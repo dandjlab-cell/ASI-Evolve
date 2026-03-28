@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Initialize Cognition knowledge base for Circle Packing (Phase 2: Optimization).
-Focus: numerical refinement, constrained optimization, breaking through plateau toward 2.635.
+Initialize Cognition knowledge base for Circle Packing.
 """
 import sys
 from pathlib import Path
