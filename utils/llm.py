@@ -1,14 +1,15 @@
-"""LLM client utilities."""
+"""LLM client utilities — Claude CLI subprocess backend."""
 
 import json
+import os
 import re
+import shutil
+import subprocess
 import threading
 import time
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from datetime import datetime
-
-from openai import OpenAI
 
 from .logger import get_logger
 from .structures import LLMResponse
@@ -16,49 +17,45 @@ from .structures import LLMResponse
 
 class LLMClient:
     """
-    Thin wrapper over an OpenAI-compatible chat-completions client.
+    LLM client that delegates to the Claude Code CLI via subprocess.
 
-    Features:
-    - Retry handling
-    - Optional JSON mode
-    - Per-step call logging
-    - Support for arbitrary extra API parameters
+    Each call spawns `claude -p` with the prompt piped via stdin.
+    No API keys or external SDK dependencies required.
     """
 
     def __init__(
         self,
-        api_key: str,
-        base_url: str = "https://api.openai.com/v1",
-        model: str = "gpt-4",
-        timeout: int = 120,
+        model: str = "opus",
+        timeout: int = 300,
         retry_times: int = 3,
         retry_delay: int = 5,
+        claude_path: str = "claude",
         **extra_params,
     ):
-        """
-        Args:
-            api_key: API key.
-            base_url: API base URL.
-            model: Default model.
-            timeout: Request timeout in seconds.
-            retry_times: Number of retry attempts.
-            retry_delay: Delay between retries in seconds.
-            **extra_params: Extra API parameters such as temperature or max_tokens.
-        """
         self.model = model
         self.timeout = timeout
         self.retry_times = retry_times
         self.retry_delay = retry_delay
-        self.extra_params = extra_params
+        self.claude_path = claude_path
 
-        self.client = OpenAI(
-            api_key=api_key,
-            base_url=base_url,
-            timeout=timeout,
-        )
+        resolved = shutil.which(claude_path)
+        if not resolved:
+            raise FileNotFoundError(
+                f"Claude CLI not found: '{claude_path}'. "
+                "Install Claude Code or set 'claude_path' in config."
+            )
+        self.claude_path = resolved
 
         self.logger = get_logger()
         self._thread_local = threading.local()
+        self._clean_env = self._build_clean_env()
+
+    @staticmethod
+    def _build_clean_env() -> dict:
+        """Build an environment dict safe for subprocess invocation."""
+        env = os.environ.copy()
+        env.pop("CLAUDECODE", None)
+        return env
 
     def set_log_dir(self, log_dir: Optional[Path]):
         """
@@ -99,64 +96,98 @@ class LLMClient:
         **kwargs,
     ) -> LLMResponse:
         """
-        Send a chat-completions request.
+        Send a request to the Claude CLI.
 
         Args:
-            messages: Chat messages.
-            json_mode: Whether to request a JSON object response.
+            messages: Chat messages (system/user/assistant).
+            json_mode: Ignored (kept for interface compatibility).
             model: Optional model override.
             call_name: Optional label for call logging.
-            **kwargs: Request-level overrides.
+            **kwargs: Ignored (kept for interface compatibility).
 
         Returns:
             Structured `LLMResponse`.
         """
-        params = {
-            "model": model or self.model,
-            "messages": messages,
-            **self.extra_params,
-            **kwargs,
-        }
+        model = model or self.model
 
-        if json_mode:
-            params["response_format"] = {"type": "json_object"}
+        system_parts = [m["content"] for m in messages if m["role"] == "system"]
+        user_parts = [m["content"] for m in messages if m["role"] != "system"]
+
+        system_prompt = "\n\n".join(system_parts) if system_parts else None
+        prompt = "\n\n".join(user_parts)
+
+        cmd = [
+            self.claude_path, "-p",
+            "--model", model,
+            "--output-format", "json",
+            "--no-session-persistence",
+            "--tools", "",
+            "--strict-mcp-config",
+        ]
+
+        if system_prompt:
+            cmd.extend(["--system-prompt", system_prompt])
 
         last_error = None
         for attempt in range(self.retry_times):
             try:
                 start_time = time.time()
-                response = self.client.chat.completions.create(**params)
+                result = subprocess.run(
+                    cmd,
+                    input=prompt,
+                    capture_output=True,
+                    text=True,
+                    timeout=self.timeout,
+                    env=self._clean_env,
+                    cwd="/tmp",
+                )
                 call_time = time.time() - start_time
 
-                content = response.choices[0].message.content or ""
+                if result.returncode != 0:
+                    raise RuntimeError(
+                        f"claude CLI exited {result.returncode}: "
+                        f"{result.stderr[:500]}"
+                    )
 
-                usage = {}
-                if response.usage:
-                    usage = {
-                        "prompt_tokens": response.usage.prompt_tokens or 0,
-                        "completion_tokens": response.usage.completion_tokens or 0,
-                        "total_tokens": response.usage.total_tokens or 0,
-                    }
+                cli_output = json.loads(result.stdout)
 
-                result = LLMResponse(
+                if cli_output.get("is_error"):
+                    raise RuntimeError(
+                        f"claude CLI error: {cli_output.get('result', 'unknown')}"
+                    )
+
+                content = cli_output.get("result", "")
+
+                cli_usage = cli_output.get("usage", {})
+                usage = {
+                    "prompt_tokens": cli_usage.get("input_tokens", 0),
+                    "completion_tokens": cli_usage.get("output_tokens", 0),
+                    "total_tokens": (
+                        cli_usage.get("input_tokens", 0)
+                        + cli_usage.get("output_tokens", 0)
+                    ),
+                    "cost_usd": cli_output.get("total_cost_usd", 0.0),
+                }
+
+                response = LLMResponse(
                     content=content,
-                    raw_response=response,
+                    raw_response=cli_output,
                     usage=usage,
-                    model=params["model"],
+                    model=model,
                     call_time=call_time,
                 )
 
                 self.logger.log_llm_call({
-                    "model": params["model"],
+                    "model": model,
                     "usage": usage,
                     "call_time": call_time,
                 })
 
                 log_dir = self._get_log_dir()
                 if log_dir:
-                    self._log_call_to_file(messages, result, call_name, attempt)
+                    self._log_call_to_file(messages, response, call_name, attempt)
 
-                return result
+                return response
 
             except Exception as e:
                 last_error = e
@@ -264,6 +295,10 @@ class LLMClient:
 
         log_file = log_dir / filename
 
+        finish_reason = None
+        if isinstance(response.raw_response, dict):
+            finish_reason = response.raw_response.get("stop_reason")
+
         log_data = {
             "call_number": call_counter,
             "timestamp": datetime.now().isoformat(),
@@ -275,7 +310,7 @@ class LLMClient:
             "messages": messages,
             "response": {
                 "content": response.content,
-                "finish_reason": response.raw_response.choices[0].finish_reason if response.raw_response.choices else None,
+                "finish_reason": finish_reason,
             },
         }
 
@@ -290,17 +325,10 @@ def create_llm_client(config: Dict[str, Any]) -> LLMClient:
     """Create an `LLMClient` from the top-level config dictionary."""
     api_config = config.get("api", {})
 
-    framework_keys = {"provider", "base_url", "api_key", "model", "timeout", "retry_times", "retry_delay"}
-
-    framework_params = {
-        "api_key": api_config.get("api_key", "EMPTY"),
-        "base_url": api_config.get("base_url", "https://api.openai.com/v1"),
-        "model": api_config.get("model", "default"),
-        "timeout": api_config.get("timeout", 120),
-        "retry_times": api_config.get("retry_times", 3),
-        "retry_delay": api_config.get("retry_delay", 5),
-    }
-
-    extra_params = {k: v for k, v in api_config.items() if k not in framework_keys}
-
-    return LLMClient(**framework_params, **extra_params)
+    return LLMClient(
+        model=api_config.get("model", "opus"),
+        timeout=api_config.get("timeout", 300),
+        retry_times=api_config.get("retry_times", 3),
+        retry_delay=api_config.get("retry_delay", 5),
+        claude_path=api_config.get("claude_path", "claude"),
+    )

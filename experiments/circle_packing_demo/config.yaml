@@ -5,21 +5,9 @@
 # Experiment name
 experiment_name: "circle_packing_align_qwen_1"
 
-# API configuration
+# API configuration — Claude CLI subprocess backend
 api:
-  provider: "sglang"
-  base_url: "http://localhost:30032/v1"
-  api_key: "EMPTY"
-  model: "default"
-  temperature: 0.6
-  top_p: 0.95
-  max_tokens: 65536  # YaRN-expanded context limit can reach 131072
-  seed: 42
-  extra_body:
-    chat_template_kwargs:
-      enable_thinking: true
-    top_k: 20
-    min_p: 0
+  model: "opus"
   timeout: 600  # Longer timeout for optimization-heavy generations
   retry_times: 3
   retry_delay: 5
