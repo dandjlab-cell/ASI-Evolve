@@ -152,47 +152,80 @@ def _score_camera_pairing(
     pipeline_manifest: Dict,
     approved_manifest: Dict,
 ) -> float:
-    """Score how well the pipeline matched V1/V2 camera pairing.
+    """Score camera selection accuracy.
 
-    For each beat in the approved edit that has both V1 and V2,
-    check if the pipeline used the same camera on the same track.
+    Premiere XMLs export all clips on a single track, so we can't compare
+    track assignment. Instead, we infer camera identity from filename prefix
+    (e.g. B19I = front/V1, AI2I = overhead/V2) and check whether the
+    pipeline chose the same camera the editor chose for each matched moment.
+
+    We detect the V1 prefix from the pipeline manifest (which has explicit
+    v1/v2 tracks), then classify approved clips by the same prefix.
     """
-    approved_pairs = {}
-    for entry in approved_manifest.get("timeline", []):
-        v1 = entry.get("v1")
-        v2 = entry.get("v2")
-        if v1 and v2 and isinstance(v1, dict) and isinstance(v2, dict):
-            idx = entry.get("beat_index", len(approved_pairs))
-            approved_pairs[idx] = (v1.get("file"), v2.get("file"))
-
-    if not approved_pairs:
+    # Learn V1 prefix from pipeline manifest (it has explicit track info)
+    v1_prefix = _detect_v1_prefix(pipeline_manifest)
+    if not v1_prefix:
         return 0.0
 
-    pipeline_pairs = {}
+    # Build approved clip list with camera labels
+    approved_clips = []
+    for entry in approved_manifest.get("timeline", []):
+        for track in ("v1", "v2"):
+            clip = entry.get(track)
+            if clip and isinstance(clip, dict) and clip.get("file"):
+                is_v1 = clip["file"].startswith(v1_prefix)
+                approved_clips.append({
+                    "file": clip["file"],
+                    "in": clip.get("in", 0.0),
+                    "camera": "v1" if is_v1 else "v2",
+                })
+
+    if not approved_clips:
+        return 0.0
+
+    # Build pipeline clip list with camera labels from track assignment
+    pipeline_clips = []
     for entry in pipeline_manifest.get("timeline", []):
-        v1 = entry.get("v1")
-        v2 = entry.get("v2")
-        if v1 and v2 and isinstance(v1, dict) and isinstance(v2, dict):
-            idx = entry.get("beat_index", len(pipeline_pairs))
-            pipeline_pairs[idx] = (v1.get("file"), v2.get("file"))
+        for track in ("v1", "v2"):
+            clip = entry.get(track)
+            if clip and isinstance(clip, dict) and clip.get("file"):
+                pipeline_clips.append({
+                    "file": clip["file"],
+                    "in": clip.get("in", 0.0),
+                    "camera": track,
+                })
 
+    # For each matched clip pair, check if camera matches
     matches = 0
-    total = len(approved_pairs)
+    total = 0
+    used = set()
 
-    for idx, (a_v1, a_v2) in approved_pairs.items():
-        p_pair = pipeline_pairs.get(idx)
-        if p_pair is None:
-            continue
-
-        p_v1, p_v2 = p_pair
-        # Check if camera assignment matches (same file on same track)
-        if p_v1 == a_v1 and p_v2 == a_v2:
-            matches += 1
-        # Partial credit: right files, wrong tracks (swapped)
-        elif p_v1 == a_v2 and p_v2 == a_v1:
-            matches += 0.5
+    for a_clip in approved_clips:
+        for i, p_clip in enumerate(pipeline_clips):
+            if i in used:
+                continue
+            if a_clip["file"] != p_clip["file"]:
+                continue
+            if abs(a_clip["in"] - p_clip["in"]) > TIMING_MATCH_TOLERANCE:
+                continue
+            # Found a match — does the camera assignment agree?
+            used.add(i)
+            total += 1
+            if a_clip["camera"] == p_clip["camera"]:
+                matches += 1
+            break
 
     return matches / total if total > 0 else 0.0
+
+
+def _detect_v1_prefix(manifest: Dict) -> Optional[str]:
+    """Detect V1 camera prefix from a pipeline manifest with explicit tracks."""
+    for entry in manifest.get("timeline", []):
+        v1 = entry.get("v1")
+        if v1 and isinstance(v1, dict) and v1.get("file"):
+            # Return first 4 chars as prefix (e.g. "B19I")
+            return v1["file"][:4]
+    return None
 
 
 def _empty_score(reason: str) -> Dict:
