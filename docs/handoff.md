@@ -2,8 +2,18 @@
 
 **Date:** 2026-04-20
 **Branch:** `main`
-**Last commit:** `85e72d2` feat: editorial judgment annotation system for recipe pipeline evolution
+**Last commit:** `11ce4f3` docs: session handoff 2026-04-20 (session 18)
 **Role:** BUILDER
+
+---
+
+## Big Picture (read this first)
+
+The endgame is a fully agentic, automated video editing process. Not a tool — an agent that edits. Dan's editorial decisions are habits and principles, not random choices. ASI-Evolve extracts those habits so they become transferable processes. When the agent encounters new footage, it knows how to tackle it because it internalized the reasoning, not just memorized cuts.
+
+**Iteration speed principle:** The evolution loop must be 10x faster than human iteration. The agent should exhaust its own attempts first — run dozens of generations autonomously. Only surface decisions to Dan when it's genuinely stuck or the correction is high-leverage. Dan's 5 minutes of correction should fix an entire CLASS of mistakes, not one instance. Batch corrections at the rule level ("always overhead for pours"), not the clip level ("use AI2I5202 at 176s").
+
+**Vision doc:** `~/DevApps/Brain/Projects/ASI-Evolve/Editorial Intelligence - Vision.md`
 
 ---
 
