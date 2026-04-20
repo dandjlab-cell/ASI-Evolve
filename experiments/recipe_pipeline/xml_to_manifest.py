@@ -98,6 +98,11 @@ def _parse_track_clips(track, fps: float) -> List[Dict]:
 
 def _parse_clip(clip, fps: float) -> Optional[Dict]:
     """Parse a single clipitem element."""
+    # Skip disabled clips (footage Dan rejected from the final edit)
+    enabled = _text(clip, "enabled")
+    if enabled and enabled.upper() == "FALSE":
+        return None
+
     # Get the source file name
     file_elem = clip.find(".//file")
     if file_elem is None:
