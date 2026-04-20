@@ -113,7 +113,13 @@ class LLMClient:
         system_parts = [m["content"] for m in messages if m["role"] == "system"]
         user_parts = [m["content"] for m in messages if m["role"] != "system"]
 
-        system_prompt = "\n\n".join(system_parts) if system_parts else None
+        # Prevent Claude from generating tool_call XML instead of content
+        system_parts.append(
+            "You have NO tools available. Do NOT generate <tool_call> or "
+            "<function_call> blocks. Respond with plain text and the XML tags "
+            "specified in the prompt (<name>, <motivation>, <code>, <analysis>, etc.)."
+        )
+        system_prompt = "\n\n".join(system_parts)
         prompt = "\n\n".join(user_parts)
 
         cmd = [
@@ -125,8 +131,7 @@ class LLMClient:
             "--strict-mcp-config",
         ]
 
-        if system_prompt:
-            cmd.extend(["--system-prompt", system_prompt])
+        cmd.extend(["--system-prompt", system_prompt])
 
         last_error = None
         for attempt in range(self.retry_times):
