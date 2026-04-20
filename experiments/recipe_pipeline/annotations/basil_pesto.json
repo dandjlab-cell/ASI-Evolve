@@ -1,0 +1,468 @@
+{
+  "recipe": "basil_pesto",
+  "global_notes": "",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "vibrant green pesto coating twisted pasta",
+      "beat_type": "beauty",
+      "filename": "B19I6413.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front (eye-level) is the right choice for a pesto-coating moment because it captures the vertical fall and gloss of the sauce hitting the pasta surface \u2014 the depth and sheen that make it feel tactile. Overhead would flatten the coat into a top-down color patch, losing the sense of the sauce enveloping the strands."
+      },
+      "duration": {
+        "seconds": 1.126,
+        "reasoning": "1.1s is on the short end for a beauty beat (typical range 1.0\u20132.0s), but appropriate here because this is the opening shot \u2014 it needs to hook without stalling. The hold is just long enough to read \"vibrant green + twisted pasta\" before the edit moves on; anything shorter risks not landing the color impression, anything longer slows the cold-open momentum."
+      },
+      "in_point": {
+        "seconds": 109.443,
+        "reasoning": "The editor chose 109.4s, bypassing the pipeline's 64.5s suggestion and the VLM-described jar-filling moments (51\u201365s). That jump strongly implies 109.4s is the peak coating action \u2014 likely the moment the pesto first contacts and begins draping the pasta. The editor skipped the sauce-prep phase entirely to land directly on the money frame: maximum visual payoff with motion already in progress."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "B19I6413.mov @ 64.5s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 1,
+      "beat_description": "crushing unpeeled garlic with side of chef's knife",
+      "beat_type": "technique",
+      "filename": "B19I6415.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the correct call for a knife technique beat \u2014 eye-level captures the lateral sweep of the blade and the hand's heel-of-palm pressure, which is exactly what teaches the viewer *how* to crush garlic. An overhead would flatten the knife angle into ambiguity and lose the wrist mechanics entirely."
+      },
+      "duration": {
+        "seconds": 1.2930000000000001,
+        "reasoning": "1.3s is tight but appropriate for a single-action technique beat \u2014 the crush is one committed gesture with a clear before/after. Holding longer adds nothing; cutting shorter risks losing the completion of the action (the moment the garlic yields). The surrounding beats (1.1s prior, 1.5s after) confirm the editor is working in a fast, rhythmic tempo and this beat fits the cadence without padding."
+      },
+      "in_point": {
+        "seconds": 17.768,
+        "reasoning": "The 17.8s in-point likely catches the knife already positioned on the garlic \u2014 skipping setup and dead frames \u2014 so the cut lands in motion or just before impact. This is a standard \"enter on the verb, not the noun\" technique choice: the viewer doesn't need to watch the editor pick up the knife."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "B19I6415.mov @ 55.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 2,
+      "beat_description": "dropping unpeeled garlic into skillet",
+      "beat_type": "ingredient",
+      "filename": "AI2I5202.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the correct call for a garlic-into-skillet drop: it collapses the depth of the pan to a flat plane so the viewer reads the landing clearly \u2014 the garlic hits the oil, the skillet surface fills the frame. Eye-level would show the pan rim and obscure the drop point, turning a visual beat into a silhouette."
+      },
+      "duration": {
+        "seconds": 1.46,
+        "reasoning": "1.5s is slightly long for a pure ingredient drop (1.0\u20131.2s is more typical), which suggests the editor was either letting the sizzle/settle read or bridging rhythm between the preceding front-camera cut and the next overhead beat. The overhead-to-overhead cut that follows means there's no camera-angle contrast to create energy, so a slightly longer hold earns the transition."
+      },
+      "in_point": {
+        "seconds": 176.385,
+        "reasoning": "Without accurate VLM data for this in-point I can't confirm the visual state at 176.4s. In well-cut recipe videos, garlic-drop in-points are typically set just before the hands release \u2014 capturing 1\u20133 frames of hang time so the drop itself lands inside the cut, not before it. The editor likely chose the earliest frame where the garlic is in motion or just clearing the hand."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "AI2I5202.mov @ 191.0s (overhead)",
+      "correction": null
+    },
+    {
+      "beat_index": 3,
+      "beat_description": "scattering pine nuts into skillet",
+      "beat_type": "ingredient",
+      "filename": "AI2I5184.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the natural choice for any ingredient placement or scatter action because it shows the full landing zone \u2014 you see the ingredient hit the surface and where it comes to rest. Eye-level would bury the action behind the hand and compress depth, turning a visual moment into an obscured gesture. Staying overhead also maintains a continuous camera language from the previous beat (AI2I5202.mov, also overhead), avoiding a jarring axis shift inside what's likely a short ingredient sequence."
+      },
+      "duration": {
+        "seconds": 1.2929999999999997,
+        "reasoning": "1.3s is lean but correct for a placement/scatter beat \u2014 the action is instantaneous (hand enters, ingredient lands, hand exits or stills), so there's no process to hold through. The rhythm here \u2014 1.5s / 1.3s / 1.4s across three consecutive beats \u2014 suggests the editor is keeping a metronomic pace through this ingredient section; the slight compression on this beat maintains forward momentum without feeling rushed."
+      },
+      "in_point": {
+        "seconds": 20.896,
+        "reasoning": "At 20.9s, the hand is mid-motion entering the frame (per VLM at 20.0s) with the ingredient already visible, landing at 21.0s. Cutting in at this moment catches the tail of the entry move \u2014 you get the kinetic energy of the hand arriving without having to sit on an empty board. Cutting in earlier at 20.0s would front-load dead time; cutting in at 21.0s would lose the motion and start on a static hold."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "AI2I5184.mov @ 39.0s (overhead)",
+      "correction": null
+    },
+    {
+      "beat_index": 4,
+      "beat_description": "stirring garlic and pine nuts in skillet",
+      "beat_type": "transformation_from",
+      "filename": "B19I6401.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "This beat sits between two overhead shots, so the front/eye-level cut creates a deliberate angle break that visually separates this moment from its neighbors \u2014 overhead reads \"what\" (the ingredient), front reads \"how\" (the technique). At eye-level, the knife blade's angle and the downward force of the press are far more legible than they'd be compressed flat from above."
+      },
+      "duration": {
+        "seconds": 1.3760000000000003,
+        "reasoning": "1.4s is consistent with the surrounding rhythm (1.3s before, 1.2s after) \u2014 the editor isn't stretching this, just holding long enough to register the action. For a `transformation_from` beat, you only need to show the *start* of the process, not the completion, so under 1.5s is appropriate."
+      },
+      "in_point": {
+        "seconds": 30.948,
+        "reasoning": "The 30.9s cut lands right at the moment of renewed action \u2014 at 31.0s the knife is already mid-descent. The editor is avoiding the static dead frames at 29-30s (cloves just sitting there, no motion) and entering on the anticipation beat, which gives the cut energy and forward pull."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "correction": null
+    },
+    {
+      "beat_index": 5,
+      "beat_description": "TRANSFORMATION: stirring until golden brown and fragrant",
+      "beat_type": "match_cut",
+      "filename": "AI2I5185.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "The overhead angle is the right call here because it turns the pan into a stage \u2014 you see the garlic cloves land and settle in isolation against the clean steel surface, which the front camera would obscure behind the pan's rim. Sitting between two front-camera shots, this overhead also provides visual relief and signals a tonal shift: we've moved from technique to ingredient."
+      },
+      "duration": {
+        "seconds": 1.1680000000000001,
+        "reasoning": "1.2s is tight for a match_cut, but appropriate here because the cloves are essentially static at the in-point \u2014 there's no motion arc to follow through, so the cut earns its length purely by composition, not action. Holding longer would feel slack; shorter wouldn't let the eye read the clean image and register the placement."
+      },
+      "in_point": {
+        "seconds": 9.509,
+        "reasoning": "Cutting at 9.5s lands just after the hands release the cloves (9.0s has hands mid-peel, 10.0s shows cloves at rest) \u2014 the editor is threading a needle to catch the cloves freshly settled without any hands cluttering the frame. This gives the cleanest, most composed read of the overhead while implying the just-completed action."
+      },
+      "verdict": "kept",
+      "confidence": "medium",
+      "pipeline_info": "AI2I5185.mov @ 9.0s (overhead)",
+      "correction": null
+    },
+    {
+      "beat_index": 6,
+      "beat_description": "transferring toasted garlic and pine nuts to plate",
+      "beat_type": "technique",
+      "filename": "B19I6402.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front gives you the vertical arc of the pour \u2014 the bowl tilt, the stream of nuts in mid-fall, the depth of the action landing into the pot. Overhead would collapse that Z-axis motion entirely, reducing the pour to nuts \"appearing\" at the bottom of frame with no sense of hand agency or trajectory. For a *transferring* technique beat, the pour path is the technique."
+      },
+      "duration": {
+        "seconds": 1.7930000000000001,
+        "reasoning": "1.8s is tight but appropriate. The VLM confirms at 22.0s the nuts have already settled \u2014 so there's roughly 0.8s of active motion from the in-point before the shot goes static. The editor holds just long enough to let the landing register and breathe before the cut. Holding longer would mean sitting on a dead pot; cutting earlier would feel rushed and not let the texture/quantity of the nuts read."
+      },
+      "in_point": {
+        "seconds": 21.188,
+        "reasoning": "21.2s vs the pipeline's 21.0s is a deliberate 6-frame trim. At 21.0s the VLM describes nuts \"mid-fall, over the garlic\" \u2014 the action has already started, so the pipeline's in-point enters into motion. The editor's +0.2s likely trims a frame where the bowl was still tilting toward the pot but the pour hadn't fully committed yet. Cutting slightly later enters cleaner into established, readable motion rather than the setup gesture."
+      },
+      "verdict": "kept",
+      "confidence": "medium",
+      "pipeline_info": "B19I6402.mov @ 21.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 7,
+      "beat_description": "plucking basil leaves from stems",
+      "beat_type": "technique",
+      "filename": "B19I6404.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front camera puts the hand gesture at eye level, letting the viewer read the pinching/pulling motion of leaf separation against the stem \u2014 the technique's legibility depends on seeing the hand laterally, not from above where fingers compress into an indistinct mass. Overhead works for ingredients laid flat; it loses the vertical dimension that defines this action."
+      },
+      "duration": {
+        "seconds": 1.126999999999999,
+        "reasoning": "1.1s is tight but appropriate \u2014 plucking a single leaf cluster is a single discrete gesture with a clear start and end, and lingering past the pull would just show held leaves with nothing new happening. The cut to overhead at the next beat (AI2I5188.mov) suggests the editor wanted to get to the result shot quickly, so the technique beat is kept lean."
+      },
+      "in_point": {
+        "seconds": 3.837,
+        "reasoning": "The editor cut in 0.2s earlier than the pipeline's 4.0s, likely to catch the moment the hand first reaches toward the stem \u2014 entering on the reach rather than mid-pull preserves the visual logic of the action from its origin. If the VLM misdescribed the clip, this earlier in-point may also be the editor consciously avoiding the stirring content that appears from 4.0s onward."
+      },
+      "verdict": "kept",
+      "confidence": "medium",
+      "pipeline_info": "B19I6404.mov @ 4.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 8,
+      "beat_description": "grating lemon zest",
+      "beat_type": "technique",
+      "filename": "AI2I5188.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the only angle that makes spatial sense here \u2014 the bowl-to-plate pour scatters ingredients across a horizontal plane, and a top-down view captures that dispersion pattern clearly. An eye-level front camera would show the back of the bowl and partially obscure where and how the ingredients land, losing the visual information that makes this moment meaningful."
+      },
+      "duration": {
+        "seconds": 1.0010000000000012,
+        "reasoning": "1.0s is tight but appropriate for a pour action that has a clear visual arc \u2014 the ingredients fall, scatter, and settle. Technique beats driven by a single continuous motion don't need to breathe the way a held ingredient reveal does; the cut needs to land before the motion fully resolves (at ~18.0s the bowl is already lifting away), so 1.0s captures the peak action without sitting on the aftermath. Holding longer would mean cutting out mid-stillness, which reads as padding."
+      },
+      "in_point": {
+        "seconds": 16.808,
+        "reasoning": "Cutting in at 16.8s rather than the pipeline's 16.0s skips the setup (bowl tilting, ingredients beginning to slide) and drops the viewer directly into the active fall. At 16.8s you're inside the motion \u2014 nuts already in the air \u2014 which reads as more dynamic on a 1.0s hold. Starting at 16.0s would burn almost a full second on anticipation, leaving only a flash of the payoff before the cut."
+      },
+      "verdict": "kept",
+      "confidence": "medium",
+      "pipeline_info": "AI2I5188.mov @ 16.0s (overhead)",
+      "correction": null
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "grating Parmesan cheese",
+      "beat_type": "technique",
+      "filename": "B19I6407.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.2929999999999993,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 62.145,
+        "reasoning": ""
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "B19I6407.mov @ 19.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "peeling toasted garlic cloves",
+      "beat_type": "technique",
+      "filename": "AI2I5191.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.0419999999999998,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 4.129,
+        "reasoning": ""
+      },
+      "verdict": "kept",
+      "confidence": "medium",
+      "pipeline_info": "AI2I5191.mov @ 3.0s (overhead)",
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "dropping peeled garlic into food processor",
+      "beat_type": "ingredient",
+      "filename": "B19I6409.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front makes sense for a drop action \u2014 eye-level captures the hand trajectory, the garlic falling, and the processor bowl opening in the same frame, giving the viewer spatial clarity on where the ingredient goes. Overhead on a food processor drop would just show the top of the lid and lose the gesture entirely."
+      },
+      "duration": {
+        "seconds": 0.9589999999999996,
+        "reasoning": "1.0s is tight but appropriate for a single discrete action (a drop); the beat doesn't need to breathe because there's no transformation to watch \u2014 it's a moment, not a process. Sandwiched between two overhead shots, keeping it short also prevents this front-camera interruption from breaking the rhythm of the surrounding sequence."
+      },
+      "in_point": {
+        "seconds": 47.339,
+        "reasoning": "The 47.3s in-point appears to cut in slightly before the peak of the drop action, likely landing on the moment the hand enters frame or releases the garlic \u2014 the editor is trimming the approach and the aftermath, keeping only the functional gesture. The VLM descriptions at neighboring frames (powder/blender content) suggest the editor may have been working around unusable material immediately before or after this window."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "B19I6409.mov @ 50.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "scattering toasted pine nuts into food processor",
+      "beat_type": "ingredient",
+      "filename": "AI2I5192.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the right call here because scattering pine nuts into a processor is a **radial, top-down action** \u2014 you're watching ingredients fall into a bowl from above, and that geometry reads cleanly only from overhead. An eye-level front camera would flatten the pour into the bowl edge and obscure the moment the nuts land against the paste."
+      },
+      "duration": {
+        "seconds": 0.7510000000000012,
+        "reasoning": "0.8s is tight but appropriate for an ingredient-drop beat \u2014 long enough to register the action (nuts leaving hand, entering bowl) without dwelling on it. The brevity also works because this is a minor ingredient addition mid-process, not a hero moment; the pipeline likely calibrated short ingredient beats at ~0.8\u20131.0s as a baseline."
+      },
+      "in_point": {
+        "seconds": 77.452,
+        "reasoning": "Cutting at 77.5s catches the lid being lifted off \u2014 the processor is just becoming accessible. This frames the beat as \"lid off \u2192 nuts go in,\" giving the action a natural entry gate. Starting earlier (76.0s, two hands on lid) would waste frames on a removal action that belongs to a prior beat; starting later would miss the spatial setup of the open bowl."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "AI2I5192.mov @ 47.0s (overhead)",
+      "correction": null
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "pulsing garlic and nuts in processor",
+      "beat_type": "transformation_from",
+      "filename": "AI2I5193.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the right call here because pulsing garlic and nuts is fundamentally a **top-down compositional story** \u2014 you're watching the processor bowl fill and transform, and the overhead angle captures the full bowl geometry, the texture contrast between the brown crumbly mixture and incoming basil, and any spatial distribution of the pulse. The front/eye-level camera would show the processor wall and lid at this stage, obscuring the actual transformation happening inside the bowl."
+      },
+      "duration": {
+        "seconds": 0.20899999999999963,
+        "reasoning": "0.2s is extremely short \u2014 essentially a flash cut, which is deliberate. For a `transformation_from` beat type, the editor is using this clip as a **punctuation mark**: you're not dwelling on the action, you're establishing the starting state (garlic/nuts already processed, basil being added) before cutting to the front camera for the actual pulsing action. The hold length is determined by the editorial rhythm, not by narrative content \u2014 it's a visual transition anchor, not an information beat."
+      },
+      "in_point": {
+        "seconds": 8.55,
+        "reasoning": "Cutting in at 8.6s lands on the frame described at [8.0s] \u2014 basil already resting in the bowl over the brown mixture, hand withdrawn. This is the **clean compositional moment**: no hand obscuring the bowl, the color contrast between green basil and brown nut mixture is fully visible, and the processor is in a \"ready to pulse\" resting state. Cutting in earlier (7.0s, hand placing basil) would require more screen time to resolve; cutting in later (10.0s, hand pressing leaves) would show action that belongs to the next beat's story."
+      },
+      "verdict": "kept",
+      "confidence": "medium",
+      "pipeline_info": "AI2I5193.mov @ 7.0s (overhead)",
+      "correction": null
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "TRANSFORMATION: pulsing until resembling wet sand",
+      "beat_type": "match_cut",
+      "filename": "B19I6410.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The front/eye-level camera captures the full gestural arc of the pour \u2014 the arm extension, wrist tilt, and the zest falling through space against the backdrop of the bowl \u2014 giving the action spatial depth and human physicality. An overhead shot would reduce this to a top-down ingredient drop, losing the sense of agency and the visual drama of the falling zest trajectory across green leaves."
+      },
+      "duration": {
+        "seconds": 1.0429999999999993,
+        "reasoning": "1.0s is tight but deliberate for a match_cut \u2014 long enough to register the motion peak (mid-pour with zest in free-fall) but short enough to cut before the action resolves into the static \"settled zest\" result visible at 39s. The previous beat was only 0.2s (overhead), so 1.0s serves as a rhythmic expansion; if it ran longer it would stall before the transformation beat in the next clip."
+      },
+      "in_point": {
+        "seconds": 37.871,
+        "reasoning": "The editor cut in at 37.9s rather than the pipeline's 38.0s \u2014 0.1s earlier, catching the onset of the pour rather than its established mid-point. At 37.9s, the wrist is just beginning to tip and the zest is starting to fall; this gives the viewer the kinetic initiation of the action, which reads more dynamically on a match_cut than entering an already-in-progress motion."
+      },
+      "verdict": "kept",
+      "confidence": "medium",
+      "pipeline_info": "B19I6410.mov @ 38.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 15,
+      "beat_description": "stuffing basil leaves into food processor",
+      "beat_type": "ingredient",
+      "filename": "B19I6411.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the right call for a physical stuffing gesture \u2014 the eye-level angle lets you read the depth of the hand pressing leaves into the bowl or feed tube, showing the relationship between hand, leaves, and machine in a way overhead would collapse into a flat, illegible push. Overhead is saved for the next beat, likely to show the assembled contents from above."
+      },
+      "duration": {
+        "seconds": 1.501999999999999,
+        "reasoning": "1.5s is short but defensible for a stuffing beat \u2014 the gesture has one clear motion arc (push down, release) and doesn't need a full cycle to register. The rhythm also tracks: sandwiched between a 1.0s front shot and a 1.1s overhead, this is a punchy three-cut sequence, and holding longer would drag the sequence without adding information."
+      },
+      "in_point": {
+        "seconds": 11.803,
+        "reasoning": "Worth flagging directly \u2014 the VLM descriptions at 10s, 11s, and 13s all show yellow liquid (likely olive oil) still pouring, not basil stuffing. At 11.8s the editor is cutting in either at the exact tail of that pour or at a moment the VLM didn't cleanly label. The in-point choice likely targets the first frame where the basil hand motion begins, entering on new action rather than mid-pour to avoid visual redundancy with whatever preceded it in the source clip."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "B19I6411.mov @ 8.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "sprinkling grated Parmesan",
+      "beat_type": "ingredient",
+      "filename": "AI2I5196.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.1260000000000012,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 15.682,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "correction": null
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "adding lemon zest",
+      "beat_type": "ingredient",
+      "filename": "B19I6412.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 0.7089999999999996,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 11.803,
+        "reasoning": ""
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "B19I6412.mov @ 9.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "pulsing the leafy mixture",
+      "beat_type": "transformation_from",
+      "filename": "B19I6414.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.3350000000000009,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 94.886,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "correction": null
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "TRANSFORMATION: pulsing until finely minced and uniform",
+      "beat_type": "match_cut",
+      "filename": "B19I6416.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the right call here because the physical gesture of tongs pulling pasta upward \u2014 strands stretching and sauce cascading \u2014 reads best from eye level, where the full vertical arc and texture are visible. Overhead would flatten the lift into a circular reveal and lose the height/motion drama that makes this frame compelling as a match cut anchor."
+      },
+      "duration": {
+        "seconds": 1.3770000000000024,
+        "reasoning": "1.4s is a tight but deliberate hold for a match cut \u2014 long enough to let the cascade motion complete its visual peak and register the texture, but short enough to maintain momentum into the next beat. A match cut lives or dies on rhythmic precision; the editor is likely cutting on the natural deceleration point of the strand-stretch rather than holding through the drop, which keeps energy tight."
+      },
+      "in_point": {
+        "seconds": 42.084,
+        "reasoning": "Cutting in at 42.1s (pipeline suggested 40.0s, so trimmed ~2 seconds) means the editor is entering *mid-lift*, skipping the initial scoop/grasp from the bowl. At 42.0s the tongs are already extended with strands intertwined and sauce clinging \u2014 this is the compositionally strongest frame, with maximum visual information (texture, coating, motion) visible simultaneously, ideal for a match cut that needs an immediate read."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "B19I6416.mov @ 40.0s (front)",
+      "correction": null
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "drizzling olive oil into running processor",
+      "beat_type": "ingredient",
+      "filename": "B19I6417.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front (eye-level) was the right call because the subject at this in-point is a close-up bowl of finished pasta \u2014 eye-level keeps the cheese texture and spaghetti depth readable and relatable, whereas overhead at this moment would flatten the pile of cheese and lose the bowl's dimensional presence. The consistent front-camera pairing with the previous beat (B19I6416.mov, also front) also avoids an unmotivated angle cut right at the closing frame."
+      },
+      "duration": {
+        "seconds": 1.5850000000000009,
+        "reasoning": "1.6s is a deliberate short hold for a closing beat \u2014 long enough to let the viewer land on the finished dish as a satisfying visual endpoint, but tight enough to avoid overstaying. For a beauty/finish shot that's pure aesthetic payoff (no action to track), anything over 2s would start to feel static; the 1.6s respects the pacing rhythm established by the preceding 1.4s beat."
+      },
+      "in_point": {
+        "seconds": 26.777,
+        "reasoning": "Cutting in at 26.8s drops the viewer into the shot right when the close-up is fully settled and cheese coverage is maximal \u2014 the bowl is dense with texture and already in frame, so there's no wasted motion at the head of the clip. The VLM at 25.0s shows the bowl partially out-of-focus at the edge; 26.8s is the first stable, fully-in-focus close-up, which is the cleanest frame to enter on."
+      },
+      "verdict": "trimmed",
+      "confidence": "medium",
+      "pipeline_info": "B19I6417.mov @ 202.0s (front)",
+      "correction": null
+    }
+  ]
+}

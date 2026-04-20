@@ -81,13 +81,28 @@ def evaluate(code_path: str, results_path: str):
         _write_error(results_path, "No approved edits found", time.time() - start)
         return
 
+    # Load editorial annotations if available
+    annotations_dir = experiment_dir / "annotations"
+    annotations = {}
+    if annotations_dir.is_dir():
+        for ann_file in annotations_dir.glob("*.json"):
+            try:
+                ann_data = json.loads(ann_file.read_text())
+                annotations[ann_file.stem] = ann_data
+            except (json.JSONDecodeError, IOError):
+                pass
+
     # For now: score the pipeline's existing manifests against approved edits.
     # TODO: Once slim runner is built, run pipeline with evolved config here.
     cached_dir = experiment_dir / "cached_recipes"
 
     from score import score_all_recipes
     try:
-        result = score_all_recipes(str(cached_dir), str(approved_dir))
+        result = score_all_recipes(
+            str(cached_dir), str(approved_dir),
+            annotations=annotations if annotations else None,
+            config=config if annotations else None,
+        )
     except Exception as e:
         _write_error(results_path, f"Scoring error: {e}\n{traceback.format_exc()}", time.time() - start)
         return

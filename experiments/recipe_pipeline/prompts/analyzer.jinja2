@@ -22,6 +22,15 @@ extract reusable lessons about what editorial decisions helped or hurt.
 {% endfor %}
 {% endif %}
 
+{% if editorial_annotations %}
+## Editor's Annotations
+The editor provided reasoning for editorial decisions in the approved edits.
+When analyzing score changes, check whether the mutation moved the pipeline
+TOWARD or AWAY from the editor's stated reasoning — not just clip match numbers.
+
+{{ editorial_annotations }}
+{% endif %}
+
 ## Instructions
 Analyze what changed between this config and the previous best, and whether
 those changes improved or hurt the score. Be specific and quantitative.

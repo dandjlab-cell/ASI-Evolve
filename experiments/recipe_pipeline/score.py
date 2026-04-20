@@ -243,10 +243,154 @@ def _empty_score(reason: str) -> Dict:
     }
 
 
+def score_with_annotations(
+    pipeline_manifest: Dict,
+    approved_manifest: Dict,
+    annotation: Dict,
+    config: Optional[Dict] = None,
+) -> Dict:
+    """Score a pipeline manifest with annotation-weighted scoring.
+
+    Adds two enhancements over score_manifest_pair:
+    1. Per-beat weight adjustment based on verdict (camera_swapped/added = 1.5x)
+    2. Reasoning alignment score (does the config prompt reflect Dan's editorial rules?)
+
+    Weights with annotations: precision 30%, recall 25%, timing 20%, camera 10%, reasoning 15%
+    """
+    # Get base scores first
+    base = score_manifest_pair(pipeline_manifest, approved_manifest)
+
+    if not annotation or not annotation.get("beats"):
+        return base
+
+    # Build annotation lookup by beat_index
+    ann_by_beat = {b["beat_index"]: b for b in annotation["beats"]}
+
+    # --- Per-beat weighted precision/recall ---
+    pipeline_clips = _extract_clips(pipeline_manifest)
+    approved_clips = _extract_clips(approved_manifest)
+    matches = _match_clips(pipeline_clips, approved_clips)
+
+    # Weight matched clips by annotation signal
+    weighted_match_score = 0.0
+    total_weight = 0.0
+
+    for a_clip in approved_clips:
+        bi = a_clip.get("beat_index")
+        ann = ann_by_beat.get(bi) if bi is not None else None
+        weight = _beat_weight(ann)
+        total_weight += weight
+
+        # Check if this approved clip was matched
+        matched = any(
+            p["file"] == a_clip["file"] and abs(p["in"] - a_clip["in"]) <= TIMING_MATCH_TOLERANCE
+            for p, _ in matches
+        )
+        if matched:
+            weighted_match_score += weight
+
+    weighted_recall = weighted_match_score / total_weight if total_weight > 0 else 0.0
+
+    # Weighted precision (weight by annotation of the approved beat it matched)
+    weighted_prec_score = 0.0
+    total_prec_weight = 0.0
+    for p_clip, a_clip in matches:
+        bi = a_clip.get("beat_index")
+        ann = ann_by_beat.get(bi) if bi is not None else None
+        weight = _beat_weight(ann)
+        total_prec_weight += weight
+        weighted_prec_score += weight
+
+    # Add unmatched pipeline clips at weight 1.0
+    unmatched_pipeline = len(pipeline_clips) - len(matches)
+    total_prec_weight += unmatched_pipeline
+    weighted_precision = weighted_prec_score / total_prec_weight if total_prec_weight > 0 else 0.0
+
+    # --- Reasoning alignment ---
+    reasoning_score = 0.0
+    if config:
+        reasoning_score = _score_reasoning_alignment(annotation, config)
+
+    # Weighted composite: precision 30%, recall 25%, timing 20%, camera 10%, reasoning 15%
+    composite = (
+        weighted_precision * 0.30 +
+        weighted_recall * 0.25 +
+        base["timing"] * 0.20 +
+        base["camera"] * 0.10 +
+        reasoning_score * 0.15
+    ) * 100
+
+    result = dict(base)
+    result.update({
+        "weighted_precision": round(weighted_precision, 4),
+        "weighted_recall": round(weighted_recall, 4),
+        "reasoning_alignment": round(reasoning_score, 4),
+        "composite": round(composite, 2),
+        "annotation_beats": len(ann_by_beat),
+        "annotation_source": annotation.get("recipe", ""),
+    })
+    return result
+
+
+def _beat_weight(annotation: Optional[Dict]) -> float:
+    """Beats Dan actively changed get higher weight in scoring."""
+    if annotation is None:
+        return 1.0
+    weight = 1.0
+    verdict = annotation.get("verdict", "")
+    if verdict in ("camera_swapped", "added"):
+        weight *= 1.5
+    if annotation.get("in_point", {}).get("reasoning"):
+        weight *= 1.2
+    return weight
+
+
+def _score_reasoning_alignment(annotation: Dict, config: Dict) -> float:
+    """Check if the evolved prompt reflects Dan's editorial vocabulary.
+
+    Extracts concept pairs from camera/timing reasoning and checks
+    whether they appear in the config's prompt templates.
+    """
+    prompts = " ".join([
+        config.get("text_match_prompt", ""),
+        config.get("beauty_pick_prompt", ""),
+    ]).lower()
+
+    if not prompts.strip():
+        return 0.0
+
+    # Extract key concept words from all reasoning fields
+    concepts = []
+    for beat in annotation.get("beats", []):
+        for dim in ("camera", "duration", "in_point"):
+            reasoning = beat.get(dim, {}).get("reasoning", "").lower()
+            if not reasoning:
+                continue
+            # Extract meaningful word pairs: "overhead" + "pour", "front" + "technique"
+            words = set(reasoning.split())
+            # Camera-action pairs
+            for cam in ("overhead", "front", "top-down", "eye-level"):
+                if cam in words:
+                    action_words = words - {"the", "a", "an", "is", "for", "and", "or",
+                                            "to", "in", "of", "it", "on", "at", "this",
+                                            "that", "with", cam}
+                    for w in action_words:
+                        if len(w) > 3:
+                            concepts.append(f"{cam} {w}")
+
+    if not concepts:
+        return 0.0
+
+    hits = sum(1 for c in concepts if all(word in prompts for word in c.split()))
+    return hits / len(concepts)
+
+
 def score_all_recipes(
     pipeline_dir: str,
     approved_dir: str,
     holdout: Optional[List[str]] = None,
+    annotations: Optional[Dict[str, Dict]] = None,
+    config: Optional[Dict] = None,
 ) -> Dict:
     """Score all recipes, return aggregate + per-recipe scores.
 
@@ -254,8 +398,11 @@ def score_all_recipes(
         pipeline_dir: Directory with {recipe}_manifest.json files
         approved_dir: Directory with {recipe}.json approved manifests
         holdout: Recipe names to exclude from training score
+        annotations: Optional dict mapping recipe_name → annotation dict
+        config: Optional evolved config dict (for reasoning alignment scoring)
     """
     holdout = set(holdout or [])
+    annotations = annotations or {}
     pipeline_path = Path(pipeline_dir)
     approved_path = Path(approved_dir)
 
@@ -285,7 +432,11 @@ def score_all_recipes(
             continue
 
         pipeline = json.loads(pipeline_file.read_text())
-        score = score_manifest_pair(pipeline, approved)
+        ann = annotations.get(recipe_name)
+        if ann:
+            score = score_with_annotations(pipeline, approved, ann, config)
+        else:
+            score = score_manifest_pair(pipeline, approved)
         per_recipe[recipe_name] = score
 
         if recipe_name in holdout:

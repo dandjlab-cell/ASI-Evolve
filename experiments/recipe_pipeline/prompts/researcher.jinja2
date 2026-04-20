@@ -30,6 +30,16 @@ matches the human editor's approved edit.
 {% endfor %}
 {% endif %}
 
+{% if editorial_style %}
+## Editor's Editorial Style
+The human editor has annotated approved edits with reasoning for each decision.
+Use this to guide your mutations — if the editor says "overhead for pours" and
+the current text_match_prompt doesn't mention pour→overhead, adding that
+heuristic is a high-value mutation.
+
+{{ editorial_style }}
+{% endif %}
+
 ## Instructions
 Produce an improved config module. Focus on ONE or TWO changes at a time so
 the Analyzer can attribute score changes to specific modifications.
