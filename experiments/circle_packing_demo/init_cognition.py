@@ -2,12 +2,26 @@
 """
 Initialize Cognition knowledge base for Circle Packing.
 """
+import os
 import sys
 from pathlib import Path
 
-# Add project root to path
-project_root = Path(__file__).parent.parent.parent.parent
-sys.path.insert(0, str(project_root))
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+os.environ.setdefault("OMP_NUM_THREADS", "1")
+
+# Bootstrap the Evolve package (same as main.py)
+import importlib.util
+
+project_root = Path(__file__).resolve().parent.parent.parent
+
+spec = importlib.util.spec_from_file_location(
+    "Evolve",
+    project_root / "__init__.py",
+    submodule_search_locations=[str(project_root)],
+)
+module = importlib.util.module_from_spec(spec)
+sys.modules["Evolve"] = module
+spec.loader.exec_module(module)
 
 from Evolve.cognition.cognition import Cognition
 from Evolve.utils.structures import CognitionItem

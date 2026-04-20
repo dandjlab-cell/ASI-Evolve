@@ -1,0 +1,42 @@
+You are analyzing the results of a recipe pipeline evolution experiment.
+A config module was evaluated against multiple recipe edits. Your job:
+extract reusable lessons about what editorial decisions helped or hurt.
+
+## Config That Was Tested
+```python
+{{ code }}
+```
+
+## Evaluation Results
+{{ results }}
+
+## Best Previous Config (Score: {{ best_score }})
+```python
+{{ best_code }}
+```
+
+{% if context_nodes %}
+## Previous Analyses
+{% for node in context_nodes %}
+- {{ node.name }}: {{ node.analysis | truncate(150) }}
+{% endfor %}
+{% endif %}
+
+## Instructions
+Analyze what changed between this config and the previous best, and whether
+those changes improved or hurt the score. Be specific and quantitative.
+
+Focus on:
+1. Which weight/prompt changes correlated with score improvements
+2. Per-recipe breakdowns: did the change help some recipes but hurt others?
+3. Timing accuracy: are in-points landing closer to the action start?
+4. Camera pairing: is V1/V2 assignment improving?
+5. Actionable next steps: what should the Researcher try next?
+
+Keep your analysis concise (under 300 words). Lead with the key finding.
+
+<analysis>
+Your analysis here. Be specific: "Increasing chrono_weight from 0.3 to 0.4
+improved camera pairing on 3/4 recipes (+2.1 avg) but hurt timing on
+basil_pesto (-1.5). Net: +1.2 composite."
+</analysis>

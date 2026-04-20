@@ -1,0 +1,41 @@
+"""
+Recipe pipeline configuration module — starting defaults.
+ASI-Evolve mutates this config each generation.
+"""
+
+CONFIG = {
+    # --- Prompt templates (the big levers) ---
+    "text_match_prompt": """You are assigning clips to editorial beats for a recipe video.
+Each beat describes a cooking action. Choose the clip where that action is
+most clearly visible and well-framed.
+When two clips show the same step, prefer the tighter framing.
+Prefer clips where the action is centered in frame.
+{context}""",
+
+    "beauty_pick_prompt": """Select the best hero shots for a recipe video finale.
+These shots showcase the finished dish at its most appealing.
+Prioritize: steam or motion > static plating > wide shots.
+Look for moments with natural movement (pouring sauce, steam rising,
+cheese pulling) over posed, static compositions.
+{context}""",
+
+    # --- V1/V2 pairing weights ---
+    "content_sim_weight": 0.4,      # unigram Jaccard similarity
+    "bigram_weight": 0.6,           # bigram Jaccard similarity
+    "chrono_weight": 0.3,           # temporal proximity bonus
+    "step_match_weight": 0.25,      # same-recipe-step bonus
+
+    # --- Audio quality modifiers ---
+    "crew_positive_bonus": 0.3,     # "that was beautiful" signal
+    "crew_redo_penalty": -0.4,      # "let's redo that" signal
+    "last_keeper_bonus": 0.5,       # last good take before redo
+
+    # --- Timing ---
+    "target_dur": 5.0,              # target clip duration in seconds
+    "min_clip_duration": 2.0,       # minimum usable clip length
+    "max_gap_sec": 12.0,            # max gap before splitting moments
+    "quality_threshold": 4,         # minimum quality score (1-10)
+
+    # --- Beauty trigger ---
+    "beauty_tail_region": 0.80,     # last N% of shoot timeline = beauty zone
+}

@@ -42,7 +42,7 @@ pipeline:
   engineer_timeout: 300  # 5 minutes
 
   parallel:
-    num_workers: 4
+    num_workers: 1  # Start with 1 to validate loop; increase after confirmed working
 
   sample_n: 3
 

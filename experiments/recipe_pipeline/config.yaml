@@ -1,0 +1,76 @@
+# Recipe Pipeline Evolution Experiment
+# ====================================
+# Evolves config modules (prompts + weights + timing constants) for the
+# RoughCut recipe pipeline, scored against Dan's approved Premiere XMLs.
+
+experiment_name: "recipe_pipeline_v1"
+
+api:
+  model: "opus"
+  timeout: 600
+  retry_times: 3
+  retry_delay: 5
+
+logging:
+  level: "INFO"
+  console: true
+  wandb:
+    enabled: true
+    offline: true
+    project: "evolve"
+
+pipeline:
+  agents:
+    manager: false
+    researcher: true
+    engineer: true
+    analyzer: true
+
+  researcher:
+    diff_based_evolution: true  # Incremental config edits, not full rewrites
+    max_code_length: 50000
+
+  max_retries:
+    researcher: 3
+    engineer: 2
+    analyzer: 2
+
+  engineer_timeout: 900  # 15 min (runs pipeline across multiple recipes)
+
+  parallel:
+    num_workers: 1  # Sequential — each eval runs Claude CLI calls
+
+  sample_n: 3
+
+  judge:
+    enabled: false
+
+cognition:
+  storage_dir: "cognition_data"
+  embedding:
+    model: "sentence-transformers/all-MiniLM-L6-v2"
+    dimension: 384
+  faiss:
+    index_type: "IP"
+  retrieval:
+    top_k: 5
+    score_threshold: 0.4
+
+database:
+  storage_dir: "database_data"
+  max_size: 50
+  embedding:
+    model: "sentence-transformers/all-MiniLM-L6-v2"
+    dimension: 384
+  sampling:
+    algorithm: "island"
+    island:
+      num_islands: 3
+      migration_interval: 5
+      migration_rate: 0.1
+      exploration_ratio: 0.3
+      exploitation_ratio: 0.5
+      feature_dimensions: ["complexity", "diversity"]
+      feature_bins: 5
+  faiss:
+    index_type: "IP"

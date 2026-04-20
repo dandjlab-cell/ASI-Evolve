@@ -10,8 +10,14 @@ Usage:
 
 import argparse
 import importlib.util
+import os
 import sys
 from pathlib import Path
+
+# Prevent segfault on macOS ARM: tokenizers parallel threads conflict with
+# FAISS OpenMP threads during concurrent model + index initialization.
+os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
+os.environ.setdefault("OMP_NUM_THREADS", "1")
 
 
 def _bootstrap_package() -> None:
