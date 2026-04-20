@@ -130,6 +130,11 @@ label.file-label { display: inline-block; padding: 10px 20px; border-radius: 6px
 label.file-label:hover { opacity: 0.85; }
 input[type=file] { display: none; }
 .recipe-list { font-size: 13px; color: #a8b2d1; margin-top: 8px; }
+.dropzone { border: 2px dashed #4361ee44; border-radius: 10px; padding: 32px 18px;
+            text-align: center; color: #556; font-size: 14px; margin-top: 12px;
+            transition: all 0.2s; }
+.dropzone.over { border-color: #4361ee; background: #4361ee18; color: #a8b2d1; }
+.dropzone.success { border-color: #2dd4bf; background: #2dd4bf12; }
 </style>
 </head><body>
 <h1>ASI-Evolve Dashboard</h1>
@@ -149,16 +154,16 @@ input[type=file] { display: none; }
 
   <div class="card">
     <h2>Recipe Ground Truth</h2>
-    <p style="font-size:13px; color:#888; margin-bottom:12px;">
-      Drop Premiere FCP XML exports here to create approved edits.
-    </p>
-    <label class="file-label">
-      Upload XML
-      <input type="file" accept=".xml" multiple onchange="uploadXML(this.files)">
-    </label>
-    <button class="btn btn-orange" onclick="scoreBaseline()" id="btn-score">
-      Score Baseline
-    </button>
+    <div class="dropzone" id="dropzone">
+      Drag &amp; drop Premiere FCP XML files here
+      <br><span style="font-size:12px; color:#445;">or click to browse</span>
+      <input type="file" accept=".xml" multiple id="file-input" style="display:none">
+    </div>
+    <div style="margin-top:10px;">
+      <button class="btn btn-orange" onclick="scoreBaseline()" id="btn-score">
+        Score Baseline
+      </button>
+    </div>
     <div id="recipe-status" style="margin-top:10px;"></div>
   </div>
 </div>
@@ -251,6 +256,32 @@ async function refreshStatus() {
   rhtml += '</div>';
   document.getElementById('recipe-status').innerHTML = rhtml;
 }
+
+// Drag and drop
+const dz = document.getElementById('dropzone');
+const fi = document.getElementById('file-input');
+
+dz.addEventListener('click', () => fi.click());
+fi.addEventListener('change', () => { if (fi.files.length) uploadXML(fi.files); });
+
+dz.addEventListener('dragover', (e) => { e.preventDefault(); dz.classList.add('over'); });
+dz.addEventListener('dragleave', () => dz.classList.remove('over'));
+dz.addEventListener('drop', (e) => {
+  e.preventDefault();
+  dz.classList.remove('over');
+  const files = [...e.dataTransfer.files].filter(f => f.name.endsWith('.xml'));
+  if (files.length === 0) {
+    appendLog('No .xml files found in drop');
+    return;
+  }
+  uploadXML(files);
+  dz.classList.add('success');
+  setTimeout(() => dz.classList.remove('success'), 2000);
+});
+
+// Prevent page-level drop from navigating away
+document.addEventListener('dragover', (e) => e.preventDefault());
+document.addEventListener('drop', (e) => e.preventDefault());
 
 refreshStatus();
 </script>
