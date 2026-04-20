@@ -1,73 +1,65 @@
 # ASI-Evolve — Session Handoff
 
-**Date:** 2026-04-19
+**Date:** 2026-04-20
 **Branch:** `main`
-**Last commit:** `3b76653` docs: recipe pipeline evolution design sketch
+**Last commit:** `a853a94` fix: camera scoring uses filename prefix
 **Role:** BUILDER
 
 ---
 
-## What Was Done
+## What Was Done (Session 16)
 
-- Forked GAIR-NLP/ASI-Evolve to `dandjlab-cell/ASI-Evolve`, cloned to `~/DevApps/ASI-Evolve/`
-- Phase 1: Audited all 6 LLM call sites across 4 agents. Single gateway at `utils/llm.py:LLMClient`
-- Phase 2: Replaced OpenAI SDK with Claude CLI subprocess backend. Single file change (`utils/llm.py`). Removed `openai` dependency.
-- Solved CLAUDE.md/MCP contamination: `cwd=/tmp` + `--strict-mcp-config` + `--tools ""` = clean invocations (0 cache tokens, 6x cost reduction)
-- Smoke-tested `generate()` and `extract_tags()` from terminal — both work end-to-end
-- Designed recipe pipeline evolution: evolve prompts + weights + timing constants against Dan's approved Premiere XMLs
-- All docs mirrored to Brain vault at `Projects/ASI-Evolve/`
+- Fixed macOS ARM segfault (`TOKENIZERS_PARALLELISM=false`, `OMP_NUM_THREADS=1`, deprecated embedding API)
+- Fixed `init_cognition.py` bootstrap, ran cognition init (12 knowledge items)
+- **Circle packing demo validated**: step 0→0.96, step 1→2.60, step 2→2.61 (98.9% of 2.635 target)
+- Fixed Claude generating `<tool_call>` instead of content tags (added "no tools" system prompt)
+- Built recipe pipeline evolution experiment (`experiments/recipe_pipeline/`)
+- Parsed real Premiere XMLs (basil pesto, chicken thighs) → baseline scores 50.6 / 46.6
+- Fixed camera scoring to use filename prefix (Premiere exports single-track)
+- Built web dashboard with drag-and-drop XML upload
 
 ## Current State
 
-- **Working:** LLMClient with Claude CLI backend. `generate()`, `extract_tags()` verified. Pushed to fork.
-- **Not yet tested:** Full ASI-Evolve pipeline (researcher → engineer → analyzer loop). Circle packing demo not yet run end-to-end.
-- **Not yet built:** Recipe pipeline evolution experiment (needs cache infrastructure, slim runner, scoring function)
+- **Working:** Full ASI-Evolve loop (circle packing validated). Recipe scoring infrastructure. Dashboard.
+- **Baseline scores:** basil_pesto=50.6, chicken_thighs=46.6 (composite, 0-100)
+- **Approved XMLs:** 2 of 5 recipes parsed (basil_pesto, chicken_thighs)
+- **Not yet built:** Slim pipeline runner (runs decision stages with evolved config)
 
-## Key Files Changed
+## Key Files
 
-| File | What changed |
-|------|-------------|
-| `utils/llm.py` | Replaced OpenAI client with `claude -p` subprocess via stdin |
-| `config.yaml` | Simplified API block (model, timeout, retry, claude_path) |
-| `experiments/circle_packing_demo/config.yaml` | Same API simplification |
-| `requirements.txt` | Removed `openai>=1.0.0` |
-| `thoughts/llm_call_audit.md` | Phase 1 audit — all call sites mapped |
-| `thoughts/cli_json_format.md` | CLI JSON response format documentation |
-| `thoughts/roughcut_recipe_evolution.md` | Recipe pipeline evolution design |
-
-## Decisions Made
-
-| Decision | Reasoning |
-|----------|-----------|
-| Claude CLI subprocess (not Anthropic SDK) | Zero API keys, uses Dan's CC subscription, no external dependencies |
-| Stdin piping (not command args) | Avoids ARG_MAX limits and shell escaping with code snippets |
-| `cwd=/tmp` + `--strict-mcp-config` | Prevents CLAUDE.md and MCP server contamination (10K+ token overhead) |
-| Default model = opus | Research framework — output quality > cost. Dan is on subscription. |
-| Evolve config module, not pipeline code | Pipeline is 3,684 lines of production code. Evolving prompts + weights is safer, faster, and human-readable. |
-| Cache expensive stages, re-run only LLM decisions | Full pipeline = 45 min/recipe. Decision stages only = 2 min/recipe. Makes evolution feasible (4 hrs vs 90 hrs). |
+| File | Purpose |
+|------|---------|
+| `utils/llm.py` | Claude CLI backend (+ "no tools" system prompt fix) |
+| `main.py` | Entry point (+ macOS ARM threading fix) |
+| `dashboard.py` | Web UI for experiments |
+| `Open Dashboard.command` | Double-click launcher |
+| `experiments/recipe_pipeline/score.py` | 4-metric scoring (precision/recall/timing/camera) |
+| `experiments/recipe_pipeline/xml_to_manifest.py` | Premiere FCP XML → manifest JSON |
+| `experiments/recipe_pipeline/evaluator.py` | ASI-Evolve-compatible eval harness |
+| `experiments/recipe_pipeline/initial_program` | Seed config (current pipeline defaults) |
+| `experiments/recipe_pipeline/approved_edits/` | Dan's exported XMLs → JSON |
+| `experiments/recipe_pipeline/cached_recipes/` | Symlinks to roughcut-ai/runs/* |
+| `Recipe XMLs/` | Raw Premiere XML exports from Dan |
 
 ## What's Next
 
-1. **Run circle_packing_demo end-to-end** — validate the full ASI-Evolve loop works with Claude CLI backend
-2. **Identify 6-8 finished recipe edits** — need footage + Dan's final Premiere XMLs as ground truth
-3. **Build cache extraction** — pull scan.json, audio_sync.json, clip_narratives.json from existing pipeline runs
-4. **Build slim pipeline runner** — extract decision stages from `build_editlist.py` into standalone script
-5. **Extend manifest_diff** — add numeric scoring (precision, recall, timing accuracy, camera match rate)
-6. **Wire recipe evolution experiment** — create ASI-Evolve experiment dir with prompts + eval.sh
+1. **Export remaining XMLs** — korean fried chicken, cucumber sandwich, banana muffins
+2. **Build slim pipeline runner** — extracts decision stages from `build_editlist.py` into standalone script that takes cached data + evolved config → manifest
+3. **Wire recipe evolution end-to-end** — run ASI-Evolve with recipe experiment (start with 5-step validation)
+4. **Future: editorial judgment** — evolve not just "which clip" but "why this clip" (camera choice heuristics, hold duration, pacing)
+5. **Future: manifest skills** — speed ramping, stop motion (2-frame per shot), transitions — output capabilities the evolved config can trigger
+
+## Baseline Scores (real XMLs)
+
+| Recipe | Precision | Recall | Timing | Camera | Composite |
+|--------|-----------|--------|--------|--------|-----------|
+| Basil Pesto | 17.5% | 47.6% | 75.9% | 100% | 50.6 |
+| Chicken Thighs | 10.5% | 40.0% | 79.5% | 100% | 46.6 |
+
+Key insight: pipeline over-generates (57 clips vs 15-21 used). Precision is the main lever.
 
 ## Known Issues
 
-- `--model haiku` maps to sonnet (haiku may not be available on Dan's plan)
-- `--tools ""` doesn't parse correctly in zsh multi-line pipes — keep commands on single lines
-- Can't test Claude CLI subprocess from within Claude Code sessions (nested session restriction) — test from regular terminal
-- Circle packing demo hasn't been run yet — may surface issues with the CLI backend under real load
-
-## Quick Start for Next Session
-
-```bash
-cd ~/DevApps/ASI-Evolve
-# Read the design sketch
-cat thoughts/roughcut_recipe_evolution.md
-# Validate the loop works — run circle packing demo
-python3 main.py --experiment circle_packing_demo --steps 2
-```
+- `--tools ""` doesn't suppress tool-call generation (fixed with system prompt, but fragile)
+- Dashboard background processes don't persist from Claude Code — use `Open Dashboard.command`
+- Banana muffins uses different camera prefix (`A057` not `B19I`) — v1 prefix detection handles this
