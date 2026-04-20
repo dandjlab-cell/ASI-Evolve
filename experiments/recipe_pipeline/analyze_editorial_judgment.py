@@ -3,11 +3,12 @@
 Analyze editorial judgment from approved recipe edits.
 
 Cross-references:
-  - Final export video (FINAL.mp4) → frame extraction at each cut point
+  - /watch-video Pass 1 frame analysis → dense visual descriptions at 2fps
   - Approved edit JSON (parsed from Premiere XML) → structural decisions
   - Pipeline manifest → what the pipeline proposed
   - Pipeline scan.json → VLM descriptions of clip content
   - Pipeline beats.json → editorial beat descriptions
+  - Existing annotation JSON (optional) → beat_groups, skipped_pipeline_beats
 
 Uses Claude CLI to infer editorial reasoning per beat, then outputs
 an Obsidian markdown annotation file for Dan to review and correct.
@@ -15,44 +16,109 @@ an Obsidian markdown annotation file for Dan to review and correct.
 Usage:
     python analyze_editorial_judgment.py \
         --recipe basil_pesto \
-        --video "/Volumes/2TB Footage/.../Basil Pesto FINAL.mp4" \
         --approved approved_edits/basil_pesto.json \
         --manifest ~/DevApps/roughcut-ai/runs/basil_pesto/basil_pesto_manifest.json \
         --scan ~/DevApps/roughcut-ai/runs/basil_pesto/scan.json \
         --beats ~/DevApps/roughcut-ai/runs/basil_pesto/beats.json \
+        --frame-analysis ~/DevApps/storyboard-gen/docs/watch-video/pass1_basil_pesto.md \
         --output ~/DevApps/Brain/Projects/ASI-Evolve/Annotations/basil_pesto.md
 """
 
 import argparse
-import base64
 import json
 import os
 import re
-import shutil
 import subprocess
 import sys
-import tempfile
 from datetime import date
-from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 
-def extract_frames(video_path: str, timecodes: List[float], output_dir: str) -> Dict[float, str]:
-    """Extract frames from video at specific timecodes using ffmpeg.
+def load_frame_analysis(frame_analysis_path: str, fps: float = 2.0) -> List[dict]:
+    """Load Pass 1 frame analysis from /watch-video markdown.
 
-    Returns dict mapping timecode → frame file path.
+    Parses the shot list table into a list of dicts with:
+      frame, time_sec, camera, subject, notes
+
+    Returns list sorted by frame number.
     """
-    frames = {}
-    for tc in timecodes:
-        out_file = os.path.join(output_dir, f"frame_{tc:.3f}.jpg")
-        cmd = [
-            "ffmpeg", "-ss", str(tc), "-i", video_path,
-            "-vframes", "1", "-q:v", "2", "-y", out_file
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode == 0 and os.path.exists(out_file):
-            frames[tc] = out_file
-    return frames
+    frames = []
+    with open(frame_analysis_path) as f:
+        for line in f:
+            line = line.strip()
+            if not line.startswith("|") or line.startswith("| Frame") or line.startswith("|---"):
+                continue
+            parts = [p.strip() for p in line.split("|")]
+            # parts[0] is empty (before first |), parts[-1] is empty (after last |)
+            parts = [p for p in parts if p]
+            if len(parts) < 4:
+                continue
+            try:
+                frame_num = int(parts[0])
+            except ValueError:
+                continue
+            time_str = parts[1]  # e.g. "0:01.5"
+            # Parse MM:SS.f format
+            time_sec = 0.0
+            if ":" in time_str:
+                mm, ss = time_str.split(":", 1)
+                time_sec = float(mm) * 60 + float(ss)
+            else:
+                time_sec = float(time_str)
+            frames.append({
+                "frame": frame_num,
+                "time_sec": time_sec,
+                "camera": parts[2],
+                "subject": parts[3],
+                "notes": parts[4] if len(parts) > 4 else "",
+            })
+    return sorted(frames, key=lambda f: f["frame"])
+
+
+def get_visual_context(
+    frame_analysis: List[dict], timeline_in: float, timeline_out: float, margin: float = 0.5
+) -> str:
+    """Get visual descriptions from frame analysis for a timeline window.
+
+    Returns formatted string of frame descriptions covering the beat's
+    timeline range plus a margin before/after for context.
+    """
+    start = timeline_in - margin
+    end = timeline_out + margin
+    relevant = [f for f in frame_analysis if start <= f["time_sec"] <= end]
+    if not relevant:
+        return "(no frame analysis coverage for this timeline range)"
+
+    lines = []
+    for f in relevant:
+        marker = ""
+        if abs(f["time_sec"] - timeline_in) < 0.3:
+            marker = " ← CUT IN"
+        elif abs(f["time_sec"] - timeline_out) < 0.3:
+            marker = " ← CUT OUT"
+        notes = f" ({f['notes']})" if f["notes"] else ""
+        lines.append(f"  [{f['time_sec']:.1f}s] {f['camera']}: {f['subject']}{notes}{marker}")
+    return "\n".join(lines)
+
+
+def load_beat_groups(annotation_path: str) -> Tuple[List[dict], List[int]]:
+    """Load beat_groups and skipped_pipeline_beats from existing annotation JSON.
+
+    Returns (beat_groups, skipped_beats). Empty lists if file doesn't exist.
+    """
+    if not annotation_path or not os.path.exists(annotation_path):
+        return [], []
+    with open(annotation_path) as f:
+        data = json.load(f)
+    return data.get("beat_groups", []), data.get("skipped_pipeline_beats", [])
+
+
+def find_beat_group(beat_idx: int, beat_groups: List[dict]) -> Optional[dict]:
+    """Find which beat group a beat belongs to, if any."""
+    for group in beat_groups:
+        if beat_idx in group.get("beats", []):
+            return group
+    return None
 
 
 def load_scan_descriptions(scan_path: str, clip_name: str, in_point: float) -> str:
@@ -175,12 +241,6 @@ def determine_verdict(
     return "kept"
 
 
-def image_to_base64(path: str) -> str:
-    """Read an image and return base64 string."""
-    with open(path, "rb") as f:
-        return base64.b64encode(f.read()).decode("utf-8")
-
-
 def build_beat_analysis_prompt(
     beat_idx: int,
     approved_clip: dict,
@@ -191,8 +251,10 @@ def build_beat_analysis_prompt(
     beat_type: str,
     pipeline_clip_info: str,
     scan_description: str,
+    visual_context: str,
     prev_beat_info: str,
     next_beat_info: str,
+    beat_group_info: str,
 ) -> str:
     """Build the LLM prompt for analyzing one beat's editorial reasoning."""
     return f"""Analyze this editorial decision from a recipe video edit.
@@ -204,8 +266,12 @@ def build_beat_analysis_prompt(
 - **Source in-point:** {approved_clip.get('in', 0):.1f}s into the source clip
 - **Verdict vs pipeline:** {verdict}
 - **Pipeline's choice:** {pipeline_clip_info}
+{f"- **Beat group:** {beat_group_info}" if beat_group_info else ""}
 
-## What the clip shows (VLM descriptions from scan):
+## What the final export shows at this beat (frame-by-frame from /watch-video):
+{visual_context}
+
+## What the source clip shows (VLM descriptions from scan):
 {scan_description if scan_description else "(no scan data available)"}
 
 ## Edit context:
@@ -213,7 +279,7 @@ def build_beat_analysis_prompt(
 - Next beat: {next_beat_info}
 
 ## Your task:
-For this beat, explain the editor's likely reasoning across three dimensions. Be specific and grounded in what's visible. Write as if you're the editor explaining your choice to another editor.
+For this beat, explain the editor's likely reasoning across three dimensions. Be specific and grounded in what's visible in the frame descriptions above. Write as if you're the editor explaining your choice to another editor.
 
 1. **Camera reasoning** — Why {camera} for this moment? What does this camera angle show that the other wouldn't? (1-2 sentences)
 2. **Duration reasoning** — Why hold for {duration:.1f}s? Is this long/short relative to the beat type? What determines the hold length? (1-2 sentences)
@@ -227,10 +293,11 @@ INPOINT: [reasoning]
 CONFIDENCE: [high/medium/low]"""
 
 
-def call_claude(prompt: str, images: List[str] = None, model: str = "sonnet") -> str:
-    """Call Claude CLI with prompt and optional images.
+def call_claude(prompt: str, model: str = "sonnet") -> str:
+    """Call Claude CLI with a text prompt.
 
     Uses sonnet for speed — this is bulk inference, not creative work.
+    Visual context comes from /watch-video frame descriptions in the prompt.
     """
     env = os.environ.copy()
     env.pop("CLAUDECODE", None)
@@ -243,21 +310,10 @@ def call_claude(prompt: str, images: List[str] = None, model: str = "sonnet") ->
         "--model", model,
     ]
 
-    # Build the prompt with image references
-    full_prompt = prompt
-    if images:
-        # Claude CLI supports image paths in the prompt via special syntax
-        image_refs = []
-        for img_path in images:
-            if os.path.exists(img_path):
-                image_refs.append(img_path)
-        if image_refs:
-            full_prompt = " ".join(image_refs) + "\n\n" + prompt
-
     try:
         result = subprocess.run(
             cmd,
-            input=full_prompt,
+            input=prompt,
             capture_output=True,
             text=True,
             cwd="/tmp",
@@ -311,20 +367,32 @@ def generate_global_analysis_prompt(
     total_duration: float,
     camera_stats: dict,
     verdict_stats: dict,
+    beat_groups: List[dict],
+    skipped_beats: List[int],
 ) -> str:
     """Prompt for overall edit style analysis."""
+    groups_text = ""
+    if beat_groups:
+        groups_text = "\n- Beat groups:\n"
+        for g in beat_groups:
+            groups_text += f"  - {g['group']}: {g['description']} (beats {g['beats']})\n"
+    skipped_text = ""
+    if skipped_beats:
+        skipped_text = f"\n- Skipped pipeline beats: {skipped_beats} (pipeline proposed these but editor omitted them)"
+
     return f"""Analyze the overall editing style of this recipe video edit.
 
 ## Recipe: {recipe_name}
 - Total beats: {beat_count}
 - Total duration: {total_duration:.1f}s
 - Camera usage: {json.dumps(camera_stats)}
-- Verdicts vs pipeline: {json.dumps(verdict_stats)}
+- Verdicts vs pipeline: {json.dumps(verdict_stats)}{groups_text}{skipped_text}
 
 Summarize the editor's approach in 2-3 sentences. Cover:
 - Overall pacing (fast/slow, consistent/varied)
 - Camera preference patterns
-- Any notable editorial choices
+- Beat grouping patterns (multi-clip sequences, editorial rhythm)
+- Any notable editorial choices (skipped beats, flash cuts, etc.)
 
 Be concise and specific. Write as one editor describing another's style."""
 
@@ -436,15 +504,15 @@ def generate_json_output(
 def main():
     parser = argparse.ArgumentParser(description="Analyze editorial judgment from approved recipe edits")
     parser.add_argument("--recipe", required=True, help="Recipe name (e.g., basil_pesto)")
-    parser.add_argument("--video", required=True, help="Path to FINAL.mp4 export")
     parser.add_argument("--approved", required=True, help="Path to approved edit JSON")
     parser.add_argument("--manifest", required=True, help="Path to pipeline manifest JSON")
     parser.add_argument("--scan", required=True, help="Path to pipeline scan.json")
     parser.add_argument("--beats", required=True, help="Path to pipeline beats.json")
+    parser.add_argument("--frame-analysis", required=True, help="Path to /watch-video Pass 1 markdown")
     parser.add_argument("--output", required=True, help="Output path for Obsidian .md file")
     parser.add_argument("--json-output", help="Output path for JSON annotations (default: annotations/{recipe}.json)")
+    parser.add_argument("--annotation", help="Path to existing annotation JSON (for beat_groups)")
     parser.add_argument("--model", default="sonnet", help="Claude model to use (default: sonnet)")
-    parser.add_argument("--skip-frames", action="store_true", help="Skip frame extraction (use scan data only)")
     args = parser.parse_args()
 
     # Load data
@@ -459,31 +527,23 @@ def main():
     v1_prefix = detect_v1_prefix(pipeline)
     beats_list = beats_data.get("beats", [])
 
+    # Load /watch-video frame analysis
+    print(f"Loading frame analysis from {args.frame_analysis}...", flush=True)
+    frame_analysis = load_frame_analysis(args.frame_analysis)
+    print(f"  Loaded {len(frame_analysis)} frame descriptions")
+
+    # Load beat groups from existing annotation if available
+    annotation_path = args.annotation or os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "annotations", f"{args.recipe}.json"
+    )
+    beat_groups, skipped_beats = load_beat_groups(annotation_path)
+    if beat_groups:
+        print(f"  Loaded {len(beat_groups)} beat groups, {len(skipped_beats)} skipped beats")
+
     # Match approved beats to pipeline beats
     matches = match_approved_to_pipeline(approved, pipeline)
-
-    # Extract frames from final video at each cut point
     timeline = approved.get("timeline", [])
-    frames = {}
-    if not args.skip_frames and os.path.exists(args.video):
-        print(f"Extracting frames from {args.video}...", flush=True)
-        timecodes = []
-        for entry in timeline:
-            tc = entry.get("timeline_in_sec", 0)
-            timecodes.append(tc)
-            # Also get a frame 0.2s before (end of previous beat's content)
-            if tc > 0.3:
-                timecodes.append(tc - 0.2)
-
-        frame_dir = os.path.join(
-            os.path.dirname(os.path.abspath(__file__)),
-            "frames", args.recipe
-        )
-        os.makedirs(frame_dir, exist_ok=True)
-        frames = extract_frames(args.video, sorted(set(timecodes)), frame_dir)
-        print(f"  Extracted {len(frames)} frames")
-    else:
-        print("  Skipping frame extraction")
 
     # Analyze each beat
     print(f"Analyzing {len(timeline)} beats...", flush=True)
@@ -532,8 +592,22 @@ def main():
             beat_desc = p_match["pipeline_entry"].get("step", "")
             beat_type = p_match["pipeline_entry"].get("beat_type", "")
 
+        # Visual context from /watch-video frame analysis
+        timeline_in = entry.get("timeline_in_sec", 0)
+        timeline_out = entry.get("timeline_out_sec", 0)
+        visual_context = get_visual_context(frame_analysis, timeline_in, timeline_out)
+
         # Scan descriptions
         scan_desc = load_scan_descriptions(args.scan, filename, in_point)
+
+        # Beat group context
+        group = find_beat_group(beat_idx, beat_groups)
+        beat_group_info = ""
+        if group:
+            beat_group_info = (
+                f"{group['group']}: {group['description']} "
+                f"(beats {group['beats']}, this is beat {beat_idx})"
+            )
 
         # Context: previous and next beats
         prev_info = "start of video"
@@ -564,23 +638,15 @@ def main():
             beat_type=beat_type,
             pipeline_clip_info=pipeline_info or "(no pipeline match)",
             scan_description=scan_desc,
+            visual_context=visual_context,
             prev_beat_info=prev_info,
             next_beat_info=next_info,
+            beat_group_info=beat_group_info,
         )
 
-        # Get frame images for this beat
-        beat_images = []
-        tc = entry.get("timeline_in_sec", 0)
-        if tc in frames:
-            beat_images.append(frames[tc])
-        # Pre-cut frame
-        pre_tc = tc - 0.2
-        if pre_tc in frames:
-            beat_images.append(frames[pre_tc])
-
-        # Call Claude
+        # Call Claude (text-only — visual context comes from frame analysis descriptions)
         print(f"  Beat {beat_idx}: {beat_desc[:50]}... ({verdict})", flush=True)
-        response = call_claude(prompt, images=beat_images, model=args.model)
+        response = call_claude(prompt, model=args.model)
         reasoning = parse_reasoning_response(response)
 
         beat_annotations.append({
@@ -599,7 +665,8 @@ def main():
     # Generate global analysis
     print("Generating global style analysis...")
     global_prompt = generate_global_analysis_prompt(
-        args.recipe, len(timeline), total_duration, camera_stats, verdict_stats
+        args.recipe, len(timeline), total_duration, camera_stats, verdict_stats,
+        beat_groups, skipped_beats,
     )
     global_notes = call_claude(global_prompt, model=args.model)
 
