@@ -1,6 +1,23 @@
 {
   "recipe": "chicken_thighs",
-  "global_notes": "This editor cuts with a brisk, consistent rhythm \u2014 15 beats across 19 seconds averages roughly 1.3 seconds per beat, suggesting tight, purposeful pacing with little dead air. There's a clear preference for front-facing shots (73% of cuts), leaning on engagement and connection with the viewer, while overhead is reserved sparingly \u2014 likely for key texture or plating moments. Most notably, the editor diverged significantly from the pipeline: trimming more suggested cuts than they kept (6 trimmed vs. 5 kept) while injecting 4 of their own, signaling a confident, opinionated hand that treats the pipeline as a rough draft rather than a blueprint.",
+  "global_notes": "15 beats across 43s of video. XML covers MARINADE PREP only (beats 0-14). Grilling section (pipeline beats 15-21) exists in video but NOT in XML export. 73% front camera, 27% overhead. 12.18s gap between beats 4-5 = ingredient text card holds (graphics layer). 0.2s flash cut at beat 8 matches basil pesto pattern (overhead, editorial punctuation). Dan treats pipeline as rough draft: 6 trimmed, 5 kept, 4 added.",
+  "beat_groups": [
+    {"group": "beauty_open", "beats": [0], "description": "Single beauty shot: grilled chicken with tongs on grill pan, title card"},
+    {"group": "garlic_prep", "beats": [1, 2], "description": "Chop garlic overhead, then scrape into bowl front"},
+    {"group": "liquid_pours", "beats": [3, 4], "description": "Olive oil (front) then soy sauce (overhead) — camera alternation"},
+    {"group": "text_card_gap", "beats": [], "description": "12.18s of ingredient text card holds between beats 4-5"},
+    {"group": "spice_sequence", "beats": [5, 6, 7, 8, 9, 10, 11], "description": "Brown sugar, vinegar, mustard, cumin (flash), paprika, salt, pepper"},
+    {"group": "technique_close", "beats": [12, 13, 14], "description": "Whisk, pour to bag, pat dry — final editorial sequence"}
+  ],
+  "skipped_pipeline_beats": [15, 16, 17, 18, 19, 20, 21],
+  "timeline_gaps": [
+    {"after_beat": 4, "before_beat": 5, "duration_s": 12.18, "content": "ingredient text card holds"},
+    {"after_beat": 8, "before_beat": 9, "duration_s": 1.09, "content": "transition hold"},
+    {"after_beat": 9, "before_beat": 10, "duration_s": 2.67, "content": "salt/pepper text card holds"},
+    {"after_beat": 11, "before_beat": 12, "duration_s": 4.05, "content": "grill marks beauty + whisking setup"},
+    {"after_beat": 13, "before_beat": 14, "duration_s": 2.34, "content": "bag massage transition"}
+  ],
+  "visual_source": "watch-video pass1, 91 frames at 2fps",
   "beats": [
     {
       "beat_index": 0,

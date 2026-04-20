@@ -1,6 +1,15 @@
 {
   "recipe": "basil_pesto",
-  "global_notes": "",
+  "global_notes": "Fast rhythmic edit (ASL 1.65s), 21 clips covering pipeline beats 0-20. Final 5 pipeline beats (21-25) absent — Dan replaced pipeline's bowl-beauty close with pesto-on-pasta sequence. Opening is 3-shot beauty sequence (front-front-overhead). Two 0.2s flash cuts (beats 13,17) as editorial punctuation. Same-camera cuts (beats 6-9) invisible to DINO detection.",
+  "beat_groups": [
+    {"group": "beauty_open", "beats": [0, 1, 2], "description": "3-shot beauty sequence: jar pour, pasta plate, overhead bowl"},
+    {"group": "toast_sequence", "beats": [3, 4, 5, 6], "description": "Ingredient drops then stir-to-golden transformation"},
+    {"group": "processor_sequence", "beats": [11, 12, 13, 14], "description": "Garlic+nuts into processor, flash-cut punctuation, wet-sand match cut"},
+    {"group": "seasoning_sequence", "beats": [15, 16, 17], "description": "Basil, parmesan, lemon zest — rapid ingredient adds"},
+    {"group": "final_blend", "beats": [18, 19, 20], "description": "Pulse leafy, pulse minced, oil drizzle — closing editorial sequence"}
+  ],
+  "skipped_pipeline_beats": [21, 22, 23, 24, 25],
+  "visual_source": "watch-video pass1, 79 frames at 2fps",
   "beats": [
     {
       "beat_index": 0,
