@@ -130,11 +130,13 @@ label.file-label { display: inline-block; padding: 10px 20px; border-radius: 6px
 label.file-label:hover { opacity: 0.85; }
 input[type=file] { display: none; }
 .recipe-list { font-size: 13px; color: #a8b2d1; margin-top: 8px; }
-.dropzone { border: 2px dashed #4361ee44; border-radius: 10px; padding: 32px 18px;
-            text-align: center; color: #556; font-size: 14px; margin-top: 12px;
-            transition: all 0.2s; }
-.dropzone.over { border-color: #4361ee; background: #4361ee18; color: #a8b2d1; }
-.dropzone.success { border-color: #2dd4bf; background: #2dd4bf12; }
+.dropzone { border: 2px dashed #4361ee88; border-radius: 10px; padding: 40px 18px;
+            text-align: center; color: #8892b0; font-size: 14px; margin-top: 12px;
+            transition: all 0.2s; cursor: pointer; min-height: 100px; }
+.dropzone:hover { border-color: #4361ee; background: #4361ee10; }
+.dropzone.over { border-color: #4cc9f0; background: #4cc9f022; color: #fff;
+                 border-style: solid; }
+.dropzone.success { border-color: #2dd4bf; background: #2dd4bf18; color: #2dd4bf; }
 </style>
 </head><body>
 <h1>ASI-Evolve Dashboard</h1>
@@ -155,10 +157,13 @@ input[type=file] { display: none; }
   <div class="card">
     <h2>Recipe Ground Truth</h2>
     <div class="dropzone" id="dropzone">
-      Drag &amp; drop Premiere FCP XML files here
-      <br><span style="font-size:12px; color:#445;">or click to browse</span>
-      <input type="file" accept=".xml" multiple id="file-input" style="display:none">
+      <div style="pointer-events:none;">
+        <div style="font-size:28px; margin-bottom:8px;">&#128230;</div>
+        Drag &amp; drop Premiere FCP XML files here
+        <br><span style="font-size:12px; color:#556;">or click to browse</span>
+      </div>
     </div>
+    <input type="file" accept=".xml" multiple id="file-input" style="display:none">
     <div style="margin-top:10px;">
       <button class="btn btn-orange" onclick="scoreBaseline()" id="btn-score">
         Score Baseline
@@ -260,28 +265,72 @@ async function refreshStatus() {
 // Drag and drop
 const dz = document.getElementById('dropzone');
 const fi = document.getElementById('file-input');
+let dragCounter = 0;
 
-dz.addEventListener('click', () => fi.click());
-fi.addEventListener('change', () => { if (fi.files.length) uploadXML(fi.files); });
+dz.addEventListener('click', function(e) {
+  e.stopPropagation();
+  fi.click();
+});
 
-dz.addEventListener('dragover', (e) => { e.preventDefault(); dz.classList.add('over'); });
-dz.addEventListener('dragleave', () => dz.classList.remove('over'));
-dz.addEventListener('drop', (e) => {
+fi.addEventListener('change', function() {
+  if (fi.files.length) uploadXML(fi.files);
+  fi.value = '';  // reset so same file can be re-uploaded
+});
+
+dz.addEventListener('dragenter', function(e) {
   e.preventDefault();
+  e.stopPropagation();
+  dragCounter++;
+  dz.classList.add('over');
+});
+
+dz.addEventListener('dragover', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+});
+
+dz.addEventListener('dragleave', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  dragCounter--;
+  if (dragCounter <= 0) {
+    dragCounter = 0;
+    dz.classList.remove('over');
+  }
+});
+
+dz.addEventListener('drop', function(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  dragCounter = 0;
   dz.classList.remove('over');
-  const files = [...e.dataTransfer.files].filter(f => f.name.endsWith('.xml'));
+
+  var files = [];
+  if (e.dataTransfer.files) {
+    for (var i = 0; i < e.dataTransfer.files.length; i++) {
+      if (e.dataTransfer.files[i].name.endsWith('.xml')) {
+        files.push(e.dataTransfer.files[i]);
+      }
+    }
+  }
+
   if (files.length === 0) {
     appendLog('No .xml files found in drop');
     return;
   }
+  appendLog('Uploading ' + files.length + ' XML file(s)...');
   uploadXML(files);
   dz.classList.add('success');
-  setTimeout(() => dz.classList.remove('success'), 2000);
+  dz.querySelector('div').innerHTML = 'Uploaded ' + files.length + ' file(s)';
+  setTimeout(function() {
+    dz.classList.remove('success');
+    dz.querySelector('div').innerHTML = '<div style="font-size:28px;margin-bottom:8px;">&#128230;</div>Drag &amp; drop Premiere FCP XML files here<br><span style="font-size:12px;color:#556;">or click to browse</span>';
+  }, 3000);
 });
 
 // Prevent page-level drop from navigating away
-document.addEventListener('dragover', (e) => e.preventDefault());
-document.addEventListener('drop', (e) => e.preventDefault());
+document.addEventListener('dragover', function(e) { e.preventDefault(); });
+document.addEventListener('drop', function(e) { e.preventDefault(); });
 
 refreshStatus();
 </script>
