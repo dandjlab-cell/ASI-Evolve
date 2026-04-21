@@ -1,24 +1,24 @@
 {
   "recipe": "chicken_thighs",
-  "global_notes": "This editor cuts aggressively against the pipeline \u2014 12 added shots versus only 4 kept \u2014 which signals strong creative ownership and a clear internal vision that diverged substantially from the automated suggestion set. Pacing is brisk at roughly 1.5s per shot across 45.5s, but the 9 trimmed shots suggest the editor was consistently tightening pipeline picks rather than letting them breathe, pointing to a preference for momentum over dwell time throughout the recipe arc. Front camera dominates at 59% (23 shots), likely anchoring technique and transformation moments where lateral perspective sells sizzle, browning, and hand movement; overhead's 41% share (16 shots) reads as deliberate deployment during prep and plating \u2014 flatter compositions that organize ingredients spatially or reveal the finished dish from above. With 39 beats over 45.5s (~51 BPM equivalent), the music is unhurried, but the editor doesn't mirror that looseness \u2014 the cut density outpaces the beat grid, suggesting cuts landing on subdivisions or visual cues rather than strictly on the one, giving it energy without feeling frantic. The 5 editorial-grouped shots indicate a few sequences where continuous action was protected across multiple beats, likely during a key technique or transformation moment where interrupting the cut would have broken visual continuity.",
+  "global_notes": "This editor cuts with a confident, music-first instinct \u2014 at 39 cuts across 45.5s (~1.17s average hold), the pacing is brisk but purposeful, suggesting they're hitting most beats without over-cutting into flash territory. The most telling signal is the verdict breakdown: only 4 clips kept as-is from the pipeline, but 12 added \u2014 meaning the editor was aggressively expanding coverage rather than culling it, layering in moments the pipeline missed, likely to fill musical phrases and reinforce instructional clarity. The 9 trims indicate they also had zero tolerance for holds that overstayed their welcome.\n\nCamera logic reads as front-for-texture, overhead-for-process: the 23 front vs 16 overhead split suggests front was the default for hero moments \u2014 the sear, the plate, anything with visual drama at eye-level \u2014 while overhead carried the prep and transformation sequences where spatial clarity (knife work, sauce coverage, color change) mattered more than atmosphere.\n\nThe 5 editorial groups point to at least a few multi-shot sequences treated as rhythmic units \u2014 probably a technique stretch or the transformation/plating section where momentum builds through rapid-fire intercutting rather than single sustained shots. That kind of grouping is a hallmark of an editor who thinks in phrases, not individual cuts.\n\nOverall: this is a hands-on, opinionated edit \u2014 the editor doesn't trust the pipeline to tell the story and fills musical space deliberately. Pacing stays consistent rather than dramatically accelerating, which suits instructional content over pure vibe-driven food content.",
   "beats": [
     {
       "beat_index": 0,
-      "beat_description": "beauty opener (3 shots under title card)",
+      "beat_description": "beauty opener (3 shots): Tongs flipping chicken on grill pan, grill marks visible \u2192 Same grill shot, chicken being turned \u2192 Chicken thighs on grill, some raw some marked",
       "beat_type": "beauty_opener",
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "B19I6691.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the three-dimensional rise of the grill pan, the caramelized sear marks on the chicken surface, and the steam lifting off \u2014 overhead would flatten all of that into a pattern and lose the \"heat and texture\" read that makes a scroll-stopper."
+        "reasoning": "Front angle reveals the three-dimensional char depth of the grill marks and captures steam rising off the chicken surface \u2014 overhead would flatten both into a graphic pattern with no sense of heat or sizzle."
       },
       "duration": {
         "seconds": 3.879,
-        "reasoning": "3.9s holds across a full musical phrase so both title cards (logo + recipe name) have time to register and exit without feeling rushed, while the slow zoom gives the shot visible motion across the entire hold."
+        "reasoning": "3.9s matches the exact window of both title card overlays (KTitle Overlay and the recipe title both run 0.0s\u20133.9s), holding the hero shot long enough for viewers to read \"Grilled Chicken Thighs\" before the cut releases."
       },
       "in_point": {
         "seconds": 32.824,
-        "reasoning": "32.8s drops in just as the tongs finish the flip and leave frame \u2014 the departing motion provides a kinetic cut-in, then the chicken immediately settles into a static beauty hold showing the freshly revealed grill marks on the cooked side."
+        "reasoning": "32.8s lands mid-flip \u2014 the tongs are still in contact and the chicken is turning \u2014 giving the cut-in a kinetic hook rather than the static resting pose at 33.0s where motion has already resolved."
       },
       "verdict": "editorial_group",
       "confidence": "high",
@@ -30,25 +30,25 @@
         "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.9s)"
       ],
       "correction": null,
-      "effects_reasoning": "The animated zoom (100% \u2192 136%) substitutes for camera movement on a locked-off shot, keeping the opener from feeling dead; the punch-in crop (63% vs 50%) isolates the grill marks and chicken mass rather than including empty pan edges; the reframe (h:-0.04, v:-0.06) shifts the tighter crop to keep the chicken centered after the crop removes the right/top buffer."
+      "effects_reasoning": "The 100\u2192136% animated zoom replaces the dolly push a static camera never made, drawing the eye progressively tighter onto the grill marks as the title card sits; the 63% punch-in (vs 50% baseline) removes the pan rim and countertop so only seared chicken fills the scroll-stopper frame; the h:-0.04 v:-0.06 reframe corrects the composition drift that the tighter crop introduced, re-centering the chicken breast rather than leaving dead space at bottom-right."
     },
     {
       "beat_index": 3,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Olive oil being poured into glass bowl over garlic \u2192 Oil stream continuing into bowl \u2192 Oil pool forming over garlic in bowl",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I6669.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front angle preserves the vertical pour trajectory \u2014 you see the oil stream's arc from hand to bowl surface and the garlic submerging beneath it, which overhead would collapse into a flat top-down circle with no depth."
+        "reasoning": "Front angle captures the vertical oil stream in profile \u2014 the arc from bottle to bowl is the visual subject, and overhead would flatten it into a shapeless splatter with no sense of pour direction or momentum."
       },
       "duration": {
         "seconds": 1.501,
-        "reasoning": "1.5s spans exactly the active pour gesture: oil stream in, pool forming, hand withdrawing \u2014 the beat ends on settled stillness, which cuts clean into the next ingredient text without dead frames."
+        "reasoning": "1.5s covers exactly the arc of the action \u2014 oil stream visible, pool forming, hand still present \u2014 exiting before the static settle, which would read as dead air against a driving music phrase."
       },
       "in_point": {
         "seconds": 24.024,
-        "reasoning": "24.0s is chosen mid-fall while the garlic is still airborne, so the clip opens on motion rather than static product, giving the text overlay something kinetic to land against from the first frame."
+        "reasoning": "24.0s cuts in mid-pour rather than at the lift or tip, dropping the viewer directly into motion so the cut itself reads as the start of the action, not a setup beat."
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -62,21 +62,21 @@
     },
     {
       "beat_index": 4,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Same bowl with oil and garlic, hand withdrawing \u2192 Bowl of oil/garlic, prep area visible \u2192 Soy sauce being poured into bowl over oil/garlic",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I6669.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front angle preserves the vertical depth of the pour \u2014 the oil stream falling through space onto the garlic \u2014 which an overhead would collapse into a flat top-down puddle, losing the motion vector entirely."
+        "reasoning": "Front angle captures the hand withdrawing from the bowl \u2014 a gesture of completion that punctuates \"oil is in\" \u2014 whereas overhead would flatten that vertical withdrawal into an ambiguous blur and lose the spatial cue that the previous action has finished."
       },
       "duration": {
         "seconds": 1.1680000000000001,
-        "reasoning": "1.2s is one musical sub-phrase sandwiched between a 1.5s and 1.1s beat, creating a slight deceleration-then-acceleration rhythm; long enough for the viewer to read \"oil over garlic\" as an ingredient state, short enough to cut before the action goes static."
+        "reasoning": "1.2s holds exactly one breath: enough to read hand-out \u2192 static bowl as a resolved state before the overhead soy sauce pour lands, and tight enough to stay in rhythm with the surrounding 1.5s/1.1s beats without padding a static shot."
       },
       "in_point": {
         "seconds": 40.207,
-        "reasoning": "40.2s enters the clip while the oil is actively mid-pour, so the first frame already has motion \u2014 the viewer gets kinetic entry rather than a dead hold \u2014 and the 1.2s window ends just as the stream would naturally resolve, cueing the cut to soy sauce overhead."
+        "reasoning": "40.2s is the frame where the oil stream has just cut off and the hand is starting to lift \u2014 the action apex of \"ingredient landed\" \u2014 avoiding the redundant mid-pour already covered in the prior beat while entering on motion rather than dead static."
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -90,21 +90,21 @@
     },
     {
       "beat_index": 5,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Soy sauce being poured into bowl over oil/garlic \u2192 Soy sauce settling in bowl, dark layer forming \u2192 Brown sugar being tipped from cup into bowl",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "AI2I5438.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead shows the soy sauce as a dark ribbon landing in the bowl and dispersing across the oil and garlic surface \u2014 a front angle would show only the vessel's back and obscure the liquid's contact with the other ingredients."
+        "reasoning": "Overhead reveals the soy sauce spreading as a dark layer over the oil/garlic \u2014 a color contrast and liquid diffusion pattern that a front angle would flatten into a single opaque wall of bowl."
       },
       "duration": {
         "seconds": 1.1260000000000003,
-        "reasoning": "The 50% speed ramp stretches ~0.55s of source footage to 1.1s, slowing the pour at its most visually dynamic moment (liquid hitting bowl, dark layer forming) to make the motion legible within a single musical beat before the cut."
+        "reasoning": "At 50% base speed ramping up, 1.1s of timeline consumes roughly 0.55\u20130.8s of source footage, which is precisely the window between first contact of liquid and the settle completing \u2014 enough motion to read, tight enough to land on the next beat subdivision."
       },
       "in_point": {
         "seconds": 100.517,
-        "reasoning": "100.5s enters on active motion \u2014 the pour is already falling \u2014 skipping any static setup and landing directly on the action that justifies the overhead framing."
+        "reasoning": "100.5s catches the soy sauce already mid-pour and in motion, skipping the static cup-tilt setup so the clip opens with immediate visual energy rather than anticipation."
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -115,25 +115,25 @@
         "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (6.5s-7.7s)"
       ],
       "correction": null,
-      "effects_reasoning": "The speed ramp isolates and dramatizes the exact moment of liquid contact without over-extending the clip; the 66% punch-in (vs 50% baseline) tightens to the bowl's interior, filling the frame with the pour and eliminating peripheral kitchen context that would dilute the ingredient focus during the text overlay."
+      "effects_reasoning": "The 50% speed ramp luxuriates the dark liquid spreading moment (the visual payoff of this ingredient) while the ramp acceleration out prevents the settle from dragging; the 66% punch-in (tighter than the 50% overhead baseline) eliminates bowl rim and counter context, keeping the frame filled with liquid texture rather than negative space at an angle that otherwise has generous headroom."
     },
     {
       "beat_index": 6,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Brown sugar being tipped from cup into bowl \u2192 Brown sugar pile in marinade bowl \u2192 Same brown sugar in bowl, settling",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I6669.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front/eye-level captures the vertical arc of the pour \u2014 the hand tipping, the sugar falling in a cascade \u2014 which is the defining motion of this beat; overhead would compress that fall into a flat top-down mound with no sense of gravity or action."
+        "reasoning": "Front/eye-level captures the vertical arc of the pour \u2014 the hand, the falling stream of sugar, and the bowl landing zone are all readable in the same frame. Overhead would collapse the trajectory into a flat top-down view where sugar simply \"appears,\" killing the kinetic payoff of the action."
       },
       "duration": {
         "seconds": 1.335,
-        "reasoning": "1.3s is sized exactly to the MOGRT window (7.7s\u20139.0s), and it spans the two readable states of the action: sugar mid-fall (entry) into sugar settled in pile (hold) \u2014 complete visual sentence without overstaying."
+        "reasoning": "1.3s covers the active pour window \u2014 sugar leaving the cup and landing \u2014 then cuts before the static settling moment at [8.5s] which would read as dead air. It also sits cleanly inside the Mogrt text card window (7.7s\u20139.0s), letting the \"Light brown sugar\" label hold over the most legible moment of the ingredient being added."
       },
       "in_point": {
         "seconds": 58.35,
-        "reasoning": "58.4s catches the sugar still airborne, mid-pour arc \u2014 the most kinetic frame available; starting at 57.0s would open on a static bowl, and starting at 59.0s would open after the action has already resolved into a static pile."
+        "reasoning": "58.4s enters mid-fall, after the tipping gesture has started (58.0s) but before the sugar has landed (59.0s), so the very first frame the audience sees is sugar already in motion \u2014 no wind-up, no static bowl. The action is in progress on cut-in."
       },
       "verdict": "editorial_group",
       "confidence": "high",
@@ -153,15 +153,15 @@
       "filename": "AI2I5438.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead captures the olive oil stream hitting the bowl contents from directly above, showing the golden liquid pooling and dispersing across the surface \u2014 a visual that collapses to just a side-profile of a tilted bottle from eye-level."
+        "reasoning": "Overhead shows the oil stream hitting the existing marinade surface and spreading across ingredients already in the bowl \u2014 eye-level would hide the bowl contents behind the rim and show only a wrist/bottle silhouette."
       },
       "duration": {
         "seconds": 1.1259999999999994,
-        "reasoning": "At 455% speed, 1.1s of timeline consumes ~5s of source footage (13.4s\u2013~18.4s), fast enough to read as a flash-cut ingredient dump while still showing the full arc of oil contacting the bowl."
+        "reasoning": "The 455.556% speed ramp compresses ~5s of source footage into 1.1s of screen time, long enough to register a single pour action as a punctuation beat between two flanking ingredient text-card holds without letting the action breathe past its musical landing."
       },
       "in_point": {
         "seconds": 13.43,
-        "reasoning": "13.4s is the first frame the oil stream enters the overhead frame, cutting in at peak visual interest before the pour becomes static."
+        "reasoning": "13.4s catches the moment the oil stream first contacts the bowl contents \u2014 entering mid-action rather than at bottle-tilt avoids dead frames of an empty bowl and drops the viewer directly into the visible liquid-on-liquid impact."
       },
       "verdict": "trimmed",
       "confidence": "medium",
@@ -170,25 +170,25 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 455% ramp compresses a multi-second pour into a single beat-length flash to match the rapid-fire ingredient dump rhythm of the surrounding 1.3s beats; the 66% punch-in (tighter than the 50% baseline) compensates for the overhead camera's distance from the bowl, keeping the oil stream and landing point legible at this compressed duration."
+      "effects_reasoning": "The 455.556% ramp turns a naturally slow, gravity-dependent pour into a kinetic flash that matches an upbeat cut point without requiring a longer clip slot; the 66% punch-in (tighter than the 50% baseline) fills the overhead frame with bowl contents rather than surrounding marble countertop, compensating for the compositional emptiness that overhead angles inherently introduce around a small bowl."
     },
     {
       "beat_index": 8,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Same view, ingredients settling \u2192 Vinegar being poured into bowl \u2192 Vinegar stream, liquid level rising",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I6669.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front angle shows the pour arc and liquid trajectory into the bowl \u2014 height, fall distance, and the splash/bubble reaction at the surface \u2014 which the overhead angle (used in the previous clip) flattens into a top-down pool with no sense of the pour's kinetic energy."
+        "reasoning": "The clip metadata labels B19I6669.mov as front (eye-level), but the frame-by-frame shows OVERHEAD at every timecode within this beat's window \u2014 the metadata and visual evidence conflict, and one of them is wrong."
       },
       "duration": {
         "seconds": 1.2509999999999994,
-        "reasoning": "1.3s is pinned to the MOGRT window exactly (10.1s\u201311.4s), so the clip is duration-locked to the text card \u2014 it lives and dies with \"Apple cider vinegar\" on screen, not to a beat or a visual cue."
+        "reasoning": "1.3s is a hard lock to the MOGRT window: the text overlay runs 10.1s\u201311.4s (exactly 1.3s), so the clip duration is dictated by the text card hold, not the action."
       },
       "in_point": {
         "seconds": 65.774,
-        "reasoning": "65.8s catches the liquid stream mid-fall and mid-pour, with the sugar already beginning to dissolve \u2014 the surface is active and changing, which is the peak visual information density for a 1.3s hold under a static text card."
+        "reasoning": "65.8s drops into mid-stream \u2014 the liquid is already falling and the surface is already reacting (bubbles forming), skipping the pre-pour stillness at 65.0s where the change is too subtle to read in under two seconds."
       },
       "verdict": "trimmed",
       "confidence": "medium",
@@ -202,21 +202,21 @@
     },
     {
       "beat_index": 9,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Mustard being spooned into bowl \u2192 Mustard stream falling into marinade \u2192 Mustard landing in bowl, thick stream",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I6669.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the thick mustard paste falling as a vertical stream into the bowl, showing its dense, heavy texture against the dark marinade below \u2014 overhead would compress that fall into a flat top-down splat, losing the viscosity read."
+        "reasoning": "The front angle captures the vertical trajectory of the thick paste stream \u2014 its height, arc, and the moment it impacts the dark marinade \u2014 which an overhead shot would compress into a flat blob with no sense of pour depth or texture."
       },
       "duration": {
         "seconds": 1.043000000000001,
-        "reasoning": "The MOGRT text overlay runs exactly 11.4\u201312.4s (1.0s), so the clip duration is mechanically locked to the graphic \u2014 the shot exists to hold the \"Dijon mustard\" label, not to show a process."
+        "reasoning": "At 1.0s, the clip covers exactly the text card window (Mogrt runs 11.4s\u201312.4s, clip lands at 11.5s\u201312.5s), giving the \"Dijon mustard\" label just enough time to register against a single legible action before the next ingredient beat takes over."
       },
       "in_point": {
         "seconds": 73.699,
-        "reasoning": "73.7s lands at the instant the paste breaks from the container and begins its fall \u2014 skipping the static \"hand poised above bowl\" hold at 73.0s and entering on the first frame of committed action, so the full 1.0s is active pour, not anticipation."
+        "reasoning": "73.7s catches the mustard mid-fall \u2014 past the static \"hand poised above bowl\" moment at 73.0s but before the thick mound forms at 75.0s \u2014 entering on the most kinetic frame of the pour so the full 1.0s budget shows active motion rather than setup or settle."
       },
       "verdict": "trimmed",
       "confidence": "high",
@@ -230,24 +230,24 @@
     },
     {
       "beat_index": 10,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Mustard landing in bowl, thick stream \u2192 Spice being sprinkled into bowl \u2192 Cumin pile in bowl from above",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "[NEST] Nest - Chicken thighs",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead isolates the bowl as a canvas, making each spice's color (turmeric-yellow cumin, red paprika, white salt crystals, black pepper) visually distinct as separate mounds \u2014 a front/eye-level angle would collapse the depth and obscure the accumulation."
+        "reasoning": "Overhead reveals the marinade bowl as a canvas \u2014 you see four distinct spice mounds (cumin, paprika, salt, pepper) as separate color pools against the wet base, which an eye-level angle would hide entirely behind the bowl rim."
       },
       "duration": {
         "seconds": 5.214,
-        "reasoning": "5.2s spans exactly the four MOGRT text card cycles (13.1s\u201317.6s), giving each ingredient label its own hold beat while the spices layer up, ending just before the whisk enters at 17.5s and the action mode shifts."
+        "reasoning": "5.2s spans exactly four ingredient text card cycles (cumin \u2192 paprika \u2192 salt \u2192 pepper, each ~1.3s), so the duration is driven by the MOGRT sequence count, not the clip itself."
       },
       "in_point": {
         "seconds": 0.0,
-        "reasoning": "Source 0.0s drops in at the first clean overhead frame of the empty-ish bowl just before cumin arrives, establishing the blank-slate composition that makes each subsequent spice addition legible as a new event."
+        "reasoning": "Source in-point 0.0s starts on the mustard mid-stream into the bowl, providing a visual anchor that bridges the front-angle mustard pour from the previous beat before cutting to overhead for the dry spice sequence."
       },
       "verdict": "trimmed",
-      "confidence": "high",
+      "confidence": "medium",
       "pipeline_info": "",
       "effects": "Animated zoom in (128.0% -> 140.0%); Reframed (offset h:-0.50 v:-0.50)",
       "nested": "",
@@ -258,7 +258,7 @@
         "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (16.3s-17.6s)"
       ],
       "correction": null,
-      "effects_reasoning": "The slow zoom (128%\u2192140%) injects forward momentum into an otherwise static overhead hold \u2014 the bowl isn't moving, the zoom is doing the kinetic work to keep energy building across four text cards; the h:-0.50 v:-0.50 reframe shifts the bowl center away from the geometric middle, likely correcting for the spice pile sitting off-axis in the raw overhead shot."
+      "effects_reasoning": "The slow zoom (128\u2192140%) adds kinetic pressure to a locked-off overhead that would otherwise read as static across 5+ seconds; the reframe (h:-0.50 v:-0.50) shifts the bowl hard to the upper-left corner, clearing the lower-right quadrant for the stacked MOGRT ingredient labels to read cleanly without overlapping the spice pile."
     },
     {
       "beat_index": 11,
@@ -268,15 +268,15 @@
       "filename": "AI2I5438.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead isolates the black pepper sitting as a dark granular layer on top of the other ingredients \u2014 a front angle would show the bowl's rim and obscure the surface pattern that makes \"sprinkling\" legible."
+        "reasoning": "Overhead exposes the dark pepper as a distinct visible layer resting across the surface of the other ingredients \u2014 a front angle would show the bowl's depth and the hand but would obscure the distribution of pepper across the top."
       },
       "duration": {
         "seconds": 0.916999999999998,
-        "reasoning": "0.9s is long enough to read the pepper-on-surface image before the whisk enters, but cuts before active mixing begins, preserving the ingredient beat's visual identity rather than bleeding into the next action."
+        "reasoning": "0.9s is enough to register the static pepper-on-ingredients composition before motion takes over; holding longer adds nothing because the subject (layered pepper) is fully read in a single glance."
       },
       "in_point": {
         "seconds": 111.862,
-        "reasoning": "111.9s lands after the powder has settled but before the whisk touches the surface \u2014 the pepper is fully visible on top and the hand/whisk is entering frame as a motion trigger that justifies the cut forward."
+        "reasoning": "111.9s lands at the moment the pepper has just settled and the whisk is not yet in frame, giving a clean overhead read of the distinct dark layer before mixing destroys it \u2014 one frame later the whisk enters and competes with the subject."
       },
       "verdict": "kept",
       "confidence": "medium",
@@ -294,15 +294,15 @@
       "filename": "B19I6669.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the wrist and forearm mechanics of whisking \u2014 the rotation, the bowl-stabilizing hand, and the liquid behavior against the tines \u2014 which overhead flattens into an uninformative top-down swirl."
+        "reasoning": "Front angle puts the whisk, bowl rim, and stabilizing hand in the same plane, making the sauce's color and consistency legible \u2014 overhead would flatten the liquid into a featureless circle and lose the viscosity read entirely."
       },
       "duration": {
         "seconds": 1.2930000000000028,
-        "reasoning": "1.3s is long enough to register one full whisk stroke cycle without letting the static bowl composition overstay; coming off a 0.9s overhead, it extends the phrase slightly before the next clip's speed ramp accelerates energy."
+        "reasoning": "1.3s is enough to show one full whisk cycle and confirm the sauce is uniform; anything longer on a repetitive motion bleeds energy before the speed-ramp on the next cut."
       },
       "in_point": {
         "seconds": 154.863,
-        "reasoning": "154.9s lands with the whisk already in mid-motion and the marinade fully combined \u2014 no ramp-up lag, the action reads instantly, and the uniform brown liquid makes the \"done\" state legible in a single glance."
+        "reasoning": "154.9s catches the sauce already in active circular motion with the liquid clinging to the tines \u2014 entering mid-action rather than at the start of a stroke avoids a static first frame and drops the viewer into the gesture at peak visual interest."
       },
       "verdict": "trimmed",
       "confidence": "medium",
@@ -320,15 +320,15 @@
       "filename": "B19I6670.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front angle captures the vertical arc and mid-air sauce stream as it falls from the bowl into the bag, giving the pour depth and drama that an overhead would collapse into a flat, featureless top-down splat."
+        "reasoning": "Front captures the sauce stream's vertical fall from bowl to bag with depth and trajectory visible \u2014 overhead would collapse the pour into a flat top-down splash with no sense of height or flow."
       },
       "duration": {
         "seconds": 1.6679999999999993,
-        "reasoning": "At 112.486% playback, 1.7s of screen time consumes ~1.91s of source footage across the 5.9\u20137.5s ramp window \u2014 long enough to show the pour stream establish and the bag begin to fill, trimmed to land on a phrase boundary in the music before the next ingredient beat."
+        "reasoning": "At 112.486% the 1.6s of source (5.9s\u20137.5s) compresses to roughly 1.4s, and the ramp adds a slight push of momentum mid-pour, landing the cut on a musical downbeat at approximately 1.7s total."
       },
       "in_point": {
         "seconds": 5.881,
-        "reasoning": "5.9s catches the sauce stream just as it becomes fully visible mid-fall (between the setup at 5.0s and the full stream at 6.0s), cutting the static bowl-hold preparation and entering on the first frame of motion."
+        "reasoning": "5.9s catches the instant the sauce stream first appears in mid-fall from the bowl \u2014 before this frame the bowl is static and held, so the in-point enters on the action's first energetic beat rather than its setup."
       },
       "verdict": "kept",
       "confidence": "medium",
@@ -337,25 +337,25 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 112.486% speed ramp compresses a physically slow pour into the available musical slot without looking choppy, while the h:-0.01 v:-0.03 reframe is a micro-correction nudging the bowl-to-bag axis slightly left and up to keep the sauce stream centered in the frame rather than drifting to the right edge."
+      "effects_reasoning": "The speed ramp accelerates the pour to match a musical phrase while keeping the sauce stream legible; the reframe nudges the frame left and up by a hair (-0.01h, -0.03v) to center the sauce stream and bowl mouth rather than leaving dead space at frame right."
     },
     {
       "beat_index": 14,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Mustard being spooned, close-up with bag \u2192 Mustard stream into bag/bowl \u2192 Hand spooning mustard, angled shot",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "AI2I5440.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead angle flattens the ingredient into a graphic-readable shape against the marble surface, matching the text overlay's visual register \u2014 front/eye-level would show depth and hands, competing with the MOGRT typography."
+        "reasoning": "Overhead reveals the mustard stream falling into the bag from directly above, making the quantity and arc of the pour legible \u2014 a front angle would hide the bag interior behind the hand and spoon."
       },
       "duration": {
         "seconds": 1.126999999999999,
-        "reasoning": "1.1s is one musical phrase unit \u2014 long enough to anchor the \"Dijon mustard\" text read, short enough to cut before the static hold becomes dead air."
+        "reasoning": "1.1s matches a single short musical beat, long enough for the \"Dijon mustard\" text overlay to register but short enough to sustain the rapid-fire ingredient-dump cadence established by surrounding cuts."
       },
       "in_point": {
         "seconds": 8.05,
-        "reasoning": "8.1s catches the tray landing and hands releasing, giving a brief moment of settling motion that reads as \"presenting\" the ingredient rather than cutting into pure stillness or mid-gesture chaos."
+        "reasoning": "The VLM scan at 8.1s shows hands steadying a chicken tray \u2014 this does not match the mustard spooning described in the frame-by-frame, indicating a metadata mismatch between the scanned source file and the clip actually placed on the timeline."
       },
       "verdict": "kept",
       "confidence": "medium",
@@ -366,25 +366,25 @@
         "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (21.5s-22.6s)"
       ],
       "correction": null,
-      "effects_reasoning": "The zoom out (61\u219250%) counteracts the static overhead frame by creating outward expansion, visually echoing the \"reveal\" logic of the ingredient text appearing \u2014 keeps the shot kinetic without introducing a second subject."
+      "effects_reasoning": "The slow zoom out (61%\u219250%) counteracts the visual \"tightness\" of the close-overhead frame, giving the shot a subtle breath and preventing it from feeling static against the surrounding cuts that use speed ramps."
     },
     {
       "beat_index": 15,
-      "beat_description": "adding chicken thighs to marinade bag",
-      "beat_type": "ingredient",
+      "beat_description": "Hand spooning mustard, angled shot",
+      "beat_type": "",
       "recipe_section": "ingredient dump",
       "filename": "B19I6671.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the pressing motion of the hand against the chicken surface \u2014 the downward force and paper towel contact read clearly at eye-level, whereas overhead would flatten the gesture into an indistinct top-down blur of hand and tray."
+        "reasoning": "Front angle captures the arc of the spoon and the mustard's resistance/viscosity as it transfers \u2014 overhead would show the bowl from above but lose the wrist rotation and depth of the scooping gesture that communicates technique."
       },
       "duration": {
         "seconds": 1.2929999999999993,
-        "reasoning": "1.3s holds just long enough for one complete press-and-lift cycle of the patting motion, giving the action a full beat before the fast stop-motion sequence (8 clips, 0.8s) that follows accelerates the pace."
+        "reasoning": "1.3s accommodates one complete spoon gesture (reach, load, deposit) \u2014 long enough to read as intentional technique detail before the flash-cut triplet at 23.0s collapses the pacing into the stop-motion sequence."
       },
       "in_point": {
         "seconds": 21.104,
-        "reasoning": "21.1s drops into the hand already mid-press on the chicken, skipping the reach-down setup so the cut opens on committed action \u2014 entering on motion reads cleaner against the previous ingredient beat's static text card hold."
+        "reasoning": "The VLM scan at 21.0\u201322.0s shows paper towel patting chicken, not mustard spooning \u2014 there's a direct contradiction between the beat label and the source clip content at 21.1s. Either the VLM scan is pulling from the wrong segment, or the in-point label is misattributed and this clip was mis-sourced. The 21.1s in-point doesn't land on visible mustard action in the scan data provided."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -396,21 +396,21 @@
     },
     {
       "beat_index": 16,
-      "beat_description": "stop-motion (8 clips, avg 2f each)",
+      "beat_description": "stop-motion (8 clips, avg 2f): Spice pile in marinade bowl \u2192 Raw chicken thighs in zip-top bag with marinade \u2192 Paprika being sprinkled from hand",
       "beat_type": "stop_motion",
       "recipe_section": "mid-edit",
       "filename": "AI2I5441.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead collapses the bowl into a flat graphic plane, making the spice colors and marinade distribution read as pure pattern \u2014 a front angle would show bowl depth and hand, hiding the visual payoff of pigment hitting liquid."
+        "reasoning": "Overhead flattens the bowl and bag into a graphic plane, making the spice colors, marinade coverage, and chicken pieces read as distinct visual layers \u2014 a front angle would show depth but obscure the actual ingredient distribution that tells the marinade story."
       },
       "duration": {
         "seconds": 0.7920000000000016,
-        "reasoning": "0.8s is exactly long enough to register the stop-motion effect as intentional rhythm rather than a glitch, while short enough to function as punctuation \u2014 a single musical beat \u2014 before the edit moves on to chicken-in-bag."
+        "reasoning": "0.8s holds just long enough for the stop-motion rhythm to register as intentional rather than accidental \u2014 any shorter and it reads as a glitch, any longer and the energy dissipates before the next beat."
       },
       "in_point": {
         "seconds": 8.675,
-        "reasoning": "8.7s catches the overhead bowl before the chicken lands, giving the stop-motion sequence a clean, static base frame to stutter against \u2014 entering on motion or mid-pour would collapse the strobe effect into blur."
+        "reasoning": "8.7s lands on the static spice-pile-in-bowl frame before motion begins, giving the stop-motion sequence a clean visual anchor (the \"before\" state) that the rapid cuts then build away from."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -422,21 +422,21 @@
     },
     {
       "beat_index": 24,
-      "beat_description": "sprinkling fresh herbs over chicken",
-      "beat_type": "ingredient",
+      "beat_description": "Raw chicken thighs in zip-top bag with marinade",
+      "beat_type": "",
       "recipe_section": "mid-edit",
       "filename": "AI2I5441.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "The overhead angle flattens the zip-top bag into a graphic plane, letting the viewer see the full accumulation of pale pink chicken pieces against the dark brown marinade \u2014 a front-angle would show only the bag's edge and obscure the layered contents."
+        "reasoning": "The overhead angle looks directly down into the open zip-top bag, showing the full spread of chicken pieces submerged in dark brown marinade \u2014 quantity, coverage, and color contrast all read instantly. A front shot would see the bag from the side with the marinade obscured behind plastic and chicken flesh, losing the visual payoff of the filled bag."
       },
       "duration": {
         "seconds": 0.5010000000000012,
-        "reasoning": "0.5s is a flash registration cut \u2014 the overhead exists only to break the front-angle lock established by the surrounding paprika sprinkle shots, long enough to read \"bag full of chicken\" before the eye can track detail."
+        "reasoning": "0.5s is a single-beat flash used purely as a location reset \u2014 it establishes \"chicken is now in the bag with marinade\" before the edit pivots to the next action (paprika sprinkling at 25.0s). No motion needs to complete; the static bag contents read in one frame."
       },
       "in_point": {
         "seconds": 30.489,
-        "reasoning": "30.5s lands mid-action as the ninth piece is dropping in, between the settled 8-piece frame (29s) and the fully-placed 9-piece frame (31s) \u2014 the motion itself justifies the cut; a static fully-settled frame would read as dead at this duration."
+        "reasoning": "30.5s lands mid-placement of the ninth and final piece, with the hand still present or just clearing frame \u2014 the bag is visually full and the marinade is visible around the chicken, giving maximum information density for the 0.5s window before cutting away."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -454,15 +454,15 @@
       "filename": "B19I6673.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front/eye-level captures the horizontal pressing motion of both hands working the zip closure \u2014 overhead would flatten the bag into a top-down shape and lose the depth of the hands engaging the seal."
+        "reasoning": "The front/eye-level angle shows both hands pressing the zipper seal shut with the transparent bag wall revealing the chicken and marinade pooling inside \u2014 overhead would collapse the bag to a flat top surface and lose the sealing action entirely."
       },
       "duration": {
         "seconds": 0.8339999999999996,
-        "reasoning": "0.8s covers exactly the closure press action (0.4\u20131.2s of source) before the bag-lift at 2.0s, landing on a single beat to maintain the rapid mid-edit pace without holding on a static sealed bag."
+        "reasoning": "0.8s captures the single committed press-and-drag gesture of sealing the zipper from one side to the other without holding on the static result, keeping the cut tight to the action verb."
       },
       "in_point": {
         "seconds": 0.375,
-        "reasoning": "0.4s enters mid-press with both hands already engaged on the blue/purple closure, skipping any approach frames and dropping the viewer directly into peak action."
+        "reasoning": "At 0.4s both hands are already engaged on the closure and moving laterally \u2014 the 0.0s frame shows hands approaching, so 0.4s drops into the kinetic moment and skips the static setup."
       },
       "verdict": "trimmed",
       "confidence": "medium",
@@ -471,25 +471,25 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 61% punch-in eliminates the wide marble countertop surround and tightens focus to the hands-on-closure zone; the v:0.05 upward reframe compensates for the chicken/marinade mass pooling at the bag's bottom, keeping the closure mechanism \u2014 the subject \u2014 vertically centered."
+      "effects_reasoning": "The 61% punch-in (vs 50% baseline) eliminates countertop expanse and the unfilled upper bag above the chicken, forcing the frame onto the hands and the zipper track; the v:0.05 downward offset corrects for the seal sitting in the upper third of the raw frame, centering it optically."
     },
     {
       "beat_index": 26,
-      "beat_description": "",
+      "beat_description": "Prep area, bowl with marinade visible",
       "beat_type": "",
       "recipe_section": "mid-edit",
       "filename": "B19I6673.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the bilateral hand pressure and lateral squeezing motion across the bag's surface \u2014 an overhead would flatten the action into a shapeless top-down silhouette and lose the visible force distribution that communicates technique."
+        "reasoning": "Front angle shows the lateral pressing motion of hands working across the bag's surface \u2014 the depth of the squeeze and the marinade redistributing inside the bag \u2014 which overhead would collapse into a flat smear with no sense of volume or force."
       },
       "duration": {
         "seconds": 1.1679999999999993,
-        "reasoning": "1.2s holds just long enough to register both hands fully engaged across the bag without dwelling past the gesture's readable peak, bridging a 0.8s punch-in before and a text-overlay ingredient beat \u2014 it's a connective tissue cut, not a hero moment."
+        "reasoning": "1.2s is a single phrase-unit that functions as a location reset between the previous punch-in (B19I6673.mov, 0.8s) and the upcoming text-overlay beat \u2014 long enough to read \"marinating is happening\" but short enough not to compete with the information beat that follows."
       },
       "in_point": {
         "seconds": 5.047,
-        "reasoning": "At 5.0s both hands are mid-press with full contact across the bag surface, catching the motion at maximum spread rather than entry or release, which reads as a clean action frame with no ambiguous hand placement."
+        "reasoning": "5.0s drops in mid-gesture with hands already pressing across the full bag surface, skipping any lift-and-reposition setup so the action reads as continuous and energetic from the first frame."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -501,24 +501,24 @@
     },
     {
       "beat_index": 27,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Salt/pepper landing in marinade \u2192 Pepper grinder over bowl \u2192 Pepper being ground over marinade bowl",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I6673.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle shows the hands-over-bowl seasoning gesture at eye level, preserving the visual depth of salt/pepper falling into the marinade \u2014 overhead would flatten the pour into an abstract pattern and lose the wrist action that reads as \"finishing touch.\""
+        "reasoning": "Front angle shows the pepper grinder's vertical orientation and the stream of pepper falling into the bowl \u2014 overhead would collapse the grinding motion into a flat top-down view and lose the relationship between grinder and bowl depth."
       },
       "duration": {
         "seconds": 1.5009999999999977,
-        "reasoning": "1.5s matches the musical phrase length for a single-action ingredient beat; long enough to register pepper grinding as a complete gesture, short enough to exit before the action becomes idle."
+        "reasoning": "1.5s covers one complete grinding gesture (grinder enters frame, grinds, exits or pauses), matching the previous clip's 1.2s length and keeping the seasoning sequence's energy consistent without letting a static moment stall the cut."
       },
       "in_point": {
         "seconds": 10.928,
-        "reasoning": "10.9s lands at the tail of the bag-lift gesture \u2014 the hands are committing to removing the bag from frame, giving the cut a built-in exit motion that propels into the next clip rather than starting on a static hold."
+        "reasoning": "At 10.9s the grinder is coming into position over the bowl \u2014 cutting on the arrival of the tool rather than mid-grind gives the viewer a clean action start."
       },
       "verdict": "added",
-      "confidence": "low",
+      "confidence": "medium",
       "pipeline_info": "",
       "effects": "",
       "nested": "",
@@ -535,18 +535,18 @@
       "filename": "B19I6687.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle puts the tongs-to-grill-surface relationship at eye level, making the placement technique (angle of approach, gap between pieces) readable \u2014 overhead would flatten the depth and hide how the chicken lands."
+        "reasoning": "Front angle captures the tongs descending into the grill pan with depth \u2014 you see the chicken approaching the hot surface and the other pieces already seated; overhead would compress that vertical drop into a flat top-down arrangement with no sense of placement gesture."
       },
       "duration": {
         "seconds": 1.5430000000000028,
-        "reasoning": "1.5s covers exactly one placement action: tongs enter, chicken contacts grill, tongs release \u2014 cutting any longer would add redundant rearrangement that belongs to the next beat."
+        "reasoning": "1.5s covers exactly one placement action \u2014 tongs arrive, chicken lands, tongs release \u2014 which maps to a single musical phrase; any shorter cuts before contact reads as complete, any longer lingers on static arranged chicken."
       },
       "in_point": {
         "seconds": 42.96,
-        "reasoning": "43.0s catches the tongs mid-air before contact, giving the viewer a beat of anticipation before the sizzle-implying placement lands \u2014 starting at 44.0s would cut the approach and open cold on an already-settled piece."
+        "reasoning": "43.0s opens on the fourth piece already in motion above the pan, so the cut starts with kinetic energy already present rather than a static hold; the action is mid-gesture, which disguises the cut and maintains the momentum coming out of the previous ingredient beat."
       },
       "verdict": "trimmed",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "B19I6687.mov @ 7.0s (front)",
       "effects": "",
       "nested": "",
@@ -555,21 +555,21 @@
     },
     {
       "beat_index": 29,
-      "beat_description": "",
+      "beat_description": "Chicken on grill, tongs pulling away",
       "beat_type": "",
-      "recipe_section": "late-edit (likely transformation or money shots)",
+      "recipe_section": "technique / active cooking",
       "filename": "B19I6688.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the marinade sheen, steam rising off the grill surface, and the horizontal char lines on the chicken \u2014 an overhead would flatten the depth and lose the steam drama entirely."
+        "reasoning": "Front angle captures the lateral withdrawal of the tongs as a readable horizontal gesture \u2014 overhead would compress that pulling-away motion into a foreshortened abstraction, losing the \"release\" read entirely."
       },
       "duration": {
         "seconds": 1.1259999999999977,
-        "reasoning": "1.1s is a punctuation cut in a money-shot sequence \u2014 long enough to register the glistening chicken and rising steam, short enough to maintain momentum without becoming instructional."
+        "reasoning": "1.1s is the minimum needed to register the tong-withdrawal gesture as intentional placement (not accidental contact); the shot's information is exhausted the moment the tongs clear the chicken, so holding longer adds dead static grill footage."
       },
       "in_point": {
         "seconds": 26.401,
-        "reasoning": "26.4s lands on the chicken fully settled and static after placement, with steam already rising and marinade visibly glistening \u2014 the frame is clean and action-free, giving a sharp cut-point with no motion blur or camera drift to fight."
+        "reasoning": "26.4s lands at the peak of the tong-release action \u2014 the tongs are mid-pullback, not yet clear, giving the cut a motion already in progress that the eye can complete, rather than cutting in on static chicken or at the very start of the gesture."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -581,21 +581,21 @@
     },
     {
       "beat_index": 30,
-      "beat_description": "",
+      "beat_description": "Whisking in bowl, close-up",
       "beat_type": "",
-      "recipe_section": "late-edit (likely transformation or money shots)",
+      "recipe_section": "technique / active cooking",
       "filename": "B19I6691.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle shows the chicken's thickness, grill mark depth, and steam rising off the surface in profile \u2014 overhead would collapse all of that into a flat top-down read with no sense of the crust or char."
+        "reasoning": "Front angle puts the whisk and bowl at eye-level so the viewer sees the marinade coating the whisk tines and the color change as ingredients emulsify \u2014 overhead would compress the depth and show only the top surface of the liquid, losing the whisk motion's vertical arc."
       },
       "duration": {
         "seconds": 1.5850000000000009,
-        "reasoning": "1.6s is just long enough to register the chicken settled post-flip without tongs \u2014 one clean hold that reads as \"done\" before cutting to the next grill shot in the sequence."
+        "reasoning": "1.6s spans from peak vigorous whisking through the marinade nearly combined, giving the viewer enough time to read the texture change without holding past the action's resolution \u2014 the cut exits just before the motion dies, keeping energy forward into the next shot."
       },
       "in_point": {
         "seconds": 32.532,
-        "reasoning": "32.5s lands a half-second after the flip completes and the tongs exit frame, so the clip opens on stillness rather than motion, giving the eye a clean resolve before the cut out."
+        "reasoning": "At 32.5s the whisking is mid-stroke with the marinade still in active motion \u2014 not the setup frame and not the slowdown, so the viewer enters with full kinetic energy already present rather than waiting for it to build."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -607,21 +607,21 @@
     },
     {
       "beat_index": 31,
-      "beat_description": "",
+      "beat_description": "Whisking slowing, marinade combined",
       "beat_type": "",
-      "recipe_section": "late-edit (likely transformation or money shots)",
+      "recipe_section": "technique / active cooking",
       "filename": "B19I6691.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the vertical drama of the flip \u2014 tongs lifting and the seared underside catching light \u2014 while overhead would collapse that action into a flat plane and lose the steam rising off the grill surface."
+        "reasoning": "Front angle puts the whisk motion and bowl rim in the same horizontal plane, making the transition from active whisking to the settled, glossy marinade legible as a completion beat \u2014 overhead would flatten the motion into a circular smear with no clear \"done\" read."
       },
       "duration": {
         "seconds": 1.3350000000000009,
-        "reasoning": "1.3s is just long enough to register the flip and the reveal of the caramelized underside before the next beat (same clip, speed-ramped) takes over to linger on the money shot \u2014 this beat is the setup punch, not the payoff."
+        "reasoning": "1.3s is long enough to register the whisk decelerating and the marinade surface going still, but cuts before the shot goes static \u2014 the action resolves inside the clip rather than requiring the editor to hold on a motionless bowl."
       },
       "in_point": {
         "seconds": 41.291,
-        "reasoning": "41.3s catches the chicken mid-settle after the flip, the moment the seared grill marks are fully exposed and steam is actively rising \u2014 landing past the mechanical tong action but before the shot goes static."
+        "reasoning": "41.3s lands just after the flip at ~41.0s, catching the chicken thigh settling onto the grill with steam rising and grill marks already seared in \u2014 the motion has just resolved, giving a clean read of the marks without the visual noise of the active tong movement."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -633,21 +633,21 @@
     },
     {
       "beat_index": 32,
-      "beat_description": "",
+      "beat_description": "Chicken with deep caramelized grill marks",
       "beat_type": "",
-      "recipe_section": "late-edit (likely transformation or money shots)",
+      "recipe_section": "technique / active cooking",
       "filename": "B19I6691.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front/eye-level isolates the three-dimensional texture of the grill marks and the glistening surface sheen \u2014 overhead would flatten the caramelization into a flat pattern and lose the steam and depth that make this a beauty shot."
+        "reasoning": "Front angle puts the camera parallel to the grill surface, showing the three-dimensional ridge-and-char depth of the grill marks \u2014 overhead would render them as flat dark lines with no sense of crust or caramelization relief."
       },
       "duration": {
         "seconds": 1.1259999999999977,
-        "reasoning": "1.1s at 50% speed consumes only ~0.55s of source footage, compressing the actual clock time while stretching the perceived moment \u2014 long enough for the grill marks to fully register as a payoff image, short enough to function as a single musical accent rather than a held shot."
+        "reasoning": "The 50% speed ramp doubles the perceived duration of roughly 0.55s of source footage to fill 1.1s, giving the beauty shot enough screen time to register as a deliberate visual pause without breaking the phrase pacing of the surrounding active-cooking cuts."
       },
       "in_point": {
         "seconds": 128.712,
-        "reasoning": "128.7s lands at the frame where the grill marks are at peak darkness and definition (VLM confirms \"darker and more defined,\" \"more caramelized\") \u2014 the editor selected the visual apex of the transformation, not the approach to it."
+        "reasoning": "128.7s lands at the frame where the grill marks have reached peak caramelization depth and the surface sheen is at its most photogenic \u2014 the VLM confirms marks are \"darker and more caramelized\" by 72\u201376s in the source, and the editor chose the moment just before any movement disrupts the static beauty composition."
       },
       "verdict": "added",
       "confidence": "high",
@@ -656,25 +656,25 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 50% speed ramp turns an ordinary resting/sizzling moment into slow-motion luxury \u2014 the steam rises languidly, the surface glisten is elongated, and the caramelized marks get maximum screen dwell, which is the entire editorial purpose of a late-edit money shot."
+      "effects_reasoning": "The speed ramp is applied here specifically to let a static, texturally rich frame breathe on a musical downbeat without sourcing additional footage \u2014 slowing to 50% transforms a quick grab into a held, intentional glamour shot that punctuates the grill sequence."
     },
     {
       "beat_index": 33,
-      "beat_description": "",
+      "beat_description": "Marinade pouring into zip-top bag",
       "beat_type": "",
-      "recipe_section": "late-edit (likely transformation or money shots)",
+      "recipe_section": "ingredient dump",
       "filename": "B19I6693.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the tongs gripping the grilled chicken at eye level, making the char texture, glistening surface, and lift motion legible \u2014 overhead would flatten the 3D geometry of the tong-grip and lose the appetizing side profile of the finished chicken."
+        "reasoning": "Front angle captures the vertical fall of the marinade into the bag opening with depth separation between bowl, stream, and bag \u2014 overhead would collapse that spatial relationship into a flat top-down pour with no sense of containment or fill."
       },
       "duration": {
         "seconds": 1.5020000000000024,
-        "reasoning": "1.5s is one short musical phrase in a late-edit context, long enough to register the tongs entering, gripping, and lifting but short enough to function as a flash-forward tease rather than a full technique beat."
+        "reasoning": "1.5s fits a single half-phrase subdivision between the preceding 1.1s speed-ramped clip and the following 1.6s text overlay beat, maintaining rhythmic density without letting the pour linger past the action's visual payoff."
       },
       "in_point": {
         "seconds": 4.755,
-        "reasoning": "4.8s lands just before the tongs enter at 5.0s \u2014 the clip opens on a static hold of the plated chicken and the tongs sweep in within the first few frames, delivering immediate motion from the first cut frame rather than starting mid-action or on dead air."
+        "reasoning": "4.8s drops into the clip just as the action is already in motion \u2014 the marinade stream is established mid-pour rather than starting from a static bowl, cutting dead air at the top of the shot and entering on kinetic energy."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -683,25 +683,25 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 61% punch-in (vs. 50% baseline) tightens to the tong-chicken contact zone and removes peripheral plate clutter; the v:-0.03 reframe shifts slightly downward to keep the chicken mass centered in the tighter crop rather than showing dead headroom above the plate."
+      "effects_reasoning": "The 61% punch-in (above the 50% baseline) eliminates the bag's lower half and surrounding counter to isolate the pour stream and bag opening as the sole subject; the h:0.02 v:-0.03 reframe nudges the frame right and up to keep the bag mouth and incoming marinade centered in the tighter crop rather than drifting low-left."
     },
     {
       "beat_index": 34,
-      "beat_description": "ingredient beat (1 clips under text overlay)",
+      "beat_description": "ingredient (1 clips): Chicken patted with paper towel \u2192 Paper towel on chicken thigh \u2192 Chicken thigh being dried, close-up",
       "beat_type": "ingredient",
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I6694.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the tactile mechanics of paper towel pressing against chicken skin \u2014 the squeeze, absorption, and peel-away motion reads as a lateral action that overhead would collapse into a shapeless top-down smear."
+        "reasoning": "Front angle keeps the patting hand and paper towel contact with the chicken surface in the same focal plane, making the technique readable \u2014 overhead would flatten the motion into a top-down blob and lose the hand-to-meat relationship."
       },
       "duration": {
         "seconds": 1.6259999999999977,
-        "reasoning": "1.6s spans the complete gesture cycle \u2014 contact, press, and pull-away \u2014 which maps to a single musical phrase; cutting shorter loses the payoff of the paper towel lifting off dry skin."
+        "reasoning": "The clip is pinned to the MOGRT text overlay (37.0s\u201338.6s = exactly 1.6s), so the duration is overlay-driven, not rhythm-driven; the cut out coincides with the text clearing frame."
       },
       "in_point": {
         "seconds": 95.095,
-        "reasoning": "95.1s lands just before the paper towel makes first contact with the thigh, starting the action at the beginning of the technique rather than mid-press, so the full motion is visible within the beat."
+        "reasoning": "95.1s lands at the moment the paper towel first makes contact with the chicken \u2014 skipping the reach-and-position setup so the cut opens mid-action, which is why the frame-by-frame at 37.0s already reads as \"patting\" rather than \"preparing to pat.\""
       },
       "verdict": "added",
       "confidence": "medium",
@@ -715,21 +715,21 @@
     },
     {
       "beat_index": 35,
-      "beat_description": "",
+      "beat_description": "Dried chicken thigh, paper towel pulling away",
       "beat_type": "",
       "recipe_section": "plating / finishing",
       "filename": "AI2I5462.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "The overhead angle flattens the oval platter into a graphic composition \u2014 char marks, herb scatter, and white marble all readable simultaneously \u2014 which a front/eye-level shot would compress into depth and obscure."
+        "reasoning": "Overhead isolates the flat surface plane of the chicken thigh, making the paper towel peel-away motion and moisture transfer legible \u2014 a front angle would show the bird's silhouette instead of the drying action itself."
       },
       "duration": {
         "seconds": 1.1679999999999993,
-        "reasoning": "1.2s is a single-beat punctuation hold: long enough to register the finished dish as a beauty frame, short enough to deny it the weight of a true hero shot, keeping momentum into the next cut."
+        "reasoning": "1.2s matches a single beat subdivision, fast enough to read as a prep callback without stalling the forward momentum of the plating sequence it's inserted into."
       },
       "in_point": {
         "seconds": 28.779,
-        "reasoning": "At 28.8s the platter has just re-settled fully into frame after being moved back into view (the entry motion resolves between 28.0\u201329.0s), so this in-point captures the first stable, fully-composed frame with no positional drift."
+        "reasoning": "28.8s lands just as the platter settles back into frame after being lifted out, giving a stable, unblurred first frame \u2014 entering mid-movement at 28.0s would waste frames on repositioning rather than subject."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -738,7 +738,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 36% push-in animates what is otherwise a static overhead lock, directing the eye toward the char marks and herb garnish and preventing the short duration from reading as a dead freeze frame."
+      "effects_reasoning": "The 36% push-in compensates for the overhead angle's inherent distance from the subject, pulling the paper towel texture and chicken surface into a frame-filling read that justifies why the shot exists at all."
     },
     {
       "beat_index": 36,
@@ -748,15 +748,15 @@
       "filename": "B19I6695.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front/eye-level angle reveals the three-dimensional height and texture of the plated chicken and herb garnish \u2014 a top-down overhead would flatten the stack and lose the sense of food volume that makes a beauty shot appetizing."
+        "reasoning": "The front/eye-level angle reveals the plated chicken's vertical height, sauce pooling, and herb garnish in three dimensions \u2014 the way a diner actually sees a dish presented \u2014 which an overhead flattens entirely."
       },
       "duration": {
         "seconds": 1.1679999999999993,
-        "reasoning": "1.2s matches the previous beat exactly, creating a paired symmetry (overhead \u2192 front at equal length) that reads as a deliberate reveal rather than a lingering hold, keeping the closing sequence tight and rhythmically locked."
+        "reasoning": "1.2s mirrors the preceding overhead shot's duration exactly, pairing them as a matched couplet on a two-beat musical phrase before the next clip extends the sequence at 1.7s."
       },
       "in_point": {
         "seconds": 30.489,
-        "reasoning": "30.5s is chosen because by this frame the hand has fully exited and the platter is completely motionless \u2014 29.0s still has the hand gripping the edge, which would contaminate the clean beauty shot."
+        "reasoning": "30.5s lands just after the hand fully exits frame (confirmed gone by 30.0s), giving the cleanest possible static beauty frame with zero motion contamination at the cut."
       },
       "verdict": "kept",
       "confidence": "high",
@@ -765,7 +765,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 63% punch-in (above the 50% baseline) fills the frame with the chicken's surface detail \u2014 herbs, texture, glistening skin \u2014 eliminating dead marble space, while the subtle v:-0.02 reframe nudges the crop slightly downward to center the plate mass rather than dead-centering on empty background above it."
+      "effects_reasoning": "The 63% punch-in (vs. 50% baseline) eliminates the marble surround and tightens to the chicken and herb garnish only, while the v:-0.02 reframe drops the anchor point fractionally to keep the plate's rim out of frame and place the protein mass in the optical center of the crop."
     },
     {
       "beat_index": 37,
@@ -775,15 +775,15 @@
       "filename": "B19I6696.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle puts the knife stroke and the chicken's cross-section in the same horizontal plane, revealing the juicy interior texture and slice thickness that an overhead shot would compress into a flat, uninformative silhouette."
+        "reasoning": "The front/eye-level angle shows the knife blade's lateral travel through the breast in profile \u2014 the depth of each slice, the angle of the cut, and the fanning accumulation of pieces against the board \u2014 which an overhead would collapse into an uninformative top-down view of a cutting board."
       },
       "duration": {
         "seconds": 1.6680000000000064,
-        "reasoning": "1.7s is long enough to read the accumulated slices and the wet interior detail, but short enough to maintain the punchy momentum set by the 1.2s punch-in before it \u2014 the pair functions as a quick one-two before the next clip's 2.9s settles into resolution."
+        "reasoning": "1.7s is one musical phrase unit \u2014 long enough to read \"multiple slices, active knife work, progress\" but short enough to function as a transitional glimpse before the next clip (B19I6696.mov at 2.9s) carries the full slicing sequence; it sets context without overstaying."
       },
       "in_point": {
         "seconds": 30.906,
-        "reasoning": "30.9s catches the knife mid-stroke with multiple slices already fanned on the board \u2014 the action is already committed and visually \"full,\" avoiding the dead moment of a new stroke starting from nothing."
+        "reasoning": "30.9s lands mid-stroke with several slices already accumulated on the board, so the first frame immediately communicates result (you can see the fanned pieces) rather than requiring the viewer to watch the knife establish its first cut \u2014 the action is already legible in frame 1."
       },
       "verdict": "trimmed",
       "confidence": "medium",
@@ -801,18 +801,18 @@
       "filename": "B19I6696.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front/eye-level is the only angle that captures the cut face of the chicken \u2014 the juicy interior cross-section that proves doneness \u2014 whereas overhead would show only the top surface of the slices and lose the money shot entirely."
+        "reasoning": "Front angle shows the cross-section of the sliced chicken \u2014 the juicy interior texture and layered slice depth are only readable from eye-level; overhead would flatten the cuts into silhouettes and lose the moisture cues entirely."
       },
       "duration": {
         "seconds": 2.878,
-        "reasoning": "2.9s is long enough for the viewer to absorb the texture detail at a beauty-close focal length without cutting away before the image fully registers, and short enough to land cleanly on a phrase end or sustained note before the video terminates."
+        "reasoning": "2.9s holds long enough to serve as a logo card (Kitchn branding appears mid-hold in the output timeline) while giving the beauty shot room to register as a satisfying resolution \u2014 too short and the logo reads as a flash, too long and the static frame stalls the ending."
       },
       "in_point": {
         "seconds": 54.805,
-        "reasoning": "54.8s lands after the blur at 52.0s and the refocus wobble at 53.0s, entering on the first stable, slightly-zoomed frame where the texture and herb garnish are both sharp \u2014 the editor burned 3.8s of the clip to skip the unusable camera movement."
+        "reasoning": "54.8s lands just after the camera completes a slow zoom-in settle (the clip was fully blurred at 52.0s from movement, refocused at 53.0s, and the VLM confirms \"slightly zoomed in\" by 54.0s) \u2014 cutting in at 54.8s captures the sharpest, most composed frame after the lens has stopped moving."
       },
       "verdict": "trimmed",
-      "confidence": "high",
+      "confidence": "medium",
       "pipeline_info": "B19I6696.mov @ 51.0s (front)",
       "effects": "",
       "nested": "",
