@@ -241,6 +241,155 @@ def determine_verdict(
     return "kept"
 
 
+def describe_effects(clip: dict) -> str:
+    """Describe editorial effects applied to a clip for the LLM prompt."""
+    effects = clip.get("effects", {})
+    if not effects:
+        return ""
+
+    parts = []
+
+    # Speed
+    speed = effects.get("speed")
+    if speed:
+        spd_pct = speed.get("speed_percent", 100)
+        if speed.get("type") == "speed_ramp":
+            kfs = speed.get("keyframes", [])
+            ramp_in = next((k for k in kfs if k.get("type") == "ramp_in"), None)
+            ramp_out = next((k for k in kfs if k.get("type") == "ramp_out"), None)
+            if ramp_in and ramp_out:
+                parts.append(f"Speed ramp ({spd_pct}% base, ramp between {ramp_in['time_sec']:.1f}s-{ramp_out['time_sec']:.1f}s)")
+            else:
+                parts.append(f"Speed ramp ({spd_pct}%)")
+        else:
+            parts.append(f"Constant slow-motion ({spd_pct}%)")
+        if speed.get("reverse"):
+            parts.append("Reversed")
+
+    # Scale / zoom
+    motion = effects.get("motion", {})
+    scale = motion.get("scale")
+    if scale:
+        if scale.get("type") == "animated":
+            start_v = scale.get("start_value", 50)
+            end_v = scale.get("end_value", 50)
+            direction = "zoom in" if end_v > start_v else "zoom out"
+            parts.append(f"Animated {direction} ({start_v}% -> {end_v}%)")
+        elif scale.get("type") == "static":
+            parts.append(scale.get("editorial_note", f"Scale: {scale.get('value')}%"))
+
+    # Position offset
+    pos = motion.get("position")
+    if pos and pos.get("type") == "animated":
+        parts.append("Animated reframe (position keyframes)")
+    elif pos and pos.get("type") == "static":
+        parts.append(f"Reframed (offset h:{pos['horiz']:.2f} v:{pos['vert']:.2f})")
+
+    return "; ".join(parts)
+
+
+def describe_nested(clip: dict) -> str:
+    """Describe a nested sequence clip."""
+    if not clip.get("nested"):
+        return ""
+    inner = clip.get("inner_clips", [])
+    return f"Nested sequence '{clip.get('nest_name', '?')}' with {len(inner)} inner clips"
+
+
+def find_overlapping_mogrts(
+    timeline_in: float, timeline_out: float, production_layers: dict
+) -> List[str]:
+    """Find production layer items that overlap a beat's timeline range.
+
+    Filters out always-on layers (watermarks, adjustment layers that span
+    the full timeline) since those aren't editorial signals.
+    """
+    overlaps = []
+    for category, items in production_layers.items():
+        # Skip always-on layers — not editorial context
+        if category in ("watermarks", "adjustment_layers"):
+            continue
+        for item in items:
+            item_in = item.get("timeline_in_sec", 0)
+            item_out = item.get("timeline_out_sec", 0)
+            # Check overlap
+            if item_in < timeline_out and item_out > timeline_in:
+                label = category.replace("_", " ").title()
+                fname = item.get("file", "?")
+                overlaps.append(f"{label}: {fname} ({item_in:.1f}s-{item_out:.1f}s)")
+    return overlaps
+
+
+# Recipe video structure (from Dan's editorial rules):
+# 1. Beauty opener (2-3 shots) — scroll-stopper yum moments, mini-story, camera switching
+# 2. Ingredient dump — things going into bowl/bag/blender
+# 3. Departure — things leaving frame to get baked, refrigerated, etc.
+# 4. Transformation — food changes: stirring, blending, sizzling
+# 5. Money shots — chocolate pouring, sizzle, steam, etc.
+# 6. Beauty close — plating, final hero shots
+#
+# These sections are cut to music: cuts on beats, hold through phrases,
+# build energy through acceleration, breathing room after dense sequences.
+
+# Keywords for each recipe section (matched against beat descriptions)
+_SECTION_KEYWORDS = {
+    "ingredient dump": [
+        "pour", "add", "sprinkle", "scatter", "dump", "measure",
+        "drop", "spoon", "squeeze", "drizzle", "crack",
+    ],
+    "prep / knife work": [
+        "chop", "slice", "dice", "mince", "grate", "peel", "crush",
+        "zest", "julienne", "cut", "trim", "debone",
+    ],
+    "technique / active cooking": [
+        "stir", "whisk", "mix", "fold", "toss", "sear", "sauté",
+        "flip", "fry", "bake", "roast", "grill", "broil",
+    ],
+    "transformation": [
+        "transformation", "transform", "golden", "brown", "bubbl",
+        "melt", "thicken", "reduce", "carameliz", "crisp",
+    ],
+    "money shot": [
+        "sizzl", "steam", "chocolat", "glaz", "drip", "ooze",
+        "stretch", "pull apart",
+    ],
+}
+
+
+def infer_recipe_section(timeline_in: float, total_duration: float, beat_desc: str) -> str:
+    """Infer which recipe section a beat falls in.
+
+    Uses position in timeline + beat description keywords.
+    Recipe structure: beauty opener → ingredient dump → prep → technique →
+    transformation → money shots → beauty close.
+    """
+    pct = timeline_in / total_duration if total_duration > 0 else 0
+    desc_lower = (beat_desc or "").lower()
+
+    # Strong positional signals
+    if pct < 0.08:
+        return "beauty opener (scroll-stopper, 2-3 hero shots)"
+    if pct > 0.92:
+        return "beauty close (plating, final hero)"
+
+    # Check for transformation keyword (strong signal anywhere)
+    if "transformation" in desc_lower or "TRANSFORMATION" in (beat_desc or ""):
+        return "transformation (food changes state)"
+
+    # Keyword matching against description
+    for section, keywords in _SECTION_KEYWORDS.items():
+        if any(kw in desc_lower for kw in keywords):
+            return section
+
+    # Positional fallback for mid-edit
+    if pct > 0.80:
+        return "plating / finishing"
+    if pct > 0.60:
+        return "late-edit (likely transformation or money shots)"
+
+    return "mid-edit"
+
+
 def build_beat_analysis_prompt(
     beat_idx: int,
     approved_clip: dict,
@@ -255,42 +404,58 @@ def build_beat_analysis_prompt(
     prev_beat_info: str,
     next_beat_info: str,
     beat_group_info: str,
+    effects_info: str = "",
+    nested_info: str = "",
+    mogrt_overlaps: List[str] = None,
+    recipe_section: str = "",
+    is_stop_motion: bool = False,
+    stop_motion_info: str = "",
 ) -> str:
     """Build the LLM prompt for analyzing one beat's editorial reasoning."""
-    return f"""Analyze this editorial decision from a recipe video edit.
+    effects_block = ""
+    if effects_info:
+        effects_block = f"\n- **Effects applied:** {effects_info}"
+    if nested_info:
+        effects_block += f"\n- **Nesting:** {nested_info}"
+    if is_stop_motion:
+        effects_block += f"\n- **Stop-motion sequence:** {stop_motion_info}"
+
+    mogrt_block = ""
+    if mogrt_overlaps:
+        mogrt_block = "\n- **Overlapping production layers:** " + "; ".join(mogrt_overlaps)
+
+    section_block = ""
+    if recipe_section:
+        section_block = f"\n- **Recipe section:** {recipe_section}"
+
+    return f"""Analyze this editorial beat from a recipe video. These videos are cut to music — cuts land on beats, durations follow phrases, pacing builds/releases energy.
 
 ## Beat {beat_idx}: {beat_description}
-- **Beat type:** {beat_type}
-- **Camera chosen:** {camera} (front = eye-level technique camera, overhead = top-down ingredient/plating camera)
-- **Duration:** {duration:.1f}s
-- **Source in-point:** {approved_clip.get('in', 0):.1f}s into the source clip
-- **Verdict vs pipeline:** {verdict}
-- **Pipeline's choice:** {pipeline_clip_info}
-{f"- **Beat group:** {beat_group_info}" if beat_group_info else ""}
+- Camera: {camera} (front=eye-level technique, overhead=top-down ingredient)
+- Duration: {duration:.1f}s
+- Source in-point: {approved_clip.get('in', 0):.1f}s
+- Verdict vs pipeline: {verdict}
+- Pipeline proposed: {pipeline_clip_info}{effects_block}{mogrt_block}{section_block}
+{f"- Beat group: {beat_group_info}" if beat_group_info else ""}
 
-## What the final export shows at this beat (frame-by-frame from /watch-video):
+## Frame-by-frame at this timecode (/watch-video):
 {visual_context}
 
-## What the source clip shows (VLM descriptions from scan):
-{scan_description if scan_description else "(no scan data available)"}
+## Source clip content (VLM scan):
+{scan_description if scan_description else "(no scan data)"}
 
-## Edit context:
-- Previous beat: {prev_beat_info}
-- Next beat: {next_beat_info}
+## Context:
+- Previous: {prev_beat_info}
+- Next: {next_beat_info}
 
-## Your task:
-For this beat, explain the editor's likely reasoning across three dimensions. Be specific and grounded in what's visible in the frame descriptions above. Write as if you're the editor explaining your choice to another editor.
+## Task:
+One sentence each. Be specific about what's visible. No hedging.
 
-1. **Camera reasoning** — Why {camera} for this moment? What does this camera angle show that the other wouldn't? (1-2 sentences)
-2. **Duration reasoning** — Why hold for {duration:.1f}s? Is this long/short relative to the beat type? What determines the hold length? (1-2 sentences)
-3. **In-point reasoning** — Why cut in at this specific moment in the source clip? What's happening visually at this frame? (1-2 sentences)
-4. **Confidence** — How certain are you about this reasoning? (high/medium/low)
-
-Format your response as:
-CAMERA: [reasoning]
-DURATION: [reasoning]
-INPOINT: [reasoning]
-CONFIDENCE: [high/medium/low]"""
+CAMERA: Why {camera}? What does this angle show that the other wouldn't?
+DURATION: Why {duration:.1f}s?{' Account for the speed ramp.' if effects_info and 'speed' in effects_info.lower() else ''}
+INPOINT: Why this in-point? What's happening at this frame?
+{"EFFECTS: Why " + effects_info + "?" if effects_info else ""}{"STOPMOTION: Why stop-motion here? What does the rapid-fire rhythm do?" if is_stop_motion else ""}
+CONFIDENCE: high/medium/low"""
 
 
 def call_claude(prompt: str, model: str = "sonnet") -> str:
@@ -341,24 +506,207 @@ def parse_reasoning_response(response: str) -> dict:
         "camera_reasoning": "",
         "duration_reasoning": "",
         "inpoint_reasoning": "",
+        "effects_reasoning": "",
+        "stopmotion_reasoning": "",
         "confidence": "medium",
     }
 
+    def _clean(s: str) -> str:
+        """Strip markdown bold/italic markers from a reasoning string."""
+        return re.sub(r'[*_]+', '', s).strip()
+
     for line in response.split("\n"):
-        line = line.strip()
-        if line.upper().startswith("CAMERA:"):
-            result["camera_reasoning"] = line[7:].strip()
-        elif line.upper().startswith("DURATION:"):
-            result["duration_reasoning"] = line[9:].strip()
-        elif line.upper().startswith("INPOINT:") or line.upper().startswith("IN-POINT:") or line.upper().startswith("IN_POINT:"):
-            val = re.sub(r'^IN[-_]?POINT:\s*', '', line, flags=re.IGNORECASE)
-            result["inpoint_reasoning"] = val.strip()
-        elif line.upper().startswith("CONFIDENCE:"):
-            conf = line[11:].strip().lower()
+        # Strip markdown bold/italic and leading whitespace
+        cleaned = _clean(line)
+        if cleaned.upper().startswith("CAMERA:"):
+            result["camera_reasoning"] = _clean(cleaned[7:])
+        elif cleaned.upper().startswith("DURATION:"):
+            result["duration_reasoning"] = _clean(cleaned[9:])
+        elif cleaned.upper().startswith("INPOINT:") or cleaned.upper().startswith("IN-POINT:") or cleaned.upper().startswith("IN_POINT:"):
+            val = re.sub(r'^IN[-_]?POINT:\s*', '', cleaned, flags=re.IGNORECASE)
+            result["inpoint_reasoning"] = _clean(val)
+        elif cleaned.upper().startswith("EFFECTS:"):
+            result["effects_reasoning"] = _clean(cleaned[8:])
+        elif cleaned.upper().startswith("STOPMOTION:") or cleaned.upper().startswith("STOP-MOTION:") or cleaned.upper().startswith("STOP_MOTION:"):
+            val = re.sub(r'^STOP[-_]?MOTION:\s*', '', cleaned, flags=re.IGNORECASE)
+            result["stopmotion_reasoning"] = _clean(val)
+        elif cleaned.upper().startswith("CONFIDENCE:"):
+            conf = _clean(cleaned[11:]).lower()
             if conf in ("high", "medium", "low"):
                 result["confidence"] = conf
 
     return result
+
+
+def _group_clips_by_zone(
+    timeline: List[dict], production_layers: dict, editorial_techniques: dict
+) -> List[dict]:
+    """Group timeline clips into editorial beats using production layer zones.
+
+    Grouping rules:
+    1. Title card zone (0s to title card end) → beauty opener (one beat)
+    2. Each MOGRT zone → one ingredient beat (clips under that MOGRT)
+    3. Stop-motion clips (consecutive ≤6 frames) → collapsed into one beat
+    4. Remaining clips → standalone beats
+
+    Returns list of grouped entries, each with type and constituent clips.
+    """
+    title_cards = production_layers.get("title_cards", [])
+    mogrts = production_layers.get("mogrts", [])
+
+    # Find title card end time
+    title_end = 0
+    for tc in title_cards:
+        title_end = max(title_end, tc.get("timeline_out_sec", 0))
+
+    # Build stop-motion ranges
+    stop_motion_ranges = []
+    for seq in editorial_techniques.get("stop_motion_sequences", []):
+        stop_motion_ranges.append((seq["timeline_in_sec"], seq["timeline_out_sec"], seq))
+
+    def is_stop_motion_clip(entry: dict) -> bool:
+        clip = entry.get("v1") or entry.get("v2") or {}
+        dur = clip.get("duration_frames", 999)
+        if dur > 6:
+            return False
+        tl_in = entry.get("timeline_in_sec", 0)
+        tl_out = entry.get("timeline_out_sec", 0)
+        for sm_in, sm_out, _ in stop_motion_ranges:
+            if tl_in >= sm_in - 0.05 and tl_out <= sm_out + 0.05:
+                return True
+        return False
+
+    def get_stop_motion_info(entries: list) -> dict:
+        for sm_in, sm_out, seq in stop_motion_ranges:
+            if entries[0].get("timeline_in_sec", 0) >= sm_in - 0.05:
+                return seq
+        return {"avg_duration_frames": 3}
+
+    # Assign each clip to a zone
+    groups = []
+    used = set()
+
+    # 1. Beauty opener: all clips under title card
+    beauty_clips = []
+    for i, entry in enumerate(timeline):
+        tl_out = entry.get("timeline_out_sec", 0)
+        tl_in = entry.get("timeline_in_sec", 0)
+        if tl_in < title_end and title_end > 0:
+            beauty_clips.append(entry)
+            used.add(i)
+
+    if beauty_clips:
+        groups.append({
+            "type": "beauty_opener",
+            "beat_index": 0,
+            "beat_indices": [e["beat_index"] for e in beauty_clips],
+            "entries": beauty_clips,
+            "timeline_in_sec": beauty_clips[0].get("timeline_in_sec", 0),
+            "timeline_out_sec": beauty_clips[-1].get("timeline_out_sec", 0),
+            "clip_count": len(beauty_clips),
+        })
+
+    # 2. MOGRT zones: clips that overlap each MOGRT
+    for mogrt in mogrts:
+        m_in = mogrt.get("timeline_in_sec", 0)
+        m_out = mogrt.get("timeline_out_sec", 0)
+        mogrt_clips = []
+        for i, entry in enumerate(timeline):
+            if i in used:
+                continue
+            tl_in = entry.get("timeline_in_sec", 0)
+            tl_out = entry.get("timeline_out_sec", 0)
+            # Clip overlaps MOGRT zone
+            if tl_in < m_out and tl_out > m_in:
+                mogrt_clips.append(entry)
+                used.add(i)
+
+        if mogrt_clips:
+            groups.append({
+                "type": "mogrt_zone",
+                "beat_index": mogrt_clips[0]["beat_index"],
+                "beat_indices": [e["beat_index"] for e in mogrt_clips],
+                "entries": mogrt_clips,
+                "timeline_in_sec": mogrt_clips[0].get("timeline_in_sec", 0),
+                "timeline_out_sec": mogrt_clips[-1].get("timeline_out_sec", 0),
+                "clip_count": len(mogrt_clips),
+                "mogrt_file": mogrt.get("file", ""),
+            })
+
+    # 3. Remaining clips: standalone or stop-motion groups
+    remaining = [(i, entry) for i, entry in enumerate(timeline) if i not in used]
+    j = 0
+    while j < len(remaining):
+        i, entry = remaining[j]
+        if is_stop_motion_clip(entry):
+            # Collect consecutive stop-motion clips
+            sm_entries = [entry]
+            k = j + 1
+            while k < len(remaining):
+                _, next_entry = remaining[k]
+                if is_stop_motion_clip(next_entry):
+                    sm_entries.append(next_entry)
+                    k += 1
+                else:
+                    break
+            sm_info = get_stop_motion_info(sm_entries)
+            groups.append({
+                "type": "stop_motion_group",
+                "beat_index": sm_entries[0]["beat_index"],
+                "beat_indices": [e["beat_index"] for e in sm_entries],
+                "entries": sm_entries,
+                "timeline_in_sec": sm_entries[0].get("timeline_in_sec", 0),
+                "timeline_out_sec": sm_entries[-1].get("timeline_out_sec", 0),
+                "clip_count": len(sm_entries),
+                "avg_duration_frames": sm_info.get("avg_duration_frames", 3),
+            })
+            j = k
+        else:
+            groups.append({"type": "normal", "entry": entry})
+            j += 1
+
+    # Sort by timeline position
+    groups.sort(key=lambda g: g.get("timeline_in_sec", 0) if "timeline_in_sec" in g
+                else g.get("entry", {}).get("timeline_in_sec", 0))
+
+    return groups
+
+
+def _describe_group_brief(g: dict, v1_prefix: str) -> str:
+    """One-line description of a grouped or normal beat for neighbor context."""
+    g_type = g["type"]
+    if g_type == "normal":
+        entry = g["entry"]
+        clip = entry.get("v1") or entry.get("v2") or {}
+        cam = detect_camera(clip.get("file", ""), v1_prefix)
+        dur = entry.get("timeline_out_sec", 0) - entry.get("timeline_in_sec", 0)
+        fx = describe_effects(clip)
+        info = f"{clip.get('file', '?')} ({cam}, {dur:.1f}s)"
+        if fx:
+            info += f" [{fx[:40]}]"
+        return info
+    elif g_type == "beauty_opener":
+        return f"beauty opener ({g['clip_count']} shots, {g['timeline_out_sec'] - g['timeline_in_sec']:.1f}s)"
+    elif g_type == "mogrt_zone":
+        dur = g["timeline_out_sec"] - g["timeline_in_sec"]
+        return f"ingredient beat ({g['clip_count']} clips, {dur:.1f}s, text overlay)"
+    elif g_type == "stop_motion_group":
+        dur = g["timeline_out_sec"] - g["timeline_in_sec"]
+        return f"stop-motion ({g['clip_count']} clips, {dur:.1f}s)"
+    return "?"
+
+
+def _get_neighbor_info(gi: int, grouped_timeline: list, v1_prefix: str) -> Tuple[str, str]:
+    """Get previous/next beat info from the grouped timeline."""
+    prev_info = "start of video"
+    next_info = "end of video"
+
+    if gi > 0:
+        prev_info = _describe_group_brief(grouped_timeline[gi - 1], v1_prefix)
+    if gi < len(grouped_timeline) - 1:
+        next_info = _describe_group_brief(grouped_timeline[gi + 1], v1_prefix)
+
+    return prev_info, next_info
 
 
 def generate_global_analysis_prompt(
@@ -388,10 +736,13 @@ def generate_global_analysis_prompt(
 - Camera usage: {json.dumps(camera_stats)}
 - Verdicts vs pipeline: {json.dumps(verdict_stats)}{groups_text}{skipped_text}
 
-Summarize the editor's approach in 2-3 sentences. Cover:
-- Overall pacing (fast/slow, consistent/varied)
-- Camera preference patterns
-- Beat grouping patterns (multi-clip sequences, editorial rhythm)
+Context: Recipe videos are cut to music. The editor chooses cuts, durations, and camera angles that serve both the instructional content (showing each step clearly) and the rhythm of the music track. Standard editing rhythm rules apply — cuts on beats, holding through phrases, building energy through acceleration, breathing room after dense sequences.
+
+Summarize the editor's approach in 3-5 sentences. Cover:
+- Overall pacing (fast/slow, consistent/varied) and how it maps to recipe sections (opener → prep → technique → transformation → plating)
+- Camera preference patterns (when front vs overhead, and why)
+- Editorial rhythm (cut frequency, acceleration/deceleration, music-driven timing)
+- Use of effects (speed ramps, stop-motion, zooms) and what purpose they serve
 - Any notable editorial choices (skipped beats, flash cuts, etc.)
 
 Be concise and specific. Write as one editor describing another's style."""
@@ -435,16 +786,37 @@ def generate_obsidian_output(
         beat_desc = ann.get("beat_description", "")
         beat_type = ann.get("beat_type", "")
         pipeline_info = ann.get("pipeline_info", "")
+        effects_info = ann.get("effects_info", "")
+        nested_info = ann.get("nested_info", "")
+        mogrt_overlaps = ann.get("mogrt_overlaps", [])
+        recipe_section = ann.get("recipe_section", "")
         reasoning = ann.get("reasoning", {})
 
-        lines.append(f"### Beat {ann['beat_index']} — {beat_desc}")
-        lines.append(f"> {filename} ({camera}, {duration:.1f}s, {beat_type}) | Verdict: {verdict}")
+        beat_label = f"Beat {ann['beat_index']}"
+        if ann.get("is_stop_motion"):
+            beat_label = f"Beats {ann.get('beat_indices', [ann['beat_index']])} (stop-motion)"
+        lines.append(f"### {beat_label} — {beat_desc}")
+
+        meta_parts = [f"{filename}", f"{camera}", f"{duration:.1f}s", beat_type]
+        if recipe_section:
+            meta_parts.append(recipe_section)
+        lines.append(f"> {' | '.join(meta_parts)} | Verdict: {verdict}")
         if pipeline_info:
             lines.append(f"> Pipeline: {pipeline_info}")
+        if effects_info:
+            lines.append(f"> Effects: {effects_info}")
+        if nested_info:
+            lines.append(f"> Nesting: {nested_info}")
+        if mogrt_overlaps:
+            lines.append(f"> Overlays: {'; '.join(mogrt_overlaps)}")
         lines.append("")
         lines.append(f"- **Camera:** {camera} | {reasoning.get('camera_reasoning', 'TODO')}")
         lines.append(f"- **Duration:** {duration:.1f}s | {reasoning.get('duration_reasoning', 'TODO')}")
         lines.append(f"- **In-point:** {in_point:.1f}s | {reasoning.get('inpoint_reasoning', 'TODO')}")
+        if effects_info and reasoning.get("effects_reasoning"):
+            lines.append(f"- **Effects:** {reasoning['effects_reasoning']}")
+        if ann.get("is_stop_motion") and reasoning.get("stopmotion_reasoning"):
+            lines.append(f"- **Stop-motion:** {reasoning['stopmotion_reasoning']}")
         lines.append(f"- **Verdict:** {verdict}")
         lines.append(f"- **Confidence:** {reasoning.get('confidence', 'medium')}")
         lines.append(f"- **Dan's correction:**")
@@ -472,10 +844,11 @@ def generate_json_output(
 
     for ann in beat_annotations:
         reasoning = ann.get("reasoning", {})
-        data["beats"].append({
+        beat_entry = {
             "beat_index": ann["beat_index"],
             "beat_description": ann.get("beat_description", ""),
             "beat_type": ann.get("beat_type", ""),
+            "recipe_section": ann.get("recipe_section", ""),
             "filename": ann["filename"],
             "camera": {
                 "choice": ann["camera"],
@@ -492,8 +865,22 @@ def generate_json_output(
             "verdict": ann["verdict"],
             "confidence": reasoning.get("confidence", "medium"),
             "pipeline_info": ann.get("pipeline_info", ""),
+            "effects": ann.get("effects_info", ""),
+            "nested": ann.get("nested_info", ""),
+            "mogrt_overlaps": ann.get("mogrt_overlaps", []),
             "correction": None,
-        })
+        }
+        if ann.get("is_stop_motion"):
+            beat_entry["is_stop_motion"] = True
+            beat_entry["beat_indices"] = ann.get("beat_indices", [])
+            beat_entry["stop_motion_clip_count"] = ann.get("stop_motion_clip_count", 0)
+            if reasoning.get("effects_reasoning"):
+                beat_entry["effects_reasoning"] = reasoning["effects_reasoning"]
+            if reasoning.get("stopmotion_reasoning"):
+                beat_entry["stopmotion_reasoning"] = reasoning["stopmotion_reasoning"]
+        elif reasoning.get("effects_reasoning"):
+            beat_entry["effects_reasoning"] = reasoning["effects_reasoning"]
+        data["beats"].append(beat_entry)
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, "w") as f:
@@ -544,15 +931,153 @@ def main():
     # Match approved beats to pipeline beats
     matches = match_approved_to_pipeline(approved, pipeline)
     timeline = approved.get("timeline", [])
+    production_layers = approved.get("production_layers", {})
+    editorial_techniques = approved.get("editorial_techniques", {})
 
-    # Analyze each beat
-    print(f"Analyzing {len(timeline)} beats...", flush=True)
+    # Compute total timeline duration for section inference
+    if timeline:
+        total_timeline_duration = max(
+            e.get("timeline_out_sec", 0) for e in timeline
+        )
+    else:
+        total_timeline_duration = 0
+
+    # Build zone map from production layers for beat grouping.
+    # Zones: title_card (beauty opener), mogrt (ingredient text), gap (no overlay).
+    # Clips under the same zone = one editorial beat.
+    grouped_timeline = _group_clips_by_zone(timeline, production_layers, editorial_techniques)
+
+    # Analyze each editorial beat
+    effective_count = len(grouped_timeline)
+    group_types = {}
+    for g in grouped_timeline:
+        group_types[g["type"]] = group_types.get(g["type"], 0) + 1
+    group_summary = ", ".join(f"{v} {k}" for k, v in group_types.items())
+    print(f"Analyzing {effective_count} beats ({len(timeline)} raw clips → {group_summary})...", flush=True)
+
     beat_annotations = []
     camera_stats = {"front": 0, "overhead": 0}
     verdict_stats = {}
     total_duration = 0
 
-    for i, entry in enumerate(timeline):
+    for gi, grouped in enumerate(grouped_timeline):
+        g_type = grouped["type"]
+
+        if g_type in ("beauty_opener", "mogrt_zone", "stop_motion_group"):
+            # Multi-clip grouped beat
+            entries = grouped["entries"]
+            first_entry = entries[0]
+            a_clip = first_entry.get("v1") or first_entry.get("v2")
+            if not a_clip:
+                continue
+
+            beat_idx = grouped["beat_index"]
+            timeline_in = grouped["timeline_in_sec"]
+            timeline_out = grouped["timeline_out_sec"]
+            duration = timeline_out - timeline_in
+            total_duration += duration
+
+            # Summarize clips in this group
+            clip_summaries = []
+            group_cameras = []
+            group_effects = []
+            for entry in entries:
+                ec = entry.get("v1") or entry.get("v2") or {}
+                cam = detect_camera(ec.get("file", ""), v1_prefix)
+                group_cameras.append(cam)
+                camera_stats[cam] = camera_stats.get(cam, 0) + 1
+                cdur = entry.get("timeline_out_sec", 0) - entry.get("timeline_in_sec", 0)
+                fx = describe_effects(ec)
+                if fx:
+                    group_effects.append(fx)
+                clip_summaries.append(
+                    f"{ec.get('file', '?')} ({cam}, {cdur:.1f}s){' [' + fx[:30] + ']' if fx else ''}"
+                )
+
+            camera = max(set(group_cameras), key=group_cameras.count) if group_cameras else "front"
+            filename = a_clip.get("file", "?")
+            in_point = a_clip.get("in", 0)
+
+            # Build description based on group type, using frame analysis for content
+            group_frame_descs = [f for f in frame_analysis
+                                 if timeline_in - 0.3 <= f["time_sec"] <= timeline_out + 0.3]
+            content_summary = ""
+            if group_frame_descs:
+                subjects = []
+                for f in group_frame_descs:
+                    subj = f.get("subject", "")
+                    if subj and subj not in subjects:
+                        subjects.append(subj)
+                content_summary = " → ".join(subjects[:3])
+
+            if g_type == "beauty_opener":
+                beat_desc = f"beauty opener ({grouped['clip_count']} shots): {content_summary}" if content_summary else f"beauty opener ({grouped['clip_count']} shots under title card)"
+                beat_type = "beauty_opener"
+                recipe_section = "beauty opener (scroll-stopper, 2-3 hero shots)"
+                verdict = "editorial_group"
+            elif g_type == "stop_motion_group":
+                beat_desc = f"stop-motion ({grouped['clip_count']} clips, avg {grouped['avg_duration_frames']:.0f}f): {content_summary}" if content_summary else f"stop-motion ({grouped['clip_count']} clips, avg {grouped['avg_duration_frames']:.0f}f each)"
+                beat_type = "stop_motion"
+                recipe_section = infer_recipe_section(timeline_in, total_timeline_duration, "stop_motion")
+                verdict = "added"
+            else:  # mogrt_zone
+                beat_desc = f"ingredient ({grouped['clip_count']} clips): {content_summary}" if content_summary else f"ingredient beat ({grouped['clip_count']} clips under text overlay)"
+                beat_type = "ingredient"
+                recipe_section = "ingredient dump (text overlay marks this step)"
+
+            verdict_stats[verdict] = verdict_stats.get(verdict, 0) + 1
+
+            visual_context = get_visual_context(frame_analysis, timeline_in, timeline_out, margin=0.5)
+            scan_desc = load_scan_descriptions(args.scan, filename, in_point)
+            mogrt_overlaps = find_overlapping_mogrts(timeline_in, timeline_out, production_layers)
+            prev_info, next_info = _get_neighbor_info(gi, grouped_timeline, v1_prefix)
+
+            clips_block = "\n".join(f"  - {s}" for s in clip_summaries)
+            effects_info = "; ".join(group_effects) if group_effects else ""
+
+            prompt = build_beat_analysis_prompt(
+                beat_idx=beat_idx, approved_clip=a_clip, camera=camera,
+                duration=duration, verdict=verdict, beat_description=beat_desc,
+                beat_type=beat_type,
+                pipeline_clip_info=f"{grouped['clip_count']} clips:\n{clips_block}",
+                scan_description=scan_desc, visual_context=visual_context,
+                prev_beat_info=prev_info, next_beat_info=next_info,
+                beat_group_info="",
+                effects_info=effects_info,
+                mogrt_overlaps=mogrt_overlaps,
+                recipe_section=recipe_section,
+                is_stop_motion=(g_type == "stop_motion_group"),
+                stop_motion_info=beat_desc if g_type == "stop_motion_group" else "",
+            )
+
+            print(f"  Beat {beat_idx}: {beat_desc} ({g_type})", flush=True)
+            response = call_claude(prompt, model=args.model)
+            reasoning = parse_reasoning_response(response)
+
+            beat_annotations.append({
+                "beat_index": beat_idx,
+                "beat_indices": grouped["beat_indices"],
+                "filename": filename,
+                "camera": camera,
+                "duration": duration,
+                "in_point": in_point,
+                "verdict": verdict,
+                "beat_description": beat_desc,
+                "beat_type": beat_type,
+                "pipeline_info": "",
+                "is_grouped": True,
+                "group_type": g_type,
+                "clip_count": grouped["clip_count"],
+                "clip_summaries": clip_summaries,
+                "effects_info": effects_info,
+                "mogrt_overlaps": mogrt_overlaps,
+                "recipe_section": recipe_section,
+                "reasoning": reasoning,
+            })
+            continue
+
+        # Normal (single-clip) beat
+        entry = grouped["entry"]
         a_clip = entry.get("v1") or entry.get("v2")
         if not a_clip or not a_clip.get("file"):
             continue
@@ -562,6 +1087,8 @@ def main():
         camera = detect_camera(filename, v1_prefix)
         duration = entry.get("timeline_out_sec", 0) - entry.get("timeline_in_sec", 0)
         in_point = a_clip.get("in", 0)
+        timeline_in = entry.get("timeline_in_sec", 0)
+        timeline_out = entry.get("timeline_out_sec", 0)
 
         camera_stats[camera] = camera_stats.get(camera, 0) + 1
         total_duration += duration
@@ -571,7 +1098,7 @@ def main():
         verdict = determine_verdict(a_clip, p_match, v1_prefix)
         verdict_stats[verdict] = verdict_stats.get(verdict, 0) + 1
 
-        # Pipeline clip info string
+        # Pipeline clip info
         pipeline_info = ""
         if p_match:
             p_entry = p_match["pipeline_entry"]
@@ -581,71 +1108,56 @@ def main():
                 p_cam = detect_camera(p_clip["file"], v1_prefix)
                 pipeline_info = f"{p_clip['file']} @ {p_clip.get('in', 0):.1f}s ({p_cam})"
 
-        # Beat description from beats.json
+        # Beat description: prefer matched pipeline beat, else derive from frame analysis
         beat_desc = ""
         beat_type = ""
-        if beat_idx < len(beats_list):
-            beat_desc = beats_list[beat_idx].get("beat", "")
-            beat_type = beats_list[beat_idx].get("type", "")
-        # Fallback: use pipeline manifest step
-        if not beat_desc and p_match:
-            beat_desc = p_match["pipeline_entry"].get("step", "")
-            beat_type = p_match["pipeline_entry"].get("beat_type", "")
+        if p_match:
+            # Use the matched pipeline beat's description, not raw index
+            p_idx = None
+            for pi, pe in enumerate(pipeline.get("timeline", [])):
+                if pe is p_match["pipeline_entry"]:
+                    p_idx = pi
+                    break
+            if p_idx is not None and p_idx < len(beats_list):
+                beat_desc = beats_list[p_idx].get("beat", "")
+                beat_type = beats_list[p_idx].get("type", "")
+            if not beat_desc:
+                beat_desc = p_match["pipeline_entry"].get("step", "")
+                beat_type = p_match["pipeline_entry"].get("beat_type", "")
+        if not beat_desc:
+            # No pipeline match or no description — derive from frame analysis
+            desc_frames = [f for f in frame_analysis
+                           if timeline_in - 0.3 <= f["time_sec"] <= timeline_in + 0.5]
+            if desc_frames:
+                beat_desc = desc_frames[0].get("subject", "") or desc_frames[0].get("notes", "")
+            if not beat_desc:
+                beat_desc = f"{filename} @ {timeline_in:.1f}s"
 
-        # Visual context from /watch-video frame analysis
-        timeline_in = entry.get("timeline_in_sec", 0)
-        timeline_out = entry.get("timeline_out_sec", 0)
         visual_context = get_visual_context(frame_analysis, timeline_in, timeline_out)
-
-        # Scan descriptions
         scan_desc = load_scan_descriptions(args.scan, filename, in_point)
+        effects_info = describe_effects(a_clip)
+        nested_info = describe_nested(a_clip)
+        mogrt_overlaps = find_overlapping_mogrts(timeline_in, timeline_out, production_layers)
+        recipe_section = infer_recipe_section(timeline_in, total_timeline_duration, beat_desc or beat_type)
+        prev_info, next_info = _get_neighbor_info(gi, grouped_timeline, v1_prefix)
 
-        # Beat group context
-        group = find_beat_group(beat_idx, beat_groups)
-        beat_group_info = ""
-        if group:
-            beat_group_info = (
-                f"{group['group']}: {group['description']} "
-                f"(beats {group['beats']}, this is beat {beat_idx})"
-            )
-
-        # Context: previous and next beats
-        prev_info = "start of video"
-        next_info = "end of video"
-        if i > 0:
-            prev = timeline[i - 1]
-            prev_clip = prev.get("v1") or prev.get("v2")
-            if prev_clip:
-                prev_cam = detect_camera(prev_clip["file"], v1_prefix)
-                prev_dur = prev.get("timeline_out_sec", 0) - prev.get("timeline_in_sec", 0)
-                prev_info = f"{prev_clip['file']} ({prev_cam}, {prev_dur:.1f}s)"
-        if i < len(timeline) - 1:
-            nxt = timeline[i + 1]
-            nxt_clip = nxt.get("v1") or nxt.get("v2")
-            if nxt_clip:
-                nxt_cam = detect_camera(nxt_clip["file"], v1_prefix)
-                nxt_dur = nxt.get("timeline_out_sec", 0) - nxt.get("timeline_in_sec", 0)
-                next_info = f"{nxt_clip['file']} ({nxt_cam}, {nxt_dur:.1f}s)"
-
-        # Build prompt
         prompt = build_beat_analysis_prompt(
-            beat_idx=beat_idx,
-            approved_clip=a_clip,
-            camera=camera,
-            duration=duration,
-            verdict=verdict,
-            beat_description=beat_desc,
+            beat_idx=beat_idx, approved_clip=a_clip, camera=camera,
+            duration=duration, verdict=verdict, beat_description=beat_desc,
             beat_type=beat_type,
             pipeline_clip_info=pipeline_info or "(no pipeline match)",
-            scan_description=scan_desc,
-            visual_context=visual_context,
-            prev_beat_info=prev_info,
-            next_beat_info=next_info,
-            beat_group_info=beat_group_info,
+            scan_description=scan_desc, visual_context=visual_context,
+            prev_beat_info=prev_info, next_beat_info=next_info,
+            beat_group_info="",
+            effects_info=effects_info, nested_info=nested_info,
+            mogrt_overlaps=mogrt_overlaps, recipe_section=recipe_section,
         )
 
-        # Call Claude (text-only — visual context comes from frame analysis descriptions)
-        print(f"  Beat {beat_idx}: {beat_desc[:50]}... ({verdict})", flush=True)
+        extra = []
+        if effects_info:
+            extra.append(effects_info[:40])
+        extra_str = f" [{', '.join(extra)}]" if extra else ""
+        print(f"  Beat {beat_idx}: {beat_desc[:50]}... ({verdict}){extra_str}", flush=True)
         response = call_claude(prompt, model=args.model)
         reasoning = parse_reasoning_response(response)
 
@@ -659,6 +1171,10 @@ def main():
             "beat_description": beat_desc,
             "beat_type": beat_type,
             "pipeline_info": pipeline_info,
+            "effects_info": effects_info,
+            "nested_info": nested_info,
+            "mogrt_overlaps": mogrt_overlaps,
+            "recipe_section": recipe_section,
             "reasoning": reasoning,
         })
 

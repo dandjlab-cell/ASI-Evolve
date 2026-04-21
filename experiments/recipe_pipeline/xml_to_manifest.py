@@ -193,9 +193,11 @@ def _detect_production_layers(
                 if lumetri is not None:
                     entry["has_lumetri"] = True
                 layers["adjustment_layers"].append(entry)
-            elif fname_lower.endswith(".mogrt"):
+            elif fname_lower.endswith(".mogrt") or ".aegraphic" in fname_lower or "mogrt" in fname_lower:
                 # Motion graphics templates (ingredient text cards, etc.)
-                if tl_in < 5.0:
+                # Premiere MOGRTs export as .aegraphic files inside the MOGRT container.
+                # Title cards start at 0.0s; ingredient MOGRTs start after the title fades.
+                if tl_in < 0.5:
                     layers["title_cards"].append(entry)
                 else:
                     layers["mogrts"].append(entry)

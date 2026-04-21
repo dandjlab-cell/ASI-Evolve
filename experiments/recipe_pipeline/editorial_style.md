@@ -1,115 +1,224 @@
 ## Editor's Style Profile
-*Aggregated from 2 recipe(s), 36 beats*
+*Aggregated from 2 recipe(s), 59 beats*
 
 ### Camera Selection Rules
 **Overhead (top-down) for:**
-- Overhead is the correct call for a garlic-into-skillet drop: it collapses the depth of the pan to a flat plane so the vi (ingredient)
-- Overhead is the natural choice for any ingredient placement or scatter action because it shows the full landing zone — y (ingredient)
-- The overhead angle is the right call here because it turns the pan into a stage — you see the garlic cloves land and set (match_cut)
-- Overhead is the only angle that makes spatial sense here — the bowl-to-plate pour scatters ingredients across a horizont (technique)
-- Overhead is the right call here because scattering pine nuts into a processor is a **radial, top-down action** — you're  (ingredient)
-- Overhead is the right call here because pulsing garlic and nuts is fundamentally a **top-down compositional story** — yo (transformation_from)
-- Overhead is the correct instinct for a chop beat — it's the only angle that shows the board plane, the knife, and the in ()
-- Overhead is the correct choice for a pour beat because the top-down angle captures the liquid hitting the surface of the (ingredient)
-- Overhead is the only angle that reveals sprinkling as a motion — you see the spice falling through the air and landing i (ingredient)
+- Overhead isolates the garlic cloves flat against the white cutting board as a graphic display, making quantity and shape (ingredient)
+- Overhead puts the pan's interior in frame as a stage, making the garlic cloves the subject against the clean steel surfa (ingredient)
+- Overhead captures the radial scatter of pine nuts and garlic cloves spreading across the white plate as they land — a fr (technique)
+- Overhead makes the garlic-dropping-into-bowl action self-evident in a single glance — the bowl is the subject, not the h (ingredient)
+- Overhead reveals the nuts cascading down into the processor bowl — their trajectory, spread across the blade, and the ga (ingredient)
+- Overhead is the only angle that looks into the processor bowl — a front/eye-level shot would show the exterior wall of t (transformation_from)
+- Overhead locks the processor bowl in a flat, graphic frame where the basil's vibrant green mass reads as a clean color-s (ingredient)
+- The overhead angle looks directly through the processor's clear lid into the bowl, revealing the paste's texture and col (match_cut)
+- The overhead angle collapses the processor bowl into a full circle of deep-green pesto, revealing its glossy, smooth sur (beauty)
+- Overhead shows the soy sauce as a dark ribbon landing in the bowl and dispersing across the oil and garlic surface — a f (ingredient)
+- Overhead captures the olive oil stream hitting the bowl contents from directly above, showing the golden liquid pooling  (ingredient)
+- Overhead isolates the bowl as a canvas, making each spice's color (turmeric-yellow cumin, red paprika, white salt crysta (ingredient)
+- Overhead isolates the black pepper sitting as a dark granular layer on top of the other ingredients — a front angle woul (ingredient)
+- Overhead angle flattens the ingredient into a graphic-readable shape against the marble surface, matching the text overl (ingredient)
+- Overhead collapses the bowl into a flat graphic plane, making the spice colors and marinade distribution read as pure pa (stop_motion)
+- The overhead angle flattens the zip-top bag into a graphic plane, letting the viewer see the full accumulation of pale p (ingredient)
+- The overhead angle flattens the oval platter into a graphic composition — char marks, herb scatter, and white marble all ()
 
 **Front (eye-level) for:**
-- Front (eye-level) is the right choice for a pesto-coating moment because it captures the vertical fall and gloss of the  (beauty)
-- Front is the correct call for a knife technique beat — eye-level captures the lateral sweep of the blade and the hand's  (technique)
-- This beat sits between two overhead shots, so the front/eye-level cut creates a deliberate angle break that visually sep (transformation_from)
-- Front gives you the vertical arc of the pour — the bowl tilt, the stream of nuts in mid-fall, the depth of the action la (technique)
-- Front camera puts the hand gesture at eye level, letting the viewer read the pinching/pulling motion of leaf separation  (technique)
-- Front makes sense for a drop action — eye-level captures the hand trajectory, the garlic falling, and the processor bowl (ingredient)
-- The front/eye-level camera captures the full gestural arc of the pour — the arm extension, wrist tilt, and the zest fall (match_cut)
-- Front is the right call for a physical stuffing gesture — the eye-level angle lets you read the depth of the hand pressi (ingredient)
-- Front is the right call here because the physical gesture of tongs pulling pasta upward — strands stretching and sauce c (match_cut)
-- Front (eye-level) was the right call because the subject at this in-point is a close-up bowl of finished pasta — eye-lev (ingredient)
-- The front/eye-level camera captures the arc and stream of the sauce mid-fall — you see the bowl, the pour trajectory, an (ingredient)
-- Front/eye-level is the right call here because spooning mustard is a hand-forward gesture — the spoon sweeps toward the  (ingredient)
-- Front (eye-level) is the right call here because the action is spatial and depth-dependent — you need to read the tongs' (ingredient)
-- Front (eye-level) is the right call here because the action — tongs entering from above, gripping, and lifting — reads b (technique)
-- Front (eye-level) is the right call for a pour-into-bag technique moment because you need to see the bag opening in rela (technique)
+- Front angle captures the vertical fall of the pesto stream into the jar and the active drizzle onto pasta — showing visc (beauty_opener)
+- The front angle shows the knife blade's downward angle and the hand's vertical pressure — the physical mechanics of crus (transformation_from)
+- Front angle captures the vertical arc of the pour — the glass bowl elevated above the pan, nuts in mid-fall — which read (ingredient)
+- The front angle captures the spoon's lateral sweeping motion across the pan and lets the viewer read the nuts' golden co (match_cut)
+- The front angle shows the hand lifting the peeled clove upward in profile, making the reveal gesture readable — overhead (technique)
+- The front/side angle reveals the blades in motion through the processor bowl, showing the texture transformation from co (match_cut)
+- The front angle captures the lateral pour gesture — the hand tilting the bowl and zest arcing downward — which reads as  (ingredient)
+- Front angle captures the pouring gesture and the cascade of parmesan falling into the processor bowl as a continuous act (ingredient)
+- Front angle shows the food processor bowl in profile, making the chunky-to-paste breakdown visible through the transluce (match_cut)
+- The front/eye-level angle captures the olive oil stream entering through the feed tube while the machine runs — the defi (ingredient)
+- Front angle makes the oil stream legible as a vertical pour into the feed tube — overhead would collapse it into a top-d (ingredient)
+- Front captures the hand gesture and the spatial relationship between the tilting bowl and the processor feed tube — the  (ingredient)
+- The front/side angle shoots through the transparent processor bowl, making the swirling green paste and wall splatter di ()
+- Front reveals the glass jar's interior depth and sidewall, showing the green paste level building and the drip on the ri (technique)
+- Front angle reveals the jar's depth and the pesto drip running down the rim — a money-shot detail that overhead collapse ()
+- The front angle captures the depth of the scraping action — spatula entering the jar and the pesto dollop falling onto t ()
+- The front angle captures the spatula's lateral scraping motion and the vertical fall of the pesto dollop onto the pasta  ()
+- Front angle captures the vertical axis of the lift — sauce dripping downward, strands cascading back into the bowl — whi (beauty)
+- Front angle puts the parmesan mound and pasta bowl at eye-level, making the cheese pile read as a distinct, identifiable (ingredient)
+- Front angle captures the bowl-toward-camera slide gesture — the depth of the parmesan-topped pasta and the hand's presen ()
+- Front angle captures the three-dimensional rise of the grill pan, the caramelized sear marks on the chicken surface, and (beauty_opener)
+- The front angle preserves the vertical pour trajectory — you see the oil stream's arc from hand to bowl surface and the  (ingredient)
+- The front angle preserves the vertical depth of the pour — the oil stream falling through space onto the garlic — which  (ingredient)
+- Front/eye-level captures the vertical arc of the pour — the hand tipping, the sugar falling in a cascade — which is the  (ingredient)
+- The front angle shows the pour arc and liquid trajectory into the bowl — height, fall distance, and the splash/bubble re (ingredient)
+- Front angle captures the thick mustard paste falling as a vertical stream into the bowl, showing its dense, heavy textur (ingredient)
+- Front angle captures the wrist and forearm mechanics of whisking — the rotation, the bowl-stabilizing hand, and the liqu (ingredient)
+- The front angle captures the vertical arc and mid-air sauce stream as it falls from the bowl into the bag, giving the po (technique)
+- Front angle captures the pressing motion of the hand against the chicken surface — the downward force and paper towel co (ingredient)
+- Front/eye-level captures the horizontal pressing motion of both hands working the zip closure — overhead would flatten t ()
+- Front angle captures the bilateral hand pressure and lateral squeezing motion across the bag's surface — an overhead wou ()
+- Front angle shows the hands-over-bowl seasoning gesture at eye level, preserving the visual depth of salt/pepper falling (ingredient)
+- Front angle puts the tongs-to-grill-surface relationship at eye level, making the placement technique (angle of approach ()
+- Front angle captures the marinade sheen, steam rising off the grill surface, and the horizontal char lines on the chicke ()
+- Front angle shows the chicken's thickness, grill mark depth, and steam rising off the surface in profile — overhead woul ()
+- Front angle captures the vertical drama of the flip — tongs lifting and the seared underside catching light — while over ()
+- Front/eye-level isolates the three-dimensional texture of the grill marks and the glistening surface sheen — overhead wo ()
+- Front angle captures the tongs gripping the grilled chicken at eye level, making the char texture, glistening surface, a ()
+- Front angle captures the tactile mechanics of paper towel pressing against chicken skin — the squeeze, absorption, and p (ingredient)
+- The front/eye-level angle reveals the three-dimensional height and texture of the plated chicken and herb garnish — a to (beauty)
+- Front angle puts the knife stroke and the chicken's cross-section in the same horizontal plane, revealing the juicy inte (beauty)
+- Front/eye-level is the only angle that captures the cut face of the chicken — the juicy interior cross-section that prov (beauty)
 
 **Camera preference by beat type:**
-- : front 0/1 (0%), overhead 1/1 (100%)
-- beauty: front 2/2 (100%), overhead 0/2 (0%)
-- ingredient: front 11/18 (61%), overhead 7/18 (39%)
-- match_cut: front 2/3 (67%), overhead 1/3 (33%)
-- technique: front 7/9 (78%), overhead 2/9 (22%)
-- transformation_from: front 2/3 (67%), overhead 1/3 (33%)
+- : front 13/14 (93%), overhead 1/14 (7%)
+- beauty: front 4/5 (80%), overhead 1/5 (20%)
+- beauty_opener: front 2/2 (100%), overhead 0/2 (0%)
+- ingredient: front 16/27 (59%), overhead 11/27 (41%)
+- match_cut: front 3/4 (75%), overhead 1/4 (25%)
+- stop_motion: front 0/1 (0%), overhead 1/1 (100%)
+- technique: front 3/4 (75%), overhead 1/4 (25%)
+- transformation_from: front 1/2 (50%), overhead 1/2 (50%)
 
 ### Pacing Rules
-- : avg 1.2s (range 1.2-1.2s, n=1)
-- beauty: avg 1.3s (range 1.1-1.4s, n=2)
-- ingredient: avg 1.2s (range 0.2-1.7s, n=18)
-- match_cut: avg 1.2s (range 1.0-1.4s, n=3)
-- technique: avg 1.4s (range 1.0-1.8s, n=9)
-- transformation_from: avg 1.0s (range 0.2-1.4s, n=3)
+- : avg 1.4s (range 0.8-4.1s, n=14)
+- beauty: avg 1.6s (range 1.1-2.9s, n=5)
+- beauty_opener: avg 3.9s (range 3.9-3.9s, n=2)
+- ingredient: avg 1.4s (range 0.5-5.2s, n=27)
+- match_cut: avg 1.0s (range 0.9-1.1s, n=4)
+- stop_motion: avg 0.8s (range 0.8-0.8s, n=1)
+- technique: avg 1.2s (range 0.7-1.7s, n=4)
+- transformation_from: avg 1.1s (range 0.8-1.4s, n=2)
 
-- [beauty, 1.1s] 1.1s is on the short end for a beauty beat (typical range 1.0–2.0s), but appropriate here because this is the opening sh
-- [technique, 1.3s] 1.3s is tight but appropriate for a single-action technique beat — the crush is one committed gesture with a clear befor
-- [ingredient, 1.5s] 1.5s is slightly long for a pure ingredient drop (1.0–1.2s is more typical), which suggests the editor was either lettin
-- [ingredient, 1.3s] 1.3s is lean but correct for a placement/scatter beat — the action is instantaneous (hand enters, ingredient lands, hand
-- [transformation_from, 1.4s] 1.4s is consistent with the surrounding rhythm (1.3s before, 1.2s after) — the editor isn't stretching this, just holdin
-- [match_cut, 1.2s] 1.2s is tight for a match_cut, but appropriate here because the cloves are essentially static at the in-point — there's 
-- [technique, 1.8s] 1.8s is tight but appropriate. The VLM confirms at 22.0s the nuts have already settled — so there's roughly 0.8s of acti
-- [technique, 1.1s] 1.1s is tight but appropriate — plucking a single leaf cluster is a single discrete gesture with a clear start and end, 
-- [technique, 1.0s] 1.0s is tight but appropriate for a pour action that has a clear visual arc — the ingredients fall, scatter, and settle.
-- [ingredient, 1.0s] 1.0s is tight but appropriate for a single discrete action (a drop); the beat doesn't need to breathe because there's no
-- [ingredient, 0.8s] 0.8s is tight but appropriate for an ingredient-drop beat — long enough to register the action (nuts leaving hand, enter
-- [transformation_from, 0.2s] 0.2s is extremely short — essentially a flash cut, which is deliberate. For a `transformation_from` beat type, the edito
-- [match_cut, 1.0s] 1.0s is tight but deliberate for a match_cut — long enough to register the motion peak (mid-pour with zest in free-fall)
-- [ingredient, 1.5s] 1.5s is short but defensible for a stuffing beat — the gesture has one clear motion arc (push down, release) and doesn't
-- [match_cut, 1.4s] 1.4s is a tight but deliberate hold for a match cut — long enough to let the cascade motion complete its visual peak and
-- [ingredient, 1.6s] 1.6s is a deliberate short hold for a closing beat — long enough to let the viewer land on the finished dish as a satisf
-- [, 1.2s] 1.2s is on the short end for a technique beat, which normally wants 1.5–2s to register knife contact and follow-through.
-- [ingredient, 1.7s] 1.7s is slightly long for a straightforward ingredient drop but justified here because the "add" action is dynamic — it 
-- [ingredient, 1.1s] 1.1s is tight but appropriate for a pour beat — arguably the minimum needed to register the action without dragging. A p
-- [ingredient, 1.3s] 1.3s is moderate-short for an ingredient beat — enough to read "spoon hits chicken, gets dragged" without lingering. The
-- [ingredient, 0.2s] 0.2s is extremely short — essentially a flash cut, well below the typical 0.5–1.0s floor for ingredient beats. The hold 
-- [ingredient, 1.5s] 1.5s is on the shorter end for an ingredient beat but appropriate here because the action has a clear completion point —
-- [technique, 1.5s] 1.5s is tight but correct for this clip's motion arc: the tongs enter at ~5.0s, complete the grip, and exit before 6.0s 
-- [technique, 1.6s] 1.6s sits squarely in the middle of the surrounding beats (1.5s and 1.7s), which signals the editor is maintaining rhyth
+- [beauty_opener, 3.9s] 3.9s accommodates two full title card reads (logo + recipe name) while the 50% speed ramp stretches roughly 2s of source
+- [ingredient, 1.3s] 1.3s is the minimum hold needed to read the ingredient text overlay and register the subject before the energy accelerat
+- [transformation_from, 1.4s] 1.4s covers the knife-in-motion entry and lands just as the action resolves, giving the viewer two distinct visual beats
+- [ingredient, 1.2s] 1.2s captures the single gesture (release → settle) without holding on a static result; the next beat carries a text ove
+- [ingredient, 1.8s] The clip is locked to the Mogrt window exactly: 9.5s − 7.7s = 1.8s, so the front angle holds precisely as long as "Raw p
+- [match_cut, 1.1s] 1.1s is long enough to register one full stir stroke and confirm the golden state, but short enough to cut before the mo
+- [technique, 1.0s] 1.0s isolates the single visual moment of transfer completion (bowl lifting away, contents settled) without holding on s
+- [technique, 1.3s] 1.3s covers exactly one display gesture — the clove raised, seen, done — long enough to register the clean skin-off surf
+- [ingredient, 1.0s] 1.0s covers exactly the drop event (clove mid-fall to cloves settled) and exits into the pine nuts pour, sustaining the 
+- [ingredient, 1.2s] 1.2s holds just long enough to register the active cascade without reaching the thinning tail of the pour, exiting clean
+- [match_cut, 1.0s] One second is exactly long enough to register the motion blur and spinning action without resolving the texture, creatin
+- [transformation_from, 0.8s] 0.8s is a single music beat serving as a punctuation cut — the lid-reveal action reads immediately from overhead, so any
+- [ingredient, 1.3s] 1.3s spans exactly the "Fresh basil" text overlay window (16.9s–18.1s covers ~1.2s of the cut), matching one musical phr
+- [ingredient, 1.0s] 1.0s spans exactly the active pour window (zest in motion from bowl to processor), covering the peak visual moment witho
+- [ingredient, 1.2s] 1.2s covers the peak of the pour action (cheese mid-fall at 49.0s through the pile growing at 50.0s) without lingering t
+- [match_cut, 1.0s] One second lands on a single beat pulse, registering the active blending motion just long enough to read "transformation
+- [ingredient, 0.8s] 0.8s lands on a single beat subdivision, functioning as a punctuation flash between the previous front clip and the over
+- [match_cut, 0.9s] 0.9s is just long enough to register the smooth green texture and confirm the transformation is complete before cutting 
+- [ingredient, 1.5s] 1.5s matches the MOGRT window exactly (23.1s–24.6s), giving the viewer one full read of "Extra-virgin olive oil" against
+- [ingredient, 1.4s] 1.4s is locked to the Mogrt overlay span (24.6s–26.0s exactly), so the clip lives and dies with the text. Within that wi
+- [, 1.0s] 1.0s is a single phrase-beat off the previous 1.4s text-overlay ingredient shot — long enough to register active blendin
+- [beauty, 1.1s] 1.1s is a single musical beat hold — long enough for the eye to read "finished, beautiful" but short enough that it func
+- [technique, 0.7s] 0.7s captures exactly one gesture arc — spatula over jar, dollop released — then cuts before the spatula retreats, keepi
+- [, 0.8s] 0.8s matches the surrounding cut rhythm (0.7s before, 1.3s after) and treats this as a punctuation frame — long enough t
+- [, 1.3s] At 50% base speed, 1.3s of screen time covers ~2.6s of source action, which is exactly enough to hold the pesto-landing 
+- [, 1.5s] 1.5s at 50% base speed stretches roughly 0.75s of source action into a slowed beat, giving the pesto-landing image enoug
+- [beauty, 1.4s] 1.4s lands the cut on a musical phrase boundary after the previous speed-ramped clip, long enough to register the cascad
+- [ingredient, 1.6s] 1.6s is a direct lock to the Ingredient Text MOGRT window (33.8s–35.4s = 1.6s exactly) — the clip is trimmed to the grap
+- [, 4.1s] 4.1s of timeline holds the entire end-card lock-up; the 50% speed ramp stretches the 4.1s source span (389.1–393.2s) int
+- [beauty_opener, 3.9s] 3.9s holds across a full musical phrase so both title cards (logo + recipe name) have time to register and exit without 
+- [ingredient, 1.5s] 1.5s spans exactly the active pour gesture: oil stream in, pool forming, hand withdrawing — the beat ends on settled sti
+- [ingredient, 1.2s] 1.2s is one musical sub-phrase sandwiched between a 1.5s and 1.1s beat, creating a slight deceleration-then-acceleration
+- [ingredient, 1.1s] The 50% speed ramp stretches ~0.55s of source footage to 1.1s, slowing the pour at its most visually dynamic moment (liq
+- [ingredient, 1.3s] 1.3s is sized exactly to the MOGRT window (7.7s–9.0s), and it spans the two readable states of the action: sugar mid-fal
+- [ingredient, 1.1s] At 455% speed, 1.1s of timeline consumes ~5s of source footage (13.4s–~18.4s), fast enough to read as a flash-cut ingred
+- [ingredient, 1.3s] 1.3s is pinned to the MOGRT window exactly (10.1s–11.4s), so the clip is duration-locked to the text card — it lives and
+- [ingredient, 1.0s] The MOGRT text overlay runs exactly 11.4–12.4s (1.0s), so the clip duration is mechanically locked to the graphic — the 
+- [ingredient, 5.2s] 5.2s spans exactly the four MOGRT text card cycles (13.1s–17.6s), giving each ingredient label its own hold beat while t
+- [ingredient, 0.9s] 0.9s is long enough to read the pepper-on-surface image before the whisk enters, but cuts before active mixing begins, p
+- [ingredient, 1.3s] 1.3s is long enough to register one full whisk stroke cycle without letting the static bowl composition overstay; coming
+- [technique, 1.7s] At 112.486% playback, 1.7s of screen time consumes ~1.91s of source footage across the 5.9–7.5s ramp window — long enoug
+- [ingredient, 1.1s] 1.1s is one musical phrase unit — long enough to anchor the "Dijon mustard" text read, short enough to cut before the st
+- [ingredient, 1.3s] 1.3s holds just long enough for one complete press-and-lift cycle of the patting motion, giving the action a full beat b
+- [stop_motion, 0.8s] 0.8s is exactly long enough to register the stop-motion effect as intentional rhythm rather than a glitch, while short e
+- [ingredient, 0.5s] 0.5s is a flash registration cut — the overhead exists only to break the front-angle lock established by the surrounding
+- [, 0.8s] 0.8s covers exactly the closure press action (0.4–1.2s of source) before the bag-lift at 2.0s, landing on a single beat 
+- [, 1.2s] 1.2s holds just long enough to register both hands fully engaged across the bag without dwelling past the gesture's read
+- [ingredient, 1.5s] 1.5s matches the musical phrase length for a single-action ingredient beat; long enough to register pepper grinding as a
+- [, 1.5s] 1.5s covers exactly one placement action: tongs enter, chicken contacts grill, tongs release — cutting any longer would 
+- [, 1.1s] 1.1s is a punctuation cut in a money-shot sequence — long enough to register the glistening chicken and rising steam, sh
+- [, 1.6s] 1.6s is just long enough to register the chicken settled post-flip without tongs — one clean hold that reads as "done" b
+- [, 1.3s] 1.3s is just long enough to register the flip and the reveal of the caramelized underside before the next beat (same cli
+- [, 1.1s] 1.1s at 50% speed consumes only ~0.55s of source footage, compressing the actual clock time while stretching the perceiv
+- [, 1.5s] 1.5s is one short musical phrase in a late-edit context, long enough to register the tongs entering, gripping, and lifti
+- [ingredient, 1.6s] 1.6s spans the complete gesture cycle — contact, press, and pull-away — which maps to a single musical phrase; cutting s
+- [, 1.2s] 1.2s is a single-beat punctuation hold: long enough to register the finished dish as a beauty frame, short enough to den
+- [beauty, 1.2s] 1.2s matches the previous beat exactly, creating a paired symmetry (overhead → front at equal length) that reads as a de
+- [beauty, 1.7s] 1.7s is long enough to read the accumulated slices and the wet interior detail, but short enough to maintain the punchy 
+- [beauty, 2.9s] 2.9s is long enough for the viewer to absorb the texture detail at a beauty-close focal length without cutting away befo
 
 ### In-point / Action Timing Rules
-- [beauty] The editor chose 109.4s, bypassing the pipeline's 64.5s suggestion and the VLM-described jar-filling moments (51–65s). T
-- [technique] The 17.8s in-point likely catches the knife already positioned on the garlic — skipping setup and dead frames — so the c
-- [ingredient] Without accurate VLM data for this in-point I can't confirm the visual state at 176.4s. In well-cut recipe videos, garli
-- [ingredient] At 20.9s, the hand is mid-motion entering the frame (per VLM at 20.0s) with the ingredient already visible, landing at 2
-- [transformation_from] The 30.9s cut lands right at the moment of renewed action — at 31.0s the knife is already mid-descent. The editor is avo
-- [match_cut] Cutting at 9.5s lands just after the hands release the cloves (9.0s has hands mid-peel, 10.0s shows cloves at rest) — th
-- [technique] 21.2s vs the pipeline's 21.0s is a deliberate 6-frame trim. At 21.0s the VLM describes nuts "mid-fall, over the garlic" 
-- [technique] The editor cut in 0.2s earlier than the pipeline's 4.0s, likely to catch the moment the hand first reaches toward the st
-- [technique] Cutting in at 16.8s rather than the pipeline's 16.0s skips the setup (bowl tilting, ingredients beginning to slide) and 
-- [ingredient] The 47.3s in-point appears to cut in slightly before the peak of the drop action, likely landing on the moment the hand 
-- [ingredient] Cutting at 77.5s catches the lid being lifted off — the processor is just becoming accessible. This frames the beat as "
-- [transformation_from] Cutting in at 8.6s lands on the frame described at [8.0s] — basil already resting in the bowl over the brown mixture, ha
-- [match_cut] The editor cut in at 37.9s rather than the pipeline's 38.0s — 0.1s earlier, catching the onset of the pour rather than i
-- [ingredient] Worth flagging directly — the VLM descriptions at 10s, 11s, and 13s all show yellow liquid (likely olive oil) still pour
-- [match_cut] Cutting in at 42.1s (pipeline suggested 40.0s, so trimmed ~2 seconds) means the editor is entering *mid-lift*, skipping 
-- [ingredient] Cutting in at 26.8s drops the viewer into the shot right when the close-up is fully settled and cheese coverage is maxim
-- [] 28.8s lands right as the platter bottom edge re-enters frame from below — the first frame of visible motion returning. C
-- [ingredient] Cutting in at 5.9s means entering just as the pour begins, not before it. At 5.0s the bowl is in ready position — that's
-- [ingredient] Cutting in at 8.1s catches the tray just as it's been set and steadied on the marble — hands present, surface stable, co
-- [ingredient] Cutting at 21.1s rather than earlier skips any pre-action setup (reaching for the spoon, bowl fumbling) and enters at fi
-- [ingredient] Cutting in at 8.7s suggests the editor is entering mid-motion — the hand is already in the sprinkle gesture and spice is
-- [ingredient] Cutting at 43.0s catches the tongs mid-entry, which is a strong visual entry point — motion is already happening so ther
-- [technique] Cutting in at 4.8s — approximately 200ms before the tongs appear at 5.0s — uses the static plate as a visual breath befo
-- [technique] The editor cut in at 95.1s versus the pipeline's 87.0s — 8 seconds later. The VLM shows the platter leaving frame at 93s
+- [beauty_opener] 109.4s is the frame where the pesto stream is actively mid-fall into the jar — the peak motion moment that immediately s
+- [ingredient] At 20.9s the hand has just finished placing the cloves and is withdrawing, so the first usable frame shows the ingredien
+- [transformation_from] 30.9s enters mid-descent with the blade already angled and moving, dropping directly into kinetic action and skipping th
+- [ingredient] 9.5s catches the cloves mid-release while hands are still in frame — the motion is live, not complete, giving the cut ki
+- [ingredient] 21.2s lands in the middle of the active pour — nuts already airborne over the garlic — skipping the static wind-up and e
+- [match_cut] 3.8s catches the spoon just as it enters frame and initiates contact with the nuts, giving the edit a clean motion-start
+- [technique] 16.8s lands mid-pour when nuts are actively airborne and falling — 16.0s opens on the bowl just beginning to tilt (too e
+- [technique] 62.1s lands on the completed reveal: second clove fully peeled and held aloft, first clove already resting on the plate 
+- [ingredient] 4.1s enters with the garlic already mid-fall and a second clove visible above — skipping the empty bowl (0.0s) and the s
+- [ingredient] 11.2s drops in at peak stream volume — the bowl is still tilted with a full flow of nuts mid-air — skipping the initial 
+- [match_cut] At 47.3s the contents are already a fine uniform powder in vigorous motion — the editor cut in here (not the pipeline's 
+- [transformation_from] 77.5s catches the lid mid-removal with hands still in motion, giving the cut a kinetic entry rather than landing on the 
+- [ingredient] 8.6s lands after the hand has released the basil and exited frame, so the first visible frame is a clean still of the fu
+- [ingredient] 37.9s catches the pour at the precise onset — one frame past the static hold at 37.0s (bowl above, nothing moving) and o
+- [ingredient] 49.9s enters just as the cheese is actively cascading — mid-pour, not at the tilt initiation — so the first frame alread
+- [match_cut] 96.8s catches the blend mid-action with green and white chunks still visually distinct against the beige base — the last
+- [ingredient] 106.4s catches the processor mid-run with ingredients actively reducing — the oil drizzle begins into a moving, responsi
+- [match_cut] 165.7s catches the paste mid-blend with visible motion still present through the clear lid — the editor avoided starting
+- [ingredient] 11.8s drops into mid-pour with the stream already established and consistent, skipping any hesitation at the start of th
+- [ingredient] 63.8s catches the salt already in active freefall, mid-stream, so the first visible frame is the climax of the action ra
+- [] 70.3s lands mid-active-blend where splatter is visible on the bowl walls, confirming the machine is running and the salt
+- [beauty] 15.7s catches the lid mid-removal with motion blur still in frame, giving the cut a dynamic entry — starting at 16.0s (l
+- [technique] 11.8s enters with the paste stream already formed and actively hitting the jar's bottom (between the 11.0s mid-fall and 
+- [] 54.7s lands after the active pour has settled, giving a clean static frame of the nearly-full jar with the drip frozen o
+- [] 94.9s is chosen because the source footage shows the jar fully stationary just before this (54–55s VLM shows no motion),
+- [] 14.5s is the first frame after the pour fully arrests — the sauce has settled into static dollops, so the editor cuts in
+- [beauty] 42.1s enters just past the static held-bundle moment (42.0s) and before the full vertical peak (43.0s), catching the pas
+- [ingredient] 26.8s lands after the cheese has fully settled into a thick static pile on the pasta (the 26.0s frame shows full coverag
+- [] 389.1s is the exact frame where the hand initiates the push-toward-camera, capturing the gesture from its origin rather 
+- [beauty_opener] 32.8s drops in just as the tongs finish the flip and leave frame — the departing motion provides a kinetic cut-in, then 
+- [ingredient] 24.0s is chosen mid-fall while the garlic is still airborne, so the clip opens on motion rather than static product, giv
+- [ingredient] 40.2s enters the clip while the oil is actively mid-pour, so the first frame already has motion — the viewer gets kineti
+- [ingredient] 100.5s enters on active motion — the pour is already falling — skipping any static setup and landing directly on the act
+- [ingredient] 58.4s catches the sugar still airborne, mid-pour arc — the most kinetic frame available; starting at 57.0s would open on
+- [ingredient] 13.4s is the first frame the oil stream enters the overhead frame, cutting in at peak visual interest before the pour be
+- [ingredient] 65.8s catches the liquid stream mid-fall and mid-pour, with the sugar already beginning to dissolve — the surface is act
+- [ingredient] 73.7s lands at the instant the paste breaks from the container and begins its fall — skipping the static "hand poised ab
+- [ingredient] Source 0.0s drops in at the first clean overhead frame of the empty-ish bowl just before cumin arrives, establishing the
+- [ingredient] 111.9s lands after the powder has settled but before the whisk touches the surface — the pepper is fully visible on top 
+- [ingredient] 154.9s lands with the whisk already in mid-motion and the marinade fully combined — no ramp-up lag, the action reads ins
+- [technique] 5.9s catches the sauce stream just as it becomes fully visible mid-fall (between the setup at 5.0s and the full stream a
+- [ingredient] 8.1s catches the tray landing and hands releasing, giving a brief moment of settling motion that reads as "presenting" t
+- [ingredient] 21.1s drops into the hand already mid-press on the chicken, skipping the reach-down setup so the cut opens on committed 
+- [stop_motion] 8.7s catches the overhead bowl before the chicken lands, giving the stop-motion sequence a clean, static base frame to s
+- [ingredient] 30.5s lands mid-action as the ninth piece is dropping in, between the settled 8-piece frame (29s) and the fully-placed 9
+- [] 0.4s enters mid-press with both hands already engaged on the blue/purple closure, skipping any approach frames and dropp
+- [] At 5.0s both hands are mid-press with full contact across the bag surface, catching the motion at maximum spread rather 
+- [ingredient] 10.9s lands at the tail of the bag-lift gesture — the hands are committing to removing the bag from frame, giving the cu
+- [] 43.0s catches the tongs mid-air before contact, giving the viewer a beat of anticipation before the sizzle-implying plac
+- [] 26.4s lands on the chicken fully settled and static after placement, with steam already rising and marinade visibly glis
+- [] 32.5s lands a half-second after the flip completes and the tongs exit frame, so the clip opens on stillness rather than 
+- [] 41.3s catches the chicken mid-settle after the flip, the moment the seared grill marks are fully exposed and steam is ac
+- [] 128.7s lands at the frame where the grill marks are at peak darkness and definition (VLM confirms "darker and more defin
+- [] 4.8s lands just before the tongs enter at 5.0s — the clip opens on a static hold of the plated chicken and the tongs swe
+- [ingredient] 95.1s lands just before the paper towel makes first contact with the thigh, starting the action at the beginning of the 
+- [] At 28.8s the platter has just re-settled fully into frame after being moved back into view (the entry motion resolves be
+- [beauty] 30.5s is chosen because by this frame the hand has fully exited and the platter is completely motionless — 29.0s still h
+- [beauty] 30.9s catches the knife mid-stroke with multiple slices already fanned on the board — the action is already committed an
+- [beauty] 54.8s lands after the blur at 52.0s and the refocus wobble at 53.0s, entering on the first stable, slightly-zoomed frame
 
 ### Known Pipeline Failures
-**added** (7 beats):
+**added** (23 beats):
 - stirring garlic and pine nuts in skillet — pipeline: 
-- sprinkling grated Parmesan — pipeline: 
-- pulsing the leafy mixture — pipeline: 
-- glistening grilled chicken thighs garnished with fresh herbs — pipeline: 
-- spooning Dijon mustard — pipeline: 
-- ... and 2 more
+- TRANSFORMATION: pulsing until finely minced and uniform — pipeline: 
+- drizzling olive oil into running processor — pipeline: 
+- TRANSFORMATION: processing until smooth and emulsified — pipeline: 
+- ingredient beat (1 clips under text overlay) — pipeline: 
+- ... and 18 more
 
-**trimmed** (17 beats):
-- vibrant green pesto coating twisted pasta — pipeline: B19I6413.mov @ 64.5s (front)
-- crushing unpeeled garlic with side of chef's knife — pipeline: B19I6415.mov @ 55.0s (front)
-- dropping unpeeled garlic into skillet — pipeline: AI2I5202.mov @ 191.0s (overhead)
-- scattering pine nuts into skillet — pipeline: AI2I5184.mov @ 39.0s (overhead)
-- grating Parmesan cheese — pipeline: B19I6407.mov @ 19.0s (front)
-- ... and 12 more
+**trimmed** (18 beats):
+- peeling toasted garlic cloves — pipeline: B19I6407.mov @ 19.0s (front)
+- TRANSFORMATION: pulsing until resembling wet sand — pipeline: B19I6409.mov @ 50.0s (front)
+- pulsing garlic and nuts in processor — pipeline: AI2I5192.mov @ 47.0s (overhead)
+- ingredient beat (3 clips under text overlay) — pipeline: 
+- ingredient beat (1 clips under text overlay) — pipeline: 
+- ... and 13 more

@@ -1,0 +1,1514 @@
+{
+  "source": "premiere_xml",
+  "source_file": "../../Recipe XMLs/Chicken Thighs_FINAL.xml",
+  "sequence_settings": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 23.976023976023978
+  },
+  "timeline": [
+    {
+      "beat_index": 0,
+      "v1": {
+        "file": "B19I6691.mov",
+        "in": 32.824,
+        "out": 34.243,
+        "timeline_in_sec": 0.0,
+        "timeline_out_sec": 1.418,
+        "duration_sec": 1.418,
+        "duration_frames": 34
+      },
+      "v2": null,
+      "timeline_in_sec": 0.0,
+      "timeline_out_sec": 1.418
+    },
+    {
+      "beat_index": 1,
+      "v1": {
+        "file": "AI2I5462.mov",
+        "in": 28.779,
+        "out": 29.947,
+        "timeline_in_sec": 1.418,
+        "timeline_out_sec": 2.586,
+        "duration_sec": 1.168,
+        "duration_frames": 28,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 687,
+                  "time_sec": 28.654,
+                  "value": 100.0
+                },
+                {
+                  "frame": 724,
+                  "time_sec": 30.197,
+                  "value": 136.0
+                }
+              ],
+              "start_value": 100.0,
+              "end_value": 136.0
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 1.418,
+      "timeline_out_sec": 2.586
+    },
+    {
+      "beat_index": 2,
+      "v1": {
+        "file": "B19I6695.mov",
+        "in": 31.323,
+        "out": 32.616,
+        "timeline_in_sec": 2.586,
+        "timeline_out_sec": 3.879,
+        "duration_sec": 1.293,
+        "duration_frames": 31,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 63.0,
+              "editorial_note": "punch-in/crop (63.0% vs 50% baseline)"
+            },
+            "position": {
+              "type": "static",
+              "horiz": -0.0380208,
+              "vert": -0.0555555
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 2.586,
+      "timeline_out_sec": 3.879
+    },
+    {
+      "beat_index": 3,
+      "v1": {
+        "file": "B19I6669.mov",
+        "in": 24.024,
+        "out": 25.525,
+        "timeline_in_sec": 3.879,
+        "timeline_out_sec": 5.38,
+        "duration_sec": 1.501,
+        "duration_frames": 36
+      },
+      "v2": null,
+      "timeline_in_sec": 3.879,
+      "timeline_out_sec": 5.38
+    },
+    {
+      "beat_index": 4,
+      "v1": {
+        "file": "B19I6669.mov",
+        "in": 40.207,
+        "out": 41.375,
+        "timeline_in_sec": 5.38,
+        "timeline_out_sec": 6.548,
+        "duration_sec": 1.168,
+        "duration_frames": 28
+      },
+      "v2": null,
+      "timeline_in_sec": 5.38,
+      "timeline_out_sec": 6.548
+    },
+    {
+      "beat_index": 5,
+      "v1": {
+        "file": "AI2I5438.mov",
+        "in": 100.517,
+        "out": 101.643,
+        "timeline_in_sec": 6.548,
+        "timeline_out_sec": 7.674,
+        "duration_sec": 1.126,
+        "duration_frames": 27,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 66.0,
+              "editorial_note": "punch-in/crop (66.0% vs 50% baseline)"
+            }
+          },
+          "speed": {
+            "speed_percent": 50.0,
+            "reverse": false,
+            "type": "speed_ramp",
+            "keyframes": [
+              {
+                "frame": 0,
+                "time_sec": 0.0,
+                "value": 0,
+                "type": "start"
+              },
+              {
+                "frame": 2410,
+                "time_sec": 100.517,
+                "value": 1205,
+                "type": "ramp_in"
+              },
+              {
+                "frame": 2437,
+                "time_sec": 101.643,
+                "value": 1218,
+                "type": "ramp_out"
+              },
+              {
+                "frame": 7956,
+                "time_sec": 331.831,
+                "value": 3978,
+                "type": "end"
+              }
+            ]
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 6.548,
+      "timeline_out_sec": 7.674
+    },
+    {
+      "beat_index": 6,
+      "v1": {
+        "file": "B19I6669.mov",
+        "in": 58.35,
+        "out": 59.685,
+        "timeline_in_sec": 7.674,
+        "timeline_out_sec": 9.009,
+        "duration_sec": 1.335,
+        "duration_frames": 32
+      },
+      "v2": null,
+      "timeline_in_sec": 7.674,
+      "timeline_out_sec": 9.009
+    },
+    {
+      "beat_index": 7,
+      "v1": {
+        "file": "AI2I5438.mov",
+        "in": 13.43,
+        "out": 14.514,
+        "timeline_in_sec": 9.009,
+        "timeline_out_sec": 10.135,
+        "duration_sec": 1.126,
+        "duration_frames": 27,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 66.0,
+              "editorial_note": "punch-in/crop (66.0% vs 50% baseline)"
+            }
+          },
+          "speed": {
+            "speed_percent": 455.556,
+            "reverse": false,
+            "type": "speed_ramp",
+            "keyframes": [
+              {
+                "frame": 0,
+                "time_sec": 0.0,
+                "value": 0,
+                "type": "start"
+              },
+              {
+                "frame": 322,
+                "time_sec": 13.43,
+                "value": 1466,
+                "type": "ramp_in"
+              },
+              {
+                "frame": 348,
+                "time_sec": 14.514,
+                "value": 1585,
+                "type": "ramp_out"
+              },
+              {
+                "frame": 873,
+                "time_sec": 36.411,
+                "value": 3977,
+                "type": "end"
+              }
+            ]
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 9.009,
+      "timeline_out_sec": 10.135
+    },
+    {
+      "beat_index": 8,
+      "v1": {
+        "file": "B19I6669.mov",
+        "in": 65.774,
+        "out": 67.025,
+        "timeline_in_sec": 10.135,
+        "timeline_out_sec": 11.386,
+        "duration_sec": 1.251,
+        "duration_frames": 30
+      },
+      "v2": null,
+      "timeline_in_sec": 10.135,
+      "timeline_out_sec": 11.386
+    },
+    {
+      "beat_index": 9,
+      "v1": {
+        "file": "B19I6669.mov",
+        "in": 73.699,
+        "out": 74.741,
+        "timeline_in_sec": 11.386,
+        "timeline_out_sec": 12.429,
+        "duration_sec": 1.043,
+        "duration_frames": 25
+      },
+      "v2": null,
+      "timeline_in_sec": 11.386,
+      "timeline_out_sec": 12.429
+    },
+    {
+      "beat_index": 10,
+      "v1": {
+        "file": "[NEST] Nest - Chicken thighs",
+        "nested": true,
+        "nest_name": "Nest - Chicken thighs",
+        "in": 0.0,
+        "out": 5.214,
+        "timeline_in_sec": 12.429,
+        "timeline_out_sec": 17.643,
+        "duration_sec": 5.214,
+        "duration_frames": 125,
+        "inner_clips": [
+          {
+            "file": "AI2I5438.mov",
+            "in": 84.751,
+            "out": 85.46,
+            "timeline_in_sec": 0.0,
+            "timeline_out_sec": 0.709,
+            "duration_sec": 0.709,
+            "duration_frames": 17
+          },
+          {
+            "file": "AI2I5438.mov",
+            "in": 91.675,
+            "out": 92.759,
+            "timeline_in_sec": 0.709,
+            "timeline_out_sec": 1.793,
+            "duration_sec": 1.084,
+            "duration_frames": 26
+          },
+          {
+            "file": "AI2I5438.mov",
+            "in": 96.847,
+            "out": 97.889,
+            "timeline_in_sec": 1.793,
+            "timeline_out_sec": 2.836,
+            "duration_sec": 1.043,
+            "duration_frames": 25
+          },
+          {
+            "file": "AI2I5438.mov",
+            "in": 104.021,
+            "out": 105.063,
+            "timeline_in_sec": 2.836,
+            "timeline_out_sec": 3.879,
+            "duration_sec": 1.043,
+            "duration_frames": 25
+          },
+          {
+            "file": "AI2I5438.mov",
+            "in": 107.357,
+            "out": 108.692,
+            "timeline_in_sec": 3.879,
+            "timeline_out_sec": 5.214,
+            "duration_sec": 1.335,
+            "duration_frames": 32
+          }
+        ],
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 0,
+                  "time_sec": 0.0,
+                  "value": 128.0
+                },
+                {
+                  "frame": 129,
+                  "time_sec": 5.38,
+                  "value": 140.0
+                }
+              ],
+              "start_value": 128.0,
+              "end_value": 140.0
+            },
+            "position": {
+              "type": "static",
+              "horiz": -0.5,
+              "vert": -0.5
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 12.429,
+      "timeline_out_sec": 17.643
+    },
+    {
+      "beat_index": 11,
+      "v1": {
+        "file": "AI2I5438.mov",
+        "in": 111.862,
+        "out": 112.779,
+        "timeline_in_sec": 17.643,
+        "timeline_out_sec": 18.56,
+        "duration_sec": 0.918,
+        "duration_frames": 22
+      },
+      "v2": null,
+      "timeline_in_sec": 17.643,
+      "timeline_out_sec": 18.56
+    },
+    {
+      "beat_index": 12,
+      "v1": {
+        "file": "B19I6669.mov",
+        "in": 154.863,
+        "out": 156.156,
+        "timeline_in_sec": 18.56,
+        "timeline_out_sec": 19.853,
+        "duration_sec": 1.293,
+        "duration_frames": 31
+      },
+      "v2": null,
+      "timeline_in_sec": 18.56,
+      "timeline_out_sec": 19.853
+    },
+    {
+      "beat_index": 13,
+      "v1": {
+        "file": "B19I6670.mov",
+        "in": 5.881,
+        "out": 7.549,
+        "timeline_in_sec": 19.853,
+        "timeline_out_sec": 21.521,
+        "duration_sec": 1.668,
+        "duration_frames": 40,
+        "effects": {
+          "motion": {
+            "position": {
+              "type": "static",
+              "horiz": -0.0101562,
+              "vert": -0.0291667
+            }
+          },
+          "speed": {
+            "speed_percent": 112.486,
+            "reverse": false,
+            "type": "speed_ramp",
+            "keyframes": [
+              {
+                "frame": 0,
+                "time_sec": 0.0,
+                "value": 0,
+                "type": "start"
+              },
+              {
+                "frame": 141,
+                "time_sec": 5.881,
+                "value": 141,
+                "type": "ramp_in"
+              },
+              {
+                "frame": 148,
+                "time_sec": 6.173,
+                "value": 148,
+                "type": null
+              },
+              {
+                "frame": 150,
+                "time_sec": 6.256,
+                "value": 157,
+                "type": null
+              },
+              {
+                "frame": 158,
+                "time_sec": 6.59,
+                "value": 213,
+                "type": null
+              },
+              {
+                "frame": 161,
+                "time_sec": 6.715,
+                "value": 224,
+                "type": null
+              },
+              {
+                "frame": 181,
+                "time_sec": 7.549,
+                "value": 243,
+                "type": "ramp_out"
+              },
+              {
+                "frame": 494,
+                "time_sec": 20.604,
+                "value": 555,
+                "type": "end"
+              }
+            ]
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 19.853,
+      "timeline_out_sec": 21.521
+    },
+    {
+      "beat_index": 14,
+      "v1": {
+        "file": "AI2I5440.mov",
+        "in": 8.05,
+        "out": 9.176,
+        "timeline_in_sec": 21.521,
+        "timeline_out_sec": 22.648,
+        "duration_sec": 1.126,
+        "duration_frames": 27,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 193,
+                  "time_sec": 8.05,
+                  "value": 61.0
+                },
+                {
+                  "frame": 219,
+                  "time_sec": 9.134,
+                  "value": 50.0
+                }
+              ],
+              "start_value": 61.0,
+              "end_value": 50.0
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 21.521,
+      "timeline_out_sec": 22.648
+    },
+    {
+      "beat_index": 15,
+      "v1": {
+        "file": "B19I6671.mov",
+        "in": 21.104,
+        "out": 22.397,
+        "timeline_in_sec": 22.648,
+        "timeline_out_sec": 23.941,
+        "duration_sec": 1.293,
+        "duration_frames": 31
+      },
+      "v2": null,
+      "timeline_in_sec": 22.648,
+      "timeline_out_sec": 23.941
+    },
+    {
+      "beat_index": 16,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 8.675,
+        "out": 8.884,
+        "timeline_in_sec": 23.941,
+        "timeline_out_sec": 24.149,
+        "duration_sec": 0.209,
+        "duration_frames": 5
+      },
+      "v2": null,
+      "timeline_in_sec": 23.941,
+      "timeline_out_sec": 24.149
+    },
+    {
+      "beat_index": 17,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 12.221,
+        "out": 12.304,
+        "timeline_in_sec": 24.149,
+        "timeline_out_sec": 24.233,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": null,
+      "timeline_in_sec": 24.149,
+      "timeline_out_sec": 24.233
+    },
+    {
+      "beat_index": 18,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 14.64,
+        "out": 14.723,
+        "timeline_in_sec": 24.233,
+        "timeline_out_sec": 24.316,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": null,
+      "timeline_in_sec": 24.233,
+      "timeline_out_sec": 24.316
+    },
+    {
+      "beat_index": 19,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 17.1,
+        "out": 17.184,
+        "timeline_in_sec": 24.316,
+        "timeline_out_sec": 24.399,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": null,
+      "timeline_in_sec": 24.316,
+      "timeline_out_sec": 24.399
+    },
+    {
+      "beat_index": 20,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 19.937,
+        "out": 20.02,
+        "timeline_in_sec": 24.399,
+        "timeline_out_sec": 24.483,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": null,
+      "timeline_in_sec": 24.399,
+      "timeline_out_sec": 24.483
+    },
+    {
+      "beat_index": 21,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 23.649,
+        "out": 23.732,
+        "timeline_in_sec": 24.483,
+        "timeline_out_sec": 24.566,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": null,
+      "timeline_in_sec": 24.483,
+      "timeline_out_sec": 24.566
+    },
+    {
+      "beat_index": 22,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 25.651,
+        "out": 25.734,
+        "timeline_in_sec": 24.566,
+        "timeline_out_sec": 24.65,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": null,
+      "timeline_in_sec": 24.566,
+      "timeline_out_sec": 24.65
+    },
+    {
+      "beat_index": 23,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 27.527,
+        "out": 27.611,
+        "timeline_in_sec": 24.65,
+        "timeline_out_sec": 24.733,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": null,
+      "timeline_in_sec": 24.65,
+      "timeline_out_sec": 24.733
+    },
+    {
+      "beat_index": 24,
+      "v1": {
+        "file": "AI2I5441.mov",
+        "in": 30.489,
+        "out": 30.989,
+        "timeline_in_sec": 24.733,
+        "timeline_out_sec": 25.234,
+        "duration_sec": 0.5,
+        "duration_frames": 12
+      },
+      "v2": null,
+      "timeline_in_sec": 24.733,
+      "timeline_out_sec": 25.234
+    },
+    {
+      "beat_index": 25,
+      "v1": {
+        "file": "B19I6673.mov",
+        "in": 0.375,
+        "out": 1.21,
+        "timeline_in_sec": 25.234,
+        "timeline_out_sec": 26.068,
+        "duration_sec": 0.834,
+        "duration_frames": 20,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 61.0,
+              "editorial_note": "punch-in/crop (61.0% vs 50% baseline)"
+            },
+            "position": {
+              "type": "static",
+              "horiz": 0.0,
+              "vert": 0.0532407
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 25.234,
+      "timeline_out_sec": 26.068
+    },
+    {
+      "beat_index": 26,
+      "v1": {
+        "file": "B19I6673.mov",
+        "in": 5.047,
+        "out": 6.215,
+        "timeline_in_sec": 26.068,
+        "timeline_out_sec": 27.236,
+        "duration_sec": 1.168,
+        "duration_frames": 28
+      },
+      "v2": null,
+      "timeline_in_sec": 26.068,
+      "timeline_out_sec": 27.236
+    },
+    {
+      "beat_index": 27,
+      "v1": {
+        "file": "B19I6673.mov",
+        "in": 10.928,
+        "out": 12.429,
+        "timeline_in_sec": 27.236,
+        "timeline_out_sec": 28.737,
+        "duration_sec": 1.501,
+        "duration_frames": 36
+      },
+      "v2": null,
+      "timeline_in_sec": 27.236,
+      "timeline_out_sec": 28.737
+    },
+    {
+      "beat_index": 28,
+      "v1": {
+        "file": "B19I6687.mov",
+        "in": 42.96,
+        "out": 44.503,
+        "timeline_in_sec": 28.737,
+        "timeline_out_sec": 30.28,
+        "duration_sec": 1.543,
+        "duration_frames": 37
+      },
+      "v2": null,
+      "timeline_in_sec": 28.737,
+      "timeline_out_sec": 30.28
+    },
+    {
+      "beat_index": 29,
+      "v1": {
+        "file": "B19I6688.mov",
+        "in": 26.401,
+        "out": 27.527,
+        "timeline_in_sec": 30.28,
+        "timeline_out_sec": 31.406,
+        "duration_sec": 1.126,
+        "duration_frames": 27
+      },
+      "v2": null,
+      "timeline_in_sec": 30.28,
+      "timeline_out_sec": 31.406
+    },
+    {
+      "beat_index": 30,
+      "v1": {
+        "file": "B19I6691.mov",
+        "in": 32.532,
+        "out": 34.117,
+        "timeline_in_sec": 31.406,
+        "timeline_out_sec": 32.991,
+        "duration_sec": 1.585,
+        "duration_frames": 38
+      },
+      "v2": null,
+      "timeline_in_sec": 31.406,
+      "timeline_out_sec": 32.991
+    },
+    {
+      "beat_index": 31,
+      "v1": {
+        "file": "B19I6691.mov",
+        "in": 41.291,
+        "out": 42.626,
+        "timeline_in_sec": 32.991,
+        "timeline_out_sec": 34.326,
+        "duration_sec": 1.335,
+        "duration_frames": 32
+      },
+      "v2": null,
+      "timeline_in_sec": 32.991,
+      "timeline_out_sec": 34.326
+    },
+    {
+      "beat_index": 32,
+      "v1": {
+        "file": "B19I6691.mov",
+        "in": 128.712,
+        "out": 129.838,
+        "timeline_in_sec": 34.326,
+        "timeline_out_sec": 35.452,
+        "duration_sec": 1.126,
+        "duration_frames": 27,
+        "effects": {
+          "speed": {
+            "speed_percent": 50.0,
+            "reverse": false,
+            "type": "speed_ramp",
+            "keyframes": [
+              {
+                "frame": 0,
+                "time_sec": 0.0,
+                "value": 0,
+                "type": "start"
+              },
+              {
+                "frame": 3086,
+                "time_sec": 128.712,
+                "value": 1543,
+                "type": "ramp_in"
+              },
+              {
+                "frame": 3113,
+                "time_sec": 129.838,
+                "value": 1556,
+                "type": "ramp_out"
+              },
+              {
+                "frame": 3722,
+                "time_sec": 155.238,
+                "value": 1861,
+                "type": "end"
+              }
+            ]
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 34.326,
+      "timeline_out_sec": 35.452
+    },
+    {
+      "beat_index": 33,
+      "v1": {
+        "file": "B19I6693.mov",
+        "in": 4.755,
+        "out": 6.256,
+        "timeline_in_sec": 35.452,
+        "timeline_out_sec": 36.954,
+        "duration_sec": 1.501,
+        "duration_frames": 36,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 61.0,
+              "editorial_note": "punch-in/crop (61.0% vs 50% baseline)"
+            },
+            "position": {
+              "type": "static",
+              "horiz": 0.0200521,
+              "vert": -0.0328704
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 35.452,
+      "timeline_out_sec": 36.954
+    },
+    {
+      "beat_index": 34,
+      "v1": {
+        "file": "B19I6694.mov",
+        "in": 95.095,
+        "out": 96.722,
+        "timeline_in_sec": 36.954,
+        "timeline_out_sec": 38.58,
+        "duration_sec": 1.627,
+        "duration_frames": 39
+      },
+      "v2": null,
+      "timeline_in_sec": 36.954,
+      "timeline_out_sec": 38.58
+    },
+    {
+      "beat_index": 35,
+      "v1": {
+        "file": "AI2I5462.mov",
+        "in": 28.779,
+        "out": 29.947,
+        "timeline_in_sec": 38.58,
+        "timeline_out_sec": 39.748,
+        "duration_sec": 1.168,
+        "duration_frames": 28,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 687,
+                  "time_sec": 28.654,
+                  "value": 100.0
+                },
+                {
+                  "frame": 724,
+                  "time_sec": 30.197,
+                  "value": 136.0
+                }
+              ],
+              "start_value": 100.0,
+              "end_value": 136.0
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 38.58,
+      "timeline_out_sec": 39.748
+    },
+    {
+      "beat_index": 36,
+      "v1": {
+        "file": "B19I6695.mov",
+        "in": 30.489,
+        "out": 31.657,
+        "timeline_in_sec": 39.748,
+        "timeline_out_sec": 40.916,
+        "duration_sec": 1.168,
+        "duration_frames": 28,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 63.0,
+              "editorial_note": "punch-in/crop (63.0% vs 50% baseline)"
+            },
+            "position": {
+              "type": "static",
+              "horiz": 0.0078125,
+              "vert": -0.0236111
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 39.748,
+      "timeline_out_sec": 40.916
+    },
+    {
+      "beat_index": 37,
+      "v1": {
+        "file": "B19I6696.mov",
+        "in": 30.906,
+        "out": 32.574,
+        "timeline_in_sec": 40.916,
+        "timeline_out_sec": 42.584,
+        "duration_sec": 1.668,
+        "duration_frames": 40
+      },
+      "v2": null,
+      "timeline_in_sec": 40.916,
+      "timeline_out_sec": 42.584
+    },
+    {
+      "beat_index": 38,
+      "v1": {
+        "file": "B19I6696.mov",
+        "in": 54.805,
+        "out": 57.683,
+        "timeline_in_sec": 42.584,
+        "timeline_out_sec": 45.462,
+        "duration_sec": 2.878,
+        "duration_frames": 69
+      },
+      "v2": null,
+      "timeline_in_sec": 42.584,
+      "timeline_out_sec": 45.462
+    }
+  ],
+  "editorial_techniques": {
+    "speed_ramps": [
+      {
+        "file": "AI2I5438.mov",
+        "timeline_in_sec": 6.548,
+        "timeline_out_sec": 7.674,
+        "speed_percent": 50.0,
+        "keyframes": [
+          {
+            "frame": 0,
+            "time_sec": 0.0,
+            "value": 0,
+            "type": "start"
+          },
+          {
+            "frame": 2410,
+            "time_sec": 100.517,
+            "value": 1205,
+            "type": "ramp_in"
+          },
+          {
+            "frame": 2437,
+            "time_sec": 101.643,
+            "value": 1218,
+            "type": "ramp_out"
+          },
+          {
+            "frame": 7956,
+            "time_sec": 331.831,
+            "value": 3978,
+            "type": "end"
+          }
+        ]
+      },
+      {
+        "file": "AI2I5438.mov",
+        "timeline_in_sec": 9.009,
+        "timeline_out_sec": 10.135,
+        "speed_percent": 455.556,
+        "keyframes": [
+          {
+            "frame": 0,
+            "time_sec": 0.0,
+            "value": 0,
+            "type": "start"
+          },
+          {
+            "frame": 322,
+            "time_sec": 13.43,
+            "value": 1466,
+            "type": "ramp_in"
+          },
+          {
+            "frame": 348,
+            "time_sec": 14.514,
+            "value": 1585,
+            "type": "ramp_out"
+          },
+          {
+            "frame": 873,
+            "time_sec": 36.411,
+            "value": 3977,
+            "type": "end"
+          }
+        ]
+      },
+      {
+        "file": "B19I6670.mov",
+        "timeline_in_sec": 19.853,
+        "timeline_out_sec": 21.521,
+        "speed_percent": 112.486,
+        "keyframes": [
+          {
+            "frame": 0,
+            "time_sec": 0.0,
+            "value": 0,
+            "type": "start"
+          },
+          {
+            "frame": 141,
+            "time_sec": 5.881,
+            "value": 141,
+            "type": "ramp_in"
+          },
+          {
+            "frame": 148,
+            "time_sec": 6.173,
+            "value": 148,
+            "type": null
+          },
+          {
+            "frame": 150,
+            "time_sec": 6.256,
+            "value": 157,
+            "type": null
+          },
+          {
+            "frame": 158,
+            "time_sec": 6.59,
+            "value": 213,
+            "type": null
+          },
+          {
+            "frame": 161,
+            "time_sec": 6.715,
+            "value": 224,
+            "type": null
+          },
+          {
+            "frame": 181,
+            "time_sec": 7.549,
+            "value": 243,
+            "type": "ramp_out"
+          },
+          {
+            "frame": 494,
+            "time_sec": 20.604,
+            "value": 555,
+            "type": "end"
+          }
+        ]
+      },
+      {
+        "file": "B19I6691.mov",
+        "timeline_in_sec": 34.326,
+        "timeline_out_sec": 35.452,
+        "speed_percent": 50.0,
+        "keyframes": [
+          {
+            "frame": 0,
+            "time_sec": 0.0,
+            "value": 0,
+            "type": "start"
+          },
+          {
+            "frame": 3086,
+            "time_sec": 128.712,
+            "value": 1543,
+            "type": "ramp_in"
+          },
+          {
+            "frame": 3113,
+            "time_sec": 129.838,
+            "value": 1556,
+            "type": "ramp_out"
+          },
+          {
+            "frame": 3722,
+            "time_sec": 155.238,
+            "value": 1861,
+            "type": "end"
+          }
+        ]
+      }
+    ],
+    "slow_motion": [],
+    "scale_adjustments": [
+      {
+        "file": "B19I6695.mov",
+        "timeline_in_sec": 2.586,
+        "timeline_out_sec": 3.879,
+        "value": 63.0,
+        "editorial_note": "punch-in/crop (63.0% vs 50% baseline)"
+      },
+      {
+        "file": "AI2I5438.mov",
+        "timeline_in_sec": 6.548,
+        "timeline_out_sec": 7.674,
+        "value": 66.0,
+        "editorial_note": "punch-in/crop (66.0% vs 50% baseline)"
+      },
+      {
+        "file": "AI2I5438.mov",
+        "timeline_in_sec": 9.009,
+        "timeline_out_sec": 10.135,
+        "value": 66.0,
+        "editorial_note": "punch-in/crop (66.0% vs 50% baseline)"
+      },
+      {
+        "file": "B19I6673.mov",
+        "timeline_in_sec": 25.234,
+        "timeline_out_sec": 26.068,
+        "value": 61.0,
+        "editorial_note": "punch-in/crop (61.0% vs 50% baseline)"
+      },
+      {
+        "file": "B19I6693.mov",
+        "timeline_in_sec": 35.452,
+        "timeline_out_sec": 36.954,
+        "value": 61.0,
+        "editorial_note": "punch-in/crop (61.0% vs 50% baseline)"
+      },
+      {
+        "file": "B19I6695.mov",
+        "timeline_in_sec": 39.748,
+        "timeline_out_sec": 40.916,
+        "value": 63.0,
+        "editorial_note": "punch-in/crop (63.0% vs 50% baseline)"
+      }
+    ],
+    "animated_zooms": [
+      {
+        "file": "AI2I5462.mov",
+        "timeline_in_sec": 1.418,
+        "timeline_out_sec": 2.586,
+        "start_value": 100.0,
+        "end_value": 136.0,
+        "keyframes": [
+          {
+            "frame": 687,
+            "time_sec": 28.654,
+            "value": 100.0
+          },
+          {
+            "frame": 724,
+            "time_sec": 30.197,
+            "value": 136.0
+          }
+        ]
+      },
+      {
+        "file": "[NEST] Nest - Chicken thighs",
+        "timeline_in_sec": 12.429,
+        "timeline_out_sec": 17.643,
+        "start_value": 128.0,
+        "end_value": 140.0,
+        "keyframes": [
+          {
+            "frame": 0,
+            "time_sec": 0.0,
+            "value": 128.0
+          },
+          {
+            "frame": 129,
+            "time_sec": 5.38,
+            "value": 140.0
+          }
+        ]
+      },
+      {
+        "file": "AI2I5440.mov",
+        "timeline_in_sec": 21.521,
+        "timeline_out_sec": 22.648,
+        "start_value": 61.0,
+        "end_value": 50.0,
+        "keyframes": [
+          {
+            "frame": 193,
+            "time_sec": 8.05,
+            "value": 61.0
+          },
+          {
+            "frame": 219,
+            "time_sec": 9.134,
+            "value": 50.0
+          }
+        ]
+      },
+      {
+        "file": "AI2I5462.mov",
+        "timeline_in_sec": 38.58,
+        "timeline_out_sec": 39.748,
+        "start_value": 100.0,
+        "end_value": 136.0,
+        "keyframes": [
+          {
+            "frame": 687,
+            "time_sec": 28.654,
+            "value": 100.0
+          },
+          {
+            "frame": 724,
+            "time_sec": 30.197,
+            "value": 136.0
+          }
+        ]
+      }
+    ],
+    "nested_sequences": [
+      {
+        "nest_name": "Nest - Chicken thighs",
+        "timeline_in_sec": 12.429,
+        "timeline_out_sec": 17.643,
+        "inner_clip_count": 5,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 0,
+                  "time_sec": 0.0,
+                  "value": 128.0
+                },
+                {
+                  "frame": 129,
+                  "time_sec": 5.38,
+                  "value": 140.0
+                }
+              ],
+              "start_value": 128.0,
+              "end_value": 140.0
+            },
+            "position": {
+              "type": "static",
+              "horiz": -0.5,
+              "vert": -0.5
+            }
+          }
+        }
+      }
+    ],
+    "stop_motion_sequences": [
+      {
+        "clip_count": 8,
+        "timeline_in_sec": 23.941,
+        "timeline_out_sec": 24.733,
+        "avg_duration_frames": 2.4,
+        "clips": [
+          {
+            "file": "AI2I5441.mov",
+            "duration_frames": 5
+          },
+          {
+            "file": "AI2I5441.mov",
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I5441.mov",
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I5441.mov",
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I5441.mov",
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I5441.mov",
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I5441.mov",
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I5441.mov",
+            "duration_frames": 2
+          }
+        ]
+      }
+    ],
+    "camera_alternation": {
+      "total_clips": 39,
+      "front_count": 23,
+      "overhead_count": 16,
+      "front_pct": 59.0,
+      "overhead_pct": 41.0,
+      "alternation_count": 14,
+      "avg_run_length": 2.6,
+      "max_run_length": 10,
+      "runs": [
+        {
+          "camera": "front",
+          "run_length": 1
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 3
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 1
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 2
+        },
+        {
+          "camera": "overhead",
+          "run_length": 2
+        },
+        {
+          "camera": "front",
+          "run_length": 2
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 1
+        },
+        {
+          "camera": "overhead",
+          "run_length": 9
+        },
+        {
+          "camera": "front",
+          "run_length": 10
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 3
+        }
+      ]
+    }
+  },
+  "production_layers": {
+    "mogrts": [
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 3.879,
+        "timeline_out_sec": 5.38,
+        "duration_sec": 1.501
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 5.38,
+        "timeline_out_sec": 6.548,
+        "duration_sec": 1.168
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 6.548,
+        "timeline_out_sec": 7.674,
+        "duration_sec": 1.126
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 7.674,
+        "timeline_out_sec": 9.009,
+        "duration_sec": 1.335
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 10.135,
+        "timeline_out_sec": 11.386,
+        "duration_sec": 1.251
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 11.386,
+        "timeline_out_sec": 12.429,
+        "duration_sec": 1.043
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 13.138,
+        "timeline_out_sec": 14.223,
+        "duration_sec": 1.084
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 14.223,
+        "timeline_out_sec": 15.265,
+        "duration_sec": 1.043
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 15.265,
+        "timeline_out_sec": 16.308,
+        "duration_sec": 1.043
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 16.308,
+        "timeline_out_sec": 17.643,
+        "duration_sec": 1.335
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 21.521,
+        "timeline_out_sec": 22.648,
+        "duration_sec": 1.126
+      },
+      {
+        "file": "K SEO_Cook Times/K SEO_Cook Times.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 27.236,
+        "timeline_out_sec": 28.737,
+        "duration_sec": 1.501
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V9",
+        "timeline_in_sec": 36.954,
+        "timeline_out_sec": 38.58,
+        "duration_sec": 1.627
+      }
+    ],
+    "title_cards": [
+      {
+        "file": "K_Title Overlay_2023.png",
+        "track": "V10",
+        "timeline_in_sec": 0.0,
+        "timeline_out_sec": 3.879,
+        "duration_sec": 3.879
+      },
+      {
+        "file": "Creamy Pumpkin Soup_Title.png",
+        "track": "V11",
+        "timeline_in_sec": 0.0,
+        "timeline_out_sec": 3.879,
+        "duration_sec": 3.879
+      }
+    ],
+    "watermarks": [
+      {
+        "file": "The Kitchn Watermark 2023 (2).png",
+        "track": "V8",
+        "timeline_in_sec": 3.879,
+        "timeline_out_sec": 42.584,
+        "duration_sec": 38.705
+      }
+    ]
+  }
+}
