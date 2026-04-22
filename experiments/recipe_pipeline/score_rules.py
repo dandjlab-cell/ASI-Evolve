@@ -96,36 +96,57 @@ def score_dump_camera_hold(beats: List[dict]) -> dict:
             "rapid_switches": [],
         }
 
-        # Count transitions and detect rapid alternation
-        # Rapid alternation = switching back and forth (F→O→F or O→F→O)
-        # A single switch in a short sequence is fine — alternation is the problem
-        run_length = 1
-        switch_count_in_seq = 0
+        # Two-pass approach:
+        # Pass 1: identify justified switches (flourish/nested)
+        # Pass 2: check remaining switches for rapid alternation
+        justified = set()
         for j in range(1, len(cameras)):
             if cameras[j] != cameras[j - 1]:
+                beat_j = beats[seq[j]]
+                effects = str(beat_j.get("effects", beat_j.get("effects_info", ""))).lower()
+                filename = str(beat_j.get("filename", "")).lower()
+                is_nested = "[nest]" in filename or beat_j.get("nested", False)
+                has_speed_ramp = "speed" in effects and "ramp" in effects
+
+                if has_speed_ramp or is_nested:
+                    justified.add(j)
+                    seq_detail.setdefault("justified_switches", []).append({
+                        "beat": beat_j.get("beat_index", seq[j]),
+                        "reason": "flourish (speed ramp)" if has_speed_ramp else "nested sequence",
+                    })
+
+        # Build effective camera sequence (skip justified-switch beats)
+        effective = [(j, cameras[j]) for j in range(len(cameras)) if j not in justified]
+
+        eff_run_length = 1
+        eff_switch_count = 0
+        for k in range(1, len(effective)):
+            j_curr, cam_curr = effective[k]
+            j_prev, cam_prev = effective[k - 1]
+
+            if cam_curr != cam_prev:
                 total_transitions += 1
-                switch_count_in_seq += 1
-                # Check for alternation: did we switch back to the camera
-                # we were just on? (i.e., A→B→A pattern)
+                eff_switch_count += 1
+
                 is_alternation = (
-                    j >= 2 and cameras[j] == cameras[j - 2]
-                    and cameras[j] != cameras[j - 1]
+                    k >= 2
+                    and cam_curr == effective[k - 2][1]
+                    and cam_curr != cam_prev
                 )
-                # Or: too many switches relative to sequence length
-                too_frequent = switch_count_in_seq >= 2 and run_length <= 1
+                too_frequent = eff_switch_count >= 2 and eff_run_length <= 1
 
                 if is_alternation or too_frequent:
                     rapid_alternations += 1
-                    beat_idx = beats[seq[j]].get("beat_index", seq[j])
-                    prev_idx = beats[seq[j - 1]].get("beat_index", seq[j - 1])
+                    beat_idx = beats[seq[j_curr]].get("beat_index", seq[j_curr])
+                    prev_idx = beats[seq[j_prev]].get("beat_index", seq[j_prev])
                     violations.append(
-                        f"Dump seq {seq_idx + 1}: rapid alternation {cameras[j-1]}→{cameras[j]} "
-                        f"at beat {prev_idx}→{beat_idx} (held only {run_length} beat{'s' if run_length > 1 else ''})"
+                        f"Dump seq {seq_idx + 1}: rapid alternation {cam_prev}→{cam_curr} "
+                        f"at beat {prev_idx}→{beat_idx} (held only {eff_run_length} beat{'s' if eff_run_length > 1 else ''})"
                     )
                     seq_detail["rapid_switches"].append(beat_idx)
-                run_length = 1
+                eff_run_length = 1
             else:
-                run_length += 1
+                eff_run_length += 1
 
         seq_details.append(seq_detail)
 
@@ -240,7 +261,7 @@ def score_flourish_detection(beats: List[dict]) -> dict:
     """
     speed_ramp_beats = []
     for beat in beats:
-        effects = str(beat.get("effects_info", ""))
+        effects = str(beat.get("effects", beat.get("effects_info", "")))
         if "speed" not in effects.lower() and "ramp" not in effects.lower():
             continue
 
@@ -254,7 +275,9 @@ def score_flourish_detection(beats: List[dict]) -> dict:
         flourish_signals = [
             "melt", "sizzl", "brown", "caramel", "bubble", "steam",
             "pour", "drip", "pool", "spread", "settle", "dissolve",
-            "slide", "cascade", "flow", "stream",
+            "slide", "cascade", "flow", "stream", "hold", "jar",
+            "scrape", "scrap", "beauty", "hero", "plat", "present",
+            "slow", "luxur", "savor", "reveal",
         ]
         functional_signals = [
             "compress", "fit", "musical", "phrase", "beat", "rhythm",
@@ -349,6 +372,60 @@ def score_camera_run_quality(beats: List[dict]) -> dict:
     }
 
 
+def score_duration_compensation(beats: List[dict]) -> dict:
+    """Rule 3 addendum: beats after a camera switch should be slightly longer.
+
+    When the editor switches camera during a dump sequence, the post-switch
+    beat is held longer to give the viewer re-orientation time. This checks
+    whether that pattern exists.
+    """
+    sequences = find_dump_sequences(beats)
+    if not sequences:
+        return {"score": 1.0, "detail": "No dump sequences"}
+
+    post_switch_durations = []
+    held_run_durations = []
+
+    for seq in sequences:
+        cameras = [get_camera(beats[i]) for i in seq]
+        for j in range(len(cameras)):
+            beat = beats[seq[j]]
+            dur = beat.get("duration", 0)
+            if isinstance(dur, dict):
+                dur = dur.get("seconds", 0)
+            dur = float(dur) if dur else 0
+
+            if j > 0 and cameras[j] != cameras[j - 1]:
+                post_switch_durations.append(dur)
+            elif j > 0:
+                held_run_durations.append(dur)
+
+    if not post_switch_durations or not held_run_durations:
+        return {"score": 1.0, "post_switch_count": len(post_switch_durations),
+                "held_count": len(held_run_durations),
+                "detail": "Not enough data to compare"}
+
+    avg_post_switch = sum(post_switch_durations) / len(post_switch_durations)
+    avg_held = sum(held_run_durations) / len(held_run_durations)
+
+    # Score: post-switch should be >= held. Reward if it is.
+    if avg_post_switch >= avg_held:
+        score = 1.0
+    else:
+        # How much shorter? Penalize proportionally
+        ratio = avg_post_switch / avg_held if avg_held > 0 else 1.0
+        score = max(0.0, ratio)
+
+    return {
+        "score": round(score, 4),
+        "avg_post_switch_dur": round(avg_post_switch, 3),
+        "avg_held_run_dur": round(avg_held, 3),
+        "post_switch_count": len(post_switch_durations),
+        "held_count": len(held_run_durations),
+        "compensating": avg_post_switch >= avg_held,
+    }
+
+
 def score_annotation(annotation: dict) -> dict:
     """Score a full annotation JSON against all editorial rules.
 
@@ -364,14 +441,16 @@ def score_annotation(annotation: dict) -> dict:
     mogrt_text = score_mogrt_text_readability(beats)
     flourish = score_flourish_detection(beats)
     camera_runs = score_camera_run_quality(beats)
+    dur_comp = score_duration_compensation(beats)
 
     # Weighted composite
     # Dump hold is the most important (Dan's strongest rule)
     composite = (
-        dump_hold["score"] * 0.35 +
-        camera_runs["score"] * 0.25 +
+        dump_hold["score"] * 0.30 +
+        camera_runs["score"] * 0.20 +
         mogrt_text["score"] * 0.20 +
-        flourish["score"] * 0.20
+        flourish["score"] * 0.15 +
+        dur_comp["score"] * 0.15
     )
 
     return {
@@ -383,6 +462,7 @@ def score_annotation(annotation: dict) -> dict:
             "camera_run_quality": camera_runs,
             "mogrt_text_readability": mogrt_text,
             "flourish_detection": flourish,
+            "duration_compensation": dur_comp,
         },
     }
 
