@@ -428,15 +428,31 @@ def build_beat_analysis_prompt(
     if recipe_section:
         section_block = f"\n- **Recipe section:** {recipe_section}"
 
-    return f"""Analyze this editorial beat from a recipe video. These videos are cut to music — cuts land on beats, durations follow phrases, pacing builds/releases energy.
+    # Build dump sequence context if applicable
+    dump_context = ""
+    if beat_group_info:
+        dump_context = f"\n- Beat group: {beat_group_info}"
+
+    return f"""You are analyzing editorial decisions in a recipe video edited by a professional editor. These videos are cut to music — cuts land on beats, durations follow phrases, pacing builds/releases energy.
+
+## Editorial Rules (the editor's actual decision-making process)
+
+These rules come from the editor himself. Reason against them, not abstract film theory.
+
+1. **Anchor shot first.** The editor finds the best version of a shot — the take and angle that sells that moment — and builds surrounding cuts around it. Camera alternation (front/overhead/front) is a side effect of sequencing best-takes, NOT a deliberate alternation rule. Don't explain camera choice as "front because vertical action" if the real reason is simply "this was the best take."
+
+2. **Anchors are dynamic.** The anchor shot shifts during editing. Stop-motion moments, found organic moments, and beautiful accidents can all become anchors for their section.
+
+3. **Ingredient dump sequences: hold camera, then switch.** During a run of ingredient dumps, don't alternate cameras every beat (F→O→F→O). Hold one camera for several beats, then switch if needed. But don't hold forever — it gets boring. Use nests, zooms, and reframes to keep the same angle interesting. MOGRT text overlay duration is driven by how long the ingredient name takes to READ, not by the action duration.
+
+4. **Organic flourishes.** The editor hunts for beautiful moments that happen naturally on camera — butter melting untouched, sauce pooling, steam rising. These get speed-ramped (normal speed → fast to show transformation). These found moments are what make the edit feel crafted.
 
 ## Beat {beat_idx}: {beat_description}
 - Camera: {camera} (front=eye-level technique, overhead=top-down ingredient)
 - Duration: {duration:.1f}s
 - Source in-point: {approved_clip.get('in', 0):.1f}s
 - Verdict vs pipeline: {verdict}
-- Pipeline proposed: {pipeline_clip_info}{effects_block}{mogrt_block}{section_block}
-{f"- Beat group: {beat_group_info}" if beat_group_info else ""}
+- Pipeline proposed: {pipeline_clip_info}{effects_block}{mogrt_block}{section_block}{dump_context}
 
 ## Frame-by-frame at this timecode (/watch-video):
 {visual_context}
@@ -449,20 +465,20 @@ def build_beat_analysis_prompt(
 - Next: {next_beat_info}
 
 ## Task:
-One sentence each. Be specific about what's visible. No hedging.
+One sentence each. Be specific about what's visible. No hedging. Reason against the editorial rules above — don't invent abstract justifications.
 
-CAMERA: Why {camera}? What does this angle show that the other wouldn't?
-DURATION: Why {duration:.1f}s?{' Account for the speed ramp.' if effects_info and 'speed' in effects_info.lower() else ''}
+CAMERA: Why {camera}? Consider: is this the anchor shot (best take), part of a held camera run, or a switch point? What does this angle show that the other wouldn't?
+DURATION: Why {duration:.1f}s?{' Account for the speed ramp.' if effects_info and 'speed' in effects_info.lower() else ''}{' Consider: MOGRT text readability drives the hold length.' if mogrt_overlaps else ''}
 INPOINT: Why this in-point? What's happening at this frame?
-{"EFFECTS: Why " + effects_info + "?" if effects_info else ""}{"STOPMOTION: Why stop-motion here? What does the rapid-fire rhythm do?" if is_stop_motion else ""}
+{"EFFECTS: Why " + effects_info + "? Consider: is this an organic flourish (unattended transformation) or a functional edit tool?" if effects_info else ""}{"STOPMOTION: Why stop-motion here? What does the rapid-fire rhythm do?" if is_stop_motion else ""}
 CONFIDENCE: high/medium/low"""
 
 
 def call_claude(prompt: str, model: str = "sonnet") -> str:
     """Call Claude CLI with a text prompt.
 
-    Uses sonnet for speed — this is bulk inference, not creative work.
     Visual context comes from /watch-video frame descriptions in the prompt.
+    Use opus for reasoning depth, sonnet for speed on bulk runs.
     """
     env = os.environ.copy()
     env.pop("CLAUDECODE", None)
@@ -707,6 +723,69 @@ def _get_neighbor_info(gi: int, grouped_timeline: list, v1_prefix: str) -> Tuple
         next_info = _describe_group_brief(grouped_timeline[gi + 1], v1_prefix)
 
     return prev_info, next_info
+
+
+def _build_dump_sequence_context(
+    gi: int, grouped_timeline: list, v1_prefix: str
+) -> str:
+    """Build context about where this beat sits in a consecutive ingredient dump run.
+
+    Tells the LLM: 'This is beat 3 of 5 in an ingredient dump sequence.
+    Previous dumps used: overhead, overhead. Next dumps use: front, front.'
+    """
+    current = grouped_timeline[gi]
+    current_type = current.get("type", "")
+
+    # Only relevant for ingredient-related beats (mogrt_zone or beats near them)
+    is_ingredient = current_type == "mogrt_zone"
+    if not is_ingredient:
+        return ""
+
+    # Walk backward to find start of ingredient run
+    run_start = gi
+    while run_start > 0:
+        prev_type = grouped_timeline[run_start - 1].get("type", "")
+        if prev_type not in ("mogrt_zone", "normal"):
+            break
+        run_start -= 1
+
+    # Walk forward to find end
+    run_end = gi
+    while run_end < len(grouped_timeline) - 1:
+        next_type = grouped_timeline[run_end + 1].get("type", "")
+        if next_type not in ("mogrt_zone", "normal"):
+            break
+        run_end += 1
+
+    run_length = run_end - run_start + 1
+    position = gi - run_start + 1
+
+    if run_length <= 1:
+        return ""
+
+    # Collect cameras in this run
+    cam_sequence = []
+    for i in range(run_start, run_end + 1):
+        g = grouped_timeline[i]
+        if g.get("type") == "normal":
+            entry = g["entry"]
+            clip = entry.get("v1") or entry.get("v2") or {}
+            cam = detect_camera(clip.get("file", ""), v1_prefix)
+        else:
+            entries = g.get("entries", [])
+            cams = []
+            for e in entries:
+                c = e.get("v1") or e.get("v2") or {}
+                cams.append(detect_camera(c.get("file", ""), v1_prefix))
+            cam = max(set(cams), key=cams.count) if cams else "?"
+        marker = " <<<" if i == gi else ""
+        cam_sequence.append(f"{cam}{marker}")
+
+    return (
+        f"Ingredient dump sequence: beat {position} of {run_length}. "
+        f"Camera run: [{', '.join(cam_sequence)}]. "
+        f"Rule: hold camera across dumps, don't alternate every beat."
+    )
 
 
 def generate_global_analysis_prompt(
@@ -1031,6 +1110,7 @@ def main():
             scan_desc = load_scan_descriptions(args.scan, filename, in_point)
             mogrt_overlaps = find_overlapping_mogrts(timeline_in, timeline_out, production_layers)
             prev_info, next_info = _get_neighbor_info(gi, grouped_timeline, v1_prefix)
+            dump_ctx = _build_dump_sequence_context(gi, grouped_timeline, v1_prefix)
 
             clips_block = "\n".join(f"  - {s}" for s in clip_summaries)
             effects_info = "; ".join(group_effects) if group_effects else ""
@@ -1042,7 +1122,7 @@ def main():
                 pipeline_clip_info=f"{grouped['clip_count']} clips:\n{clips_block}",
                 scan_description=scan_desc, visual_context=visual_context,
                 prev_beat_info=prev_info, next_beat_info=next_info,
-                beat_group_info="",
+                beat_group_info=dump_ctx,
                 effects_info=effects_info,
                 mogrt_overlaps=mogrt_overlaps,
                 recipe_section=recipe_section,
@@ -1140,6 +1220,7 @@ def main():
         mogrt_overlaps = find_overlapping_mogrts(timeline_in, timeline_out, production_layers)
         recipe_section = infer_recipe_section(timeline_in, total_timeline_duration, beat_desc or beat_type)
         prev_info, next_info = _get_neighbor_info(gi, grouped_timeline, v1_prefix)
+        dump_ctx = _build_dump_sequence_context(gi, grouped_timeline, v1_prefix)
 
         prompt = build_beat_analysis_prompt(
             beat_idx=beat_idx, approved_clip=a_clip, camera=camera,
@@ -1148,7 +1229,7 @@ def main():
             pipeline_clip_info=pipeline_info or "(no pipeline match)",
             scan_description=scan_desc, visual_context=visual_context,
             prev_beat_info=prev_info, next_beat_info=next_info,
-            beat_group_info="",
+            beat_group_info=dump_ctx,
             effects_info=effects_info, nested_info=nested_info,
             mogrt_overlaps=mogrt_overlaps, recipe_section=recipe_section,
         )

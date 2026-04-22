@@ -1,6 +1,6 @@
 {
   "recipe": "basil_pesto",
-  "global_notes": "Working from aggregate stats alone, here's what the numbers suggest \u2014 though a full cut list would sharpen this considerably:\n\n---\n\n**Editorial Style Analysis \u2014 basil_pesto**\n\nThis is a tight, high-intervention edit: 39.5 seconds across 33 beats puts the average shot at roughly 1.2 seconds, which reads as fast-cut instructional rather than meditative cooking content. The editor was clearly not a passive pipeline consumer \u2014 with 11 shots *added*, 9 *trimmed*, and only 7 *kept* as-is, this is someone actively reshaping coverage rather than approving a rough cut. The 2 editorial groups suggest at least one dense technique sequence (likely the mortar-and-pestle or blend phase) where action was compressed into a rhythmic cluster rather than shown linearly.\n\nCamera logic skews heavily front (21 vs. 12 overhead, ~64/36 split), which for pesto is a notable choice \u2014 overhead is the natural home for ingredient prep and texture reveals. The front preference likely means the editor is prioritizing *process narrative* (hand movements, vessel interaction, jar fills) over pure top-down ingredient shots, reserving overhead for the transformation money shot and final plating. The overhead count being 12 on a 33-beat cut suggests overhead appears in focused bursts rather than throughout.\n\nThe volume of trims (9) against additions (11) signals a pacing philosophy: supplement where coverage is thin, compress where the pipeline was generous. That net-positive shot count combined with a sub-40-second runtime means the editor was finding shorter versions of more moments \u2014 acceleration through density, not through removal.\n\n---\n\nTo give you section-level pacing notes (opener vs. technique vs. transformation) I'd need the actual shot list with timestamps and camera labels. Do you have a JSON or CSV cut list you can share?",
+  "global_notes": "Pacing sits at ~1.2s/beat average \u2014 brisk and firmly music-cut, with a clear weight toward the front of the edit: the 11 \"added\" beats (vs. 7 \"kept\" from the base pipeline) tell me this editor layered extra cuts into the opener and prep to build momentum, then let the 9 trims compress the technique stretch so the blending/pounding hits land on downbeats rather than sprawling.\n\nCamera logic is conventional but disciplined \u2014 64% front for the hero/reveal moments (opener, ingredient beauty, final plating) and 36% overhead reserved for where geometry matters (knife work on basil, garlic prep, the emulsification in the bowl); overhead gets clustered during the technique section where top-down reads clearer, then the edit snaps back to front for the transformation reveal.\n\nThe rhythm pattern \u2014 dense add-ins early, trims through the middle, looser holds at the end \u2014 is a classic accel-then-breathe structure: energy ramps through prep, peaks at the blend, then decelerates for the plating payoff so the final dish gets a full musical phrase instead of a beat.\n\nThe two `editorial_group` tags read as a deliberate stylized micro-sequence (likely a rapid same-action montage \u2014 probably the basil-picking or the pound-and-add cycle) used as a texture moment rather than an info-bearing cut.\n\nOverall: an editor who trusts the music more than the recipe's literal chronology \u2014 willing to invent beats to serve rhythm, willing to cut coverage to keep the phrase clean, and parking overhead angles where they actually teach rather than defaulting to them for variety.",
   "beats": [
     {
       "beat_index": 0,
@@ -10,18 +10,18 @@
       "filename": "B19I6413.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front captures the lateral arc of the pesto stream as it falls into the glass jar, making the sauce's viscous, glossy texture and green color legible against the transparent walls \u2014 overhead would flatten this into a top-down fill with no pour drama."
+        "reasoning": "Front is the anchor because the vertical pesto stream falling into the jar is the best-take hero moment \u2014 the pour's verticality only reads dramatically at eye-level, and overhead is reserved as the switch point at 2.5s to reveal the finished bowl."
       },
       "duration": {
         "seconds": 3.879,
-        "reasoning": "3.9s holds the full title card sequence (\"Basil Pesto\" + Kitchn logo, 0.0s\u20133.9s) while the 50% speed ramp doubles the real-time footage needed per clip, requiring ~2s of source material to yield 1s of screen time, so the three slow-motion clips combined reach exactly the title fade endpoint."
+        "reasoning": "3.9s holds long enough for the viewer to read the \"Basil Pesto\" title card + Kitchn logo across three beauty shots, with the 50% speed ramp stretching the pour itself so the title has time to land before the overhead reveal."
       },
       "in_point": {
         "seconds": 109.443,
-        "reasoning": "109.4s is the frame where the pour stream is fully established mid-fall \u2014 not the beginning of the tip (which would show setup) but the peak continuous flow, which is the most visually rich frame to start the ramp on."
+        "reasoning": "109.4s catches the pesto mid-fall into a partially-filled jar \u2014 the stream is already established and the jar has enough sauce to read as \"pesto,\" avoiding the empty-jar beginning or the static settled-sauce end."
       },
       "verdict": "editorial_group",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "",
       "effects": "Speed ramp (50.0% base, ramp between 109.4s-110.6s); punch-in/crop (81.0% vs 50% baseline); Reframed (offset h:-0.03 v:0.10); Speed ramp (50.0% base, ramp between 17.8s-19.1s)",
       "nested": "",
@@ -30,7 +30,7 @@
         "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.9s)"
       ],
       "correction": null,
-      "effects_reasoning": "The two speed ramps (50% on the pour clips) luxuriate in the sauce's viscosity for sensory impact; the aggressive punch-in (81% vs 50% baseline) eliminates peripheral countertop and fills the frame with jar and sauce; the reframe (v:+0.10 downward) re-centers the jar vertically after the crop shifts the composition up."
+      "effects_reasoning": "The speed ramp is an organic flourish \u2014 pesto pouring is a found beautiful transformation that gets slowed to savor the stream, while the punch-in/crop and reframe are functional tools to tighten composition on the jar and correct framing under the title card overlay."
     },
     {
       "beat_index": 3,
@@ -40,15 +40,15 @@
       "filename": "AI2I5184.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead isolates the cutting board as a clean stage for the ingredient reveal \u2014 the text overlay (\"Unpeeled garlic cloves\") reads flat and unobstructed, and the hand placement gesture reads as deliberate action rather than technique."
+        "reasoning": "Overhead because this is the start of the ingredient-dump run and top-down cleanly shows both garlic cloves isolated on the white board for ingredient ID \u2014 front would bury the cloves behind the hand/knife and obscure the callout subject."
       },
       "duration": {
         "seconds": 1.2929999999999997,
-        "reasoning": "1.3s covers exactly one musical phrase unit \u2014 enough to land the hand-place on the downbeat and hold the two-cloves composition until the text callout registers, then cut before the shot goes static."
+        "reasoning": "1.3s exactly matches the MOGRT window (3.9s\u20135.2s) so \"Unpeeled garlic cloves\" has just enough time to be read before cutting to the crush."
       },
       "in_point": {
         "seconds": 20.896,
-        "reasoning": "20.9s catches the hand mid-descent with the cloves visibly in frame, skipping the empty-board lead-in and opening the shot in motion so the edit doesn't feel like a pause."
+        "reasoning": "20.9s lands right as the hand has finished placing the cloves and is withdrawing, giving a clean reveal of two static cloves on the board that reads instantly with the text overlay."
       },
       "verdict": "editorial_group",
       "confidence": "high",
@@ -59,7 +59,7 @@
         "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (3.9s-5.2s)"
       ],
       "correction": null,
-      "effects_reasoning": "The 146% punch-in eliminates dead negative space around the board edges and fills the frame with the two cloves and hand, making the ingredient legible at thumbnail scale; the 0.02 vertical reframe nudges the cloves up from center to clear compositional space for the text overlay sitting in the lower third."
+      "effects_reasoning": "Functional, not organic \u2014 the 146% punch-in (nearly 3x the 50% baseline) tightens onto the two small cloves so they fill frame against the white board, with a negligible h:0.02 reframe just to center them under the MOGRT."
     },
     {
       "beat_index": 4,
@@ -69,15 +69,15 @@
       "filename": "B19I6401.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front angle shows the blade geometry in profile \u2014 the flat of the knife parallel to the board and the gap between steel and clove closing \u2014 which makes the crush mechanic legible; overhead would collapse that vertical action into a top-down obscure of the hand."
+        "reasoning": "Front is the anchor shot for the crush \u2014 it sells the blade's descent and downward press in profile (visible in frames 5.0s\u20136.0s showing knife approaching, pressing, and flat against clove), which overhead would flatten into an ambiguous top-down blur; this beat opens a held-front run before the switch to overhead at 6.5s for the peel/placement."
       },
       "duration": {
         "seconds": 1.3760000000000003,
-        "reasoning": "1.4s covers exactly the approach-to-contact arc without holding on the static post-crush result, which already exists in the next overhead beat \u2014 the edit moves on the moment the action completes rather than lingering."
+        "reasoning": "1.4s covers the full approach-and-press gesture (blade entering frame \u2192 committing to the crush) and matches the surrounding action-beat rhythm (prev 1.3s, next 1.2s), long enough to register the motion without lingering past the impact."
       },
       "in_point": {
         "seconds": 30.948,
-        "reasoning": "30.9s catches the knife already descending mid-motion so the clip enters with kinetic energy on the first frame; starting at 30.0s or 29.0s would open on a static shot of crushed cloves with no hands, killing the build into the crush action."
+        "reasoning": "30.9s catches the blade mid-descent toward the first clove \u2014 per the source scan, 31.0s is \"knife descends toward the first garlic clove, blade angled mid-motion\" \u2014 so 30.9s starts just as the blade enters the anticipation phase, giving the viewer the setup-then-crush arc rather than dropping in mid-press."
       },
       "verdict": "added",
       "confidence": "high",
@@ -95,24 +95,24 @@
       "filename": "AI2I5185.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead collapses the depth of the pan into a flat stage, making the garlic's landing position and the skin-to-clove separation legible in a way a front angle would foreshorten into visual noise."
+        "reasoning": "Overhead is the switch point from the previous front shot \u2014 it's chosen because only top-down shows the cloves actually landing in the pan (front couldn't reveal pan contents), and it's likely the anchor for this placement moment since the best version of \"ingredient arrives in pan\" reads from above."
       },
       "duration": {
         "seconds": 1.1680000000000001,
-        "reasoning": "1.2s is long enough to register the cloves hitting pan (one \"read\") but short enough to cut before the hands retreat and the frame goes static at 10.0s \u2014 the action window is narrow."
+        "reasoning": "1.2s is a tight ingredient-dump beat that lands on the music and leaves room for the next pine-nuts beat (1.8s with text) to breathe \u2014 any longer and the two peeled cloves sitting motionless (per source 10.0s) would deaden the pace."
       },
       "in_point": {
         "seconds": 9.509,
-        "reasoning": "9.5s catches the hands mid-release between the active peel (9.0s) and the motionless result (10.0s), giving the cut a live entry frame with kinetic hands rather than a dead-end still."
+        "reasoning": "9.5s sits between active peeling (9.0s, hands mid-peel) and the static resting cloves (10.0s, hands gone) \u2014 catching the instant of placement/hand-withdrawal, which is the actual action the beat is describing."
       },
       "verdict": "kept",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "AI2I5185.mov @ 9.0s (overhead)",
       "effects": "punch-in/crop (123.0% vs 50% baseline)",
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 123% crop doubles down on the pan's interior at the expense of surrounding context \u2014 the baseline 50% would preserve too much empty countertop, and overhead shots without a tight crop read as spatially ambiguous; the hard crop forces the eye directly onto the garlic the instant the cut lands."
+      "effects_reasoning": "123% punch-in is functional, not organic \u2014 the source was framed wide enough to capture hands peeling above the pan, so the crop tightens onto the cloves in the pan bottom to match the beat's subject (placement, not peeling)."
     },
     {
       "beat_index": 6,
@@ -122,15 +122,15 @@
       "filename": "B19I6402.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle shows the vertical fall of nuts from bowl-height into the pan, giving the pour spatial drama and depth \u2014 overhead would collapse that arc into a flat scatter."
+        "reasoning": "Front is the anchor for the pour itself \u2014 it shows the glass bowl tilting and the cascade of pine nuts falling over the garlic, which overhead would flatten to nuts just appearing in the pan; this beat and the next are both front, forming a short held run inside the dump sequence rather than a single-beat alternation."
       },
       "duration": {
         "seconds": 1.7930000000000001,
-        "reasoning": "1.8s covers the active pour motion through the peak of cascade, landing just as the nuts settle but before the spoon enters \u2014 it's one clean gestural unit, and it fits exactly inside the MOGRT text window (7.7s\u20139.5s)."
+        "reasoning": "1.8s matches the \"Raw pine nuts\" MOGRT window (7.7s\u20139.5s) exactly \u2014 the hold is sized to let the viewer read the ingredient label, not to the physical pour action."
       },
       "in_point": {
         "seconds": 21.188,
-        "reasoning": "21.2s catches the nuts already mid-fall, skipping the static setup of the bowl hovering, so the clip enters at peak motion and reads as immediate action."
+        "reasoning": "21.2s lands mid-cascade with the bowl already tilted and nuts in active fall over the garlic cloves, entering on motion rather than on the static pre-pour frame or the settled post-pour frame."
       },
       "verdict": "kept",
       "confidence": "high",
@@ -150,18 +150,18 @@
       "filename": "B19I6404.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle keeps the spoon's lateral sweeping motion legible \u2014 you see the pine nuts scattering and browning across the pan surface, whereas overhead would compress that action into a flat blur of movement with no color read on the nuts."
+        "reasoning": "Front is the anchor here \u2014 it's the only angle that shows the golden-brown color change on the nuts themselves, which is the whole point of a \"fragrant/golden\" transformation beat (overhead would just show a pan of brown specks from above)."
       },
       "duration": {
         "seconds": 1.126999999999999,
-        "reasoning": "1.1s is a single musical beat \u2014 long enough to register the stirring action and the golden color of the nuts, short enough to cut before the motion becomes repetitive, landing the exit on the downbeat that opens the overhead transfer shot."
+        "reasoning": "1.1s is enough to register the toasted color and one clean stirring motion before the overhead pour payoff lands on the next beat \u2014 any longer and we'd be watching stirring after the transformation has already read."
       },
       "in_point": {
         "seconds": 3.837,
-        "reasoning": "3.8s catches the wooden spoon entering frame from above, giving the cut a built-in motion trigger \u2014 the viewer's eye tracks the spoon's arrival, which provides kinetic justification for the edit rather than cutting into an already-in-progress stir (the pipeline's 4.0s)."
+        "reasoning": "3.8s starts mid-stir with the spoon already pushing nuts across the pan (per VLM at 4.0s the spoon is actively redistributing), skipping the spoon-entry frame the pipeline proposed so we open on action-in-progress rather than a setup gesture."
       },
       "verdict": "kept",
-      "confidence": "high",
+      "confidence": "medium",
       "pipeline_info": "B19I6404.mov @ 4.0s (front)",
       "effects": "",
       "nested": "",
@@ -176,15 +176,15 @@
       "filename": "AI2I5188.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead captures the spatial event of transfer \u2014 the arc of fall and scatter pattern across the white plate \u2014 which a front angle would hide entirely behind the tilted bowl obscuring the plate surface."
+        "reasoning": "Overhead is the anchor here because the top-down angle is the only way to see pine nuts and garlic actively scattering across the plate's surface \u2014 a front angle would show the pan tilting but hide the destination and the spread pattern that sells the \"transfer complete\" beat."
       },
       "duration": {
         "seconds": 1.0010000000000012,
-        "reasoning": "1.0s brackets exactly the peak action: entering as ingredients are mid-fall (16.8s) and exiting as the bowl lifts clear, so there's no dead time before or after the motion."
+        "reasoning": "1.0s is just long enough to register the pour landing and the contents settling before peeling begins, and it's slightly tighter than the surrounding 1.1s/1.3s front shots to keep the overhead as a punctuation rather than a dwell."
       },
       "in_point": {
         "seconds": 16.808,
-        "reasoning": "16.8s catches the bowl already in pour \u2014 nuts actively leaving the rim \u2014 rather than the static setup at 16.0s, so the cut arrives with kinetic energy already present and the full 1.0s is working."
+        "reasoning": "16.8s catches the pour mid-action \u2014 the bowl is already tilted and pine nuts are actively falling onto the plate \u2014 skipping the dead lead-in at 16.0s (bowl just arriving) and the emptied-out tail at 18.0s (bowl lifting away)."
       },
       "verdict": "kept",
       "confidence": "high",
@@ -202,18 +202,18 @@
       "filename": "B19I6407.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle shows the vertical lift and display of the peeled clove held aloft above the pine nuts \u2014 the upward reveal gesture and the clove's roasted surface are only readable at eye level; overhead would collapse the held-up clove flat against the plate and lose the \"look at this\" moment entirely."
+        "reasoning": "Front is the switch point \u2014 after an overhead beat and before another overhead punch-in on the processor dump, front is the only angle that shows the roasted skin coming off and the peeled clove being displayed/inspected, which overhead would flatten into just \"hands on a plate.\""
       },
       "duration": {
         "seconds": 1.2929999999999993,
-        "reasoning": "1.3s captures exactly one gesture unit \u2014 the clove is already displayed at the in-point, so the shot enters on the payoff and exits before any dead hold; sandwiched between two 1.0s overheads, it's a fractionally longer middle beat that gives the front-angle close-up just enough breath to register without breaking the overhead-dominant rhythm of this sequence."
+        "reasoning": "1.3s holds just long enough to register the peeled clove reveal before the overhead processor dump, staying in the ~1s prep-sequence rhythm bracketed by the 1.0s clips on either side."
       },
       "in_point": {
         "seconds": 62.145,
-        "reasoning": "62.1s enters on the fully peeled clove already raised and visible, skipping all the skin-separation fumbling shown in the frame-by-frame at 11.5s \u2014 the editor chose the cleaner, post-peel display frame so the shot reads immediately as \"done, clean clove\" rather than opening on process."
+        "reasoning": "62.1s catches the moment the second peeled clove is lifted/displayed above the pine nuts \u2014 the roasted surface reveal \u2014 before the hands start rotating/inspecting at 63.0s, so you land on the cleanest \"here it is\" frame rather than mid-fidget."
       },
       "verdict": "trimmed",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "B19I6407.mov @ 19.0s (front)",
       "effects": "",
       "nested": "",
@@ -228,15 +228,15 @@
       "filename": "AI2I5191.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead collapses the depth so the food processor bowl reads as a flat target zone, making the garlic's downward trajectory and point of entry unmistakable \u2014 a front angle would show the clove approaching but obscure whether it actually landed."
+        "reasoning": "Overhead because this is a switch point after the front-angle anchor \u2014 the previous front shot sold \"hand with garlic poised over pine nuts,\" but only overhead can show the garlic actually entering the food processor bowl interior, which front (eye-level) would hide behind the bowl's rim."
       },
       "duration": {
         "seconds": 1.0419999999999998,
-        "reasoning": "One second is exactly long enough to register the drop action and confirm the clove is in the bowl, matching the rhythmic pulse of an ingredient-dump sequence where each addition gets a single beat."
+        "reasoning": "1.0s fits the ingredient-dump beat length \u2014 just long enough to register \"garlic in\" without overstaying, matching the rhythm of the surrounding 1.3s/1.2s cuts."
       },
       "in_point": {
         "seconds": 4.129,
-        "reasoning": "4.1s catches the clove already mid-fall with the second clove still held above, entering on kinetic motion rather than the static \"hand hovering\" setup at 3.0s, so the cut arrives with energy already live."
+        "reasoning": "4.1s lands right after the hand releases the clove mid-fall (per VLM at 4.0s), skipping the static 3.0s \"poised to drop\" setup so the cut opens on motion."
       },
       "verdict": "kept",
       "confidence": "high",
@@ -245,7 +245,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 124% punch-in crops out the surrounding counter and wide processor base, reframing the shot to isolate the bowl interior and the falling clove \u2014 without it, the overhead has too much dead negative space to read clearly in one second."
+      "effects_reasoning": "Punch-in to 124% is a functional reframe \u2014 the Cuisinart bowl is small and centered in the native overhead framing, so cropping in fills the frame with the drop action; this is not an organic flourish (no unattended transformation, the hand is driving the moment)."
     },
     {
       "beat_index": 11,
@@ -255,15 +255,15 @@
       "filename": "AI2I5191.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "The overhead angle reveals the full interior of the processor bowl \u2014 nuts cascading across the blade and garlic below \u2014 which a front shot would hide behind the opaque plastic housing."
+        "reasoning": "Overhead continues the held camera from the previous beat (also overhead) \u2014 this is a held-camera run during ingredient dumps (Rule 3), and top-down is the only angle that actually shows the pine nuts cascading INTO the processor bowl rather than hitting an opaque side wall."
       },
       "duration": {
         "seconds": 1.168000000000001,
-        "reasoning": "1.2s is long enough to register the mid-fall nut stream at its visual peak (not just a flash), while the slightly longer beat than the previous 1.0s beat absorbs the \"payload\" moment before the cut snaps to the front-angle pulse shot."
+        "reasoning": "1.2s is MOGRT-driven \u2014 long enough to read the \"pine nuts\" text overlay (Rule 3), slightly longer than the adjacent 1.0s beats because the label needs reading time, not because the pour action requires it."
       },
       "in_point": {
         "seconds": 11.22,
-        "reasoning": "11.2s lands after the initial bowl tilt (10.0s) but before the stream thins (12.0s), entering the pour at maximum cascade volume with nuts visibly mid-air above the blade."
+        "reasoning": "11.2s catches the pour mid-cascade with nuts actively streaming and some already landed on the blade \u2014 the pipeline's 10.0s start-of-pour would show a thinner, less visually full stream, while 11.2s has peak cascade density."
       },
       "verdict": "kept",
       "confidence": "high",
@@ -272,7 +272,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 124% punch-in eliminates dead workspace at the edges of the overhead frame, keeping the bowl-to-processor contact zone \u2014 the only area with motion \u2014 centered and legible at the cut."
+      "effects_reasoning": "Punch-in to 124% is a functional framing tool, not an organic flourish \u2014 the food processor occupies a small area of the full overhead frame, so cropping tightens onto the bowl/blade where the nuts are actually landing."
     },
     {
       "beat_index": 12,
@@ -282,18 +282,18 @@
       "filename": "B19I6409.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front/side angle shows the blending contents through the transparent bowl walls, making the texture transformation \u2014 fine powder swirling \u2014 directly legible in a way overhead never could while the lid is on."
+        "reasoning": "Front is the anchor because it's the only angle that shows the actual pulsing \u2014 motion-blurred blades spinning visible nuts through the side glass \u2014 while both neighboring overheads can only see the closed lid or post-pulse interior; it's a deliberate O\u2192F\u2192O switch point where front sells the transformation that overhead physically can't."
       },
       "duration": {
         "seconds": 0.9589999999999996,
-        "reasoning": "1.0s is a single rhythmic pulse \u2014 long enough to read \"fine powder in motion\" but clipped before the action settles, matching the beat name's \"pulsing\" cadence and keeping energy high between two overhead punch-in shots."
+        "reasoning": "1.0s fits between the 1.2s overhead lead-in and 0.8s overhead payoff, long enough to read the continuous grinding motion but short enough that the wider, unpunched front shot doesn't stall against the 124%-cropped overheads bracketing it."
       },
       "in_point": {
         "seconds": 47.339,
-        "reasoning": "47.3s lands inside the window where the contents have fully broken down into uniform fine powder (confirmed at 47.0s) but the blades are still actively spinning, so the motion blur communicates both the result of processing and the ongoing action simultaneously."
+        "reasoning": "47.3s lands mid-grind when contents have broken down into the fine swirling powder \u2014 the literal \"wet sand\" texture the beat calls for \u2014 rather than earlier chunky stages or the later static post-pulse frame."
       },
       "verdict": "trimmed",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "B19I6409.mov @ 50.0s (front)",
       "effects": "",
       "nested": "",
@@ -308,24 +308,23 @@
       "filename": "AI2I5192.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead puts the open processor bowl face-on to the lens, making the crumbly nut/garlic paste texture the entire frame rather than showing the machine's exterior profile."
+        "reasoning": ""
       },
       "duration": {
         "seconds": 0.7510000000000012,
-        "reasoning": "0.8s is one short musical pulse \u2014 enough to register the lid-off reveal and paste texture before cutting to the incoming basil ingredient beat, sustaining momentum without a pause."
+        "reasoning": ""
       },
       "in_point": {
         "seconds": 77.452,
-        "reasoning": "77.5s catches the lid actively mid-lift, so the motion itself acts as a cut-trigger \u2014 the upward hand movement gives the edit kinetic entry rather than cutting onto a static, already-open bowl."
+        "reasoning": ""
       },
       "verdict": "trimmed",
-      "confidence": "high",
+      "confidence": "medium",
       "pipeline_info": "AI2I5192.mov @ 47.0s (overhead)",
       "effects": "punch-in/crop (124.0% vs 50% baseline)",
       "nested": "",
       "mogrt_overlaps": [],
-      "correction": null,
-      "effects_reasoning": "The processor bowl is a small circle within a larger overhead frame, so 124% punch-in eliminates the surrounding countertop dead space and fills the frame with the paste detail that the shot exists to show."
+      "correction": null
     },
     {
       "beat_index": 14,
@@ -335,18 +334,18 @@
       "filename": "AI2I5193.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the only angle that reveals the full processor bowl as a canvas \u2014 showing basil leaves landing on top of the existing golden nut-garlic paste lets the viewer read both the new ingredient and the accumulated base simultaneously, which a front angle would hide behind the bowl wall."
+        "reasoning": "Overhead because this is beat 12 in a held overhead run (positions 11-12 are both overhead before switching to front at 13) \u2014 the top-down angle shows the accumulating pile of basil covering the existing nut/garlic paste, which the front eye-level angle can't reveal."
       },
       "duration": {
         "seconds": 1.2929999999999993,
-        "reasoning": "1.3s matches a single short musical phrase at an energetic section of the cut \u2014 the two 0.2s flash cuts register the ingredient visually before the 0.9s clip gives just enough time for the text overlay (\"Fresh basil\") to land and read."
+        "reasoning": "1.3s matches the MOGRT \"Fresh basil\" overlay window (16.9s\u201318.1s \u2248 1.2s) \u2014 long enough for the two-word label to read cleanly without lingering past the beat."
       },
       "in_point": {
         "seconds": 8.55,
-        "reasoning": "8.6s starts after the hand has exited frame (VLM confirms hand gone by 8.0s), so the clip opens on a clean, static pile of basil with no motion blur or wrist occluding the leaves \u2014 a legible first frame for a 0.2s shot."
+        "reasoning": "8.6s sits between the hand placing basil (7.0s) and the hand pressing it down (10.0s) \u2014 catching the clean resting pile without a hand in frame, which is what the \"Fresh basil\" label needs to land on."
       },
       "verdict": "trimmed",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "",
       "effects": "punch-in/crop (124.0% vs 50% baseline); punch-in/crop (124.0% vs 50% baseline); punch-in/crop (124.0% vs 50% baseline)",
       "nested": "",
@@ -354,7 +353,7 @@
         "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (16.9s-18.1s)"
       ],
       "correction": null,
-      "effects_reasoning": "124% punch-in on a 50% baseline crop means the processor bowl fills the entire frame edge-to-edge, eliminating the surrounding countertop and hands from the composition so the green basil reads instantly against the golden base without the eye needing to travel."
+      "effects_reasoning": "Functional, not organic \u2014 three sub-cuts from the same AI2I5193.mov with 124% punch-in are reframes inside the held overhead, applying rule 3's \"use nests, zooms, and reframes to keep the same angle interesting\" across the run."
     },
     {
       "beat_index": 17,
@@ -364,15 +363,15 @@
       "filename": "B19I6410.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the arc of the pour in profile \u2014 the falling zest and its landing on the green basil are only visible in silhouette from this side; overhead would show a flat top-down view of the bowl with no sense of the ingredient's trajectory or the hand's motion."
+        "reasoning": "Front here is a switch point starting a held front run (beat 13 marks the beginning of positions 13-16 all front after prior alternation) \u2014 the side angle shows the pouring gesture and empty bowl in the operator's hand, information the overhead would flatten into just \"zest appearing.\""
       },
       "duration": {
         "seconds": 1.0429999999999993,
-        "reasoning": "1.0s is the minimum viable window to cover the MOGRT text overlay (18.1s\u201319.2s = 1.1s), which is the functional purpose of this beat \u2014 the clip is a text-delivery vehicle in a tight ingredient-dump sequence, not a showcase shot."
+        "reasoning": "1.0s is the minimum readable beat for the short two-word \"Lemon zest\" MOGRT \u2014 text-read time sets the floor, and there's no organic flourish in this clip to justify holding longer."
       },
       "in_point": {
         "seconds": 37.871,
-        "reasoning": "37.9s catches the zest mid-fall with the hand still in frame \u2014 entering at the peak of motion rather than 37.0s (static setup, bowl hovering) or 39.0s (zest already settled), maximizing visual energy for a 1-second cut."
+        "reasoning": "37.9s lands just as the pour begins \u2014 37.0s in the source is static (hand holding bowl, no motion) and 38.0s is already mid-pour, so 37.9s catches the first frame of falling zest without dead air."
       },
       "verdict": "trimmed",
       "confidence": "high",
@@ -392,15 +391,15 @@
       "filename": "B19I6410.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the pour action and the cascade of parmesan falling into the processor in profile \u2014 overhead would flatten the fall and lose the visual depth of cheese landing on the layered ingredients."
+        "reasoning": "Front because this is beat 14 of a held front-camera run (beats 13-16 all front) \u2014 the editor is holding the angle across the middle of the dump sequence per Rule 3, not switching."
       },
       "duration": {
         "seconds": 1.1679999999999993,
-        "reasoning": "1.2s covers the full pour arc (cup tilting \u2192 cheese mid-fall \u2192 pile growing) without holding on the static \"empty cup\" moment at 51s, matching the text overlay window (19.2s\u201320.4s) precisely."
+        "reasoning": "1.2s matches the MOGRT \"Parmesan cheese\" text overlay (19.2s-20.4s) exactly \u2014 the hold is driven by read time for the two-word label, not the pour action."
       },
       "in_point": {
         "seconds": 49.883,
-        "reasoning": "49.9s catches the cheese already mid-pour with visible cascade, skipping the static setup of the cup being raised and landing directly on the kinetic action."
+        "reasoning": "49.9s catches the cheese mid-cascade with the pile visibly growing on top of the basil, the most dynamic frame of the pour rather than the cup-tilt start or near-empty end."
       },
       "verdict": "trimmed",
       "confidence": "high",
@@ -411,7 +410,7 @@
         "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (19.2s-20.4s)"
       ],
       "correction": null,
-      "effects_reasoning": "119% punch-in tightens to the processor bowl and falling cheese, removing dead negative space around the hand and cup; the minimal vertical reframe (-0.04h) nudges the frame down slightly to keep the cheese pile centered as it builds."
+      "effects_reasoning": "Punch-in to 119% with a slight left reframe is a functional tool to tighten onto the cascading cheese and the processor bowl contents, cropping out the wider counter area \u2014 not an organic flourish, just composition tightening within a held run so the repeated front angle stays visually interesting."
     },
     {
       "beat_index": 19,
@@ -421,24 +420,24 @@
       "filename": "B19I6410.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle reveals the vertical layering inside the bowl \u2014 basil on top, cheese, then nut paste below \u2014 a stacking story that overhead would collapse into a single green mass."
+        "reasoning": "Front because the side view of the food processor shows the ingredient layers stacked visibly (green basil on top, white cheese, beige nut paste below) through the clear bowl \u2014 overhead would flatten all that layering into just the top surface. This is the anchor shot for \"everything's loaded, about to blend.\""
       },
       "duration": {
         "seconds": 1.0420000000000016,
-        "reasoning": "1.0s is the minimum readable beat to register the layered composition before the lid drops and the static moment is gone forever \u2014 any shorter and the viewer can't parse what they're seeing; any longer and the edit stalls before the payoff blend."
+        "reasoning": "1.0s gives a beat of visual rest between the rapid-fire ingredient dumps (previous 1.2s ingredient beat) and the blending action that follows, letting the viewer register the full stack before chaos starts."
       },
       "in_point": {
         "seconds": 96.763,
-        "reasoning": "96.8s catches the last static frame before active blending begins (VLM confirms motion has started by 97.0s), giving the editor the one clean freeze-frame that sells the \"all ingredients loaded\" beat without showing chopping chaos."
+        "reasoning": "96.8s catches the pre-blend moment \u2014 ingredients still in distinct layers, lid going on \u2014 which is exactly the \"ready\" frame; the VLM shows 97s onward is already actively blending, so this in-point is the last clean look before motion."
       },
       "verdict": "added",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "",
       "effects": "punch-in/crop (110.0% vs 50% baseline); Reframed (offset h:-0.02 v:0.00)",
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 110% punch-in (minimal, just above the 50% baseline) tightens to eliminate dead bowl rim and lid hardware at the frame edges, keeping the eye on the ingredient layers; the h:-0.02 reframe is a hair-nudge left to center the layered column of ingredients rather than the processor's center post."
+      "effects_reasoning": "Punch-in to 110% and the small horizontal offset are functional reframing to tighten on the bowl and remove dead counter/lid space, not an organic flourish \u2014 nothing is transforming untouched here."
     },
     {
       "beat_index": 20,
@@ -448,24 +447,24 @@
       "filename": "B19I6410.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle shows the processor bowl at eye level, making the green chunks visibly breaking down against the beige base \u2014 the textural transformation (chunky to paste) reads clearly through the transparent bowl wall in a way overhead cannot show."
+        "reasoning": "Front holds one more beat from the previous front shot (lid going on) before switching to overhead for the next two beats \u2014 it's the tail of a held-camera run that lets the viewer see green chunks through the side of the bowl, which the overhead can't show."
       },
       "duration": {
         "seconds": 0.8350000000000009,
-        "reasoning": "0.8s is one short musical phrase \u2014 just long enough to register the active blending motion and the green-breaking-down moment before cutting to the overhead confirmation shot, maintaining momentum without letting the repetitive blending action overstay."
+        "reasoning": "0.8s is a short punchy beat matching the neighboring rhythm (1.0s \u2192 0.8s \u2192 0.9s), just long enough to register \"blending has started\" before handing off to the overhead reveal."
       },
       "in_point": {
         "seconds": 106.356,
-        "reasoning": "106.4s lands mid-blend when the chunks are still visible but actively being reduced \u2014 not at the start of blending (too early, no payoff) and not at the end (too smooth, the drama of breakdown is gone); this frame has the most kinetic read of the transformation."
+        "reasoning": "106.4s catches the early-blend moment when chunks are still visibly green and distinct \u2014 starting later would skip the chunky stage that sets up the transformation arc into the smoother overhead shot."
       },
       "verdict": "added",
-      "confidence": "high",
+      "confidence": "medium",
       "pipeline_info": "",
       "effects": "punch-in/crop (110.0% vs 50% baseline); Reframed (offset h:-0.02 v:0.00)",
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "110% punch-in (modest, just above baseline) tightens the frame to the bowl contents and removes dead space around the machine body; the -0.02 horizontal reframe nudges the bowl center slightly right to balance the composition against the processor handle mass on the left."
+      "effects_reasoning": "Functional punch-in (110%) + slight horizontal reframe tightens on the processor bowl so the green-chunk action reads at this short duration \u2014 not an organic flourish, just attention-direction."
     },
     {
       "beat_index": 21,
@@ -475,15 +474,15 @@
       "filename": "AI2I5193.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "The overhead angle shows the pesto's transformation \u2014 the circular blending motion and color/texture change from chunky to smooth \u2014 which a front angle would obscure behind the processor bowl walls and lid."
+        "reasoning": "Overhead is the only angle that actually shows the pesto forming through the clear lid \u2014 front would just show the opaque side of the processor, so this is a best-take switch to reveal the transformation inside."
       },
       "duration": {
         "seconds": 0.916999999999998,
-        "reasoning": "0.9s is long enough to register the green mass in motion but cuts before the blend completes, preserving forward momentum into the oil-pour beat that follows."
+        "reasoning": "0.9s is long enough to register the green-paste-forming moment without stalling the cadence before the oil-pour ingredient beat that follows."
       },
       "in_point": {
         "seconds": 165.707,
-        "reasoning": "165.7s catches the paste mid-blend while it's still visibly chunky and moving \u2014 starting earlier would show static setup, starting later would lose the transformation arc the cut depends on."
+        "reasoning": "165.7s catches the paste mid-blend where it's visibly chunky-to-smoother, so the shot reads as active transformation rather than a static \"machine running\" frame."
       },
       "verdict": "added",
       "confidence": "high",
@@ -492,7 +491,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 113% punch-in (vs 50% baseline) eliminates dead counter space around the processor and fills the frame with the lid/bowl, while the small h:0.03 v:0.04 reframe nudges the composition to center the green paste mass rather than the feed chute."
+      "effects_reasoning": "The 113% punch-in with a small h:0.03/v:0.04 reframe is a functional crop to push past the processor housing and center the green mass under the lid \u2014 this is a found organic flourish (pesto forming untouched) being tightened up, not a mechanical action beat."
     },
     {
       "beat_index": 22,
@@ -502,15 +501,15 @@
       "filename": "B19I6411.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front angle captures the full arc of the pour \u2014 measuring cup, oil stream, and feed tube entry \u2014 as a single readable action, whereas overhead would flatten the pour to a top-down drip with no spatial relationship between vessel and destination."
+        "reasoning": "Front is the switch point out of the prior overhead punch-in (AI2I5193.mov) and opens a held front run across the next several dumps \u2014 eye-level shows the measuring cup in hand and the oil's golden-green stream entering the feed tube, which the overhead top-down wouldn't render as recognizably \"olive oil.\""
       },
       "duration": {
         "seconds": 1.501999999999999,
-        "reasoning": "The clip is cut to exactly match the MOGRT text overlay (23.1s\u201324.6s = 1.5s), so the ingredient label and its corresponding visual action share a single identical window on screen."
+        "reasoning": "1.5s matches the MOGRT \"Extra-virgin olive oil\" read time (23.1s\u201324.6s) \u2014 the longest ingredient name in this run needs the full beat to be legible, not the pour action itself."
       },
       "in_point": {
         "seconds": 11.803,
-        "reasoning": "11.8s lands mid-pour with the stream already established and consistent, skipping any initial tilt/hesitation at the start of the pour and dropping straight into the clean, uninterrupted golden-green column of oil."
+        "reasoning": "11.8s lands mid-pour with the stream already established and consistent (per VLM scan at 11.0s/13.0s), skipping the cup-tilt ramp so the cut opens on a clean, readable oil stream."
       },
       "verdict": "added",
       "confidence": "high",
@@ -530,15 +529,15 @@
       "filename": "B19I6411.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle shows the salt arc falling from bowl to feed tube in profile, making the ingredient's trajectory and destination legible \u2014 overhead would flatten the pour into a top-down abstraction and lose the \"into the machine\" spatial relationship."
+        "reasoning": "Front is the held-run choice here \u2014 beats 16-19 are all front, so this is continuing the hold rather than switching, and front frames the hand-tilting-bowl-into-feed-tube action at eye level where you can read the pouring motion."
       },
       "duration": {
         "seconds": 1.3760000000000012,
-        "reasoning": "1.4s is the minimum to show all three beat-states of the pour (initiation, stream, finish) while the \"Kosher salt\" text overlay completes its hold, then cuts as the processor shot takes over \u2014 trimming further would drop the finish frame and feel rushed."
+        "reasoning": "1.4s is governed by \"Kosher salt\" MOGRT readability \u2014 two short words need roughly that hold to register, matching the prior ingredient beat's 1.5s cadence."
       },
       "in_point": {
         "seconds": 63.814,
-        "reasoning": "63.8s catches the pour already in motion at mid-tilt (confirmed at 64.0s as \"actively falling, mid-pour\"), skipping the static setup of the hand reaching toward the bowl and landing the audience directly in the action."
+        "reasoning": "63.8s lands just before the pour hits its clearest mid-action frame (64.0s shows salt actively streaming), so the cut opens on the tilt-and-release rather than dead air before the pour."
       },
       "verdict": "added",
       "confidence": "high",
@@ -558,18 +557,18 @@
       "filename": "B19I6411.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front/side angle shows the pesto actively swirling through the transparent processor bowl walls \u2014 you see the circular motion and splatter confirming the machine is running; overhead would only show a static green surface with no visible movement."
+        "reasoning": "Front is the anchor/best-take here \u2014 the side-view shows the smooth vibrant green vortex actively swirling with splatter on the bowl walls, which overhead flattens into a static disc; it also sets up the next beat's overhead lid-removal as a reveal rather than a repeat angle."
       },
       "duration": {
         "seconds": 0.9589999999999996,
-        "reasoning": "1.0s is a single beat hit \u2014 enough to register the blending action and vibrant color after the preceding ingredient text-overlay beat, then cut before the shot goes static; the next clip's punch-in needs a hard contrast, not a lingering hold."
+        "reasoning": "1.0s is a short connective beat between the prior ingredient-dump (1.4s, text overlay that needed read time) and the upcoming overhead lid reveal \u2014 just long enough to register \"it's blending smooth\" without dwelling, keeping the music pacing tight into the reveal."
       },
       "in_point": {
         "seconds": 70.279,
-        "reasoning": "70.3s catches the pesto mid-swirl with splatter visible on the bowl walls, the peak motion frame \u2014 69.0s would work but 70.3s is denser with movement, and 72.0s introduces the idle hand which softens the energy."
+        "reasoning": "70.3s over the pipeline's 69.0s because by 70.3s the paste reads as \"smooth final-blend stage\" (matching the 26.5s frame) rather than the rougher mid-process swirl at 69.0s \u2014 the editor picked the moment the pesto looks finished, not chaotic."
       },
       "verdict": "kept",
-      "confidence": "high",
+      "confidence": "medium",
       "pipeline_info": "B19I6411.mov @ 69.0s (front)",
       "effects": "",
       "nested": "",
@@ -584,15 +583,15 @@
       "filename": "AI2I5196.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the only angle that shows the pesto surface and lid-removal as a single unified reveal \u2014 the bowl fills the frame top-down, making the smooth, deep-green finish the subject rather than the machine's exterior."
+        "reasoning": "Overhead is the best take of the reveal \u2014 it shows the smooth green surface and blade geometry of the finished pesto, which front (eye-level) would foreshorten into a dark rim and hide; this is a deliberate switch off the front-heavy run around it to land the \"money shot\" of the transformation."
       },
       "duration": {
         "seconds": 1.1260000000000012,
-        "reasoning": "1.1s captures exactly the lid-clearing motion and one settled frame of the finished pesto \u2014 long enough to read the reveal, short enough that it reads as a punctuation beat between two front-angle clips rather than a lingering hero shot."
+        "reasoning": "1.1s is a held reveal beat \u2014 longer than the ~0.7s front shots bracketing it because the viewer needs time to register the lid-off transformation and read the smooth pesto texture before cutting to the spatula transfer."
       },
       "in_point": {
         "seconds": 15.682,
-        "reasoning": "15.7s catches the lid mid-lift, so the clip enters with built-in kinetic motion blur that reads as a \"reveal in progress\" \u2014 starting at 16.0s (lid already gone) would lose the gesture; starting at 15.0s would include the hand lowering the lid first, which contradicts the narrative direction."
+        "reasoning": "15.7s catches the lid mid-exit with motion blur still in frame (between the 15.0s lifting pose and 16.0s fully-clear state), so the cut opens on dynamic upward motion rather than a static \"lid already gone\" plate."
       },
       "verdict": "added",
       "confidence": "high",
@@ -601,7 +600,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The punch-in to 68% eliminates the processor body and countertop surroundings so the bowl fills the frame edge-to-edge, turning the smooth pesto surface into a pure texture shot; the v:+0.02 reframe corrects the overhead camera's slight off-axis position to re-center the bowl within the tighter crop."
+      "effects_reasoning": "68% punch-in with a tiny vertical nudge is a functional reframe \u2014 tightening past the 50% baseline crops out dead bowl rim and centers the pesto surface for emphasis; not an organic flourish since nothing is transforming on its own here, just a money-shot push-in on the finished product."
     },
     {
       "beat_index": 26,
@@ -611,15 +610,15 @@
       "filename": "B19I6412.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front reveals the glass jar in profile, showing fill depth, the pesto-weighted spatula dollop suspended over the mouth, and the drip trailing down the rim \u2014 overhead would collapse all of that into a featureless green top-down pool with no sense of vessel or transfer direction."
+        "reasoning": "Front is the anchor here \u2014 the money shot is the glass jar silhouette filling up with the pesto drip caught on the rim (rule 4 organic flourish), which overhead would flatten into an unreadable green blob; it's also a switch point out of the prior overhead beat, and front then holds into beat 27."
       },
       "duration": {
         "seconds": 0.7089999999999996,
-        "reasoning": "0.7s is a single beat \u2014 exactly enough to register the spatula-over-jar composition and the dripping pesto before the cut resolves to the hero jar shot in the next clip; holding longer would stall the payoff that B19I6413 delivers."
+        "reasoning": "0.7s lands the cut on the music beat and gives just enough time to read the three-stage micro-story (spatula scoop \u2192 dollop over jar mouth \u2192 hero jar with rim drip) without lingering past the drip, which is the payoff frame."
       },
       "in_point": {
         "seconds": 11.803,
-        "reasoning": "At 11.8s the pesto stream first elongates and contacts the jar bottom, which is the moment of maximum visual tension in the pour \u2014 the pipeline's 9.0s entry would have started mid-setup with the pitcher still high, so the editor trimmed 2.8s of lead-in to enter at peak action."
+        "reasoning": "11.8s starts on active transfer \u2014 spatula mid-scoop with pesto visibly dripping \u2014 whereas the pipeline's 9.0s would have opened on the setup before the stream makes contact; the editor trimmed forward to enter on motion."
       },
       "verdict": "trimmed",
       "confidence": "high",
@@ -637,15 +636,15 @@
       "filename": "B19I6413.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle reveals the glass jar's volumetric fullness through its transparent walls and puts the rim drip on the near edge in clear view \u2014 overhead would flatten the jar into a circle and bury the drip behind the rim."
+        "reasoning": "Front \u2014 the jar is nearly full with a pesto drip on the rim, and front angle renders the jar as a dimensional object where that drip reads clearly, whereas overhead would flatten the contents into a green disc and lose the hero silhouette; this is the anchor shot for the money-shot section (best take of \"finished pesto\")."
       },
       "duration": {
         "seconds": 0.7929999999999993,
-        "reasoning": "0.8s is a single-beat hold sized to register the \"full jar + drip\" payoff read before handing off to the next clip's speed ramp, any shorter skips the detail, any longer kills the momentum the ramp is about to build."
+        "reasoning": "0.8s is a hold beat for a money shot \u2014 long enough to register the finished product and the drip, short enough to not stall before the next jar-grip shot."
       },
       "in_point": {
         "seconds": 54.721,
-        "reasoning": "54.7s lands after the active pour has settled, giving a static hero frame where the jar is nearly full and the rim drip is frozen mid-drip \u2014 the previous frames show sauce still mid-fall, which would compete with the \"completion\" read this beat needs."
+        "reasoning": "54.7s is past the active pour (which fills 50\u201352s in the source), landing on the settled moment where the jar is full and a drip has naturally formed on the rim \u2014 the found organic frame, not mid-action."
       },
       "verdict": "added",
       "confidence": "high",
@@ -654,7 +653,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The tighter 70% punch-in (vs. 50% baseline) crops out the blender and surrounding counter to make the jar fill the frame as a product-shot hero; the reframe h:-0.04 v:0.06 nudges the composition left and down to land the rim drip on the lower-center visual sweet spot rather than the geometric center of the cropped frame."
+      "effects_reasoning": "Punch-in to 70% and the slight reframe (h:-0.04, v:0.06) tighten on the jar/rim drip to sell it as hero \u2014 this is a functional presentation tool for the money shot, not an organic flourish (no speed ramp, no transformation playing out)."
     },
     {
       "beat_index": 28,
@@ -664,24 +663,24 @@
       "filename": "B19I6414.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The front/above-front angle shows the pesto's vivid green color through the glass jar face and the hand's grip simultaneously \u2014 overhead would collapse the jar to a circle and lose the depth and label, while a pure side angle would miss the surface texture catching light."
+        "reasoning": "Front continues the held camera run (previous front, next front) because the hand-jar presentation with pesto texture visible at the surface is the hero moment \u2014 overhead would only show a jar lid and miss the grip/texture reveal."
       },
       "duration": {
         "seconds": 1.3350000000000009,
-        "reasoning": "At 50% base speed the 1.3s of screen time covers ~2.6s of real action, giving the eye just enough time to read \"jar of pesto\" and absorb the texture detail before the cut to the payoff scrape \u2014 any shorter and the color register is missed, any longer and the momentum stalls before the spaghetti shot."
+        "reasoning": "1.3s gives the jar-presentation enough screen time to register as a deliberate hero beat before the pour lands on the next shot; the 50% ramp stretches the source so the hand settling onto the jar reads as weighty rather than incidental."
       },
       "in_point": {
         "seconds": 94.886,
-        "reasoning": "The in-point at 94.9s catches the jar already lifted and gripped mid-air, entering the shot with kinetic energy already established rather than a dead static pickup off the surface."
+        "reasoning": "94.9s is the exact moment the hand arrives on the jar with the pesto surface in focus \u2014 earlier frames (per VLM at 48s/54s) show the jar sitting stationary and unattended, so this in-point catches the first frame of purposeful human contact."
       },
       "verdict": "added",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "",
       "effects": "Speed ramp (50.0% base, ramp between 94.9s-96.2s)",
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The full-duration 50% ramp luxuriates over the pesto's color and glass-refracted texture, turning a functional \"grab jar\" gesture into a tactile money shot that earns the cut to pesto hitting pasta immediately after."
+      "effects_reasoning": "The speed ramp is functional, not an organic flourish \u2014 there's no unattended transformation here (no melting, no pooling), just a hand grab, so the 50% ramp is being used as a money-shot tool to elevate the hero ingredient reveal right before the pour."
     },
     {
       "beat_index": 29,
@@ -691,15 +690,15 @@
       "filename": "B19I6415.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle shows the spatula-scraping action in profile, making the downward drag motion and the pesto's viscosity legible \u2014 overhead would flatten the dollop into a green blob with no sense of depth or tool-to-food contact."
+        "reasoning": "Front \u2014 this sits inside a held-camera run (prev front, next front) on the pesto-scraping sequence, and the front angle shows the spatula's horizontal drag and the dollop landing/spreading across the noodles, which overhead would flatten into pure texture."
       },
       "duration": {
         "seconds": 1.458999999999996,
-        "reasoning": "1.5s of timeline at 50% base speed covers roughly 0.75s of source action, which is precisely the beat window of the spatula making first contact and beginning the drag \u2014 long enough to read the gesture, short enough to not linger past the payoff before the tong-toss cut."
+        "reasoning": "1.5s covers 1.4s of source (14.5\u219215.9) ramped from 50% baseline, letting the dollop-land moment breathe in slow-mo before accelerating into the drag so the cut resolves on the next beat rather than lingering."
       },
       "in_point": {
         "seconds": 14.473,
-        "reasoning": "14.5s catches the frame immediately after the pour settles into static dollops, eliminating the dead air of [14.0s] while entering just before the spatula re-engages \u2014 the clip opens on potential energy, not residual motion."
+        "reasoning": "14.5s is the instant the pour stops and the sauce settles as dollops on the spaghetti \u2014 the clean \"landed\" frame before any spatula drag \u2014 so the shot opens on the fresh pesto shape and then transforms."
       },
       "verdict": "added",
       "confidence": "medium",
@@ -708,7 +707,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 50% ramp slows the pesto-landing-on-pasta moment (the visual payoff of the entire sauce sequence) to let the texture and color contrast register emotionally, then accelerates out to maintain the cut rhythm into the tong-toss that follows."
+      "effects_reasoning": "Organic flourish \u2014 the pesto hitting pasta and the first drag is a found transformation moment (green on yellow, thick stream), and the 50% ramp-up treats it as a hero beat rather than a functional timing fix."
     },
     {
       "beat_index": 30,
@@ -718,15 +717,15 @@
       "filename": "B19I6416.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the vertical axis of the lift \u2014 tongs pulling pasta upward with strands cascading straight down into the bowl \u2014 a geometry that overhead would compress into a flat tangle with no sense of height or fall."
+        "reasoning": "Front because this is a beauty anchor \u2014 the vertical cascade of strands falling back only reads from eye-level; overhead would flatten the drop into a shapeless mass and kill the hero moment."
       },
       "duration": {
         "seconds": 1.3770000000000024,
-        "reasoning": "1.4s gives exactly one arc: entry into the mid-lift, peak of the cascade, and the strands beginning to drop \u2014 the full visual payoff without holding past the moment; longer would let the pasta settle back and kill the tension before the cut to the ingredient beat."
+        "reasoning": "1.4s lets the cascade breathe \u2014 long enough to register the lift-and-fall as a beauty beat, short enough to stay on the music phrase before the parmesan ingredient text hits next."
       },
       "in_point": {
         "seconds": 42.084,
-        "reasoning": "42.1s enters on the bundle already suspended above the bowl (the 42.0s frame shows strands intertwined, sauce clinging mid-air), so the shot opens at maximum visual complexity \u2014 skipping the pickup motion from the bowl that was likely covered by the preceding speed-ramp beat."
+        "reasoning": "42.1s skips the 41s \"pulling from the bowl\" setup and lands right as the bundle clears the rim into its lifted pose, catching the cascade at its peak rather than mid-extraction."
       },
       "verdict": "trimmed",
       "confidence": "high",
@@ -744,15 +743,15 @@
       "filename": "B19I6417.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front/eye-level captures the vertical depth of the parmesan mound and the dimensional texture of the freshly grated strands \u2014 overhead would compress the cheese pile into a flat white circle, losing the \"just grated\" visual that sells the ingredient."
+        "reasoning": "Front \u2014 this is deep inside a held front-camera run (7 consecutive fronts before it), so the rule is \"hold, don't alternate,\" and front specifically shows the fluffy pile of parmesan sitting three-dimensionally on top of the spaghetti, which an overhead would flatten into a white disc."
       },
       "duration": {
         "seconds": 1.5850000000000009,
-        "reasoning": "1.6s matches the MOGRT ingredient text overlay window (33.8s\u201335.4s) exactly \u2014 the clip is trimmed to the text's lifespan, not a visual cut point."
+        "reasoning": "1.6s \u2014 matches the MOGRT \"Parmesan cheese\" text window (33.8s\u201335.4s); two words of readable text need roughly that long to land, and the cut duration is governed by readability here, not by any action in the shot."
       },
       "in_point": {
         "seconds": 26.777,
-        "reasoning": "26.8s enters at peak cheese coverage \u2014 the VLM confirms at 26.0s the pasta is \"completely covered by a thick, fluffy layer\" \u2014 catching the mound before any settling or compression, maximizing the white-on-green contrast for the ingredient reveal."
+        "reasoning": "26.8s \u2014 by this frame in the source clip the grated parmesan has finished falling and is visibly settled as a thick fluffy blanket over the pesto (VLM shows it \"completely covered\" by 26.0s and \"fully blanketed\" by 28.0s), giving a clean \"finished dish\" beat to hold under the text."
       },
       "verdict": "trimmed",
       "confidence": "high",
@@ -772,24 +771,24 @@
       "filename": "B19I6417.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front angle captures the bowl sliding toward the lens as a direct presentation gesture \u2014 overhead would collapse the depth of that approach into a flat lateral drag, losing the sense of the dish being offered to the viewer."
+        "reasoning": "Front is the anchor/hero angle for the final beauty shot \u2014 it shows the bowl's dimensional presentation (parmesan mounded on top, pasta color, bowl rim) the way a viewer would see the finished dish placed in front of them, which overhead would flatten into just a color disc."
       },
       "duration": {
         "seconds": 4.128999999999998,
-        "reasoning": "4.1s of timeline at 50% speed consumes roughly 2s of source footage, which is just long enough to complete the slide arc and hold the final beauty frame while the Kitchn end card fully resolves \u2014 cutting earlier would clip the logo reveal mid-settle."
+        "reasoning": "4.1s is the closing hold \u2014 longer than mid-video beats because the end card needs time to read (Kitchn logo, finished dish), and the 50% speed ramp stretches ~2s of real bowl-slide motion into a slower, more luxurious settle."
       },
       "in_point": {
         "seconds": 389.055,
-        "reasoning": "389.1s catches the bowl already in motion with the hand still guiding the edge, entering on kinetic energy already established so the slow-motion has immediate visual weight rather than ramping up from a static hold."
+        "reasoning": "389.1s catches the bowl just as the hand is still at the edge pushing it toward camera \u2014 the last bit of motion before the dish comes to rest, giving the shot a \"presented to you\" arrival rather than starting on a static plate."
       },
       "verdict": "added",
-      "confidence": "medium",
+      "confidence": "high",
       "pipeline_info": "",
       "effects": "Speed ramp (50.0% base, ramp between 389.1s-393.2s)",
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The 50% speed ramp transforms a utilitarian 2-second kitchen gesture into a ~4-second cinematic reveal, stretching the dish's hero moment to fill the end card window and giving the logo something graceful to sit over rather than a quick snap-to-static."
+      "effects_reasoning": "Speed ramp is functional, not organic \u2014 there's no transformation happening (VLM confirms the source is essentially static cheese-on-pasta), so the 50% is purely to slow the presentation gesture and buy hang-time for the end card."
     }
   ]
 }
