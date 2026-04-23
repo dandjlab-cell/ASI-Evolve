@@ -30,7 +30,7 @@
         "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.9s)"
       ],
       "correction": null,
-      "effects_reasoning": "The speed ramp is an organic flourish \u2014 pesto pouring is a found beautiful transformation that gets slowed to savor the stream, while the punch-in/crop and reframe are functional tools to tighten composition on the jar and correct framing under the title card overlay."
+      "effects_reasoning": "The speed ramp is an organic flourish \u2014 pesto pouring is a found beautiful transformation that gets slowed to savor the stream, while the punch-in/crop and reframe are functional tools to tighten composition on the jar and correct framing under the title card overlay. [flourish: functional]"
     },
     {
       "beat_index": 3,
@@ -680,7 +680,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "The speed ramp is functional, not an organic flourish \u2014 there's no unattended transformation here (no melting, no pooling), just a hand grab, so the 50% ramp is being used as a money-shot tool to elevate the hero ingredient reveal right before the pour."
+      "effects_reasoning": "The speed ramp is functional, not an organic flourish \u2014 there's no unattended transformation here (no melting, no pooling), just a hand grab, so the 50% ramp is being used as a money-shot tool to elevate the hero ingredient reveal right before the pour. [flourish: functional]"
     },
     {
       "beat_index": 29,
@@ -707,7 +707,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "Organic flourish \u2014 the pesto hitting pasta and the first drag is a found transformation moment (green on yellow, thick stream), and the 50% ramp-up treats it as a hero beat rather than a functional timing fix."
+      "effects_reasoning": "Organic flourish \u2014 the pesto hitting pasta and the first drag is a found transformation moment (green on yellow, thick stream), and the 50% ramp-up treats it as a hero beat rather than a functional timing fix. [flourish: functional]"
     },
     {
       "beat_index": 30,
@@ -788,7 +788,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "Speed ramp is functional, not organic \u2014 there's no transformation happening (VLM confirms the source is essentially static cheese-on-pasta), so the 50% is purely to slow the presentation gesture and buy hang-time for the end card."
+      "effects_reasoning": "Speed ramp is functional, not organic \u2014 there's no transformation happening (VLM confirms the source is essentially static cheese-on-pasta), so the 50% is purely to slow the presentation gesture and buy hang-time for the end card. [flourish: functional]"
     }
   ]
 }

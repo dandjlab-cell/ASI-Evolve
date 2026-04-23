@@ -17,6 +17,7 @@ Usage:
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Dict, List, Optional
@@ -266,26 +267,30 @@ def score_flourish_detection(beats: List[dict]) -> dict:
             continue
 
         desc = str(beat.get("beat_description", "")).lower()
-        reasoning = ""
-        r = beat.get("reasoning", {})
-        if isinstance(r, dict):
-            reasoning = str(r.get("effects_reasoning", "")).lower()
+        reasoning = str(beat.get("effects_reasoning", "")).lower()
 
-        # Check if this looks like an organic flourish
-        flourish_signals = [
-            "melt", "sizzl", "brown", "caramel", "bubble", "steam",
-            "pour", "drip", "pool", "spread", "settle", "dissolve",
-            "slide", "cascade", "flow", "stream", "hold", "jar",
-            "scrape", "scrap", "beauty", "hero", "plat", "present",
-            "slow", "luxur", "savor", "reveal",
-        ]
-        functional_signals = [
-            "compress", "fit", "musical", "phrase", "beat", "rhythm",
-            "tempo", "accelerat",
-        ]
+        # Prefer the structured verdict token if present: [flourish: organic|functional].
+        # Keyword matching is a fallback for legacy annotations that pre-date the token.
+        tag_match = re.search(r"\[flourish:\s*(organic|functional)\s*\]", reasoning)
+        if tag_match:
+            verdict = tag_match.group(1)
+            is_flourish = verdict == "organic"
+            is_functional = verdict == "functional"
+        else:
+            flourish_signals = [
+                "melt", "sizzl", "brown", "caramel", "bubble", "steam",
+                "pour", "drip", "pool", "spread", "settle", "dissolve",
+                "slide", "cascade", "flow", "stream", "hold", "jar",
+                "scrape", "scrap", "beauty", "hero", "plat", "present",
+                "slow", "luxur", "savor", "reveal",
+            ]
+            functional_signals = [
+                "compress", "fit", "musical", "phrase", "beat", "rhythm",
+                "tempo", "accelerat",
+            ]
 
-        is_flourish = any(s in desc or s in reasoning for s in flourish_signals)
-        is_functional = any(s in desc or s in reasoning for s in functional_signals)
+            is_flourish = any(s in desc or s in reasoning for s in flourish_signals)
+            is_functional = any(s in desc or s in reasoning for s in functional_signals)
 
         speed_ramp_beats.append({
             "beat_index": beat.get("beat_index"),

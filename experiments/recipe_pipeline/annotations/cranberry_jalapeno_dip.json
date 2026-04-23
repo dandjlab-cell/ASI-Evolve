@@ -226,7 +226,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "Speed ramp at 101.391% is functional, not organic \u2014 1.4% is imperceptible as a transformation ramp and is almost certainly a duration-fit nudge to hit the next beat cleanly; a true organic flourish would ramp far more aggressively (e.g., 150-400%) to sell a transformation."
+      "effects_reasoning": "Speed ramp at 101.391% is functional, not organic \u2014 1.4% is imperceptible as a transformation ramp and is almost certainly a duration-fit nudge to hit the next beat cleanly; a true organic flourish would ramp far more aggressively (e.g., 150-400%) to sell a transformation. [flourish: functional]"
     },
     {
       "beat_index": 10,

@@ -491,7 +491,7 @@ One sentence each. Be specific about what's visible. No hedging. Reason against 
 CAMERA: Why {camera}? Consider: is this the anchor shot (best take), part of a held camera run, or a switch point? What does this angle show that the other wouldn't?
 DURATION: Why {duration:.1f}s?{' Account for the speed ramp.' if effects_info and 'speed' in effects_info.lower() else ''}{' Consider: MOGRT text readability drives the hold length.' if mogrt_overlaps else ''}
 INPOINT: Why this in-point? What's happening at this frame?
-{"EFFECTS: Why " + effects_info + "? Consider: is this an organic flourish (unattended transformation) or a functional edit tool?" if effects_info else ""}{"STOPMOTION: Why stop-motion here? What does the rapid-fire rhythm do?" if is_stop_motion else ""}
+{"EFFECTS: Why " + effects_info + "? Consider: is this an organic flourish (unattended transformation like melting/pouring/pooling) or a functional edit tool (timing nudge, reframe, attended action)? If the effect includes a speed ramp, end your answer with a verdict token on the SAME line: [flourish: organic] or [flourish: functional]. Emit the token only when a speed ramp is present." if effects_info else ""}{"STOPMOTION: Why stop-motion here? What does the rapid-fire rhythm do?" if is_stop_motion else ""}
 CONFIDENCE: high/medium/low"""
 
 

@@ -114,7 +114,8 @@
       "mogrt_overlaps": [
         "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (6.5s-7.7s)"
       ],
-      "correction": null
+      "correction": null,
+      "effects_reasoning": "[flourish: functional]"
     },
     {
       "beat_index": 6,
@@ -169,7 +170,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "Functional, not organic. Olive oil pouring is a directed action (hand, bottle, stream) \u2014 not an unattended transformation like melting butter or pooling sauce, so rule 4 doesn't apply. The 455% ramp is compression to jam pour+settle into the MOGRT read-window. The 66% punch-in (vs 50% baseline) is the rule-3 reframe: since overhead is held across multiple beats, tightening the crop keeps the held angle visually fresh and makes the oil stream more prominent in the frame."
+      "effects_reasoning": "Functional, not organic. Olive oil pouring is a directed action (hand, bottle, stream) \u2014 not an unattended transformation like melting butter or pooling sauce, so rule 4 doesn't apply. The 455% ramp is compression to jam pour+settle into the MOGRT read-window. The 66% punch-in (vs 50% baseline) is the rule-3 reframe: since overhead is held across multiple beats, tightening the crop keeps the held angle visually fresh and makes the oil stream more prominent in the frame. [flourish: functional]"
     },
     {
       "beat_index": 8,
@@ -335,7 +336,8 @@
       "effects": "Speed ramp (112.486% base, ramp between 5.9s-7.5s); Reframed (offset h:-0.01 v:-0.03)",
       "nested": "",
       "mogrt_overlaps": [],
-      "correction": null
+      "correction": null,
+      "effects_reasoning": "[flourish: functional]"
     },
     {
       "beat_index": 14,
@@ -653,7 +655,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "Speed ramp (50% base) because this is an organic flourish \u2014 chicken sitting stationary while grill marks deepen is exactly the unattended-transformation moment the editor hunts for, and the slow-down lets that beauty land."
+      "effects_reasoning": "Speed ramp (50% base) because this is an organic flourish \u2014 chicken sitting stationary while grill marks deepen is exactly the unattended-transformation moment the editor hunts for, and the slow-down lets that beauty land. [flourish: organic]"
     },
     {
       "beat_index": 33,

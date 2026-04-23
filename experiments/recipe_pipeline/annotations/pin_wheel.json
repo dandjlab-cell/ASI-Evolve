@@ -89,7 +89,7 @@
         "Text Overlays: Graphic (4.7s-6.2s)"
       ],
       "correction": null,
-      "effects_reasoning": "Speed ramp (50% base, 73.1\u201374.5s) is an organic-flourish use, not purely functional timing-fill \u2014 the slowdown lets the cascade and the pile-building read as a transformation moment rather than a checkbox, consistent with the \"beautiful natural moments get speed-ramped\" rule."
+      "effects_reasoning": "Speed ramp (50% base, 73.1\u201374.5s) is an organic-flourish use, not purely functional timing-fill \u2014 the slowdown lets the cascade and the pile-building read as a transformation moment rather than a checkbox, consistent with the \"beautiful natural moments get speed-ramped\" rule. [flourish: functional]"
     },
     {
       "beat_index": 5,
@@ -118,7 +118,7 @@
         "Text Overlays: Graphic (6.2s-7.5s)"
       ],
       "correction": null,
-      "effects_reasoning": "Speed ramp (50% base across 92.3\u201393.6s) is an organic flourish \u2014 the rising fine-sugar cloud is an unattended beautiful-accident transformation, and ramping emphasizes that moment rather than serving a functional timing fix."
+      "effects_reasoning": "Speed ramp (50% base across 92.3\u201393.6s) is an organic flourish \u2014 the rising fine-sugar cloud is an unattended beautiful-accident transformation, and ramping emphasizes that moment rather than serving a functional timing fix. [flourish: functional]"
     },
     {
       "beat_index": 6,
@@ -147,7 +147,7 @@
         "Text Overlays: Graphic (7.5s-8.8s)"
       ],
       "correction": null,
-      "effects_reasoning": "Organic flourish \u2014 the speed ramp slows the vanilla stream to showcase the brown-into-white pooling as a found beautiful moment, and the 79% punch-in with a slight reframe (h:-0.06, v:0.08) recomposes the pool into the center of frame where the MOGRT doesn't sit."
+      "effects_reasoning": "Organic flourish \u2014 the speed ramp slows the vanilla stream to showcase the brown-into-white pooling as a found beautiful moment, and the 79% punch-in with a slight reframe (h:-0.06, v:0.08) recomposes the pool into the center of frame where the MOGRT doesn't sit. [flourish: organic]"
     },
     {
       "beat_index": 7,
@@ -176,7 +176,7 @@
         "Text Overlays: Graphic (8.8s-10.1s)"
       ],
       "correction": null,
-      "effects_reasoning": "This is an organic flourish, not a functional tool \u2014 salt grains falling in 50% slow-mo is exactly the \"beautiful moment on camera\" rule #4 describes (tactile transformation worth ramping), and the punch-in/reframe centers the sprinkle over the vanilla well so the grain trail is legible at the smaller scale."
+      "effects_reasoning": "This is an organic flourish, not a functional tool \u2014 salt grains falling in 50% slow-mo is exactly the \"beautiful moment on camera\" rule #4 describes (tactile transformation worth ramping), and the punch-in/reframe centers the sprinkle over the vanilla well so the grain trail is legible at the smaller scale. [flourish: functional]"
     },
     {
       "beat_index": 8,
@@ -203,7 +203,7 @@
       "nested": "",
       "mogrt_overlaps": [],
       "correction": null,
-      "effects_reasoning": "100.725% is a functional pacing nudge (barely above real-time) to shave a few frames off the descent so it lands on the beat \u2014 not an organic flourish since there's no unattended transformation being revealed, just a micro-adjustment to sync motion to music."
+      "effects_reasoning": "100.725% is a functional pacing nudge (barely above real-time) to shave a few frames off the descent so it lands on the beat \u2014 not an organic flourish since there's no unattended transformation being revealed, just a micro-adjustment to sync motion to music. [flourish: functional]"
     },
     {
       "beat_index": 9,
