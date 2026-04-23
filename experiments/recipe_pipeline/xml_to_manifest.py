@@ -149,6 +149,7 @@ def _detect_production_layers(
     layers = {
         "adjustment_layers": [],
         "mogrts": [],
+        "text_overlays": [],
         "title_cards": [],
         "end_cards": [],
         "watermarks": [],
@@ -185,6 +186,18 @@ def _detect_production_layers(
                 "timeline_out_sec": tl_out,
                 "duration_sec": round((end - start) / fps, 3),
             }
+
+            # Premiere-native Essential Graphics clips (no file extension; detected via
+            # GraphicAndType effect). Newer Kitchn recipes use these per-ingredient text
+            # overlays instead of imported .aegraphic MOGRTs.
+            effect_ids = {e.findtext("effectid", "") for e in clip.findall(".//filter/effect")}
+            if "GraphicAndType" in effect_ids:
+                if tl_in < 0.5:
+                    layers["title_cards"].append(entry)
+                else:
+                    entry["kind"] = "essential_graphic"
+                    layers["text_overlays"].append(entry)
+                continue
 
             # Classify by filename/extension patterns
             if "adjustment" in fname_lower or fname_lower.endswith(".prproj"):

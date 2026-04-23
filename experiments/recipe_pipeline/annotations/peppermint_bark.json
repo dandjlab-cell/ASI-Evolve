@@ -1,0 +1,921 @@
+{
+  "recipe": "peppermint_bark",
+  "global_notes": "The analysis above is my direct answer \u2014 this task doesn't require an implementation plan since you asked for a stylistic summary, not code changes. If you'd like me to build tooling around this (e.g., a per-beat analyzer that confirms the acceleration/overhead-clustering hypotheses), say the word and I'll enter the plan workflow for that.",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (4 shots): Finished peppermint bark pieces on dark blue plate \u2192 Finished peppermint bark pieces on blue plate, slight reframe \u2192 Finished peppermint bark pieces on blue plate, slow drift",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I3315.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front dominates because the anchor is the hands-snap-bark moment at [3.0-4.0s] that sells the \"layered crunchy product\" payoff \u2014 the single overhead plate opens the beat for establishment, then the edit commits to front to showcase the pour-into-snap narrative that only a side angle can show."
+      },
+      "duration": {
+        "seconds": 4.713,
+        "reasoning": "4.7s is set by the title card (\"Peppermint Bark / the kitchn\") needing to stay legible across the whole opener, and the 50% ramp on the overhead anchor is what stretches the hero plate long enough to support that title read before the faster front beats kick in."
+      },
+      "in_point": {
+        "seconds": 34.868,
+        "reasoning": "34.9s is the cleanest frame of the finished-plate composition in the source take, and it's where the editor begins the ramp that lands back at real-time by 36.2s for the transition into the front pour sequence."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 34.9s-36.2s); punch-in/crop (74.0% vs 50% baseline); Reframed (offset h:0.01 v:0.00)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-4.7s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-4.7s)",
+        "Title Cards: Graphic (0.0s-4.7s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Functional, not organic \u2014 the speed ramp extends the anchor to hold the title card, the 74% punch-in tightens to a scroll-stopper vertical-friendly framing, and the tiny h:0.01 offset is a centering nudge on the plate; none of this is a \"butter melting\" found moment."
+    },
+    {
+      "beat_index": 4,
+      "beat_description": "ingredient (1 clips): Empty glass Pyrex mixing bowl \u2192 Chopped dark chocolate pouring into glass bowl, motion blur \u2192 Dark chocolate mound in bowl, more pieces falling",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3730.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the opening anchor of a 33-beat dump run that holds front for the first 5 beats \u2014 per rule 3 the editor establishes and holds rather than alternating, and this angle shows the marble counter context and settled chocolate at eye level that the preceding overhead pour frames (5.0\u20135.5s) already covered from above."
+      },
+      "duration": {
+        "seconds": 1.585,
+        "reasoning": "1.6s is driven by the MOGRT \"Dark chocolate\" card window (4.7s\u20136.3s) \u2014 a two-word label needs roughly that long to read comfortably, so the cut holds exactly the read time, not the action."
+      },
+      "in_point": {
+        "seconds": 7.049,
+        "reasoning": "7.0s into B19I3730.mov lands on the composed, fully-settled chocolate mound rather than mid-pour motion blur \u2014 the \"best frame\" of the front take, and also avoids duplicating the pouring motion just shown overhead."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (4.7s-6.3s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 5,
+      "beat_description": "ingredient (3 clips): Chopped dark chocolate settled in glass bowl, marble counter behind \u2192 Hand opens mint-green Daewoo microwave door, empty interior \u2192 Hand slides glass bowl of chopped chocolate into microwave",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3731.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the action is horizontal/lateral \u2014 door hinging open and bowl sliding into the microwave cavity \u2014 which overhead would flatten and hide the interior; it's also a held-camera run (front across ~6 beats here), consistent with the dump rule of not alternating."
+      },
+      "duration": {
+        "seconds": 3.253,
+        "reasoning": "3.3s holds long enough for the incoming MOGRT \"Microwave until melted, about 2 minutes\" to land and be read, plus the preceding \"Dark chocolate\" label \u2014 text readability, not action length, governs."
+      },
+      "in_point": {
+        "seconds": 4.254,
+        "reasoning": "4.3s lands at the clean start of the door-opening gesture, skipping dead pre-roll so the action reads immediately on the cut."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (6.3s-9.6s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 8,
+      "beat_description": "Tight push-in: spatula lifts, thick chocolate ribbons fall back into bowl",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "B19I3733.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.6690000000000005,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 27.861,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:0.01 v:-0.03)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "ingredient (1 clips): Hand tips small glass jar over bowl, first drop of clear extract falling \u2192 Glass jar tipped further, clear peppermint extract drip hangs from rim \u2192 Extract drizzles in a thin stream onto chocolate-smeared bowl rim",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3737.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is beat 4 of a held front run (the camera run shows four consecutive fronts before this), so per Rule 3 the editor is holding camera across ingredient dumps rather than alternating; front at eye-level also shows the jar tipping and the drip forming on the rim, which overhead would flatten into an invisible pour."
+      },
+      "duration": {
+        "seconds": 1.5429999999999993,
+        "reasoning": "1.5s \u2014 \"Peppermint extract\" is a two-word MOGRT that reads cleanly in about a second and a half, and Rule 3 says the text read-time drives the hold, not the pour action (which continues past the cut out into the next clip)."
+      },
+      "in_point": {
+        "seconds": 5.38,
+        "reasoning": "5.4s \u2014 this lands on the first drop of clear extract falling from the tipped jar, a clean entry on the initiating action of the dump rather than mid-pour."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (11.2s-12.8s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "Extract stream continues pouring, finer stream",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3738.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a held-camera run start \u2014 the editor stays on FRONT through four consecutive beats (12.5s through 14.0s) before switching to OVERHEAD at 14.5s for the pour, so this isn't alternation but the opening beat of a sustained front sequence that lets the extract drip, spatula lift, and chocolate ribbon swirl all read from the same eye-level angle."
+      },
+      "duration": {
+        "seconds": 1.9600000000000009,
+        "reasoning": "2.0s is driven by the \"Peppermint extract\" MOGRT needing enough on-screen time to be read, not by the action of the thinning stream itself."
+      },
+      "in_point": {
+        "seconds": 32.699,
+        "reasoning": "32.7s catches the tail of the pour where the stream has narrowed to a finer drip \u2014 the visually refined moment rather than the initial glug, giving the beat a calmer, more deliberate read than an earlier in-point would."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "Melted chocolate pouring from Pyrex measuring cup onto foil-lined pan, pool spreading",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3734.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Overhead is a switch point from the previous front shot (B19I3738.mov, 2.0s) into a sustained overhead run continuing on AI2I3284.mov; the angle is justified because only top-down reveals the pool spreading across the foil and the coverage area that the brush will work in the next beat \u2014 front wouldn't show pool geometry at all."
+      },
+      "duration": {
+        "seconds": 1.4179999999999975,
+        "reasoning": "1.4s covers exactly the pour-and-pool-forms arc visible in frames 14.5 \u2192 15.5s (stream establishes, pool grows, pool widens) before cutting out just as the brush enters at 16.0s \u2014 long enough to register the organic flourish of chocolate pooling, short enough to keep ingredient-dump pacing."
+      },
+      "in_point": {
+        "seconds": 6.298,
+        "reasoning": "6.3s drops in mid-pour with the stream already steady and a visible pool forming \u2014 skipping the pitcher-lift and initial drip windup because the storytelling content is the transformation (liquid \u2192 spreading pool), not the setup."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "Top-down: pastry brush spreads chocolate across foil-lined pan, mostly covered",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "AI2I3284.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.5020000000000024,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 23.774,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (72.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "ingredient (1 clips): Very tight profile on the edge of the set dark chocolate layer in foil-lined pan \u2192 Marble countertop texture card \u2192 Marble countertop texture card, same",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I3284.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is beat 8 of a 33-beat dump run and sits inside a brief 2-beat overhead hold (beats 7\u20138) that breaks up a long front run \u2014 the top-down angle is needed to show the flat, set chocolate surface in the foil-lined pan, which a front/eye-level shot can't reveal."
+      },
+      "duration": {
+        "seconds": 1.9179999999999993,
+        "reasoning": "1.9s is paced to the MOGRT \"Refrigerate for 25 minutes\" card that lands on/near this beat \u2014 the hold length matches how long the viewer needs to read the elapsed-time text, not the action itself."
+      },
+      "in_point": {
+        "seconds": 55.264,
+        "reasoning": "55.3s lands on the cleanest frame of the fully-set chocolate edge in the foil pan \u2014 the anchor frame that sells \"refrigerated and set\" before the scene transitions to the candy cane card."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (72.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Cook Times/K SEO_Cook Times.aegraphic (17.9s-19.6s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 72% is a functional edit tool, not an organic flourish \u2014 the tight profile on the chocolate edge requires cropping well past the 50% baseline to make the set layer legible at this scale."
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "ingredient (2 clips): Hands open a Ziploc freezer bag, empty, on marble \u2192 First candy cane placed into open Ziploc bag \u2192 Hand arranges single candy cane at bottom of open bag",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3736.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 2.001999999999999,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 10.177,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (19.6s-21.6s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "Hand seals the Ziploc bag full of ~5 candy canes",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "B19I3736.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the switch point right before the overhead stop-motion pound \u2014 the overhead angle is reserved for the percussive anchor, so front holds through the sealing action (an eye-level hand motion that reads as \"ingredient now contained\") and hands off to overhead for the impact."
+      },
+      "duration": {
+        "seconds": 0.8339999999999996,
+        "reasoning": "0.8s because the MOGRT \"Candy canes\" was already read during the prior 2.0s ingredient beat, so this cut only needs to complete the seal and compress into the overhead pound \u2014 a short beat that accelerates into the impact."
+      },
+      "in_point": {
+        "seconds": 17.309,
+        "reasoning": "17.3s catches the hand closing the top of the bag with all ~5 canes visible inside \u2014 the exact frame where \"bagged ingredient\" reads in one glance, with no wasted pre-roll on fingers approaching."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "Top-down: wooden rolling pin handle pounds candy canes in bag, shards flying",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I3285.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the action IS top-down \u2014 the pin drives straight down into the bag, so shards flying and the pound impact only read from above; front would show a hand moving vertically behind a bag, hiding the actual crush. This is a switch point (prev/next are front) and functions as an anchor \u2014 the percussive stop-motion beat with shards is the \"found moment\" the editor built this section around."
+      },
+      "duration": {
+        "seconds": 1.0430000000000028,
+        "reasoning": "1.0s lands one clean pound + shard-scatter on a beat, sitting between the 0.8s front setup and the 1.2s front payoff so the impact reads as the accent in a short-long-shorter-longer rhythm, not a held hero shot."
+      },
+      "in_point": {
+        "seconds": 24.566,
+        "reasoning": "24.6s is the frame where the handle is already making contact and shards are airborne \u2014 cutting in on impact (not the windup) so the beat hits immediately on the cut rather than waiting for the motion to arrive."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "Tight overhead: wooden pin rolls over fully crushed candy cane dust in bag",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I3736.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Overhead \u2014 only the top-down angle shows the texture change from shards to dust and the pin's grinding motion across the bag; the front angle at 24.5s shows the result (flat sealed bag) but can't show the crushing itself, so overhead is the anchor for the \"crushing completes\" moment and continues the held overhead run through the prep sequence."
+      },
+      "duration": {
+        "seconds": 1.2099999999999973,
+        "reasoning": "1.2s gives one complete roll-over pass room to read as a finished action (slightly longer than the 1.0s prior overhead), and supports the speed-ramp noted on the rolling pass \u2014 enough time for the transformation to register before the front cut reveals the outcome."
+      },
+      "in_point": {
+        "seconds": 60.143,
+        "reasoning": "60.1s lands on the pin rolling over fully crushed dust rather than shards mid-break; an earlier in-point would repeat the percussive breaking beat at 23.0s, and a later one would miss the rolling motion itself \u2014 this frame is the visual pivot from \"breaking\" to \"ground.\""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "Hands hold flat bag of crushed candy cane bits, on marble",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I3736.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.3760000000000012,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 113.488,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "ingredient (1 clips): White chocolate wafers pouring into empty glass bowl \u2192 White chocolate wafers filling bowl, more falling \u2192 Bowl of white chocolate wafers at capacity, pile settled",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3739.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front here because it's the tail of a held front-camera run (beats 9\u201314 are all front per the run notation) and the front eye-level angle shows the wafers cascading into the bowl with depth and falling motion that an overhead would flatten into a static pile."
+      },
+      "duration": {
+        "seconds": 1.5010000000000012,
+        "reasoning": "1.5s because the MOGRT \"White chocolate\" text overlay runs exactly 26.0s\u201327.5s and the cut holds for as long as the ingredient name needs to be read, not for the pouring action itself."
+      },
+      "in_point": {
+        "seconds": 9.009,
+        "reasoning": "9.0s into B19I3739.mov puts the cut-in at the moment wafers first hit the empty glass bowl, capturing the full empty\u2192filling\u2192settled transformation across the 1.5s hold rather than starting mid-pour."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (26.0s-27.5s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 21,
+      "beat_description": "ingredient (2 clips): Top-down: full bowl of white chocolate wafers on marble \u2192 Top-down: full bowl of white chocolate wafers, same framing \u2192 Top-down: bowl now filled with smooth pale-yellow melted white chocolate",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I3287.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this beat is the wafers\u2192melted-chocolate transformation \u2014 only the top-down angle shows the bowl's contents changing state, and it's a deliberate switch point out of the preceding front-heavy run to land on the organic flourish."
+      },
+      "duration": {
+        "seconds": 1.9190000000000005,
+        "reasoning": "1.9s holds long enough to read the full MOGRT \"Microwave until melted, about 1 1/2 minutes\" (a wordier card than typical ingredient names) while the two sub-clips register the before/after melt."
+      },
+      "in_point": {
+        "seconds": 16.85,
+        "reasoning": "16.9s starts on the full-wafer bowl so the viewer sees the solid state first, then the stop-motion jump to smooth pale-yellow melted chocolate \u2014 the in-point anchors the transformation."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (63.0% vs 50% baseline); punch-in/crop (63.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (27.5s-29.4s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "63% punch-in (vs 50% baseline) is functional, not flourish \u2014 it tightens onto the bowl so the wafer\u2192liquid change reads clearly at playback size, since the marble surroundings carry no information here."
+    },
+    {
+      "beat_index": 23,
+      "beat_description": "Spatula lifts, thick ribbon of melted white chocolate falls back into bowl",
+      "beat_type": "",
+      "recipe_section": "transformation",
+      "filename": "B19I3744.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor here because it's the only angle that shows the ribbon's vertical silhouette \u2014 the thick pour cascading back into the bowl \u2014 which the overhead flattens into just a circle in a circle; this is a deliberate switch off the overhead held in the previous beat because that angle cannot sell the ribbon."
+      },
+      "duration": {
+        "seconds": 2.001999999999999,
+        "reasoning": "2.0s is slightly longer than the ingredient beats bracketing it (1.9s / 1.7s) because this is an organic flourish anchor, not a read-driven MOGRT beat \u2014 the ribbon needs room to form, stretch, and fall before the cut."
+      },
+      "in_point": {
+        "seconds": 28.862,
+        "reasoning": "28.9s starts ~0.6s before the spatula lift so the shot opens with the wind-up and lands the ribbon fall in the middle of the clip rather than cold-cutting onto an already-falling ribbon."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (60.0% vs 50% baseline); Reframed (offset h:-0.02 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The 60% punch-in (tighter than the 50% baseline) and small down-left reframe push the ribbon and bowl rim to fill frame \u2014 this is the functional tool used to elevate an organic flourish, trimming dead counter and centering the hero transformation."
+    },
+    {
+      "beat_index": 24,
+      "beat_description": "ingredient (1 clips): Hand tips small glass prep bowl over white chocolate, about to pour \u2192 Thin stream of peppermint extract pours from prep bowl into white chocolate \u2192 Stream of peppermint extract continues pouring, swirl forming in chocolate",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3745.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Frame scan shows this is actually OVERHEAD (not front as labeled) \u2014 a deliberate break from the held front run because peppermint extract is a liquid pour where the stream and swirl forming in the chocolate only read from top-down; front would be blocked by the hand and bowl."
+      },
+      "duration": {
+        "seconds": 1.6679999999999993,
+        "reasoning": "1.7s matches the \"Peppermint extract\" MOGRT window (31.4s\u201333.1s) almost exactly \u2014 held long enough for viewers to read the two-word ingredient name, not tied to the pour's physical duration."
+      },
+      "in_point": {
+        "seconds": 10.052,
+        "reasoning": "10.1s into the source lands right as the hand enters frame tipping the bowl, just before the stream breaks \u2014 earliest usable moment that shows the pour action without leading dead frames of an empty bowl hover."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (31.4s-33.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 25,
+      "beat_description": "Blue spatula stirs white chocolate in glass bowl, smooth surface",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I3745.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.1270000000000024,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 18.894,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 26,
+      "beat_description": "Extreme close-up of white chocolate being stirred, spatula visible",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I3745.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a held-camera run (prev front, next front) where the ECU with spatula visible is the anchor \u2014 it shows the ribbon fold and fall laterally into the bowl, which overhead flattens into a featureless white pool."
+      },
+      "duration": {
+        "seconds": 2.2929999999999993,
+        "reasoning": "2.3s at 50% ramp = ~1.15s of real action, enough to hold through spatula lift \u2192 ribbon fold \u2192 ribbon falling back, cutting out exactly when the overhead takes over for the layering pour at 36.5s."
+      },
+      "in_point": {
+        "seconds": 94.428,
+        "reasoning": "94.4s lands on the spatula mid-stir showing a thick, glossy ribbon forming \u2014 the frame that sells \"white chocolate is ready, properly tempered\" right before the layering step begins."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 94.4s-96.7s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Organic flourish \u2014 the ribbon fold/fall is a found beautiful moment (viscosity, sheen, cascading folds), not functional; 50% base ramping through 94.4\u201396.7s stretches the transformation so the texture reads before the overhead cut releases it."
+    },
+    {
+      "beat_index": 27,
+      "beat_description": "White chocolate stream pours onto set chocolate layer (dark brown slab in foil-lined pan)",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3747.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Overhead is a switch point, not a held run \u2014 the previous beat was front (B19I3745) and the editor cuts top-down here because the anchor of this moment is the pool of white chocolate spreading across the dark slab, which is only legible from above; a front angle would hide the spread behind the pan's rim and kill the layering reveal that defines the new recipe section."
+      },
+      "duration": {
+        "seconds": 1.5019999999999953,
+        "reasoning": "1.5s holds just long enough for the stream to land and the pool to visibly widen across the dark base (the organic flourish per rule 4 \u2014 pour \u2192 spread transformation), then cuts out the instant the offset spatula enters frame at 38.0s so the smoothing action gets its own dedicated shot instead of being rushed at the tail of this one."
+      },
+      "in_point": {
+        "seconds": 13.013,
+        "reasoning": "13.0s lands on the clean start of the pour \u2014 stream already making contact and forming the initial pool \u2014 avoiding pre-pour dead air on the head and preserving the full widening arc of the pool as the on-screen action."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 28,
+      "beat_description": "White chocolate now covers larger area, hand enters with black-handled offset spatula",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "B19I3747.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front holds the eye-level angle one beat longer before the switch to overhead on beat 29 \u2014 you see the hand and offset spatula enter toward the camera, which reads the \"tool arrives\" moment more tactilely than a top-down reveal would."
+      },
+      "duration": {
+        "seconds": 1.5010000000000048,
+        "reasoning": "1.5s matches the preceding front shot's 1.5s cadence, keeping the held-camera run at steady rhythm before the bump to 1.8s when the angle finally breaks to overhead."
+      },
+      "in_point": {
+        "seconds": 69.903,
+        "reasoning": "69.9s catches the exact frame where the black-handled offset spatula makes first contact with the white chocolate \u2014 the \"smoothing begins\" threshold, no dead frames before the action."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 29,
+      "beat_description": "Wide top-down of full foil-lined pan, hand spreads white chocolate with offset spatula",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "AI2I3291.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor here \u2014 it's the money shot reveal of the entire foil-lined pan covered in white chocolate, which front cannot show (front would only see the spatula and hand, missing the pan geography and full coverage payoff)."
+      },
+      "duration": {
+        "seconds": 1.7519999999999953,
+        "reasoning": "1.8s holds long enough to watch the spatula complete its sweep and lift off cleanly (per the frame scan, spreading \u2192 smoothing \u2192 hand pulls spatula out), letting the viewer register the finished surface before the next cut."
+      },
+      "in_point": {
+        "seconds": 93.885,
+        "reasoning": "93.9s drops in with the pan already mostly covered and the spatula mid-sweep \u2014 skipping the messy early spreading and entering on the satisfying smoothing phase, which is the readable version of the action."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 30,
+      "beat_description": "Wide overhead, hand pulls spatula out, white chocolate surface smooth",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "B19I3747.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The metadata labels this \"front\" but the shot description (\"Wide overhead, hand pulls spatula out\") and every frame 41.0\u201343.0s show overhead \u2014 this is an overhead hold, not a front cut. It sits inside a sustained overhead run (the entire sprinkle flourish that follows stays overhead), so it's a held-camera beat, not a switch point; the top-down angle is the only way to read \"surface is now smooth and fully coated\" as a money shot."
+      },
+      "duration": {
+        "seconds": 1.5430000000000064,
+        "reasoning": "1.5s lets the spatula clear frame and the glossy white surface register as the reveal before cutting to the tighter sprinkle at 41.5s \u2014 shorter would clip the spatula exit, longer would stall a beat that's just a setup for the peppermint flourish."
+      },
+      "in_point": {
+        "seconds": 150.567,
+        "reasoning": "150.6s catches the spatula mid-pull-out with the surface already smooth behind it \u2014 the causal \"spreading is done\" frame. Earlier in the source would still show spreading motion; later would lose the spatula and kill the transformation read."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 31,
+      "beat_description": "Medium overhead (wider), pan half-covered in dense peppermint crumbs, hand sprinkling mid-frame",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I3747.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The metadata label \"front\" contradicts the shot description (medium overhead, wider), and the surrounding clips at 42.5s and 43.5s are both overhead \u2014 this is a held-overhead run (rule 3), and the cut is a pull-back reframe within the same camera family to keep the angle from going stale, not a switch to front."
+      },
+      "duration": {
+        "seconds": 1.8359999999999985,
+        "reasoning": "1.8s gives just enough time to register the wider pan and the sprinkle hitting the half-covered surface before cutting to the final full-coverage establishing shot at 44.5s \u2014 a mid-phrase beat, not a hold."
+      },
+      "in_point": {
+        "seconds": 172.172,
+        "reasoning": "172.2s lands on the frame where crumb coverage has built to \"half-covered\" density with the hand actively sprinkling mid-frame \u2014 the anchor moment for the wider reframe, showing transformation in progress rather than a static state."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 32,
+      "beat_description": "ingredient (1 clips): Wider overhead of full pan with even peppermint coverage, hand exiting frame \u2192 Blurred marble counter with text card centered \u2192 Blurred marble counter, text card still on screen",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3768.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Overhead (metadata-label of \"front\" conflicts with the visuals, which clearly show top-down of the full pan with even peppermint coverage) \u2014 this is the anchor payoff shot that resolves the ingredient-dump run by revealing total coverage, which no front angle could show, and then holds to carry the refrigerate text card."
+      },
+      "duration": {
+        "seconds": 2.1679999999999993,
+        "reasoning": "2.2s is paced to the MOGRT \"Refrigerate until bark is set, about 35 minutes\" \u2014 roughly seven words of reading time plus the half-second hand-exit/defocus lead-in, so the viewer gets the payoff glance AND finishes the text card before cutting to the foil reveal."
+      },
+      "in_point": {
+        "seconds": 12.888,
+        "reasoning": "12.9s catches the exact frame the hand has just cleared the pan, leaving the fully-sprinkled bark unobstructed \u2014 any earlier and the hand is still in frame, any later and the defocus has already started eating the payoff."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (66.0% vs 50% baseline); Reframed (offset h:0.01 v:-0.04)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Cook Times/K SEO_Cook Times.aegraphic (45.1s-46.8s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Functional, not organic \u2014 the 66% punch-in tightens the overhead onto the pan so the peppermint coverage reads at this smaller hold, and the h:0.01/v:-0.04 reframe nudges the pan to make room for the centered text card that follows in the defocus."
+    },
+    {
+      "beat_index": 33,
+      "beat_description": "3/4 angle of foil-wrapped pan on cutting board, hand lifting foil flap to reveal set peppermint bark",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I3769.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front 3/4 is the anchor shot for the reveal \u2014 lifting a foil flap is a vertical/diagonal gesture that reads clearly from front but would be obscured from overhead (the flap itself would block the bark it's revealing), so this is the only angle that sells \"reveal\" in a single frame."
+      },
+      "duration": {
+        "seconds": 1.1270000000000024,
+        "reasoning": "1.1s is a payoff beat after the 2s text-card hold \u2014 long enough to register \"foil lifts \u2192 set bark revealed\" as the resolution of the refrigeration step, but short because the next beat (47.5s) continues the same shot pulling foil further, so this cut just needs to land the reveal, not complete it."
+      },
+      "in_point": {
+        "seconds": 3.462,
+        "reasoning": "3.5s into the source skips the dead/setup frames where the hand approaches and grips the foil, landing on the moment the flap actually starts lifting \u2014 the first frame where the reveal action is legible."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 34,
+      "beat_description": "3/4 angle close-up of set bark on cutting board, chef's knife mid-cut, hand holds bark steady",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I3772.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front 3/4 shows the knife pressing down through the bark with visible crack propagation and bracing hand \u2014 overhead would flatten the vertical knife travel into a line, losing the break moment that sells \"cutting set bark.\""
+      },
+      "duration": {
+        "seconds": 0.9169999999999945,
+        "reasoning": "0.9s is one clean knife-press beat \u2014 long enough to read the crack extending, short enough to stay in the prep-sequence pacing set by neighbors (1.1s prev, 1.3s next)."
+      },
+      "in_point": {
+        "seconds": 14.014,
+        "reasoning": "14.0s skips the approach and lands with the knife already mid-cut and crack line visible \u2014 the editor entered the clip at the moment of break, not the moment of contact."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (67.0% vs 50% baseline); Reframed (offset h:0.08 v:0.00)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Functional punch-in (67% vs 50%) with slight rightward reframe (h:0.08) to center the knife/crack on the bark \u2014 tightening for detail on a small action, not an organic flourish (no transformation, no speed ramp)."
+    },
+    {
+      "beat_index": 35,
+      "beat_description": "3/4 close-up, hand braces bark, knife nearly through, cut line extended",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I3772.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this beat sits mid-run in a held-front knife sequence (48.5s\u219249.0s\u219249.5s all front) \u2014 the editor is holding one camera through the physical action, tightening framing rather than alternating, and front shows the knife angle and hand-brace pressure that overhead would flatten into a line."
+      },
+      "duration": {
+        "seconds": 1.2929999999999993,
+        "reasoning": "1.3s because this is the peak-tension beat of the cut-through (hand bracing, blade nearly all the way in), so it gets slightly more breathing room than the preceding 0.9s front beat before releasing into the overhead reveal."
+      },
+      "in_point": {
+        "seconds": 78.704,
+        "reasoning": "78.7s lands exactly on the hand-braces / knife-nearly-through frame \u2014 the most readable single moment of effort and progress, where the crack line is extended and the press is visibly committing."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in 71% (vs previous 67%, baseline 50%) is a functional progressive tighten, not an organic flourish \u2014 the crop escalates each beat of the held-front run to build pressure into the overhead cut-grid reveal that follows."
+    },
+    {
+      "beat_index": 36,
+      "beat_description": "Top-down of rectangular peppermint bark slab on white cutting board, uncut",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "[NEST] Nest - Peppermint Bark",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is required to read the rectangular slab's geometry and set up the grid-of-squares reveal on the next beat \u2014 a front angle would only show the edge profile and couldn't sell the \"before cut\" state that pairs with the \"after cut\" jump on 50.5s."
+      },
+      "duration": {
+        "seconds": 0.9590000000000032,
+        "reasoning": "1.0s is a short register-and-move hold; just long enough to read \"uncut rectangle\" before the jump-cut to the cut grid, and it's paired duration with its after-shot rather than a musical phrase length."
+      },
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "0.0s grabs the cleanest static frame of the untouched slab before any hand or knife enters, which is what the jump-cut needs as its \"before\" plate."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (123.0% -> 133.0%); Animated reframe (position keyframes)",
+      "nested": "Nested sequence 'Nest - Peppermint Bark' with 7 inner clips",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The 123\u2192133% zoom with reframe is a functional tool, not an organic flourish \u2014 the slab isn't transforming on its own, so the push-in is adding momentum into the jump-cut reveal and keeping a held overhead angle from feeling static (rule 3: reframe/zoom to keep the same camera alive)."
+    },
+    {
+      "beat_index": 37,
+      "beat_description": "Marble counter mostly empty, edge of blue plate with bark pieces visible top-right",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I3773.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a switch point after the overhead nest \u2014 peppermint bark's whole identity is its three stacked layers (dark chocolate bottom, white chocolate, pink peppermint flakes), which only read in profile from front; overhead would flatten it to a pink-dotted disc and lose the hero feature."
+      },
+      "duration": {
+        "seconds": 1.543999999999997,
+        "reasoning": "1.5s covers the plate placement and settle (51.0\u219252.0s) and cuts out right as the hand enters to lift a piece, handing off momentum to the ECU that follows \u2014 any longer and you'd be sitting on a static plate, any shorter and the reveal doesn't land."
+      },
+      "in_point": {
+        "seconds": 28.946,
+        "reasoning": "28.9s is the exact frame the plate edge enters with the hand still placing it \u2014 starting mid-placement gives the shot kinetic energy and a clear \"here it is\" beat rather than opening on a static already-placed plate."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 38,
+      "beat_description": "Close-up of hand holding a single bark piece up, rest of plate blurred behind",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I3774.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor shot for the finishing section \u2014 you cannot show the layered cross-section (pink peppermint / white / dark chocolate stripes) from overhead, so this best-take ECU is what sells the payoff of the entire recipe."
+      },
+      "duration": {
+        "seconds": 1.5010000000000048,
+        "reasoning": "1.5s is a beauty hold long enough to let the viewer register the three distinct layers but short enough to keep momentum into the snap-break that follows, matching the 1.5s/2.0s rhythm of its neighbors."
+      },
+      "in_point": {
+        "seconds": 56.098,
+        "reasoning": "56.1s catches the bark already lifted and isolated with the plate blurred behind, before any hand motion begins \u2014 the cleanest, most static frame of the held piece, which is why it reads as a hero."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 39,
+      "beat_description": "ECU, two hands snap bark piece in half, mid-break, white \"the kitchn\" logo graphic animates in top-left",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "B19I3774.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front ECU is the anchor shot \u2014 the snap-break is a found organic flourish (the editor's favorite kind of moment), and only the front angle reveals the layered peppermint/white/dark cross-section as the bark cracks apart; overhead would flatten the break into a line."
+      },
+      "duration": {
+        "seconds": 2.043999999999997,
+        "reasoning": "2.0s covers the full snap arc (mid-break \u2192 clean halves \u2192 pull apart) and gives the \"the kitchn\" logo room to animate in and settle before the cut to the stacked hero \u2014 shorter would clip the logo, longer would drag at the end card."
+      },
+      "in_point": {
+        "seconds": 95.929,
+        "reasoning": "95.9s lands on the mid-break moment with hands already in motion and the crack actively propagating, so the shot opens on kinetic action rather than a static pre-snap pose \u2014 the cross-section reveal is what sells the beauty close."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 40,
+      "beat_description": "ECU hero of stacked bark, slightly different framing/push",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "B19I3776.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 the anchor shot for the final beauty. A vertical stack of bark reads as architecture from eye-level (you see the layers, the height, the silhouette); overhead would collapse it into a flat disc and kill the hero. Previous beat was also front, so this continues a held-camera run into the closer rather than switching for its own sake."
+      },
+      "duration": {
+        "seconds": 2.335000000000001,
+        "reasoning": "2.3s \u2014 this is the breathe-and-land ending. Final beauty shots get extended holds because there's no next beat to cut to; the audience needs time to absorb the finished product and register the logo before fade. Longer than a mid-sequence cooking cut by design."
+      },
+      "in_point": {
+        "seconds": 19.645,
+        "reasoning": "19.6s \u2014 \"slightly different framing/push\" means the editor picked a point where any camera settle/push-in has locked into its final composition, giving subtle residual motion into the hold rather than a dead-static frame. Late in the source clip is where the cleanest, most composed version of the hero lives."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    }
+  ]
+}

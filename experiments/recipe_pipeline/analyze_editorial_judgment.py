@@ -123,6 +123,8 @@ def find_beat_group(beat_idx: int, beat_groups: List[dict]) -> Optional[dict]:
 
 def load_scan_descriptions(scan_path: str, clip_name: str, in_point: float) -> str:
     """Get VLM description of a clip near a specific in-point from scan.json."""
+    if not scan_path:
+        return ""
     with open(scan_path) as f:
         scan = json.load(f)
 
@@ -158,6 +160,25 @@ def detect_v1_prefix(manifest: dict) -> str:
         v1 = entry.get("v1")
         if v1 and isinstance(v1, dict) and v1.get("file"):
             return v1["file"][:4]
+    return "B19I"
+
+
+def _detect_v1_prefix_from_approved(approved: dict) -> str:
+    """Detect V1 camera prefix from the approved-edit timeline.
+
+    Used in --no-manifest mode. Takes the first 4 chars of the most-common
+    filename prefix across V1 clips.
+    """
+    from collections import Counter
+    prefixes = Counter()
+    for entry in approved.get("timeline", []):
+        v1 = entry.get("v1")
+        if v1 and isinstance(v1, dict):
+            fn = v1.get("file", "")
+            if fn:
+                prefixes[fn[:4]] += 1
+    if prefixes:
+        return prefixes.most_common(1)[0][0]
     return "B19I"
 
 
@@ -568,7 +589,10 @@ def _group_clips_by_zone(
     Returns list of grouped entries, each with type and constituent clips.
     """
     title_cards = production_layers.get("title_cards", [])
-    mogrts = production_layers.get("mogrts", [])
+    # Ingredient-overlay zones: imported .aegraphic MOGRTs (older recipes) and
+    # Premiere-native Essential Graphics text clips (newer recipes) both mark
+    # the same editorial concept — an ingredient beat.
+    mogrts = production_layers.get("mogrts", []) + production_layers.get("text_overlays", [])
 
     # Find title card end time
     title_end = 0
@@ -971,26 +995,41 @@ def main():
     parser = argparse.ArgumentParser(description="Analyze editorial judgment from approved recipe edits")
     parser.add_argument("--recipe", required=True, help="Recipe name (e.g., basil_pesto)")
     parser.add_argument("--approved", required=True, help="Path to approved edit JSON")
-    parser.add_argument("--manifest", required=True, help="Path to pipeline manifest JSON")
-    parser.add_argument("--scan", required=True, help="Path to pipeline scan.json")
-    parser.add_argument("--beats", required=True, help="Path to pipeline beats.json")
+    parser.add_argument("--manifest", help="Path to pipeline manifest JSON (omit with --no-manifest)")
+    parser.add_argument("--scan", help="Path to pipeline scan.json (omit with --no-manifest)")
+    parser.add_argument("--beats", help="Path to pipeline beats.json (omit with --no-manifest)")
     parser.add_argument("--frame-analysis", required=True, help="Path to /watch-video Pass 1 markdown")
     parser.add_argument("--output", required=True, help="Output path for Obsidian .md file")
     parser.add_argument("--json-output", help="Output path for JSON annotations (default: annotations/{recipe}.json)")
     parser.add_argument("--annotation", help="Path to existing annotation JSON (for beat_groups)")
     parser.add_argument("--model", default="sonnet", help="Claude model to use (default: sonnet)")
+    parser.add_argument("--no-manifest", action="store_true",
+                        help="Skip pipeline comparison (manifest/scan/beats). Use for recipes without a pipeline run.")
     args = parser.parse_args()
+
+    if not args.no_manifest and not (args.manifest and args.scan and args.beats):
+        parser.error("--manifest, --scan, and --beats are required unless --no-manifest is set")
 
     # Load data
     print(f"Loading data for {args.recipe}...", flush=True)
     with open(args.approved) as f:
         approved = json.load(f)
-    with open(args.manifest) as f:
-        pipeline = json.load(f)
-    with open(args.beats) as f:
-        beats_data = json.load(f)
 
-    v1_prefix = detect_v1_prefix(pipeline)
+    if args.no_manifest:
+        pipeline = {"timeline": []}
+        beats_data = {"beats": []}
+        print("  --no-manifest: skipping pipeline comparison (verdicts will be 'unknown')")
+    else:
+        with open(args.manifest) as f:
+            pipeline = json.load(f)
+        with open(args.beats) as f:
+            beats_data = json.load(f)
+
+    # Derive v1_prefix from approved timeline when manifest is absent
+    if args.no_manifest:
+        v1_prefix = _detect_v1_prefix_from_approved(approved)
+    else:
+        v1_prefix = detect_v1_prefix(pipeline)
     beats_list = beats_data.get("beats", [])
 
     # Load /watch-video frame analysis

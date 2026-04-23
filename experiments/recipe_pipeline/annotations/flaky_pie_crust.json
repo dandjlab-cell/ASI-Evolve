@@ -1,0 +1,600 @@
+{
+  "recipe": "flaky_pie_crust",
+  "global_notes": "Analysis is in the plan file and the message above. Awaiting your approval to exit plan mode.",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (3 shots): Baked pie crust on sheet pan held with oven mitts \u2192 Baked pie crust, oven mitts lowering tray to counter \u2192 Baked pie crust settled on counter, mitts releasing",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "A054_04180657_C022.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The macro front shot of the twisted fluted crust edge is the anchor \u2014 it's the hero \"best take\" that sells Flaky Pie Crust as the title promises; the overhead opening is context/setup, not alternation, and the beat builds toward the front anchor because overhead can't show the crimped edge profile that defines the crust's craft."
+      },
+      "duration": {
+        "seconds": 3.337,
+        "reasoning": "3.3s is driven by the title card pair (\"Flaky Pie Crust / the kitchn\" + \"Creamy Pumpkin Soup\") needing read time over the opener \u2014 not action duration \u2014 and the 50% speed ramp stretches the macro glide to fill that title hold without the shot feeling frozen."
+      },
+      "in_point": {
+        "seconds": 13.764,
+        "reasoning": "13.8s catches the mitts mid-lower with the crust already revealed on the tray, giving motion into frame (tray descending) rather than a static crust or the busier oven-extraction moment just before."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (73.0% vs 50% baseline); Reframed (offset h:0.00 v:0.02); Speed ramp (50.0% base, ramp between 24.4s-24.6s); Speed ramp (50.0% base, ramp between 24.6s-26.0s)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-3.3s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.3s)",
+        "Title Cards: Graphic (0.0s-3.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 73% punch-in tightens the overhead onto the crust (crops away sheet-pan edges/counter), the 0.02 vertical reframe nudges the crust to center, and the 50% speed ramps on the macro are an organic-flourish move \u2014 the twisted fluting catching light is a found beautiful moment, and slowing it lets the viewer register the crimp craftsmanship as the title reads."
+    },
+    {
+      "beat_index": 3,
+      "beat_description": "Whisk plunging into dry flour mound in bowl",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "4L9A8796.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor take here \u2014 the plunge into the flour mound reads as a macro, dimensional action (whisk diving down into a textured pile), which overhead would flatten into a top-down swirl and lose the \"plunge\" entirely."
+      },
+      "duration": {
+        "seconds": 1.6270000000000007,
+        "reasoning": "1.6s holds long enough to show the full technique arc visible in the frames \u2014 plunge (7.5s) \u2192 strokes through flour (8.0s) \u2192 pile leveling (8.5s) \u2014 which is a deliberate technique-read beat sitting slightly longer than the flanking 1.1s beauty and ingredient beats before handing off to the butter dump."
+      },
+      "in_point": {
+        "seconds": 31.24,
+        "reasoning": "31.2s catches the whisk at the exact moment of first contact with the dry mound, the most dynamic entry frame \u2014 cutting in mid-stroke would have sacrificed the plunge, which is the whole reason this shot earns anchor status."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 4,
+      "beat_description": "ingredient (2 clips): Hands crumbling/smearing butter into flour \u2192 Hands pinching butter and flour between fingers \u2192 Bench scraper pulled through flour/butter mixture",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "4L9A8796.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front anchors the \"butter should be the size of a pea\" technique tip \u2014 eye-level sells fingertip smearing/pinching better than top-down, and this is part of the front-heavy run in the camera sequence (front, front, front, overhead, front...); the mid-beat flip to overhead is the best-take for the bench scraper pulling through the mixture, a top-down motion."
+      },
+      "duration": {
+        "seconds": 2.3360000000000003,
+        "reasoning": "2.3s is driven by the SEO Tip Bubble MOGRT window (10.8s\u201313.2s \u2248 2.4s) \u2014 the beat holds long enough to read \"The butter should be the size of a pea!\" with the lightbulb icon."
+      },
+      "in_point": {
+        "seconds": 73.907,
+        "reasoning": "73.9s enters cleanly on the first frame of hands actively smearing butter into flour (not pre-action, not mid-motion), aligning the technique demo with the callout's appearance."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Tip Bubble_MOGRT/K SEO_Tip Bubble_MOGRT.aegraphic (10.8s-13.2s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 71% punch-in on the overhead tightens onto the flour/butter mixture and the scraper's path so the pea-size texture is legible at video scale \u2014 functional crop for ingredient clarity, not an organic-moment speed ramp."
+    },
+    {
+      "beat_index": 6,
+      "beat_description": "Hand lifts shaggy butter-flour crumble, lets it fall",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "4L9A8797.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is an organic flourish/anchor moment (rule 4) where the cascade of crumble falling through space only reads in profile; overhead would flatten it into a pile with no visible fall, so front is the only angle that sells the texture beat."
+      },
+      "duration": {
+        "seconds": 1.043000000000001,
+        "reasoning": "1.0s \u2014 a quick hero insert between ingredient dumps, long enough to register the lift-and-fall action once but short enough not to stall the ingredient-dump momentum on either side."
+      },
+      "in_point": {
+        "seconds": 25.901,
+        "reasoning": "25.9s \u2014 catches the hand already mid-lift with crumble actively cascading, skipping the wind-up so the full 1.0s is the falling-texture payoff rather than setup."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 7,
+      "beat_description": "ingredient (1 clips): Ice water poured from large measuring cup into smaller Pyrex \u2192 Water continues filling smaller cup, ice tongs/spoon held \u2192 Pour finishing into ice-filled measure cup",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "A054_04180540_C008.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a deliberate switch point \u2014 beat 4 is the first overhead after three front shots (the `<<<` marker in the camera run confirms it), and top-down is the only angle that reveals the ice cubes in the receiving Pyrex and the water level rising against them, which a front angle would flatten into a glass wall."
+      },
+      "duration": {
+        "seconds": 1.2509999999999994,
+        "reasoning": "1.3s matches the read time for the two-word \"Ice water\" MOGRT plus a beat of dwell so the viewer registers both the label and the ice landing in frame before cutting."
+      },
+      "in_point": {
+        "seconds": 10.761,
+        "reasoning": "10.8s enters mid-pour with the stream already established and ice visible, skipping the pre-pour setup so the shot is pure action from frame one."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (14.2s-15.5s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 8,
+      "beat_description": "Empty 1-cup Pyrex in foreground, water streaming in",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "4L9A8798.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a deliberate switch point after the overhead ice-water pour \u2014 the front angle makes the Pyrex logo and empty-vessel shape legible at eye-level (overhead would flatten it into a disc), reintroducing the measuring container as its own beat."
+      },
+      "duration": {
+        "seconds": 0.916999999999998,
+        "reasoning": "0.9s is a quick setup beat, not an anchor \u2014 it does just enough work to register \"fresh Pyrex, water going in\" before the longer 2.8s front shot that follows carries the real weight."
+      },
+      "in_point": {
+        "seconds": 9.843,
+        "reasoning": "9.8s lands on the stream already established into a still-empty cup \u2014 earlier would show an empty vessel with no action, later would lose the clean empty-read as the cup fills up."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "Hand holds tablespoon over ice-water Pyrex, scooping",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "4L9A8800.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this sits in the middle of a held front run (prev front 0.9s, next front 1.3s) \u2014 per Rule 3, the editor holds one camera across several ingredient-dump beats rather than alternating, and front reads the vertical scoop-and-lift action at eye level where overhead would flatten the spoon's travel."
+      },
+      "duration": {
+        "seconds": 2.7950000000000017,
+        "reasoning": "2.8s because this is the anchor beat of the measuring micro-sequence \u2014 it needs to hold long enough to read the scooping action (hand enters, spoon fills, begins lifting) and let the \"Measuring ice water by the spoon\" MOGRT land, which is why it's roughly 2\u20133\u00d7 the neighboring 0.9s/1.3s cuts."
+      },
+      "in_point": {
+        "seconds": 4.713,
+        "reasoning": "4.7s because that's the clean start of the scoop itself \u2014 the prior beat already showed water streaming into the Pyrex, so the editor enters exactly when the tablespoon is positioned and beginning to scoop, skipping dead approach frames."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "Pyrex nearly vertical, finishing the drizzle",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "4L9A8800.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the held angle through this ingredient-dump stretch \u2014 prev and next are both front \u2014 and at eye-level the Pyrex tipping near-vertical reads as a silhouette with the final stream trailing out, which overhead would flatten into just a bowl surface."
+      },
+      "duration": {
+        "seconds": 1.2510000000000012,
+        "reasoning": "1.3s is enough to register the Pyrex rotating to its steepest angle and the drizzle petering out \u2014 a compact end-of-pour beat that matches the pacing of the surrounding front shots without lingering."
+      },
+      "in_point": {
+        "seconds": 36.495,
+        "reasoning": "36.5s lands on the Pyrex at its most vertical with residual drizzle trailing \u2014 the found \"pour finishing\" flourish, which is why this beat was added in the first place (not in pipeline)."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "Macro of shaggy dough clumps being turned",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "4L9A8801.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the previous shot was also front (4L9A8800.mov, 1.3s) and this continues a held-front run before switching to the overhead nest \u2014 front eye-level also shows the shaggy-clump texture against the bowl wall, which an overhead tilt would flatten into a top-down mass."
+      },
+      "duration": {
+        "seconds": 1.2100000000000009,
+        "reasoning": "1.2s matches the pacing of the preceding 1.3s front beat, keeping a steady two-beat front hold before the edit releases into the longer 4.1s overhead zoom-nest."
+      },
+      "in_point": {
+        "seconds": 55.097,
+        "reasoning": "55.1s lands right on the \"just comes together\" texture moment \u2014 the frame where separate crumbs have clumped into a cohesive shaggy mass as it's being turned, which is the readable beat this cut needs to sell."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "Mixing bowl tilted to show shaggy dough crumble inside",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "[NEST] nest - flaky",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the shot's whole purpose is showing texture INSIDE the bowl \u2014 shaggy dough crumble \u2014 which a front/eye-level angle physically cannot reveal; this is a content requirement, not a held-run continuation."
+      },
+      "duration": {
+        "seconds": 4.128999999999998,
+        "reasoning": "4.1s is long because it's a nested sequence compressing four inner clips (bowl tilt reveal \u2192 dump to marble \u2192 press/consolidate \u2192 shape into disks per the frame-by-frame), covering a full transformation arc rather than a single beat."
+      },
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "0.0s \u2014 starts exactly on the tilt revealing the shaggy texture, the payoff frame that justifies cutting to overhead at all."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (100.0% -> 150.0%); Reframed (offset h:-0.50 v:-0.50)",
+      "nested": "Nested sequence 'nest - flaky' with 4 inner clips",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Functional, not organic \u2014 the zoom 100\u2192150% with h/v -0.50 reframe is the \"keep the same angle interesting\" tool from rule 3, adding push-in motion across a held overhead run and tightening onto the dough mass so the nested 4-clip sequence doesn't feel static."
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "Hand pats/shapes second disk on marble, first disk visible right",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "4L9A8802.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a deliberate switch point between an overhead nest (previous) and another overhead (next) \u2014 the front angle is the best take for showing both disks in frame together with the first disk visible right, dramatizing \"two disks now exist\" in a way overhead couldn't since overhead would flatten them into the counter."
+      },
+      "duration": {
+        "seconds": 1.0010000000000012,
+        "reasoning": "1.0s is a short punctuation beat wedged between the longer 4.1s nest and the 1.2s overhead that follows \u2014 just enough to register the second disk's completion and the new two-disk state before moving to wrapping."
+      },
+      "in_point": {
+        "seconds": 124.333,
+        "reasoning": "124.3s catches the exact frame where fingers are actively shaping the edge AND both disks are cleanly composed in frame \u2014 earlier would be mid-press ambiguity, later (27.5s in timeline) decays into a static resting beauty shot."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "One disk wrapped in plastic wrap on left, unwrapped on right",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "A054_04180548_C011.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.1679999999999993,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 20.312,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 15,
+      "beat_description": "ingredient (1 clips): Hands holding wrapped dough disk up to camera \u2192 Hands lower wrapped disk \u2192 Wrapped disk moved offscreen, empty marble left",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "4L9A8803.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front sells the \"holding up to camera\" presentation gesture \u2014 this is the hero beat showing the finished dough disk lifted toward the viewer, which overhead would flatten into just a top of a plastic blob; it's a held-front run (prev/next are both front-adjacent) finishing the make-dough section before the chill."
+      },
+      "duration": {
+        "seconds": 2.2940000000000005,
+        "reasoning": "2.3s is driven by the \"Refrigerate for at least 1 hour\" MOGRT (29.6s\u201331.3s) needing read time, and the 50% speed ramp stretches 2.3s of source into the timeline hold needed for that banner plus the graceful lower-and-clear exit."
+      },
+      "in_point": {
+        "seconds": 106.857,
+        "reasoning": "106.9s catches the disk at its highest, cleanest presentation frame \u2014 hands holding the wrapped puck square to camera \u2014 so the cut opens on a resolved hero pose rather than mid-raise."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 106.9s-109.2s)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Cook Times/K SEO_Cook Times.aegraphic (29.6s-31.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 50% speed ramp is a functional section-ender, not an organic flourish \u2014 there's no unattended transformation here (hands are actively moving the disk); the ramp exists to stretch the beat for MOGRT readability and give the make-dough section a deliberate, cinematic close before the chill cut."
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "Hand places chilled unwrapped dough disk on floured marble",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "4L9A8815.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the switch-point shot before handing off to overhead for the roll \u2014 it captures two human gestures (hand placing the disk, fingers shaping the edges) that read as intent, whereas overhead would flatten them into pure top-down geometry; overhead earns its turn at the next beat because the rolling pin's flattening action only legibly reads from above."
+      },
+      "duration": {
+        "seconds": 1.2929999999999993,
+        "reasoning": "1.3s is just enough to register both micro-actions (place + shape) before the cut, without lingering on either \u2014 this is a setup beat, not the anchor, so it doesn't get hero time."
+      },
+      "in_point": {
+        "seconds": 25.984,
+        "reasoning": "26.0s starts at the frame where the hand makes contact with the floured marble, giving the cut a clean \"arrival\" \u2014 we see the disk land rather than catching it mid-air or already settled, which sells the placement as a deliberate gesture."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "ingredient (2 clips): Rolling pin dusted with flour presses down on disk \u2192 Rolling pin rolls dough outward, disk flattens wider \u2192 Dough rolled into a large thin round",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "A054_04180631_C018.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is a held-camera switch point \u2014 the run breaks from front into three consecutive overheads (this one + next two), and top-down is the only angle that reads the flat disk actually expanding into a wide thin round."
+      },
+      "duration": {
+        "seconds": 2.5859999999999985,
+        "reasoning": "2.6s matches the \"A flour-dusted rolling pin prevents the dough from sticking\" tip bubble MOGRT window (32.6s\u201335.2s) \u2014 the hold is driven by tip readability, and the 192% ramp lets the shot cover ~5s of source rolling action inside that read-time."
+      },
+      "in_point": {
+        "seconds": 56.598,
+        "reasoning": "56.6s is the frame where the floured pin first makes contact and begins pressing \u2014 you want the action to start at the cut, not mid-roll."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (192.425% base, ramp between 56.6s-57.7s)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Tip Bubble_MOGRT/K SEO_Tip Bubble_MOGRT.aegraphic (32.6s-35.2s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 192% ramp is a functional compression tool, not an organic flourish \u2014 rolling dough out is slow and repetitive, and the speed-up fits the full transformation (press \u2192 roll \u2192 thin round) into the MOGRT's readable hold."
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "Dough draped/rolled onto rolling pin, pie plate visible above",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "A054_04180648_C020.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the only angle that reads this moment \u2014 a front/eye-level shot would hide the empty pie plate under the draping dough, so overhead is the anchor here because it's the only take that shows the transport-and-drop action landing in the vessel."
+      },
+      "duration": {
+        "seconds": 1.4179999999999993,
+        "reasoning": "1.4s at ~100.656% speed covers roughly 1.4s of source (78.7s \u2192 80.1s), which spans the rolling-pin-above-plate through the half-unrolled drape \u2014 long enough to register the \"dough meets plate\" reveal, short enough to hand off to the press-in beat that follows."
+      },
+      "in_point": {
+        "seconds": 78.662,
+        "reasoning": "78.7s starts exactly when the rolling pin with draped dough enters position over the empty pie plate \u2014 begins on the transport move so the viewer sees the pie plate still empty, making the drape that follows legible as a transformation rather than a mid-action cut."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (100.656% base, ramp between 78.7s-80.1s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The 100.656% ramp is a functional timing nudge (sub-1% over real-time), not an organic flourish \u2014 it's the editor shaving frames to land the cut on the next beat, not speed-ramping a found moment of transformation."
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "Hands press dough into pie plate bottom and sides",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "A054_04180648_C020.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because pressing dough into a plate is a top-down spreading action \u2014 the circular coverage across the plate bottom only reads from above, and this continues a held overhead run from the previous beat (A054 overhead) before the switch to front for the crimping macro that follows."
+      },
+      "duration": {
+        "seconds": 0.9170000000000016,
+        "reasoning": "0.9s is a short connective beat \u2014 the pressing action is continuous and mechanical with no single payoff moment, so it bridges the 1.4s overhead before and the 2.1s front crimping after without overstaying on a non-hero action."
+      },
+      "in_point": {
+        "seconds": 117.075,
+        "reasoning": "117.1s catches hands mid-press with the shell already taking form, not the stationary setup or finished state \u2014 motion is active in-frame at the cut."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (67.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "67% punch-in (tighter than 50% baseline) is a functional reframe, not an organic flourish \u2014 it tightens the held overhead onto the hands/dough contact to keep the same angle visually fresh per the \"use nests/zooms/reframes\" rule, and steps the intimacy up toward the even-tighter front macro that follows."
+    },
+    {
+      "beat_index": 21,
+      "beat_description": "Macro close-up: thumbs pinching/crimping edge",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "4L9A8820.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because it's the anchor \u2014 only the macro front angle shows the thumbs' pinching technique and the zigzag flutes resolving into pattern, which the overhead flattens; this is a deliberate switch point between two overhead shots (0.9s prev, 1.3s next) to sell the crimping technique."
+      },
+      "duration": {
+        "seconds": 2.0859999999999985,
+        "reasoning": "2.1s because it's the hero beat of the crimping sequence \u2014 noticeably longer than the flanking overheads (0.9s, 1.3s) to let the viewer watch the scalloped rim actually form rather than just glimpse it."
+      },
+      "in_point": {
+        "seconds": 11.803,
+        "reasoning": "11.8s lands mid-crimp with thumbs already engaged and flutes visibly forming \u2014 not a cold start on a static hand, not the tail where the pattern is done, but the productive middle where technique is legible."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 22,
+      "beat_description": "Finished raw crust on sheet pan, hands steadying tray",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "A054_04180700_C023.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the switch point out of the preceding front-camera run \u2014 top-down is the only angle that reads the full circular fluted crust as a finished \"pre-bake hero,\" which a front/eye-level shot would foreshorten into a flat disc."
+      },
+      "duration": {
+        "seconds": 1.2510000000000048,
+        "reasoning": "1.3s is the minimum hold needed to register the raw crust as a completed object before the whip transition drops the baked tray into frame \u2014 any longer and the reveal loses its snap."
+      },
+      "in_point": {
+        "seconds": 15.557,
+        "reasoning": "15.6s is the frame where hands have finished steadying and the tray sits centered and still \u2014 the cleanest \"hero\" framing in the take before the drop gesture begins."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (69.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 69% is functional, not organic \u2014 it tightens off the sheet-pan edges and surrounding counter so the fluted rim fills frame and the upcoming raw\u2192baked whip lands on a matched-scale subject rather than a wide pan."
+    },
+    {
+      "beat_index": 23,
+      "beat_description": "Macro of baked crust edge from side, shallow focus pull",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "4L9A8823.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the switch point after the overhead tray-drop reveal at 40.5s \u2014 overhead sold the \"it's baked\" moment, and front takes over as the anchor for the beauty run because only a side angle gives you the shallow-DOF focus pull across the fluted rim (overhead flattens that texture)."
+      },
+      "duration": {
+        "seconds": 2.168999999999997,
+        "reasoning": "2.2s is long because this is a beauty/reveal beat, not an ingredient beat \u2014 the focus pull needs time to travel and resolve, and it's setting up the end-card landing two shots later, so the pacing decelerates here rather than staying tight."
+      },
+      "in_point": {
+        "seconds": 21.063,
+        "reasoning": "21.1s is where the focus pull has committed to the toasty crimped edge with the rim reading sharp \u2014 earlier frames are pre-roll before the pull lands, later frames are already drifting toward the interior reveal that belongs to the next beat."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 24,
+      "beat_description": "Tilt-up reveals interior of baked shell with docking holes",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "4L9A8821.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the tilt-up reveal is a front-angle move \u2014 it physically can't happen from overhead \u2014 and this continues a held front run from the previous 2.2s front shot before switching to overhead on the next beat for the flat beauty."
+      },
+      "duration": {
+        "seconds": 1.0840000000000032,
+        "reasoning": "1.1s covers the full tilt arc from rim to interior-with-docking-holes; the 50% base ramp stretches the first part of the move so the docking-hole detail registers before the cut to overhead, landing on the beat transition into the end-card."
+      },
+      "in_point": {
+        "seconds": 88.588,
+        "reasoning": "88.6s is the frame the tilt-up begins \u2014 starting earlier would show static rim, later would skip the reveal motion that makes this shot work."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 88.6s-89.7s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Functional reveal treatment, not an organic flourish \u2014 nothing is transforming unattended. The 50% base slows the opening of the tilt so the docking-hole texture reads, then ramps back up to hit the cut on tempo; it's the same slow-to-normal technique used for organic moments, applied here to sell a craft-detail reveal in the beauty close."
+    },
+    {
+      "beat_index": 25,
+      "beat_description": "Baked pie shell on sheet pan, full overhead beauty shot",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "A054_04180657_C022.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a top-down beauty shot where the circular geometry, lattice/crimp pattern, and even bake color of the finished crust read as a complete object \u2014 a front eye-level angle would only show the rim profile and hide the payoff."
+      },
+      "duration": {
+        "seconds": 1.9609999999999985,
+        "reasoning": "2.0s holds because it's the terminal end-card shot carrying the logo, so it needs to breathe long enough to register as closure rather than another beat in the sequence."
+      },
+      "in_point": {
+        "seconds": 15.849,
+        "reasoning": "15.8s is where the shot is clean and settled \u2014 camera locked, pie fully framed, and the end-card logo element has resolved so the composite reads on the first frame of the cut."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (100.0% vs 50% baseline); Animated reframe (position keyframes)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The 100% punch-in off a 50% baseline plus position keyframes is a functional edit tool (not an organic flourish) \u2014 it adds a slow drift/push so the static end-card has motion energy and doesn't feel like a freeze frame."
+    }
+  ]
+}

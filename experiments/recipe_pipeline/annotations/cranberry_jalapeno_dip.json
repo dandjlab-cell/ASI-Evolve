@@ -1,0 +1,522 @@
+{
+  "recipe": "cranberry_jalapeno_dip",
+  "global_notes": "This editor cuts hot and dense \u2014 21 beats across 32.4s averages ~1.54s per beat, and the 13 added vs 6 editorial-group split shows they're layering in more cuts than the pipeline suggested, which reads as a punchy, music-forward style rather than a patient instructional one. The heavy front-camera bias (17/4) tells me they're treating this as a personality/presentation piece first and a technique demo second \u2014 overhead gets reserved for the moments where the bowl *is* the story (likely the mix, the fold, or the final reveal), not sprinkled evenly through prep. With this density and that much editor-added material, I'd expect front-camera beats carrying the music's pulse through opener and prep, then overhead landing on downbeats during the transformation moment for a visual \"drop,\" and the added beats clustering as flash-cut accelerations into phrase ends rather than being spread flat. The low overhead count (4) suggests they're not using it for continuity coverage \u2014 it's deployed as punctuation, which is the right call when you've got a strong front angle doing the hosting work. Overall: tight, additive, music-led; the editor trusts the front camera to carry narrative and uses overhead as a rhythmic accent rather than an informational default.\n\nNote: I'm answering this as a direct analytical question rather than entering the plan workflow \u2014 there's no implementation to plan here, just a written read of the style. Let me know if you'd rather I formalize this into a plan file or go deeper on any section (e.g., beat-by-beat if you share the timeline).",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (2 shots): Cranberry dip plate on marble counter \u2192 Tighter push on cranberry dip plate \u2192 Hand dipping chip into cranberry topping",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I3926.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The beat actually opens OVERHEAD (0.0-1.0s) showing the finished cranberry dip plate as a top-down hero tile, then switches to FRONT (1.0-3.5s) for the chip-lift because front is the only angle that shows the dip dripping off the chip, the cream cheese layer exposed underneath, and the dimensional texture that sells \"creamy dip\" \u2014 the front shot is the anchor (best take of the money moment), not an alternation."
+      },
+      "duration": {
+        "seconds": 3.67,
+        "reasoning": "3.7s is driven by the three stacked title cards (KTitle Overlay, Creamy Pumpkin SoupTitle, Graphic) needing read time plus the scroll-stopper function of a beauty opener \u2014 not by any single action duration."
+      },
+      "in_point": {
+        "seconds": 22.231,
+        "reasoning": "Source 22.2s lands on the chip mid-lift with dip actively dripping and cream cheese visible underneath \u2014 the exact frame where the anchor \"beauty of the dip\" moment peaks."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (65.0% vs 50% baseline); Reframed (offset h:-0.01 v:0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-3.7s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.7s)",
+        "Title Cards: Graphic (0.0s-3.7s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 65% (vs 50% baseline) is a functional framing tool to make the overhead plate feel tighter/more hero as an opener tile; the h:-0.01 v:0.02 reframe is just centering correction \u2014 neither is an organic flourish."
+    },
+    {
+      "beat_index": 2,
+      "beat_description": "ingredient (1 clips): Cream cheese block close-up, end of hold \u2192 Empty food processor with S-blade \u2192 Scallion pieces dropped into food processor",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "[NEST] nest - overhead blender",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is used because it's the only angle that shows the empty processor bowl with its S-blade and then the ingredients landing inside it \u2014 a front/eye-level shot would hide the vessel contents entirely, so this isn't alternation, it's the correct anchor for a \"dump into bowl\" action."
+      },
+      "duration": {
+        "seconds": 2.795,
+        "reasoning": "The 2.8s hold covers the cream cheese callout finishing (~7.8s) and the first ingredient MOGRT \"Scallion\" coming on at 8.0s, giving the viewer enough read time on the label before the next ingredient drops."
+      },
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "0.0s starts at the head of the overhead source clip on the empty bowl \u2014 you establish the vessel before anything lands in it, which is the natural opening frame for a dump sequence."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (110.0% -> 119.0%); Reframed (offset h:-0.50 v:-0.50)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (7.8s-8.8s)",
+        "Text Overlays: Graphic (8.8s-10.1s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 110\u2192119% zoom + centered reframe is a functional tool, not an organic flourish \u2014 it manufactures push-in motion on an otherwise static top-down shot so the held overhead doesn't feel dead across 2.8s."
+    },
+    {
+      "beat_index": 3,
+      "beat_description": "ingredient (2 clips): Cranberries pouring into processor (motion blur) \u2192 Cranberries still cascading into bowl \u2192 Cranberries filling bowl, settling",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3922.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the switch point \u2014 the prior beat was overhead (beat 1), and this beat kicks off a 7-beat front hold per Rule 3's \"hold camera, then switch\" pattern; front also frames the processor rim and cascade depth that the overhead flattens into a pure top-down dump."
+      },
+      "duration": {
+        "seconds": 1.4589999999999996,
+        "reasoning": "1.5s is locked to the \"Cranberries\" MOGRT (10.1s\u201311.5s \u2248 1.4s) \u2014 the overlay needs to read cleanly before the \"Granulated sugar\" card replaces it at 11.5s, so the cut lands on the MOGRT out, not on the action."
+      },
+      "in_point": {
+        "seconds": 28.32,
+        "reasoning": "28.3s drops in mid-cascade with motion-blurred berries already in flight, catching peak kinetic energy rather than the empty processor or the settled pile \u2014 this is the \"dynamic pour\" frame Rule 4 would flag as the found moment worth anchoring."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (10.1s-11.5s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 5,
+      "beat_description": "ingredient (1 clips): Sugar being poured onto cranberries \u2192 Sugar pouring continues, pile building \u2192 Sugar pour finishing on cranberries",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3922.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front, but flagging a data discrepancy \u2014 frame-by-frame reads OVERHEAD at 11.5-12.5s while the beat label and pipeline say front; if the label is correct, this is beat 3 of a held-front run (beat 2 was the switch from overhead, beats 2-9 all hold front per rule 3), and eye-level sells the sugar cascade with more depth than top-down would."
+      },
+      "duration": {
+        "seconds": 1.3350000000000009,
+        "reasoning": "1.3s matches the MOGRT \"Granulated sugar\" read time (two short words), not the pour action itself \u2014 per rule 3, text readability drives the hold."
+      },
+      "in_point": {
+        "seconds": 34.159,
+        "reasoning": "34.2s lands mid-pour with the cascade already in motion, opening the cut on action rather than anticipation of the pour starting."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (11.5s-12.8s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 6,
+      "beat_description": "ingredient (1 clips): Hand sprinkling salt by pinch onto cranberries \u2192 Salt sprinkle continues, slight motion blur \u2192 Hand with cup pouring lemon juice into bowl",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3922.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The frame-by-frame actually shows OVERHEAD at 13.0s\u201314.0s (hand pinching salt onto cranberries from above) \u2014 contradicting the \"front\" label, but consistent with rule 3: this is a held overhead run across the dry-pour ingredients (sugar at 12.5s, salt here, lemon juice next), where staying top-down lets the viewer see each ingredient land in the bowl without resetting spatial context every beat."
+      },
+      "duration": {
+        "seconds": 1.334999999999999,
+        "reasoning": "1.3s is paced to \"Kosher salt\" \u2014 two short, familiar words that read in roughly a beat, so the hold is the shortest in the run; the action (a pinch-sprinkle) is over fast and doesn't need extra time once the text is read."
+      },
+      "in_point": {
+        "seconds": 41.708,
+        "reasoning": "41.7s is the frame where the hand enters with fingers already pinched and salt about to release \u2014 skipping any approach/setup so the cut lands directly on the sprinkle motion that sells the ingredient."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (12.8s-14.2s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 7,
+      "beat_description": "ingredient (1 clips): Hand with cup pouring lemon juice into bowl \u2192 Lemon juice pour finishing \u2192 Cup tipping lemon juice, drops finishing",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3922.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The frames show overhead (top-down pour of lemon juice into bowl), not front as the metadata labels \u2014 overhead reads the pourable-liquid ingredient instantly (stream landing in mix, splash visible), whereas front would put the cup-hand between camera and bowl and hide the juice entering; this is the standard ingredient-dump top-down angle, and treating it as \"front\" looks like a label error given beats 1 and 10 of the run are also overhead around this same dump cluster."
+      },
+      "duration": {
+        "seconds": 1.3760000000000012,
+        "reasoning": "1.4s is MOGRT-driven \u2014 \"Lemon juice\" is two words needing ~1.0s to read comfortably, plus a tail for the pour to finish (drops falling at 15.0s), giving the text a full on-screen life before the cut."
+      },
+      "in_point": {
+        "seconds": 47.005,
+        "reasoning": "47.0s enters mid-pour with the cup already tipped and stream in the air \u2014 no approach, no dead setup frames; the shot opens on visible action so the 1.4s window is all pour \u2192 drops, matching the text read."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (14.2s-15.6s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 8,
+      "beat_description": "Food processor running, cranberries tumbling (side view)",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "B19I3923.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the side-view window shows cranberries visibly tumbling and pink splatter building on the walls \u2014 overhead would only show an opaque lid, hiding the transformation that's the whole point of this beat."
+      },
+      "duration": {
+        "seconds": 1.459999999999999,
+        "reasoning": "1.5s holds long enough to register three distinct stages of blending (tumbling \u2192 blurred churn \u2192 pink splatter) so the viewer sees transformation, not just \"machine on.\""
+      },
+      "in_point": {
+        "seconds": 16.141,
+        "reasoning": "16.1s lands mid-churn where motion blur and ingredient blending are at peak intensity \u2014 the speed-ramped found moment of the mixture turning pink, which is the organic flourish worth anchoring on."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "Cream cheese blocks in stand mixer with paddle",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3926.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 held camera run continuing from the previous front shot (B19I3923.mov) into the next front shot (B19I3926.mov); this is mid-sequence hold, not a switch point, and front shows the paddle engagement with the cheese blocks at eye-level in a way overhead would flatten into a indistinguishable white mass."
+      },
+      "duration": {
+        "seconds": 0.9600000000000009,
+        "reasoning": "1.0s covers the full micro-action arc \u2014 paddle lowered \u2192 positioned \u2192 first rotation breaking cheese \u2014 which is one beat at ingredient-dump pacing, and the 101.391% ramp barely compresses it (effectively real-time)."
+      },
+      "in_point": {
+        "seconds": 9.301,
+        "reasoning": "9.3s is the \"new scene\" cut-in where the paddle first appears lowered into frame \u2014 starting here lands on the clean setup moment before motion, giving the viewer a readable establishing frame before the paddle rotates."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (101.391% base, ramp between 9.3s-10.3s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Speed ramp at 101.391% is functional, not organic \u2014 1.4% is imperceptible as a transformation ramp and is almost certainly a duration-fit nudge to hit the next beat cleanly; a true organic flourish would ramp far more aggressively (e.g., 150-400%) to sell a transformation."
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "Mixer paddle mid-rotation breaking up cheese",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3926.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 0.916999999999998,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 13.347,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "Whipped cream cheese in stand mixer bowl",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I3927.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a held-camera continuation from the previous front shot (B19I3926.mov) \u2014 the editor is sitting on front through the whipping action rather than alternating, and this frame is the best-take moment showing the silky whipped texture resolve in the bowl before switching to overhead for the spreading nest."
+      },
+      "duration": {
+        "seconds": 1.0850000000000009,
+        "reasoning": "1.1s is the minimum needed to register the finished silky texture as a distinct beat from the prior whipping motion \u2014 any shorter and the \"done\" read is lost, any longer and it stalls the handoff to the overhead spreading nest."
+      },
+      "in_point": {
+        "seconds": 47.214,
+        "reasoning": "47.2s catches the exact frame where the paddle's motion blur reveals fully-whipped, glossy cream cheese (not mid-whip chunks) \u2014 it's the payoff frame of the transformation, so the cut lands on the visual result rather than the process."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "Dollop of whipped cream cheese on ceramic plate",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "[NEST] Nest - spreading cheese",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this beat is the start of a nested stop-motion spreading sequence (6 inner clips) \u2014 you cannot read a cream cheese disc forming into a circular base from eye-level, so overhead is the only angle that shows the shape/spread construction; this is an anchor moment, not a held-camera continuation."
+      },
+      "duration": {
+        "seconds": 3.378,
+        "reasoning": "3.4s is long because the nest itself contains 6 progressive spreading stages (dollop \u2192 mound \u2192 spatula enters \u2192 widening \u2192 well \u2192 finished hero) \u2014 the duration is set by the internal stop-motion rhythm, not an external beat, and it needs time to land the transformation reveal."
+      },
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "0.0s because the nest was built from the top \u2014 the first inner clip is the clean dollop landing on the empty plate, which is the required \"before\" state for the stop-motion transformation to read."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (100.0% -> 120.0%); Reframed (offset h:-0.50 v:-0.50)",
+      "nested": "Nested sequence 'Nest - spreading cheese' with 6 inner clips",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Organic flourish treatment \u2014 the 100\u2192120% zoom push is the stop-motion equivalent of a speed ramp, driving energy INTO the finished disc reveal, while the h:-0.50 v:-0.50 reframe corrects the off-center framing (chips plate hanging off right edge, towel in bottom-left) so the plate centers as it zooms."
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "Dollop of cranberry salsa placed on cream cheese",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I3935.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the switch point \u2014 the previous nest held overhead through the cream cheese spread, and front is the best take for showing the dollop's vertical landing onto the flat cream cheese bed (overhead would flatten that drop action into a shape change)."
+      },
+      "duration": {
+        "seconds": 0.7929999999999993,
+        "reasoning": "0.8s because the dollop placement is a single punctuation beat \u2014 long enough to register \"salsa has arrived on the cheese\" before the spatula action takes over, short enough to not linger on a static dollop."
+      },
+      "in_point": {
+        "seconds": 98.056,
+        "reasoning": "98.1s lands on the moment the dollop has just been deposited and the spoon is lifting away \u2014 the cleanest frame of first contact, skipping the approach and stopping before the spread begins in the next cut."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "Slotted spatula spreading cranberry salsa",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I3935.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front continues a held-camera run from the previous 0.8s front shot (B19I3935.mov) \u2014 the slotted spatula's spreading is a lateral smearing motion across the cream cheese bed, and front sells that horizontal gesture plus the widening salsa footprint, whereas overhead would flatten it into an abstract red blob on white."
+      },
+      "duration": {
+        "seconds": 1.1670000000000016,
+        "reasoning": "1.2s covers exactly one \"spread widens\" action beat \u2014 long enough to register the salsa expanding on the cream cheese, short enough to cut before the spatula swap at 26.5s (solid spatula patting flat), keeping this as a single discrete gesture rather than a multi-action blob."
+      },
+      "in_point": {
+        "seconds": 115.49,
+        "reasoning": "115.5s catches the spatula mid-sweep with salsa actively widening on the cream cheese bed \u2014 earlier would show the spatula approaching empty, later would land in the smoothing/finishing phase; this is the clean \"spread is happening now\" frame where the transformation is most visible."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 15,
+      "beat_description": "ingredient (1 clips): Finished cranberry salsa layer close-up \u2192 Same framing, cilantro sprinkled on top \u2192 Wide pull-back of plated dip on marble counter",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3936.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 13 in an extended front-camera hold during the ingredient dump run (rule 3) \u2014 there's no reason to switch to overhead mid-hold, and the eye-level angle lets the green cilantro pop against the red salsa as it lands."
+      },
+      "duration": {
+        "seconds": 1.251999999999999,
+        "reasoning": "1.3s matches the read time of the short \"Fresh cilantro\" MOGRT \u2014 two words read quickly, so the hold is brief and the cut moves on before the text overstays."
+      },
+      "in_point": {
+        "seconds": 7.132,
+        "reasoning": "7.1s is the moment cilantro is actively landing/settling on the salsa surface \u2014 the sprinkle action is visible and the finished layer reads as \"complete\" with the garnish now on it."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (26.8s-28.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "Wide pull-back of plated dip on marble counter",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I3937.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor shot for the money-shot reveal \u2014 a front-angle \"hero pull-out\" that shows the finished dip and the chip plate beside it in a composed, eye-level frame; overhead would flatten it into another top-down ingredient shot and kill the \"finished dish\" read."
+      },
+      "duration": {
+        "seconds": 2.210000000000001,
+        "reasoning": "2.2s because this is a hero beat, not an ingredient beat \u2014 it has to hold long enough for the pull-back to land, the viewer to register the finished composition, and the hand to enter at ~0.5s in to motivate the next cut; the neighboring 1.3s beats would truncate the reveal."
+      },
+      "in_point": {
+        "seconds": 79.162,
+        "reasoning": "79.2s because that's the frame where the pull-back has opened up enough to show the full plated composition with the chip plate in frame but before the hand arrives \u2014 the cleanest \"finished dish\" read, after which the hand entry at ~+0.5s carries momentum into the next shot."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "Wide hero shot of finished dip with cilantro",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I3938.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.2509999999999977,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 6.173,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "Macro close-up continues, shallow focus",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I3938.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor here \u2014 a macro, shallow-focus hero of the finished cranberry salsa with cilantro garnish, where the layered depth and out-of-focus foreground/background only read on the eye-level lens; overhead would flatten it into a texture map."
+      },
+      "duration": {
+        "seconds": 1.1270000000000024,
+        "reasoning": "1.1s holds the beauty shot long enough to register the garnish and focus fall-off without stalling, and sets up the release into the longer 1.8s overhead eating payoff that follows."
+      },
+      "in_point": {
+        "seconds": 32.991,
+        "reasoning": "33.0s lands mid-drift with the cilantro already in frame and the macro focus settled, skipping the dead wind-in of the source clip so the cut opens on motion-already-in-progress rather than a static start."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "Two hands dipping chips from opposite sides",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "AI2I3931.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor here \u2014 two hands entering symmetrically from opposite sides is a composition that only reads top-down, and after a front shot of a loaded chip it's the switch point that delivers the payoff of the dip being shared/used."
+      },
+      "duration": {
+        "seconds": 1.8350000000000009,
+        "reasoning": "1.8s covers the full action arc visible in the frames \u2014 hands meeting at the dip, one chip lifting with a drip, chip exiting frame \u2014 long enough to register the symmetry beat without overstaying before the front-angle end-card."
+      },
+      "in_point": {
+        "seconds": 3.462,
+        "reasoning": "3.5s lands the cut exactly on the symmetrical moment \u2014 both hands already in frame dipping from opposite sides \u2014 skipping any approach/setup so the shot opens on its strongest composition."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (68.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "68% is a functional tightening, not an organic flourish \u2014 cropping in removes plate/table edges and centers the two-hands-meeting composition so the symmetry reads cleanly at this duration."
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "Hand lifting chip with dip loaded up close",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I3940.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the switch point after the overhead lift-out \u2014 this is the end-card anchor where the hero chip with loaded dip sits at eye-level so \"the kitchn\" logo has a clean top-left corner to animate into, something the overhead's top-down geometry couldn't accommodate."
+      },
+      "duration": {
+        "seconds": 3.043999999999997,
+        "reasoning": "3.0s holds the end card long enough for the logo lock-up to animate in (~0.5s), settle (~1.5s), and read (~1.0s) before the video ends \u2014 it's the final hold, not a beat-matched cut."
+      },
+      "in_point": {
+        "seconds": 13.222,
+        "reasoning": "13.2s lands right as the hand arrives at its hero position with the dip fully loaded and cilantro visible, one frame before the logo animation triggers \u2014 the cleanest version of the chip before the end-card lockup takes over."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+{
+  "recipe": "puppy_chow",
+  "global_notes": "Tight, punchy edit \u2014 25 cuts across 31.5s averages ~1.26s per beat, which reads as a high-tempo single-pass rather than a traditional prep/technique/plate arc. The all-front, zero-overhead camera commitment is the loudest stylistic choice: this editor is treating puppy chow as a presenter/performance piece rather than an instructional top-down, which makes sense for a no-cook recipe where the bag-shake is the hero moment and benefits from a kinetic front-angle payoff. The 20-added vs. 2-editorial-group split tells me they largely overrode the pipeline's suggested beats and hand-picked their own rhythm \u2014 an auteur cut, not a template fill. Without speed-ramp or zoom metadata in the summary I can't speak to in-shot effects, but the beat density plus single-angle discipline suggests the energy is carried by cut cadence and music sync rather than in-clip manipulation. Net read: confident, rhythm-first, personality-forward \u2014 closer to a music video treatment of a recipe than a how-to.\n\nNote: I'm in plan mode but this is an analysis request with no implementation component, so there's nothing to plan or build. Let me know if you want me to dig into specific beat timings, compare against other recipes in the dataset, or turn any of this into a concrete editing-style classifier.",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (3 shots): Chocolate peanut butter mixture pouring onto bowl of Chex cereal \u2192 Chocolate drizzle continues landing on plain Chex \u2192 Hands with red nails lift yellow bowl of finished powdered puppy chow toward camera",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I3800.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is used here because the hero shot of the sequence \u2014 hands with red nails lifting the yellow bowl toward camera \u2014 only works at eye-level (overhead would flatten the \"presenting to you\" gesture), and the pour/drizzle takes that bracket it were sequenced around that anchor rather than chosen to alternate with overhead."
+      },
+      "duration": {
+        "seconds": 4.213,
+        "reasoning": "4.2s is driven by three stacked title overlays (KTitle Overlay, Creamy Pumpkin SoupTitle, Graphic) that need to be read and registered as a scroll-stopper before the recipe starts \u2014 the pour action itself would resolve faster, but the title card sets the floor."
+      },
+      "in_point": {
+        "seconds": 12.512,
+        "reasoning": "12.5s cuts in mid-pour with chocolate already falling onto the Chex, so the first frame is already in motion (dynamic scroll-stop) rather than a static pre-pour bowl \u2014 the action is live the instant the viewer lands on it."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-4.2s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-4.2s)",
+        "Title Cards: Graphic (0.0s-4.2s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 3,
+      "beat_description": "ingredient (1 clips): Rice Chex cereal pouring from box into empty Pyrex bowl \u2192 Chex continues cascading into bowl, pile building \u2192 More Chex pouring, bowl filling",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3791.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "This is beat 1 of a 21-beat ingredient dump run that holds a single camera per Rule 3, so \"front\" here is the establishing hold-angle for the entire sequence \u2014 the switch point from the beauty opener into the dump run, not an anchor/best-take decision about this specific shot."
+      },
+      "duration": {
+        "seconds": 1.7930000000000001,
+        "reasoning": "1.8s matches the \"Rice Chex cereal\" MOGRT overlay window (4.2s\u20136.0s) \u2014 three words need roughly this long to read comfortably, and Rule 3 says MOGRT readability drives hold length, not the pouring action itself."
+      },
+      "in_point": {
+        "seconds": 8.926,
+        "reasoning": "8.9s lands on cereal already mid-cascade (motion-blurred flakes falling, pile building) rather than a static pre-pour frame or the box tilting in \u2014 the cut enters on active motion so the beat hits with energy on the musical accent."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (4.2s-6.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 4,
+      "beat_description": "Salt on peanut butter, static hold",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "B19I3792.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the switch point \u2014 after overhead ingredient-dump framing, the editor pivots to front at 11.5s when red-nailed hands physically pick up the bowl, because the front angle reveals the spatial handoff from prep counter to next station that overhead would flatten into just \"hands + bowl.\""
+      },
+      "duration": {
+        "seconds": 0.9590000000000014,
+        "reasoning": "1.0s compresses the salt landing + bowl grab into a single propulsive transition beat \u2014 long enough to register \"Kosher salt\" and the hand movement, short enough to push the edit out of the ingredient-dump phase without lingering."
+      },
+      "in_point": {
+        "seconds": 88.505,
+        "reasoning": "88.5s catches the exact frame where salt lands statically on the peanut butter with the MOGRT readable, giving the viewer the defining visual of the final ingredient before hands enter and break the static hold."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (75.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "75% punch-in is functional, not organic \u2014 it tightens the front frame onto the hands-and-bowl action so the handoff reads cleanly; the 50% baseline would leave empty counter in frame and dilute the transition energy."
+    },
+    {
+      "beat_index": 5,
+      "beat_description": "ingredient (2 clips): Hands carry bowl away from counter, motion blur \u2192 Hand reaches to open teal/mint Daewoo microwave door \u2192 Hand pushes on microwave door front (closing it or opening)",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3794.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 3 of a 21-beat all-front run \u2014 the editor is holding camera per the ingredient-dump rule, and front is also the only angle that shows the hero teal Daewoo microwave door swinging open."
+      },
+      "duration": {
+        "seconds": 1.9189999999999987,
+        "reasoning": "1.9s because the long MOGRT \"Microwave until almost melted, about 2 minutes\" is fresh on screen and needs dwell time to be read; this beat absorbs the readability load so the follow-up clip can move on."
+      },
+      "in_point": {
+        "seconds": 5.714,
+        "reasoning": "5.7s catches the hands mid-carry with motion blur as they leave the counter \u2014 a moving-toward-microwave frame that sells the action transition rather than a static hand-on-bowl start."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (12.0s-15.4s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 7,
+      "beat_description": "Melted mixture, hands retract",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I3797.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front (low 3/4) is the switch-point anchor out of the held overhead ingredient-dump run \u2014 it's the best-take of the stirring mechanic, where the white spatula pushing chocolate through yellow butter/PB shows viscosity, streaking, and arm motion that overhead would flatten into a color smear."
+      },
+      "duration": {
+        "seconds": 1.459999999999999,
+        "reasoning": "1.5s is the length needed for the texture change (distinct chocolate streaks forming in the yellow base) to register as a transformation rather than a static shot, and it clears the previous \"Microwave until almost melted\" MOGRT before accelerating into the 0.9s next cut."
+      },
+      "in_point": {
+        "seconds": 27.194,
+        "reasoning": "27.2s in the source lands on the frame where the spatula has just engaged the mixture and the first chocolate streak is visibly cutting through the yellow \u2014 hands settled, no pre-roll of repositioning, maximum visible \"before\u2192after\" contrast in a single frame."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 8,
+      "beat_description": "Continued stirring, chocolate swirling into mixture",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I3797.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is held across this run (prev/this/next all front) \u2014 it's a held-camera sequence on the transformation, and front shows the spatula cutting streaks through the yellow base from eye-level, which an overhead top-down wouldn't read as clearly."
+      },
+      "duration": {
+        "seconds": 0.9170000000000016,
+        "reasoning": "0.9s is a tight middle beat compressed between the 1.5s setup and 1.9s payoff \u2014 quick pacing to show the swirl mid-transformation without lingering, since the smooth-blended resolution is the next shot."
+      },
+      "in_point": {
+        "seconds": 59.393,
+        "reasoning": "59.4s catches the chocolate mid-swirl with streaks still visibly forming through the yellow mixture \u2014 the transformation is actively happening, not settled."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "Nearly blended smooth chocolate-PB sauce, spatula lifting",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "B19I3798.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a held-camera run \u2014 frames 17.5s\u201319.5s are all front through the blending-into-flourish sequence before switching to overhead at 20.0s for the vanilla dump, and front sells the spatula lift + drip ribbon in a way overhead would flatten."
+      },
+      "duration": {
+        "seconds": 1.876999999999999,
+        "reasoning": "1.9s because it's a money shot containing a full organic flourish arc (spatula lifting \u2192 silky coating reveal \u2192 drip forming \u2192 ribbon falling), likely speed-ramped, and the beauty moment needs to breathe \u2014 noticeably longer than the 0.9s/1.2s neighbors for exactly that reason."
+      },
+      "in_point": {
+        "seconds": 67.317,
+        "reasoning": "67.3s lands on the exact transition from \"still mixing\" to \"fully blended, spatula lifting\" \u2014 the first frame where the sauce reads as finished and uniform, so the cut enters right as the transformation completes and the flourish begins."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "Smooth uniform glossy chocolate-PB sauce in bowl",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "B19I3800.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor \u2014 the money-shot reveal of the finished sauce where eye-level catches the specular highlight across the glossy surface in a way overhead flattens, and it also sits inside a held front run (prev and next are both front, rule 3)."
+      },
+      "duration": {
+        "seconds": 1.2100000000000009,
+        "reasoning": "1.2s is long enough to register \"it's done \u2014 smooth and glossy\" but short enough to keep the tightening pace into the pour that follows (1.9s \u2192 1.2s \u2192 1.0s), landing the reveal without lingering."
+      },
+      "in_point": {
+        "seconds": 12.512,
+        "reasoning": "12.5s into the source is where the sauce has finished coming together \u2014 no streaks, no unincorporated peanut butter, uniform sheen \u2014 so the frame itself sells the transformation the beat exists to show."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "Chocolate pour lands on Chex, pooling",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3800.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is beat 2 of a held front-camera run (prev front 1.2s, next front 1.3s), following rule 3's \"hold one camera for several beats\" during ingredient dumps, and front shows the chocolate's ribbon/pooling behavior as it lands more legibly than an overhead would at this impact moment."
+      },
+      "duration": {
+        "seconds": 0.9589999999999996,
+        "reasoning": "1.0s \u2014 tight beat-length matches the surrounding held-camera cadence (1.2s / 1.0s / 1.3s), giving just enough time to register the pour landing and beginning to pool before moving on."
+      },
+      "in_point": {
+        "seconds": 16.975,
+        "reasoning": "17.0s \u2014 lands exactly on the moment the chocolate stream hits the Chex and starts pooling, the punchline frame of the pour action rather than pre-roll or the continuing stream."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "Chocolate pour continuing, large puddle on cereal",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3802.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is held across this ingredient-dump run (prev front, next front) \u2014 not an alternation choice; the editor is sitting on front for the chocolate pour because Rule 3 says hold, and front sells the growing puddle silhouette against the cereal that overhead would flatten."
+      },
+      "duration": {
+        "seconds": 1.251999999999999,
+        "reasoning": "1.3s is the longest beat in the local run (1.0 \u2192 1.3 \u2192 0.9), giving the puddle a breath to visibly grow before the spatula enters on the next cut \u2014 a small hold on the peak of the pour."
+      },
+      "in_point": {
+        "seconds": 11.094,
+        "reasoning": "11.1s lands on the \"large puddle\" frame, after the ribbon texture of the initial drizzle and before the spatula intrudes \u2014 the editor picked the moment the chocolate reads as a pour result, not a pour action."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "Spatula folds chocolate and Chex together, chunks visible",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I3802.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this sits inside a held-front run (previous and next clips are both B19I3802.mov front), and front at this framing shows the spatula's folding motion and the chunky coated-Chex texture at eye level in a way overhead would flatten."
+      },
+      "duration": {
+        "seconds": 0.875,
+        "reasoning": "0.9s \u2014 shorter than the 1.3s neighbors, a quick punch beat in the middle of the folding phrase that keeps the mixing sequence moving rather than dwelling."
+      },
+      "in_point": {
+        "seconds": 112.904,
+        "reasoning": "112.9s \u2014 lands right on the spatula actively folding with chocolate chunks clearly visible in the Chex, the cleanest \"mixing is happening\" frame before the shot evolves to heavy coating and lift."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "Spatula lifts mound of coated Chex, heap visible",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I3802.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because it's the anchor \"reveal\" shot where the heap's vertical volume and glossy coating sell the transformation \u2014 overhead would flatten the mound into a brown blob and lose the payoff."
+      },
+      "duration": {
+        "seconds": 1.251999999999999,
+        "reasoning": "1.3s covers the lift \u2192 fold \u2192 uniform-coating resolution (27.0\u219228.3s), giving the mound moment time to land before the next ingredient beat with its MOGRT needs its own reading time."
+      },
+      "in_point": {
+        "seconds": 150.692,
+        "reasoning": "150.7s starts exactly on the spatula lifting with the heap at peak visibility \u2014 the strongest frame of the \"it's done\" moment, before the action devolves into generic folding."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 15,
+      "beat_description": "ingredient (1 clips): Mixture fully coated, uniform brown \u2192 Large ziploc bag on counter, hand holds open top, bowl of powdered sugar hovering above \u2192 Hands hold bag open, powdered sugar bowl tipping toward opening",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3803.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 12 of a 21-beat front-only dump run \u2014 the editor is holding camera across the sequence per the \"don't alternate every beat\" rule, and front eye-level reads the hand-bag-bowl setup clearly as the transition moment between the coated mixture and the powdered sugar dump."
+      },
+      "duration": {
+        "seconds": 1.7930000000000028,
+        "reasoning": "1.8s because the \"Powdered sugar\" MOGRT needs enough on-screen time to read comfortably, and the clip also has to cover three micro-moments (coated mixture \u2192 bag opening \u2192 bowl tipping) before the actual pour lands on the next beat."
+      },
+      "in_point": {
+        "seconds": 51.009,
+        "reasoning": "51.0s lands on \"mixture fully coated, uniform brown\" \u2014 a clean completion frame that punctuates the folding action finishing before pivoting into the bag/sugar setup, giving the cut a natural end-of-step beat rather than starting mid-motion."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (28.4s-30.2s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "ingredient (1 clips): Powdered sugar dumping from glass bowl into bag \u2192 Spatula scrapes chocolate-coated Chex into ziploc bag on top of powdered sugar \u2192 Metal scoop/measuring cup dumping more cereal mixture into bag",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I3803.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 0.9179999999999993,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 64.982,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (30.2s-31.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "Metal scoop/measuring cup dumping more cereal mixture into bag",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3803.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.083999999999996,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 125.667,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "Scoop nearly empty, last bits falling into bag",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I3803.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is part of a held-camera run \u2014 the previous shot, this shot, and the next are all from the same front clip (B19I3803.mov), so the editor is staying locked on front through the cereal-addition sequence rather than alternating to overhead."
+      },
+      "duration": {
+        "seconds": 1.1260000000000048,
+        "reasoning": "1.1s matches the musical beat length established by the neighboring cuts (1.1s \u2192 1.1s \u2192 1.0s), keeping the ingredient-dump run on tempo."
+      },
+      "in_point": {
+        "seconds": 211.962,
+        "reasoning": "212.0s lands on the \"nearly empty scoop, last bits falling\" moment \u2014 the tail of the cereal dump, which reads as the completion gesture for that ingredient before the powdered sugar pour takes over."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "Heavy pour of powdered sugar cascading into bag",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I3803.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front continues the held-camera run from the previous beat (also front, B19I3803.mov) per Rule 3 \u2014 ingredient dumps hold one angle across several beats \u2014 and front sells the vertical cascade of sugar falling into the bag in a way overhead would flatten into a featureless white blob."
+      },
+      "duration": {
+        "seconds": 1.0429999999999993,
+        "reasoning": "1.0s matches the 1.1s rhythm of the bracketing beats (steady ingredient-dump cadence) and gives just enough screen time to read the powdered-sugar MOGRT without stalling the pour-pour-seal sequence."
+      },
+      "in_point": {
+        "seconds": 224.766,
+        "reasoning": "224.8s lands on the peak of the cascade \u2014 sugar already streaming heavily with visible volume in the air \u2014 skipping the weak ramp-up and starting the cut on the most kinetic frame of the action."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "Hands sealing zipper of bag",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I3803.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is held across this run (prev front \u2192 this front \u2192 next front), consistent with rule 3's \"hold one camera for several beats\" \u2014 and front shows the zipper-pinch gesture at readable scale, which overhead would flatten into an ambiguous top-down blob."
+      },
+      "duration": {
+        "seconds": 1.1259999999999977,
+        "reasoning": "1.1s covers the discrete sealing action cleanly and cuts out before the toss motion begins at ~35.0s, which is reserved for the next shot."
+      },
+      "in_point": {
+        "seconds": 265.974,
+        "reasoning": "266.0s lands on the actual zipper-seal contact rather than the preceding \"pressing air out\" prep frame, so the cut opens on the functional moment, not setup."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 21,
+      "beat_description": "Bag tilting during toss, powdered sugar visibly coating interior",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I3803.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a held-camera run (previous front 1.1s, this 0.9s, next front 1.4s) \u2014 the editor isn't alternating F\u2192O\u2192F\u2192O during the toss sequence. Front also sells the specific visual: the bag's tilted silhouette with powdered sugar visibly dusted on the interior walls, which overhead would flatten into an uninformative top-down view of the sealed bag."
+      },
+      "duration": {
+        "seconds": 0.9179999999999993,
+        "reasoning": "0.9s is a tight middle beat within a three-shot toss run (1.1s \u2192 0.9s \u2192 1.4s) \u2014 short enough to keep the tossing rhythm moving and compress the middle of the action, with the next shot holding longer because it settles into the resting/reveal moment."
+      },
+      "in_point": {
+        "seconds": 272.522,
+        "reasoning": "272.5s lands exactly on the tilt frame where the powdered sugar is visibly coating the interior \u2014 the transformation moment. Earlier frames (35.0s) just show hands beginning to tumble the bag; this in-point skips the setup and opens on the visible coating, which is the reason to hold on front in the first place."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 22,
+      "beat_description": "Bag resting on marble counter after shake, contents coated in powdered sugar",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I3804.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is the middle of a held front-camera run (front shake \u2192 front rest \u2192 front pour), and the editor isn't alternating because the bag-shake-and-settle is one continuous physical action that reads better staying on the same profile angle; front also shows the powder-coated silhouette against the marble in a way overhead would flatten."
+      },
+      "duration": {
+        "seconds": 1.3760000000000048,
+        "reasoning": "1.4s \u2014 it's the breath beat after the 0.9s shake, deliberately longer than the action shot to let the energy land and give the viewer time to register the \"now coated\" transformation before the pour starts; this is the organic-flourish rest moment, not an action beat."
+      },
+      "in_point": {
+        "seconds": 26.193,
+        "reasoning": "26.2s \u2014 picks the frame just after the bag has stopped moving and settled on the marble, when the powdered-sugar coating is fully visible through the bag and any residual dust has settled enough to read the result clearly."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 23,
+      "beat_description": "Continued leveling, pan covered edge-to-edge",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "B19I3806.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor shot \u2014 the reveal of the finished yellow bowl entering frame from the right against the marble background is the best-take hero moment, and front eye-level sells a horizontal product-reveal motion that overhead (top-down) simply cannot stage."
+      },
+      "duration": {
+        "seconds": 1.7929999999999993,
+        "reasoning": "1.8s holds slightly longer than the surrounding 1.4s/1.6s beats because the bowl needs time to enter, settle, and register as the finished-dish reveal \u2014 this is the breathing room a beauty-close hero shot earns."
+      },
+      "in_point": {
+        "seconds": 119.661,
+        "reasoning": "119.7s starts with pre-roll just before the bowl crosses into frame, so the entrance motion itself plays out on-cut rather than catching the bowl already parked."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 24,
+      "beat_description": "Side 3/4: hand sets yellow bowl down with heaped puppy chow",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "B19I3807.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor take for the \"set down\" action \u2014 it shows the profile/height of the heaped puppy chow and the satisfying bowl-land, which overhead would flatten; the edit saves overhead for the top-down finale at 44.5s."
+      },
+      "duration": {
+        "seconds": 1.6269999999999953,
+        "reasoning": "1.6s is a beauty-close hold \u2014 long enough to register the heap and the gesture before handing off to the overhead hero, not a rhythmic ingredient-dump beat."
+      },
+      "in_point": {
+        "seconds": 39.873,
+        "reasoning": "39.9s lands on the bowl making contact with the surface with the full heap already settled \u2014 earlier would catch mid-descent motion blur, later would miss the placement."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    }
+  ]
+}
