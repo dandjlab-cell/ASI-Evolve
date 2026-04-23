@@ -301,18 +301,35 @@ def score_flourish_detection(beats: List[dict]) -> dict:
             "classification": "flourish" if is_flourish else ("functional" if is_functional else "unknown"),
         })
 
-    if not speed_ramp_beats:
-        return {"score": 1.0, "speed_ramp_count": 0,
-                "detail": "No speed ramps to assess"}
-
+    # Binary reward with neutral floor:
+    # - At least one organic flourish → 1.0 (Dan's rule 4 aspiration met)
+    # - Zero organic flourishes (no ramps, OR all ramps functional) → 0.7 neutral
+    # Rationale: flourishes are great to have but sometimes legitimately missed
+    # (footage didn't contain a slow-reveal moment, or editor used ramps only
+    # for timing). The 0.3 gradient rewards evolved edits that find flourish
+    # opportunities without punishing edits that don't.
     flourishes = sum(1 for b in speed_ramp_beats if b["is_flourish"])
-    score = flourishes / len(speed_ramp_beats)
+
+    if not speed_ramp_beats:
+        return {
+            "score": 0.7,
+            "speed_ramp_count": 0,
+            "flourish_count": 0,
+            "detail": "No speed ramps — neutral (no flourish present, but none attempted)",
+        }
+
+    score = 1.0 if flourishes >= 1 else 0.7
 
     return {
         "score": round(score, 4),
         "speed_ramp_count": len(speed_ramp_beats),
         "flourish_count": flourishes,
         "functional_count": sum(1 for b in speed_ramp_beats if b["is_functional"]),
+        "detail": (
+            f"{flourishes} organic flourish(es) present — aspiration met"
+            if flourishes >= 1
+            else "All speed ramps are functional timing tools — neutral, no flourish found"
+        ),
         "details": speed_ramp_beats,
     }
 

@@ -15,35 +15,66 @@
 
 The holdouts are drawn from the **new text-overlay recipes**, never from basil_pesto/chicken_thighs, so this tests generalization to the new structural pattern.
 
-## Scores (Rule 4 tag-based, after both fixes)
+## Scores (final — Rule 4 tag-based with neutral floor)
 
-| Recipe | Split | Composite | R1 Dump Hold | R2 Camera Runs | R3 MOGRT/Text Readability | R4 Flourish | R5 Duration Comp |
+| Recipe | Split | Composite | R1 Dump Hold | R2 Camera Runs | R3 MOGRT/Text | **R4 Flourish** | R5 Duration |
 |---|---|---|---|---|---|---|---|
-| basil_pesto | tune | **79.66** | 1.00 | 0.73 | 1.00 | 0.00 | 1.00 |
-| chicken_thighs | tune | **73.17** | 0.67 | 0.78 | 0.95 | 0.25 | 1.00 |
-| cranberry_jalapeno_dip | tune | **73.12** | 1.00 | 0.49 | 0.91 | 0.00 | 1.00 |
-| pin_wheel | tune | **77.94** | 1.00 | 0.63 | 0.87 | 0.20 | 1.00 |
-| puppy_chow | tune | **92.00** | 1.00 | 0.60 | 1.00 | 1.00* | 1.00 |
-| sweet_potato_pie | tune | **72.74** | 1.00 | 0.60 | 0.79 | 0.00 | 1.00 |
-| flaky_pie_crust | **holdout** | **80.12** | 1.00 | 0.61 | 1.00 | 0.20 | 1.00 |
-| peppermint_bark | **holdout** | **77.46** | 1.00 | 0.79 | 0.92 | 0.00 | 0.89 |
+| basil_pesto | tune | **90.16** | 1.00 | 0.73 | 1.00 | 0.70 | 1.00 |
+| chicken_thighs | tune | **84.42** | 0.67 | 0.78 | 0.95 | **1.00** | 1.00 |
+| cranberry_jalapeno_dip | tune | **83.62** | 1.00 | 0.49 | 0.91 | 0.70 | 1.00 |
+| pin_wheel | tune | **89.94** | 1.00 | 0.63 | 0.87 | **1.00** | 1.00 |
+| puppy_chow | tune | **87.50** | 1.00 | 0.60 | 1.00 | 0.70 | 1.00 |
+| sweet_potato_pie | tune | **83.24** | 1.00 | 0.60 | 0.79 | 0.70 | 1.00 |
+| flaky_pie_crust | **holdout** | **92.12** | 1.00 | 0.61 | 1.00 | **1.00** | 1.00 |
+| peppermint_bark | **holdout** | **87.96** | 1.00 | 0.79 | 0.92 | 0.70 | 0.89 |
 
-_* puppy_chow has zero speed ramps; scorer returns 1.0 default for "nothing to assess"._
+_Bolded R4 = 1.00: recipe meets the "at least one organic flourish" aspiration. Others = 0.70 neutral._
+
+## Rule 4 — neutral floor design (Dan's call, 2026-04-22)
+
+Rule 4 measures whether organic flourishes are present. Dan's call: **flourishes are great to have but sometimes legitimately missed** (footage may not contain a slow-reveal moment, or the editor may use ramps only for timing). Future evolved edits **should always have some kind of flourish**.
+
+Implementation:
+- `≥ 1 organic flourish` (regardless of total ramp count) → **1.00** (aspiration met)
+- `0 organic flourishes` (no ramps at all, OR all ramps functional) → **0.70** (neutral — not punitive, but a 0.3 gradient that evolution can seek by finding flourish opportunities)
+
+This fixes the prior behavior where recipes with 0 flourishes scored 0.00 (harsh) and recipes with 0 ramps scored 1.00 (accidentally perfect via the "nothing to assess" default).
+
+**Who meets the aspiration (3 of 8):**
+- chicken_thighs beat 32: caramelized grill marks
+- flaky_pie_crust beat 0: baked pie crust hero reveal
+- pin_wheel beat 6: macro powdered sugar pile
+
+**Who doesn't (5 of 8):**
+- basil_pesto (4 ramps, all functional — the pesto pour flourishes got classified as functional in backfill; worth a human check)
+- cranberry_jalapeno_dip (1 functional ramp — mixer timing nudge)
+- peppermint_bark (all functional — including the white chocolate ribbon pour)
+- puppy_chow (0 ramps entirely — no ramps to judge)
+- sweet_potato_pie (7 ramps, all functional timing tools)
 
 ## Aggregate comparison
 
 | Metric | Tune (n=6) | Holdout (n=2) | Δ |
 |---|---|---|---|
-| Composite mean | **78.11** | **78.79** | **+0.68** |
+| Composite mean | **86.48** | **90.04** | **+3.56** |
 | R1 Dump Hold | 0.95 | 1.00 | +0.05 |
 | R2 Camera Runs | 0.64 | 0.70 | +0.06 |
 | R3 MOGRT/Text Readability | 0.92 | 0.96 | +0.04 |
-| R4 Flourish Detection | 0.24 | 0.10 | –0.14 |
+| R4 Flourish Detection | 0.80 | 0.85 | +0.05 |
 | R5 Duration Compensation | 1.00 | 0.95 | –0.05 |
 
 ## Verdict
 
-**PASS — scorer generalizes even more tightly.** With Rule 4 now honest (tag-based, not keyword-matched), holdout mean is **+0.68 points above** tune mean — nearly identical. No single-rule collapse. Rule 3 remained stable (0.92–1.00 across holdouts; the text_overlays adaptation from session 23 works).
+**PASS.** Holdout mean is **+3.56 points above** tune mean — well within the ±10-point acceptable threshold. No single-rule collapse. Rule 3 remains stable (0.92–1.00 across holdouts; the text_overlays adaptation works). Rule 4 now returns honest, actionable signal: recipes that meet the flourish aspiration score 1.00, recipes that don't score 0.70 (neutral, not punished), and the 0.3 gradient is exactly the fitness signal prompt evolution can optimize against.
+
+## Scoring history
+
+| Stage | Tune mean | Hold mean | Δ | Notes |
+|---|---|---|---|---|
+| Original (field-path bug) | 83.80 | 87.03 | +3.23 | Rule 4 keyword-matching descriptions only |
+| Fix A (field path) | 86.00 | 88.53 | +2.54 | Rule 4 could read reasoning but negation-fragile |
+| Fix B (tag-based, strict 0/N) | 78.11 | 78.79 | +0.68 | Honest but punitive — zero flourishes = 0.00 |
+| **Fix C (tag-based, neutral floor)** | **86.48** | **90.04** | **+3.56** | Honest AND aligned with editorial intent |
 
 ## Rule 4 fix history (sessions 23 → 23b)
 
