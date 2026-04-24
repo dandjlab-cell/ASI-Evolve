@@ -1,0 +1,721 @@
+{
+  "recipe": "congee",
+  "global_notes": "Brisk and beat-locked: at 32 cuts over 39.7s (~1.24s average), this editor is cutting nearly every beat and treating the track as the spine, not the voice-over. The 25 \"added\" vs 1 \"editorial_group\" ratio tells me they're layering lots of non-obvious inserts and flash accents on top of the instructional bed \u2014 more rhythm-first than documentary \u2014 so the prep/aromatics section likely flurries fastest, the long simmer gets compressed via speed ramps or overhead time-lapse to keep the tempo honest, and plating decelerates slightly to let the garnish pours land on strong beats.\n\nCamera is near-balanced with a slight front lean (17/15): front carries hands, knife work, and any hero reveal of the finished bowl, while overhead owns the pot \u2014 rice hitting water, the texture shift from grainy to silky (congee's transformation moment), and ingredient geography where spatial clarity matters more than performance. The even split plus dense cut rate means they're ping-ponging angles on beats to generate energy rather than holding a single angle through a phrase.\n\nNotable tells: the additive-heavy pattern points to occasional flash cuts as punctuation on accent beats and likely a held overhead through the porridge \"reveal\" so one phrase can breathe after the dense prep \u2014 a classic build-dense / release-on-transformation move. Expect at least one speed ramp covering the simmer and possibly stop-motion on garnish placement to snap the final plating onto the downbeat.\n\n---\n\nA note on mode: your question is a pure analytical summary, not an implementation task, so there's nothing to plan or build \u2014 the answer above is the deliverable. Let me know if you'd like me to formalize this into a plan file anyway, or if you want a deeper breakdown (e.g., per-section beat map, specific effect recommendations).",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (2 shots): Finished congee in ceramic bowl on marble, green onion garnish, hand on bowl \u2192 Finished congee hero bowl, hand gripping \u2192 Finished congee hero bowl, slight motion",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4166.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "The beat is actually a two-shot group \u2014 front hero bowl (1.5s) then overhead spoon-dip (1.8s); the overhead half exists because it's the best-take reveal of congee texture and scallion distribution, which the eye-level front simply cannot show (you can't see INTO a bowl from front)."
+      },
+      "duration": {
+        "seconds": 3.337,
+        "reasoning": "3.3s is driven by the MOGRT title card \"Congee / the kitchn\" needing time to be read, registered, and absorbed \u2014 beauty openers are gated by title readability, not action length, and ~3s is the standard minimum for a recipe-name brand card."
+      },
+      "in_point": {
+        "seconds": 129.421,
+        "reasoning": "129.4s catches the hand already gripping the bowl with subtle motion \u2014 openers need life, and starting mid-grip avoids a static product-shot feel while landing the viewer immediately into a \"served\" moment."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Animated zoom out (50.0% -> 50.0%); punch-in/crop (68.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-3.3s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.3s)",
+        "Title Cards: Graphic (0.0s-3.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 50%\u219250% \"animated zoom\" is a functional micro-push to add breath to an otherwise static hero, and the 68% punch-in on the overhead is a functional reframe tightening composition on the spoon action \u2014 both are timing/composition tools, not organic transformations, and no speed ramp is present so no flourish token applies."
+    },
+    {
+      "beat_index": 2,
+      "beat_description": "Empty fine-mesh strainer on marble",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4113.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the next beat is a top-down rice pour into this exact strainer \u2014 establishing the empty receiving vessel from the same angle the pour will use means the viewer's eye is already locked onto the target when rice starts hitting it. Not an anchor, just a setup beat for the dump that follows."
+      },
+      "duration": {
+        "seconds": 0.625,
+        "reasoning": "0.6s is barely a glance \u2014 long enough to register \"empty strainer, clean marble\" and no longer, since holding on an empty vessel would stall momentum coming out of the 3.3s opener and delay the actual ingredient action."
+      },
+      "in_point": {
+        "seconds": 17.726,
+        "reasoning": "17.7s is the cleanest static moment \u2014 strainer settled, no hand in frame, no stray rice, before any pour-related motion begins. Picks the calmest version of the product shot."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 3,
+      "beat_description": "ingredient (1 clips): Hand pouring white rice from glass measuring cup into strainer \u2192 Rice continues pouring, cup tilted \u2192 Rice settled in strainer, cup pulling away",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4113.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is beat 2 of a held overhead run (`overhead, overhead <<<`) per rule 3 \u2014 the editor is holding the angle across consecutive ingredient dumps rather than alternating, and top-down shows rice accumulating in the strainer which a front angle would flatten."
+      },
+      "duration": {
+        "seconds": 1.3349999999999995,
+        "reasoning": "1.3s is sized to the \"White rice\" MOGRT (4.0s\u20135.3s on screen) \u2014 short text reads fast, so the hold matches readability rather than stretching the pour action."
+      },
+      "in_point": {
+        "seconds": 20.187,
+        "reasoning": "20.2s catches the pour mid-flow with rice actively streaming from the tilted measuring cup into the strainer \u2014 the kinetic middle of the action, not the setup or settle."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (4.0s-5.3s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 4,
+      "beat_description": "ingredient (2 clips): Rice settled in strainer, cup pulling away \u2192 Hand rinsing rice under running water in strainer over bowl \u2192 Hand agitating rice in strainer, water flowing through",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4141.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because beats 1\u20132 were overhead dumps and this is the switch point into a 7-beat front run \u2014 front shows the washing technique (fingers agitating rice, water flowing through) at eye level where the tip callout's claim about \"creamier congee\" is visually earned, which a top-down wouldn't sell."
+      },
+      "duration": {
+        "seconds": 3.0859999999999994,
+        "reasoning": "3.1s because the tip callout \"Washing the rice leads to a creamier congee\" is a full sentence that needs read time \u2014 more than twice as long as the previous 1.3s ingredient beat, which only had to cover a short MOGRT label."
+      },
+      "in_point": {
+        "seconds": 16.475,
+        "reasoning": "16.5s catches the rice settled with the measuring cup pulling away \u2014 a clean hand-off frame that bridges from the prior dump beat into the wash action that follows."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Tip Bubble_MOGRT/K SEO_Tip Bubble_MOGRT.aegraphic (5.3s-8.4s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 6,
+      "beat_description": "Rinsed rice being poured from strainer into cream Dutch oven",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4143.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.293000000000001,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 21.98,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 7,
+      "beat_description": "ingredient (1 clips): Glass measuring cup of water pouring into pot of rice on stove \u2192 Water continues pouring, rice visible under surface \u2192 Pouring angle deeper \u2014 cup markings (cups) visible",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4116.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is a switch point \u2014 the previous two beats ran front (B19I4143), and this kicks off a 2-beat overhead micro-hold (this clip + AI2I4118 next) before returning to a long front run; top-down is also the only angle that reads the pour column entering the pot, rice visible under the surface, and the cup measurement markings, none of which a front eye-level shot could show."
+      },
+      "duration": {
+        "seconds": 1.709999999999999,
+        "reasoning": "1.7s matches the \"Water\" MOGRT overlay window (9.7s\u201311.4s) \u2014 short word, but the hold gives the overlay enough breath to register as a titled ingredient step rather than a flash, and it covers the actual pouring action from active flow to nearly-covered rice."
+      },
+      "in_point": {
+        "seconds": 3.212,
+        "reasoning": "3.2s drops in after the cup has already entered frame and the pour is mid-stream (water actively falling, rice still visible beneath), skipping the approach/setup and landing on the most legible pouring moment where cup markings are visible in profile."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (9.7s-11.4s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 8,
+      "beat_description": "Boiling/simmering rice in Dutch oven, foamy surface",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4118.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead continues the held-camera run from the preceding water pour \u2014 staying top-down lets the foamy ring and boil pattern read clearly, which a front angle would flatten into a pot rim."
+      },
+      "duration": {
+        "seconds": 1.3350000000000009,
+        "reasoning": "1.3s is a brief hold to register the \"it's actively cooking\" state between the pour and the spoon lift, short enough that the held overhead run doesn't go stale before the front switch."
+      },
+      "in_point": {
+        "seconds": 40.249,
+        "reasoning": "40.2s lands after the pour has settled and the surface is already agitated with a visible foam ring, so the cut opens on an unambiguous simmer rather than mid-pour turbulence."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (75.0% vs 50% baseline); Reframed (offset h:0.01 v:0.00)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 75% tightens onto the foam/boil texture so the simmer reads in a 1.3s window, and the 0.01 horizontal reframe is a tiny centering nudge \u2014 no speed ramp, so this is a functional crop, not a found-moment flourish."
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "Wooden spoon lifting rice out of simmering pot close-up",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4151.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a switch point after an overhead shot \u2014 the front angle is the anchor here since it's the only angle that shows the steam rising and the vertical tilt-and-spill action, which overhead would flatten into nothing."
+      },
+      "duration": {
+        "seconds": 1.209999999999999,
+        "reasoning": "1.2s holds the full three-micro-moment arc (lift \u2192 steam hold \u2192 tilt spill at 12.5/13.0/13.5s) and cuts out exactly before the ginger drop at 14.0s hands off to the next ingredient beat."
+      },
+      "in_point": {
+        "seconds": 21.271,
+        "reasoning": "21.3s starts on the lift because that's where the organic flourish begins \u2014 steam already visible, rice softened \u2014 catching the transformation moment rather than the static pre-lift pot."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "ingredient (1 clips): Sliced yellow ginger coins dropping into simmering pot \u2192 More ginger slices falling into bubbling rice \u2192 Ginger slices settled in center of pot",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4151.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because beat 10 sits mid-run in a held front camera sequence (beats 7-10 all front per the camera run), not a switch point \u2014 the editor is holding the angle across dumps rather than alternating, and front shows the ginger coins entering the simmering surface at eye-level where the splash/drop action reads clearly."
+      },
+      "duration": {
+        "seconds": 1.3340000000000014,
+        "reasoning": "1.3s matches the read-time needed for the \"Fresh ginger\" MOGRT text overlay (13.9s-15.3s, ~1.4s total), keeping the cut on-screen long enough for viewers to finish reading the ingredient name."
+      },
+      "in_point": {
+        "seconds": 40.958,
+        "reasoning": "41.0s catches the moment ginger coins first drop into the pot \u2014 the clean start of the dump action that pairs with the text overlay's appearance."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (13.9s-15.3s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "ingredient (1 clips): Ginger slices settled in center of pot \u2192 Clear bowl dumping garlic slices into simmering pot \u2192 Garlic slices scattered into the simmer",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4151.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this beat sits in the middle of a held front-camera run (beats 7\u201310 all front per the camera run map), so it's not a switch point \u2014 the editor is holding the angle across consecutive dumps per rule 3, and front frames the bowl-dump action at pot level where the garlic slices are visibly falling in."
+      },
+      "duration": {
+        "seconds": 1.2929999999999993,
+        "reasoning": "1.3s because \"Garlic\" is a single short word \u2014 the MOGRT needs minimal read time, and this matches the tight cadence of adjacent one-word ingredient beats (1.3s / 1.5s)."
+      },
+      "in_point": {
+        "seconds": 46.838,
+        "reasoning": "46.8s catches the bowl already tipped and garlic slices mid-fall into the simmer \u2014 the peak of the dump action, not the pre-pour setup or post-settle."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (15.3s-16.6s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "ingredient (1 clips): Bubbling pot closeup with scallion whites falling in \u2192 Sliced scallions (green + white) landing in pot \u2192 Scallions dispersing across bubbling surface",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4151.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 10 in a held front-camera run (beats 7-10 are all front per the camera run array), and the front angle captures the vertical drop of scallion whites falling into the pot plus the dispersion across the bubbling surface \u2014 an overhead would flatten the falling action."
+      },
+      "duration": {
+        "seconds": 1.501999999999999,
+        "reasoning": "1.5s because \"Fresh scallions\" (two words) needs roughly that long to read comfortably, and the MOGRT text overlay (16.6s-18.1s \u2248 1.5s) drives the hold length, not the action itself."
+      },
+      "in_point": {
+        "seconds": 53.136,
+        "reasoning": "53.1s catches the exact moment scallion whites begin falling into frame \u2014 the dump sequence convention is to start at ingredient impact so the viewer sees the addition happen, not the lead-up."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (16.6s-18.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "Wooden spoon stirring pot of simmering rice with scallion rings visible",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "AI2I4123.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is part of a held overhead run through the simmering/stirring section \u2014 top-down reveals the pot contents (rice texture, floating scallion rings) that an eye-level front angle would hide behind the rim."
+      },
+      "duration": {
+        "seconds": 0.7089999999999996,
+        "reasoning": "0.7s keeps the ingredient-dump pacing tight and lands on the next music beat without lingering on a continuation shot."
+      },
+      "in_point": {
+        "seconds": 64.481,
+        "reasoning": "64.5s catches the spoon mid-stir with scallion rings clearly visible on the surface \u2014 a readable stirring moment rather than a dead frame."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (74.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 74% tightens on the spoon/scallion action inside the pot and matches the next beat's identical 74% crop, keeping the held-overhead run visually varied without switching camera; attended stirring action, no speed ramp present."
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "Wider overhead \u2014 more broken-down rice, scallions floating, wooden spoon in pot",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "AI2I4134.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead continues the held camera run from the previous overhead beat (0.7s) \u2014 front would hide what's inside the pot, and only top-down reveals the scallions floating on broken-down rice and the spoon's path through the thickening texture."
+      },
+      "duration": {
+        "seconds": 1.0010000000000012,
+        "reasoning": "1.0s gives the viewer enough time to read the texture change across the clip \u2014 scallions floating on broken rice at the cut-in, spoon dragging through thickened congee at the cut-out \u2014 without stalling the ingredient-dump rhythm before the front-angle payoff."
+      },
+      "in_point": {
+        "seconds": 14.306,
+        "reasoning": "14.3s lands on the wider overhead framing with scallions visibly floating and the spoon already in the pot, giving a clean starting state for the thickening beat that follows."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (74.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 74% matches the previous beat's crop exactly, maintaining visual continuity inside the held overhead run and tightening onto the texture detail of the congee breaking down."
+    },
+    {
+      "beat_index": 15,
+      "beat_description": "Wooden spoon pulling through thickened congee, texture fully broken down",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4160.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the scoop-lift action reads vertically \u2014 the drip falling off the spoon and the creamy profile of the scoop only exist in a side view; overhead would flatten this into a shapeless blob, so this is a deliberate switch-point off the held overhead into the best-take angle for the texture payoff."
+      },
+      "duration": {
+        "seconds": 1.6260000000000012,
+        "reasoning": "1.6s gives the lift enough time for the scoop to clear the pot and the drip to resolve visibly \u2014 any shorter and the scoop is still rising when the cut hits, so this is the hero \"finished congee\" hold before soy sauce enters."
+      },
+      "in_point": {
+        "seconds": 20.687,
+        "reasoning": "20.7s lands with the spoon already mid-lift and the scoop holding its shape, skipping the plunge/scrape and starting directly on the creamy-lift money frame."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "ingredient (1 clips): Small clear dish pouring soy sauce into congee pot \u2192 Soy sauce streaming down into congee forming a dark puddle \u2192 Dish tipped further, soy sauce splashing on congee",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4160.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this beat sits mid-run in a held front sequence (positions 13-17 are all front per the camera run), so the editor is executing the \"hold camera across dumps\" rule rather than switching \u2014 and front shows the dish-tip-to-stream arc laterally, which overhead would flatten into a top-down puddle with no pour gesture."
+      },
+      "duration": {
+        "seconds": 1.5850000000000009,
+        "reasoning": "1.6s matches the read time for the \"Soy sauce\" MOGRT (two short words, ~1.5s hold) while also covering the complete pour arc described frame-by-frame (tip \u2192 stream \u2192 splash)."
+      },
+      "in_point": {
+        "seconds": 52.761,
+        "reasoning": "52.8s lands on the dish initiating the tip so the cut opens on the start of the pour action rather than mid-stream, giving the beat a clean gestural entry."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (21.4s-23.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "ingredient (1 clips): Soy dish empty, dark swirl on congee surface \u2192 Small mound of kosher salt falling onto congee beside soy streaks \u2192 Mound of kosher salt settled on congee with soy streak next to it",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4160.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this beat sits at position 15 of a 6-beat held-front run (positions 14\u201317 all front), so holding \u2014 not switching \u2014 is the correct move; front also reads the dark soy swirl and the salt landing beside it on the congee surface clearly at eye level."
+      },
+      "duration": {
+        "seconds": 1.376999999999999,
+        "reasoning": "1.4s matches the \"Kosher salt\" MOGRT duration (23.0s\u201324.4s) \u2014 short, two-word label, quick to read, so the hold is sized to reading time rather than action."
+      },
+      "in_point": {
+        "seconds": 59.309,
+        "reasoning": "59.3s opens on the empty soy dish with the dark swirl already set on the congee, giving a clean \"previous ingredient resolved\" frame before the salt mound drops in \u2014 it bridges out of the soy beat into the salt beat cleanly."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline); Reframed (offset h:0.00 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (23.0s-24.4s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 71% (vs 50% baseline) and a tiny v:-0.02 reframe are functional tools \u2014 they tighten on the salt-landing area and recenter composition within the held front run to keep the repeated angle from feeling static; no speed ramp, so this is not an organic flourish."
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "ingredient (1 clips): Amber sesame oil pouring in thin stream onto salt and soy pile \u2192 Sesame oil continuing to pour, pooling on top of salt \u2192 Sesame oil spreading across top of congee in amber halo",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4160.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a held-camera run \u2014 this is the 4th consecutive front clip in the dump sequence (positions 13-16), and the eye-level angle captures the thin amber stream's vertical arc as it hits the salt, which overhead would flatten into just a spreading puddle."
+      },
+      "duration": {
+        "seconds": 1.3760000000000012,
+        "reasoning": "1.4s matches the MOGRT hold needed to read \"Toasted sesame oil\" (three words, longer than single-word ingredients get), consistent with the neighboring ingredient beats."
+      },
+      "in_point": {
+        "seconds": 65.19,
+        "reasoning": "65.2s catches the pour mid-stream with the oil already connecting bottle to pile \u2014 the most legible \"this is oil being added\" frame, before it's just a pool."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline); Reframed (offset h:0.00 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (24.4s-25.7s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 71% tightens the frame onto the pour/pile interaction (baseline 50% would leave too much empty bowl), and the -0.02 vertical nudge recenters the action after the crop; no speed ramp, this is a functional reframe to sell the ingredient, not a found transformation moment."
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "ingredient (1 clips): Sesame oil spreading across top of congee in amber halo \u2192 Small tan mound of white pepper lands on oil-soaked congee \u2192 White pepper mound settled, sesame oil ring around it",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4160.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 17 of a held five-shot front run (positions 13\u201317) before the switch to overhead at beat 18 \u2014 holding the same eye-level angle across the pepper drop keeps the dump sequence from choppy alternation, per the \"hold camera across dumps\" rule."
+      },
+      "duration": {
+        "seconds": 1.3759999999999977,
+        "reasoning": "1.4s matches the reading time for \"Ground white pepper\" (three words, MOGRT visible 25.7s\u201327.1s) \u2014 text readability sets the hold, not the pepper-landing action itself."
+      },
+      "in_point": {
+        "seconds": 72.364,
+        "reasoning": "72.4s catches the sesame-oil amber halo already spreading with the pepper mound landing mid-shot, so one clip delivers two ingredient beats (oil finishing + pepper arriving) in a single readable frame."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline); Reframed (offset h:0.00 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (25.7s-27.1s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 71% with a tiny vertical offset (-0.02) tightens on the oil ring + pepper mound and recenters after the crop \u2014 functional reframe to make the small tan pile legible at a glance, not an organic transformation."
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "Wooden spoon stirring the seasoning pile (pepper + soy + oil) into congee pot",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "AI2I4134.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.4179999999999993,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 77.953,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline); Reframed (offset h:0.00 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 21,
+      "beat_description": "Wooden spoon lifts big heaped scoop of creamy seasoned congee",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4160.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor \u2014 this is the hero money shot where the finished congee is revealed clinging to the spoon with scallion flecks visible, a textural payoff overhead can't sell, and it also functions as the natural switch point out of the previous overhead punch-in and into the overhead stop-motion plating run that follows."
+      },
+      "duration": {
+        "seconds": 2.086000000000002,
+        "reasoning": "2.1s covers the full three-beat lift arc (spoon lifts at 28.5s \u2192 raised higher at 29.0s \u2192 full creamy reveal at 29.5s) plus the handoff to the empty bowl at 30.0\u201330.5s, giving the reveal enough air to register the thickness before stop-motion takes over."
+      },
+      "in_point": {
+        "seconds": 121.621,
+        "reasoning": "121.6s catches the spoon at the start of the upward lift with the scoop already loaded \u2014 motion begins on the cut rather than landing mid-action or pre-scoop, so the beat reads as a clean rising gesture."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 22,
+      "beat_description": "stop-motion (5 clips, avg 3f): Empty bowl, slightly reframed \u2014 start of stop-motion dump sequence \u2192 Stop-motion: first dollop of congee appears in bowl \u2192 Stop-motion: congee pile grows, filling center of bowl",
+      "beat_type": "stop_motion",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "AI2I4135.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the bowl-filling transformation only reads from top-down \u2014 front would just show the bowl rim with congee rising invisibly; this is the anchor shot for the stop-motion sequence, not a switch point."
+      },
+      "duration": {
+        "seconds": 0.541999999999998,
+        "reasoning": "0.5s total split across 5 micro-clips (~3 frames each) produces the stutter-step rhythm that makes stop-motion read as magic \u2014 any longer per frame and the \"materializing\" illusion collapses into normal cuts."
+      },
+      "in_point": {
+        "seconds": 8.258,
+        "reasoning": "8.3s lands on the first dollop appearing in the otherwise-empty bowl, so the sequence starts at visible-change-begins rather than on empty-bowl dead frames or mid-fill where the viewer missed the reveal."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline); punch-in/crop (71.0% vs 50% baseline); punch-in/crop (71.0% vs 50% baseline); punch-in/crop (71.0% vs 50% baseline); punch-in/crop (71.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "71% punch-in crops out surrounding counter/kitchen so attention is locked on the bowl during the rapid stutter \u2014 functional reframe to isolate the trick, not an organic flourish (no speed ramp, this is a stop-motion stutter built from frame duration itself)."
+    },
+    {
+      "beat_index": 27,
+      "beat_description": "Stop-motion: bowl nearly full, creamy texture obvious",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "AI2I4135.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the only angle that reads the bowl filling top-down \u2014 front would just show a static rim with stuff appearing behind it, so this isn't an alternation choice but the only camera that sells the stop-motion fill, and it's mid-run in a held overhead sequence (5 prior overhead beats)."
+      },
+      "duration": {
+        "seconds": 0.4170000000000016,
+        "reasoning": "0.4s is a tightening from the preceding 0.5s stop-motion beats, accelerating toward the climax frame (fully plated) before the section breaks to the FRONT scallion shot at 31.5s."
+      },
+      "in_point": {
+        "seconds": 57.391,
+        "reasoning": "57.4s lands on the \"nearly full, creamy texture obvious\" frame \u2014 the penultimate visible-progress beat where the bowl still reads as filling rather than finished, making it the last frame that earns its place before the plated holds."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "71% punch-in crops past the bowl rim to emphasize the creamy interior texture in the 0.4s window the eye actually has \u2014 functional reframe to make a dense overhead readable at speed, not a found organic transformation."
+    },
+    {
+      "beat_index": 28,
+      "beat_description": "ingredient (1 clips): Close-up of plated bowl, scallions landing on surface \u2192 More scallion slices settled across congee surface \u2192 Scallions fully scattered on finished bowl, fingertip visible top-right",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4164.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the switch point \u2014 the previous overhead was a brief 0.4s punch-in, and front now holds across beats 2\u20133 of the dump sequence (rule 3: hold camera, don't alternate), showing the scallions landing and settling on the congee surface at eye-level which reads the garnish action better than a top-down would."
+      },
+      "duration": {
+        "seconds": 1.3770000000000024,
+        "reasoning": "1.4s matches the \"Fresh scallions\" MOGRT lifespan exactly (31.6s\u201333.0s) \u2014 the hold length is driven by how long the text needs to be readable, not the action itself."
+      },
+      "in_point": {
+        "seconds": 6.84,
+        "reasoning": "6.8s catches scallions mid-landing on the surface rather than pre-drop or post-settle, giving the cut an active in-frame motion that lands on the beat."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (31.6s-33.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 29,
+      "beat_description": "ingredient (1 clips): Thin stream of sesame oil drizzling onto garnished bowl \u2192 Sesame oil pooling on surface, amber halo spreading \u2192 Finished bowl, oil settled across top with scallions",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4164.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is held from the previous beat (beats 2 and 3 both front) \u2014 this is a held-camera run mid-ingredient-dump, not a switch point, and the front angle shows the thin vertical stream of sesame oil and the amber halo spreading across the bowl's surface, which an overhead would flatten."
+      },
+      "duration": {
+        "seconds": 1.6259999999999977,
+        "reasoning": "1.6s matches the \"Toasted sesame oil\" MOGRT exactly (33.0s\u201334.6s) \u2014 the hold length is driven by the four-syllable text needing to be read, not by the drizzle action itself."
+      },
+      "in_point": {
+        "seconds": 54.263,
+        "reasoning": "54.3s lands on the first frame where the thin stream of sesame oil actually contacts the bowl \u2014 catching the drizzle at its start so the pour, pool, and settle all play within the beat."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (33.0s-34.6s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 30,
+      "beat_description": "Slightly wide overhead \u2014 garnished bowl drifting into frame on marble",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "AI2I4140.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor shot for the finished-dish reveal \u2014 it shows the full top-down composition of scallions and ginger garnish on the bowl, which a front angle can't sell, and it's the first in a held overhead run (three overhead beats before switching to front spoon lift)."
+      },
+      "duration": {
+        "seconds": 1.7520000000000024,
+        "reasoning": "1.8s is a short hold that lets the drifting bowl settle into frame and register as \"finished dish\" before the next overhead beat continues the reveal on the same camera."
+      },
+      "in_point": {
+        "seconds": 64.606,
+        "reasoning": "64.6s catches the bowl mid-drift into frame on the marble \u2014 a motion entry, not a static start, which gives the reveal kinetic energy on the cut-in."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Animated zoom out (71.0% -> 71.0%)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The 71.0% \u2192 71.0% \"animated zoom\" is a static scale (identical start/end), i.e. a reframe/crop to tighten the composition on the bowl \u2014 purely functional, no speed ramp present so no flourish token."
+    },
+    {
+      "beat_index": 31,
+      "beat_description": "White soup spoon lifting scoop of finished congee out of bowl",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4172.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor for the outro hero \u2014 this is the best take of the heaped spoon composed to sit under the incoming \"the kitchn\" logo lockup, where an overhead would obscure the brand mark and fail to read as a finished-product beauty shot."
+      },
+      "duration": {
+        "seconds": 3.336999999999996,
+        "reasoning": "3.3s is the outro hold, long enough for the logo to build in and settle as an end card; the 70% speed ramp stretches the spoon lift so the final gesture lands ceremonially rather than cutting hot."
+      },
+      "in_point": {
+        "seconds": 25.859,
+        "reasoning": "25.9s is the moment the spoon breaks the surface of the congee with a full heaping scoop \u2014 a clean entry on the lift action that gives the ramp room to decelerate into the logo lockup."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (70.0% base, ramp between 25.9s-29.2s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The speed ramp slows an attended hand action (spoon lift) to time the outro hero into the logo build-in \u2014 a functional finishing/landing treatment, not an unattended transformation like butter melting or sauce pooling. [flourish: functional]"
+    }
+  ]
+}

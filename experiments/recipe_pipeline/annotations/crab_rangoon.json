@@ -1,0 +1,748 @@
+{
+  "recipe": "crab_rangoon",
+  "global_notes": "Working from the aggregates only (no beat-by-beat data here), so this is a read of the macro shape rather than specific cuts:\n\nThe edit runs brisk \u2014 30 cuts over 43.7s averages ~1.46s per beat, which sits in the pocket of a mid-tempo track and suggests the editor is cutting on-beat rather than holding through phrases. The heavy front-camera lean (80/20 front vs overhead) is a stylistic tell: this editor is prioritizing personality and hand performance over pure instructional clarity, reserving overhead for the moments where geometry actually matters (likely the wrapping/folding technique and maybe plating), and trusting front angles to carry prep and transformation. The 17 \"added\" beats against 10 from the editorial group means more than half the timeline is the editor's own rhythmic embellishment \u2014 extra inserts, reaction beats, or micro-cuts layered on top of the base structural cuts, which typically reads as an editor building density and musicality rather than just hitting the script. That ratio usually signals speed ramps or flash cuts around the technique section and a punchier opener than the template calls for. Without the per-beat verdicts I can't confirm where the acceleration lands, but the shape \u2014 front-dominant, cut-dense, heavily augmented \u2014 reads as a performance-forward edit rather than a clinical how-to.",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (2 shots): Finished crab rangoon plate with sweet chili dipping sauce \u2192 Same plate, tighter framing \u2192 Even tighter on plated rangoons",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4588.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor shot here \u2014 the hand-holding-a-rangoon hero reveal is the money shot that sells \"crab rangoon,\" while the preceding overhead push-in establishes the plate context; front shows the crosshatch sealing folds and dimensional shape a top-down couldn't."
+      },
+      "duration": {
+        "seconds": 3.337,
+        "reasoning": "3.3s holds long enough for the viewer to read the \"Crab Rangoon / the kitchn\" title card and register the finished dish before the recipe begins \u2014 title readability drives the hold, not the hand motion."
+      },
+      "in_point": {
+        "seconds": 33.784,
+        "reasoning": "33.8s is where the best take of the hero hand-hold lands \u2014 rangoon cleanly above the dip bowl with good rotation/lighting before the action peaks."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (55.0% -> 70.0%); Animated reframe (position keyframes)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-3.3s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.3s)",
+        "Title Cards: Graphic (0.0s-3.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 55%\u219270% zoom plus reframe is a functional push-in manufacturing movement on an otherwise static plated shot \u2014 no organic transformation (no melting, pouring, pooling) is happening, just a timing/energy nudge into the hero cut."
+    },
+    {
+      "beat_index": 2,
+      "beat_description": "ingredient (1 clips): Cream cheese block being scraped from foil wrapper into glass bowl \u2192 Cream cheese block sitting in bowl, foil being peeled back \u2192 Cream cheese block fully plopped in bowl, wrapper removed",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4577.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is the anchor shot for \"ingredient lands in bowl\" \u2014 the action is the cream cheese block hitting the glass bowl, which only a top-down view reveals; front would just show hands above a bowl rim with no visible ingredient, and this also establishes the overhead opening of the dump run."
+      },
+      "duration": {
+        "seconds": 1.4179999999999997,
+        "reasoning": "1.4s matches the \"Cream cheese\" MOGRT window (3.3s\u20134.8s) \u2014 two short, familiar words that read comfortably in ~1.4s, so the hold is set by text readability, not by how long the scrape takes."
+      },
+      "in_point": {
+        "seconds": 5.839,
+        "reasoning": "5.8s lands on the scrape-in moment where the block is actively being pushed off the foil into the bowl \u2014 peak transformation frame (ingredient entering container), skipping the pre-roll where the foil is still closed."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (3.3s-4.8s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 64% tightens the frame onto the bowl and cream cheese so the ingredient reads clearly at 1.4s under the overlay, trimming empty counter space around the bowl \u2014 functional reframe, no speed ramp present."
+    },
+    {
+      "beat_index": 3,
+      "beat_description": "ingredient (1 clips): Cream cheese block fully plopped in bowl, wrapper removed \u2192 Shredded imitation crab in glass bowl, mid-pour/arrange \u2192 Imitation crab settled in bowl, hand withdrawing",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4436.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the switch point out of the overhead run \u2014 beat 1 (cream cheese) was overhead, and the editor is breaking to front here and holding it across the next beat too (front\u2192front in the camera run), giving the crab/garlic transition an eye-level ingredient-beauty angle that shows depth and the pour arc that overhead flattens."
+      },
+      "duration": {
+        "seconds": 1.4180000000000001,
+        "reasoning": "1.4s matches the read time of the \"Imitation crab\" MOGRT (13 characters) \u2014 same hold as the prior \"Cream cheese\" beat, and the next shorter word \"Garlic\" drops to 1.2s, confirming text length drives duration."
+      },
+      "in_point": {
+        "seconds": 19.311,
+        "reasoning": "19.3s lands on the mid-pour/arrange moment \u2014 crab actively streaming/settling into the bowl with the hand still in frame, which is the peak-action frame of that take rather than the static before/after."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (4.8s-6.2s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 4,
+      "beat_description": "ingredient (1 clips): Closer angle on shredded imitation crab bowl, small dish of minced garlic about to be added \u2192 Minced garlic being tipped from small bowl onto crab \u2192 Garlic settled on top of crab pile, bowl lifting away",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4436.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because it holds the camera from the previous front beat \u2014 this is the second of a two-beat front run before switching to overhead on the next dump, which is exactly the \"hold camera across dumps\" rule (not alternating F\u2192O\u2192F\u2192O); front at eye-level also shows the garlic being tipped off the lip of the small bowl as a distinct action, where overhead would flatten it into just \"stuff landing in a pile.\""
+      },
+      "duration": {
+        "seconds": 1.1680000000000001,
+        "reasoning": "1.2s because \"Garlic\" is a 6-letter single-word MOGRT that reads almost instantly, so the hold only needs to cover the tip-and-settle action plus minimum legibility \u2014 the text overlay running 6.2s\u20137.3s (1.1s) confirms readability, not action length, set the bound."
+      },
+      "in_point": {
+        "seconds": 41.667,
+        "reasoning": "41.7s lands on the pre-tip frame where the small garlic dish is hovering over the crab bowl but hasn't poured yet, so the cut captures the full dump arc (hover \u2192 tip \u2192 settle \u2192 bowl lift) within the 1.2s window rather than starting mid-pour."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (6.2s-7.3s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 5,
+      "beat_description": "ingredient (1 clips): Sliced scallions being dumped from small bowl into crab mixture \u2192 Scallions piled on top of crab+garlic, wider framing \u2192 Soy sauce being poured from small dish onto the pile",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4577.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is a switch point \u2014 after two front-angle dumps (crab, garlic), the editor breaks the run to show scallions landing on top of the growing pile, which a front/eye-level angle can't reveal because the stack geometry (scallions on crab on garlic) only reads from above."
+      },
+      "duration": {
+        "seconds": 1.1260000000000003,
+        "reasoning": "1.1s matches how long \"Scallions\" takes to read \u2014 a short word gets a short hold, consistent with MOGRT readability driving duration rather than the dump action itself."
+      },
+      "in_point": {
+        "seconds": 53.095,
+        "reasoning": "53.1s catches the mid-dump moment where the donor bowl is still tipped and scallions are actively falling onto the pile, showing both the action and the accumulation in one frame rather than a pre-dump or settled-pile state."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (62.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (7.3s-8.5s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 62% tightens on the bowl-and-pile to make the small scallion volume read clearly against the wider crab/garlic base \u2014 this is a functional reframe for legibility, not an organic transformation, and no speed ramp is present."
+    },
+    {
+      "beat_index": 6,
+      "beat_description": "ingredient (1 clips): Soy sauce being poured from small dish onto the pile \u2192 Soy sauce finishing pour, puddling on scallions \u2192 Small bowl of sugar being tipped in",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4436.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a switch point \u2014 the previous beat was overhead (wide scallion pile), and this kicks off a long front run; front sells the dark soy stream against the pale pile, which overhead would flatten into a dark blob."
+      },
+      "duration": {
+        "seconds": 1.1259999999999994,
+        "reasoning": "1.1s is the read time for the \"Soy sauce\" MOGRT \u2014 two short words with a space, standard ingredient-label hold, not tied to pour duration."
+      },
+      "in_point": {
+        "seconds": 62.813,
+        "reasoning": "62.8s lands mid-pour with the dark stream already visible and puddling starting \u2014 skips the dead pre-pour setup so the ingredient reads instantly when the cut hits."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (8.5s-9.6s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 7,
+      "beat_description": "ingredient (1 clips): Small bowl of sugar being tipped in \u2192 White granulated sugar mounded on top of mix \u2192 Toasted sesame oil being drizzled from small pitcher",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4436.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front continues a held front-camera run (this is the 6th beat of front in a row per the camera run pattern), and front shows the pitcher's amber stream entering frame from above \u2014 overhead would flatten the pour into a top-down splat that loses the drizzle's verticality."
+      },
+      "duration": {
+        "seconds": 1.1259999999999994,
+        "reasoning": "1.1s gives just enough screen time to read the three-word \"Toasted sesame oil\" MOGRT before cutting; ingredient dumps in this run sit in the 1.1\u20131.2s band for that reason."
+      },
+      "in_point": {
+        "seconds": 73.115,
+        "reasoning": "73.1s lands on the sugar-tipping moment with the bowl already inverted and grains falling, skipping the dead approach frames so the cut opens on visible motion."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (62.0% vs 50% baseline); Reframed (offset h:0.04 v:0.06)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (9.6s-10.7s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 62% tightens the frame onto the bowl/pour zone so the small pitcher and stream read clearly against the busy mise-en-place, and the small h:0.04 v:0.06 reframe re-centers the action after the crop \u2014 functional framing tool, not an organic flourish (no speed ramp present)."
+    },
+    {
+      "beat_index": 8,
+      "beat_description": "ingredient (1 clips): Toasted sesame oil being drizzled from small pitcher \u2192 Sesame oil pooling over sugar and scallions \u2192 Sesame oil drizzle continuing, smaller stream",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4436.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 7 of a long held front-camera run (rule: hold across dumps, don't alternate), and the eye-level angle shows the amber drizzle stream and the pool landing on the scallion pile more legibly than a top-down view."
+      },
+      "duration": {
+        "seconds": 1.168000000000001,
+        "reasoning": "1.2s matches the \"Toasted sesame oil\" MOGRT overlay window (10.7s\u201311.9s) \u2014 the hold equals how long the two-word label needs to be read, not the pour action itself."
+      },
+      "in_point": {
+        "seconds": 79.371,
+        "reasoning": "79.4s lands right as the amber stream leaves the pitcher and begins pooling, giving a clean \"action starts now\" frame that syncs with the text overlay popping on."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (62.0% vs 50% baseline); Reframed (offset h:0.04 v:0.06)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (10.7s-11.9s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Tighter 62% crop with a small h:0.04/v:0.06 reframe pushes the pitcher and pooling oil toward frame center so the drizzle reads at this short duration \u2014 functional reframe, no speed ramp present."
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "ingredient (1 clips): Garlic powder being sprinkled onto pile from a pinch bowl \u2192 Garlic powder settled, hand withdrawing \u2192 Ground white pepper being tapped over mound from small shaker",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4436.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this beat sits mid-run in a long held-front stretch (position 8 inside a ~12-shot front block per the camera run), so the choice is \"don't alternate,\" not \"front because vertical action.\""
+      },
+      "duration": {
+        "seconds": 1.1679999999999993,
+        "reasoning": "1.2s \u2014 \"Garlic powder\" is a two-word, 13-character MOGRT; 1.2s is the minimum comfortable read for that string, matching the adjacent ingredient beats (1.2\u20131.3s)."
+      },
+      "in_point": {
+        "seconds": 90.299,
+        "reasoning": "90.3s \u2014 lands on active sprinkle (pale yellow powder mid-fall from the pinch bowl), not the settled/hand-withdrawing frame, so the dump reads as a live action rather than a static product shot."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (11.9s-13.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "ingredient (1 clips): Ground white pepper being tapped over mound from small shaker \u2192 White pepper continuing, more dusting visible \u2192 Seasoned mound at rest before mixing",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4436.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 9 of a long held front run (positions 2-17 are all front) \u2014 the editor locked onto front for the dump sequence rather than alternating, and front at eye-level shows the shaker-to-mound action cleanly where overhead would just show powder landing on a pile."
+      },
+      "duration": {
+        "seconds": 1.2509999999999994,
+        "reasoning": "1.3s matches the read time for the three-word \"Ground white pepper\" MOGRT \u2014 long enough to read, consistent with the ~1.2s neighbor beat, and the dusting action itself fills the hold without feeling stretched."
+      },
+      "in_point": {
+        "seconds": 94.469,
+        "reasoning": "94.5s lands on the active tap where pepper is visibly falling from the shaker onto the mound \u2014 entering mid-action avoids a static pre-tap frame and delivers the ingredient reveal the moment the overlay appears."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (13.1s-14.3s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "Both hands holding bowl, spatula beginning to fold ingredients",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "[NEST] Nest - crab ragoon speed up",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The nested sequence contains both angles \u2014 overhead at 14.5s (hands/spatula folding in bowl) resolving to front at 16.0s (spatula lifting combined mix) \u2014 and the beat label \"front\" reflects the resolving frame; overhead was needed because the loose-streaky\u2192cohesive transformation only reads from top-down, and the front exit hands off cleanly to the next front beat (B19I4436.mov)."
+      },
+      "duration": {
+        "seconds": 1.8770000000000007,
+        "reasoning": "1.9s is just long enough for the speed-ramped nest to actually show the mixture transforming from streaky to combined without a flash-cut, while keeping the mix-combine action compressed so it doesn't stall the section."
+      },
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "0.0s \u2014 the source begins exactly at \"both hands holding bowl, spatula beginning to fold,\" which is the first frame of the transformation; any earlier in-point would be pre-mix setup with nothing changing."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (110.0% -> 120.0%); Reframed (offset h:-0.50 v:-0.50)",
+      "nested": "Nested sequence 'Nest - crab ragoon speed up' with 2 inner clips",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The 110\u2192120% push-in plus centered reframe crops the bowl to fill frame so the folding action is legible at speed, and the nest's speed ramp is a functional timing compression of an attended technique beat (hands are actively folding \u2014 not an untouched transformation like pooling or melting). [flourish: functional]"
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "3/4 angle on bowl, spatula lifting a portion of combined mix",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I4436.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a held-camera run \u2014 the previous beat (crab rangoon speed-up nest) was already front, and staying front through the final mixing moment keeps the \"combining\" phase on one angle before the overhead takeover begins at the wonton-wrapper layout (Rule 3: hold camera, then switch at phase boundary)."
+      },
+      "duration": {
+        "seconds": 1.6679999999999993,
+        "reasoning": "1.7s is a quick \"button\" beat that punctuates the end of the mixing phase \u2014 long enough to register the finished filling's texture (pale pink/green paste flecked with scallion/crab), short enough to feel like a transition into the wrapping section that follows."
+      },
+      "in_point": {
+        "seconds": 170.295,
+        "reasoning": "170.3s catches the spatula mid-lift with a portion raised out of the bowl, which is the single frame that best reveals the finished consistency \u2014 starting any later would land on the smashing/smoothing action, which shows process rather than result."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "ingredient (1 clips): First wonton wrapper being placed on teal cutting board; small water bowl in upper-left \u2192 First wrapper aligned on board, hand withdrawing \u2192 Two wrappers now laid out, hands gone (compilation state 1)",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "[NEST] Nest - crab_wrappers ",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The nest is classified front but its content is predominantly overhead \u2014 the stop-motion compilation of wrappers appearing then receiving filling scoops can only read from top-down, and the front-angle sealing close-up at 20.0s is what the classifier caught; the overhead compilation IS the anchor here (the found stop-motion moment), not a deliberate camera switch."
+      },
+      "duration": {
+        "seconds": 2.461000000000002,
+        "reasoning": "2.5s fits two back-to-back MOGRTs (\"Wonton wrappers\" 17.9\u201319.3s then \"Crab mixture\" 19.3\u201320.3s) plus the sealing callout beat \u2014 the read time of both labels drives the hold, and the 13 compilation states need breathing room to register as stop-motion rather than a jitter."
+      },
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "0.0s starts at the nest head where the first wrapper lands on the teal board, syncing the visual onset with the \"Wonton wrappers\" text overlay fire at 17.9s so the label and the object arrive together."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (104.0% -> 121.0%); Animated reframe (position keyframes)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (17.9s-19.3s)",
+        "Text Overlays: Graphic (19.3s-20.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Animated zoom (104\u2192121%) + reframe keyframes are functional \u2014 ken-burns motion keeping a static overhead alive across 13 near-identical compilation states and recentering as the wrapper row grows leftward-to-rightward; no speed ramp, so these are edit-tool sweetening for a held camera, not an organic flourish."
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "ingredient (3 clips): Same close-up; one finger pressing near filling as wrapper starts to close around it \u2192 Tighter angle on sealing the wrapper around filling; wrapper pulled up and over \u2192 Two hands lifting wrapper corners up over filling",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4437.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Part of the long held front-camera run (13 consecutive front shots preceding this beat) \u2014 the rule is hold across dumps, and front close-up shows the finger-tracing and wrapper-sealing technique that overhead would flatten, especially with the water-tracing callout demanding clear finger/wrapper contact."
+      },
+      "duration": {
+        "seconds": 3.253,
+        "reasoning": "The \"Trace the border with a finger dipped in water\" callout plus the mogrt instructional overlay runs roughly 20.3s\u201323.6s (~3.3s) \u2014 text readability on the instruction drives the hold, and three sub-actions (press, pull, lift) need time to register."
+      },
+      "in_point": {
+        "seconds": 188.355,
+        "reasoning": "At 188.4s the finger is just initiating pressure near the filling as the wrapper begins to fold over \u2014 the cut lands on the start of the seal, immediately after the callout establishes the technique."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (63.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (20.3s-23.6s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 63% tightens on the finger/wrapper contact so the sealing detail reads while the callout box eats screen real estate \u2014 functional reframe for attended detail work, not an organic transformation."
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "Rangoon fully pinched into 4-point star shape, hands shaping edges",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "B19I4437.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.1259999999999977,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 197.197,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "Close-up, hands holding in-progress pouch of filling, squeezing corners together",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "B19I4437.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is part of a held front-camera run (previous 1.1s front, this 1.6s front, next 1.0s front), so the editor is holding one angle across a multi-beat folding progression rather than alternating; front is also what reads the pinching action in 3D, since overhead would flatten the pouch squeeze into a shapeless blob."
+      },
+      "duration": {
+        "seconds": 1.6270000000000024,
+        "reasoning": "1.6s is the longest beat in this three-cut run (1.1s \u2192 1.6s \u2192 1.0s), which makes it the anchor of the mini-sequence \u2014 the clearest \"pouch being formed\" moment gets held longer so the transformation reads, with tighter cuts bracketing it."
+      },
+      "in_point": {
+        "seconds": 202.911,
+        "reasoning": "202.9s lands on the hands actively squeezing the corners together on a visibly in-progress pouch \u2014 you enter mid-action on the pinch, not on a static hold or a reset, which is the most legible \"forming\" frame in the take."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "Final shaped rangoon on board, hands pressing top corners inward",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I4437.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is held across all three surrounding beats (front\u2192front\u2192front) \u2014 this is mid-run on a held camera, not a switch point, and front shows the finger-pressure shaping action that overhead would flatten into a top-down silhouette."
+      },
+      "duration": {
+        "seconds": 1.0429999999999993,
+        "reasoning": "1.0s is a short punctuation beat sandwiched between two longer front holds (1.6s and 1.4s) \u2014 just enough to register the corner-press action without lingering, keeping the held-camera run from going stale."
+      },
+      "in_point": {
+        "seconds": 218.76,
+        "reasoning": "218.8s lands exactly on hands pressing top corners inward on the finished rangoon \u2014 a clean, complete shaping gesture, before the hands pull back at 27.0s into a transitional moment."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "Hands pressing on fresh rangoon, shaping top",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I4437.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because it's a held-camera run through the shaping sequence (previous beat also front, continuing into this press/pinch action) \u2014 eye-level captures the finger pressure and seam work on a single rangoon, which overhead would flatten, and the overhead angle is being saved as the payoff reveal of the full 4x6 batch on the next cut."
+      },
+      "duration": {
+        "seconds": 1.3759999999999977,
+        "reasoning": "1.4s is a slight hold (longer than the 1.0s prior and 1.3s next) that lets the press-and-shape gesture read completely before the camera change and batch reveal \u2014 enough time to register \"the rangoon is finished\" so the overhead wide lands as a payoff rather than a non-sequitur."
+      },
+      "in_point": {
+        "seconds": 225.559,
+        "reasoning": "225.6s lands right as hands re-engage to press the top (27.5s frame), skipping the 27.0s transition frame where hands are pulling back from the previous rangoon \u2014 cutting in on the start of new action, not on dead motion."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 21,
+      "beat_description": "Wide shot of fully shaped rangoon batch \u2014 roughly 4x6 grid of pinwheel rangoons on cutting board",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "AI2I4579.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the only angle that shows the full 4x6 grid \u2014 this is the anchor shot for the \"finished prep\" reveal, and it's a deliberate switch point punctuating the front\u2192front run on either side because a front angle would flatten the batch into an unreadable line."
+      },
+      "duration": {
+        "seconds": 1.3350000000000009,
+        "reasoning": "1.3s is a short reveal beat \u2014 nothing is moving in the frame (stationary batch, no hands yet), so the cut just needs long enough to register \"whole batch done\" before pushing into the fry, and holding longer would stall momentum right as the recipe pivots to cooking."
+      },
+      "in_point": {
+        "seconds": 17.517,
+        "reasoning": "17.5s lands on the clean stationary batch before the hand enters from bottom-right at 29.5s timeline \u2014 the editor wants the uninterrupted \"ta-da\" frame, not a frame with a hand already reaching in, so the in-point is chosen to sit in the hands-free window."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 22,
+      "beat_description": "Cut to frying pot \u2014 spider strainer lowering two raw rangoons into hot oil",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I4439.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "This is a switch point sandwiched between two overheads \u2014 the 3/4 angle is the anchor here because it's the only angle that reads the vertical descent of the strainer into oil and the immediate bubble reaction, which an overhead would flatten into a static float."
+      },
+      "duration": {
+        "seconds": 1.4589999999999996,
+        "reasoning": "1.5s covers a complete micro-action arc \u2014 lower (30.0s), submerge with heavy bubbling (30.5s), strainer lifting away (31.0s) \u2014 cutting at 31.5s hands off to overhead exactly when the strainer has cleared frame and there's nothing more for this angle to show."
+      },
+      "in_point": {
+        "seconds": 12.346,
+        "reasoning": "12.3s lands on the rangoons crossing the oil surface with pale uncooked wrappers still visible \u2014 starting any earlier wastes time on empty approach, any later misses the \"raw goes in\" moment that motivates cutting away from the previous overhead."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 23,
+      "beat_description": "Top-down on fry pot \u2014 four rangoons floating in amber oil, golden-brown",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "AI2I4581.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor here \u2014 it's the only angle that shows all four rangoons at once floating in the amber oil with bubbles ringing each one, which is what sells \"they're frying\"; a front/eye-level shot would show the pot rim and maybe one rangoon's top, not the pattern."
+      },
+      "duration": {
+        "seconds": 1.0850000000000009,
+        "reasoning": "1.1s is shorter than its 1.5s/1.2s front neighbors because the frame reads instantly (four brown shapes in bubbling oil) \u2014 the editor gets the info across and cuts before the static float becomes boring, keeping the frying sequence moving."
+      },
+      "in_point": {
+        "seconds": 96.888,
+        "reasoning": "96.9s lands on rangoons already golden-brown and floating with active bubbling around the edges \u2014 past the pale-dough stage, before the strainer lift, so the frame reads as \"mid-fry, transforming\" without ambiguity."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (66.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 66% tightens onto the four rangoons and bubbling oil, cropping out dead pot-rim space so the 1.1s beat isn't wasted on negative space \u2014 functional reframe for a brief insert, not a speed-ramped transformation moment."
+    },
+    {
+      "beat_index": 24,
+      "beat_description": "Spider strainer holds two finished golden-brown rangoons up out of oil",
+      "beat_type": "",
+      "recipe_section": "transformation",
+      "filename": "B19I4442.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "3/4-angle is the anchor shot \u2014 the best take of the reveal moment, showing both the golden-brown color (which front would flatten) and the oil draining off (which overhead would hide); it's not an alternation choice, it's the take that sells the transformation."
+      },
+      "duration": {
+        "seconds": 1.2090000000000032,
+        "reasoning": "1.2s gives the eye just enough time to register \"raw dough \u2192 finished rangoon\" without lingering past the lift's peak, fitting the building cadence between the 1.1s overhead before and the 1.6s salting shot after."
+      },
+      "in_point": {
+        "seconds": 20.02,
+        "reasoning": "20.0s lands exactly as the strainer clears the oil with the rangoons held up \u2014 the peak reveal frame, before the lift settles and after the draining motion has begun."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 25,
+      "beat_description": "ingredient (1 clips): Rack of fried golden rangoons on wire rack being salted (falling salt grains visible) \u2192 Rack of rangoons, more salt grains falling \u2192 Rack of rangoons, salt flakes visible on top edges",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4446.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 continuing the held-front run (beat 22 of a long front-dominant stretch); the low-front angle sells this shot because falling salt grains read as silhouetted streaks against the rangoons and backlight, which would flatten into specks from overhead."
+      },
+      "duration": {
+        "seconds": 1.5849999999999937,
+        "reasoning": "1.6s \u2014 \"Kosher salt\" is a two-word MOGRT that reads in roughly a second, and 1.6s leaves enough tail to actually see salt hit the rangoons; it also matches the 1.2s/1.6s cadence of the neighboring dumps."
+      },
+      "in_point": {
+        "seconds": 14.932,
+        "reasoning": "14.9s \u2014 picked the frame where salt grains are mid-air and clearly visible falling onto the rack, i.e. the peak of the action rather than the pre-sprinkle or post-settle moments."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (33.8s-35.4s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 26,
+      "beat_description": "Rack of rangoons, same angle, held",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I4447.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is held from the previous salt-application beat \u2014 classic \"hold camera, then switch\" \u2014 and it preserves the vertical stack of the rack with salt flakes visible on the top edges, which overhead would flatten into a texture rather than a hero arrangement; the switch to overhead happens on the next cut at [36.0s] when the dish transitions to plated/finished."
+      },
+      "duration": {
+        "seconds": 1.5850000000000009,
+        "reasoning": "1.6s matches the prior ingredient beat's 1.6s and gives the \"Kosher salt\" MOGRT enough on-screen time to read before the cut lands on the plating switch at [36.0s]."
+      },
+      "in_point": {
+        "seconds": 45.963,
+        "reasoning": "46.0s picks the steady, settled frame after the salt has landed \u2014 rack still, flakes visible, no hand in frame \u2014 which is the clean read the overlay needs."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 27,
+      "beat_description": "Tight macro on cluster of golden rangoons, shallow DOF on center rangoon",
+      "beat_type": "",
+      "recipe_section": "transformation",
+      "filename": "B19I4451.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front/macro is the anchor shot here \u2014 a best-take beauty moment where shallow DOF isolates one golden rangoon and shows the crinkled wonton texture, which overhead would flatten into a top-down pattern."
+      },
+      "duration": {
+        "seconds": 1.2929999999999993,
+        "reasoning": "1.3s matches the beauty-shot cadence of the surrounding plating beats (1.6s front \u2192 1.3s macro \u2192 1.4s overhead), long enough to register the hero rangoon's texture but short enough to stay inside the musical phrase before handing to the overhead serving moment."
+      },
+      "in_point": {
+        "seconds": 15.933,
+        "reasoning": "15.9s is the settled frame where focus has locked onto the center rangoon with the shallow DOF fully resolved \u2014 earlier frames in the source likely have focus hunting or micro-movement, and this is the first moment the shot is clean."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 28,
+      "beat_description": "Same macro, holds",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "AI2I4591.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the plated-rangoon top-down with dip bowl upper-left and two hands reaching in from opposite corners is the best-take anchor for the plating reveal \u2014 front couldn't show the full plate composition, the bowl placement, or the symmetric multi-hand gesture that sells \"ready to share.\""
+      },
+      "duration": {
+        "seconds": 1.3770000000000024,
+        "reasoning": "1.4s is long enough to register the plated composition and the two hands entering/gripping, then cut before the action stalls \u2014 the dip hero shot needs to land next."
+      },
+      "in_point": {
+        "seconds": 36.161,
+        "reasoning": "36.2s is the frame where both hands are mid-reach into the plate from opposing corners, giving the symmetric \"served\" composition that makes the shot read instantly."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Animated zoom out (64.0% -> 55.0%); Reframed (offset h:0.00 v:0.01)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The 64%\u219255% zoom out with a tiny vertical reframe is a functional push-pull that reveals more plate/hands as the beat plays and nudges the composition \u2014 no speed ramp, attended hand action, not an organic flourish."
+    },
+    {
+      "beat_index": 29,
+      "beat_description": "Hand dipping a single rangoon into sweet chili sauce bowl",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I4450.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor hero shot for the final beauty beat \u2014 the dip-and-lift has vertical drama (rangoon rising, sauce dripping) that front sells at eye level, while overhead would flatten the lift into a dot-in-a-bowl."
+      },
+      "duration": {
+        "seconds": 4.045000000000002,
+        "reasoning": "4.0s holds long because this is the closing beauty moment carrying the \"the kitchn\" logo reveal and end-card landing \u2014 the shot has to breathe through dip \u2192 submerge \u2192 lift \u2192 drip \u2192 final pose."
+      },
+      "in_point": {
+        "seconds": 19.686,
+        "reasoning": "19.7s catches the rangoon just as it enters the sauce, giving the full dunk-lift-drip arc in one unbroken take rather than starting mid-action."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Animated zoom out (57.0% -> 50.0%)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Animated zoom out 57\u219250% is functional \u2014 a slow pull-back that opens the frame for the logo overlay and end-card feeling, nudging the shot from tight action to wider beauty composition; no speed ramp present."
+    }
+  ]
+}

@@ -1,0 +1,1374 @@
+{
+  "recipe": "baked_lobster_tail",
+  "global_notes": "With 56 beats over 147.8s (~2.6s average) and 49 of 56 cuts added beyond the pipeline's editorial group, this is a heavily re-cut piece where the editor is driving rhythm rather than deferring to the source logic. The near-even front/overhead split (29/27) suggests a classic alternation pattern \u2014 overhead for prep actions where hand choreography and ingredient placement read best (chopping, seasoning, assembly), front for hero moments and transformations (the lobster going in, the bake reveal, final plating) where dimensionality and steam/sheen sell the dish. Pacing likely tightens through the prep-to-technique stretch as beats stack, then opens up on the transformation beat for a held phrase before a punchier plating sequence. The high \"added\" count relative to the pipeline's 2 editorial picks indicates the editor is treating the music as primary structure \u2014 cutting on beats through dense instructional passages and probably using flash cuts or micro-montages to compress repetitive prep. Expect speed ramps or a brief stop-motion flourish around ingredient assembly to bridge the instructional density, with the front camera reserved as the \"payoff\" angle after overhead-heavy prep runs.",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (2 shots): Hero plate \u2014 spoon drizzling herb butter on split lobster tail, lemon wedges, butter sauce ramekin \u2192 Hero plate \u2014 spoon drizzling herb butter, spoon moved slightly \u2192 Hero plate \u2014 spoon lifted higher off tail, drizzle ongoing",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4323.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor \u2014 the drizzle-on-tail hero is the money shot of the dish, showing the split tail, herb butter glistening, and the spoon action that an overhead would flatten into a top-down tray read."
+      },
+      "duration": {
+        "seconds": 3.337,
+        "reasoning": "3.3s covers the stacked title card load (\"Baked Lobster Tails / the kitchn\" plus graphic) which needs time to land before the overhead platter reveal at 1.5s extends the beauty beat."
+      },
+      "in_point": {
+        "seconds": 30.572,
+        "reasoning": "30.6s catches the spoon mid-drizzle with butter already flowing \u2014 you enter on motion, not on the spoon approaching."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (59.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-3.3s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.3s)",
+        "Title Cards: Graphic (0.0s-3.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 59% tightens onto the tail and drizzle so the title cards have clean negative space above/around without the ramekin and lemon wedges competing for attention at full 50% framing."
+    },
+    {
+      "beat_index": 2,
+      "beat_description": "ingredient (1 clips): Hand places raw lobster tail on cutting board \u2192 Hand adjusting/pressing raw tail onto cutting board \u2192 Single raw lobster tail centered on cutting board, hand out of frame",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4307.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because it's the anchor shot for the ingredient reveal \u2014 the hand placing the tail on the board is the action that sells \"here is the lobster,\" and eye-level shows the hand-to-ingredient hand-off in a way overhead would flatten into a static product shot."
+      },
+      "duration": {
+        "seconds": 1.209,
+        "reasoning": "1.2s because the \"Lobster tail\" MOGRT needs enough on-screen time to be read comfortably before the cut to overhead clears the text at 4.5s; the action itself (place + press) resolves in roughly that window too."
+      },
+      "in_point": {
+        "seconds": 8.3,
+        "reasoning": "8.3s lands on the hand entering frame with the tail already in hand, skipping any pre-roll so the cut hits the placement action on the beat."
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (3.3s-4.5s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 3,
+      "beat_description": "stop-motion (3 clips, avg 3f): Single raw lobster tail centered on cutting board, hand out of frame \u2192 Single raw tail on board \u2014 dense frame \u2192 TWO raw tails now on board, side by side",
+      "beat_type": "stop_motion",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4277.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the subject IS the accumulating count of tails on the board \u2014 a top-down graphic reveal of 1\u21922\u21923\u21924 only reads from above; front/eye-level would hide the board surface and kill the compilation payoff."
+      },
+      "duration": {
+        "seconds": 0.4169999999999998,
+        "reasoning": "0.4s total (3 clips at ~3f each) because stop-motion rhythm needs sub-beat fragments to register as rapid-fire accumulation rather than three separate shots; any longer per frame and it becomes a slow reveal instead of a punch."
+      },
+      "in_point": {
+        "seconds": 11.845,
+        "reasoning": "11.8s lands on the moment a single centered tail is clean in frame before the second tail enters \u2014 the cleanest \"state 1\" to start the 1\u21922\u21923\u21924 progression from."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 6,
+      "beat_description": "Single raw tail on board \u2014 dense frame",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4277.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor here because the stop-motion accumulation gag (1\u21922\u21923\u21924 tails appearing) only reads from top-down \u2014 a front angle would hide the board surface where the tails are landing."
+      },
+      "duration": {
+        "seconds": 0.4169999999999998,
+        "reasoning": "0.4s matches the stop-motion cadence of the previous three clips, keeping the accumulation beats locked to the same rhythmic grid before the payoff frame extends."
+      },
+      "in_point": {
+        "seconds": 32.491,
+        "reasoning": "32.5s catches the single tail fully settled and centered with the hand cleared \u2014 the clean \"one\" frame needed before the 2/3/4 reveals land."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 7,
+      "beat_description": "ingredient (2 clips): Kitchen shears cutting top shell lengthwise down one tail \u2192 Shears continuing lengthwise cut \u2192 Shears mid-cut on tail shell",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4307.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a switch point in the ingredient/action run \u2014 the front shot established the cutting action at 5.5\u20137.0s, and overhead now shows the top-down geometry of the shell slit opening up across all four tails, which the eye-level front angle can't reveal."
+      },
+      "duration": {
+        "seconds": 3.9210000000000003,
+        "reasoning": "3.9s holds because the \"Cut top shell lengthwise, stopping at the tail\" MOGRT needs full read time across the sequence, and the overhead carries the back half of that read while showing the cut progressing to completion on the rightmost tail."
+      },
+      "in_point": {
+        "seconds": 87.004,
+        "reasoning": "87.0s lands on shears entering frame on the rightmost tail \u2014 a clean action start that matches the cut point and lets the overhead show the full cutting motion through to the hand retracting."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (62.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (5.4s-9.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 62% with a tiny reframe offset is a functional edit tool \u2014 it tightens the overhead onto the active tail and nudges the composition so the shears/hand action sits centered, not an organic flourish."
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "ingredient (1 clips): Two hands prying shell open, meat partially lifted out at top \u2192 Hands continuing to pry meat free from shell, more meat exposed \u2192 Hands holding tail with meat lifted up above shell",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4315.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the meat-prying action is vertical and intimate \u2014 hands lifting meat up out of the shell reads clearly at eye-level, where overhead would flatten the lift into a shape change; it's also a switch point after two overhead beats, and this front take is the anchor that best sells the \"pry\" moment."
+      },
+      "duration": {
+        "seconds": 1.834999999999999,
+        "reasoning": "1.8s holds long enough for viewers to read the \"Gently pry the meat away\" lower-third and register the meat clearing the shell before the knife beat takes over."
+      },
+      "in_point": {
+        "seconds": 70.237,
+        "reasoning": "70.2s lands right as the hands have already gotten purchase and are actively lifting \u2014 you skip the fumbling setup and enter mid-action with meat visibly separating."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (9.3s-11.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "ingredient (1 clips): Knife slicing down through tail meat lengthwise on cutting board \u2192 Knife mid-cut, more of meat sliced, angle slightly different \u2192 Knife continuing cut, more tail meat exposed, second tail visible",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4316.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the held camera for this ingredient-dump run (beat 4 of a 5-beat front streak) \u2014 the editor is holding the angle across dumps rather than alternating, and front shows the knife's downward travel and the meat splitting open in a way overhead would flatten."
+      },
+      "duration": {
+        "seconds": 1.8350000000000009,
+        "reasoning": "1.8s is a short, tight hold because the MOGRT \"Cut the tail meat in half\" is brief and easy to read, and this beat is mid-run where pace stays quick before the longer 3.9s beat that follows."
+      },
+      "in_point": {
+        "seconds": 20.437,
+        "reasoning": "20.4s lands on the knife already driving down through the tail \u2014 you skip the approach and enter on the action itself, so the cut reads as continuous slicing motion rather than setup."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (11.1s-13.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "ingredient (1 clips): Hands opening the shell wider, meat spread like an open book \u2192 Hands continuing to butterfly/open tail, meat rising out \u2192 Hands spreading tail shell further apart, meat visible in center",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4317.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 3.9209999999999994,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 81.123,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (13.0s-14.9s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "ingredient (1 clips): Two hands pressing down on white cloth covering (a) tail(s) \u2192 Hands pressing down through cloth, tail visible underneath at edges \u2192 Hands continuing press through cloth",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4317.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because we're in a held front-camera run (beats 3\u20137 all front) \u2014 this is the middle of a hold, not a switch point, and front shows the downward hand pressure flattening the cloth-covered tail at eye level where the gesture reads clearly."
+      },
+      "duration": {
+        "seconds": 1.876999999999999,
+        "reasoning": "1.9s covers the \"Press down to flatten slightly\" lower-third long enough to read comfortably while the pressing action plays through its arc from contact to full press."
+      },
+      "in_point": {
+        "seconds": 90.549,
+        "reasoning": "90.5s lands on the moment two hands make contact with the cloth over the tail \u2014 the clean start of the press gesture, matching the MOGRT cue in."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (16.9s-18.8s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "Hands holding press, cloth fully covering tail",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4317.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor \u2014 the hands-on-press moment sells the physical action of flattening the tail, which reads cleanly at eye-level where the cloth-covered press and the hands are the silhouette; overhead would flatten the gesture into a top-down blob."
+      },
+      "duration": {
+        "seconds": 1.0010000000000012,
+        "reasoning": "1.0s holds just long enough to register the completed press action as a beauty beat before cutting to the three-tails comparison; any longer and the static hold stalls the opener's momentum."
+      },
+      "in_point": {
+        "seconds": 115.866,
+        "reasoning": "115.9s lands on the hands already settled on the press with the cloth fully draped \u2014 the \"finished\" frame of the gesture, not the messy approach \u2014 so it functions as a clean hero still rather than mid-action."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "ingredient (1 clips): Same three tails, slight continuation \u2192 Glass measuring cup pouring water into empty white/teal-handled baking dish \u2192 Water pouring, more pooled in dish",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4276.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a switch point \u2014 the ingredient dump run has been holding front for five beats, and water pouring into a dish reads clearly only from above where you can see the liquid filling the vessel; front would just show a hand and a cup."
+      },
+      "duration": {
+        "seconds": 1.6260000000000012,
+        "reasoning": "1.6s covers the \"Water\" MOGRT long enough to read the single short word plus a breath, and matches the physical duration of the pour arc before the next angle."
+      },
+      "in_point": {
+        "seconds": 13.388,
+        "reasoning": "13.4s starts just as the stream hits the dish bottom and begins pooling \u2014 the moment the ingredient visibly becomes \"water in the dish.\""
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (57.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (19.8s-21.4s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "57% punch-in tightens the frame onto the dish and pour stream, cropping out empty counter so the liquid action fills the frame; functional reframe, no speed ramp present."
+    },
+    {
+      "beat_index": 15,
+      "beat_description": "Side-angle of pyrex measuring cup pouring water into teal-handled dish",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4306.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.3350000000000009,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 13.639,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "Hand placing butterflied tail into dish (water now in dish)",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4318.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor here \u2014 it's the scroll-stopper hero shot of the beauty opener, selling the single butterflied tail entering water at eye-level where you see the curl and translucency of the meat; overhead would flatten it into a top-down ingredient shot and kill the hero moment."
+      },
+      "duration": {
+        "seconds": 1.0009999999999977,
+        "reasoning": "1.0s lets the placement land and read as a deliberate hero beat before the overhead compilation takes over \u2014 shorter would feel rushed for an opener, longer would stall before the payoff."
+      },
+      "in_point": {
+        "seconds": 5.672,
+        "reasoning": "5.7s catches the hand mid-placement with the tail already entering frame, skipping dead approach time and starting on motion so the cut has energy."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "Hand positioning single tail in dish, large empty space remaining",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4286.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a switch point into an ingredient-dump compilation \u2014 the next several beats are tails being placed in the dish, and overhead is the only angle that shows the dish filling up (front view at 24.5s can't read the arrangement inside the dish)."
+      },
+      "duration": {
+        "seconds": 0.33399999999999963,
+        "reasoning": "0.3s because it's the first beat of a dense compilation run (subsequent beats are 0.1s stop-motion); this slightly longer opener establishes the dish/empty-space before the rapid fill-in payoff."
+      },
+      "in_point": {
+        "seconds": 7.966,
+        "reasoning": "8.0s into the source lands on a single tail being positioned with large empty dish visible \u2014 the \"before\" state that makes the subsequent fill-up read as a compilation rather than a random cut-in."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (59.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 59% crops out dead dish space and centers the hand+tail action, tightening the frame so the single tail reads clearly before the compilation fills the dish \u2014 functional reframe, not an organic transformation."
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "stop-motion (2 clips, avg 3f): Four tails now arranged in dish (compilation payoff) \u2192 Two tails visible in dish, mid-placement \u2192 Three tails visible in dish, mid-placement",
+      "beat_type": "stop_motion",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4286.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor for this stop-motion payoff because the compilation only reads from top-down \u2014 you can't count tails in a dish from a front angle."
+      },
+      "duration": {
+        "seconds": 0.1670000000000016,
+        "reasoning": "0.2s across two frames is the rapid-fire stop-motion rhythm landing the \"tails assembled\" payoff on the beat."
+      },
+      "in_point": {
+        "seconds": 11.887,
+        "reasoning": "11.9s catches the mid-placement frames (2 tails, then 3 tails) that sell the build-up before the four-tail resolution."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (59.0% vs 50% baseline); punch-in/crop (59.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 59% tightens the dish in frame so the tail count reads instantly at stop-motion speed; functional reframe, no speed ramp."
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "Four tails now arranged in dish (compilation payoff)",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4286.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor here \u2014 the top-down compilation payoff of all four tails arranged in the dish only reads from above; a front angle would flatten the arrangement and hide the count."
+      },
+      "duration": {
+        "seconds": 0.41699999999999804,
+        "reasoning": "0.4s is a quick payoff hold after the 0.2s stop-motion build \u2014 long enough to register \"four tails done,\" short enough to hand off to the foil-cover beat."
+      },
+      "in_point": {
+        "seconds": 18.101,
+        "reasoning": "18.1s lands on the cleanest frame of all four tails settled in final position, the resolution frame of the stop-motion compilation."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (59.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 59% tightens the dish in frame so the four-tail arrangement fills the screen as a beauty-opener hero shot \u2014 functional reframe, no speed ramp, no flourish token."
+    },
+    {
+      "beat_index": 21,
+      "beat_description": "Low-angle front view of four tails in dish, foil/plastic sheet being drawn across foreground",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4286.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "This is a switch point \u2014 after a held overhead run building the four-tail compilation, cutting to a low-angle front reveals the foil sheet entering the frame from foreground depth, which an overhead would flatten into a featureless rectangle."
+      },
+      "duration": {
+        "seconds": 0.75,
+        "reasoning": "0.8s covers the foil's entry across the frame to the moment of contact \u2014 long enough to register the new angle and the covering action, short enough to hand off to the ECU crimp detail on the next beat."
+      },
+      "in_point": {
+        "seconds": 37.204,
+        "reasoning": "37.2s catches the foil mid-draw with the tails still clearly visible underneath, so the viewer sees both the subject and the action being performed on it before the seal obscures everything."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (59.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 59% tightens onto the dish and foil interaction, trimming dead countertop from a wide low-angle take so the hero (tails + foil) fills the frame at opener scale."
+    },
+    {
+      "beat_index": 22,
+      "beat_description": "ingredient (1 clips): Hand pressing foil seal over dish \u2192 Marble countertop with MOGRT \"Bake at 425\u00b0F until cooked through, 20 to 27 minutes\" \u2192 Marble countertop with same MOGRT, light blue shirt BG",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4318.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the switch point out of the preceding overhead ingredient-dump run \u2014 the sealing gesture (hand pressing foil, Kitchn logo, green dish) reads as a tactile human action that an overhead would flatten into a texture shot, so front sells the \"sealing\" verb before the MOGRT card takes over."
+      },
+      "duration": {
+        "seconds": 2.878,
+        "reasoning": "2.9s covers the length needed to read \"Bake at 425\u00b0F until cooked through, 20 to 27 minutes\" \u2014 a two-line instruction card with a temperature and a time range needs roughly 3 seconds to parse, and the hold is sized to the MOGRT, not the foil-press action."
+      },
+      "in_point": {
+        "seconds": 43.752,
+        "reasoning": "43.8s lands on the hand already making contact and pressing down \u2014 past the approach/wrinkle frames, so the cut opens on the decisive sealing gesture rather than the setup."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Cook Times/K SEO_Cook Times.aegraphic (26.2s-28.3s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 23,
+      "beat_description": "ingredient (1 clips): Marble countertop with MOGRT, neutral BG \u2192 Saucepan with stick of butter melting, text \"Unsalted butter\" \u2192 Butter melting further in saucepan",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4287.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the butter melting in the saucepan is a top-down transformation \u2014 foam forming on the surface only reads from above, and this sits inside a held overhead run (beats 1-2 overhead, this is beat 4), so it's continuation of the hold, not a switch."
+      },
+      "duration": {
+        "seconds": 2.0020000000000024,
+        "reasoning": "2.0s covers reading \"Unsalted butter\" (two words, ~1.3-1.5s comfortable read) plus a beat to register the melting action; the 327% speed ramp compresses ~6.5s of real melting into that window so the viewer sees visible transformation during the text hold."
+      },
+      "in_point": {
+        "seconds": 34.326,
+        "reasoning": "34.3s is where the butter stick is intact and just beginning to slump \u2014 gives the ramp a clear \"before\" state so the acceleration reads as melting rather than just bubbling."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (327.495% base, ramp between 34.3s-36.3s); punch-in/crop (72.0% vs 50% baseline); Reframed (offset h:0.00 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (28.3s-30.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Speed ramp turns an otherwise static 2s hold into a visible transformation (stick \u2192 froth) while the MOGRT is on screen; the 72% punch-in tightens onto the saucepan so the butter fills frame and the foam texture reads at small playback sizes; the slight vertical reframe recenters the pan after the crop. This is an unattended organic moment (butter melting by itself) being accelerated for visual payoff. [flourish: organic]"
+    },
+    {
+      "beat_index": 24,
+      "beat_description": "ingredient (1 clips): Butter nearly melted, frothy surface \u2192 Minced garlic added to bubbling butter, text \"Garlic\" \u2192 Minced garlic sizzling in butter, tool entering frame",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4319.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a switch point that begins a short front hold (the run shows F, F, F clustered here after an O,O,F,O opening) \u2014 per the hold-then-switch rule, the editor is ending the overhead run and committing to front for the next several dumps, and front gives human presence (hand entering, garlic falling from fingers) that the top-down overhead can't sell on an ingredient reveal."
+      },
+      "duration": {
+        "seconds": 1.376999999999999,
+        "reasoning": "1.4s is driven by MOGRT readability \u2014 \"Garlic\" is a single short word, so the text needs only a brief hold to be read, and 1.4s matches that without overstaying."
+      },
+      "in_point": {
+        "seconds": 101.31,
+        "reasoning": "101.3s lands on the garlic hitting the frothy, nearly-melted butter with immediate sizzle and tool entering frame \u2014 the transformation moment (dry garlic \u2192 bubbling in fat) that justifies the cut-in."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (30.3s-31.7s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 25,
+      "beat_description": "Yellow silicone spatula stirring garlic butter",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4319.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Overhead is the anchor here \u2014 it's the only angle that reveals the swirl pattern and bubbling surface of the garlic butter, which is the whole point of a beauty-opener hero shot; front would just show the side of a saucepan."
+      },
+      "duration": {
+        "seconds": 1.1260000000000012,
+        "reasoning": "1.1s is a quick beauty-opener beat \u2014 long enough to register the swirl and motion blur, short enough to stay punchy in a 2-3 shot scroll-stopper sequence cut to music."
+      },
+      "in_point": {
+        "seconds": 112.696,
+        "reasoning": "112.7s lands on the tighter push-in CU with active motion blur on the spatula mid-drag \u2014 the most dynamic frame of the stir, where bubbling and movement read instantly."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 26,
+      "beat_description": "Spatula mid-swirl through garlic butter",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4287.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the swirl pattern in the butter is only legible top-down \u2014 a front angle would just show a hand/wrist moving and lose the glossy circular motion that makes this a hero beauty shot; this is an organic-flourish anchor for the opener, not part of a held run (previous beat was front)."
+      },
+      "duration": {
+        "seconds": 0.8339999999999961,
+        "reasoning": "0.8s because beauty-opener hero shots are scroll-stoppers cut short and punchy \u2014 long enough to register the swirl, short enough to stack 2-3 heroes back-to-back before the recipe proper starts."
+      },
+      "in_point": {
+        "seconds": 132.466,
+        "reasoning": "132.5s catches the spatula mid-arc when the butter is actively moving and catching light \u2014 peak of the swirl motion rather than the static start or trailing end, maximizing the 0.8s window."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 27,
+      "beat_description": "ingredient (1 clips): Chopped parsley tipped into saucepan, text \"Fresh parsley\" \u2192 Parsley falling into butter from measuring cup, dark manicure hand \u2192 Mounded parsley resting on butter surface",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4320.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because it's a switch point after a 3-beat overhead hold (beats 5-7 all overhead per the run), and the front angle sells the dark-manicure hand tipping parsley at eye level in a way the top-down can't \u2014 you see the pour arc and the hand gesture, not just the landing."
+      },
+      "duration": {
+        "seconds": 1.4179999999999993,
+        "reasoning": "1.4s holds long enough to read \"Fresh parsley\" (two words, ~1.2-1.4s comfortable read) and matches the MOGRT overlay window (33.6s-35.0s = 1.4s) \u2014 text readability, not action length, sets the hold."
+      },
+      "in_point": {
+        "seconds": 9.676,
+        "reasoning": "9.7s lands on the parsley actively falling/tipping from the cup into the pan \u2014 mid-pour is the most legible frame for an ingredient dump, skipping pre-roll hand-entry and cutting out before the static \"resting mound\" beat."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (33.6s-35.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 28,
+      "beat_description": "Yellow spatula pushing parsley into butter",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4320.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front sells the tactile push-and-fold gesture at eye-level in a beauty opener where hero shots need to feel cinematic, not top-down utilitarian \u2014 overhead would flatten it into an ingredient-reveal shot, which this section isn't."
+      },
+      "duration": {
+        "seconds": 1.1260000000000048,
+        "reasoning": "1.1s fits the beauty-opener pacing of 2-3 hero shots (neighbors are 1.4s and 1.3s) \u2014 long enough to register the parsley-into-butter motion, short enough to keep the opener moving toward the next hero beat."
+      },
+      "in_point": {
+        "seconds": 13.138,
+        "reasoning": "13.1s lands on the spatula already engaged and folding \u2014 skips the approach/entry frames and starts on the moment the green visibly hits the yellow butter, which is the actual \"sell\" of the shot."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 29,
+      "beat_description": "ingredient (1 clips): Liquid measuring cup pouring into pan, text \"Lemon juice\" \u2192 Lemon juice stream continues into parsley butter \u2192 Lemon juice still pouring, tool submerged stirring",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4320.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front continues a held front-camera run (positions 9\u201311 are all front in the sequence), consistent with the rule to hold a camera across several dumps rather than alternate \u2014 the front angle sells the pour as a gesture (cup tipping, stream falling) in a way overhead would flatten into just a puddle."
+      },
+      "duration": {
+        "seconds": 1.3350000000000009,
+        "reasoning": "1.3s is the read-length of the \"Lemon juice\" MOGRT \u2014 two words, needs a beat to register before the next ingredient label replaces it; the pour action itself could run longer or shorter but text legibility sets the floor."
+      },
+      "in_point": {
+        "seconds": 24.358,
+        "reasoning": "24.4s lands on the cup already tipped with the stream established and hitting the butter \u2014 skips the pre-pour dead air and drops the viewer into visible liquid motion immediately, which is what the label is pointing at."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (36.2s-37.5s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 30,
+      "beat_description": "ingredient (1 clips): Salt raining into pan from hand, text \"Kosher salt\" \u2192 Mound of salt sitting on surface of butter mixture \u2192 Salt dissolving into mixture, pile shrinking",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4320.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a switch point \u2014 the run just shifted from overhead dumps into a stretch of five front beats, and this angle sells the vertical salt stream falling from the hand in a way overhead flattens into a blob."
+      },
+      "duration": {
+        "seconds": 1.333999999999996,
+        "reasoning": "1.3s is the read-time floor for \"Kosher salt\" MOGRT \u2014 two short words need roughly a beat-and-a-third to register before the next ingredient lands."
+      },
+      "in_point": {
+        "seconds": 31.24,
+        "reasoning": "31.2s catches the salt mid-fall with the hand still releasing, giving the viewer the action (raining salt) rather than the aftermath (pile sitting)."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (37.5s-38.8s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 31,
+      "beat_description": "Spatula stirring sauce vigorously, ECU top-down",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4288.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the anchor moment here is the top-down view of the sauce's texture and motion \u2014 you see the swirl pattern and suspended greens, which a front angle would flatten into an obscured pot rim."
+      },
+      "duration": {
+        "seconds": 1.2929999999999993,
+        "reasoning": "1.3s matches the surrounding ingredient-beat cadence and gives just enough time to register the stirring action before cutting to the oven-out moment."
+      },
+      "in_point": {
+        "seconds": 35.577,
+        "reasoning": "35.6s lands on the spatula mid-vigorous-stir with the sauce already fully mixed and greens suspended \u2014 peak visual energy of the stir, not the ramp-up."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (77.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 77% tightens into the spatula/sauce interaction for a scroll-stopping hero texture shot in the beauty opener \u2014 functional reframe for emphasis, no transformation unfolding on its own."
+    },
+    {
+      "beat_index": 32,
+      "beat_description": "Foil-covered green baking dish carried on oven mitt",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4321.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.3770000000000024,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 10.302,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 33,
+      "beat_description": "Foil pulled back revealing cooked lobster tails in dish",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4321.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor here because the reveal action \u2014 foil lifting up and away \u2014 reads as a vertical gesture toward the lens that an overhead would flatten into a shrinking rectangle; this is a best-take reveal beat, not part of a held-camera run."
+      },
+      "duration": {
+        "seconds": 1.7520000000000024,
+        "reasoning": "1.8s lets the foil-pull register and the tails land as a hero image in a beauty-opener section where shots are allowed to breathe, without crossing into the duplicate/extended hold at 42.5s that would feel static."
+      },
+      "in_point": {
+        "seconds": 24.483,
+        "reasoning": "24.5s catches the foil mid-pull with meat just becoming visible \u2014 the transformation frame \u2014 rather than starting on the pre-reveal static foil (41.0s) or the already-revealed static hero (42.0s+)."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 34,
+      "beat_description": "Green dish front-of-counter, 4 tails in buttery liquid",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4290.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because after the front hero anchor at 43.0s, the editor switches to top-down for the plating reveal \u2014 overhead shows the full platter composition (four tails + lemon wedges + parsley-butter ramekin) which a front angle would foreshorten and obscure."
+      },
+      "duration": {
+        "seconds": 1.6679999999999993,
+        "reasoning": "1.7s holds long enough to register the full plated arrangement and read it as the \"hero result\" payoff, sitting on a musical phrase before the sauce ECU kicks in."
+      },
+      "in_point": {
+        "seconds": 11.678,
+        "reasoning": "11.7s lands after the initial hand-tray motion settles into a clean composed frame, giving a stable plating reveal rather than mid-motion chaos."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (50.0% -> 64.0%); Animated reframe (position keyframes)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The zoom 50\u219264% with position keyframes is a functional reframe \u2014 pushing in on the platter to tighten the composition and add subtle motion to an otherwise static hold, not an organic transformation."
+    },
+    {
+      "beat_index": 35,
+      "beat_description": "ECU tilted view \u2014 spoon lifting parsley butter from ramekin",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4325.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor \u2014 an ECU tilted hero of the spoon lifting parsley butter is the best-take sell of the sauce itself, and overhead couldn't show the butter's viscosity, flecks of parsley, and the lift off the ramekin the way a low tilted angle does."
+      },
+      "duration": {
+        "seconds": 1.0429999999999993,
+        "reasoning": "1.0s lets the spoon clear the ramekin and register the sauce as a distinct hero element before the next front shot continues the action \u2014 long enough to read, short enough to stay in the beauty-opener's punchy 2-3 hero rhythm."
+      },
+      "in_point": {
+        "seconds": 22.397,
+        "reasoning": "22.4s catches the spoon mid-lift with butter already loaded and pulling up, the moment of maximum sauce visibility \u2014 earlier would be pre-dip setup, later would be the drip/hover covered by the next cut."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 36,
+      "beat_description": "ECU spoon pouring butter onto split lobster tails",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4323.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor here because the ECU of butter pouring onto split lobster tails is the hero beauty moment \u2014 the drizzle, sheen, and pooling in the shell read at eye-level in a way an overhead flatten would lose."
+      },
+      "duration": {
+        "seconds": 1.3759999999999977,
+        "reasoning": "1.4s holds long enough to see the pour land and sauce begin pooling (the organic flourish) without stalling the beauty-opener's scroll-stopping pace."
+      },
+      "in_point": {
+        "seconds": 60.811,
+        "reasoning": "60.8s catches the spoon mid-pour as butter actively streams onto the tail \u2014 not the approach, not the retreat, the transformation frame."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 37,
+      "beat_description": "ECU single tail being basted, spoon angled overhead",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4323.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this ECU push-in on a single basted tail is the anchor \u2014 it's the best-take hero moment of the drizzle sequence, showing sauce pooling inside one shell in a way the overhead's flatter top-down geometry can't sell."
+      },
+      "duration": {
+        "seconds": 1.2090000000000032,
+        "reasoning": "1.2s holds just long enough to register the basting action and sauce pool before cutting to the overhead platter reveal; any longer and it stalls the build into the hero plated shot."
+      },
+      "in_point": {
+        "seconds": 100.684,
+        "reasoning": "100.7s lands right as the spoon is angled over the tail mid-pour with sauce actively pooling \u2014 the peak of the basting gesture, not the approach or the pull-away."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 38,
+      "beat_description": "Platter pushed into frame from bottom, mostly empty marble above",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4292.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a switch point into the beauty/end-card sequence \u2014 the finished platter is a top-down subject (full plate composition, logo placement, symmetry) that only reads from above; front angle can't show the plating."
+      },
+      "duration": {
+        "seconds": 2.293999999999997,
+        "reasoning": "2.3s holds long enough to register the reveal (empty marble \u2192 platter sliding in) and let the eye settle before the locked-off hero frames that follow; shorter would clip the push-in, longer would stall before the beauty hold."
+      },
+      "in_point": {
+        "seconds": 19.353,
+        "reasoning": "19.4s catches the platter mid-entry from the bottom of frame with negative space still above \u2014 the motion itself is the cut's payoff, so starting before it lands gives the push-in its arc."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 39,
+      "beat_description": "ECU hand dipping lobster meat chunk into parsley butter ramekin, \"the kitchn\" logo",
+      "beat_type": "",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4326.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor shot for the end-card \u2014 the eye-level ECU sells the dip-and-lift hero action with the logo locked in frame, which overhead can't do (overhead would flatten the lift and hide the logo placement)."
+      },
+      "duration": {
+        "seconds": 3.7959999999999994,
+        "reasoning": "3.8s because the shot carries a full mini-arc \u2014 dip, lift, drip, hold \u2014 and as a closing beauty beat it needs to breathe longer than mid-sequence cuts to let the logo register before the video ends."
+      },
+      "in_point": {
+        "seconds": 85.335,
+        "reasoning": "85.3s lands right as the hand enters the ramekin for the dip, starting the action cleanly on the downward motion so the subsequent lift and drip play out in full within the shot."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 40,
+      "beat_description": "AI2I4277.mov @ 369.5s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4277.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead here is a switch point \u2014 the previous 3.8s front shot held the eye-level angle, so cutting to overhead reveals the top-down state of the pan/bowl (ingredient layout, coverage, distribution) that the front angle can't show."
+      },
+      "duration": {
+        "seconds": 2.2519999999999527,
+        "reasoning": "2.3s is a short hold \u2014 long enough to register the overhead reveal but tight because the next shot is also overhead at 4.0s, so this acts as the entry beat of a held-overhead run rather than a standalone moment."
+      },
+      "in_point": {
+        "seconds": 91.967,
+        "reasoning": "92.0s into the source take is likely where the action reads cleanest from above \u2014 hands clear of the food, or the ingredient just having landed/settled \u2014 giving a legible top-down frame at the cut point."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 41,
+      "beat_description": "AI2I4277.mov @ 371.7s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4277.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this sits inside a held overhead run (previous and next are both overhead) \u2014 it's not a switch point, it's continuation of the same camera holding through a mid-edit sequence where top-down framing shows ingredient placement/action that an eye-level front wouldn't reveal."
+      },
+      "duration": {
+        "seconds": 3.9630000000000223,
+        "reasoning": "4.0s is a medium hold \u2014 long enough to read the action without stalling, fitting between the shorter 2.3s lead-in and the longer 7.2s payoff that follows, building duration as the section develops."
+      },
+      "in_point": {
+        "seconds": 115.073,
+        "reasoning": "115.1s into the source take likely skips past setup/hand-entry to land on the cleanest portion of the action where the moment reads immediately on cut."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 42,
+      "beat_description": "AI2I4284.mov @ 375.7s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4284.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this sits inside a held overhead run (prev and next are both overhead) \u2014 not a switch point, just continuing the held-camera rule for a top-down action where the transformation reads best from above."
+      },
+      "duration": {
+        "seconds": 7.214999999999975,
+        "reasoning": "7.2s is unusually long for a mid-edit beat, which points to an organic flourish anchor \u2014 a found moment (melt/pool/bloom/steam) being speed-ramped so the transformation has room to resolve on screen."
+      },
+      "in_point": {
+        "seconds": 15.807,
+        "reasoning": "15.8s skips past the setup and hands-in-frame to land on the instant the transformation becomes visually legible, which is why it was worth adding outside the pipeline."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 43,
+      "beat_description": "AI2I4286.mov @ 397.0s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4286.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this sits inside a held-overhead run (prev and next are both overhead) \u2014 it's not a switch point but a continuation, keeping the top-down angle that reads ingredient identity/placement better than eye-level would."
+      },
+      "duration": {
+        "seconds": 2.9189999999999827,
+        "reasoning": "2.9s is a mid-length hold \u2014 long enough to register the ingredient/action on the beat phrase but shorter than the 7.2s predecessor, tightening pace as the section builds toward the 2.1s next cut."
+      },
+      "in_point": {
+        "seconds": 45.587,
+        "reasoning": "45.6s into the source take likely skips the settle-in and lands on the clean action moment (hand clear, ingredient hitting/landing), giving an immediate readable frame on the cut."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 44,
+      "beat_description": "AI2I4288.mov @ 443.1s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4288.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because with no scan/frame data to confirm content, the prior beat was also overhead (AI2I4286) and this is most likely a held-camera run continuing the same top-down angle rather than a switch \u2014 holding the overhead keeps an ingredient/action sequence legible from above where a front eye-level wouldn't show the pan/bowl contents."
+      },
+      "duration": {
+        "seconds": 2.1270000000000095,
+        "reasoning": "2.1s fits a mid-edit held-camera beat \u2014 slightly shorter than the previous 2.9s, suggesting the editor is tightening pacing as the section progresses toward a phrase end or transition."
+      },
+      "in_point": {
+        "seconds": 8.175,
+        "reasoning": "8.2s into the source skips the clip's settle/setup and lands after the hand/action has entered frame and the motion is already reading cleanly \u2014 the usable moment of the take, not its opening."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 45,
+      "beat_description": "AI2I4288.mov @ 445.2s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4288.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 2.0860000000000127,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 23.065,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 46,
+      "beat_description": "AI2I4288.mov @ 447.3s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4288.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this sits inside a held-overhead run (prev and next are both overhead) \u2014 it's not a switch point, it's continuation of a sustained top-down angle that shows ingredient placement/coverage in the pan which a front eye-level shot wouldn't read."
+      },
+      "duration": {
+        "seconds": 1.2930000000000064,
+        "reasoning": "1.3s is short relative to its neighbors (2.1s / 2.2s), suggesting a music-driven beat inside the phrase \u2014 a quick punctuation cut that keeps the held-camera run from getting boring via a reframe/nest rather than an angle change."
+      },
+      "in_point": {
+        "seconds": 30.239,
+        "reasoning": "30.2s into the source lands on the specific action moment the editor wanted (likely the contact/placement frame) \u2014 a best-take selection within the take, not the clip's head."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 47,
+      "beat_description": "AI2I4289.mov @ 452.3s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4289.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is part of a held-camera run \u2014 the previous and next beats are both overhead, so this is the middle of a sustained top-down sequence showing ingredient placement/action that reads clearest from above."
+      },
+      "duration": {
+        "seconds": 2.1689999999999827,
+        "reasoning": "2.2s is a mid-length hold that sits between the tighter 1.3s prior beat and the longer 3.9s next beat, letting the sequence breathe and build toward the longer outgoing shot on a musical phrase."
+      },
+      "in_point": {
+        "seconds": 18.227,
+        "reasoning": "18.2s into the source take likely lands on the moment the ingredient/action resolves into frame cleanly \u2014 past the settle-in, at the point the gesture reads."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 48,
+      "beat_description": "AI2I4289.mov @ 454.5s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4289.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 3.9209999999999923,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 33.242,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 49,
+      "beat_description": "AI2I4291.mov @ 461.9s",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4291.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because prev (AI2I4289) and next (AI2I4292) are both overhead \u2014 this is mid-run of a held overhead camera, not a switch point, so the editor is staying top-down to keep the ingredient/action reading cleanly from above rather than cutting back to eye-level."
+      },
+      "duration": {
+        "seconds": 2.795000000000016,
+        "reasoning": "2.8s is a short insert beat sandwiched between a 3.9s and a 10.8s overhead \u2014 it functions as a reframe/nest within the held-camera run to keep the same angle from getting boring, sized to land on the next musical beat without stealing time from the longer 10.8s hero shot that follows."
+      },
+      "in_point": {
+        "seconds": 47.714,
+        "reasoning": "47.7s into the source take is likely where the action resolves into a clean readable overhead composition (ingredient settling/landing in frame) \u2014 the editor picked the moment the top-down shot actually \"shows\" something the eye-level couldn't, justifying the insert."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 50,
+      "beat_description": "AI2I4292.mov @ 469.4s",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "AI2I4292.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because at 10.8s this is almost certainly a held-camera transformation/money shot (late-edit section) where top-down reveals the full surface change \u2014 pooling, spreading, or layering \u2014 that an eye-level front angle would foreshorten into invisibility."
+      },
+      "duration": {
+        "seconds": 10.802999999999997,
+        "reasoning": "10.8s is far too long for an ingredient beat and matches an organic flourish or speed-ramped transformation the editor found and chose to let breathe across a musical phrase rather than cut away from."
+      },
+      "in_point": {
+        "seconds": 35.244,
+        "reasoning": "35.2s into the source suggests the editor skipped the setup/hand-entry and landed on the moment the transformation is already visibly underway \u2014 the \"good part\" of the take, not its beginning."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 51,
+      "beat_description": "B19I4322.mov @ 528.0s",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I4322.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the switch point after a held overhead run (previous beat was overhead at the same source timecode 10.8s), breaking the hold to re-establish the cook/eye-level perspective before the next front beat continues."
+      },
+      "duration": {
+        "seconds": 2.2939999999999827,
+        "reasoning": "2.3s is a short phrase-length hold \u2014 long enough to register the switch and read the action, short enough to keep momentum into the following 4.3s front beat that carries the real weight."
+      },
+      "in_point": {
+        "seconds": 10.844,
+        "reasoning": "10.8s matches the previous clip's in-point, suggesting a matched-action cut across cameras at the same moment \u2014 the front angle shows the cook's hands/face reaction that the overhead couldn't."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 52,
+      "beat_description": "B19I4322.mov @ 530.3s",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "B19I4322.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 with no VLM/frame data and the prior shot also front, this reads as a held-camera run continuing rather than a deliberate switch; front at eye-level sells transformation/money-shot moments in late-edit better than a top-down ingredient angle would."
+      },
+      "duration": {
+        "seconds": 4.336999999999989,
+        "reasoning": "4.3s is long for this edit's rhythm (neighbors are 2.3s and 2.6s), suggesting this is an anchor/organic flourish holding through a musical phrase to let a transformation read before the speed-ramp release on the next clip."
+      },
+      "in_point": {
+        "seconds": 66.024,
+        "reasoning": "66.0s into the source likely lands on the moment the flourish resolves (sauce settling, steam peak, melt completing) \u2014 the editor picked the frame where the beautiful accident is most legible, then held."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 53,
+      "beat_description": "B19I4319.mov @ 673.0s",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I4319.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front at eye-level sells the finished dish as a presentation/reveal in plating, showing the plate's silhouette and the garnish/sauce landing on top in a way overhead would flatten."
+      },
+      "duration": {
+        "seconds": 2.5860000000000127,
+        "reasoning": "2.6s gives the finishing beat room to breathe after a 4.3s front hold and before another 3.6s front continuation \u2014 it's a held-camera run on the hero plate, and 2.6s is the middle beat of that phrase."
+      },
+      "in_point": {
+        "seconds": 15.39,
+        "reasoning": "15.4s is where the transformation worth compressing begins (sauce/oil/garnish starting to move or settle) \u2014 the ramp needs runway before the payoff at 18.0s."
+      },
+      "verdict": "added",
+      "confidence": "low",
+      "pipeline_info": "",
+      "effects": "Speed ramp (671.217% base, ramp between 15.4s-18.0s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "671% base compressing ~17s of source into ~2.6s screen time is the signature of an unattended transformation on the finished plate (sauce pooling, oil spreading, steam rising) being sped up to show the change in a single beat. [flourish: organic]"
+    },
+    {
+      "beat_index": 54,
+      "beat_description": "B19I4319.mov @ 675.6s",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I4319.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the same B19I4319.mov clip continuing from the previous beat \u2014 it's a held camera run into the lobster/butter nest, not a switch point."
+      },
+      "duration": {
+        "seconds": 3.6280000000000427,
+        "reasoning": "3.6s of timeline covers 5.6s of source (1.3s\u21924.9s) at 156.8%, giving enough real-time motion to register the transformation before handing off to the 38.8s nest."
+      },
+      "in_point": {
+        "seconds": 1.293,
+        "reasoning": "1.3s picks up exactly where the prior beat's ramp ended (same clip, continuous source), keeping the action unbroken into the nest."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (156.808% base, ramp between 1.3s-4.9s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Speed ramp at 156.8% over an unattended plating/finishing moment is the editor hunting an organic flourish \u2014 compressing a slow real-world transformation into a punchy lead-in before the long butter-melt nest. [flourish: organic]"
+    },
+    {
+      "beat_index": 55,
+      "beat_description": "[NEST] Nest - lobster tail:butter melt @ 736.3s",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "[NEST] Nest - lobster tail:butter melt",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is a nested beauty sequence of butter melting on the lobster tail, and the front/eye-level angle shows the translucent butter slumping and pooling against the shell in a way an overhead flatten would kill; it's the anchor shot because the organic flourish (butter melt transformation) IS the moment."
+      },
+      "duration": {
+        "seconds": 38.78899999999999,
+        "reasoning": "38.8s \u2014 final hero beauty close at the end of the video, so the edit releases tension and lets the speed-ramped transformation breathe to completion; this is the payoff shot, not a beat in a sequence."
+      },
+      "in_point": {
+        "seconds": 0.375,
+        "reasoning": "0.4s \u2014 trimmed just past the head frame to skip any settle/handling artifact and start on clean butter-on-shell before the melt begins, so the ramp has a clear \"before\" state to transform from."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "Nested sequence 'Nest - lobster tail:butter melt' with 2 inner clips",
+      "mogrt_overlaps": [],
+      "correction": null
+    }
+  ]
+}

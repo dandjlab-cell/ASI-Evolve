@@ -1,0 +1,1536 @@
+{
+  "source": "premiere_xml",
+  "source_file": "../../Recipe XMLs/French Onion Mac & Cheese_FINAL XML.xml",
+  "sequence_settings": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 23.976023976023978
+  },
+  "timeline": [
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4717.mov",
+        "in": 9.509,
+        "out": 10.385,
+        "timeline_in_sec": 0.0,
+        "timeline_out_sec": 0.876,
+        "duration_sec": 0.876,
+        "duration_frames": 21,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 115.0,
+              "editorial_note": "punch-in/crop (115.0% vs 50% baseline)"
+            },
+            "position": {
+              "type": "static",
+              "horiz": 0.0130208,
+              "vert": 0.0
+            }
+          }
+        }
+      },
+      "timeline_in_sec": 0.0,
+      "timeline_out_sec": 0.876,
+      "beat_index": 0
+    },
+    {
+      "v1": {
+        "file": "B19I4598.mov",
+        "in": 28.403,
+        "out": 29.363,
+        "timeline_in_sec": 0.876,
+        "timeline_out_sec": 1.835,
+        "duration_sec": 0.959,
+        "duration_frames": 23,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 128.0,
+              "editorial_note": "punch-in/crop (128.0% vs 50% baseline)"
+            },
+            "position": {
+              "type": "static",
+              "horiz": -0.04375,
+              "vert": -0.0537037
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 0.876,
+      "timeline_out_sec": 1.835,
+      "beat_index": 1
+    },
+    {
+      "v1": {
+        "file": "B19I4600.mov",
+        "in": 35.911,
+        "out": 37.412,
+        "timeline_in_sec": 1.835,
+        "timeline_out_sec": 3.337,
+        "duration_sec": 1.501,
+        "duration_frames": 36
+      },
+      "v2": null,
+      "timeline_in_sec": 1.835,
+      "timeline_out_sec": 3.337,
+      "beat_index": 2
+    },
+    {
+      "v1": {
+        "file": "B19I4583.mov",
+        "in": 10.51,
+        "out": 11.803,
+        "timeline_in_sec": 3.337,
+        "timeline_out_sec": 4.63,
+        "duration_sec": 1.293,
+        "duration_frames": 31
+      },
+      "v2": null,
+      "timeline_in_sec": 3.337,
+      "timeline_out_sec": 4.63,
+      "beat_index": 3
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4702.mov",
+        "in": 64.898,
+        "out": 66.149,
+        "timeline_in_sec": 4.63,
+        "timeline_out_sec": 5.881,
+        "duration_sec": 1.251,
+        "duration_frames": 30
+      },
+      "timeline_in_sec": 4.63,
+      "timeline_out_sec": 5.881,
+      "beat_index": 4
+    },
+    {
+      "v1": {
+        "file": "B19I4583.mov",
+        "in": 98.557,
+        "out": 99.808,
+        "timeline_in_sec": 5.881,
+        "timeline_out_sec": 7.132,
+        "duration_sec": 1.251,
+        "duration_frames": 30
+      },
+      "v2": null,
+      "timeline_in_sec": 5.881,
+      "timeline_out_sec": 7.132,
+      "beat_index": 5
+    },
+    {
+      "v1": {
+        "file": "B19I4583.mov",
+        "in": 107.482,
+        "out": 108.734,
+        "timeline_in_sec": 7.132,
+        "timeline_out_sec": 8.383,
+        "duration_sec": 1.251,
+        "duration_frames": 30
+      },
+      "v2": null,
+      "timeline_in_sec": 7.132,
+      "timeline_out_sec": 8.383,
+      "beat_index": 6
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4703.mov",
+        "in": 63.772,
+        "out": 65.566,
+        "timeline_in_sec": 8.383,
+        "timeline_out_sec": 10.177,
+        "duration_sec": 1.793,
+        "duration_frames": 43
+      },
+      "timeline_in_sec": 8.383,
+      "timeline_out_sec": 10.177,
+      "beat_index": 7
+    },
+    {
+      "v1": {
+        "file": "B19I4584.mov",
+        "in": 1.585,
+        "out": 2.753,
+        "timeline_in_sec": 10.177,
+        "timeline_out_sec": 11.345,
+        "duration_sec": 1.168,
+        "duration_frames": 28
+      },
+      "v2": null,
+      "timeline_in_sec": 10.177,
+      "timeline_out_sec": 11.345,
+      "beat_index": 8
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4704.mov",
+        "in": 9.259,
+        "out": 10.26,
+        "timeline_in_sec": 11.345,
+        "timeline_out_sec": 12.346,
+        "duration_sec": 1.001,
+        "duration_frames": 24
+      },
+      "timeline_in_sec": 11.345,
+      "timeline_out_sec": 12.346,
+      "beat_index": 9
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4704.mov",
+        "in": 66.566,
+        "out": 67.442,
+        "timeline_in_sec": 12.346,
+        "timeline_out_sec": 13.222,
+        "duration_sec": 0.876,
+        "duration_frames": 21
+      },
+      "timeline_in_sec": 12.346,
+      "timeline_out_sec": 13.222,
+      "beat_index": 10
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4705.mov",
+        "in": 8.258,
+        "out": 9.343,
+        "timeline_in_sec": 13.222,
+        "timeline_out_sec": 14.306,
+        "duration_sec": 1.084,
+        "duration_frames": 26
+      },
+      "timeline_in_sec": 13.222,
+      "timeline_out_sec": 14.306,
+      "beat_index": 11
+    },
+    {
+      "v1": {
+        "file": "B19I4588.mov",
+        "in": 7.758,
+        "out": 9.134,
+        "timeline_in_sec": 14.306,
+        "timeline_out_sec": 15.682,
+        "duration_sec": 1.376,
+        "duration_frames": 33
+      },
+      "v2": null,
+      "timeline_in_sec": 14.306,
+      "timeline_out_sec": 15.682,
+      "beat_index": 12
+    },
+    {
+      "v1": {
+        "file": "B19I4588.mov",
+        "in": 20.687,
+        "out": 21.98,
+        "timeline_in_sec": 15.682,
+        "timeline_out_sec": 16.975,
+        "duration_sec": 1.293,
+        "duration_frames": 31
+      },
+      "v2": null,
+      "timeline_in_sec": 15.682,
+      "timeline_out_sec": 16.975,
+      "beat_index": 13
+    },
+    {
+      "v1": {
+        "file": "B19I4588.mov",
+        "in": 39.873,
+        "out": 41.416,
+        "timeline_in_sec": 16.975,
+        "timeline_out_sec": 18.518,
+        "duration_sec": 1.543,
+        "duration_frames": 37
+      },
+      "v2": null,
+      "timeline_in_sec": 16.975,
+      "timeline_out_sec": 18.518,
+      "beat_index": 14
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4708.mov",
+        "in": 14.473,
+        "out": 16.266,
+        "timeline_in_sec": 18.518,
+        "timeline_out_sec": 20.312,
+        "duration_sec": 1.793,
+        "duration_frames": 43
+      },
+      "timeline_in_sec": 18.518,
+      "timeline_out_sec": 20.312,
+      "beat_index": 15
+    },
+    {
+      "v1": {
+        "file": "B19I4590.mov",
+        "in": 15.515,
+        "out": 17.226,
+        "timeline_in_sec": 20.312,
+        "timeline_out_sec": 22.022,
+        "duration_sec": 1.71,
+        "duration_frames": 41
+      },
+      "v2": null,
+      "timeline_in_sec": 20.312,
+      "timeline_out_sec": 22.022,
+      "beat_index": 16
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4710.mov",
+        "in": 19.311,
+        "out": 20.771,
+        "timeline_in_sec": 22.022,
+        "timeline_out_sec": 23.482,
+        "duration_sec": 1.46,
+        "duration_frames": 35
+      },
+      "timeline_in_sec": 22.022,
+      "timeline_out_sec": 23.482,
+      "beat_index": 17
+    },
+    {
+      "v1": {
+        "file": "B19I4591.mov",
+        "in": 24.775,
+        "out": 26.193,
+        "timeline_in_sec": 23.482,
+        "timeline_out_sec": 24.9,
+        "duration_sec": 1.418,
+        "duration_frames": 34
+      },
+      "v2": null,
+      "timeline_in_sec": 23.482,
+      "timeline_out_sec": 24.9,
+      "beat_index": 18
+    },
+    {
+      "v1": {
+        "file": "B19I4592.mov",
+        "in": 6.715,
+        "out": 7.966,
+        "timeline_in_sec": 24.9,
+        "timeline_out_sec": 26.151,
+        "duration_sec": 1.251,
+        "duration_frames": 30
+      },
+      "v2": null,
+      "timeline_in_sec": 24.9,
+      "timeline_out_sec": 26.151,
+      "beat_index": 19
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "[NEST] Nest - french onion",
+        "nested": true,
+        "nest_name": "Nest - french onion",
+        "in": 0.0,
+        "out": 2.252,
+        "timeline_in_sec": 26.151,
+        "timeline_out_sec": 28.403,
+        "duration_sec": 2.252,
+        "duration_frames": 54,
+        "inner_clips": [
+          {
+            "file": "AI2I4712.mov",
+            "in": 18.602,
+            "out": 20.02,
+            "timeline_in_sec": 0.0,
+            "timeline_out_sec": 1.418,
+            "duration_sec": 1.418,
+            "duration_frames": 34
+          },
+          {
+            "file": "AI2I4712.mov",
+            "in": 25.484,
+            "out": 25.567,
+            "timeline_in_sec": 1.418,
+            "timeline_out_sec": 1.501,
+            "duration_sec": 0.083,
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I4712.mov",
+            "in": 32.074,
+            "out": 32.157,
+            "timeline_in_sec": 1.501,
+            "timeline_out_sec": 1.585,
+            "duration_sec": 0.083,
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I4712.mov",
+            "in": 38.288,
+            "out": 38.372,
+            "timeline_in_sec": 1.585,
+            "timeline_out_sec": 1.668,
+            "duration_sec": 0.083,
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I4712.mov",
+            "in": 46.88,
+            "out": 46.964,
+            "timeline_in_sec": 1.668,
+            "timeline_out_sec": 1.752,
+            "duration_sec": 0.083,
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I4712.mov",
+            "in": 56.098,
+            "out": 56.181,
+            "timeline_in_sec": 1.752,
+            "timeline_out_sec": 1.835,
+            "duration_sec": 0.083,
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I4712.mov",
+            "in": 61.103,
+            "out": 61.186,
+            "timeline_in_sec": 1.835,
+            "timeline_out_sec": 1.919,
+            "duration_sec": 0.083,
+            "duration_frames": 2
+          },
+          {
+            "file": "AI2I4712.mov",
+            "in": 92.551,
+            "out": 92.884,
+            "timeline_in_sec": 1.919,
+            "timeline_out_sec": 2.252,
+            "duration_sec": 0.334,
+            "duration_frames": 8
+          }
+        ],
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 0,
+                  "time_sec": 0.0,
+                  "value": 100.0
+                },
+                {
+                  "frame": 53,
+                  "time_sec": 2.211,
+                  "value": 114.0
+                }
+              ],
+              "start_value": 100.0,
+              "end_value": 114.0
+            },
+            "position": {
+              "type": "static",
+              "horiz": -0.5,
+              "vert": -0.5
+            }
+          }
+        }
+      },
+      "timeline_in_sec": 26.151,
+      "timeline_out_sec": 28.403,
+      "beat_index": 20
+    },
+    {
+      "v1": {
+        "file": "B19I4594.mov",
+        "in": 6.715,
+        "out": 8.133,
+        "timeline_in_sec": 28.403,
+        "timeline_out_sec": 29.821,
+        "duration_sec": 1.418,
+        "duration_frames": 34,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 119.0,
+              "editorial_note": "punch-in/crop (119.0% vs 50% baseline)"
+            },
+            "position": {
+              "type": "static",
+              "horiz": 0.0,
+              "vert": 0.0458333
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 28.403,
+      "timeline_out_sec": 29.821,
+      "beat_index": 21
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4713.mov",
+        "in": 107.065,
+        "out": 108.65,
+        "timeline_in_sec": 29.821,
+        "timeline_out_sec": 31.406,
+        "duration_sec": 1.585,
+        "duration_frames": 38,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 124.0,
+              "editorial_note": "punch-in/crop (124.0% vs 50% baseline)"
+            }
+          }
+        }
+      },
+      "timeline_in_sec": 29.821,
+      "timeline_out_sec": 31.406,
+      "beat_index": 22
+    },
+    {
+      "v1": {
+        "file": "B19I4594.mov",
+        "in": 109.318,
+        "out": 110.402,
+        "timeline_in_sec": 31.406,
+        "timeline_out_sec": 32.491,
+        "duration_sec": 1.084,
+        "duration_frames": 26
+      },
+      "v2": null,
+      "timeline_in_sec": 31.406,
+      "timeline_out_sec": 32.491,
+      "beat_index": 23
+    },
+    {
+      "v1": {
+        "file": "B19I4594.mov",
+        "in": 170.837,
+        "out": 172.089,
+        "timeline_in_sec": 32.491,
+        "timeline_out_sec": 33.742,
+        "duration_sec": 1.251,
+        "duration_frames": 30
+      },
+      "v2": null,
+      "timeline_in_sec": 32.491,
+      "timeline_out_sec": 33.742,
+      "beat_index": 24
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4713.mov",
+        "in": 202.452,
+        "out": 203.62,
+        "timeline_in_sec": 33.742,
+        "timeline_out_sec": 34.91,
+        "duration_sec": 1.168,
+        "duration_frames": 28
+      },
+      "timeline_in_sec": 33.742,
+      "timeline_out_sec": 34.91,
+      "beat_index": 25
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4714.mov",
+        "in": 5.881,
+        "out": 7.049,
+        "timeline_in_sec": 34.91,
+        "timeline_out_sec": 36.078,
+        "duration_sec": 1.168,
+        "duration_frames": 28
+      },
+      "timeline_in_sec": 34.91,
+      "timeline_out_sec": 36.078,
+      "beat_index": 26
+    },
+    {
+      "v1": {
+        "file": "B19I4595.mov",
+        "in": 59.142,
+        "out": 60.769,
+        "timeline_in_sec": 36.078,
+        "timeline_out_sec": 37.704,
+        "duration_sec": 1.627,
+        "duration_frames": 39
+      },
+      "v2": null,
+      "timeline_in_sec": 36.078,
+      "timeline_out_sec": 37.704,
+      "beat_index": 27
+    },
+    {
+      "v1": {
+        "file": "B19I4595.mov",
+        "in": 112.195,
+        "out": 113.322,
+        "timeline_in_sec": 37.704,
+        "timeline_out_sec": 38.83,
+        "duration_sec": 1.126,
+        "duration_frames": 27
+      },
+      "v2": null,
+      "timeline_in_sec": 37.704,
+      "timeline_out_sec": 38.83,
+      "beat_index": 28
+    },
+    {
+      "v1": {
+        "file": "B19I4595.mov",
+        "in": 194.152,
+        "out": 195.07,
+        "timeline_in_sec": 38.83,
+        "timeline_out_sec": 39.748,
+        "duration_sec": 0.918,
+        "duration_frames": 22
+      },
+      "v2": null,
+      "timeline_in_sec": 38.83,
+      "timeline_out_sec": 39.748,
+      "beat_index": 29
+    },
+    {
+      "v1": {
+        "file": "B19I4595.mov",
+        "in": 204.329,
+        "out": 205.08,
+        "timeline_in_sec": 39.748,
+        "timeline_out_sec": 40.499,
+        "duration_sec": 0.751,
+        "duration_frames": 18,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 138.0,
+              "editorial_note": "punch-in/crop (138.0% vs 50% baseline)"
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 39.748,
+      "timeline_out_sec": 40.499,
+      "beat_index": 30
+    },
+    {
+      "v1": {
+        "file": "B19I4595.mov",
+        "in": 208.083,
+        "out": 209.459,
+        "timeline_in_sec": 40.499,
+        "timeline_out_sec": 41.875,
+        "duration_sec": 1.376,
+        "duration_frames": 33,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 138.0,
+              "editorial_note": "punch-in/crop (138.0% vs 50% baseline)"
+            }
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 40.499,
+      "timeline_out_sec": 41.875,
+      "beat_index": 31
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4714.mov",
+        "in": 223.14,
+        "out": 224.182,
+        "timeline_in_sec": 41.875,
+        "timeline_out_sec": 42.918,
+        "duration_sec": 1.043,
+        "duration_frames": 25
+      },
+      "timeline_in_sec": 41.875,
+      "timeline_out_sec": 42.918,
+      "beat_index": 32
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4714.mov",
+        "in": 236.695,
+        "out": 237.446,
+        "timeline_in_sec": 42.918,
+        "timeline_out_sec": 43.669,
+        "duration_sec": 0.751,
+        "duration_frames": 18
+      },
+      "timeline_in_sec": 42.918,
+      "timeline_out_sec": 43.669,
+      "beat_index": 33
+    },
+    {
+      "v1": {
+        "file": "B19I4596.mov",
+        "in": 20.395,
+        "out": 21.104,
+        "timeline_in_sec": 43.669,
+        "timeline_out_sec": 44.378,
+        "duration_sec": 0.709,
+        "duration_frames": 17
+      },
+      "v2": null,
+      "timeline_in_sec": 43.669,
+      "timeline_out_sec": 44.378,
+      "beat_index": 34
+    },
+    {
+      "v1": {
+        "file": "B19I4596.mov",
+        "in": 24.691,
+        "out": 24.775,
+        "timeline_in_sec": 44.378,
+        "timeline_out_sec": 44.461,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": {
+        "file": "B19I4596.mov",
+        "in": 35.827,
+        "out": 35.994,
+        "timeline_in_sec": 44.378,
+        "timeline_out_sec": 44.544,
+        "duration_sec": 0.167,
+        "duration_frames": 4,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 100.0,
+              "editorial_note": "punch-in/crop (100.0% vs 50% baseline)"
+            }
+          }
+        }
+      },
+      "timeline_in_sec": 44.378,
+      "timeline_out_sec": 44.461,
+      "beat_index": 35
+    },
+    {
+      "v1": {
+        "file": "B19I4596.mov",
+        "in": 28.946,
+        "out": 29.029,
+        "timeline_in_sec": 44.461,
+        "timeline_out_sec": 44.544,
+        "duration_sec": 0.083,
+        "duration_frames": 2
+      },
+      "v2": null,
+      "timeline_in_sec": 44.461,
+      "timeline_out_sec": 44.544,
+      "beat_index": 36
+    },
+    {
+      "v1": {
+        "file": "B19I4596.mov",
+        "in": 36.37,
+        "out": 37.454,
+        "timeline_in_sec": 44.544,
+        "timeline_out_sec": 45.629,
+        "duration_sec": 1.084,
+        "duration_frames": 26
+      },
+      "v2": null,
+      "timeline_in_sec": 44.544,
+      "timeline_out_sec": 45.629,
+      "beat_index": 37
+    },
+    {
+      "v1": {
+        "file": "B19I4596.mov",
+        "in": 76.743,
+        "out": 77.703,
+        "timeline_in_sec": 45.629,
+        "timeline_out_sec": 46.588,
+        "duration_sec": 0.959,
+        "duration_frames": 23
+      },
+      "v2": null,
+      "timeline_in_sec": 45.629,
+      "timeline_out_sec": 46.588,
+      "beat_index": 38
+    },
+    {
+      "v1": {
+        "file": "B19I4596.mov",
+        "in": 101.685,
+        "out": 103.02,
+        "timeline_in_sec": 46.588,
+        "timeline_out_sec": 47.923,
+        "duration_sec": 1.335,
+        "duration_frames": 32
+      },
+      "v2": null,
+      "timeline_in_sec": 46.588,
+      "timeline_out_sec": 47.923,
+      "beat_index": 39
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "[NEST] Nest - french mac and cheese",
+        "nested": true,
+        "nest_name": "Nest - french mac and cheese",
+        "in": 0.0,
+        "out": 2.336,
+        "timeline_in_sec": 47.923,
+        "timeline_out_sec": 50.259,
+        "duration_sec": 2.336,
+        "duration_frames": 56,
+        "inner_clips": [
+          {
+            "file": "AI2I4715.mov",
+            "in": 144.519,
+            "out": 145.729,
+            "timeline_in_sec": 0.0,
+            "timeline_out_sec": 1.21,
+            "duration_sec": 1.21,
+            "duration_frames": 29
+          },
+          {
+            "file": "AI2I4716.mov",
+            "in": 0.0,
+            "out": 1.543,
+            "timeline_in_sec": 1.21,
+            "timeline_out_sec": 2.753,
+            "duration_sec": 1.543,
+            "duration_frames": 37
+          }
+        ],
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 0,
+                  "time_sec": 0.0,
+                  "value": 100.0
+                },
+                {
+                  "frame": 56,
+                  "time_sec": 2.336,
+                  "value": 110.0
+                }
+              ],
+              "start_value": 100.0,
+              "end_value": 110.0
+            },
+            "position": {
+              "type": "static",
+              "horiz": -0.5,
+              "vert": -0.5
+            }
+          }
+        }
+      },
+      "timeline_in_sec": 47.923,
+      "timeline_out_sec": 50.259,
+      "beat_index": 40
+    },
+    {
+      "v1": {
+        "file": "B19I4597.mov",
+        "in": 8.133,
+        "out": 9.301,
+        "timeline_in_sec": 50.259,
+        "timeline_out_sec": 51.426,
+        "duration_sec": 1.168,
+        "duration_frames": 28
+      },
+      "v2": null,
+      "timeline_in_sec": 50.259,
+      "timeline_out_sec": 51.426,
+      "beat_index": 41
+    },
+    {
+      "v1": {
+        "file": "B19I4597.mov",
+        "in": 41.166,
+        "out": 42.334,
+        "timeline_in_sec": 51.426,
+        "timeline_out_sec": 52.594,
+        "duration_sec": 1.168,
+        "duration_frames": 28
+      },
+      "v2": null,
+      "timeline_in_sec": 51.426,
+      "timeline_out_sec": 52.594,
+      "beat_index": 42
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4716.mov",
+        "in": 70.028,
+        "out": 72.322,
+        "timeline_in_sec": 52.594,
+        "timeline_out_sec": 54.888,
+        "duration_sec": 2.294,
+        "duration_frames": 55
+      },
+      "timeline_in_sec": 52.594,
+      "timeline_out_sec": 54.888,
+      "beat_index": 43
+    },
+    {
+      "v1": {
+        "file": "B19I4598.mov",
+        "in": 9.76,
+        "out": 11.053,
+        "timeline_in_sec": 54.888,
+        "timeline_out_sec": 56.181,
+        "duration_sec": 1.293,
+        "duration_frames": 31
+      },
+      "v2": null,
+      "timeline_in_sec": 54.888,
+      "timeline_out_sec": 56.181,
+      "beat_index": 44
+    },
+    {
+      "v1": {
+        "file": "B19I4598.mov",
+        "in": 19.311,
+        "out": 20.562,
+        "timeline_in_sec": 56.181,
+        "timeline_out_sec": 57.432,
+        "duration_sec": 1.251,
+        "duration_frames": 30
+      },
+      "v2": null,
+      "timeline_in_sec": 56.181,
+      "timeline_out_sec": 57.432,
+      "beat_index": 45
+    },
+    {
+      "v1": null,
+      "v2": {
+        "file": "AI2I4717.mov",
+        "in": 12.346,
+        "out": 13.222,
+        "timeline_in_sec": 57.432,
+        "timeline_out_sec": 58.308,
+        "duration_sec": 0.876,
+        "duration_frames": 21,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "static",
+              "value": 127.0,
+              "editorial_note": "punch-in/crop (127.0% vs 50% baseline)"
+            },
+            "position": {
+              "type": "static",
+              "horiz": 0.0130208,
+              "vert": 0.0
+            }
+          }
+        }
+      },
+      "timeline_in_sec": 57.432,
+      "timeline_out_sec": 58.308,
+      "beat_index": 46
+    },
+    {
+      "v1": {
+        "file": "B19I4600.mov",
+        "in": 48.006,
+        "out": 51.385,
+        "timeline_in_sec": 58.308,
+        "timeline_out_sec": 61.728,
+        "duration_sec": 3.42,
+        "duration_frames": 82,
+        "effects": {
+          "speed": {
+            "speed_percent": 75.0,
+            "reverse": false,
+            "type": "speed_ramp",
+            "keyframes": [
+              {
+                "frame": 0,
+                "time_sec": 0.0,
+                "value": 0,
+                "type": "start"
+              },
+              {
+                "frame": 1151,
+                "time_sec": 48.006,
+                "value": 863,
+                "type": "ramp_in"
+              },
+              {
+                "frame": 1232,
+                "time_sec": 51.385,
+                "value": 924,
+                "type": "ramp_out"
+              },
+              {
+                "frame": 5593,
+                "time_sec": 233.275,
+                "value": 4194,
+                "type": "end"
+              }
+            ]
+          }
+        }
+      },
+      "v2": null,
+      "timeline_in_sec": 58.308,
+      "timeline_out_sec": 61.728,
+      "beat_index": 47
+    }
+  ],
+  "editorial_techniques": {
+    "speed_ramps": [
+      {
+        "file": "B19I4600.mov",
+        "timeline_in_sec": 58.308,
+        "timeline_out_sec": 61.728,
+        "speed_percent": 75.0,
+        "keyframes": [
+          {
+            "frame": 0,
+            "time_sec": 0.0,
+            "value": 0,
+            "type": "start"
+          },
+          {
+            "frame": 1151,
+            "time_sec": 48.006,
+            "value": 863,
+            "type": "ramp_in"
+          },
+          {
+            "frame": 1232,
+            "time_sec": 51.385,
+            "value": 924,
+            "type": "ramp_out"
+          },
+          {
+            "frame": 5593,
+            "time_sec": 233.275,
+            "value": 4194,
+            "type": "end"
+          }
+        ]
+      }
+    ],
+    "slow_motion": [],
+    "scale_adjustments": [
+      {
+        "file": "B19I4598.mov",
+        "timeline_in_sec": 0.876,
+        "timeline_out_sec": 1.835,
+        "value": 128.0,
+        "editorial_note": "punch-in/crop (128.0% vs 50% baseline)"
+      },
+      {
+        "file": "B19I4594.mov",
+        "timeline_in_sec": 28.403,
+        "timeline_out_sec": 29.821,
+        "value": 119.0,
+        "editorial_note": "punch-in/crop (119.0% vs 50% baseline)"
+      },
+      {
+        "file": "B19I4595.mov",
+        "timeline_in_sec": 39.748,
+        "timeline_out_sec": 40.499,
+        "value": 138.0,
+        "editorial_note": "punch-in/crop (138.0% vs 50% baseline)"
+      },
+      {
+        "file": "B19I4595.mov",
+        "timeline_in_sec": 40.499,
+        "timeline_out_sec": 41.875,
+        "value": 138.0,
+        "editorial_note": "punch-in/crop (138.0% vs 50% baseline)"
+      },
+      {
+        "file": "AI2I4717.mov",
+        "timeline_in_sec": 0.0,
+        "timeline_out_sec": 0.876,
+        "value": 115.0,
+        "editorial_note": "punch-in/crop (115.0% vs 50% baseline)"
+      },
+      {
+        "file": "AI2I4713.mov",
+        "timeline_in_sec": 29.821,
+        "timeline_out_sec": 31.406,
+        "value": 124.0,
+        "editorial_note": "punch-in/crop (124.0% vs 50% baseline)"
+      },
+      {
+        "file": "B19I4596.mov",
+        "timeline_in_sec": 44.378,
+        "timeline_out_sec": 44.544,
+        "value": 100.0,
+        "editorial_note": "punch-in/crop (100.0% vs 50% baseline)"
+      },
+      {
+        "file": "AI2I4717.mov",
+        "timeline_in_sec": 57.432,
+        "timeline_out_sec": 58.308,
+        "value": 127.0,
+        "editorial_note": "punch-in/crop (127.0% vs 50% baseline)"
+      }
+    ],
+    "animated_zooms": [
+      {
+        "file": "[NEST] Nest - french onion",
+        "timeline_in_sec": 26.151,
+        "timeline_out_sec": 28.403,
+        "start_value": 100.0,
+        "end_value": 114.0,
+        "keyframes": [
+          {
+            "frame": 0,
+            "time_sec": 0.0,
+            "value": 100.0
+          },
+          {
+            "frame": 53,
+            "time_sec": 2.211,
+            "value": 114.0
+          }
+        ]
+      },
+      {
+        "file": "[NEST] Nest - french mac and cheese",
+        "timeline_in_sec": 47.923,
+        "timeline_out_sec": 50.259,
+        "start_value": 100.0,
+        "end_value": 110.0,
+        "keyframes": [
+          {
+            "frame": 0,
+            "time_sec": 0.0,
+            "value": 100.0
+          },
+          {
+            "frame": 56,
+            "time_sec": 2.336,
+            "value": 110.0
+          }
+        ]
+      }
+    ],
+    "nested_sequences": [
+      {
+        "nest_name": "Nest - french onion",
+        "timeline_in_sec": 26.151,
+        "timeline_out_sec": 28.403,
+        "inner_clip_count": 8,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 0,
+                  "time_sec": 0.0,
+                  "value": 100.0
+                },
+                {
+                  "frame": 53,
+                  "time_sec": 2.211,
+                  "value": 114.0
+                }
+              ],
+              "start_value": 100.0,
+              "end_value": 114.0
+            },
+            "position": {
+              "type": "static",
+              "horiz": -0.5,
+              "vert": -0.5
+            }
+          }
+        }
+      },
+      {
+        "nest_name": "Nest - french mac and cheese",
+        "timeline_in_sec": 47.923,
+        "timeline_out_sec": 50.259,
+        "inner_clip_count": 2,
+        "effects": {
+          "motion": {
+            "scale": {
+              "type": "animated",
+              "keyframes": [
+                {
+                  "frame": 0,
+                  "time_sec": 0.0,
+                  "value": 100.0
+                },
+                {
+                  "frame": 56,
+                  "time_sec": 2.336,
+                  "value": 110.0
+                }
+              ],
+              "start_value": 100.0,
+              "end_value": 110.0
+            },
+            "position": {
+              "type": "static",
+              "horiz": -0.5,
+              "vert": -0.5
+            }
+          }
+        }
+      }
+    ],
+    "stop_motion_sequences": [
+      {
+        "clip_count": 3,
+        "timeline_in_sec": 44.378,
+        "timeline_out_sec": 44.544,
+        "avg_duration_frames": 2.7,
+        "clips": [
+          {
+            "file": "B19I4596.mov",
+            "duration_frames": 2
+          },
+          {
+            "file": "B19I4596.mov",
+            "duration_frames": 4
+          },
+          {
+            "file": "B19I4596.mov",
+            "duration_frames": 2
+          }
+        ]
+      }
+    ],
+    "camera_alternation": {
+      "total_clips": 49,
+      "front_count": 32,
+      "overhead_count": 17,
+      "front_pct": 65.3,
+      "overhead_pct": 34.7,
+      "alternation_count": 25,
+      "avg_run_length": 1.9,
+      "max_run_length": 7,
+      "runs": [
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 3
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 2
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 1
+        },
+        {
+          "camera": "overhead",
+          "run_length": 3
+        },
+        {
+          "camera": "front",
+          "run_length": 3
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 1
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 2
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 1
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 2
+        },
+        {
+          "camera": "overhead",
+          "run_length": 2
+        },
+        {
+          "camera": "front",
+          "run_length": 5
+        },
+        {
+          "camera": "overhead",
+          "run_length": 2
+        },
+        {
+          "camera": "front",
+          "run_length": 7
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 2
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 2
+        },
+        {
+          "camera": "overhead",
+          "run_length": 1
+        },
+        {
+          "camera": "front",
+          "run_length": 1
+        }
+      ]
+    }
+  },
+  "production_layers": {
+    "mogrts": [
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 3.337,
+        "timeline_out_sec": 4.63,
+        "duration_sec": 1.293
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 4.63,
+        "timeline_out_sec": 5.881,
+        "duration_sec": 1.251
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 5.881,
+        "timeline_out_sec": 7.132,
+        "duration_sec": 1.251
+      },
+      {
+        "file": "K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 8.383,
+        "timeline_out_sec": 10.177,
+        "duration_sec": 1.793
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 14.306,
+        "timeline_out_sec": 15.682,
+        "duration_sec": 1.376
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 15.682,
+        "timeline_out_sec": 16.975,
+        "duration_sec": 1.293
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 18.518,
+        "timeline_out_sec": 20.312,
+        "duration_sec": 1.793
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 22.022,
+        "timeline_out_sec": 23.482,
+        "duration_sec": 1.46
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 23.482,
+        "timeline_out_sec": 24.9,
+        "duration_sec": 1.418
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 28.403,
+        "timeline_out_sec": 29.821,
+        "duration_sec": 1.418
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 29.821,
+        "timeline_out_sec": 31.406,
+        "duration_sec": 1.585
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 33.742,
+        "timeline_out_sec": 34.91,
+        "duration_sec": 1.168
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 36.078,
+        "timeline_out_sec": 37.704,
+        "duration_sec": 1.627
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 39.748,
+        "timeline_out_sec": 40.499,
+        "duration_sec": 0.751
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 40.499,
+        "timeline_out_sec": 41.875,
+        "duration_sec": 1.376
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 43.669,
+        "timeline_out_sec": 44.544,
+        "duration_sec": 0.876
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 46.588,
+        "timeline_out_sec": 47.923,
+        "duration_sec": 1.335
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 49.132,
+        "timeline_out_sec": 50.259,
+        "duration_sec": 1.126
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 50.259,
+        "timeline_out_sec": 51.426,
+        "duration_sec": 1.168
+      },
+      {
+        "file": "K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 51.426,
+        "timeline_out_sec": 52.594,
+        "duration_sec": 1.168
+      },
+      {
+        "file": "K SEO_Cook Times/K SEO_Cook Times.aegraphic",
+        "track": "V5",
+        "timeline_in_sec": 53.095,
+        "timeline_out_sec": 54.888,
+        "duration_sec": 1.793
+      }
+    ],
+    "title_cards": [
+      {
+        "file": "K_Title Overlay_2023.png",
+        "track": "V7",
+        "timeline_in_sec": 0.0,
+        "timeline_out_sec": 3.337,
+        "duration_sec": 3.337
+      },
+      {
+        "file": "Creamy Pumpkin Soup_Title.png",
+        "track": "V8",
+        "timeline_in_sec": 0.0,
+        "timeline_out_sec": 3.337,
+        "duration_sec": 3.337
+      },
+      {
+        "file": "Graphic",
+        "track": "V9",
+        "timeline_in_sec": 0.0,
+        "timeline_out_sec": 3.337,
+        "duration_sec": 3.337
+      }
+    ],
+    "watermarks": [
+      {
+        "file": "The Kitchn Watermark 2023 (2).png",
+        "track": "V4",
+        "timeline_in_sec": 3.337,
+        "timeline_out_sec": 58.308,
+        "duration_sec": 54.972
+      }
+    ]
+  }
+}

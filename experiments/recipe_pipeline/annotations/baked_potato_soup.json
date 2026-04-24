@@ -1,0 +1,932 @@
+{
+  "recipe": "baked_potato_soup",
+  "global_notes": "At ~1.15s per beat across 48 cuts in 55 seconds, this is a brisk, tightly-cut edit that lives on the downbeat \u2014 the editor is treating the track as the spine and the recipe as the payload. The roughly 50/50 front/overhead split suggests a disciplined grammar: overheads for ingredient reveals, measuring, and stirring (where geometry reads cleaner top-down), and fronts for hero moments and texture cues like steam, pour arcs, and the final plating where depth sells the transformation.\n\nThe verdict ratio (32 added vs 2 editorial_group) tells the real story \u2014 the editor aggressively inserted cuts beyond the base coverage, which usually means flash inserts and micro-beats layered into prep/technique sections to keep the midsection from sagging. That pattern typically translates to a measured opener, an accelerating prep block with angle-swapping on consecutive beats, a breath around the bake/transformation, and a punchy plating run-out synced to the track's final phrase.\n\nWithout speed-ramp or stop-motion flags in the metadata, I'd read this as a cuts-driven edit rather than an effects-driven one \u2014 rhythm and angle variety are doing the work that ramps would do elsewhere. The overall signature: music-first, dense but legible, and confident enough to let camera alternation carry energy instead of leaning on post tricks.",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (2 shots): Finished soup bowl hero, 3/4 angle, title card \"Loaded Baked Potato Soup\" + the kitchn logo \u2192 Hand (dark nail polish) setting bowl down, 3/4 hero \u2192 Hand pulls away, bowl settled, 3/4 hero",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I4267.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front 3/4 hero is the anchor shot \u2014 it's the finished-dish beauty take with title card composited onto it, so this angle is non-negotiable for a beauty opener; overhead wouldn't sell the steam, toppings, or bowl depth."
+      },
+      "duration": {
+        "seconds": 3.337,
+        "reasoning": "3.3s holds long enough for viewers to read \"Loaded Baked Potato Soup\" + logo and register the hero before the stop-motion ingredient sequence begins."
+      },
+      "in_point": {
+        "seconds": 75.158,
+        "reasoning": "75.2s lands right as the hand is already placing/releasing the bowl, giving a settled hero with subtle motion (hand pulling away) rather than a dead static frame."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (89.0% vs 50% baseline); Reframed (offset h:0.01 v:-0.06)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-3.3s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.3s)",
+        "Title Cards: Graphic (0.0s-3.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 89% punch-in plus tiny h:0.01/v:-0.06 reframe recomposes the 3/4 hero so the bowl and title lockup sit correctly in frame \u2014 a functional reframe for title-safe composition, not an organic transformation, and no speed ramp is present."
+    },
+    {
+      "beat_index": 2,
+      "beat_description": "ingredient (9 clips): Empty enameled Dutch oven (teal), MOGRT text \"Bacon\" top-left \u2192 Empty Dutch oven, same framing \u2192 3 raw bacon strips appear in pot (stop-motion pop-in)",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4224.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.209,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 7.341,
+        "reasoning": ""
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (3.3s-4.5s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "Bacon sizzling/cooking in pot, fat rendering, strips pale",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "AI2I4225.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the transformation being sold \u2014 fat rendering out and strips going pale in the pot \u2014 reads top-down where you can see the liquid pooling and all six strips at once; eye-level would hide the rendered fat behind the Dutch oven wall."
+      },
+      "duration": {
+        "seconds": 0.45899999999999963,
+        "reasoning": "0.5s because this is a money-shot stop-motion beat inside a fast cooking montage \u2014 long enough to register the sizzle state, short enough to keep the speed-ramped transformation moving to the next cook stage."
+      },
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "0.0s of the source lands right at the cooking cut after the arrangement completes at 4.1s, catching the first frame where the bacon reads as actively rendering rather than static-arranged."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "Bacon crisping, browned edges, curling in rendered fat",
+      "beat_type": "",
+      "recipe_section": "transformation",
+      "filename": "AI2I4226.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a transformation moment \u2014 the browning edges and curling in rendered fat only read from top-down; a front angle would flatten the fat pool and hide the curl, so this is the best-take anchor for showing the bacon's change of state."
+      },
+      "duration": {
+        "seconds": 0.5419999999999998,
+        "reasoning": "0.5s matches the surrounding ingredient-dump/transformation cadence on the beat and gives just enough time to register the crisped texture before cutting to the 0.1s front shot that snaps energy forward."
+      },
+      "in_point": {
+        "seconds": 89.298,
+        "reasoning": "89.3s lands on the frame where the edges are already browned and curling in the fat pool \u2014 past the raw-looking phase, at the peak-readable \"crisped\" moment, so the viewer instantly registers \"done\" rather than \"cooking.\""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "Tighter push-in on crisped bacon in fat, no MOGRT",
+      "beat_type": "",
+      "recipe_section": "transformation",
+      "filename": "B19I4253.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The metadata says \"front\" but the frame-by-frame scan shows OVERHEAD \u2014 this is an overhead tight push-in on the bacon in fat, which is the correct angle because the transformation being sold (crisp texture + fat pooling) reads from the top-down, not eye-level; it's a held-camera continuation of the prior overhead beat, not a switch."
+      },
+      "duration": {
+        "seconds": 0.125,
+        "reasoning": "0.1s is a flash insert \u2014 a single-beat tighter reframe on the same overhead to punch the \"it's done\" moment before cutting to the front at 1.0s, keeping the held overhead run from going stale via a zoom/reframe rather than a camera switch (rule 3)."
+      },
+      "in_point": {
+        "seconds": 47.464,
+        "reasoning": "47.5s lands on the frame where the bacon is fully crisped and sitting in a visible pool of rendered fat \u2014 the payoff frame of the render, chosen as the anchor instant for the transformation section before handing off to the front angle."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "Tighter push-in on crisped bacon in fat, no MOGRT",
+      "beat_type": "",
+      "recipe_section": "transformation",
+      "filename": "B19I4253.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front here is the anchor \u2014 the tighter push-in on crisped bacon sitting in the rendered fat is the best-take version of \"bacon is done,\" and it's the payoff shot the surrounding beats are built around (note: the frame-by-frame labels this OVERHEAD, which contradicts the metadata; if the shot is actually overhead, the reasoning is the same \u2014 it's the anchor for the \"bacon fully rendered\" moment, not a camera-alternation choice)."
+      },
+      "duration": {
+        "seconds": 1.0010000000000003,
+        "reasoning": "1.0s lets the tighter, fully-crisped bacon register as a distinct beat from the previous 0.1s flash and gives the viewer time to read the transformation before cutting to the draining beat \u2014 no MOGRT means duration is paced to the visual, not to text reading time."
+      },
+      "in_point": {
+        "seconds": 47.589,
+        "reasoning": "47.6s is the frame where the push-in has settled on the crisped bacon in the fat pool \u2014 the bacon is fully browned and the fat is visibly rendered, which is the exact \"done\" state this anchor needs to sell."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 15,
+      "beat_description": "Crisp bacon pieces on white paper towel (drained), 2 pieces",
+      "beat_type": "",
+      "recipe_section": "transformation",
+      "filename": "B19I4253.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The frame content (paper towel with bacon viewed top-down, tongs descending vertically) is actually overhead, not front \u2014 overhead is correct here because draining/placement reads top-down, and this sits inside a held-overhead run that continues into the onion dump at 8.5s, so it's part of a sustained overhead camera hold through the transformation-to-ingredient handoff, not a switch point."
+      },
+      "duration": {
+        "seconds": 1.6690000000000005,
+        "reasoning": "1.7s covers the tongs-place action plus a brief hold on three drained pieces, giving the viewer time to register \"bacon is done/drained\" before the onion dump cuts in \u2014 shorter would skip the resolution beat, longer would stall before the ingredient intro."
+      },
+      "in_point": {
+        "seconds": 102.06,
+        "reasoning": "102.1s starts just as the drained bacon is settled and the tongs are about to place the third piece, so the cut opens on a readable \"drained bacon\" state and immediately delivers an action beat (tongs placing) rather than opening on empty towel or mid-motion."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "ingredient (1 clips): Hand with glass bowl dumping diced yellow onion into rendered fat in pot, MOGRT \"Yellow onion\" \u2192 Tilted bowl above pot, onion cascading into fat \u2192 Bowl gone, pile of diced onion on pot bottom in rendered fat",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4255.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a switch point \u2014 beats 4\u20137 are a held front run during the ingredient dump sequence, and front at eye-level sells the bowl-tilt-and-cascade action (arm motion, falling onion stream) better than a top-down would, which would flatten the pour into a static dump."
+      },
+      "duration": {
+        "seconds": 1.5009999999999994,
+        "reasoning": "1.5s covers the time needed to read the \"Yellow onion\" MOGRT cleanly (two words, ~1.2\u20131.5s read) while also containing the full pour arc from tilted bowl to empty bowl."
+      },
+      "in_point": {
+        "seconds": 2.669,
+        "reasoning": "2.7s lands right as the bowl reaches its tilt angle and onion starts cascading \u2014 skipping the dead approach frames and entering on the action that matches the text reveal."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (8.3s-9.8s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "Wooden spoon stirring onion into fat, close tight on pot",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4255.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Overhead \u2014 this is a held-camera run continuing from the prior overhead dump (rule 3), and top-down is the only angle that actually shows the spoon folding onion into the rendered fat in the pot."
+      },
+      "duration": {
+        "seconds": 1.6270000000000007,
+        "reasoning": "1.6s is just long enough to register the state change from \"pile of onion sitting in fat\" to \"stirring/cooking has begun\" before the next ingredient intro takes over."
+      },
+      "in_point": {
+        "seconds": 66.525,
+        "reasoning": "66.5s lands on the spoon already engaged with the onion mid-stir, so the cut reads as cooking-in-progress rather than a static pile."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "ingredient (1 clips): Glass measuring cup pouring chicken broth into pot, MOGRT \"Low-sodium chicken broth\" \u2192 Broth pour continues, broth level rising \u2192 Broth still pouring, onion floating, more liquid",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4228.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the broth pour is a top-down ingredient reveal \u2014 you need to see liquid hitting the pot surface and the level rising, which a front eye-level angle would flatten; it's also a held-camera run (beat 9 within a stretch of overheads) consistent with the \"hold camera across dumps\" rule."
+      },
+      "duration": {
+        "seconds": 1.4179999999999993,
+        "reasoning": "1.4s covers the time needed to read \"Low-sodium chicken broth\" MOGRT, and the 50% speed ramp stretches the pour action so the text can breathe without the liquid arriving too fast."
+      },
+      "in_point": {
+        "seconds": 9.426,
+        "reasoning": "9.4s lands just as the broth stream is established and hitting the pot \u2014 past the awkward pre-pour tilt, into the clean continuous pour that reads instantly as \"broth.\""
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 9.4s-10.8s); punch-in/crop (60.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (11.5s-12.9s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Speed ramp slows the pour to let the rising broth level and floating onion register as a small transformation moment (liquid filling, onion lifting) while the MOGRT is up; the 60% punch-in tightens on the pot to keep the stream and label readable \u2014 this is an unattended pouring/pooling transformation, not a timing nudge. [flourish: organic]"
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "ingredient (1 clips): Milk pouring into broth mixture (white stream), MOGRT \"Whole milk\" \u2192 Milk pour continues, white swirl into yellow broth \u2192 Milk still pouring, more white in frame",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4257.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The frame-by-frame shows OVERHEAD, not front \u2014 this contradicts the metadata label, but an overhead angle is the correct choice here because the white milk stream swirling into yellow broth is a top-down transformation that only reads from above; it's a held-camera continuation of the overhead pour run, not a switch."
+      },
+      "duration": {
+        "seconds": 1.4600000000000009,
+        "reasoning": "1.5s covers the two words \"Whole milk\" at a comfortable read speed, and the 50% speed ramp stretches ~0.7s of real pour into screen time so the swirl visibly blooms before the MOGRT clears."
+      },
+      "in_point": {
+        "seconds": 23.857,
+        "reasoning": "23.9s lands right as the milk stream first hits the broth surface \u2014 the cleanest entry frame where white meets yellow, giving the swirl room to develop on screen rather than entering mid-pour."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 23.9s-25.3s)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (12.9s-14.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Milk hitting broth and swirling is an unattended organic transformation (no hand, no spoon, just liquid behavior), so the ramp is there to let that bloom register \u2014 not to fix timing. [flourish: organic]"
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "Milk fully combined, wooden spoon stirring milky soup base with onion chunks, MOGRT off",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "AI2I4229.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is part of a held ingredient-dump run \u2014 the editor is staying top-down to show milk integrating into the onion base, which a front eye-level angle wouldn't reveal. (medium)"
+      },
+      "duration": {
+        "seconds": 1.4589999999999996,
+        "reasoning": "1.5s matches the surrounding ingredient beats (prev 1.5s, next 1.4s); with the 50% speed ramp, 1.5s of timeline consumes ~1.5s of source across the ramp window 43.5\u201345.0s. (high)"
+      },
+      "in_point": {
+        "seconds": 43.543,
+        "reasoning": "43.5s is the stir-in moment where the milk has just fully combined and the spoon is actively folding \u2014 the cleanest \"milk is now soup base\" read before salt enters. (high)"
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 43.5s-45.0s); punch-in/crop (65.0% vs 50% baseline); Reframed (offset h:0.00 v:0.02)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Functional \u2014 the spoon stir is an attended action (hand-driven), not an unattended transformation; the 50% ramp stretches the stir to fill the musical beat, and the 65% punch-in tightens on the swirling milk/onion texture since the baseline overhead is too wide to read the combining. [flourish: functional]"
+    },
+    {
+      "beat_index": 21,
+      "beat_description": "ingredient (1 clips): Salt pouring in white stream from measuring spoon/cup, MOGRT \"Kosher salt\" \u2192 Salt pour continues \u2192 Pile of freshly ground black pepper visible center on soup surface, MOGRT \"Freshly ground black pepper\"",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4257.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.4189999999999987,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 71.488,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 71.5s-72.9s)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (15.8s-17.2s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 22,
+      "beat_description": "ingredient (1 clips): Pile of freshly ground black pepper visible center on soup surface, MOGRT \"Freshly ground black pepper\" \u2192 Black pepper pile still visible, tiny movement in soup \u2192 Wooden spoon entering from lower right, stirring pepper in",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4229.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because we're mid-ingredient-dump run and the editor is holding overhead across the dump beats (this is beat 13, surrounded by overhead on both sides in the local run); top-down is also the only angle that reads a flat pile of pepper on the soup surface \u2014 eye-level would lose the pile against the rim."
+      },
+      "duration": {
+        "seconds": 1.6679999999999993,
+        "reasoning": "1.7s covers the time needed to read the MOGRT \"Freshly ground black pepper\" (four words, longest ingredient string in this stretch), and the 50% base speed ramp stretches the visible stir-in so the text hold and the action resolve together."
+      },
+      "in_point": {
+        "seconds": 90.09,
+        "reasoning": "90.1s lands on the pepper pile already settled and centered with no hand in frame \u2014 a clean plate for the MOGRT to pop onto before the spoon enters from lower right."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 90.1s-91.8s); punch-in/crop (72.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (17.2s-18.9s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Speed ramp is functional \u2014 it's timing the shot to the MOGRT read and the beat length, not showcasing an unattended transformation (the spoon enters and stirs, this is an attended action); the 72% punch-in tightens onto the pepper pile so it's legible against the wide soup surface. [flourish: functional]"
+    },
+    {
+      "beat_index": 23,
+      "beat_description": "Spoon upper left, pepper swirled, tighter framing",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4257.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "The metadata labels this \"front\" but the frame-by-frame clearly shows overhead (spoon visible from above, pepper swirled on surface) \u2014 this is a held-camera continuation of the overhead ingredient-dump run, not a switch, so the angle stays overhead to keep the stir action legible from the only angle that reads the swirl pattern."
+      },
+      "duration": {
+        "seconds": 1.6260000000000012,
+        "reasoning": "1.6s covers the tight swirl moment through the spoon-lift, with the 50% speed ramp stretching ~0.8s of source into screen time so the pepper dispersion reads without feeling rushed before the wider simmer beat."
+      },
+      "in_point": {
+        "seconds": 87.421,
+        "reasoning": "87.4s lands on the tightest framing with the spoon parked upper-left and pepper mid-swirl \u2014 the peak graphic moment of the stir where the black flecks are most visible against the milky soup."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 87.4s-89.0s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The ramp slows an unattended transformation (pepper dispersing/swirling into the soup surface) \u2014 a found organic moment the editor stretched to let the pattern bloom, not a timing nudge. [flourish: organic]"
+    },
+    {
+      "beat_index": 24,
+      "beat_description": "Wide overhead of simmering milky soup in pot, foamy surface, onion bits visible",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4230.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is the best take of the simmer moment \u2014 the foamy surface and dispersed pepper read only from top-down; an eye-level front shot would just show a pot rim."
+      },
+      "duration": {
+        "seconds": 1.2929999999999993,
+        "reasoning": "1.3s holds long enough to register the simmer state and let the pepper settle visually, then cuts before the static shot goes dead ahead of the potato dump."
+      },
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "0.0s starts at the cleanest frame of the simmer with foam and onion bits clearly visible, giving the viewer an immediate read on the soup's current state."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (70.0% vs 50% baseline); Reframed (offset h:0.01 v:0.00)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 70% and a tiny reframe tighten the composition on the foamy center and onion bits \u2014 this is a functional reframe on an attended simmer beat, not an unattended transformation, and there's no speed ramp."
+    },
+    {
+      "beat_index": 25,
+      "beat_description": "ingredient (1 clips): Diced russet potato chunks cascading into soup from bowl (upper right), MOGRT \"Russet potatoes\" \u2192 Potato dump continues, more chunks falling, bowl visible upper right \u2192 Potato dump continues, bowl tipped, chunks still falling",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4259.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front was the best-take pick for this potato cascade \u2014 it shows the chunks arcing down in profile with visible falling motion, which reads more kinetically than a top-down would, and it functions as a switch point breaking the prior overhead pair before returning to overhead next."
+      },
+      "duration": {
+        "seconds": 2.1690000000000005,
+        "reasoning": "2.2s is driven by MOGRT \"Russet potatoes\" readability (two words, needs ~2s on screen) plus covering the full bowl-tip cascade; the 50% speed ramp stretches ~1.1s of real action to fill that read window."
+      },
+      "in_point": {
+        "seconds": 24.858,
+        "reasoning": "24.9s starts right as the first chunks break the bowl's lip and begin cascading \u2014 the cleanest entry into the dump action, skipping any pre-tip hesitation."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 24.9s-27.0s)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (21.8s-24.0s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Speed ramp slows the cascade to let the viewer register the dice shape and quantity while the MOGRT is read \u2014 it's stretching an attended pour action for timing/readability, not savoring an unattended transformation. [flourish: functional]"
+    },
+    {
+      "beat_index": 26,
+      "beat_description": "Wide overhead of milky soup with bits of onion, potato now submerged/simmering",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4231.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a switch point \u2014 the prior ingredient dump run was overhead, and the simmer reveal needs a top-down view to show the soup's milky surface with onion/potato submerged, which eye-level can't reveal."
+      },
+      "duration": {
+        "seconds": 2.0440000000000005,
+        "reasoning": "2.0s holds long enough to register the state change (raw dumps \u2192 cooked simmer) and let the creamy texture read before cutting tighter on the spoon beat."
+      },
+      "in_point": {
+        "seconds": 28.195,
+        "reasoning": "28.2s lands on the wide simmer after the last potato has fully settled \u2014 surface is uniform and milky, no lingering cascade motion from the dump."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (69.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "69% punch-in crops out pot edges and tightens on the soup surface so the onion dice and creamy texture read clearly at this duration \u2014 functional reframe, no ramp."
+    },
+    {
+      "beat_index": 27,
+      "beat_description": "Tight shot of creamy soup, wooden spoon center, potato chunks visible right",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4260.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is a switch point and likely the anchor for this mini-section; the low-angle front on the spoon lift shows chunks suspended against soup and reveals consistency/drip, which the overhead flattens into a top-down puddle."
+      },
+      "duration": {
+        "seconds": 1.7929999999999993,
+        "reasoning": "1.8s gives the beauty hero room to breathe \u2014 long enough to register the lift, the suspended chunks, and the drip back \u2014 without overstaying before the masher cut."
+      },
+      "in_point": {
+        "seconds": 7.341,
+        "reasoning": "7.3s lands on the peak of the spoon lift where potato chunks are held above the surface and soup is actively falling, the single frame that sells \"creamy + chunky.\""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 28,
+      "beat_description": "ingredient (1 clips): Potato masher entering creamy soup, \"Mash for a chunky texture\" MOGRT appears \u2192 Masher pressed down into soup, tip MOGRT holding \u2192 Masher lifted slightly, hand visible top, tip MOGRT",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4260.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this beat sits inside a long held-front run (positions 14\u201324 of the dump sequence are almost all front) \u2014 holding the camera across dumps per rule 3, not switching back to overhead just because the action is vertical."
+      },
+      "duration": {
+        "seconds": 4.379999999999999,
+        "reasoning": "4.4s to let the \"Mash for a chunky texture\" tip MOGRT breathe long enough to read the full phrase, which is longer than the physical mashing action would require on its own."
+      },
+      "in_point": {
+        "seconds": 32.741,
+        "reasoning": "32.7s lands just after the front wooden-spoon texture-check beauty moment (32.0\u201332.5s) \u2014 picking up when the spoon/masher action is clearly legible in frame and the tip MOGRT is anchored for reading."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Tip Bubble_MOGRT/K SEO_Tip Bubble_MOGRT.aegraphic (27.8s-32.2s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 29,
+      "beat_description": "Wooden spoon stirring smooth creamy soup, no chunks visible",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4261.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor here \u2014 it's the best take for selling \"smooth, no chunks\" because the eye-level angle reads the soup's texture and the spoon's drag through it, which overhead would flatten into a uniform orange circle."
+      },
+      "duration": {
+        "seconds": 1.3340000000000032,
+        "reasoning": "1.3s holds just long enough to register the smoothness and confirm the blend worked before the cheddar dump takes over; any longer and the texture-check beat overstays before the next ingredient lands."
+      },
+      "in_point": {
+        "seconds": 6.256,
+        "reasoning": "6.3s into the source lands on the spoon mid-stir with the surface already visibly smooth \u2014 past the messy initial swirl, before the spoon lifts, so the frame reads \"blended\" instantly on the cut."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 30,
+      "beat_description": "ingredient (1 clips): Shredded cheddar cheese being poured/dumped into pot, \"Cheddar cheese\" label \u2192 Cheddar pile settled on surface of soup, \"Cheddar cheese\" label holds \u2192 Cheddar pile slightly more spread, \"Cheddar cheese\" label",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4262.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.918999999999997,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 12.137,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (33.5s-35.5s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 31,
+      "beat_description": "Wooden spoon entering from top-left starting to stir cheese",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4262.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Overhead is the held camera for this cheese-integration run \u2014 the stir action reads as a top-down graphic (orange streaks through soup) that a front angle would flatten into an obscured rim view."
+      },
+      "duration": {
+        "seconds": 1.5020000000000024,
+        "reasoning": "1.5s covers one full stir sweep (spoon enters \u2192 mid-stir \u2192 streaks visible) before cutting out the moment the sour cream tub tilts in with its MOGRT \u2014 just long enough to register \"cheese is now integrated.\""
+      },
+      "in_point": {
+        "seconds": 21.104,
+        "reasoning": "21.1s into the source lands on the spoon breaking frame from top-left with the cheddar label already gone \u2014 the cleanest \"action begins\" frame, avoiding the dead tail of the dissolve and the label still being up."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 32,
+      "beat_description": "ingredient (1 clips): Tub of sour cream tilting over soup surface, \"Sour cream\" label appears \u2192 Sour cream dollop mid-dump, falling from container \u2192 Sour cream partially dumped, tail of cream dropping",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4263.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is labeled but the frame-by-frame shows overhead \u2014 this is actually the continuation of an overhead hold across the sour cream dump (consistent with the \"hold camera across dumps\" rule), showing the tub tilt and dollop fall from top-down where the pour action reads clearest; eye-level front wouldn't show the cream landing on the soup surface."
+      },
+      "duration": {
+        "seconds": 2.0429999999999993,
+        "reasoning": "2.0s covers the full readable beat of the \"Sour cream\" MOGRT plus the pour arc (tilt \u2192 dollop \u2192 tail), giving the viewer time to read the two-word label while the dump action completes."
+      },
+      "in_point": {
+        "seconds": 5.297,
+        "reasoning": "5.3s lands exactly on the tub tilt and MOGRT-in frame (37.0s in the timeline), so the cut, the label animation, and the start of the pour all hit together on the beat."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (37.0s-39.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 33,
+      "beat_description": "Wooden spoon stirring sour cream into yellow soup",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I4263.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.3350000000000009,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 23.774,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 34,
+      "beat_description": "stop-motion (6 clips, avg 2f): Empty white serving bowl next to pot (stop-motion start) \u2192 Empty bowl, identical frame (stop-motion hold) \u2192 First scoop of soup lands in bowl, small puddle",
+      "beat_type": "stop_motion",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "AI2I4236.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 0.6259999999999977,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 8.3,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 40,
+      "beat_description": "Bowl about half full, soup level rising",
+      "beat_type": "",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "AI2I4236.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the held camera through the stop-motion fill sequence \u2014 it's the only angle that shows the bowl filling from empty to full, which a front low-angle would hide behind the rim."
+      },
+      "duration": {
+        "seconds": 0.4170000000000016,
+        "reasoning": "0.4s is one stop-motion beat in the held run of fill frames, brisk enough to keep the rising-soup transformation reading as motion rather than a static hold."
+      },
+      "in_point": {
+        "seconds": 39.873,
+        "reasoning": "39.9s lands on the \"half full\" frame, the midpoint of the fill that shows clear progress from the prior puddle and sets up the continued rise to full in the next beats."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 41,
+      "beat_description": "ingredient (1 clips): Hand sprinkling shredded cheddar into filled bowl, \"Cheddar cheese\" label \u2192 More cheese falling, larger pile in center, \"Cheddar cheese\" label \u2192 Cheese pile expanding across surface, label still up",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4266.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is the switch point from the overhead fill resolution; front (low angle) sells the cheese cascade in silhouette against the bowl rim in a way overhead would flatten into a texture pile, and it opens the held front run that carries the rest of the garnish sequence."
+      },
+      "duration": {
+        "seconds": 1.6679999999999993,
+        "reasoning": "1.7s \u2014 the \"Cheddar cheese\" MOGRT needs enough on-screen time to read cleanly, and 1.7s covers the readable hold plus the visible growth of the pile before the bacon label swaps in at 43.0s."
+      },
+      "in_point": {
+        "seconds": 10.344,
+        "reasoning": "10.3s into the source \u2014 lands just as the hand enters frame and the first shreds hit the soup surface, so the cut starts on the action rather than on empty pre-roll."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (41.4s-43.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 42,
+      "beat_description": "ingredient (1 clips): Bowl topped with cheese and bacon crumbles, \"Crumbled bacon\" label \u2192 More bacon sprinkled across, \"Crumbled bacon\" label \u2192 Final bacon distribution, \"Crumbled bacon\" label",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4266.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 holding the front camera across the ingredient dump run (beat 3 of 8, all front after the initial overhead), so this is a held-camera continuation, not a switch; the low angle keeps the bacon crumbles sitting on top of the cheese readable in silhouette against the bowl rim."
+      },
+      "duration": {
+        "seconds": 1.6679999999999993,
+        "reasoning": "1.7s \u2014 the \"Crumbled bacon\" MOGRT needs enough screen time to be read and registered as the labeled ingredient; matches the neighboring ingredient beats (1.7s each) so the dump sequence reads as a steady rhythm."
+      },
+      "in_point": {
+        "seconds": 44.169,
+        "reasoning": "44.2s \u2014 lands on the moment bacon is actively being sprinkled and spreading across the cheese, giving motion inside the hold rather than a static topped bowl."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (43.0s-44.7s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 43,
+      "beat_description": "ingredient (1 clips): Wider bowl with cheese + bacon, \"Fresh chives\" label appears \u2192 Chives sprinkled around edges, \"Fresh chives\" label \u2192 More chives across surface, \"Fresh chives\" label",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4266.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is held through the chive run (beat 4 of a front-camera streak); the 3/4 front angle shows chives landing and scattering across the bowl's surface in a way overhead would flatten, and switching cameras mid-dump would violate the hold-then-switch rule."
+      },
+      "duration": {
+        "seconds": 1.669000000000004,
+        "reasoning": "1.7s is the minimum readable hold for the \"Fresh chives\" MOGRT \u2014 long enough to read the two-word label while the chives visibly land and spread, short enough to keep the dump sequence's rhythm."
+      },
+      "in_point": {
+        "seconds": 70.862,
+        "reasoning": "70.9s lands right as the chives begin hitting the bowl with the label popping on \u2014 the cut starts on the action (green bits entering frame) rather than on empty anticipation."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (44.7s-46.4s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 44,
+      "beat_description": "ingredient (1 clips): Tight top-down of finished bowl, chives distributed, \"Freshly ground black pepper\" label \u2192 Same composition, \"Freshly ground black pepper\" label holds \u2192 Tight top-down finished bowl, pepper/bacon/chives/cheese, \"Freshly ground black pepper\" label",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4266.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front continues the held-camera run (beat 5 of 8, all front after the initial overhead) \u2014 this is the \"hold one camera across dumps\" rule in action, and the tight top-down framing on the finished bowl is the best-take hero composition for selling the pepper grind moment."
+      },
+      "duration": {
+        "seconds": 1.7509999999999977,
+        "reasoning": "1.8s matches the read-time of \"Freshly ground black pepper\" (three words, longest label in the dump run), so the MOGRT has time to land and be read before cutting."
+      },
+      "in_point": {
+        "seconds": 92.634,
+        "reasoning": "92.6s lands on the hero composition already settled \u2014 bowl centered, chives/bacon/cheese distributed, pepper label cueing in \u2014 giving a clean frame for the new MOGRT rather than catching residual motion from the prior chive drop."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (46.4s-48.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 45,
+      "beat_description": "Hands holding bowl being set down/lifted on marble, steam/blur on counter",
+      "beat_type": "",
+      "recipe_section": "money shot",
+      "filename": "B19I4267.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "This is the anchor shot for the money-shot section \u2014 the hero bowl reveal is THE moment of the video, so the editor picked the best take of hands presenting the finished soup; it's a deliberate switch point away from cooking coverage into beauty, and the overhead/3-4 hero angle shows the full composition (bacon, cheese, chives arranged on top) that a front eye-level angle would foreshorten and hide."
+      },
+      "duration": {
+        "seconds": 1.918999999999997,
+        "reasoning": "1.9s lets the hero composition land and breathe before cutting to the macro \u2014 long enough to register \"finished dish\" on the beat, short enough that it still has forward momentum into the macro detail shot at 50.0s rather than dragging."
+      },
+      "in_point": {
+        "seconds": 22.689,
+        "reasoning": "22.7s catches the hands-entering/bowl-settling transition reveal \u2014 you want the motion of arrival (hands placing the bowl, steam still moving) rather than a static bowl already sitting there, because the movement is what sells the \"presented to you\" feeling."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 46,
+      "beat_description": "Extreme close-up of soup surface \u2014 bacon, cheese, chives in detail",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I4268.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "This is a macro/tight anchor shot of the finished soup surface \u2014 it's the beauty-money shot showcasing the bacon/cheese/chives texture that no other angle can deliver, functioning as the organic flourish anchor for the plating section rather than part of a held run."
+      },
+      "duration": {
+        "seconds": 1.2510000000000048,
+        "reasoning": "1.3s holds just long enough for the viewer's eye to register the three topping textures (bacon, cheese, chives) before cutting to the spoon lift \u2014 any shorter and the detail reads as a flash, any longer and the near-static macro starts to feel dead before the outro action begins."
+      },
+      "in_point": {
+        "seconds": 93.677,
+        "reasoning": "93.7s lands on the cleanest frame of the settled surface with toppings fully visible and minimal drift, giving a crisp \"hero\" read before the two subsequent half-second holds show subtle movement."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 47,
+      "beat_description": "Spoon lifting scoop from bowl, \"the kitchn\" logo top-left",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "B19I4268.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor shot here \u2014 the hero spoon lift with bacon-topped scoop and \"the kitchn\" logo is the best-take money shot for the outro, and overhead couldn't sell the vertical lift or the food-porn silhouette of the heaping spoon."
+      },
+      "duration": {
+        "seconds": 3.9209999999999994,
+        "reasoning": "3.9s at 75% base speed stretches a ~2.9s real action (spoon entering bowl \u2192 peak lift \u2192 settle) into a long, breathable final beat that lets the logo register and the video land on a held hero frame rather than a cut."
+      },
+      "in_point": {
+        "seconds": 89.715,
+        "reasoning": "89.7s catches the spoon just as it enters/begins lifting from the bowl, so the ramp starts on the initiation of the lift and peaks on the heaping-scoop hero frame \u2014 cutting in any later would miss the build."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (75.0% base, ramp between 89.7s-93.6s)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Speed ramp here is an organic flourish \u2014 the spoon lift is an unattended beauty transformation (scoop rising, bacon cresting, soup glistening) being slowed to savor, exactly the \"found hero moment\" pattern, not a timing nudge. [flourish: organic]"
+    }
+  ]
+}

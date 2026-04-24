@@ -1,0 +1,794 @@
+{
+  "recipe": "cucumber_tea",
+  "global_notes": "Fast, dense cut \u2014 63 beats in 36.5s averages ~0.58s per shot, which reads as a tightly music-locked edit rather than a breathing instructional piece. Overhead is clearly the workhorse (2:1 over front), almost certainly carrying the prep and technique middle where hands-on-board clarity matters; front angles are reserved for opener/hero moments and the transformation/plating bookends where you want face, pour, or reveal energy. The editor is aggressive against the pipeline \u2014 27 added beats vs only 2 from the editorial group suggests they're subdividing phrases and layering flash cuts on top of the baseline structure to ride the track rather than just landing on its downbeats. That ratio usually signals accelerating stack-ups (montage bursts on prep, quick multi-angle coverage of a single action) with the music driving micro-cuts the instructional logic alone wouldn't justify. Net style: rhythm-forward, overhead-anchored, with front angles used as punctuation \u2014 energetic and contemporary rather than classical demo pacing.",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (16 shots): Title card: \"Cucumber Sandwiches / the kitchn\" over cream-cheese-spread bread with 3 cucumber slices top row \u2192 Same sandwich, only 1 cucumber slice visible top-left \u2192 Same sandwich, 2 cucumber slices top-left",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "AI2I4678.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor because it's the only angle that reveals the stop-motion compilation state \u2014 slices accumulating one-by-one on the bread top \u2014 which a front angle physically can't show; the switch to front at 1.5s is the hero beauty reveal of the finished stack."
+      },
+      "duration": {
+        "seconds": 3.337,
+        "reasoning": "3.3s holds long enough to read \"Cucumber Sandwiches / the kitchn\" title card AND register the stop-motion build + final product reveal, with the last ~1.8s on the front hero giving the title its readable dwell time."
+      },
+      "in_point": {
+        "seconds": 105.188,
+        "reasoning": "105.2s lands on the baseline title frame \u2014 cream-cheese bread with the first 3 slices already placed top row \u2014 the clean starting state that the stop-motion compilation builds outward from."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-3.3s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.3s)",
+        "Title Cards: Graphic (0.0s-3.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 57% crop tightens the frame past the 50% baseline to fill screen with the sandwich (removing marble negative space) so the stop-motion slice placements read clearly at 0.1s cadence \u2014 functional reframe, no speed ramp."
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "ingredient (1 clips): Hands steadying whole English cucumber on orange cutting board, chef's knife mid-cut trimming end; \"English cucumber\" text overlay top-left \u2192 Cucumber on board with end piece separated off to right, hand resting on cucumber; \"English cucumber\" text still on \u2192 Benriner mandoline angled across frame, cucumber being pushed through blade from top, sliced rounds piling below on orange cutting board",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4670.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor shot for an ingredient reveal \u2014 top-down frames the whole English cucumber flat on the orange board so the viewer identifies the ingredient at a glance, which the eye-level front angle can't do as cleanly; this is the first beat of an ingredient dump run, so it sets the held camera."
+      },
+      "duration": {
+        "seconds": 1.209,
+        "reasoning": "1.2s is paced to let \"English cucumber\" read comfortably in the MOGRT \u2014 short two-word label, ~1s to read plus a small tail; the action (end-trim) is incidental to the text hold."
+      },
+      "in_point": {
+        "seconds": 5.547,
+        "reasoning": "5.5s lands on the knife mid-cut through the end of the cucumber, so the beat opens on visible action rather than a static pre-roll of hands hovering."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (63.0% vs 50% baseline); Reframed (offset h:0.01 v:0.03)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (3.3s-4.5s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "63% punch-in vs the 50% baseline tightens the frame on the cucumber and knife so the ingredient reads bigger under the text overlay, and the tiny h:0.01/v:0.03 reframe recenters the cucumber under the top-left MOGRT \u2014 both are functional composition nudges, not a found organic moment, and there is no speed ramp."
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "Benriner mandoline angled across frame, cucumber being pushed through blade from top, sliced rounds piling below on orange cutting board",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I4540.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this IS the anchor shot \u2014 the mandoline angled across frame with cucumber pushed down from top and slices piling below is the single image that sells \"mandoline slicing\" in one read, where overhead would flatten the vertical push action and lose the blade/pile relationship."
+      },
+      "duration": {
+        "seconds": 1.2509999999999994,
+        "reasoning": "1.3s covers the readable arc from full cucumber \u2192 shorter stub \u2192 near-finished pile (three distinct progress states in the scan), long enough to register the technique and transformation but short enough to stay in the prep-section pacing before cutting to the overhead strainer transfer."
+      },
+      "in_point": {
+        "seconds": 70.529,
+        "reasoning": "70.5s lands on mid-action with cucumber already being pushed and a starter pile visible, skipping dead setup frames \u2014 viewer arrives when the motion is already legible and the pile is growing, which is the most dynamic entry point into the slice."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "Mandoline with cucumber near top only small stub visible, pile fuller",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4672.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the best-take angle for this near-finished mandoline moment because only top-down reveals both the shrinking stub AND the fuller pile in one read \u2014 the prior front shot shows the hand/motion, this shot shows the result of that motion, which front can't frame cleanly."
+      },
+      "duration": {
+        "seconds": 0.835,
+        "reasoning": "0.8s is a deliberate step-down in the pacing ramp (1.3s front \u2192 0.8s overhead \u2192 0.5s stop-motion beats), tightening the rhythm into the stop-motion flourish rather than lingering on slicing."
+      },
+      "in_point": {
+        "seconds": 14.848,
+        "reasoning": "14.8s catches the clip at the \"almost done\" state where the stub is still visible but small and the pile is at peak density pre-transfer \u2014 the single frame that sells \"slicing is ending\" before the stop-motion takes over."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 19,
+      "beat_description": "stop-motion (6 clips, avg 2f): Strainer holding pile of cucumber rounds in centre, hand out of frame \u2192 Strainer pile, subtle shift \u2014 slightly fewer/more organized slices \u2192 Strainer pile of slices (same composition)",
+      "beat_type": "stop_motion",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I4672.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the sequence is selling incremental state changes in the strainer pile (pile shape, density, spread) \u2014 only the top-down angle reads those subtle compositional shifts, and per Rule 3 this is a held-camera run through the dump, not a switch point."
+      },
+      "duration": {
+        "seconds": 0.5,
+        "reasoning": "0.5s because 6 clips \u00d7 ~2 frames is the minimum viable stop-motion chunk \u2014 long enough to register distinct frames as a rhythm, short enough to punch through without becoming a held shot."
+      },
+      "in_point": {
+        "seconds": 19.353,
+        "reasoning": "19.4s because that's where the strainer is at the \"mid-fill\" baseline with the most headroom for visible state changes (slices can still be added and redistributed across the remaining frames) \u2014 starting earlier would have nothing to progress toward, later would land on a near-final pile with nowhere to go."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 25,
+      "beat_description": "Strainer with more slices added \u2014 pile expands to right",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "AI2I4672.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead continues the held-camera run through this cucumber-slice stop-motion sequence (Rule 3) \u2014 switching to front here would break the rhythm, and the top-down angle is the only one that reads the pile-shape change (expansion to the right) that makes this frame worth including."
+      },
+      "duration": {
+        "seconds": 0.4590000000000005,
+        "reasoning": "0.5s matches the stop-motion cadence established by the previous 6 clips at 0.5s \u2014 each beat is a discrete pile-state (B, C, D, E, F), so anything longer would stall the progression and anything shorter would lose the \"slices added\" read."
+      },
+      "in_point": {
+        "seconds": 37.454,
+        "reasoning": "37.5s lands on \"Dense compilation D\" \u2014 the frame where the pile has visibly expanded rightward versus the prior B/C states, giving a clear next-step in the stop-motion progression rather than a near-duplicate."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 26,
+      "beat_description": "ingredient (1 clips): Closer 3/4 angle of strainer over bowl, \"Kosher salt\" text overlay top-left, salt streaming down onto cucumbers \u2192 Same angle, salt continues falling, small white salt pile visible on slices \u2192 Salt stream visible mid-air, salt pile slightly larger on slices",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4542.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the switch point out of overhead \u2014 beat 1 was the overhead \"final dump\" state, and the editor breaks to front here to introduce the salting action with the MOGRT, then holds front for beats 3\u20134; overhead would flatten the vertical salt stream, while front shows salt mid-air and the accumulating pile on the slices."
+      },
+      "duration": {
+        "seconds": 1.1680000000000001,
+        "reasoning": "1.2s matches the \"Kosher salt\" MOGRT window (7.6s\u20138.8s) \u2014 two short words read fast, so the hold is short; the clip lives exactly as long as the text needs to be legible."
+      },
+      "in_point": {
+        "seconds": 59.893,
+        "reasoning": "59.9s lands on salt already streaming with a visible pile starting to form \u2014 skips the empty-frame wind-up and grabs the frame where the action reads instantly alongside the text overlay appearing."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (7.6s-8.8s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 27,
+      "beat_description": "Salt stream visible mid-air, salt pile slightly larger on slices",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I4542.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is held through a salt/toss run (Salting C \u2192 Tossing A \u2192 Tossing B all front) before switching to overhead for the drain hold \u2014 this is Rule 3 in action (hold one camera across several ingredient-action beats, switch on the section change to drain)."
+      },
+      "duration": {
+        "seconds": 1.4179999999999993,
+        "reasoning": "1.4s captures the salt-stream-mid-air moment and lets the pile read as slightly grown on the slices before the toss takes over \u2014 long enough to register the salting peak, short enough to keep the salt\u2192toss\u2192drain phrase moving."
+      },
+      "in_point": {
+        "seconds": 69.778,
+        "reasoning": "69.8s lands on salt visibly streaming through air with the pile already accumulated \u2014 the most legible \"salting is happening\" frame, so the viewer reads the action instantly rather than watching it start."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 28,
+      "beat_description": "ingredient (1 clips): Extreme close-up of empty glass bowl interior (bottom of bowl, orange cutting board showing through), strainer visible top-right; \"Let cucumbers drain, 30 minutes to 1 hour\" text callout bottom-left \u2192 Same empty bowl bottom, strainer top-right, drain text overlay \u2192 Same empty bowl, slight framing shift",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4548.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is beat 4 of 15 marked `<<<` at the tail of a held front run (front/front/front) per the run map `[overhead, front, front, front <<<, overhead, ...]`, executing the \"hold camera then switch\" rule right before the overhead cut to the cream cheese placement at beat 5; the extreme close-up of the empty bowl interior with strainer top-right anchors the drain moment without breaking the held sequence."
+      },
+      "duration": {
+        "seconds": 2.4610000000000003,
+        "reasoning": "2.5s \u2014 the \"Let cucumbers drain, 30 minutes to 1 hour\" callout is a multi-phrase instructional MOGRT (not a single ingredient name), so readability requires a longer hold than the ~1.2\u20131.4s used for single-word ingredient labels like the adjacent beats; 2.5s lets the viewer read the full time range once comfortably."
+      },
+      "in_point": {
+        "seconds": 8.133,
+        "reasoning": "8.1s \u2014 lands on the settled empty-bowl frame where the strainer is already parked top-right, cutting board orange is visible through the glass, and the composition is stable with the bottom-left safe area clear for the drain callout; any earlier and hands or the straining action would still be in frame."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_INSTRUCTIONS/K SEO_INSTRUCTIONS.aegraphic (10.2s-12.6s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 29,
+      "beat_description": "ingredient (1 clips): New clean glass bowl on marble, block of cream cheese on spatula being lowered into bowl from bottom-right; \"Cream cheese\" text overlay top-left \u2192 Cream cheese block fully in centre of bowl on spatula, \"Cream cheese\" text still on \u2192 Cream cheese block settled in bowl, spatula being withdrawn",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4673.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is the switch point in the camera run \u2014 after 3 fronts (beats 2-4), the editor flips back to overhead to break the held-front run before it gets boring, and overhead is the angle that actually reads a flat rectangular cream cheese block being lowered into a bowl (front would just show a hand and a blob)."
+      },
+      "duration": {
+        "seconds": 1.2089999999999996,
+        "reasoning": "1.2s because \"Cream cheese\" is two short words \u2014 that's the read time for the MOGRT, and the beat holds exactly long enough for the text to land before cutting to the next ingredient."
+      },
+      "in_point": {
+        "seconds": 10.928,
+        "reasoning": "10.9s catches the spatula entering frame from bottom-right with the block already on it \u2014 you see the placement action (lowering \u2192 settling \u2192 spatula withdrawing) compressed into the read window, not dead air before the block appears."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (12.6s-13.8s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 30,
+      "beat_description": "ingredient (1 clips): Cream cheese block in bowl with pile of chopped fresh dill sprinkled on top, small bowl in top-right dumping; \"Fresh dill\" text overlay top-left \u2192 Cream cheese with dill pile, slightly more dill scattered around \u2192 Close 3/4 angle of bowl, hand tipping small glass ramekin pouring stream of chopped chives onto cream-cheese-with-dill mound; \"Fresh chives\" text overlay top-left",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4547.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 6 in a sustained front-camera hold (beats 6\u201313 are all front after a single overhead at beat 5) \u2014 the hold-across-dumps rule is operating, and the close 3/4 angle shows the tipping ramekin and falling stream of dill, which the top-down angle flattens into just a growing pile."
+      },
+      "duration": {
+        "seconds": 0.9589999999999996,
+        "reasoning": "1.0s matches the \"Fresh dill\" MOGRT overlay (13.8s\u201314.8s) \u2014 two short syllables read quickly, so the hold is trimmed below the 1.2s default used on longer names."
+      },
+      "in_point": {
+        "seconds": 30.948,
+        "reasoning": "30.9s lands on the mid-pour moment \u2014 ramekin actively tipped, visible stream of chopped dill falling onto the cream cheese \u2014 peak action of the dump rather than the lead-in or settled aftermath."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (13.8s-14.8s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 31,
+      "beat_description": "ingredient (1 clips): Close 3/4 angle of bowl, hand tipping small glass ramekin pouring stream of chopped chives onto cream-cheese-with-dill mound; \"Fresh chives\" text overlay top-left \u2192 Chives fully dumped, ramekin still overhead, large green pile on cream cheese, scattered chive bits \u2192 Same bowl angle, hand squeezing upside-down mayo bottle, dollop of mayo landing on herb pile; \"Mayonnaise\" text overlay top-left",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4547.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is beat 7 inside a sustained front run (beats 6 through 13 all hold front per the camera run), so the \"hold camera across dumps\" rule applies and switching to overhead mid-run would break the held block for no payoff; the front 3/4 already reads the chive stream pouring from the ramekin clearly."
+      },
+      "duration": {
+        "seconds": 1.209999999999999,
+        "reasoning": "1.2s \u2014 \"Fresh chives\" is two short words and 1.2s is the comfortable minimum to read it, which matches the 1.0s/1.1s cadence of the bordering ingredient beats."
+      },
+      "in_point": {
+        "seconds": 47.589,
+        "reasoning": "47.6s \u2014 lands on the active stream of chopped chives mid-pour onto the dill mound, which is the unambiguous \"chives are being added\" frame; earlier would catch ramekin approach with no product visible, later would miss the pour itself."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (14.8s-16.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 32,
+      "beat_description": "ingredient (1 clips): Same bowl angle, hand squeezing upside-down mayo bottle, dollop of mayo landing on herb pile; \"Mayonnaise\" text overlay top-left \u2192 Mayo continuing to squeeze, larger dollop forming on the mound \u2192 Butter pile with mound of chopped herbs (chives + dill) on top; salt shaker entering top",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4547.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 8 in a held front-camera run (beats 6\u201313 all front per the run map), so the rule is \"hold, don't alternate\" \u2014 and front shows the vertical squeeze action of the upside-down bottle and the dollop landing, which overhead would flatten into a shapeless blob on the mound."
+      },
+      "duration": {
+        "seconds": 1.0840000000000032,
+        "reasoning": "1.1s matches the read time for \"Mayonnaise\" (10 characters) and sits in the 1.0\u20131.2s band of the neighboring dump beats, giving the MOGRT enough hold without dragging the sequence."
+      },
+      "in_point": {
+        "seconds": 65.607,
+        "reasoning": "65.6s lands on the dollop actually contacting the herb pile \u2014 the identifying moment of the ingredient \u2014 rather than pre-squeeze anticipation or post-drop aftermath, so the cut opens on the action that sells \"mayo added.\""
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (16.0s-17.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 33,
+      "beat_description": "ingredient (1 clips): Butter pile with mound of chopped herbs (chives + dill) on top; salt shaker entering top \u2192 Same butter/herb mound with white flaky kosher salt landed on center of dill \u2192 Cream cheese/herb pile with coarse ground black pepper on top; pepper grinder visible at top of frame",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4547.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 beat 9 of a long front-camera run (beats 6-13), so this is a held-camera continuation, not a switch point; front shows the salt shaker and pepper grinder entering from the top of frame and the seasoning landing on the herb mound, which overhead would flatten into indistinct sprinkle."
+      },
+      "duration": {
+        "seconds": 1.0009999999999977,
+        "reasoning": "1.0s \u2014 two MOGRTs (\"Kosher salt\" handing off to \"Freshly ground black pepper\") need to both register as readable, and 1.0s is the minimum hold that lets the pepper label land before the next beat."
+      },
+      "in_point": {
+        "seconds": 75.617,
+        "reasoning": "75.6s \u2014 starts on the salt-shaker-entering-top anticipation frame so the viewer sees the tool arrive and deposit within the clip, rather than cutting in mid-dump."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (63.0% vs 50% baseline); Reframed (offset h:0.00 v:0.05)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (17.1s-18.1s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 63% with a small downward reframe (v:+0.05) tightens on the butter/herb mound and re-centers it after the crop \u2014 this is a functional tightening for a static seasoning beat, no speed ramp, no organic transformation."
+    },
+    {
+      "beat_index": 34,
+      "beat_description": "ingredient (1 clips): Cream cheese/herb pile with coarse ground black pepper on top; pepper grinder visible at top of frame \u2192 Same pile, more pepper settled, grinder lifted away \u2192 Yellow silicone spatula plunging into butter/herb mound in glass bowl",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4547.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 10 of 15 in a held front-camera run (positions 2-13 of the camera run are all front) \u2014 it's neither the anchor nor a switch point, just continuation of the held angle, and front keeps the pepper grinder visible at top of frame which overhead would crop out."
+      },
+      "duration": {
+        "seconds": 0.9600000000000009,
+        "reasoning": "1.0s because \"Freshly ground black pepper\" is a three-word MOGRT that needs ~1s of screen time to read comfortably, and the hold covers both the grinder-visible frame and the grinder-lifted-away beat before cutting to the spatula action."
+      },
+      "in_point": {
+        "seconds": 81.248,
+        "reasoning": "81.2s lands on the pepper pile with grinder still in frame, establishing the \"what\" of the MOGRT (pepper being added) immediately on the cut rather than mid-grind or post-grind."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (63.0% vs 50% baseline); Reframed (offset h:0.00 v:0.05)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (18.1s-19.1s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 63% tightens on the pile so the pepper flecks and herb texture read at this short duration, and the small vertical reframe (v:0.05) nudges the pile toward center after the crop \u2014 functional tool, no speed ramp, attended grinding action."
+    },
+    {
+      "beat_index": 35,
+      "beat_description": "Yellow silicone spatula plunging into butter/herb mound in glass bowl",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "B19I4547.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor shot for \"mixing begins\" \u2014 the plunge reads as a dynamic forward-action moment where green herbs striking pale butter needs the eye-level angle to sell the contact and texture contrast, and it opens a held-front run (next beat also front) rather than alternating off the prior ingredient dump."
+      },
+      "duration": {
+        "seconds": 0.8760000000000012,
+        "reasoning": "0.9s because the beat needs to contain the full plunge-and-press gesture (spatula enters, presses down, cream cheese starts spreading) without lingering into repetitive mixing \u2014 short enough to keep momentum into the 0.7s follow-up, long enough that the action registers as the transition from dumping to mixing."
+      },
+      "in_point": {
+        "seconds": 86.003,
+        "reasoning": "86.0s because that frame is the exact moment of contact \u2014 spatula tip just entering the mound \u2014 giving a clean kinetic start; earlier frames would show hover/approach dead time, later frames would miss the plunge and land mid-press."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 36,
+      "beat_description": "Spatula mixing butter/herbs; visible streaks of green folded into pale butter",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I4547.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this sits in a held-front run (previous 0.9s front, next 1.2s front of same source B19I4547.mov) \u2014 the editor isn't alternating, he's staying on the angle that shows the fold-and-streak transformation at eye level where the green-into-pale-butter contrast reads clearest."
+      },
+      "duration": {
+        "seconds": 0.666999999999998,
+        "reasoning": "0.7s because the mixing action is continuous and self-similar, so the beat just needs to register the \"streaks appearing\" read before moving on \u2014 any longer and it stalls the run, any shorter and you miss the green."
+      },
+      "in_point": {
+        "seconds": 96.054,
+        "reasoning": "96.1s because this is the frame where the green has clearly dispersed into visible streaks in the pale butter \u2014 not the earlier press-down phase and not yet fully homogenized, so it's the most legible \"mixing is happening\" moment in the take."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 37,
+      "beat_description": "Close-up top-down of yellow spatula folding herb-streaked cream cheese mixture in glass bowl",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I4547.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "This is overhead (the frame data shows OVERHEAD at 20.5s despite the \"front\" metadata label) \u2014 folding/mixing reads entirely from top-down because the action is the spatula tracing through the bowl and the herb streaks distributing, neither of which is visible from eye-level; this is the anchor shot for the \"mixture coming together\" moment and also the switch point out of the preceding 0.7s front clip."
+      },
+      "duration": {
+        "seconds": 1.1679999999999993,
+        "reasoning": "1.2s is long enough to register the fold-and-smooth transformation (streaky \u2192 uniform herb distribution across roughly three spatula passes) without lingering, and it sits as a small breath between the tight 0.7s technique cut before it and the ingredient/MOGRT beat that follows."
+      },
+      "in_point": {
+        "seconds": 185.519,
+        "reasoning": "185.5s lands mid-fold with the herbs still visibly streaked rather than already blended \u2014 cutting in on in-progress action sells the technique, and it leaves exactly enough runway to reach the near-smooth finish at the outgoing frame before handing off to the bread intro."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 38,
+      "beat_description": "ingredient (1 clips): Spatula smoothing mixed herbed cream cheese \u2014 uniformly distributed herb flecks \u2192 Slice of white sandwich bread held by right hand on orange/terracotta surface \u2192 Same white bread slice, hand still holding right edge",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I4678.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.1680000000000028,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 16.725,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (21.8s-22.9s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 39,
+      "beat_description": "ingredient (2 clips): Tight shot: small offset spatula knife spreading herbed cream cheese mound on bread \u2192 Spatula continuing to spread mixture across bread \u2014 wider, flatter pile \u2192 Bread slice fully covered with smoothed herbed cream cheese; hand with butter knife at left",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I4550.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is a switch point at the end of the dump run that repositions the viewer top-down for the incoming overhead stop-motion cucumber compilation \u2014 showing the flat smoothed canvas the slices will land on, which a front angle can't reveal."
+      },
+      "duration": {
+        "seconds": 1.6679999999999993,
+        "reasoning": "1.7s covers the time needed to read \"Cream cheese mixture\" across both sub-clips of the spreading action, with the MOGRT ending at 24.6s right as the stop-motion begins."
+      },
+      "in_point": {
+        "seconds": 227.018,
+        "reasoning": "227.0s lands on the overhead frame where the spread is already fully smoothed with the butter knife resting at left \u2014 the finished-canvas moment needed before cucumber slices start appearing."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (57.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Text Overlays: Graphic (22.9s-24.6s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 7% punch-in tightens the overhead on the bread itself so the smoothed cream cheese coverage fills the frame and reads cleanly as a completed surface before the stop-motion begins \u2014 functional reframe, no speed ramp."
+    },
+    {
+      "beat_index": 41,
+      "beat_description": "stop-motion (14 clips, avg 2f): Same bread with spread; TWO cucumber slices appear at top-left (stop-motion start) \u2192 Bread with 1 cucumber slice top-left (stop-motion intermediate) \u2192 Bread with 1 cucumber slice (same position, slight shift or same pose)",
+      "beat_type": "stop_motion",
+      "recipe_section": "late-edit (likely transformation or money shots)",
+      "filename": "AI2I4678.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the only angle that reads cucumber-placement-on-bread as a top-down grid filling in \u2014 front camera literally cannot show this growing tile pattern, so this is a forced anchor by content, not a switch decision."
+      },
+      "duration": {
+        "seconds": 1.1679999999999993,
+        "reasoning": "1.2s holds 14 frames at ~2f each, which is the minimum the eye needs to register each placement state as a discrete \"snap\" before the next one lands \u2014 any longer per frame and it stops feeling like stop-motion, any shorter and the slices don't register."
+      },
+      "in_point": {
+        "seconds": 105.188,
+        "reasoning": "105.2s is the first frame where cucumber slices appear on the bread (state: 2 slices top-left), the cleanest entry point for a build-up sequence that needs to start from near-empty and end at fully-covered."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline); punch-in/crop (57.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 57% tightens onto the bread surface so the small cucumber slices fill more of the frame and each placement reads clearly \u2014 this is a functional reframe to make the stop-motion legible, no speed ramp present."
+    },
+    {
+      "beat_index": 55,
+      "beat_description": "Bread with ~14 cucumber slices (rows 5+5+4 nearly filling bottom)",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "AI2I4678.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is part of a held overhead run through the cucumber-dump compilation (rule 3) \u2014 the angle shows coverage/pattern progression across the bread surface that a front angle physically can't reveal, and the switch to FRONT doesn't come until the knife enters at [26.5s]."
+      },
+      "duration": {
+        "seconds": 0.8339999999999996,
+        "reasoning": "0.8s is a tight beat-length hold that lets the near-complete (~14 slice) state register after the preceding 1.2s stop-motion burst, short enough to keep compilation momentum before the final fully-covered frame and the camera switch."
+      },
+      "in_point": {
+        "seconds": 168.168,
+        "reasoning": "168.2s lands on the rows-5+5+4 \"nearly filling bottom\" state \u2014 the most visually satisfying almost-done frame, placed just before the 15-slice completion so the viewer reads \"filling in\" rather than \"done.\""
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (57.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "57% punch-in tightens off the orange-surface negative space to keep the bread filling the frame as the pattern completes \u2014 functional reframe on attended placement, not an unattended transformation, and no speed ramp is present."
+    },
+    {
+      "beat_index": 56,
+      "beat_description": "Assembled sandwich on orange cutting board; chef's knife pressing in to start cut; left crust trimmed off at left",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I4551.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 0.7510000000000012,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 11.678,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 57,
+      "beat_description": "Sandwich after first crust cut \u2014 trimmed strip visible at left (top crust piece); knife repositioning for bottom cut",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I4551.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this beat sits inside a held-camera run (prev and next are both front from the same source file B19I4551.mov), and front shows the trimmed crust strip separating from the loaf at eye level, which overhead would flatten into just \"knife on bread.\""
+      },
+      "duration": {
+        "seconds": 0.75,
+        "reasoning": "0.8s \u2014 matches the steady 0.8s cadence of the surrounding knife-work beats, long enough to register the separated crust and the knife resetting for the next cut without stalling the rhythm."
+      },
+      "in_point": {
+        "seconds": 19.519,
+        "reasoning": "19.5s \u2014 lands on the moment the first cut has just completed (strip visible, knife lifting to reposition), which is the readable \"progress beat\" between cut one and cut two."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 58,
+      "beat_description": "Sandwich rotated; bottom crust being cut off \u2014 trimmed left crust piece now at top-left of board with cucumber visible inside",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I4551.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 0.8350000000000009,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 28.195,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 59,
+      "beat_description": "Sandwich with 3 trimmed crust strips stacked to the left; hand pressing down, preparing next cut",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I4551.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 0.791999999999998,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 35.577,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 60,
+      "beat_description": "Crustless sandwich on board, knife making vertical cut down center \u2014 two halves starting to separate, cucumber filling visible",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I4552.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this sits inside a held front-camera run (prev front, this front, next front) during the portion-cut beat, and front reveals the cross-section of cucumber/cream-cheese filling as the knife descends, which an overhead would flatten into just a knife-top."
+      },
+      "duration": {
+        "seconds": 1.0429999999999993,
+        "reasoning": "1.0s captures the mid-cut moment of halves separating without lingering into the completion frame at 30.5s, keeping the portion-cut micro-sequence tight on beat before the plated reveal lands."
+      },
+      "in_point": {
+        "seconds": 11.553,
+        "reasoning": "11.6s lands on the frame where the two halves are visibly starting to separate with filling exposed \u2014 the peak-transformation moment of the cut, not the knife entering (too early) or the halves fully apart (resolution already past)."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 64% is a functional reframe to emphasize the filling cross-section and tighten the eye on the knife line \u2014 attended knife action, not an unattended organic transformation, and no speed ramp is indicated."
+    },
+    {
+      "beat_index": 61,
+      "beat_description": "Sandwich now fully halved, knife at bottom, both halves clearly separated with cucumber/cream cheese filling showing",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I4553.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is the anchor beauty-reveal shot for the plating section; front angle shows the cucumber/cream cheese cross-section that sells \"tea sandwich,\" which overhead would flatten into a meaningless top-down rectangle."
+      },
+      "duration": {
+        "seconds": 2.0020000000000024,
+        "reasoning": "2.0s \u2014 long enough for the viewer to register the completed halving and read the filling layers before the hero close-up takes over; shorter would skip past the reveal, longer would stall before the end-card hero."
+      },
+      "in_point": {
+        "seconds": 45.17,
+        "reasoning": "45.2s \u2014 the exact frame the two halves finish separating with the knife parked at the bottom of the plate, which is the cleanest readable version of \"it's done\" before any hand re-enters frame."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 62,
+      "beat_description": "Plate of stacked tea sandwiches, even tighter crop, no hand visible",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "B19I4553.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor for the plating finale \u2014 this is the cleanest, hand-free version of the stacked plate, the best-take beauty shot that sells the finished dish before the hero hand-held close-up takes over."
+      },
+      "duration": {
+        "seconds": 3.6700000000000017,
+        "reasoning": "3.7s is a hold-and-breathe beauty duration that lets the viewer register the completed plate without a hand in frame, then hands off to the hero sandwich shot where the end card builds."
+      },
+      "in_point": {
+        "seconds": 118.744,
+        "reasoning": "118.7s is the exact frame where the plate sits cleanly with no hand visible \u2014 the editor trimmed in right after the arranging hand exits and before anyone reaches back in."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    }
+  ]
+}
