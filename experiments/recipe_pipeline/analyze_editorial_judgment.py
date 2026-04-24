@@ -147,15 +147,35 @@ def load_scan_descriptions(scan_path: str, clip_name: str, in_point: float) -> s
     return "\n".join(descriptions)
 
 
-def detect_camera(filename: str, v1_prefix: str) -> str:
-    """Detect camera from filename prefix."""
-    if filename.startswith(v1_prefix):
+def detect_camera(filename: str, v1_prefix: str = "") -> str:
+    """Classify camera as front/overhead from filename prefix.
+
+    Uses Kitchn recording convention (shared with xml_to_manifest.py):
+      - B19I*, B20I*, C*  → front
+      - AI2I*, AI3I*, A*  → overhead
+      - anything else     → fallback to "front" (legacy behavior)
+
+    The v1_prefix argument is retained for backward compatibility but ignored;
+    the hardcoded prefix rules are more reliable than session-derived prefixes
+    (which fail when both cameras share a prefix — see steak_tacos).
+    """
+    if not filename:
+        return "unknown"
+    if filename.startswith(("B19I", "B20I", "C")):
         return "front"
-    return "overhead"
+    if filename.startswith(("AI2I", "AI3I", "A")):
+        return "overhead"
+    # Unknown prefix — be conservative. Default to "front" to preserve old
+    # behavior for edge cases; explicit unknowns would be better long-term.
+    return "front"
 
 
 def detect_v1_prefix(manifest: dict) -> str:
-    """Detect V1 camera prefix from pipeline manifest."""
+    """Detect V1 camera prefix from pipeline manifest.
+
+    Kept for compatibility with callers that still pass it through. The
+    current detect_camera() ignores it.
+    """
     for entry in manifest.get("timeline", []):
         v1 = entry.get("v1")
         if v1 and isinstance(v1, dict) and v1.get("file"):
@@ -164,10 +184,10 @@ def detect_v1_prefix(manifest: dict) -> str:
 
 
 def _detect_v1_prefix_from_approved(approved: dict) -> str:
-    """Detect V1 camera prefix from the approved-edit timeline.
+    """Compatibility shim — detect_camera no longer consumes this.
 
-    Used in --no-manifest mode. Takes the first 4 chars of the most-common
-    filename prefix across V1 clips.
+    Kept so --no-manifest mode callers don't break. Returns the most-common
+    V1 filename prefix or a safe default.
     """
     from collections import Counter
     prefixes = Counter()

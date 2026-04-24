@@ -666,9 +666,28 @@ def _detect_stop_motion(sorted_clips: List[Dict], fps: float) -> List[Dict]:
     return sequences
 
 
+def camera_from_filename(filename: str) -> str:
+    """Classify camera as front/overhead/unknown from source filename prefix.
+
+    Kitchn recording convention:
+      - B19I*, B20I*, C*  → front camera (eye-level side view)
+      - AI2I*, AI3I*, A*  → overhead camera (top-down bird's-eye)
+
+    Returns "unknown" if prefix doesn't match either convention.
+    Shared between parser stats and the annotation script's per-beat camera
+    labeling — keeps both in agreement.
+    """
+    if not filename:
+        return "unknown"
+    if filename.startswith(("B19I", "B20I", "C")):
+        return "front"
+    if filename.startswith(("AI2I", "AI3I", "A")):
+        return "overhead"
+    return "unknown"
+
+
 def _analyze_camera_alternation(sorted_clips: List[Dict]) -> Dict:
     """Analyze front↔overhead camera alternation pattern."""
-    # Detect camera from filename prefix
     cameras = []
     for clip in sorted_clips:
         f = clip.get("file", "")
@@ -677,12 +696,7 @@ def _analyze_camera_alternation(sorted_clips: List[Dict]) -> Dict:
             inner = clip.get("inner_clips", [])
             if inner:
                 f = inner[0].get("file", "")
-        if f.startswith("B19I") or f.startswith("B20I") or f.startswith("C"):
-            cameras.append("front")
-        elif f.startswith("AI2I") or f.startswith("AI3I") or f.startswith("A"):
-            cameras.append("overhead")
-        else:
-            cameras.append("unknown")
+        cameras.append(camera_from_filename(f))
 
     if not cameras:
         return {}
@@ -721,29 +735,26 @@ def _analyze_camera_alternation(sorted_clips: List[Dict]) -> Dict:
 
 
 def _pair_tracks(track_clips: Dict[str, List[Dict]], fps: float) -> List[Dict]:
-    """Pair V1 and V2 clips by overlapping timeline positions."""
+    """Build the editorial timeline by merging V1 and V2 tracks.
+
+    For each V1 clip: emit an entry with v1 set; pair with an overlapping V2
+    if one exists. V2 clips in V1 gaps (V2 playing during V1 silence) are
+    emitted as their own entries with v1=None, v2=set — these are real
+    editorial beats that the original paired-only logic dropped.
+
+    Timeline is sorted by timeline_in_sec. beat_index is re-assigned after
+    sorting so indices reflect playback order.
+    """
     v1_clips = track_clips.get("V1", [])
     v2_clips = track_clips.get("V2", [])
 
-    if not v2_clips:
-        return [
-            {
-                "beat_index": i,
-                "v1": clip,
-                "v2": None,
-                "timeline_in_sec": clip["timeline_in_sec"],
-                "timeline_out_sec": clip["timeline_out_sec"],
-            }
-            for i, clip in enumerate(v1_clips)
-        ]
-
-    timeline = []
+    entries = []
     used_v2 = set()
 
-    for i, v1 in enumerate(v1_clips):
+    # Pass 1: every V1 clip → an entry, paired with overlapping V2 if any
+    for v1 in v1_clips:
         best_v2 = None
         best_overlap = 0
-
         for j, v2 in enumerate(v2_clips):
             if j in used_v2:
                 continue
@@ -753,21 +764,32 @@ def _pair_tracks(track_clips: Dict[str, List[Dict]], fps: float) -> List[Dict]:
                 best_v2 = (j, v2)
 
         entry = {
-            "beat_index": i,
             "v1": v1,
+            "v2": best_v2[1] if best_v2 and best_overlap > 0 else None,
             "timeline_in_sec": v1["timeline_in_sec"],
             "timeline_out_sec": v1["timeline_out_sec"],
         }
-
         if best_v2 is not None and best_overlap > 0:
             used_v2.add(best_v2[0])
-            entry["v2"] = best_v2[1]
-        else:
-            entry["v2"] = None
+        entries.append(entry)
 
-        timeline.append(entry)
+    # Pass 2: V2 clips in V1 gaps → entries with v1=None, v2=set
+    for j, v2 in enumerate(v2_clips):
+        if j in used_v2:
+            continue
+        entries.append({
+            "v1": None,
+            "v2": v2,
+            "timeline_in_sec": v2["timeline_in_sec"],
+            "timeline_out_sec": v2["timeline_out_sec"],
+        })
 
-    return timeline
+    # Sort by timeline position and re-assign beat_index
+    entries.sort(key=lambda e: e["timeline_in_sec"])
+    for i, e in enumerate(entries):
+        e["beat_index"] = i
+
+    return entries
 
 
 def _overlap(a: Dict, b: Dict) -> float:

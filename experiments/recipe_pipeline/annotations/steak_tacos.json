@@ -1,0 +1,1139 @@
+{
+  "recipe": "steak_tacos",
+  "global_notes": "This is an analysis task, not an implementation task \u2014 answering directly with the requested editorial summary.\n\n---\n\n**Editorial analysis \u2014 steak_tacos**\n\nThe cut runs at a steady ~1.34s/beat with a deliberate accordion shape: open with three near-identical 1.25s hero beats, sit in a 1.1\u20131.6s pocket through the marinade build (beats 3\u20139), squeeze hard into a 0.5\u20130.88s flash run through the assembly montage (beats 22\u201327, the salt/oil/onion/sear sequence on cam B19I6568\u21926570), then breathe back out into 1.6\u20132.1s beauty shots for plating and the final hero. Front camera dominates at 77% with long uninterrupted runs (5, 6, 8 in a row) and overhead used as single-beat punctuation almost exclusively for top-down ingredient pours into the marinade dish \u2014 overhead earns its place when you need to see *what's going in*, front carries everything else.\n\nSpeed ramps are surgical, not decorative \u2014 only four, all parked on transformation moments (the 50% ramp on B19I6541 for the marinade pour into the dish, the 57.97% ramp on B19I6560 for the onion toss, the 50% ramp on B19I6561 for the sear entry) \u2014 they're being used as energy bumps right before a phrase change rather than as a stylistic tic. The punch-in pattern is the real workhorse: ~20 static scale-ups clustered tightly around 64% (vs the 50% baseline) running from the sear through the assembly, which keeps tight cuts feeling kinetic without ever cutting to a true close-up coverage angle. Three subtle animated zooms (50\u219253, 53\u219250, 55\u219263) sit on hero/transition beats \u2014 pushing in on the reveal, easing out off the match cut.\n\nNotable choices: the editor honors the captioned MATCH_CUT pairs (raw\u2192cooked onions at 13\u201314, raw\u2192seared steak at 17\u201318, pale\u2192charred tortilla at 22\u201323) by holding camera consistency across the pair so the transformation lands cleanly. The 35-added vs 6-editorial-group ratio shows heavy hand-tuning over the pipeline's grouping \u2014 the editor is overriding the algorithmic phrasing rather than riding it, particularly through the assembly compression, which is exactly where machine cuts tend to feel mechanical.",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_description": "beauty opener (3 shots): Grilled steak on grill pan with charred crust, tongs pressing down, peppers/onions bottom-right \u2192 Steak continues searing on grill pan, no tongs visible \u2192 Steak on grill pan, smoke/steam rising heavier, peppers at edge",
+      "beat_type": "beauty_opener",
+      "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
+      "filename": "B19I6562.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the hero angle for this beauty opener \u2014 it shows the charred crust, the steam/smoke rising off the pan, and the pressed-down tongs in a way overhead would flatten, and it's the best-take anchor for a title-card held section."
+      },
+      "duration": {
+        "seconds": 3.879,
+        "reasoning": "3.9s is driven by three stacked title cards (\"Grilled Steak Tacos,\" the Kitchn logo, and the graphic) needing to be read before the ingredient section starts \u2014 title readability, not action, sets the hold."
+      },
+      "in_point": {
+        "seconds": 79.371,
+        "reasoning": "79.4s lands on peak sear \u2014 tongs actively pressing, heaviest steam, peppers still in frame bottom-right \u2014 the most dynamic version of the pan shot to sell the \"tacos\" promise under the title."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (66.0% vs 50% baseline); punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Title Cards: K_Title Overlay_2023.png (0.0s-3.9s)",
+        "Title Cards: Creamy Pumpkin Soup_Title.png (0.0s-3.9s)",
+        "Title Cards: Graphic (0.0s-3.9s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-ins at 66% and 64% plus a small reframe are functional framing tools \u2014 tightening into the charred crust and centering the pan against the title card overlay, no speed ramp and no organic transformation being revealed."
+    },
+    {
+      "beat_index": 3,
+      "beat_description": "ingredient (1 clips): Hand holding open zip-top bag, measuring cup pouring orange juice in \u2192 Pour continues, juice stream visible, bag held steady \u2192 Pour finishing, juice pooling at bottom of bag",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6541.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the first beat of a front-held run (beats 1\u20132 are both front before switching to overhead), and front shows the pour geometry \u2014 the stream arcing from measuring cup into the open bag \u2014 which overhead would flatten into a featureless top-down of liquid disappearing."
+      },
+      "duration": {
+        "seconds": 1.5429999999999997,
+        "reasoning": "1.5s matches the MOGRT \"Orange juice\" overlay window (3.9s\u20135.4s), giving the two-word label a comfortable read; the 50% speed ramp between 22.5s\u201324.0s lets 3s of real pour action live inside that 1.5s screen window without feeling rushed."
+      },
+      "in_point": {
+        "seconds": 22.481,
+        "reasoning": "22.5s catches the pour already in motion \u2014 juice stream visible mid-flow with the bag held steady \u2014 rather than the empty-bag pre-pour, so the frame reads \"ingredient going in\" instantly on the cut."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 22.5s-24.0s)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (3.9s-5.4s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The ramp is compressing an attended, hand-performed pour action to fit the MOGRT read window, not preserving a found unattended transformation like butter melting or sauce pooling on its own. [flourish: functional]"
+    },
+    {
+      "beat_index": 4,
+      "beat_description": "ingredient (1 clips): New small cup pouring clearer lime juice into the same bag (now contains OJ pool) \u2192 Lime juice pour continuing, thinner stream, bag held open \u2192 Tail of lime pour, cup nearly empty, yellow pool at bag bottom",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6541.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 2 of a held front run (beat 1 was also front, marked <<< here continuing the hold) \u2014 the editor is following the \"hold camera across dumps\" rule rather than alternating to overhead just because the prior OJ beat already used front."
+      },
+      "duration": {
+        "seconds": 1.335,
+        "reasoning": "1.3s because the \"Lime juice\" MOGRT (5.4s-6.8s \u2248 1.4s) needs to be readable, and at 50% base speed the 1.3s timeline hold covers ~2.6s of source \u2014 enough to register the cup-swap and see the stream establish without dragging."
+      },
+      "in_point": {
+        "seconds": 35.285,
+        "reasoning": "35.3s lands right as the new small cup begins pouring clearer lime juice into the bag that already holds the OJ pool \u2014 the recognizable ingredient-change moment where the viewer can identify \"this is a different liquid now.\""
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 35.3s-36.6s)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (5.4s-6.8s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Speed ramp (50% base, 35.3s-36.6s) is a functional timing tool here \u2014 the pour is an attended action being stretched to fit the MOGRT read and the dump-sequence beat, not an unattended transformation like pooling sauce or melting butter. [flourish: functional]"
+    },
+    {
+      "beat_index": 5,
+      "beat_description": "ingredient (1 clips): Tail of lime pour, cup nearly empty, yellow pool at bag bottom \u2192 Top-down: bag lying on counter, hand holding garlic press squeezing minced garlic into bag \u2192 Garlic press squeezing more, mound of minced garlic forming on liquid surface",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I5315.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the switch point \u2014 previous two beats held front for lime pour endings, and this beat opens a 3-beat overhead run because the garlic press action only reads from above (you need to see the minced strands extruding downward and the mound landing on the liquid surface; a front/eye-level angle would hide the extrusion and the pooling)."
+      },
+      "duration": {
+        "seconds": 1.2509999999999994,
+        "reasoning": "1.3s covers reading \"Garlic\" in the MOGRT plus one clear squeeze-and-release of the press \u2014 the word is short but the viewer still needs a beat to register the new ingredient label while seeing the action that matches it."
+      },
+      "in_point": {
+        "seconds": 26.61,
+        "reasoning": "26.6s lands on the press already loaded and actively extruding, with the mound visibly forming on the yellow pool \u2014 not the setup frames (press being positioned, empty squeeze) and not the aftermath (hand pulling away)."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (6.8s-8.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 6,
+      "beat_description": "ingredient (1 clips): Chopped cilantro dumped into bag, forming green pile over garlic/liquid \u2192 Cilantro pile settled, slight shift, no hands in frame \u2192 Dark red-brown chipotle salsa dumped onto cilantro/garlic pile",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I5315.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is beat 4 of a 5-beat overhead run mid-sequence (rule 3: hold camera across dumps), and top-down is the only angle that shows successive ingredients stacking \u2014 green cilantro landing on garlic, then dark salsa landing on cilantro \u2014 which a front/eye-level shot would flatten into a hidden pile behind the bag wall."
+      },
+      "duration": {
+        "seconds": 1.0840000000000014,
+        "reasoning": "1.1s matches the \"Cilantro\" MOGRT read window (8.0\u20139.1s) \u2014 short word, short hold \u2014 and the cut out lands exactly as the salsa starts dumping, handing off to the next beat's \"Blended chipotle salsa\" label rather than forcing one beat to carry two text reads."
+      },
+      "in_point": {
+        "seconds": 36.912,
+        "reasoning": "36.9s catches the cilantro mid-fall into the bag \u2014 action-start on the beat, not a pre-roll of empty bag \u2014 so the cut opens on motion entering frame and the \"Cilantro\" label has something to point at immediately."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (8.0s-9.1s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 7,
+      "beat_description": "ingredient (1 clips): Dark red-brown chipotle salsa dumped onto cilantro/garlic pile \u2192 Chipotle mound settled, composition similar \u2192 Chipotle/cilantro composition, minor settling",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I5315.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is the third consecutive overhead in a held run (positions 3-4-5 of the camera sequence) during the ingredient dump \u2014 the top-down angle is the only one that shows the dark salsa landing on and merging with the green cilantro/garlic pile as a distinct color/texture layer, which a front angle on a bowl would hide."
+      },
+      "duration": {
+        "seconds": 1.209999999999999,
+        "reasoning": "1.2s because \"Blended chipotle salsa\" is a three-word MOGRT and needs ~1.2s of screen time to read cleanly; the MOGRT's own 9.1s\u201310.3s span confirms the cut is sized to the text, not to the pour action (which settles by 9.5s)."
+      },
+      "in_point": {
+        "seconds": 55.013,
+        "reasoning": "55.0s lands on the moment the salsa first hits the pile \u2014 you get the visual impact of dark-red meeting green in frame one, then the remaining ~0.7s lets the mound settle so the cut out to the front bag-stir doesn't feel yanked."
+      },
+      "verdict": "editorial_group",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (9.1s-10.3s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 8,
+      "beat_description": "Camera cuts to side angle on bag standing upright, red spatula stirring marinade inside bag",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6541.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is a switch point \u2014 overhead just showed the flat chipotle/cilantro composition, and front side-angle is the only angle that sells the stirring action through the upright bag wall (overhead on an upright bag shows nothing but the top)."
+      },
+      "duration": {
+        "seconds": 1.1260000000000012,
+        "reasoning": "1.1s is enough to register the stirring motion and new marbled marinade color before red onion drops in next \u2014 short enough to keep the ingredient-add pacing tight."
+      },
+      "in_point": {
+        "seconds": 70.612,
+        "reasoning": "70.6s catches the spatula mid-churn with visible marinade sloshing \u2014 peak motion, not a setup or settle frame."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 9,
+      "beat_description": "ingredient (1 clips): Hand tilting measuring cup dumping sliced red onion rings into the marinated bag \u2192 Onion rings continuing to drop into bag, cup tilted \u2192 Cup withdrawn, bag standing with onion slices suspended above marinade",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6541.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 7 in a held front-camera run (4 fronts before, multiple fronts after per the run map) \u2014 rule 3 says hold camera across ingredient dumps, and the front angle shows the bag standing upright so you see onions suspended in the marbled brown marinade, which an overhead would flatten into a top-down blob."
+      },
+      "duration": {
+        "seconds": 1.5429999999999993,
+        "reasoning": "1.5s because the \"Red onion\" MOGRT (11.4s\u201313.0s \u2248 1.6s) needs to be on-screen long enough to read two words, and the shot is cut to cover that readability window \u2014 the pour-drop-withdraw action fits inside it rather than dictating it."
+      },
+      "in_point": {
+        "seconds": 104.021,
+        "reasoning": "104.0s lands on the tilt-and-dump frame where rings first start falling \u2014 starting earlier would waste time on the cup entering frame, starting later would miss the pour initiation that visually matches the \"Red onion\" label appearing."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (11.4s-13.0s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 10,
+      "beat_description": "ingredient (1 clips): Raw flank steak being lowered into bag with both hands, meat visible red at top \u2192 Steak pushed further into bag, more meat visible, hands opening bag wider \u2192 Steak fully inside bag, hands sealing zipper from top",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6541.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is mid-run in a held front-camera stretch (positions 6\u20139 in the run are all front), so per rule 3 the editor is holding the angle across dumps rather than switching; the eye-level front also shows the steak descending into the bag opening, which reads as \"going in\" more clearly than a top-down overhead."
+      },
+      "duration": {
+        "seconds": 1.5020000000000007,
+        "reasoning": "1.5s \u2014 matches the \"Flank steak\" MOGRT's read time (the overlay runs 13.0s\u201314.5s), so the cut length is set by how long it takes to read the two-word ingredient label, not by the action itself."
+      },
+      "in_point": {
+        "seconds": 151.485,
+        "reasoning": "151.5s \u2014 this is the first frame where the raw red meat breaks the top of the bag with both hands lowering it, the clean entry moment that sells \"flank steak going in\" under the new text overlay."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (13.0s-14.5s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 11,
+      "beat_description": "Both hands massaging/squishing sealed bag from above to coat steak in marinade",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "B19I6541.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is a held-camera run (prior beat at 14.0s was also front showing hands sealing zipper), so staying on front maintains continuity through the sealing\u2192massaging action without a pointless F\u2192O\u2192F flip; overhead would also show the marinade mixing but the editor is riding the same angle through a continuous tactile moment."
+      },
+      "duration": {
+        "seconds": 1.0839999999999996,
+        "reasoning": "1.1s \u2014 short because it's a connective motion beat sandwiched between two ingredient beats with text overlays (1.5s prior, 1.6s next); the massaging itself is repetitive so a full phrase isn't needed, just enough to register the action and see marinade movement through the plastic before cutting."
+      },
+      "in_point": {
+        "seconds": 180.722,
+        "reasoning": "180.7s lands right as both hands are already engaged squishing from above with visible color/marinade mixing through the bag \u2014 skips the dead frames of hands just arriving/settling and enters on peak legibility of the action."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 12,
+      "beat_description": "ingredient (1 clips): Bag being lifted/shaken, some motion blur on hands \u2192 Marble counter clean, out-of-focus blue apron visible upper area \u2192 Same clean counter, nearly identical composition",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6541.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 10 of a long front-camera hold (the run shows five consecutive fronts ending here, with the switch to overhead happening on the next beat) \u2014 the anchor is the bag-lift/shake motion, which reads as dynamic hand action at eye-level but would flatten into a shapeless blur from overhead."
+      },
+      "duration": {
+        "seconds": 1.6270000000000007,
+        "reasoning": "1.6s because the \"Refrigerate for 1 to 4 hours\" MOGRT overlay (15.9s\u201317.2s) needs enough screen time to be read \u2014 ~26 characters of cook-time copy drives the hold, not the bag motion itself."
+      },
+      "in_point": {
+        "seconds": 260.594,
+        "reasoning": "260.6s catches the bag mid-lift with motion blur on the hands, giving the cut a kinetic entry before settling into the clean-counter frames where the refrigerate pill takes over the viewer's attention."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Cook Times/K SEO_Cook Times.aegraphic (15.9s-17.2s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 13,
+      "beat_description": "Top-down: marinated flank steak placed onto sheet pan, hands positioning it, marinade bag in bottom-left corner",
+      "beat_type": "",
+      "recipe_section": "mid-edit",
+      "filename": "AI2I5332.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this is a top-down placement moment \u2014 the steak landing on the sheet pan \u2014 and that geometry only reads from above; the sheet pan, onion pile, and marinade bag all lay flat in the frame, which front cam would flatten into an unreadable edge."
+      },
+      "duration": {
+        "seconds": 0.791999999999998,
+        "reasoning": "0.8s because it's a quick connective beat between two ingredient beats \u2014 just long enough to register \"steak is now on the pan\" before the next action, not long enough to linger on a static placement."
+      },
+      "in_point": {
+        "seconds": 15.307,
+        "reasoning": "15.3s lands on the hands actively positioning the steak with the marinade bag still visible bottom-left \u2014 picks up mid-motion so the cut has kinetic energy instead of opening on a static pan."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 14,
+      "beat_description": "ingredient (2 clips): Close-up side view of marinated steak on sheet pan, kosher salt sprinkling down from top \u2192 Salt continuing to fall, grains on meat surface \u2192 Salt continuing, subtle increase in salt grains visible on steak",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6559.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the side-view shows the vertical fall of salt grains against the dark meat surface \u2014 overhead would only show dots appearing, losing the motion of the sprinkle; this is also a switch point back to front after the prior overhead beat, starting a held front run per rule 3."
+      },
+      "duration": {
+        "seconds": 2.126999999999999,
+        "reasoning": "2.1s because the \"Kosher salt\" MOGRT runs exactly 18.9s\u201321.0s \u2014 the cut holds precisely as long as the text overlay needs to be read."
+      },
+      "in_point": {
+        "seconds": 12.846,
+        "reasoning": "12.8s captures the start of the salt fall \u2014 grains just beginning to descend onto the steak, giving the viewer the initiation of the action rather than mid-stream."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (61.0% vs 50% baseline); Reframed (offset h:0.02 v:-0.04)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (18.9s-21.0s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in/crop at 61% with a small reframe nudge is a functional tool \u2014 it lets the editor stay on the same front camera across two sub-beats of the held run (rule 3: use zooms/reframes to keep the same angle interesting) without cutting to overhead; no speed ramp present."
+    },
+    {
+      "beat_index": 16,
+      "beat_description": "ingredient (1 clips): Similar close-up, finer ground pepper now falling from above onto steak \u2192 Pepper continuing to fall, subtle darker flecks on meat \u2192 Pepper fall nearly finishing, steak visibly seasoned",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6559.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 this is beat 13 mid-way through a held front-camera run (positions 6-13 are almost all front), so it's a hold-continuation, not a switch; front at eye-level shows the pepper's trajectory falling onto the steak surface in a way overhead would flatten."
+      },
+      "duration": {
+        "seconds": 1.5429999999999993,
+        "reasoning": "1.5s \u2014 the \"Black pepper\" MOGRT appears at 21.0s and needs readable hang time; 1.5s is the minimum comfortable read for a two-word label, and it also covers the full pepper-fall action cleanly."
+      },
+      "in_point": {
+        "seconds": 70.153,
+        "reasoning": "70.2s \u2014 this frame is the precise moment pepper begins falling from above as the text swaps from \"Kosher salt\" to \"Black pepper,\" aligning the cut to the ingredient-label change."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (59.0% vs 50% baseline); Reframed (offset h:0.05 v:-0.03)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (21.0s-22.5s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 59% with a slight h:0.05/v:-0.03 reframe is a functional framing tool \u2014 tighter crop emphasizes the darker flecks landing on the meat and recenters the steak after the baseline frame drifts; no speed ramp, no unattended transformation, just a framing nudge."
+    },
+    {
+      "beat_index": 17,
+      "beat_description": "ingredient (1 clips): Cut to empty cast-iron grill pan on stove, hand holding small glass bowl of oil starting to pour \u2192 Oil stream visibly pouring onto ridges of grill pan \u2192 Oil continuing, pool spreading across grill ridges, drips visible",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6560.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the pouring action (bowl tilt, falling stream) reads as a dynamic arc from eye-level \u2014 overhead would flatten the pour into just a growing puddle; this sits in the middle of a held front run (beats 12\u201315), so it's part of the hold, not a switch point."
+      },
+      "duration": {
+        "seconds": 1.5850000000000009,
+        "reasoning": "1.6s covers the MOGRT read for \"Vegetable oil\" (two words, ~1.5s minimum) and the slowed 57.97% playback stretches ~0.93s of source across the beat so the pour's start-stream-pool arc fully plays without truncation."
+      },
+      "in_point": {
+        "seconds": 18.227,
+        "reasoning": "18.2s lands right as the bowl tilts and the first stream becomes visible \u2014 clean start of the pour action, no dead frames of a stationary bowl beforehand."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (57.9729%)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (22.5s-24.1s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Oil pooling and spreading across grill ridges with no hand in frame is an unattended transformation, and the sub-100% ramp slows it to let the pool bloom beautifully across the beat. [flourish: organic]"
+    },
+    {
+      "beat_index": 18,
+      "beat_description": "ingredient (2 clips): Top-down onto empty oiled grill pan, tongs placing loose mound of marinated red onion strands onto grates \u2192 Tongs releasing more onion strands, forming small pile center-left of pan \u2192 Tongs withdrawn slightly, onion mound settling",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I5335.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the held camera here \u2014 positions 11\u201315 of the run are all front, so this beat sits inside a sustained front hold rather than marking a switch, and the best take of the onion-placement moment lived on the front angle."
+      },
+      "duration": {
+        "seconds": 2.753,
+        "reasoning": "2.8s matches the reading time for the three-word \"Marinated red onions\" MOGRT, which is the governing constraint during an ingredient dump beat."
+      },
+      "in_point": {
+        "seconds": 4.796,
+        "reasoning": "4.8s into the source lands mid-placement with the tongs already dropping onion strands, skipping the empty-pan lead-in and starting on visible action."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Animated zoom in (55.0% -> 63.0%); Animated zoom in (50.0% -> 53.0%)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (24.1s-26.9s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "The 55\u219263% and 50\u219253% zooms are small functional reframes that push into the pan and add subtle motion to an otherwise static placement \u2014 no speed ramp, no organic transformation being captured, just a punch-in to keep the shot from feeling flat."
+    },
+    {
+      "beat_index": 20,
+      "beat_description": "Top-down: tongs actively tossing/flipping onion pile, motion blur on onion ribbons",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "AI2I5335.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor shot here \u2014 it's the best-take of the tossing action because it reveals the full spread of onion ribbons across the pan and captures the motion blur of the flip, which a front angle would flatten into just \"hands moving.\" It also sets up the next beat (steak lowering into pan) by keeping us in the same top-down spatial frame."
+      },
+      "duration": {
+        "seconds": 1.0429999999999993,
+        "reasoning": "1.0s is a short punch for a motion/energy beat \u2014 long enough to register the toss as a discrete action between the slower ingredient-overlay beats on either side, short enough to not drag or invite a second toss cycle."
+      },
+      "in_point": {
+        "seconds": 198.198,
+        "reasoning": "198.2s lands on peak motion \u2014 tongs actively mid-flip with ribbons in the air and visible blur, rather than the static lift-before or settle-after; it's the single frame in the clip where the action reads fastest."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 21,
+      "beat_description": "ingredient (1 clips): Raw marinated flank steak lowered onto grill next to cooking onions, tongs holding meat \u2192 Steak settling on grill, both items now cooking together \u2192 Same composition as 58 but smaller framing (possibly scaled/letterboxed window, zoom-in transition look)",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I5335.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because this beat sits inside a 3-beat overhead hold (positions 16-17 within the run) during the ingredient dump \u2014 the top-down angle shows the spatial relationship of the raw steak being placed next to the already-cooking onions on the grill, which a front angle couldn't communicate."
+      },
+      "duration": {
+        "seconds": 1.7520000000000024,
+        "reasoning": "1.8s holds long enough to read the \"Marinated flank steak\" MOGRT (which spans 27.9-29.7s) while the steak settles into place \u2014 the text readability sets the floor, not the action itself."
+      },
+      "in_point": {
+        "seconds": 226.893,
+        "reasoning": "226.9s lands exactly on the moment the raw red steak touches down beside the onions, capturing the placement action and the pre-sear color contrast before the meat starts cooking."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (27.9s-29.7s)"
+      ],
+      "correction": null
+    },
+    {
+      "beat_index": 22,
+      "beat_description": "Close-up side view of steak sizzling on grill pan, beginning to get char marks, onions visible right",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I6561.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front side-view is the anchor here \u2014 it's the best-take beauty angle that actually sells the sear (char marks developing, sizzle silhouette, shallow DOF on the crust), something the overhead can't show because char and sizzle read along the side profile, not from above."
+      },
+      "duration": {
+        "seconds": 1.3339999999999996,
+        "reasoning": "1.3s is a held beauty beat, not a cut beat \u2014 the 50% base ramp stretches roughly 0.65s of real source action across 1.3s of timeline so the sizzle and char have room to breathe before the overhead flip cuts in."
+      },
+      "in_point": {
+        "seconds": 466.049,
+        "reasoning": "466.0s lands right as char marks are beginning to appear with onions already crisping frame-right \u2014 it's the transformation threshold (raw\u2192seared) where the shot has the most visible change to offer during the held duration."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "Speed ramp (50.0% base, ramp between 466.0s-467.4s); punch-in/crop (59.0% vs 50% baseline); Animated reframe (position keyframes)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Unattended sear developing on its own (no hands, no tongs, no active manipulation until the cut-out) with speed ramp + punch-in to push into the crust detail and animated reframe to keep the static-ish hold alive \u2014 textbook found-moment treatment, not a timing fix. [flourish: organic]"
+    },
+    {
+      "beat_index": 23,
+      "beat_description": "Top-down cut: tongs lifting one side of steak revealing grilled underside, onions pushed to upper-left",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "AI2I5336.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead because the reveal of the grilled underside is only legible top-down \u2014 the front angle at 30.5s and 32.0s can't show what's on the bottom face of the steak, so this is a switch-point anchor for the flip-reveal moment."
+      },
+      "duration": {
+        "seconds": 0.9600000000000009,
+        "reasoning": "1.0s because it's a single punctuating beat \u2014 the reveal registers instantly and the wider top-down at 31.5s takes over the sustained read, so this shot only needs to land the \"grilled underside\" information."
+      },
+      "in_point": {
+        "seconds": 21.98,
+        "reasoning": "22.0s catches the tongs mid-lift with the crust face already rotated into view \u2014 the peak-information frame of the reveal, not the pre-lift or the set-down."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (58.0% vs 50% baseline)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "58% crop tightens onto the steak/tong contact point so the grilled pattern reads in a 1-second window \u2014 functional reframe to make the reveal legible at this short duration, not a found organic moment."
+    },
+    {
+      "beat_index": 24,
+      "beat_description": "tongs scraping marinade off steak back into cutting board",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6562.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": ""
+      },
+      "duration": {
+        "seconds": 1.6679999999999957,
+        "reasoning": ""
+      },
+      "in_point": {
+        "seconds": 22.314,
+        "reasoning": ""
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 25,
+      "beat_description": "ingredient (1 clips): vegetable oil poured onto grill pan with cooked peppers/chiles \u2192 oil stream continues into grill pan, peppers at bottom \u2192 oil pouring into grill pan, pan appears shinier/oilier",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6562.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front per metadata, though frames 33.5\u201334.5s visually read as overhead during the pour \u2014 assuming the metadata is correct, front holds beat-21 inside a mostly-front local run (beats 20, 21, 22, 23 all front), consistent with rule 3's \"hold across dumps\" rather than flipping to overhead for a single pour."
+      },
+      "duration": {
+        "seconds": 1.5010000000000048,
+        "reasoning": "\"Vegetable oil\" is a 12-character, two-word MOGRT that reads in roughly a second; 1.5s gives a comfortable read-plus-breath without dragging the ingredient run."
+      },
+      "in_point": {
+        "seconds": 64.815,
+        "reasoning": "64.8s catches the oil stream already established and hitting the pan \u2014 the pan visibly transitions from dry to glossy across the hold, which is the transformation worth showing (skipping the pre-pour dead frames)."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "Animated zoom out (53.0% -> 50.0%)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (33.6s-35.1s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "A 53% \u2192 50% scale is a tiny, functional reframe/settle on an attended pouring action \u2014 not an unattended organic transformation (butter melting, sauce pooling) and no speed ramp, so it's a mechanical framing nudge rather than a flourish."
+    },
+    {
+      "beat_index": 26,
+      "beat_description": "marinated steak lowered into grill pan by tongs",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I6562.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a transformation moment \u2014 you need to see sear marks forming, smoke rising, and the tongs placing/repositioning at eye-level, which overhead flattens into a top-down geometry shot; the tight beauty close-up at 37.0s suggests this take was picked as the anchor for the sear section (best-take payoff frame), and surrounding cuts are built around landing on it."
+      },
+      "duration": {
+        "seconds": 2.0019999999999953,
+        "reasoning": "2.0s (longer than the 1.5s ingredient beats on either side) holds long enough to register the steak-to-grill transformation across its full arc \u2014 lowering, placement, sear-mark bloom, and resolution on the beauty frame \u2014 functioning as a mini organic flourish rather than a rhythmic dump beat."
+      },
+      "in_point": {
+        "seconds": 76.868,
+        "reasoning": "76.9s starts exactly on the tongs lowering the steak into the pan with the peppers/onions pushed to the bottom-right, which is the moment of commitment \u2014 earlier would be dead approach/empty pan air, later would skip the dramatic descent and start mid-placement without the setup."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 27,
+      "beat_description": "tight close-up of seared steak with grill marks and peppers beside",
+      "beat_type": "",
+      "recipe_section": "technique / active cooking",
+      "filename": "B19I6562.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is an anchor beauty shot \u2014 the seared crust and grill marks are the hero detail that only reads in tight macro, and overhead would flatten that texture; it also sits inside a held front-camera run (prev front 2.0s, next front 1.2s), so no switch is needed."
+      },
+      "duration": {
+        "seconds": 1.5020000000000024,
+        "reasoning": "1.5s because the beauty frame holds exactly until the scene breaks \u2014 at 38.5s the tongs enter and start moving peppers to the board, so the out-point is driven by the natural end of the steady macro moment, not a beat count."
+      },
+      "in_point": {
+        "seconds": 139.014,
+        "reasoning": "139.0s because that's the first clean frame where the macro composition has landed (grill marks centered, peppers settled beside) \u2014 the editor picked the frame where the hero image is fully resolved rather than mid-settle."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 28,
+      "beat_description": "tongs moving sauteed peppers/onions onto cutting board",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6563.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a held-camera run \u2014 previous clip is front, next clip is front with a punch-in, so the editor is staying on front through the transfer-to-board sequence rather than switching; front also shows the pile building with dimension on the board, whereas overhead would flatten the mound into a shape."
+      },
+      "duration": {
+        "seconds": 1.2090000000000032,
+        "reasoning": "1.2s covers the transfer and the tongs lifting away (38.5\u219239.7s of source) and cuts out before the steak arrives at 40.0s, which belongs to the next beat \u2014 the duration is bounded by the action, not padded."
+      },
+      "in_point": {
+        "seconds": 9.843,
+        "reasoning": "9.8s lands on the scene change where the tongs are already actively placing peppers on the board \u2014 starts in motion, skipping any approach/setup frames so the cut opens on the deposit itself."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 29,
+      "beat_description": "tongs placing cooked steak onto cutting board next to peppers",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6563.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the anchor/best-take moment \u2014 the steak's arrival on the board with grill marks visible at eye level is the payoff shot after grilling, which overhead would flatten into a top-down ingredient beat instead of a hero reveal."
+      },
+      "duration": {
+        "seconds": 2.0019999999999953,
+        "reasoning": "2.0s covers the full beauty arc \u2014 tongs arriving, steak landing, tongs pulling away, steak resting \u2014 giving the cooked hero ingredient room to breathe before the scene change to tortillas."
+      },
+      "in_point": {
+        "seconds": 85.502,
+        "reasoning": "85.5s lands exactly on \"steak arriving at resting position\" so the cut itself is the placement moment, not the pre-roll of tongs traveling in."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (67.0% vs 50% baseline); Reframed (offset h:0.03 v:0.01)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "67% punch-in tightens onto the steak as the hero subject (vs the looser 50% baseline that would include more board/peppers), and the tiny h:0.03/v:0.01 reframe is a functional compositional nudge to recenter the steak after the crop \u2014 attended tong action, not an unattended organic transformation, and no speed ramp present."
+    },
+    {
+      "beat_index": 30,
+      "beat_description": "ingredient (2 clips): raw corn tortilla placed on stove grate by hand \u2192 hand retreating from corn tortilla on gas burner grate \u2192 charred tortilla lifted by fingers over gas flame, another on burner",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I5340.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because the beauty of this beat is the tortilla puffing over visible blue flame at 43.0s\u201344.5s \u2014 overhead can't show the flame interaction or the puff profile, and this sits mid-run in a long front stretch (beat 26 of 40, flanked by front on both sides) so holding front matches the \"don't alternate every beat\" rule."
+      },
+      "duration": {
+        "seconds": 3.0870000000000033,
+        "reasoning": "3.1s because the \"Corn tortillas\" MOGRT needs read time AND the front angle contains an organic flourish (the tortilla puffing and char spots expanding untouched at 43.5s\u201344.5s), which earns extra hold beyond a standard dump beat."
+      },
+      "in_point": {
+        "seconds": 67.067,
+        "reasoning": "67.1s lands on the hand placing the raw tortilla on the grate \u2014 the clean start of the action, before retreat and before the puff payoff, so the clip reads as a complete mini-arc (place \u2192 retreat \u2192 puff)."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (41.8s-44.9s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 64% with a tiny reframe (-0.01, -0.02) tightens on the burner/flame/tortilla and nudges the subject off dead-center \u2014 functional framing, not a flourish; no speed ramp present so no verdict token."
+    },
+    {
+      "beat_index": 32,
+      "beat_description": "knife slicing into rested flank steak on cutting board",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6568.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this opens the knife-work section after the tortilla toasting hold \u2014 eye-level shows the blade biting into the steak and the slicing motion in profile, which overhead (geometry of finished slices) can't sell; the next beat is also front with matching punch-in, so this is the start of a held front run for the slicing sequence."
+      },
+      "duration": {
+        "seconds": 0.5,
+        "reasoning": "0.5s captures a single clean slice from entry to follow-through, matching the quick rhythm needed to string multiple slice beats together without lingering on any one cut."
+      },
+      "in_point": {
+        "seconds": 10.427,
+        "reasoning": "10.4s is the moment the blade actually enters the rested steak cleanly \u2014 skipping the approach and any prior slice, landing on the recognizable \"knife going in\" frame that reads instantly at this short duration."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "64% punch-in tightens on the blade/meat contact point so the action reads at 0.5s (baseline 50% would leave too much board and second steak visible), and the tiny h:-0.01/v:-0.02 nudge recenters the cutting point after the crop \u2014 functional timing/framing tool, not an unattended transformation."
+    },
+    {
+      "beat_index": 33,
+      "beat_description": "knife cutting through end of steak, finishing a slice",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6568.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a held-camera run on the slicing sequence (previous and next are both front from the same source clip B19I6568.mov), and the front angle shows the knife's lateral cutting motion and the exposed interior of the steak as the slice completes \u2014 overhead would flatten the action."
+      },
+      "duration": {
+        "seconds": 0.6679999999999993,
+        "reasoning": "0.7s fits the slicing-rhythm pocket between the 0.5s prev and 0.9s next, just long enough to register the completion of one slice without lingering into the next cutting motion."
+      },
+      "in_point": {
+        "seconds": 19.019,
+        "reasoning": "19.0s lands on the knife finishing its pass through the end of the steak \u2014 the resolution of a slice action, which is the most legible single-frame readable moment in a continuous cutting motion."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 64% with a tiny reframe (-0.01h, -0.02v) is a functional edit tool \u2014 it crops out the second steak visible top-left and centers the active knife/slice, matching the punch level of the surrounding shots from the same source for continuity."
+    },
+    {
+      "beat_index": 34,
+      "beat_description": "knife cutting multiple slices, several strips visible left",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6568.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front \u2014 held camera run continuing from the previous front knife beat (B19I6568), not a switch point; front shows the blade edge engaging the steak and the accumulated strips piling left of frame, which overhead would flatten into a top-down pattern and lose the cutting action itself."
+      },
+      "duration": {
+        "seconds": 0.8759999999999977,
+        "reasoning": "0.9s \u2014 slightly longer than the preceding 0.7s front beat, letting the viewer register the batch of strips before the hard cut-out to the overhead sour cream beat which starts a new ingredient section."
+      },
+      "in_point": {
+        "seconds": 46.964,
+        "reasoning": "47.0s \u2014 enters mid-slice with the blade already in the steak and several strips already visible left, skipping setup and landing on the peak visual (accumulated cuts) rather than a single stroke."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "64% punch-in tightens on the blade-and-strips region, cropping out surrounding counter/board space so the accumulation reads clearly at this short duration; the -0.01h/-0.02v reframe nudges the pile of strips back into compositional center. Functional \u2014 attended knife action, no speed ramp, just a tightening for focus."
+    },
+    {
+      "beat_index": 35,
+      "beat_description": "ingredient (1 clips): spoon with sour cream above three charred tortillas on gray plate \u2192 sour cream dollop dropped onto right tortilla from spoon \u2192 sour cream spooned into tortilla shell on plate, tight angle",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "AI2I5344.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is a switch point breaking a long front run (7 front beats prior) \u2014 top-down shows which of the three tortillas the dollop lands on (the right one) and the spatial drop, which the front eye-level angle can't resolve cleanly."
+      },
+      "duration": {
+        "seconds": 1.2090000000000032,
+        "reasoning": "1.2s covers the two-word \"Sour cream\" MOGRT read plus the visible dollop drop; shorter and the text cuts before landing, longer and it drags against the ingredient-dump cadence."
+      },
+      "in_point": {
+        "seconds": 7.549,
+        "reasoning": "7.5s lands on the moment the spoon is loaded and tipped over the right tortilla, catching the dollop release rather than the static pre-drop hover."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (76.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.03)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (47.0s-48.2s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "76% punch-in tightens onto the three tortillas and spoon so the dollop reads at this short hold, and the small h/v offset recenters the target tortilla in frame \u2014 functional framing for a brief ingredient-dump beat, no speed ramp present."
+    },
+    {
+      "beat_index": 36,
+      "beat_description": "ingredient (1 clips): sour cream spooned into tortilla shell on plate, tight angle \u2192 spoon spreading sour cream inside tortilla \u2192 sour cream spread in two tortilla shells, spoon pulling away",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6570.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front at beat 31 is a switch point \u2014 beat 30 was overhead, and front then holds for six more beats before the next overhead; eye-level shows the tortilla's depth and the spoon entering the shell in profile, which sells \"filling a vessel\" better than a top-down flatten would."
+      },
+      "duration": {
+        "seconds": 1.1679999999999993,
+        "reasoning": "1.2s matches the \"Sour cream\" MOGRT span (48.2s\u201349.3s \u2248 1.1s) \u2014 just long enough to read the two-word ingredient name before cutting to the steak beauty frame."
+      },
+      "in_point": {
+        "seconds": 26.443,
+        "reasoning": "26.4s lands on the spoon making contact and beginning the spread, so the cut opens on action (spreading) rather than on a static dollop or an empty approach."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (48.2s-49.3s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "64% punch-in plus a tiny -0.01h/-0.02v reframe tightens onto the tortilla/sour cream interaction and recenters it under the MOGRT \u2014 functional tightening for an attended spreading action, no speed ramp, so no flourish token."
+    },
+    {
+      "beat_index": 37,
+      "beat_description": "sliced steak placed in sour cream-lined tortilla, tight taco shot",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6570.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a tight taco beauty anchor \u2014 the best-take frame showing the pink steak interior resting on white sour cream inside the tortilla, which reads as a constructed taco only from eye-level; overhead would flatten the layered steak-on-cream relationship."
+      },
+      "duration": {
+        "seconds": 0.7920000000000016,
+        "reasoning": "0.8s because it's a brief beauty hold on the just-placed steak before hands enter at [50.0s] to arrange \u2014 long enough to register the pink interior, short enough to snap to the next action beat on the music."
+      },
+      "in_point": {
+        "seconds": 72.072,
+        "reasoning": "72.1s catches the clean frame right after the sour-cream spoon has cleared and the steak is settled but before fingers intrude, giving a momentary \"finished taco\" read."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 64% tightens past the 50% baseline to sell the taco as a hero/beauty moment and crop out the second taco and surrounding counter noise; the tiny h:-0.01 v:-0.02 nudge recenters the steak pile in the pushed-in frame \u2014 functional reframe, no speed ramp."
+    },
+    {
+      "beat_index": 38,
+      "beat_description": "hand placing/arranging steak slices in two sour-cream-lined tacos",
+      "beat_type": "",
+      "recipe_section": "prep / knife work",
+      "filename": "B19I6570.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is a held-camera run \u2014 the previous (0.8s) and next (1.2s) clips are both front from the same source file B19I6570.mov, so per Rule 3 the editor is holding one angle across the taco-assembly beats; the close side view reads fingers arranging steak into sour-cream-lined tacos more intimately than an overhead would."
+      },
+      "duration": {
+        "seconds": 0.8759999999999977,
+        "reasoning": "0.9s sits between the 0.8s prev and 1.2s next, keeping the assembly rhythm tight enough to feel like placement-placement-placement without lingering before the pepper topping arrives."
+      },
+      "in_point": {
+        "seconds": 86.753,
+        "reasoning": "86.8s drops in on the actual placing/arranging action (fingers on steak in taco) rather than waiting for the withdrawn-hand beauty hold \u2014 the decisive moment of the arrangement."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "The 64% punch-in and tiny -0.01/-0.02 reframe are functional \u2014 they match the neighbor punch-ins (64% before, 71% after) to keep the held B19I6570 angle visually varied across the run per Rule 3, and the reframe nudges the tacos into the compositional sweet spot; no speed ramp, so no flourish token."
+    },
+    {
+      "beat_index": 39,
+      "beat_description": "sauteed red bell pepper strips added on top of steak in taco",
+      "beat_type": "",
+      "recipe_section": "ingredient dump",
+      "filename": "B19I6570.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this beat sits inside a held-front run during the ingredient dump (prev front, next front), and eye-level sells the red strips landing on the dark steak as a textural beauty register rather than a top-down placement action."
+      },
+      "duration": {
+        "seconds": 1.2100000000000009,
+        "reasoning": "1.2s gives just enough hold to read the peppers-on-steak beauty frame before the pico beat takes over with its text overlay, slightly longer than the 0.9s predecessor to let the assembled taco breathe before the next ingredient call-out."
+      },
+      "in_point": {
+        "seconds": 123.415,
+        "reasoning": "123.4s lands on the peppers already resting on the steak (close-up beauty) rather than mid-placement, so the cut opens on a composed frame instead of a hand exit."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (71.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.07)",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 71% with a tiny v:-0.07 nudge is a functional reframe \u2014 tightening the held front angle to keep the repeated camera interesting per rule 3 (nests/zooms on a held camera) and centering the peppers on the steak; no speed ramp, so not a flourish."
+    },
+    {
+      "beat_index": 40,
+      "beat_description": "ingredient (1 clips): spoon dropping pico de gallo onto assembled tacos \u2192 spoon continues dropping pico de gallo, salsa forming pile on taco \u2192 spoon lifting away from taco after adding pico",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6572.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 35 of 40 in a long held front-camera run (the run shows front-after-front-after-front at this point), and the eye-level angle shows the horizontal arc of the spoon dropping pico across the taco \u2014 holding the camera per Rule 3 rather than switching."
+      },
+      "duration": {
+        "seconds": 1.9179999999999993,
+        "reasoning": "1.9s because the \"Pico de gallo\" MOGRT just appeared and the viewer needs time to read the four-syllable label while seeing the spoon actually deposit the salsa."
+      },
+      "in_point": {
+        "seconds": 17.434,
+        "reasoning": "17.4s in source because that's the frame where the spoon is actively releasing pico onto the assembled taco \u2014 the action starts mid-drop rather than on wind-up, so the cut lands on the visible deposit."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (52.2s-54.1s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "punch-in to 64% (tighter than 50% baseline) with a tiny h:-0.01 v:-0.02 reframe \u2014 functional framing to push the viewer closer to the taco surface and center the spoon's drop point; no speed ramp, no organic transformation, just a framing nudge for an attended action."
+    },
+    {
+      "beat_index": 41,
+      "beat_description": "ingredient (2 clips): crumbled cotija cheese falling onto pico-topped taco \u2192 more cotija sprinkled across taco, cheese coating pico \u2192 continued cotija sprinkle, cheese pile grows",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6572.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is the middle of a long held-camera run (front dominates beats 30\u201339 of the sequence) and front shows the cotija crumbles landing on the layered taco \u2014 pico, peppers, steak, cheese \u2014 in a way overhead would flatten; no reason to switch here."
+      },
+      "duration": {
+        "seconds": 2.878,
+        "reasoning": "2.9s because it matches the \"Cotija cheese\" MOGRT exactly (54.1s\u201357.0s) \u2014 the hold is sized to let the text read, not the sprinkle action, which continues past the cut."
+      },
+      "in_point": {
+        "seconds": 49.967,
+        "reasoning": "50.0s because the first cotija crumbles are entering the frame and landing on the taco \u2014 a clean start of the sprinkle that aligns with the text overlay cut-in."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02); punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (54.1s-57.0s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 64% with a tiny reframe nudge is a functional framing tool \u2014 tightens onto the taco so the cotija falling is legible against the pico/steak and keeps the composition centered under the top-left MOGRT; no speed ramp, attended sprinkle action."
+    },
+    {
+      "beat_index": 43,
+      "beat_description": "ingredient (1 clips): single cilantro leaf placed on taco center \u2192 cilantro leaf visible on taco, hand gone \u2192 second cilantro leaf added, two leaves on taco",
+      "beat_type": "ingredient",
+      "recipe_section": "ingredient dump (text overlay marks this step)",
+      "filename": "B19I6572.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front because this is beat 37 in a held front run (positions 32\u201336 are all front) \u2014 the editor is staying on the eye-level angle to show the delicate act of placing individual cilantro leaves, which reads better at eye level than top-down."
+      },
+      "duration": {
+        "seconds": 1.5850000000000009,
+        "reasoning": "1.6s because the \"Cilantro\" MOGRT runs 57.0s\u201358.6s (exactly 1.6s) \u2014 the hold length matches how long the text needs to sit on screen to be read, not the placement action itself."
+      },
+      "in_point": {
+        "seconds": 87.296,
+        "reasoning": "87.3s lands on the moment the first cilantro leaf touches the taco center, giving a clean start to the placement beat with the hand already in contact."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "punch-in/crop (64.0% vs 50% baseline); Reframed (offset h:-0.01 v:-0.02)",
+      "nested": "",
+      "mogrt_overlaps": [
+        "Mogrts: K SEO_Ingredient Text_MOGRT/K SEO_Ingredient Text_MOGRT.aegraphic (57.0s-58.6s)"
+      ],
+      "correction": null,
+      "effects_reasoning": "Punch-in to 64% from 50% baseline with a tiny reframe (h:-0.01, v:-0.02) tightens on the small leaves so the garnish reads at the scale it deserves \u2014 this is a functional framing tool, not an organic flourish, and no speed ramp is present."
+    },
+    {
+      "beat_index": 44,
+      "beat_description": "pull-back reveal \u2014 three finished tacos on gray plate, hand holds plate edge",
+      "beat_type": "",
+      "recipe_section": "plating / finishing",
+      "filename": "AI2I5348.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "Overhead is the anchor shot here \u2014 it's the only angle that shows all three finished tacos laid out in full composition on the plate, which a front angle would foreshorten or crop; the hand holding the plate edge adds the \"unveil\" gesture that makes this read as a reveal rather than a static beauty shot."
+      },
+      "duration": {
+        "seconds": 1.5850000000000009,
+        "reasoning": "1.6s covers the three distinct overhead moments visible (pull-back in, hero hold with hand, hero beauty hold as hand clears) before cutting to the front tight close-up \u2014 long enough to register the full dish, short enough to hand off to the front hero before it goes static."
+      },
+      "in_point": {
+        "seconds": 27.319,
+        "reasoning": "27.3s catches the pull-back motion already in progress with the hand still anchored on the plate edge, so the cut lands on movement (the reveal gesture) rather than a static plate \u2014 that motion is what sells this as a scene-change hero shot."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 45,
+      "beat_description": "tight close-up of two finished tacos side-by-side",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "B19I6578.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor shot \u2014 this is the plated-hero beauty moment where the side-front angle sells the pink steak edges and cilantro in cross-section, which an overhead would flatten into a top-down graphic; it's also a deliberate switch point after the previous overhead dump (1.6s) to signal \"we've arrived at the finished dish.\""
+      },
+      "duration": {
+        "seconds": 1.5429999999999993,
+        "reasoning": "1.5s is a read-the-hero hold \u2014 long enough to register both finished tacos as a composed pair, short enough to hand off to the 2.1s taco-lift beauty that extends this final sequence into a climactic beat."
+      },
+      "in_point": {
+        "seconds": 87.129,
+        "reasoning": "87.1s lands on the cleanest static framing of the plated pair before hands enter frame at ~61.5s of the edit \u2014 this is the best-take window where both tacos sit composed with cilantro visible and no motion blur contaminating the hero."
+      },
+      "verdict": "added",
+      "confidence": "medium",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    },
+    {
+      "beat_index": 46,
+      "beat_description": "hands lifting a taco from the plate, blurred motion",
+      "beat_type": "",
+      "recipe_section": "beauty close (plating, final hero)",
+      "filename": "B19I6578.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "Front is the anchor shot here \u2014 overhead can't show a taco held vertically with its filling cross-section, and this shot has to land the logo end-card composition, which only works eye-level; it's not part of a held run (previous was also front, but that's sequencing the best closer, not an alternation rule)."
+      },
+      "duration": {
+        "seconds": 2.1269999999999953,
+        "reasoning": "2.1s because the shot has to cover both the lift-from-plate motion AND settle into the vertical hero hold where the logo appears \u2014 a 1.5s cut like the previous beat would clip the settle; this is the final musical phrase resolving, so it breathes slightly longer than the beats before it."
+      },
+      "in_point": {
+        "seconds": 41.667,
+        "reasoning": "41.7s catches the lift at motion-blur initiation \u2014 starting earlier would show the static plated taco (redundant with prior beauty), starting later would skip the transformation and drop viewers into a static hold; the blur is the transition itself."
+      },
+      "verdict": "added",
+      "confidence": "high",
+      "pipeline_info": "",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "correction": null
+    }
+  ]
+}
