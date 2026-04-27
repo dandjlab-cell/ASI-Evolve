@@ -3,8 +3,9 @@
 **Date:** 2026-04-27
 **Branch:** `main`
 **Last commits:**
-- ASI-Evolve `<this commit>` — prproj reader + effect reasoning + A/B diff harness
-- Brain `<commit>` — ASI-Evolve session: vocabulary v2, prproj writer plan, full effect decoder
+- ASI-Evolve `9422103` — prproj reader + effect reasoning + A/B diff harness
+- ASI-Evolve `b22fbae` — session handoff doc
+- Brain `e648860` — ASI-Evolve session: vocabulary v2, prproj writer plan, full effect decoder
 
 **Role:** BUILDER
 
