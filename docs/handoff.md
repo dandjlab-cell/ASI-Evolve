@@ -128,24 +128,43 @@ Lock down the vocabulary of editorial intents (across all 17 corpus recipes), de
 - **baked_lobster_tails reports 775s duration** — known parser anomaly from prior handoff (beat 55 nest at 736s far past actual ~60s recipe). Cosmetic; effects extraction is fine.
 - **Mirror reflection-angle + Replicate count visual semantics unverified** — storage formats are decoded; what specific values (angle 0 vs 90, count 2 vs 3) DO visually requires opening the test prprojs in Premiere. 5-minute check.
 
+## Scope guard rail — DO NOT over-scope
+
+**This session = Round 1 ONLY.** Build the skeleton writer that produces a prproj with bins + media + sequence + V1 clip placement. Stop there and verify before adding more.
+
+DO NOT this session:
+- ❌ Add V2 cam track (that's Round 2)
+- ❌ Implement MOGRT writing (that's Round 2)
+- ❌ Implement ANY effects: no Transforms, no speed ramps, no Lumetri, no masks (that's Round 3)
+- ❌ Encode editorial-intent vocabulary entries (that's Round 4)
+- ❌ Decode the Lumetri Blob, the PremiereFilterPrivateData, or the Tracker payloads (deferred — see Effect Replication Recipes "A/B tests needed" section)
+
+The vocabulary doc exists for future rounds. Read it to understand the destination, but don't try to implement vocabulary intents in Round 1.
+
+The pass criteria for Round 1 is in `Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md` — open Premiere, load the generated prproj, spot-check 3 V1 clips. That's the bar. Hitting it = round 1 done; iterate to round 2 next.
+
 ## Quick Start for Next Session
 
 ```bash
-# Read the canonical context (in this order):
+# Set cwd to the ASI-Evolve repo (where the writer code will live):
+cd /Users/dandj/DevApps/ASI-Evolve
+
+# Read the canonical context for Round 1 (in this order):
 cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md"
 cat "/Users/dandj/DevApps/Brain/Knowledge/API Integration/Effect Replication Recipes.md"
-cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Editorial Intents Vocabulary v1.md"
 
-# Confirm the existing reader still works:
-cd /Users/dandj/DevApps/ASI-Evolve
+# Vocabulary doc is reference-only for Round 1 — don't implement it yet:
+# cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Editorial Intents Vocabulary v1.md"
+
+# Confirm the existing reader still works (sanity check, not part of build):
 python3 experiments/recipe_pipeline/prproj_reader.py "Recipe XMLs/STEAK TACO.prproj"
 
-# Existing manifest to use as input for round 1 writer:
+# Existing manifest = INPUT for the round 1 writer:
 cat /Users/dandj/DevApps/roughcut-ai/runs/basil_pesto/basil_pesto_manifest.json | python3 -m json.tool | head -50
 
-# Test prprojs available for verification:
+# Test prprojs available for round-trip verification (compare your output structure to these):
 ls "/Users/dandj/DevApps/ASI-Evolve/experiments/PREMIERE PROJECTS/TESTS/"
 
-# Round 1 starts here — build manifest_to_prproj.py at:
-# /Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/manifest_to_prproj/
+# Round 1 build location:
+# experiments/recipe_pipeline/manifest_to_prproj/manifest_to_prproj.py
 ```
