@@ -1,10 +1,10 @@
-# Recipe Pipeline — Session Handoff (2026-04-25)
+# Recipe Pipeline — Session Handoff (2026-04-27)
 
-**Date:** 2026-04-25
+**Date:** 2026-04-27
 **Branch:** `main`
 **Last commits:**
-- ASI-Evolve `615c506` — feat: 6 new recipe annotations + surgical frame extractor
-- Brain `6f7f320` — docs: commit to Premiere Pro medium + pattern library stub
+- ASI-Evolve `<this commit>` — prproj reader + effect reasoning + A/B diff harness
+- Brain `<commit>` — ASI-Evolve session: vocabulary v2, prproj writer plan, full effect decoder
 
 **Role:** BUILDER
 
@@ -12,133 +12,139 @@
 
 ## Session goal
 
-Reach a 15-recipe annotated corpus, then resolve where to take the editing-agent pipeline architecturally. Direction locked to Premiere Pro as the medium.
+Lock down the vocabulary of editorial intents (across all 17 corpus recipes), decode every effect parameter format we'd need to write a fresh Premiere project from scratch, and decide the production-system architecture for the manifest writer.
 
 ## What Was Done
 
-### Phase 1: Corpus expansion (15 recipes)
-- Fixed two parser/annotation bugs surfaced by steak_tacos:
-  - **V2-only beats recovery** in `xml_to_manifest.py` (12 missing beats restored on steak_tacos)
-  - **Camera detection via prefix convention** (replaced session-derived prefix with hardcoded B19I/AI2I rules — shared between parser and annotation script)
-- Re-annotated steak_tacos with the fixes (41 beats, 90.41 composite)
-- Annotated 6 more recipes via surgical frame extraction (XML-driven dense regions where stop-motion happens, 2fps elsewhere): baked_potato_soup, baked_lobster_tail, congee, crab_rangoon, cucumber_tea, french_onion_mac
-- Built `extract_frames_smart.py` — 2fps baseline + 12fps in dense regions (appearance compilations), driven by manifest's stop_motion_sequences + nest-internal scan
-- Final corpus scores: tune mean 86.48 → 85.50 over 15 recipes; range 71.51 (crab_rangoon) to 92.12 (flaky_pie_crust)
+### Vocabulary work
+- Built `recipe-analyze` skill at `~/.claude/skills/recipe-analyze/` — orchestrates `prproj_reader` → frame extraction → Opus editorial reasoning → pattern library refresh
+- Reran all 17 recipes through image-mode editorial reasoning (Opus reads actual rendered frames at every cut + effect boundary)
+- Generated **Editorial Intents Vocabulary v1** at `Brain/Projects/ASI-Evolve/Editorial Intents Vocabulary v1.md` — 7 categories, 26 entries, each with Definition + Realization + Recipes-cited + Counter-examples
+- Refined Stop-Motion category based on Dan's feedback:
+  - Two distinct patterns (`no-hands-addition` normal-paced vs `frame-staccato-stop-motion` 2-frame-per-clip)
+  - Shared constraints: locked overhead, hands don't block action (off-camera reach OK)
+  - Frame-staccato has ~5-frame entry hold + 2-frame body + ~5-frame exit hold (canonical structure)
+  - Exit hold extends past 5 frames when chaining into a Transform zoom-in (chained-effect rule)
+- Added `masked-hand-over-staccato` entry — composite of object-aware mask on hand layer + frame-staccato underneath. Steak_tacos sheet-pan moment is the canonical example.
 
-### Phase 2: Investigation — export format fidelity
+### Decoder work
+- Added speed-ramp extraction to `prproj_reader.py` — TimeRemapping + PlaybackSpeed now flow through to dumps
+- Verified all Mask2 Type values (was guessing before):
+  - `0` = system companion mask
+  - `1` = Ellipse Mask Tool
+  - `2` = Rectangle Mask Tool
+  - `3` = Pen Mask Tool
+  - `4` = Object Mask Tool (Sensei)
+- Verified Lumetri pid → UI panel mapping via A/B tests:
+  - pid 20 = Basic Correction Saturation
+  - pid 31 = Creative Saturation
+  - pid 90 = HSL Secondary Saturation
+  - pid 51 = Vignette Amount
+- Decoded project skeleton XML for the writer (3 A/B pairs):
+  - Bin / nested bin (`BinProjectItem` ClassID `dbfd6653-...`)
+  - Media import (`MasterClip` + `Media` + `VideoMediaSource` + `VideoStream` + `ClipProjectItem` + `ClipLoggingInfo`)
+  - Empty sequence (~50 elements: Sequence + TrackGroups + per-track ClipTracks + audio mixer)
+  - Nested-sequence-as-clip (via `VideoSequenceSource` instead of `VideoMediaSource`)
+- All ClassIDs documented in `Brain/Knowledge/API Integration/Effect Replication Recipes.md`
 
-Working through what the editing-agent pipeline actually needs revealed export-format limitations:
-
-- **XMEML drops adjustment-layer Transform effects entirely.** Confirmed on steak_tacos: 9 adjustment-layer clipitems, only 2 (V7 Lumetri grades) carried filter data. The 6 V3 + 1 V5 Transform effects came back empty.
-- **AAF preserves effect TYPES (`Transform`, `Lumetri Color`) and time spans, but parameters are missing for adjustment-layer Transforms.** Strictly better than XMEML for adjustment-layer awareness, but still loses keyframe values.
-- **AAF drops masks entirely.** XMEML drops them too. Only `.prproj` has them.
-- **`.prproj` has everything AND is fully readable.** Verified by extracting Transform effect parameters from steak_tacos: ObjectRef chain resolves cleanly, all 12 Transform parameters (Anchor Point, Position [animated], Scale [animated], etc.) accessible, keyframes follow same encoding as the documented speed-ramp solution.
-
-### Phase 3: Direction lock — Premiere Pro is the medium
-
-- Updated `Editing Agent - Roadmap.md` with 2026-04-25 direction lock: prproj becomes primary input, XMEML kept as fallback
-- Created `Knowledge/API Integration/Premiere Effect Pattern Library — Recipe Corpus.md` — canonical catalog stub with population schema, format requirements, and the explicit "see it before replicate it" framing
-- Reshaped tasks:
-  - **#16** → build prproj reader with full parameter extraction + populate pattern library across all 15 recipes. Reading is the unblocker — verified feasible today.
-  - **#17** → prproj WRITER for round-trip recreation. Deferred; only needed when pipeline produces editor-openable projects.
-  - **#18** → deleted; mask discovery folded into #16 (same method, no separate session needed).
+### Architecture decision
+- **Prproj-direct is the primary path** for the production manifest writer
+- UXP can't do speed ramps (per Adobe API: "Set speed: NO"); UXP can't do MOGRT text (per existing vault notes); both are core editorial elements
+- Server-deployable, no Premiere needed at build time, no plugin install for editors
+- Confirmed V1/V2 sync happens upstream (`audio_sync.py` cross-correlates audio → pairs.json with offsets → `build_editlist.py` grounding picks pre-aligned source coords). Recipe writer is dumb placement: V1 on track 1, V2 on track 2, both at same `timeline_in`. No offset math.
+- **The detailed plan for next session is at `Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md`**
 
 ## Current State
 
-**What works:**
-- 15 recipes annotated (Brain `Projects/ASI-Evolve/Annotations/`) with corresponding JSONs (`experiments/recipe_pipeline/annotations/`)
-- Rule scorer (`score_rules.py`) with 5 rules + verdict-token Rule 4
-- `xml_to_manifest.py` handles MOGRTs + Essential Graphics + V2-only beats + correct camera detection
-- `extract_frames_smart.py` produces surgical frame coverage for Pass 1 captioning
-- Annotation pipeline (`analyze_editorial_judgment.py`) supports `--no-manifest` mode, structured `[flourish: organic|functional]` verdict tokens, existing approved-edit JSONs
+**What works end-to-end:**
+- Reader: any `.prproj` → JSON dump with cuts, effects, masks, speed ramps, MOGRT text, Lumetri params, Mirror, Replicate
+- `recipe-analyze` skill: prproj → 2fps + 12fps frames → Opus editorial reasoning → pattern library refresh
+- Vocabulary clustering: 17 OBSERVATIONS sections → curated 26-entry intent catalog
+- A/B diff harness: any two prprojs → byte-level diffs in matching ArbVideoComponentParams
 
-**What's partially done:**
-- Pattern library doc is a stub awaiting reader output. Schema and population process are explicit; data isn't there.
+**What's documented:**
+- Effect Replication Recipes — every parameter for every effect we use, with verified values from steak_tacos
+- Stop-motion vocabulary fully refined (4 entries with shared constraints + 5-2-5 frame rule)
+- Speed ramp encoding (per `Premiere Speed Ramp via prproj.md`)
+- MOGRT text encoding (`textEditValue` UTF-16 JSON inside ArbVideoComponentParam)
+- Mask Type discriminator (0/1/2/3/4 mapping verified)
+- Bin/Media/Sequence/NestedSequence ClassIDs
 
 **What's not yet built:**
-- `prproj_reader.py` (task #16, the next-session opener)
-- Per-effect discovery docs in `Knowledge/API Integration/` (Adjustment Layer Transform, Mask, Lumetri Color)
-- 15 recipe `.prproj` dumps
-- `flat_timeline` / `dense_regions` parser refactor (task #15) — blocked by #16
+- The prproj-direct writer (`manifest_to_prproj.py`) — round-by-round plan exists, build is next session
+- Mirror Reflection Angle visual semantics (storage verified; visual mapping needs in-Premiere observation — 5 min check on existing test prprojs)
+- Replicate Count visual semantics (same — 5 min check)
 
-**Known gaps in the corpus:**
-- 5 recipes have hidden nest-internal appearance compilations not yet captured in beat groupings: cranberry_jalapeno_dip, peppermint_bark, pin_wheel, crab_rangoon, french_onion_mac. These will surface naturally once the parser reads `flat_timeline` from prproj output.
-- baked_lobster_tail has a parser anomaly (beat 55 nest at 736s, far past video end). Cosmetic; flag and filter when encountered.
-
-## Key Files Changed (this session)
+## Key Files Changed
 
 | File | What |
 |---|---|
-| `experiments/recipe_pipeline/xml_to_manifest.py` | V2-only beat recovery + shared `camera_from_filename()` helper |
-| `experiments/recipe_pipeline/analyze_editorial_judgment.py` | Camera detection updated to use prefix convention |
-| `experiments/recipe_pipeline/extract_frames_smart.py` | NEW — surgical 2fps+12fps frame extraction with nest-aware dense regions |
-| `experiments/recipe_pipeline/approved_edits/{6 new}.json` | NEW — parsed manifests for the 6 new recipes |
-| `experiments/recipe_pipeline/annotations/{6 new}.json` | NEW — annotation outputs |
-| `experiments/recipe_pipeline/annotations/steak_tacos.json` | UPDATED — re-run after V2-only fix |
-| `Brain/Projects/ASI-Evolve/Annotations/{7 new .md files}` | NEW — Obsidian-side annotations |
-| `Brain/Projects/ASI-Evolve/Editing Agent - Roadmap.md` | UPDATED — 2026-04-25 direction lock |
-| `Brain/Knowledge/API Integration/Premiere Effect Pattern Library — Recipe Corpus.md` | NEW — pattern catalog stub |
+| `experiments/recipe_pipeline/prproj_reader.py` | Speed ramp extraction added; Mask vertex decode; full param dumps for Transform/Lumetri/Mirror/Replicate |
+| `experiments/recipe_pipeline/effect_reasoning/run_effect_reasoning.py` | Compact effects table for Opus prompts; speed-ramp column added |
+| `experiments/recipe_pipeline/effect_reasoning/run_effect_reasoning_with_images_cli.py` | Image-mode reasoning runner — uses frame_index for 12fps dense-region frames |
+| `experiments/recipe_pipeline/effect_reasoning/cluster_vocabulary.py` | NEW — synthesizes OBSERVATIONS into the editorial-intent vocabulary |
+| `experiments/recipe_pipeline/prproj_ab_diff/diff_arb_payloads.py` | A/B diff harness — used to decode Mask Type, Lumetri pids, MOGRT text |
+| `experiments/recipe_pipeline/prproj_dumps/*.json` | 18 effect dumps (17 recipes + 1 legacy duplicate) |
+| `~/.claude/skills/recipe-analyze/SKILL.md` | NEW — orchestrator skill doc |
+| `~/.claude/skills/recipe-analyze/scripts/orchestrate.sh` | NEW — chains reader → frames → reasoning → library refresh |
+| `~/.claude/skills/recipe-analyze/scripts/extract_frames_for_prproj.py` | NEW — 2fps baseline + 12fps in dense regions identified from effects JSON |
+| `~/.claude/skills/recipe-analyze/scripts/refresh_pattern_library.py` | NEW — auto-refreshes the cross-recipe headline-stats table |
+| `Brain/Knowledge/API Integration/Effect Replication Recipes.md` | NEW — canonical reference; every effect's full param spec |
+| `Brain/Knowledge/API Integration/Premiere Adjustment Layer Transform via prproj.md` | UPDATED — Uniform Scale semantics corrected |
+| `Brain/Knowledge/API Integration/Premiere Mask2 via prproj.md` | UPDATED — full Type → tool table |
+| `Brain/Knowledge/API Integration/Premiere prproj Reverse Engineering Method.md` | UPDATED — extended ClassID table with bin/media/sequence elements |
+| `Brain/Projects/ASI-Evolve/Editorial Intents Vocabulary v1.md` | NEW — 7-category, 26-entry vocabulary |
+| `Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md` | NEW — round-by-round build plan for next session |
+| `Brain/Projects/ASI-Evolve/Test Prprojs Needed.md` | UPDATED — closed (all primary tests done) |
+| `Brain/Projects/ASI-Evolve/Annotations/{recipe} — Effect Reasoning (image mode).md` | 17 NEW files — Opus reasoning per recipe |
 
 ## Decisions Made
 
 | Decision | Reasoning |
 |---|---|
-| **Premiere Pro is the medium** | Only `.prproj` preserves full editorial fidelity (adjustment-layer Transform keyframes, masks, full parameter state). Confirmed today via direct extraction. XMEML and AAF both drop critical data. |
-| **Reading over writing — for now** | Reading prproj is straightforward (verified ObjectRef chain resolution works). Writing valid prproj is hard. Reading unblocks editing-agent work; writing only matters when pipeline produces editor-openable projects (deferred to task #17). |
-| **Pattern library as the catalog** | "See it before replicate it." Every recipe gets a full parameter dump AND a comparative entry. Patterns emerge from data, not theory. Foundation for eventual replication when M3 generator needs training data. |
-| **Detection-only for adjustment-layer Transforms in initial reader** | Annotation quality doesn't materially benefit from parameter values. Dense frame sampling + VLM observation captures editorial signal. Parameters add ~10% margin (mostly for style signature precision and replication). |
-| **Discovery #18 (masks) folded into #16** | Same method, same reverse-engineering process. No reason for a separate session — handle as part of building the reader. |
-| **Tasks #15, #10 blocked by #16** | The parser refactor + style signature work want clean `flat_timeline` from full-fidelity input. Doing them on XMEML now would require redoing on prproj later. |
-| **Third-party parsers (PRPROJ-READER, prproj-rs) flagged for evaluation, not assumed useful** | Both are external GitHub projects, never tested by us. Task #16 starts with a 30-min feasibility check and documents the outcome regardless (so we don't re-evaluate them in 6 months). |
-| **Defer cloud-migration thread** | Cloud migration plan exists in `Brain/Projects/RoughCut/Recipe Pipeline — Cloud Migration Status.md` but is parallel to editing-agent work. Not on the critical path for next session. |
+| **Prproj-direct as primary writer architecture** | UXP can't do speed ramps (Adobe API: "Set speed: NO"). Recipes use them constantly. Without prproj-direct, an entire editorial layer is unencodable. Plus: server-deployable, no plugin install, deterministic. |
+| **Stop-Motion is its own vocabulary category, with TWO distinct patterns** | Dan corrected the conflation: `no-hands-addition` (normal pace, defined by hand-presence) is orthogonal to `frame-staccato-stop-motion` (defined by 2-frame-per-clip cut rate). Both can stack. |
+| **5-frame bookends are non-negotiable for staccato sequences** | Without them the staccato feels jarring on entry/exit. Exit hold extends past 5 when chaining into a zoom transition. |
+| **MOGRT counts are tooling noise, NOT editorial signature** | Saved as feedback memory previously — Dan added MOGRTs because manifest can't get text in any other way. Don't infer text-style preferences from Capsule density. |
+| **Verified Mask Type table over assumed** | Had been guessing Type=4=object-aware from correlation. Ran A/B tests (`MASK_PEN`, `MASK_ELLIPSE`) → confirmed 0=companion, 1=Ellipse, 2=Rectangle, 3=Pen, 4=Object. |
+| **V1/V2 sync is upstream concern, not writer concern** | Read `roughcut-ai/premiere-plugin/lib/ppro-api.js:596-684` — recipe pipeline writer doesn't consume `audio_offset_s`. Sync was applied during manifest generation by `audio_sync.py`. By manifest-write time, source coords already represent the same wall-clock moment. |
+| **Object-aware mask geometry stays editor's responsibility** | Sensei generates the Tracker payloads on-click. Manifest emits Type=4 placeholder + marker; editor clicks Object Mask Tool; Sensei populates everything. We don't need to decode the FlatBuffers tracker format. |
+| **Image-mode reasoning beats text-only reasoning** | Image mode caught visual details (red garlic press, hand-presence patterns, mask-isolated hand exits) that text descriptors lost. Quality lift validated end-to-end across all 17 recipes. |
+| **Vocabulary clustering used `--no-annotation` flag for Opus calls** | Existing per-beat annotation caused Opus to anchor to its prose framing instead of deriving from effects + frames. Removing it dramatically improved precision (verified on steak_tacos title-card section bug). |
 
-## What's Next (next session priority order)
+## What's Next
 
-1. **Task #16 — Build prproj reader.** Stage 1: 30-min feasibility check on PRPROJ-READER and prproj-rs (clone, run on `Recipe XMLs/STEAK TACO.prproj`, document outcome). Stage 2: build `prproj_reader.py` that extracts full parameter fidelity. Stage 3: write per-effect discovery docs in vault. Stage 4: run on all 15 recipes, populate pattern library.
-2. **Task #15 — Parser refactor** (unblocked once reader works). Build `flat_timeline`, `dense_regions`, `appearance_compilations`, `span_effects` on top of the prproj-derived JSON. ~4 hours after the reader lands.
-3. **Task #10 — Style Signature v1** (blocked by #15). Mining patterns from `flat_timeline` data.
-4. **Task #13 — Discrimination test** (independent of others, can run any time). Construct bad variants of basil_pesto/chicken_thighs, score, measure scorer's discriminative power.
-5. **Task #14 — Close the loop on basil_pesto** (independent). Find roughcut-ai pipeline output for basil_pesto, annotate, score, compare to Dan's approved edit.
-6. **Task #17 — prproj WRITER** (deferred). Round-trip generation when pipeline output for editors becomes a goal.
+1. **Build round 1 of the prproj-direct writer** — `manifest_to_prproj.py` that takes basil_pesto's existing manifest + ffprobe + emits a working prproj with bins + media + sequence + V1 clips. Spec is in `Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md` §"Round 1".
+2. **Verify round 1** — open generated prproj in Premiere, spot-check 3 clips, round-trip read it with the existing `prproj_reader.py` to confirm values match the manifest exactly.
+3. **Round 2** — V2 + MOGRTs (proves the prproj-direct MOGRT path UXP can't do).
+4. **Round 3** — Effects layer (the editorial-intent vocabulary: Transforms, speed ramps, Lumetri, masks, kaleidoscopes).
+5. **Round 4** — Manifest schema v2 design with intent tags per beat.
+6. **Side task (~10 min)** — open `MIRROR_ANGLE_0/90` and `REPLICATE_2/3` in Premiere, observe and document the visual semantics. Updates to `Effect Replication Recipes.md`.
 
 ## Known Issues
 
-- **baked_lobster_tail timeline anomaly** — beat 55 nest at 736-775s is far past the actual recipe duration (~60s). Other 54 beats are normal. Worth filtering or flagging.
-- **5 recipes' nested appearance compilations not yet visible** to scorer beat grouping (will surface after parser refactor on prproj input). Their current scores reflect partial visibility.
-- **basil_pesto flourish tags** — backfill classifier tagged all 4 speed ramps as functional including the pesto pour. Dan paused on revisiting; flagged for after Style Signature v1 gives us norms.
-- **Concurrency cap on parallel Opus image-reading agents** — ~3-4 agents max. Documented in feedback memory; respect waves of 3 for any future Pass 1 work.
-- **Subagent Write permission** — agents can't `Write` to paths outside session cwd. Pre-create output files; agents use `Edit`.
-- **Cloud migration plan exists in parallel** — `Brain/Projects/RoughCut/Recipe Pipeline — Cloud Migration Status.md`. Not blocking editing-agent work; pick up separately if/when capacity matters.
+- **steak_tacos vs steak_taco slug duplicate** — `prproj_dumps/` has both. The reader's slugifier produced `steak_taco` from `STEAK TACO.prproj` filename; later we copied to `steak_tacos_effects.json` for consistency. Only impacts directory listings; effect-reasoning files use `steak_tacos`. Cleanup: delete `steak_taco_effects.json`.
+- **baked_lobster_tails reports 775s duration** — known parser anomaly from prior handoff (beat 55 nest at 736s far past actual ~60s recipe). Cosmetic; effects extraction is fine.
+- **Mirror reflection-angle + Replicate count visual semantics unverified** — storage formats are decoded; what specific values (angle 0 vs 90, count 2 vs 3) DO visually requires opening the test prprojs in Premiere. 5-minute check.
 
 ## Quick Start for Next Session
 
 ```bash
 # Read the canonical context (in this order):
-cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Editing Agent - Roadmap.md"
-cat "/Users/dandj/DevApps/Brain/Knowledge/API Integration/Premiere Effect Pattern Library — Recipe Corpus.md"
-cat "/Users/dandj/DevApps/Brain/Knowledge/API Integration/Premiere prproj Reverse Engineering Method.md"
-cat "/Users/dandj/DevApps/Brain/Knowledge/API Integration/Premiere Speed Ramp via prproj.md"
+cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md"
+cat "/Users/dandj/DevApps/Brain/Knowledge/API Integration/Effect Replication Recipes.md"
+cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Editorial Intents Vocabulary v1.md"
 
-# Start task #16 — feasibility check (~30 min):
-mkdir -p /tmp/prproj-eval && cd /tmp/prproj-eval
-git clone https://github.com/sergeiventurinov/PRPROJ-READER
-git clone https://github.com/supercuts/prproj-rs
-# Try parsing STEAK TACO.prproj with each. Record outcome regardless of result.
+# Confirm the existing reader still works:
+cd /Users/dandj/DevApps/ASI-Evolve
+python3 experiments/recipe_pipeline/prproj_reader.py "Recipe XMLs/STEAK TACO.prproj"
 
-# Verified-readable test case (Transform extraction confirmed working):
-ls -la "/Users/dandj/DevApps/ASI-Evolve/Recipe XMLs/STEAK TACO.prproj"
+# Existing manifest to use as input for round 1 writer:
+cat /Users/dandj/DevApps/roughcut-ai/runs/basil_pesto/basil_pesto_manifest.json | python3 -m json.tool | head -50
 
-# Already-decompressed reference (gzipped XML, 49k lines):
-ls -la /tmp/steak_tacos_prproj.xml
+# Test prprojs available for verification:
+ls "/Users/dandj/DevApps/ASI-Evolve/experiments/PREMIERE PROJECTS/TESTS/"
+
+# Round 1 starts here — build manifest_to_prproj.py at:
+# /Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/manifest_to_prproj/
 ```
-
-## Files referenced for context
-
-- `Brain/Projects/ASI-Evolve/Editing Agent - Roadmap.md` — master plan with 2026-04-25 direction lock
-- `Brain/Knowledge/API Integration/Premiere prproj Reverse Engineering Method.md` — established method, ClassID table
-- `Brain/Knowledge/API Integration/Premiere Speed Ramp via prproj.md` — first proven extraction (template for future effect docs)
-- `Brain/Knowledge/API Integration/Premiere Pro API Complete Reference.md` — what's exposed via API (try API first)
-- `Brain/Knowledge/API Integration/Premiere Effect Pattern Library — Recipe Corpus.md` — canonical catalog stub
-- `Recipe XMLs/STEAK TACO.prproj` — verified-readable test case
-- `Recipe XMLs/steak_tacos XML.aaf` — AAF reference (preserves effect types but not transform parameters)
-- `Recipe XMLs/steak_tacos XML.xml` — XMEML reference (drops adjustment-layer Transforms entirely)
