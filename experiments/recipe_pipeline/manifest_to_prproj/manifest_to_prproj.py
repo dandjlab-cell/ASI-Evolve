@@ -1,29 +1,24 @@
 #!/usr/bin/env python3
 """
-manifest_to_prproj.py — Round 1 prproj-direct writer.
+manifest_to_prproj.py — Round 1 prproj-direct writer (CLI orchestrator).
 
-Takes a recipe manifest (e.g. basil_pesto_manifest.json) and emits a Premiere
-.prproj with bins, media imports, an empty sequence at the manifest's fps and
-resolution, and V1 clips placed at the manifest's timeline positions cutting
-from the manifest's source ranges.
+Takes a recipe manifest and emits a Premiere .prproj with bins, media imports,
+an empty sequence at the manifest's fps/resolution, and V1 clips placed at the
+manifest's timeline positions cutting from the manifest's source ranges.
 
-Round 1 scope: V1 only. No V2, no MOGRTs, no effects. See plan at
-Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md §"Round 1".
+Round 1 scope: V1 only. No V2, no MOGRTs, no effects beyond per-clip
+PlaybackSpeed (static slow-mo) and Motion.Scale (resolution fit).
 
-Approach: template-mutation.
-  - Load SEQ_FLAT.prproj as the seed (full project boilerplate + 1 working V1
-    clip in an "Sequence 01" sequence).
-  - Strip the existing single VideoClipTrackItem on V1 + its template assets.
-  - Append fresh media-chain blocks for every unique V1 source.
-  - Append fresh VideoClipTrackItem + subclip VideoClip per timeline entry.
-  - Build 2 bins (1_CUTS, 2_FOOTAGE) under root; reparent items.
-  - Renumber all assigned IDs to avoid collision with the seed.
-  - Gzip and write.
+This file is the CLI entry point and the orchestrator (`write_prproj`). The
+actual XML emission lives in the `core/` and `effects/` subpackages — each
+module documents its own scope. See `core/__init__.py` for the component map
+and Decision 3 in Brain/Projects/RoughCut/Architecture — Lessons from Claude
+Code Paper.md for the rationale behind the split.
 
-Verification:
-  - python prproj_reader.py <out.prproj> must succeed.
-  - Open in Premiere: bins visible, sequence at right fps/res, V1 clips on
-    timeline matching manifest within 1 frame.
+Companion docs:
+  - Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md — round-by-round plan
+  - Brain/Projects/ASI-Evolve/Manifest-to-Prproj Writer — Build Notes.md — operational handoff
+  - Brain/Knowledge/API Integration/Premiere prproj Media Chain and Clip Placement Graph.md — XML reference
 """
 
 from __future__ import annotations
@@ -32,53 +27,25 @@ import argparse
 import gzip
 import json
 import logging
-import os
 import re
-import shutil
-import subprocess
 import sys
-import uuid
-from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
-
-import xml.etree.ElementTree as ET
 
 # Support both module and script invocation:
 #   python -m experiments.recipe_pipeline.manifest_to_prproj.manifest_to_prproj …
 #   python experiments/recipe_pipeline/manifest_to_prproj/manifest_to_prproj.py …
 # When invoked as a script, __package__ is empty and sibling modules need a
-# path-based import. Prepending the package directory to sys.path makes both
-# work without conditional imports.
+# path-based import. Prepending the package's parent directory to sys.path
+# makes both work without conditional imports.
 if not __package__:
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
     __package__ = "manifest_to_prproj"  # type: ignore[name-defined]
 
 from .core import (  # noqa: E402
-    CID_BIN_PROJECT_ITEM,
-    CID_CLIP_PROJECT_ITEM,
-    CID_MASTER_CLIP,
-    CID_MEDIA,
-    CID_VIDEO_STREAM,
-    CID_VIDEO_MEDIA_SOURCE,
-    CID_CLIP_LOGGING_INFO,
-    CID_VIDEO_CLIP,
-    CID_VIDEO_CLIP_TRACK_ITEM,
-    CID_CLIP_CHANNEL_GROUP_VECTOR_SERIALIZER,
-    CID_MARKERS,
-    CID_SUB_CLIP,
-    CID_VIDEO_COMPONENT_CHAIN,
-    CID_VIDEO_FILTER_COMPONENT,
-    CID_VIDEO_COMPONENT_PARAM,
-    CID_VIDEO_COMPONENT_PARAM_BOOL,
-    CID_VIDEO_COMPONENT_PARAM_CLAMPED,
-    CID_POINT_COMPONENT_PARAM,
     TICKS_PER_SECOND,
-    START_KEYFRAME_TICK,
-    FRAMERATE_TICKS_23_976,
     timecode_to_seconds,
     seconds_to_ticks,
-    start_keyframe as _start_keyframe,
 )
 from .core.seed_loader import (  # noqa: E402
     SEED_PRPROJ,
@@ -115,6 +82,7 @@ from .effects.motion import (  # noqa: E402
     build_motion_filter,
 )
 
+
 logger = logging.getLogger("manifest_to_prproj")
 
 
@@ -125,12 +93,8 @@ def _slugify(s: str) -> str:
     return s.strip("_") or "recipe"
 
 
-# ──────────────────────────────────────────────────────────────────────────
-# Main
-# ──────────────────────────────────────────────────────────────────────────
-
-
 def setup_logging(out_path: Path, verbose: bool, quiet: bool) -> None:
+    """Two sinks: stderr at INFO/DEBUG/WARNING per flags, sidecar .log at DEBUG."""
     level = logging.DEBUG if verbose else (logging.WARNING if quiet else logging.INFO)
     logger.setLevel(logging.DEBUG)
     fmt = logging.Formatter("%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -194,6 +158,7 @@ def preflight(timeline: list, footage_folder: Path, fps: float) -> dict[str, Med
 
 
 def write_prproj(manifest_path: Path, out_path: Path, footage_folder_override: Optional[Path]) -> None:
+    """Top-level orchestrator. Loads the seed, mutates it per the manifest, writes the result."""
     logger.info("manifest: %s", manifest_path)
     manifest = json.loads(manifest_path.read_text())
     seq = manifest["sequence_settings"]
@@ -272,11 +237,11 @@ def write_prproj(manifest_path: Path, out_path: Path, footage_folder_override: O
             )
 
         # Per-clip scale fits source into the sequence frame using height ratio.
-        # 4K (2160h) -> 1080p sequence: scale = 50%. Same-resolution: scale = 100
-        # (no Motion override emitted; chain stays default).
-        # The orchestrator decides WHETHER to apply Motion.Scale; the factory
-        # passed to build_clip_placement defers the actual element build until
-        # placement IDs have been allocated, preserving ID-allocation order.
+        # 4K (2160h) -> 1080p sequence: scale = 50%. Same-resolution: no Motion
+        # override emitted; chain stays default. The factory pattern lets
+        # build_clip_placement allocate its own IDs first, then invoke this
+        # callable — preserving pre-refactor ID allocation order so ObjectID
+        # values stay byte-identical.
         meta = metas[basename]
         motion_filter_factory = None
         if meta.height != height:
