@@ -93,6 +93,16 @@ from .core.serializer import (  # noqa: E402
     write_prproj_bytes,
     integrity_check,
 )
+from .core.bins import (  # noqa: E402
+    build_bin,
+    find_root_project_item,
+    find_v1_clip_track,
+    find_existing_vcti,
+    replace_root_bin_items,
+    replace_v1_clip_items,
+    remove_existing_vcti,
+    classify_root_clip_project_item,
+)
 
 logger = logging.getLogger("manifest_to_prproj")
 
@@ -181,27 +191,6 @@ def _parse_rational(s: str) -> tuple[int, int]:
 # ──────────────────────────────────────────────────────────────────────────
 # Element builders — each emits a fresh subtree with new IDs/UIDs
 # ──────────────────────────────────────────────────────────────────────────
-
-
-def build_bin(name: str, ids: IdFactory, child_urefs: list[str]) -> tuple[ET.Element, str]:
-    """BinProjectItem matching the BIN_FLAT shape. Returns (element, ObjectUID)."""
-    uid = ids.fresh_uid()
-    bin_el = ET.Element("BinProjectItem", {
-        "ObjectUID": uid,
-        "ClassID": CID_BIN_PROJECT_ITEM,
-        "Version": "1",
-    })
-    project_item = ET.SubElement(bin_el, "ProjectItem", {"Version": "1"})
-    node = ET.SubElement(project_item, "Node", {"Version": "1"})
-    props = ET.SubElement(node, "Properties", {"Version": "1"})
-    ET.SubElement(props, "project.icon.view.grid.order").text = "0"
-    ET.SubElement(project_item, "Name").text = name
-
-    container = ET.SubElement(bin_el, "ProjectItemContainer", {"Version": "1"})
-    items = ET.SubElement(container, "Items", {"Version": "1"})
-    for i, uref in enumerate(child_urefs):
-        ET.SubElement(items, "Item", {"Index": str(i), "ObjectURef": uref})
-    return bin_el, uid
 
 
 def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
@@ -614,91 +603,6 @@ def build_clip_placement(
 # ──────────────────────────────────────────────────────────────────────────
 # Mutator: surgically modify the seed
 # ──────────────────────────────────────────────────────────────────────────
-
-
-def find_root_project_item(premiere_data: ET.Element) -> ET.Element:
-    for el in premiere_data:
-        if el.tag == "RootProjectItem" and "ObjectUID" in el.attrib:
-            return el
-    raise RuntimeError("RootProjectItem not found")
-
-
-def find_v1_clip_track(premiere_data: ET.Element) -> ET.Element:
-    """Return the first VideoClipTrack element with ObjectUID (the V1 track)."""
-    for el in premiere_data:
-        if el.tag == "VideoClipTrack" and "ObjectUID" in el.attrib:
-            return el
-    raise RuntimeError("V1 VideoClipTrack not found")
-
-
-def find_existing_vcti(premiere_data: ET.Element) -> Optional[ET.Element]:
-    for el in premiere_data:
-        if el.tag == "VideoClipTrackItem" and "ObjectID" in el.attrib:
-            return el
-    return None
-
-
-def replace_root_bin_items(root_bin: ET.Element, new_urefs: list[str]) -> None:
-    container = root_bin.find("ProjectItemContainer")
-    items = container.find("Items")
-    # Clear and repopulate
-    for child in list(items):
-        items.remove(child)
-    for i, uref in enumerate(new_urefs):
-        ET.SubElement(items, "Item", {"Index": str(i), "ObjectURef": uref})
-
-
-def replace_v1_clip_items(v1_track: ET.Element, vcti_ids: list[str]) -> None:
-    clip_items = v1_track.find("ClipTrack/ClipItems")
-    track_items = clip_items.find("TrackItems")
-    for child in list(track_items):
-        track_items.remove(child)
-    for i, oid in enumerate(vcti_ids):
-        ET.SubElement(track_items, "TrackItem", {"Index": str(i), "ObjectRef": oid})
-
-
-def remove_existing_vcti(premiere_data: ET.Element) -> None:
-    for el in list(premiere_data):
-        if el.tag == "VideoClipTrackItem" and "ObjectID" in el.attrib:
-            premiere_data.remove(el)
-
-
-def classify_root_clip_project_item(
-    cpi_uref: str, premiere_data: ET.Element
-) -> str:
-    """Classify a root ClipProjectItem as 'sequence' or 'media'.
-
-    Heuristic: if the document contains a `<Sequence>` element whose `<Name>`
-    matches the ClipProjectItem's `<Name>`, treat it as a sequence project item.
-    Otherwise it's media.
-
-    Walking the MasterClip→Clip→Source chain doesn't work for sequences because
-    sequence-backed MasterClips reference an AudioClip at the same Clip level
-    (not a VideoClip), and the chain to VideoSequenceSource is not as clean as
-    media-backed clips. Name-matching is robust because Premiere keeps the
-    ClipProjectItem name in lockstep with the Sequence name.
-    """
-    cpi = next(
-        (e for e in premiere_data
-         if e.tag == "ClipProjectItem" and e.get("ObjectUID") == cpi_uref),
-        None,
-    )
-    if cpi is None:
-        return "unknown"
-    name_el = cpi.find("ProjectItem/Name")
-    if name_el is None or not name_el.text:
-        return "unknown"
-    name = name_el.text
-
-    sequence_names = {
-        s.find("Name").text
-        for s in premiere_data
-        if s.tag == "Sequence"
-        and "ObjectUID" in s.attrib
-        and s.find("Name") is not None
-        and s.find("Name").text
-    }
-    return "sequence" if name in sequence_names else "media"
 
 
 # ──────────────────────────────────────────────────────────────────────────
