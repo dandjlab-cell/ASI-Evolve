@@ -80,11 +80,15 @@ from .core import (  # noqa: E402
     seconds_to_ticks,
     start_keyframe as _start_keyframe,
 )
-
-
-REPO_ROOT = Path(__file__).resolve().parents[3]
-SEED_PRPROJ = REPO_ROOT / "experiments" / "PREMIERE PROJECTS" / "TESTS" / "SEQ_FLAT.prproj"
-OUTPUTS_ROOT = REPO_ROOT / "experiments" / "PREMIERE PROJECTS" / "OUTPUTS"
+from .core.seed_loader import (  # noqa: E402
+    SEED_PRPROJ,
+    OUTPUTS_ROOT,
+    IdFactory,
+    parse_xml,
+    find_max_object_id,
+    collect_used_uids,
+    find_premiere_data,
+)
 
 logger = logging.getLogger("manifest_to_prproj")
 
@@ -168,61 +172,6 @@ def _parse_rational(s: str) -> tuple[int, int]:
         a, b = s.split("/")
         return int(a), int(b)
     return int(s), 1
-
-
-# ──────────────────────────────────────────────────────────────────────────
-# ID factory
-# ──────────────────────────────────────────────────────────────────────────
-
-
-@dataclass
-class IdFactory:
-    next_object_id: int = 1
-    used_uids: set = field(default_factory=set)
-
-    def fresh_id(self) -> str:
-        i = self.next_object_id
-        self.next_object_id += 1
-        return str(i)
-
-    def fresh_uid(self) -> str:
-        while True:
-            u = str(uuid.uuid4())
-            if u not in self.used_uids:
-                self.used_uids.add(u)
-                return u
-
-
-# ──────────────────────────────────────────────────────────────────────────
-# XML helpers
-# ──────────────────────────────────────────────────────────────────────────
-
-
-def parse_xml(xml_bytes: bytes) -> ET.ElementTree:
-    return ET.ElementTree(ET.fromstring(xml_bytes))
-
-
-def find_max_object_id(root: ET.Element) -> int:
-    mx = 0
-    for el in root.iter():
-        oid = el.get("ObjectID")
-        if oid and oid.isdigit():
-            mx = max(mx, int(oid))
-    return mx
-
-
-def collect_used_uids(root: ET.Element) -> set[str]:
-    uids = set()
-    for el in root.iter():
-        u = el.get("ObjectUID")
-        if u:
-            uids.add(u)
-    return uids
-
-
-def find_premiere_data(tree: ET.ElementTree) -> ET.Element:
-    """SEQ_FLAT root is <PremiereData Version="3">. Return that element."""
-    return tree.getroot()
 
 
 # ──────────────────────────────────────────────────────────────────────────
