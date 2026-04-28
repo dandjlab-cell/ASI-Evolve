@@ -44,39 +44,47 @@ from typing import Optional
 
 import xml.etree.ElementTree as ET
 
+# Support both module and script invocation:
+#   python -m experiments.recipe_pipeline.manifest_to_prproj.manifest_to_prproj …
+#   python experiments/recipe_pipeline/manifest_to_prproj/manifest_to_prproj.py …
+# When invoked as a script, __package__ is empty and sibling modules need a
+# path-based import. Prepending the package directory to sys.path makes both
+# work without conditional imports.
+if not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    __package__ = "manifest_to_prproj"  # type: ignore[name-defined]
 
-TICKS_PER_SECOND = 254_016_000_000
+from .core import (  # noqa: E402
+    CID_BIN_PROJECT_ITEM,
+    CID_CLIP_PROJECT_ITEM,
+    CID_MASTER_CLIP,
+    CID_MEDIA,
+    CID_VIDEO_STREAM,
+    CID_VIDEO_MEDIA_SOURCE,
+    CID_CLIP_LOGGING_INFO,
+    CID_VIDEO_CLIP,
+    CID_VIDEO_CLIP_TRACK_ITEM,
+    CID_CLIP_CHANNEL_GROUP_VECTOR_SERIALIZER,
+    CID_MARKERS,
+    CID_SUB_CLIP,
+    CID_VIDEO_COMPONENT_CHAIN,
+    CID_VIDEO_FILTER_COMPONENT,
+    CID_VIDEO_COMPONENT_PARAM,
+    CID_VIDEO_COMPONENT_PARAM_BOOL,
+    CID_VIDEO_COMPONENT_PARAM_CLAMPED,
+    CID_POINT_COMPONENT_PARAM,
+    TICKS_PER_SECOND,
+    START_KEYFRAME_TICK,
+    FRAMERATE_TICKS_23_976,
+    timecode_to_seconds,
+    seconds_to_ticks,
+    start_keyframe as _start_keyframe,
+)
+
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
 SEED_PRPROJ = REPO_ROOT / "experiments" / "PREMIERE PROJECTS" / "TESTS" / "SEQ_FLAT.prproj"
 OUTPUTS_ROOT = REPO_ROOT / "experiments" / "PREMIERE PROJECTS" / "OUTPUTS"
-
-# ClassIDs (verified in Brain/Knowledge/API Integration/Premiere prproj Reverse Engineering Method.md)
-CID_BIN_PROJECT_ITEM = "dbfd6653-24da-480e-a35e-ba45e9504e4b"
-CID_CLIP_PROJECT_ITEM = "cb4e0ed7-aca1-4171-8525-e3658dec06dd"
-CID_MASTER_CLIP = "fb11c33a-b0a9-4465-aa94-b6d5db2628cf"
-CID_MEDIA = "7a5c103e-f3ac-4391-b6b4-7cc3d2f9a7ff"
-CID_VIDEO_STREAM = "a36e4719-3ec6-4a0c-ab11-8b4aab377aa5"
-CID_VIDEO_MEDIA_SOURCE = "e64ddf74-8fac-4682-8aa8-0e0ca2248949"
-CID_CLIP_LOGGING_INFO = "77ab7fdd-dcdf-465d-9906-7a330ca1e738"
-CID_VIDEO_CLIP = "9308dbef-2440-4acb-9ab2-953b9a4e82ec"
-CID_VIDEO_CLIP_TRACK_ITEM = "368b0406-29e3-4923-9fcd-094fbf9a1089"
-CID_CLIP_CHANNEL_GROUP_VECTOR_SERIALIZER = "a3127a8c-95d4-456e-a7f5-171b3f922426"
-CID_MARKERS = "bee50706-b524-416c-9f03-b596ce5f6866"
-CID_SUB_CLIP = "e0c58dc9-dbdd-4166-aef7-5db7e3f22e84"
-CID_VIDEO_COMPONENT_CHAIN = "0970e08a-f58f-4108-b29a-1a717b8e12e2"
-CID_VIDEO_FILTER_COMPONENT = "d10da199-beea-4dd1-b941-ed3a78766d50"
-CID_VIDEO_COMPONENT_PARAM = "fe47129e-6c94-4fc0-95d5-c056a517aaf3"
-CID_VIDEO_COMPONENT_PARAM_BOOL = "cc12343e-f113-4d3b-ae05-b287db77d461"  # bool
-CID_VIDEO_COMPONENT_PARAM_CLAMPED = "a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542"  # clamped float (anti-flicker)
-CID_POINT_COMPONENT_PARAM = "ca81d347-309b-44d2-acc7-1c572efb973c"
-
-# Anchor for StartKeyframe (~-360000s expressed in ticks)
-START_KEYFRAME_TICK = "-91445760000000000"
-
-# Default frame rate as ticks-per-frame for 23.976 = 24000/1001:
-# ticks_per_frame = TICKS_PER_SECOND * 1001 / 24000 = 10597793000
-FRAMERATE_TICKS_23_976 = 10597793000
 
 logger = logging.getLogger("manifest_to_prproj")
 
@@ -160,24 +168,6 @@ def _parse_rational(s: str) -> tuple[int, int]:
         a, b = s.split("/")
         return int(a), int(b)
     return int(s), 1
-
-
-# ──────────────────────────────────────────────────────────────────────────
-# Timecode → ticks
-# ──────────────────────────────────────────────────────────────────────────
-
-
-def timecode_to_seconds(tc: str, fps: float) -> float:
-    """Parse 'HH:MM:SS:FF' (non-drop frame) at given fps to seconds."""
-    parts = tc.split(":")
-    if len(parts) != 4:
-        raise ValueError(f"bad timecode: {tc!r}")
-    h, m, s, f = (int(p) for p in parts)
-    return h * 3600 + m * 60 + s + f / fps
-
-
-def seconds_to_ticks(sec: float) -> int:
-    return int(round(sec * TICKS_PER_SECOND))
 
 
 # ──────────────────────────────────────────────────────────────────────────
@@ -433,11 +423,6 @@ def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
         "duration_ticks": duration_ticks,
         "name": name,
     }
-
-
-def _start_keyframe(value: str) -> str:
-    """Format a StartKeyframe with a single scalar value (or 'X:Y' for points)."""
-    return f"{START_KEYFRAME_TICK},{value},0,0,0,0,0,0"
 
 
 def build_motion_filter(scale_pct: float, ids: IdFactory) -> tuple[ET.Element, list[ET.Element], str]:
