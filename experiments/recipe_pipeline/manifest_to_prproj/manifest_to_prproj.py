@@ -108,6 +108,12 @@ from .core.media_chain import (  # noqa: E402
     ffprobe,
     build_media_chain,
 )
+from .core.placement import (  # noqa: E402
+    build_clip_placement,
+)
+from .effects.motion import (  # noqa: E402
+    build_motion_filter,
+)
 
 logger = logging.getLogger("manifest_to_prproj")
 
@@ -117,249 +123,6 @@ def _slugify(s: str) -> str:
     s = s.strip().lower()
     s = re.sub(r"[^a-z0-9]+", "_", s)
     return s.strip("_") or "recipe"
-
-
-# ──────────────────────────────────────────────────────────────────────────
-# Element builders — each emits a fresh subtree with new IDs/UIDs
-# ──────────────────────────────────────────────────────────────────────────
-
-
-def build_motion_filter(scale_pct: float, ids: IdFactory) -> tuple[ET.Element, list[ET.Element], str]:
-    """Build a Motion VideoFilterComponent with custom Scale + default everything else.
-
-    Returns (filter_element, param_elements, filter_object_id). All elements
-    must be appended to PremiereData root.
-
-    Param layout (from steak_tacos reference, IDs 924-934):
-      0 Position (point)        — default 0.5,0.5
-      1 Scale (scalar)           — set per call
-      2 Scale Width (scalar)     — default 100 (ignored when uniform=true)
-      3 Uniform Scale (bool)     — true
-      4 Rotation (scalar)        — default 0
-      5 Anchor Point (point)     — default 0.5,0.5
-      6 Anti-flicker (clamped)   — default 0
-      7 Crop Left (scalar)       — default 0
-      8 Crop Top (scalar)        — default 0
-      9 Crop Right (scalar)      — default 0
-      10 Crop Bottom (scalar)    — default 0
-    """
-    filter_id = ids.fresh_id()
-    pids = [ids.fresh_id() for _ in range(11)]
-
-    elements: list[ET.Element] = []
-
-    # The Motion VideoFilterComponent
-    f = ET.Element("VideoFilterComponent", {
-        "ObjectID": filter_id,
-        "ClassID": CID_VIDEO_FILTER_COMPONENT,
-        "Version": "9",
-    })
-    comp = ET.SubElement(f, "Component", {"Version": "7"})
-    params = ET.SubElement(comp, "Params", {"Version": "1"})
-    for i, pid in enumerate(pids):
-        ET.SubElement(params, "Param", {"Index": str(i), "ObjectRef": pid})
-    ET.SubElement(comp, "ID").text = "1"
-    ET.SubElement(comp, "DisplayName").text = "Motion"
-    ET.SubElement(comp, "Intrinsic").text = "true"
-    # PremiereFilterPrivateData copied from steak_tacos's Motion (the "ARM=" blob is harmless)
-    pfpd = ET.SubElement(f, "PremiereFilterPrivateData", {
-        "Encoding": "base64",
-        "BinaryHash": "4b0b6857-bf41-31a9-a7e7-0ca80000000e",
-    })
-    pfpd.text = "ARM="
-    ET.SubElement(f, "MatchName").text = "AE.ADBE Motion"
-    ET.SubElement(f, "VideoFilterType").text = "2"
-    elements.append(f)
-
-    # The 11 params
-    def make_scalar_param(pid: str, name: str, parameter_id: int, start_value: str,
-                           upper_ui: str, lower: str, upper: str) -> ET.Element:
-        p = ET.Element("VideoComponentParam", {
-            "ObjectID": pid,
-            "ClassID": CID_VIDEO_COMPONENT_PARAM,
-            "Version": "10",
-        })
-        ET.SubElement(p, "Name").text = name
-        ET.SubElement(p, "ParameterID").text = str(parameter_id)
-        ET.SubElement(p, "UpperUIBound").text = upper_ui
-        ET.SubElement(p, "StartKeyframe").text = _start_keyframe(start_value)
-        ET.SubElement(p, "LowerBound").text = lower
-        ET.SubElement(p, "UpperBound").text = upper
-        return p
-
-    def make_point_param(pid: str, name: str, parameter_id: int, x: float, y: float) -> ET.Element:
-        p = ET.Element("PointComponentParam", {
-            "ObjectID": pid,
-            "ClassID": CID_POINT_COMPONENT_PARAM,
-            "Version": "4",
-        })
-        ET.SubElement(p, "Name").text = name
-        ET.SubElement(p, "ParameterID").text = str(parameter_id)
-        ET.SubElement(p, "StartKeyframe").text = (
-            f"{START_KEYFRAME_TICK},{x}:{y},0,0,0,0,0,0,5,4,0,0,0,0"
-        )
-        return p
-
-    def make_bool_param(pid: str, parameter_id: int, value: bool) -> ET.Element:
-        p = ET.Element("VideoComponentParam", {
-            "ObjectID": pid,
-            "ClassID": CID_VIDEO_COMPONENT_PARAM_BOOL,
-            "Version": "10",
-        })
-        ET.SubElement(p, "Name")  # empty name
-        ET.SubElement(p, "ParameterID").text = str(parameter_id)
-        ET.SubElement(p, "StartKeyframe").text = _start_keyframe("true" if value else "false")
-        return p
-
-    def make_clamped_param(pid: str, name: str, parameter_id: int, start_value: str) -> ET.Element:
-        p = ET.Element("VideoComponentParam", {
-            "ObjectID": pid,
-            "ClassID": CID_VIDEO_COMPONENT_PARAM_CLAMPED,
-            "Version": "10",
-        })
-        ET.SubElement(p, "Name").text = name
-        ET.SubElement(p, "ParameterID").text = str(parameter_id)
-        ET.SubElement(p, "StartKeyframe").text = _start_keyframe(start_value)
-        return p
-
-    elements.append(make_point_param(pids[0], "Position", 1, 0.5, 0.5))
-    elements.append(make_scalar_param(pids[1], "Scale", 2, f"{scale_pct}.", "200", "0", "10000"))
-    elements.append(make_scalar_param(pids[2], "Scale Width", 3, "100.", "200", "0", "10000"))
-    elements.append(make_bool_param(pids[3], 4, True))
-    elements.append(make_scalar_param(pids[4], "Rotation", 5, "0.", "360", "-3.40282346638528860e+38", "3.40282346638528860e+38"))
-    elements.append(make_point_param(pids[5], "Anchor Point", 6, 0.5, 0.5))
-    elements.append(make_clamped_param(pids[6], "Anti-flicker Filter", 7, "0."))
-    elements.append(make_scalar_param(pids[7], "Crop Left", 8, "0.", "100", "0", "100"))
-    elements.append(make_scalar_param(pids[8], "Crop Top", 9, "0.", "100", "0", "100"))
-    elements.append(make_scalar_param(pids[9], "Crop Right", 10, "0.", "100", "0", "100"))
-    elements.append(make_scalar_param(pids[10], "Crop Bottom", 11, "0.", "100", "0", "100"))
-
-    return f, elements, filter_id
-
-
-def build_clip_placement(
-    media_chain: dict,
-    timeline_in_ticks: int,
-    timeline_out_ticks: int,
-    source_in_ticks: int,
-    source_out_ticks: int,
-    ids: IdFactory,
-    playback_speed: Optional[float] = None,
-    motion_scale_pct: Optional[float] = None,
-) -> dict:
-    """Build VideoClipTrackItem + SubClip element + subclip VideoClip for one placement.
-
-    Reference graph (per SEQ_FLAT):
-      VideoClipTrackItem
-        └─ SubClip ObjectRef ──▶ SubClip element (own ClassID)
-                                  ├─ Clip ObjectRef ──▶ VideoClip (with InPoint/OutPoint)
-                                  └─ MasterClip ObjectURef ──▶ MasterClip
-    """
-    vcti_id = ids.fresh_id()
-    subclip_element_id = ids.fresh_id()
-    video_clip_id = ids.fresh_id()
-    components_id = ids.fresh_id()
-
-    elements: list[ET.Element] = []
-
-    # 1. VideoClipTrackItem
-    vcti = ET.Element("VideoClipTrackItem", {
-        "ObjectID": vcti_id,
-        "ClassID": CID_VIDEO_CLIP_TRACK_ITEM,
-        "Version": "8",
-    })
-    cti = ET.SubElement(vcti, "ClipTrackItem", {"Version": "8"})
-    co = ET.SubElement(cti, "ComponentOwner", {"Version": "1"})
-    ET.SubElement(co, "Components", {"ObjectRef": components_id})
-    ti = ET.SubElement(cti, "TrackItem", {"Version": "4"})
-    ET.SubElement(ti, "Start").text = str(timeline_in_ticks)
-    ET.SubElement(ti, "End").text = str(timeline_out_ticks)
-    ET.SubElement(cti, "SubClip", {"ObjectRef": subclip_element_id})
-    ET.SubElement(vcti, "PixelAspectRatio").text = "1,1"
-    ET.SubElement(vcti, "ToneMapSettings").text = '{"peak":-1,"version":3}'
-    ET.SubElement(vcti, "FrameRect").text = "0,0,1920,1080"
-    elements.append(vcti)
-
-    # 2. SubClip element (the indirection layer between VCTI and VideoClip)
-    sub = ET.Element("SubClip", {
-        "ObjectID": subclip_element_id,
-        "ClassID": CID_SUB_CLIP,
-        "Version": "6",
-    })
-    ET.SubElement(sub, "Clip", {"ObjectRef": video_clip_id})
-    ET.SubElement(sub, "MasterClip", {"ObjectURef": media_chain["master_clip_uid"]})
-    ET.SubElement(sub, "Name").text = media_chain["name"]
-    ET.SubElement(sub, "OrigChGrp").text = "0"
-    elements.append(sub)
-
-    # 3. VideoClip (the subclip on timeline; has InPoint/OutPoint into the source)
-    vc = ET.Element("VideoClip", {
-        "ObjectID": video_clip_id,
-        "ClassID": CID_VIDEO_CLIP,
-        "Version": "11",
-    })
-    clip = ET.SubElement(vc, "Clip", {"Version": "18"})
-    cnode = ET.SubElement(clip, "Node", {"Version": "1"})
-    cprops = ET.SubElement(cnode, "Properties", {"Version": "1"})
-    ET.SubElement(cprops, "asl.clip.label.name").text = "BE.Prefs.LabelColors.0"
-    ET.SubElement(cprops, "asl.clip.label.color").text = "11405886"
-    mowner = ET.SubElement(clip, "MarkerOwner", {"Version": "1"})
-    ET.SubElement(mowner, "Markers", {"ObjectRef": media_chain["markers_id"]})
-    ET.SubElement(clip, "Source", {"ObjectRef": media_chain["video_media_source_id"]})
-    ET.SubElement(clip, "InPoint").text = str(source_in_ticks)
-    ET.SubElement(clip, "OutPoint").text = str(source_out_ticks)
-    if playback_speed is not None and abs(playback_speed - 1.0) > 1e-6:
-        # Recompute from actual source/timeline tick ranges for tick-exact ratio.
-        # This guarantees Premiere's internal "natural duration on timeline"
-        # ((OutPoint-InPoint)/PlaybackSpeed) matches End-Start exactly — otherwise
-        # any rounding shows as zebra bars at the clip's tail edge.
-        tl_dur_ticks = timeline_out_ticks - timeline_in_ticks
-        src_dur_ticks = source_out_ticks - source_in_ticks
-        if tl_dur_ticks > 0:
-            playback_speed = src_dur_ticks / tl_dur_ticks
-        # Use full Python float precision (~17 digits) — `:.6f` truncates to ~µs.
-        ET.SubElement(clip, "PlaybackSpeed").text = repr(playback_speed)
-    ET.SubElement(clip, "ClipID").text = ids.fresh_uid()
-    elements.append(vc)
-
-    # 4. VideoComponentChain (target of VCTI's Components ObjectRef).
-    # Required even when the clip carries no effects — Premiere silently
-    # refuses to render the timeline if this dangles.
-    vcc = ET.Element("VideoComponentChain", {
-        "ObjectID": components_id,
-        "ClassID": CID_VIDEO_COMPONENT_CHAIN,
-        "Version": "3",
-    })
-
-    if motion_scale_pct is not None and abs(motion_scale_pct - 100.0) > 1e-6:
-        # Custom Motion override: emit a full Motion VideoFilterComponent + 11 params.
-        _, motion_elements, motion_filter_id = build_motion_filter(motion_scale_pct, ids)
-        elements.extend(motion_elements)
-        # Chain shape matches steak_tacos's custom-motion clips: no DefaultMotion
-        # field, no MZ.ComponentChain props, just a Components list with the filter.
-        ET.SubElement(vcc, "DefaultOpacity").text = "true"
-        ET.SubElement(vcc, "DefaultOpacityComponentID").text = "2"
-        cc = ET.SubElement(vcc, "ComponentChain", {"Version": "3"})
-        comps = ET.SubElement(cc, "Components", {"Version": "1"})
-        ET.SubElement(comps, "Component", {"Index": "0", "ObjectRef": motion_filter_id})
-    else:
-        ET.SubElement(vcc, "DefaultMotion").text = "true"
-        ET.SubElement(vcc, "DefaultOpacity").text = "true"
-        ET.SubElement(vcc, "DefaultMotionComponentID").text = "1"
-        ET.SubElement(vcc, "DefaultOpacityComponentID").text = "2"
-        cc = ET.SubElement(vcc, "ComponentChain", {"Version": "3"})
-        ccnode = ET.SubElement(cc, "Node", {"Version": "1"})
-        ccprops = ET.SubElement(ccnode, "Properties", {"Version": "1"})
-        ET.SubElement(ccprops, "MZ.ComponentChain.ActiveComponentID").text = "2"
-        ET.SubElement(ccprops, "MZ.ComponentChain.ActiveComponentParamIndex").text = "4294967295"
-    elements.append(vcc)
-
-    return {"elements": elements, "vcti_id": vcti_id}
-
-
-# ──────────────────────────────────────────────────────────────────────────
-# Mutator: surgically modify the seed
-# ──────────────────────────────────────────────────────────────────────────
 
 
 # ──────────────────────────────────────────────────────────────────────────
@@ -511,19 +274,26 @@ def write_prproj(manifest_path: Path, out_path: Path, footage_folder_override: O
         # Per-clip scale fits source into the sequence frame using height ratio.
         # 4K (2160h) -> 1080p sequence: scale = 50%. Same-resolution: scale = 100
         # (no Motion override emitted; chain stays default).
+        # The orchestrator decides WHETHER to apply Motion.Scale; the factory
+        # passed to build_clip_placement defers the actual element build until
+        # placement IDs have been allocated, preserving ID-allocation order.
         meta = metas[basename]
-        motion_scale_pct: Optional[float] = None
+        motion_filter_factory = None
         if meta.height != height:
             motion_scale_pct = (height / meta.height) * 100.0
             logger.info(
                 "timeline[%d] %s: source %dx%d in %dx%d sequence → Motion.Scale=%.2f%%",
                 i, basename, meta.width, meta.height, width, height, motion_scale_pct,
             )
+            if abs(motion_scale_pct - 100.0) > 1e-6:
+                motion_filter_factory = (
+                    lambda ids_, _scale=motion_scale_pct: build_motion_filter(_scale, ids_)
+                )
 
         p = build_clip_placement(
             chain, tl_in, tl_out, src_in, src_out, ids,
             playback_speed=playback_speed,
-            motion_scale_pct=motion_scale_pct,
+            motion_filter_factory=motion_filter_factory,
         )
         placements.append(p)
         for el in p["elements"]:
