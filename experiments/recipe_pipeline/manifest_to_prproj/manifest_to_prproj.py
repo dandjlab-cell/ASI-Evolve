@@ -89,6 +89,10 @@ from .core.seed_loader import (  # noqa: E402
     collect_used_uids,
     find_premiere_data,
 )
+from .core.serializer import (  # noqa: E402
+    write_prproj_bytes,
+    integrity_check,
+)
 
 logger = logging.getLogger("manifest_to_prproj")
 
@@ -910,13 +914,10 @@ def write_prproj(manifest_path: Path, out_path: Path, footage_folder_override: O
     replace_root_bin_items(root_bin, [cuts_uid, footage_uid])
 
     # Serialize + gzip
-    xml_bytes = b'<?xml version="1.0" encoding="UTF-8" ?>\n' + ET.tostring(pdata, encoding="utf-8")
-    logger.info("uncompressed XML: %d bytes", len(xml_bytes))
-    with gzip.open(out_path, "wb") as fp:
-        fp.write(xml_bytes)
+    uncompressed_bytes = write_prproj_bytes(pdata, out_path)
     out_size = out_path.stat().st_size
     logger.info("wrote %s (%d gzipped bytes, %d uncompressed, %d ObjectIDs assigned)",
-                out_path, out_size, len(xml_bytes), ids.next_object_id - max_id - 1)
+                out_path, out_size, uncompressed_bytes, ids.next_object_id - max_id - 1)
 
     # Round-trip
     integrity_check(
@@ -925,52 +926,6 @@ def write_prproj(manifest_path: Path, out_path: Path, footage_folder_override: O
         expected_new_masterclips=len(media_by_file),
         seed_masterclips=seed_masterclip_count,
     )
-
-
-def integrity_check(
-    out_path: Path,
-    expected_vcti: int,
-    expected_new_masterclips: int,
-    seed_masterclips: int,
-) -> None:
-    """Re-open the gzipped output, count key elements, and read with prproj_reader."""
-    logger.info("round-trip: re-reading %s", out_path)
-    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-    try:
-        with gzip.open(out_path, "rb") as fp:
-            data = fp.read()
-        vcti_count = data.count(b"<VideoClipTrackItem ObjectID=")
-        mc_count = data.count(b"<MasterClip ObjectUID=")
-        expected_mc = expected_new_masterclips + seed_masterclips
-        logger.info(
-            "round-trip counts: vcti=%d (expected %d); masterclip=%d (expected %d = %d new + %d from seed)",
-            vcti_count, expected_vcti, mc_count, expected_mc, expected_new_masterclips, seed_masterclips,
-        )
-        ok = vcti_count == expected_vcti and mc_count == expected_mc
-
-        # Also exercise prproj_reader to confirm the output parses end-to-end.
-        try:
-            import prproj_reader  # type: ignore
-            tree = prproj_reader.read_prproj(out_path)  # type: ignore[attr-defined]
-            seq = tree.get("primary_sequence")
-            if seq:
-                v1_clips = len(seq["tracks"][0]["clip_items"])
-                logger.info("reader sees: sequence=%r tracks=%d V1_clips=%d duration=%.3fs",
-                            seq["name"], len(seq["tracks"]), v1_clips, tree["duration_seconds"])
-                ok = ok and v1_clips == expected_vcti
-        except AttributeError:
-            # prproj_reader doesn't expose read_prproj — fall back to subprocess
-            logger.debug("prproj_reader.read_prproj not available; skipping deep parse")
-        except Exception as e:
-            logger.warning("prproj_reader deep parse failed: %s", e)
-            ok = False
-
-        if ok:
-            logger.info("ROUND-TRIP OK")
-        else:
-            logger.error("ROUND-TRIP MISMATCH")
-    except Exception as e:
-        logger.error("round-trip read failed: %s", e)
 
 
 def main(argv=None):
