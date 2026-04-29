@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    html, body {
+      margin: 0; padding: 0;
+      height: 100%;
+      font-family: -apple-system, sans-serif;
+      font-size: 11px;
+      color: #ddd;
+      background: #1e1e1e;
+      overflow: hidden;
+    }
+    body { display: flex; flex-direction: column; padding: 8px; box-sizing: border-box; }
+    h2 { margin: 0 0 4px; font-size: 13px; }
+    .section-label { font-size: 10px; color: #888; margin: 6px 0 2px; text-transform: uppercase; letter-spacing: 0.5px; }
+    button {
+      margin: 2px 4px 2px 0;
+      padding: 4px 8px;
+      background: #2d6cdf;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 11px;
+    }
+    button:hover { background: #3d7ce8; }
+    button.test { background: #d97a2d; }
+    button.test:hover { background: #e88a3d; }
+    button.utility { background: #555; }
+    button.utility:hover { background: #666; }
+    .row { margin-bottom: 2px; flex: 0 0 auto; }
+    #log-wrap {
+      flex: 1 1 auto;
+      min-height: 200px;
+      margin-top: 6px;
+      border: 1px solid #444;
+      background: #0d0d0d;
+      overflow-y: scroll;
+      overflow-x: auto;
+    }
+    #log {
+      margin: 0;
+      padding: 6px;
+      font-family: Menlo, monospace;
+      font-size: 10px;
+      color: #c0e8c0;
+      white-space: pre;
+      tab-size: 2;
+    }
+  </style>
+</head>
+<body>
+  <h2>Karaoke Loop (Transcript → Markers + Text Tests)</h2>
+
+  <div class="section-label">Loop control</div>
+  <div class="row">
+    <button id="start-loop">▶ START loop</button>
+    <button id="stop-loop">⏸ Stop</button>
+    <button id="clear-markers">Clear markers</button>
+  </div>
+
+  <div class="section-label">Data</div>
+  <div class="row">
+    <button id="load-real-transcript">Load /tmp/karaoke_words.json</button>
+  </div>
+
+  <div class="section-label">Source Text write test</div>
+  <div class="row">
+    <button id="write-source-text-properly" class="test">★★ Write Source Text (createKeyframe → SetValueAction)</button>
+  </div>
+
+  <div class="section-label">Torq-native + privileged hunt</div>
+  <div class="row">
+    <button id="torq-hunt" class="test">★★★ Probe torq-native + registerCoreModule + privileged paths</button>
+  </div>
+
+  <div class="section-label">Log</div>
+  <div class="row">
+    <button id="save-log" class="utility">Save → /tmp/uxp_probe.log</button>
+    <button id="clear-log" class="utility">Clear log</button>
+  </div>
+
+  <div id="log-wrap"><pre id="log"></pre></div>
+
+  <script src="index.js"></script>
+</body>
+</html>

@@ -4,3 +4,4 @@
 .test_tmp/
 *.prproj.log
 experiments/PREMIERE PROJECTS/OUTPUTS/
+experiments/recipe_pipeline/decoder_harness/captures/

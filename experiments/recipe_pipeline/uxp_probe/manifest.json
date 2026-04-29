@@ -1,0 +1,30 @@
+{
+  "id": "com.asievolve.transcript-probe",
+  "name": "Transcript API Probe",
+  "version": "0.1.0",
+  "manifestVersion": 6,
+  "main": "index.html",
+  "host": {
+    "app": "premierepro",
+    "minVersion": "25.6.0",
+    "dependencies": {
+      "dvatranscription": "",
+      "sDMEvent": "",
+      "mediaFoundation": ""
+    }
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "transcriptProbePanel",
+      "label": "Transcript API Probe",
+      "minimumSize": { "width": 400, "height": 500 },
+      "preferredDockedSize": { "width": 500, "height": 700 },
+      "preferredFloatingSize": { "width": 500, "height": 700 }
+    }
+  ],
+  "requiredPermissions": {
+    "localFileSystem": "fullAccess",
+    "clipboard": "readAndWrite"
+  }
+}
