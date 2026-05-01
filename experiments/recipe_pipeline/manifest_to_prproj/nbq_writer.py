@@ -132,10 +132,102 @@ def _paragraph_sort_key(pid: str) -> tuple[int, str]:
         return (10**9, pid)
 
 
+def _natural_take_bounds(
+    take_in_s: float,
+    take_out_s: float,
+    sg_words: list[dict],
+    silence_s: float = 1.0,
+    max_lookback_s: float = 5.0,
+) -> tuple[float, float]:
+    """Extend a take's [start_s, end_s] to the natural utterance boundaries
+    using Whisper word timestamps.
+
+    script_align's take.start_s is the first SCRIPT-MATCHED word. Anna may
+    have said preamble words ("OK, um, today...") that don't match the
+    script and got skipped — we want the cut to begin at the natural
+    sentence start, not the matched word.
+
+    Algorithm:
+      - Walk backward from take_in_s through Whisper words. Include each
+        word whose preceding silence < silence_s (1s). Stop when a >1s
+        silence is hit OR we've gone back max_lookback_s. That's the
+        natural utterance start.
+      - Same forward from take_out_s for natural end.
+
+    Returns the extended [start, end] in source-time seconds.
+    """
+    if not sg_words:
+        return take_in_s, take_out_s
+
+    # Backward scan: find earliest word still in this utterance
+    new_start = take_in_s
+    for i in range(len(sg_words) - 1, -1, -1):
+        w = sg_words[i]
+        if w["start"] >= take_in_s:
+            continue  # word is at/after take's matched start; not preamble
+        if take_in_s - w["start"] > max_lookback_s:
+            break
+        prev = sg_words[i - 1] if i > 0 else None
+        gap = (w["start"] - prev["end"]) if prev else 999.0
+        if gap > silence_s:
+            # This word follows a real silence — it's the start of an utterance
+            new_start = max(0.0, w["start"] - 0.05)
+            break
+        # Otherwise this word is part of the same utterance as the take's start
+        new_start = max(0.0, w["start"] - 0.05)
+
+    # Forward scan: find last word still in this utterance
+    new_end = take_out_s
+    for i, w in enumerate(sg_words):
+        if w["end"] <= take_out_s:
+            continue
+        if w["start"] - take_out_s > max_lookback_s:
+            break
+        prev = sg_words[i - 1]
+        gap = w["start"] - prev["end"]
+        if gap > silence_s:
+            break  # silence before this word — utterance ended
+        new_end = w["end"] + 0.05
+
+    return new_start, new_end
+
+
+def _split_take_at_real_gaps(
+    take_in_s: float,
+    take_out_s: float,
+    take_words: list[dict],
+    real_gap_s: float = 1.0,
+) -> list[dict]:
+    """Split a take into segments only where Whisper found a >real_gap_s
+    silence. Breaths (<1s pauses) are KEPT inside the segment. Returns
+    [{in_s, out_s}, ...] — one entry if no real gaps, multiple if dead air
+    inside the take.
+    """
+    if not take_words:
+        return [{"in_s": take_in_s, "out_s": take_out_s}]
+    segs: list[dict] = []
+    seg_start = max(take_in_s, take_words[0]["start"] - 0.05)
+    prev = take_words[0]
+    for w in take_words[1:]:
+        gap = w["start"] - prev["end"]
+        if gap > real_gap_s:
+            seg_end = min(prev["end"] + 0.05, take_out_s)
+            if seg_end > seg_start:
+                segs.append({"in_s": round(seg_start, 3), "out_s": round(seg_end, 3)})
+            seg_start = max(w["start"] - 0.05, seg_end)
+        prev = w
+    final_end = min(prev["end"] + 0.05, take_out_s)
+    if final_end > seg_start:
+        segs.append({"in_s": round(seg_start, 3), "out_s": round(final_end, 3)})
+    return segs or [{"in_s": take_in_s, "out_s": take_out_s}]
+
+
 def collect_placements_by_script_order(
     trimmed_takes_path: Path,
     take_visuals_path: Path,
     sync_groups: dict,
+    transcripts_path: Optional[Path] = None,
+    real_gap_s: float = 1.0,
 ) -> list[dict]:
     """Walk trimmed takes in script-paragraph order; pick the best take per
     paragraph; place its segments back-to-back on the timeline.
@@ -153,6 +245,9 @@ def collect_placements_by_script_order(
     """
     trimmed = json.loads(trimmed_takes_path.read_text())
     takes = trimmed.get("takes", [])
+    transcripts_data: dict = {}
+    if transcripts_path and transcripts_path.exists():
+        transcripts_data = json.loads(transcripts_path.read_text())
     visuals_idx: dict[tuple, int] = {}
     if take_visuals_path.exists():
         vis = json.loads(take_visuals_path.read_text())
@@ -218,6 +313,17 @@ def collect_placements_by_script_order(
             continue
         src_in_s = float(take["start_s"])
         src_out_s = float(take["end_s"])
+
+        # Extend to natural utterance boundaries via Whisper words. The take's
+        # matched start may be mid-sentence if SW skipped non-script preamble
+        # ("OK, um, today..."). Walk backward through transcript to find the
+        # nearest word AFTER a >1s silence — that's the natural sentence start.
+        sg_words = transcripts_data.get(sg_id, {}).get("words", [])
+        if sg_words:
+            src_in_s, src_out_s = _natural_take_bounds(
+                src_in_s, src_out_s, sg_words, silence_s=real_gap_s,
+            )
+
         # Per-file cursor: trim leading overlap with previous take from same
         # file (adjacent script paragraphs often share aligned words).
         cursor = file_source_cursor.get(a_cam, 0.0)
@@ -226,19 +332,39 @@ def collect_placements_by_script_order(
         if src_out_s <= src_in_s:
             continue
         duration_s = src_out_s - src_in_s
-        if duration_s < 0.5:  # too short to be a meaningful cut
+        if duration_s < 0.5:
             continue
-        placements.append({
-            "primary_pid": entry["primary_pid"],
-            "paragraphs": list(take.get("paragraphs") or []),
-            "file": a_cam,
-            "source_in_s": src_in_s,
-            "source_out_s": src_out_s,
-            "timeline_in_s": timeline_cursor_s,
-            "timeline_out_s": timeline_cursor_s + duration_s,
-        })
-        timeline_cursor_s += duration_s
-        file_source_cursor[a_cam] = src_out_s
+
+        # Split the take at real-air gaps (>real_gap_s silences) so dead air
+        # inside the take is removed but breaths (<1s pauses) are kept.
+        if sg_words:
+            take_words = [
+                w for w in sg_words
+                if src_in_s <= w.get("start", 0) <= src_out_s
+            ]
+            sub_segments = _split_take_at_real_gaps(
+                src_in_s, src_out_s, take_words, real_gap_s=real_gap_s,
+            )
+        else:
+            sub_segments = [{"in_s": src_in_s, "out_s": src_out_s}]
+
+        for seg in sub_segments:
+            seg_in = float(seg["in_s"])
+            seg_out = float(seg["out_s"])
+            seg_dur = seg_out - seg_in
+            if seg_dur < 0.5:
+                continue
+            placements.append({
+                "primary_pid": entry["primary_pid"],
+                "paragraphs": list(take.get("paragraphs") or []),
+                "file": a_cam,
+                "source_in_s": seg_in,
+                "source_out_s": seg_out,
+                "timeline_in_s": timeline_cursor_s,
+                "timeline_out_s": timeline_cursor_s + seg_dur,
+            })
+            timeline_cursor_s += seg_dur
+            file_source_cursor[a_cam] = seg_out
     return placements
 
 
@@ -435,13 +561,20 @@ def write_nbq_prproj(
         trimmed_takes_path = project_dir / f"{project_stem}_trimmed_takes.json"
     if take_visuals_path is None:
         take_visuals_path = project_dir / f"{project_stem}_take_visuals.json"
+    transcripts_path = project_dir / f"{project_stem}_transcripts.json"
     if not trimmed_takes_path.exists():
         raise RuntimeError(
             f"trimmed_takes.json not found at {trimmed_takes_path} — "
             "run trim_air.py before the writer"
         )
+    if not transcripts_path.exists():
+        logger.warning(
+            "transcripts.json not found at %s — falling back to script-aligned "
+            "boundaries (cuts may start mid-sentence)", transcripts_path
+        )
     placements_spec = collect_placements_by_script_order(
         trimmed_takes_path, take_visuals_path, sync_groups,
+        transcripts_path=transcripts_path,
     )
     n_takes = len({(p["file"], p["source_in_s"], p["source_out_s"]) for p in placements_spec})
     logger.info("placements: %d cuts from %d distinct take ranges",
