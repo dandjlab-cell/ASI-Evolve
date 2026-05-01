@@ -203,6 +203,14 @@ def collect_placements_by_script_order(
 
     placements: list[dict] = []
     timeline_cursor_s = 0.0
+    # Per-file source cursor — last source_out we've placed from that file.
+    # Adjacent script paragraphs often have overlapping take ranges (Anna
+    # spoke them in one continuous flow; script_align attributed shared
+    # words to both). Without tracking, the next paragraph's take would
+    # replay the tail of the previous paragraph's footage. Trim each
+    # segment's in_s up to file_cursor so the timeline never time-travels
+    # backward within a single file.
+    file_source_cursor: dict[str, float] = {}
     for entry in chosen_takes:
         take = entry["take"]
         sg_id = take["sync_group_id"]
@@ -216,6 +224,11 @@ def collect_placements_by_script_order(
         for seg in segments:
             src_in_s = float(seg["in_s"])
             src_out_s = float(seg["out_s"])
+            cursor = file_source_cursor.get(a_cam, 0.0)
+            if src_in_s < cursor:
+                src_in_s = cursor  # trim leading overlap
+            if src_out_s <= src_in_s:
+                continue  # entire segment was before cursor
             duration_s = src_out_s - src_in_s
             # Drop micro-segments shorter than 0.25s — these are typically
             # trim_air leftovers (mid-word stubs after tightening) that would
@@ -232,12 +245,15 @@ def collect_placements_by_script_order(
                 "timeline_out_s": timeline_cursor_s + duration_s,
             })
             timeline_cursor_s += duration_s
+            file_source_cursor[a_cam] = src_out_s
     return placements
 
 
 def self_check_placements(placements: list[dict]) -> list[str]:
     """Return a list of warning strings for likely errors. Empty = clean."""
     warnings: list[str] = []
+
+    # 1. Exact source-range duplicates
     seen: dict[tuple, int] = {}
     for i, p in enumerate(placements):
         key = (p["file"], round(p["source_in_s"], 2), round(p["source_out_s"], 2))
@@ -248,17 +264,52 @@ def self_check_placements(placements: list[dict]) -> list[str]:
             )
         else:
             seen[key] = i
+
+    # 2. Micro-cuts (mid-word stubs from trim_air leftovers)
     durations = [p["timeline_out_s"] - p["timeline_in_s"] for p in placements]
     if durations:
-        too_short = [
-            (i, d) for i, d in enumerate(durations) if d < 0.25
-        ]
+        too_short = [(i, d) for i, d in enumerate(durations) if d < 0.25]
         if too_short:
             warnings.append(
                 f"{len(too_short)} placements shorter than 0.25s "
                 f"(possible mid-word cuts): "
                 + ", ".join(f"idx{i}={d:.2f}s" for i, d in too_short[:5])
             )
+
+    # 3. Backward source jumps within the same file — replays earlier
+    # footage, which is almost always wrong for scripted talking-head.
+    last_src_out_per_file: dict[str, float] = {}
+    last_idx_per_file: dict[str, int] = {}
+    backward = []
+    for i, p in enumerate(placements):
+        f = p["file"]
+        cur_in = p["source_in_s"]
+        prev_out = last_src_out_per_file.get(f)
+        if prev_out is not None and cur_in < prev_out - 0.1:
+            backward.append((last_idx_per_file[f], i, prev_out, cur_in, f))
+        last_src_out_per_file[f] = p["source_out_s"]
+        last_idx_per_file[f] = i
+    if backward:
+        warnings.append(
+            f"{len(backward)} backward source jumps within same file "
+            "(replays earlier footage): "
+            + "; ".join(
+                f"idx{prev}→{cur}: {f[:18]} prev_out={po:.2f} → cur_in={ci:.2f} (backward {po-ci:.2f}s)"
+                for prev, cur, po, ci, f in backward[:3]
+            )
+        )
+
+    # 4. Timeline gaps or overlaps
+    for i in range(1, len(placements)):
+        prev = placements[i-1]
+        cur = placements[i]
+        gap = cur["timeline_in_s"] - prev["timeline_out_s"]
+        if abs(gap) > 0.001:
+            warnings.append(
+                f"Timeline {'gap' if gap > 0 else 'overlap'} "
+                f"between idx {i-1} and {i}: {gap*1000:.1f}ms"
+            )
+            break  # one warning is enough; don't flood
     return warnings
 
 
