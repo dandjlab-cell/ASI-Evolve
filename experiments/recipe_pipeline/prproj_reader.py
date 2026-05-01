@@ -486,12 +486,41 @@ def resolve_clip_track_item(item_elem: ET.Element, idx: IdIndex) -> dict:
         "duration_seconds": (end_seconds - start_seconds) if (start_seconds is not None and end_seconds is not None) else None,
         "is_adjustment_layer": is_adjustment,
         "source_object_ref": source_ref,
+        "source_filename": resolve_source_filename(source_ref, idx),
         "source_in_point_ticks": in_point_ticks,
         "source_out_point_ticks": out_point_ticks,
         "playback_speed": playback_speed,
         "speed_ramp": speed_ramp,
         "filter_components": filter_components,
     }
+
+
+def resolve_source_filename(source_ref: str | None, idx: IdIndex) -> str | None:
+    """Resolve source_object_ref → media filename basename (no extension).
+
+    Walks: VideoMediaSource → MediaSource/Media (ObjectURef) → Title or FilePath.
+    Returns None for adjustment-layer clips (no source) or sequence-backed
+    sources (multicam / nested).
+    """
+    if not source_ref:
+        return None
+    src = idx.get_id(source_ref, expect=("VideoMediaSource",))
+    if src is None:
+        return None
+    media_node = src.find("MediaSource/Media")
+    if media_node is None:
+        return None
+    media_uref = media_node.get("ObjectURef")
+    media = idx.get_uid(media_uref, expect=("Media",))
+    if media is None:
+        return None
+    title = child_text(media, "Title") or child_text(media, "FilePath")
+    if title is None:
+        return None
+    base = title.rsplit("/", 1)[-1]
+    if "." in base:
+        base = base.rsplit(".", 1)[0]
+    return base
 
 
 def resolve_track(track_elem: ET.Element, idx: IdIndex) -> dict:

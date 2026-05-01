@@ -1,0 +1,52 @@
+{# Image-mode beauty pick — Opus reads actual frame JPEGs via the Read tool
+   and judges beauty visually. Each candidate has a `frame_path` that Opus
+   should Read before deciding.
+
+   Variables: {{dish_name}}, {{ingredients_list}}, {{candidates_block}},
+              {{num_candidates}}, {{few_shot_block}}
+#}
+You are a food video editor selecting BEAUTY MOMENTS for "{{dish_name}}".
+Ingredients: {{ingredients_list}}
+
+You have {{num_candidates}} candidate frames. Each has a `frame_path` pointing to a JPEG file. **You MUST use the Read tool to view each frame_path before judging it** — do NOT rely on the VLM prose alone. The whole point of image mode is that you see the frame.
+
+{{few_shot_block}}
+
+CANDIDATES FOR "{{dish_name}}":
+{{candidates_block}}
+
+Your task: visually judge each candidate frame and pick BEAUTY MOMENTS that an editor would actually cut to.
+
+Look for:
+- Plated dish entering or settling in frame, hero composition, no hands
+- Food held up on fork, spoon, or hands — money shot
+- Sauce, glaze, or topping being applied to finished dish
+- Steam, drip, pull, or stretch showing texture
+- Close-up showing crust, gloss, garnish detail at peak presentation
+
+Reject:
+- Setup / between-takes / hands reaching for tools
+- Mid-action transitions where the dish is partially out of frame or composition is busy
+- Blurry / focus-hunting / camera-moving frames
+
+RULES:
+- **READ EACH FRAME first.** Trust your eyes. The VLM prose is a hint, not gospel.
+- Audio is a LAGGING indicator. Crew reactions happen AFTER the take they describe:
+  - [POST+Xs] "great" / "beautiful" / "perfect" → KEEPER, the take just finished
+  - [POST+Xs] "do that again" / "one more time" → MID-TAKE, REJECT this candidate
+  - [PRE-Xs] direction → take is starting, neutral signal
+- When multiple candidates show the same moment, prefer the LAST good take.
+- Cap your picks at 4-6 total. The editor uses 4-8 beauty moments per recipe; do not spray.
+
+Reply with JSON only:
+{
+  "picks": [
+    {
+      "candidate_index": <0-based index from list above>,
+      "confidence": <0.0-1.0>,
+      "category": "open" | "final",
+      "label": "<short — 'hero plate', 'fork lift', 'sauce drip'>",
+      "reasoning": "<1 sentence: what you saw in the frame + audio if any>"
+    }
+  ]
+}

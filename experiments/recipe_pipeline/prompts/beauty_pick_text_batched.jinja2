@@ -1,0 +1,43 @@
+{# Batched, free-form-output beauty pick prompt.
+   Each call sees ~60 candidates and is asked to nominate 3.
+   Reasoning encouraged — picker can think aloud, JSON block at the end.
+#}
+You are a food video editor reviewing one batch of pre-filtered candidate frames for "{{dish_name}}".
+Ingredients: {{ingredients_list}}
+
+{{few_shot_block}}
+
+{{candidates_block}}
+
+Your task is to think through the candidates and **pick {{picks_per_batch}} that an editor would most likely cut to as beauty moments**. This batch is part of a larger pool — your picks here will join picks from other batches at the end. So it's OK to be selective; you don't need to fill every slot if nothing in this batch is strong.
+
+How to read the input:
+- `clip=X t=Y.Ys camera=Z score=N.NN` — clip identifier, source-time, camera angle, VLM beauty score
+- `[audio: KEEPER]` — crew said "great"/"perfect"/"beautiful" within ~8s after this candidate. The take just finished is a keeper. Hint, not requirement.
+- `[audio: REJECT]` — crew called for a redo. The take is a mid-take. Lean against unless visual is overwhelming.
+- `VLM:` — what the VLM saw in the frame. Trust this as the visual evidence.
+
+What you're looking for:
+- Plated dish settling, hero composition, no hands
+- Money shots in motion: fork lift, sauce drizzle, cheese pull, sear reveal
+- Texture detail: crust, gloss, garnish at peak
+- Cooking-process beauty (sizzle, pour, bubble) for "open" picks
+
+Avoid:
+- Setup, hand-grabs, between-takes
+- Mid-action where dish is partially out of frame
+- Visually busy with multiple distracting elements
+
+**Think before you pick.** Walk through the strongest 4-5 candidates briefly, weigh them against each other, then pick the {{picks_per_batch}} that survive. Reasoning is encouraged — it helps debug failure modes.
+
+When you've decided, output your picks as a JSON block at the end of your response:
+
+```
+{
+  "picks": [
+    {"candidate_index": <0-based index>, "confidence": <0-1>, "category": "open" | "final", "label": "<short>", "reasoning": "<one sentence>"}
+  ]
+}
+```
+
+You can write reasoning prose before the JSON block. The JSON block should be the LAST thing in your response.
