@@ -124,6 +124,144 @@ def collect_video_sources(sync_groups: dict) -> dict[str, dict]:
     return out
 
 
+def _paragraph_sort_key(pid: str) -> tuple[int, str]:
+    """[P09] sorts before [P10]; non-numeric paragraphs go to the end."""
+    try:
+        return (int(pid.lstrip("P").lstrip("p")), pid)
+    except ValueError:
+        return (10**9, pid)
+
+
+def collect_placements_by_script_order(
+    trimmed_takes_path: Path,
+    take_visuals_path: Path,
+    sync_groups: dict,
+) -> list[dict]:
+    """Walk trimmed takes in script-paragraph order; pick the best take per
+    paragraph; place its segments back-to-back on the timeline.
+
+    Simpler than the cluster→beat→segment model: just follow the script,
+    air already removed by trim_air, one take per paragraph.
+
+    Selection per paragraph:
+      - exclude pickups (coverage < 0.4 — short re-do reads)
+      - rank by combined_score = 0.6 × confidence + 0.4 × (visual_score / 3)
+      - pick highest
+
+    De-dupes by source range so a take covering multiple paragraphs is
+    placed exactly once (not once per paragraph it covers).
+    """
+    trimmed = json.loads(trimmed_takes_path.read_text())
+    takes = trimmed.get("takes", [])
+    visuals_idx: dict[tuple, int] = {}
+    if take_visuals_path.exists():
+        vis = json.loads(take_visuals_path.read_text())
+        for s in vis.get("scores", []):
+            if s.get("visual_score") is not None:
+                key = (s["sync_group_id"], round(float(s["start_s"]), 2),
+                       round(float(s["end_s"]), 2))
+                visuals_idx[key] = int(s["visual_score"])
+
+    sg_to_a_cam = {
+        g["group_id"]: g["a_cam"]
+        for g in sync_groups.get("groups", [])
+        if g.get("a_cam")
+    }
+
+    def _combined_score(take: dict) -> float:
+        conf = float(take.get("confidence") or 0.0)
+        key = (take.get("sync_group_id"), round(float(take["start_s"]), 2),
+               round(float(take["end_s"]), 2))
+        v = visuals_idx.get(key, 0) or 0
+        return 0.6 * conf + 0.4 * (v / 3.0)
+
+    # Group takes by their FIRST paragraph (a take spanning multiple paragraphs
+    # is bound to its earliest one in script order).
+    by_paragraph: dict[str, list[dict]] = {}
+    for t in takes:
+        if t.get("type") == "pickup":
+            continue
+        paragraphs = t.get("paragraphs") or []
+        if not paragraphs:
+            continue
+        primary_pid = sorted(paragraphs, key=_paragraph_sort_key)[0]
+        by_paragraph.setdefault(primary_pid, []).append(t)
+
+    # Pick best take per paragraph
+    chosen_takes: list[dict] = []
+    seen_ranges: set[tuple] = set()
+    for pid in sorted(by_paragraph.keys(), key=_paragraph_sort_key):
+        candidates = by_paragraph[pid]
+        candidates.sort(key=_combined_score, reverse=True)
+        best = candidates[0]
+        rng = (best["sync_group_id"], round(float(best["start_s"]), 2),
+               round(float(best["end_s"]), 2))
+        if rng in seen_ranges:
+            continue
+        seen_ranges.add(rng)
+        chosen_takes.append({"primary_pid": pid, "take": best})
+
+    placements: list[dict] = []
+    timeline_cursor_s = 0.0
+    for entry in chosen_takes:
+        take = entry["take"]
+        sg_id = take["sync_group_id"]
+        a_cam = sg_to_a_cam.get(sg_id)
+        if not a_cam:
+            logger.warning("take from sg=%s has no a_cam — skipping", sg_id)
+            continue
+        segments = take.get("segments") or [
+            {"in_s": take["start_s"], "out_s": take["end_s"]}
+        ]
+        for seg in segments:
+            src_in_s = float(seg["in_s"])
+            src_out_s = float(seg["out_s"])
+            duration_s = src_out_s - src_in_s
+            # Drop micro-segments shorter than 0.25s — these are typically
+            # trim_air leftovers (mid-word stubs after tightening) that would
+            # cut Anna off mid-syllable on the timeline.
+            if duration_s < 0.25:
+                continue
+            placements.append({
+                "primary_pid": entry["primary_pid"],
+                "paragraphs": list(take.get("paragraphs") or []),
+                "file": a_cam,
+                "source_in_s": src_in_s,
+                "source_out_s": src_out_s,
+                "timeline_in_s": timeline_cursor_s,
+                "timeline_out_s": timeline_cursor_s + duration_s,
+            })
+            timeline_cursor_s += duration_s
+    return placements
+
+
+def self_check_placements(placements: list[dict]) -> list[str]:
+    """Return a list of warning strings for likely errors. Empty = clean."""
+    warnings: list[str] = []
+    seen: dict[tuple, int] = {}
+    for i, p in enumerate(placements):
+        key = (p["file"], round(p["source_in_s"], 2), round(p["source_out_s"], 2))
+        if key in seen:
+            warnings.append(
+                f"DUP source range placed twice: idx {seen[key]} and {i} "
+                f"({p['file']} {p['source_in_s']:.2f}-{p['source_out_s']:.2f}s)"
+            )
+        else:
+            seen[key] = i
+    durations = [p["timeline_out_s"] - p["timeline_in_s"] for p in placements]
+    if durations:
+        too_short = [
+            (i, d) for i, d in enumerate(durations) if d < 0.25
+        ]
+        if too_short:
+            warnings.append(
+                f"{len(too_short)} placements shorter than 0.25s "
+                f"(possible mid-word cuts): "
+                + ", ".join(f"idx{i}={d:.2f}s" for i, d in too_short[:5])
+            )
+    return warnings
+
+
 def collect_placements_from_timeline(
     timeline: list[dict],
     sync_groups: dict,
@@ -216,6 +354,8 @@ def write_nbq_prproj(
     out_path: Path,
     footage_folder_override: Optional[Path] = None,
     motion_scale_pct: float = 50.0,
+    trimmed_takes_path: Optional[Path] = None,
+    take_visuals_path: Optional[Path] = None,
 ) -> None:
     logger.info("manifest: %s", manifest_path)
     logger.info("sync_groups: %s", sync_groups_path)
@@ -240,11 +380,35 @@ def write_nbq_prproj(
     metas = preflight(sorted(video_sources.keys()), footage_folder)
     logger.info("preflight ok: %d files probed", len(metas))
 
-    # Compute placements (per beat-segment, V1-only for Round 1)
-    placements_spec = collect_placements_from_timeline(timeline, sync_groups)
-    logger.info("placements: %d cuts across %d clusters",
-                len(placements_spec),
-                len({p["cluster_id"] for p in placements_spec}))
+    # Compute placements: walk script paragraphs in order, pick best take per
+    # paragraph (highest combined_score, skip pickups), place its trimmed
+    # segments back-to-back. Simpler than the cluster→beat→segment hierarchy
+    # and avoids the duplicate-segments problem when one take covers multiple
+    # paragraphs.
+    project_dir = manifest_path.parent
+    project_stem = manifest_path.stem.replace("_v4_manifest", "")
+    if trimmed_takes_path is None:
+        trimmed_takes_path = project_dir / f"{project_stem}_trimmed_takes.json"
+    if take_visuals_path is None:
+        take_visuals_path = project_dir / f"{project_stem}_take_visuals.json"
+    if not trimmed_takes_path.exists():
+        raise RuntimeError(
+            f"trimmed_takes.json not found at {trimmed_takes_path} — "
+            "run trim_air.py before the writer"
+        )
+    placements_spec = collect_placements_by_script_order(
+        trimmed_takes_path, take_visuals_path, sync_groups,
+    )
+    n_takes = len({(p["file"], p["source_in_s"], p["source_out_s"]) for p in placements_spec})
+    logger.info("placements: %d cuts from %d distinct take ranges",
+                len(placements_spec), n_takes)
+
+    # Self-check for errors
+    warnings = self_check_placements(placements_spec)
+    for w in warnings:
+        logger.warning("self-check: %s", w)
+    if not warnings:
+        logger.info("self-check: clean (no duplicate ranges, no mid-word cuts)")
 
     # Sanity: the placements should reference files we've probed
     referenced_files = sorted({p["file"] for p in placements_spec})
@@ -332,13 +496,13 @@ def write_nbq_prproj(
         link_el = build_link_element(placement["vcti_id"], audio_placement["acti_id"], ids)
         pdata.append(link_el)
 
-        if i < 8 or i % 25 == 0:
+        if i < 12 or i % 25 == 0:
             logger.info(
-                "placed[%03d] %s  cluster=%s  beat=%s  tl=%.2f-%.2fs  src=%.2f-%.2fs  vcti=%s  acti=%s  scale=%.1f%%",
-                i, p["file"], p["cluster_id"], p["beat_id"],
+                "placed[%03d] %s  pid=%s  tl=%.2f-%.2fs  src=%.2f-%.2fs  vcti=%s  acti=%s",
+                i, p["file"], p.get("primary_pid", "?"),
                 p["timeline_in_s"], p["timeline_out_s"],
                 p["source_in_s"], p["source_out_s"],
-                placement["vcti_id"], audio_placement["acti_id"], motion_scale_pct,
+                placement["vcti_id"], audio_placement["acti_id"],
             )
 
     # Re-link V1 ClipTrack to all our new VCTIs and A1 ClipTrack to all ACTIs
