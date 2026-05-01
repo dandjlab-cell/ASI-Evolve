@@ -203,13 +203,11 @@ def collect_placements_by_script_order(
 
     placements: list[dict] = []
     timeline_cursor_s = 0.0
-    # Per-file source cursor — last source_out we've placed from that file.
-    # Adjacent script paragraphs often have overlapping take ranges (Anna
-    # spoke them in one continuous flow; script_align attributed shared
-    # words to both). Without tracking, the next paragraph's take would
-    # replay the tail of the previous paragraph's footage. Trim each
-    # segment's in_s up to file_cursor so the timeline never time-travels
-    # backward within a single file.
+    # ONE cut per take = take.start_s..take.end_s. No trim_air segment
+    # splitting (which cut at every 0.3s breath, producing mid-sentence
+    # cuts). Each cut = one continuous Anna delivery from the take's
+    # first matched word to its last matched word, exactly as script_align
+    # found it. Take's natural pauses inside stay in the audio.
     file_source_cursor: dict[str, float] = {}
     for entry in chosen_takes:
         take = entry["take"]
@@ -218,34 +216,29 @@ def collect_placements_by_script_order(
         if not a_cam:
             logger.warning("take from sg=%s has no a_cam — skipping", sg_id)
             continue
-        segments = take.get("segments") or [
-            {"in_s": take["start_s"], "out_s": take["end_s"]}
-        ]
-        for seg in segments:
-            src_in_s = float(seg["in_s"])
-            src_out_s = float(seg["out_s"])
-            cursor = file_source_cursor.get(a_cam, 0.0)
-            if src_in_s < cursor:
-                src_in_s = cursor  # trim leading overlap
-            if src_out_s <= src_in_s:
-                continue  # entire segment was before cursor
-            duration_s = src_out_s - src_in_s
-            # Drop micro-segments shorter than 0.25s — these are typically
-            # trim_air leftovers (mid-word stubs after tightening) that would
-            # cut Anna off mid-syllable on the timeline.
-            if duration_s < 0.25:
-                continue
-            placements.append({
-                "primary_pid": entry["primary_pid"],
-                "paragraphs": list(take.get("paragraphs") or []),
-                "file": a_cam,
-                "source_in_s": src_in_s,
-                "source_out_s": src_out_s,
-                "timeline_in_s": timeline_cursor_s,
-                "timeline_out_s": timeline_cursor_s + duration_s,
-            })
-            timeline_cursor_s += duration_s
-            file_source_cursor[a_cam] = src_out_s
+        src_in_s = float(take["start_s"])
+        src_out_s = float(take["end_s"])
+        # Per-file cursor: trim leading overlap with previous take from same
+        # file (adjacent script paragraphs often share aligned words).
+        cursor = file_source_cursor.get(a_cam, 0.0)
+        if src_in_s < cursor:
+            src_in_s = cursor
+        if src_out_s <= src_in_s:
+            continue
+        duration_s = src_out_s - src_in_s
+        if duration_s < 0.5:  # too short to be a meaningful cut
+            continue
+        placements.append({
+            "primary_pid": entry["primary_pid"],
+            "paragraphs": list(take.get("paragraphs") or []),
+            "file": a_cam,
+            "source_in_s": src_in_s,
+            "source_out_s": src_out_s,
+            "timeline_in_s": timeline_cursor_s,
+            "timeline_out_s": timeline_cursor_s + duration_s,
+        })
+        timeline_cursor_s += duration_s
+        file_source_cursor[a_cam] = src_out_s
     return placements
 
 
