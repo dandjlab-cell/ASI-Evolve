@@ -38,6 +38,13 @@ from .classids import (
     CID_VIDEO_MEDIA_SOURCE,
     CID_MEDIA,
     CID_VIDEO_STREAM,
+    CID_AUDIO_MEDIA_SOURCE,
+    CID_AUDIO_STREAM,
+    CID_AUDIO_COMPONENT_CHAIN,
+    CID_AUDIO_CLIP,
+    CID_CLIP_CHANNEL_VECTOR_SERIALIZER,
+    CID_CLIP_CHANNEL_SERIALIZER,
+    CID_SECONDARY_CONTENT,
 )
 from .seed_loader import IdFactory
 from .tick_math import TICKS_PER_SECOND
@@ -115,8 +122,15 @@ def ffprobe(path: Path) -> MediaMeta:
     )
 
 
-def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
-    """Build the 9-element chain for one source file.
+def build_media_chain(
+    meta: MediaMeta, ids: IdFactory, *, with_audio: bool = False,
+) -> dict:
+    """Build the 9-element video chain for one source file. With with_audio=True,
+    also emits the parallel audio chain (AudioMediaSource, AudioStream,
+    AudioClip, AudioComponentChain, ClipChannelVectorSerializer, 2×
+    ClipChannelSerializer for stereo, 2× SecondaryContent) and updates the
+    Media + MasterClip + ClipChannelGroupVectorSerializer to reference them.
+    Decoded from AUDIO_REF_A.prproj (2026-05-01).
 
     Returns dict with:
       - elements: list[ET.Element] to append to PremiereData root
@@ -125,8 +139,10 @@ def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
                          from this source
       - video_media_source_id: ObjectID; subclip VideoClips reference this via
                                 Source ObjectRef (shared across all placements)
+      - audio_media_source_id: ObjectID (when with_audio=True); subclip
+                                AudioClips reference this via Source ObjectRef
       - markers_id: ObjectID; same Markers shared across all placements'
-                     VideoClip MarkerOwner ObjectRefs
+                     VideoClip + AudioClip MarkerOwner ObjectRefs
       - duration_ticks, name: convenience for placement loop
     """
     # IDs for all elements
@@ -140,6 +156,19 @@ def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
     master_video_clip_id = ids.fresh_id()
     channel_group_serializer_id = ids.fresh_id()
     markers_id = ids.fresh_id()
+
+    # Audio chain IDs (allocated only when with_audio=True). Stereo assumption
+    # — 2 channels. ffprobe could surface a more accurate channel count;
+    # leaving stereo as the conservative default until real-world mono cases
+    # show up.
+    audio_channels = 2
+    audio_stream_id = ids.fresh_id() if with_audio else None
+    audio_media_source_id = ids.fresh_id() if with_audio else None
+    master_audio_clip_id = ids.fresh_id() if with_audio else None
+    audio_component_chain_id = ids.fresh_id() if with_audio else None
+    clip_channel_vector_serializer_id = ids.fresh_id() if with_audio else None
+    clip_channel_serializer_ids = [ids.fresh_id() for _ in range(audio_channels)] if with_audio else []
+    secondary_content_ids = [ids.fresh_id() for _ in range(audio_channels)] if with_audio else []
 
     name = meta.abs_path.name
     duration_ticks = meta.duration_ticks
@@ -173,11 +202,18 @@ def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
     ET.SubElement(mc_props, "monitor.zoom.in.time").text = "0"
     ET.SubElement(mc_props, "monitor.zoom.out.time").text = str(duration_ticks)
     ET.SubElement(mc_props, "monitor.take.video").text = "true"
-    # take.audio=false avoids needing an audio media-chain in Round 1
-    ET.SubElement(mc_props, "monitor.take.audio").text = "false"
+    ET.SubElement(mc_props, "monitor.take.audio").text = "true" if with_audio else "false"
     ET.SubElement(mc, "LoggingInfo", {"ObjectRef": clip_logging_info_id})
+    if with_audio:
+        # AudioComponentChains list (only present when audio is enabled)
+        acc_list = ET.SubElement(mc, "AudioComponentChains", {"Version": "1"})
+        ET.SubElement(acc_list, "AudioComponentChain",
+                      {"Index": "0", "ObjectRef": audio_component_chain_id})
     clips = ET.SubElement(mc, "Clips", {"Version": "1"})
     ET.SubElement(clips, "Clip", {"Index": "0", "ObjectRef": master_video_clip_id})
+    if with_audio:
+        # Master AudioClip lives at Clips Index=1
+        ET.SubElement(clips, "Clip", {"Index": "1", "ObjectRef": master_audio_clip_id})
     ET.SubElement(mc, "AudioClipChannelGroups", {"ObjectRef": channel_group_serializer_id})
     ET.SubElement(mc, "Name").text = name
     ET.SubElement(mc, "TimeDisplay").text = "104"
@@ -217,11 +253,17 @@ def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
     elements.append(vc)
 
     # 4b. ClipChannelGroupVectorSerializer (target of MasterClip's AudioClipChannelGroups ref)
+    # When audio is enabled, populate with one ClipChannelVectorItem pointing
+    # to the per-source ClipChannelVectorSerializer.
     ccg = ET.Element("ClipChannelGroupVectorSerializer", {
         "ObjectID": channel_group_serializer_id,
         "ClassID": CID_CLIP_CHANNEL_GROUP_VECTOR_SERIALIZER,
         "Version": "1",
     })
+    if with_audio:
+        ccg_vectors = ET.SubElement(ccg, "ClipChannelVectors", {"Version": "1"})
+        ET.SubElement(ccg_vectors, "ClipChannelVectorItem",
+                      {"Index": "0", "ObjectRef": clip_channel_vector_serializer_id})
     elements.append(ccg)
 
     # 4c. Markers (target of every VideoClip's MarkerOwner ref for this masterclip)
@@ -253,6 +295,11 @@ def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
         "ClassID": CID_MEDIA,
         "Version": "30",
     })
+    if with_audio:
+        # AudioStream ref must come BEFORE VideoStream — matches AUDIO_REF_A
+        # element order. Premiere is order-tolerant in practice but matching
+        # the reference means the diff is minimal.
+        ET.SubElement(md, "AudioStream", {"ObjectRef": audio_stream_id})
     ET.SubElement(md, "VideoStream", {"ObjectRef": video_stream_id})
     rel = os.path.relpath(meta.abs_path, Path.home())
     ET.SubElement(md, "RelativePath").text = rel
@@ -279,11 +326,119 @@ def build_media_chain(meta: MediaMeta, ids: IdFactory) -> dict:
     ET.SubElement(vs, "FrameRate").text = str(meta.framerate_ticks)
     elements.append(vs)
 
+    if with_audio:
+        # Stereo audio frame rate: ConformedAudioRate = 5760000 (44.1kHz) or
+        # 5292000 (48kHz). Standard camera audio is 48kHz; matching REF_A's
+        # 48kHz figure. Premiere recomputes ConformedAudioPath/PeakFilePath
+        # on first open if missing, so we leave those off rather than
+        # synthesizing wrong paths.
+        audio_frame_rate = 5292000  # 48kHz reference rate
+        stereo_layout = '[{"channellabel":100},{"channellabel":101}]'
+
+        # 7. AudioMediaSource (parallel to VideoMediaSource — same Media UID)
+        ams = ET.Element("AudioMediaSource", {
+            "ObjectID": audio_media_source_id,
+            "ClassID": CID_AUDIO_MEDIA_SOURCE,
+            "Version": "2",
+        })
+        ams_msrc = ET.SubElement(ams, "MediaSource", {"Version": "4"})
+        ET.SubElement(ams_msrc, "Content", {"Version": "10"})
+        ET.SubElement(ams_msrc, "Media", {"ObjectURef": media_uid})
+        ET.SubElement(ams, "OriginalDuration").text = str(duration_ticks)
+        elements.append(ams)
+
+        # 8. AudioStream
+        as_el = ET.Element("AudioStream", {
+            "ObjectID": audio_stream_id,
+            "ClassID": CID_AUDIO_STREAM,
+            "Version": "8",
+        })
+        ET.SubElement(as_el, "AudioChannelLayout").text = stereo_layout
+        ET.SubElement(as_el, "Duration").text = str(duration_ticks)
+        ET.SubElement(as_el, "SampleType").text = "7"
+        ET.SubElement(as_el, "FrameRate").text = str(audio_frame_rate)
+        elements.append(as_el)
+
+        # 9. AudioComponentChain (master)
+        acc = ET.Element("AudioComponentChain", {
+            "ObjectID": audio_component_chain_id,
+            "ClassID": CID_AUDIO_COMPONENT_CHAIN,
+            "Version": "4",
+        })
+        ET.SubElement(acc, "DefaultVol").text = "true"
+        ET.SubElement(acc, "DefaultVolumeComponentID").text = "1"
+        ET.SubElement(acc, "DefaultChannelVolumeComponentID").text = "2"
+        ET.SubElement(acc, "ComponentChain", {"Version": "3"})
+        ET.SubElement(acc, "AudioChannelLayout").text = stereo_layout
+        ET.SubElement(acc, "ChannelType").text = "1"
+        elements.append(acc)
+
+        # 10. Master AudioClip (sibling of master VideoClip)
+        ac = ET.Element("AudioClip", {
+            "ObjectID": master_audio_clip_id,
+            "ClassID": CID_AUDIO_CLIP,
+            "Version": "8",
+        })
+        ac_clip = ET.SubElement(ac, "Clip", {"Version": "18"})
+        ac_node = ET.SubElement(ac_clip, "Node", {"Version": "1"})
+        ac_props = ET.SubElement(ac_node, "Properties", {"Version": "1"})
+        ET.SubElement(ac_props, "asl.clip.label.name").text = "BE.Prefs.LabelColors.0"
+        ET.SubElement(ac_props, "asl.clip.label.color").text = "11405886"
+        ac_mowner = ET.SubElement(ac_clip, "MarkerOwner", {"Version": "1"})
+        ET.SubElement(ac_mowner, "Markers", {"ObjectRef": markers_id})
+        ET.SubElement(ac_clip, "Source", {"ObjectRef": audio_media_source_id})
+        ET.SubElement(ac_clip, "ClipID").text = ids.fresh_uid()
+        ET.SubElement(ac_clip, "InUse").text = "false"
+        # SecondaryContents per channel (master has same channel count as the source)
+        ac_sec_contents = ET.SubElement(ac, "SecondaryContents", {"Version": "1"})
+        for i, sc_id in enumerate(secondary_content_ids):
+            ET.SubElement(ac_sec_contents, "SecondaryContentItem",
+                          {"Index": str(i), "ObjectRef": sc_id})
+        ET.SubElement(ac, "AudioChannelLayout").text = stereo_layout
+        elements.append(ac)
+
+        # 11. SecondaryContent × N (one per audio channel — points back to the
+        #     AudioMediaSource with a ChannelIndex).
+        for i, sc_id in enumerate(secondary_content_ids):
+            sc = ET.Element("SecondaryContent", {
+                "ObjectID": sc_id,
+                "ClassID": CID_SECONDARY_CONTENT,
+                "Version": "1",
+            })
+            ET.SubElement(sc, "Content", {"ObjectRef": audio_media_source_id})
+            ET.SubElement(sc, "ChannelIndex").text = str(i)
+            elements.append(sc)
+
+        # 12. ClipChannelVectorSerializer
+        ccvs = ET.Element("ClipChannelVectorSerializer", {
+            "ObjectID": clip_channel_vector_serializer_id,
+            "ClassID": CID_CLIP_CHANNEL_VECTOR_SERIALIZER,
+            "Version": "1",
+        })
+        ccvs_chans = ET.SubElement(ccvs, "ClipChannels", {"Version": "1"})
+        for i, ccs_id in enumerate(clip_channel_serializer_ids):
+            ET.SubElement(ccvs_chans, "ClipChannelItem",
+                          {"Index": str(i), "ObjectRef": ccs_id})
+        ET.SubElement(ccvs, "ChannelType").text = "1"
+        elements.append(ccvs)
+
+        # 13. ClipChannelSerializer × N (one per audio channel)
+        for i, ccs_id in enumerate(clip_channel_serializer_ids):
+            ccs = ET.Element("ClipChannelSerializer", {
+                "ObjectID": ccs_id,
+                "ClassID": CID_CLIP_CHANNEL_SERIALIZER,
+                "Version": "1",
+            })
+            ET.SubElement(ccs, "SourceClipIndex").text = "0"
+            ET.SubElement(ccs, "mSourceChannelIndex").text = str(i)
+            elements.append(ccs)
+
     return {
         "elements": elements,
         "clip_project_item_uid": clip_project_item_uid,
         "master_clip_uid": master_clip_uid,
         "video_media_source_id": video_media_source_id,
+        "audio_media_source_id": audio_media_source_id,
         "markers_id": markers_id,
         "duration_ticks": duration_ticks,
         "name": name,

@@ -65,9 +65,11 @@ from .core.bins import (  # noqa: E402
     build_bin,
     find_root_project_item,
     find_v1_clip_track,
+    find_a1_clip_track,
     find_existing_vcti,
     replace_root_bin_items,
     replace_v1_clip_items,
+    replace_a1_clip_items,
     remove_existing_vcti,
     classify_root_clip_project_item,
 )
@@ -78,6 +80,8 @@ from .core.media_chain import (  # noqa: E402
 )
 from .core.placement import (  # noqa: E402
     build_clip_placement,
+    build_audio_clip_placement,
+    build_link_element,
 )
 from .effects.motion import (  # noqa: E402
     build_motion_filter,
@@ -125,13 +129,22 @@ def collect_placements_from_timeline(
     sync_groups: dict,
 ) -> list[dict]:
     """Walk the manifest's timeline (per cluster); produce flat placement
-    entries — one per beat-segment — with timeline + source ranges + the
+    entries — one per source segment — with timeline + source ranges + the
     a_cam basename to source from.
 
     Each cluster's primary_take comes from a specific sync_group; that
-    sync_group's a_cam is the file we cut from. The beat's v6_segments
-    give the (source-time) sub-cuts inside the take. We lay them back-to-
-    back inside the cluster's [timeline_in_s, timeline_out_s] window.
+    sync_group's a_cam is the file we cut from. We use the PRIMARY TAKE's
+    segments list once per cluster, NOT the per-beat v6_segments lists,
+    because the v4 composer's `_segments_inside_paragraph_range` currently
+    returns the full take segments for EVERY beat (TODO marked in
+    cluster_to_beats.py: real per-beat slicing requires word-level
+    paragraph-time mapping). Iterating beats × segments would duplicate
+    each segment N times (N = beat count). Iterating segments per cluster
+    gives the correct one-cut-per-trim_air-segment timeline.
+
+    Beat-level granularity will become important in Round 2 when V6+V7
+    are paired and each beat carries its own mode (Position+Scale_H).
+    Until then, V1 placement is per-cluster.
     """
     sg_to_a_cam: dict[str, str] = {
         g["group_id"]: g["a_cam"]
@@ -151,6 +164,9 @@ def collect_placements_from_timeline(
             continue
         cluster_in_s = float(cluster["timeline_in_s"])
         timeline_cursor_s = cluster_in_s
+        # Walk beats × v6_segments — composer's per-paragraph slicing means
+        # beats now have UNIQUE segments (no duplication across beats inside
+        # a cluster). Each segment becomes one cut on V1.
         for beat in beats:
             for seg in beat.get("v6_segments") or []:
                 src_in_s = float(seg["in_s"])
@@ -255,11 +271,14 @@ def write_nbq_prproj(
     logger.info("seed scan: max ObjectID=%d, %d ObjectUIDs in use", max_id, len(used_uids))
 
     # ────────────────────────────────────────────────────────────────────
-    # Build media chains for every video source
+    # Build media chains for every video source. with_audio=True so each
+    # .mp4's embedded audio gets a parallel AudioMediaSource + AudioStream
+    # + AudioClip + channel routing — drag-to-timeline brings audio with it
+    # the way Premiere does for native imports.
     # ────────────────────────────────────────────────────────────────────
     media_by_file: dict[str, dict] = {}
     for basename in sorted(metas.keys()):
-        chain = build_media_chain(metas[basename], ids)
+        chain = build_media_chain(metas[basename], ids, with_audio=True)
         media_by_file[basename] = chain
         for el in chain["elements"]:
             pdata.append(el)
@@ -278,7 +297,8 @@ def write_nbq_prproj(
     # to leave room for BG plate + L/R MOGRTs). Override via --motion-scale
     # for episodes with different framing. Set to 100 to disable.
     # ────────────────────────────────────────────────────────────────────
-    placements: list[dict] = []
+    placements: list[dict] = []  # video placements
+    audio_placements: list[dict] = []  # audio placements (1:1 paired with video)
     for i, p in enumerate(placements_spec):
         chain = media_by_file[p["file"]]
         tl_in = seconds_to_ticks(p["timeline_in_s"])
@@ -297,18 +317,37 @@ def write_nbq_prproj(
         placements.append(placement)
         for el in placement["elements"]:
             pdata.append(el)
+
+        # Paired audio placement on A1 — uses the same source range as video
+        # so the linked-selection group stays in sync.
+        audio_placement = build_audio_clip_placement(
+            chain, tl_in, tl_out, src_in, src_out, ids,
+        )
+        audio_placements.append(audio_placement)
+        for el in audio_placement["elements"]:
+            pdata.append(el)
+
+        # Link element pairs the V1 + A1 placements (matches the default
+        # behavior of dragging a video-with-audio clip into the timeline).
+        link_el = build_link_element(placement["vcti_id"], audio_placement["acti_id"], ids)
+        pdata.append(link_el)
+
         if i < 8 or i % 25 == 0:
             logger.info(
-                "placed[%03d] %s  cluster=%s  beat=%s  tl=%.2f-%.2fs  src=%.2f-%.2fs  vcti=%s  scale=%.1f%%",
+                "placed[%03d] %s  cluster=%s  beat=%s  tl=%.2f-%.2fs  src=%.2f-%.2fs  vcti=%s  acti=%s  scale=%.1f%%",
                 i, p["file"], p["cluster_id"], p["beat_id"],
                 p["timeline_in_s"], p["timeline_out_s"],
-                p["source_in_s"], p["source_out_s"], placement["vcti_id"], motion_scale_pct,
+                p["source_in_s"], p["source_out_s"],
+                placement["vcti_id"], audio_placement["acti_id"], motion_scale_pct,
             )
 
-    # Re-link V1 ClipTrack to all our new VCTIs
+    # Re-link V1 ClipTrack to all our new VCTIs and A1 ClipTrack to all ACTIs
     v1_track = find_v1_clip_track(pdata)
     replace_v1_clip_items(v1_track, [p["vcti_id"] for p in placements])
-    logger.info("V1 track: linked %d VCTIs", len(placements))
+    a1_track = find_a1_clip_track(pdata)
+    replace_a1_clip_items(a1_track, [a["acti_id"] for a in audio_placements])
+    logger.info("V1 track: %d VCTIs; A1 track: %d ACTIs",
+                len(placements), len(audio_placements))
 
     # ────────────────────────────────────────────────────────────────────
     # Build bins. Root layout:

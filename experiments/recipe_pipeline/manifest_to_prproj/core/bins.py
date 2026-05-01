@@ -64,6 +64,14 @@ def find_v1_clip_track(premiere_data: ET.Element) -> ET.Element:
     raise RuntimeError("V1 VideoClipTrack not found")
 
 
+def find_a1_clip_track(premiere_data: ET.Element) -> ET.Element:
+    """Return the first AudioClipTrack element with ObjectUID (the A1 track)."""
+    for el in premiere_data:
+        if el.tag == "AudioClipTrack" and "ObjectUID" in el.attrib:
+            return el
+    raise RuntimeError("A1 AudioClipTrack not found")
+
+
 def find_existing_vcti(premiere_data: ET.Element) -> Optional[ET.Element]:
     for el in premiere_data:
         if el.tag == "VideoClipTrackItem" and "ObjectID" in el.attrib:
@@ -87,6 +95,20 @@ def replace_v1_clip_items(v1_track: ET.Element, vcti_ids: list[str]) -> None:
     for child in list(track_items):
         track_items.remove(child)
     for i, oid in enumerate(vcti_ids):
+        ET.SubElement(track_items, "TrackItem", {"Index": str(i), "ObjectRef": oid})
+
+
+def replace_a1_clip_items(a1_track: ET.Element, acti_ids: list[str]) -> None:
+    """Audio sibling of replace_v1_clip_items. The seed's A1 ClipItems may have
+    no TrackItems child yet; create one if missing.
+    """
+    clip_items = a1_track.find("ClipTrack/ClipItems")
+    track_items = clip_items.find("TrackItems")
+    if track_items is None:
+        track_items = ET.SubElement(clip_items, "TrackItems", {"Version": "1"})
+    for child in list(track_items):
+        track_items.remove(child)
+    for i, oid in enumerate(acti_ids):
         ET.SubElement(track_items, "TrackItem", {"Index": str(i), "ObjectRef": oid})
 
 
