@@ -196,6 +196,15 @@ def _build_production_candidates(recipe_slug: str) -> tuple[list[dict], dict]:
                 })
         v2_candidates = _nms_hero_band(v2_candidates)
         v2_candidates.sort(key=lambda c: c["score"], reverse=True)
+        # Per-clip cap on v2 path TESTED 2026-05-02 and reverted. Tradeoffs:
+        #   cap=8:  reachability 74% → 63% (too tight, drops truth picks)
+        #   cap=15: corpus 0.274 → 0.270 (tied), but KFC stdev exploded
+        #           ±0.029 → ±0.208 — KFC's truth picks concentrated on
+        #           B19I6339 sometimes survive the cap, sometimes don't.
+        # Conclusion: editor patterns differ per recipe. KFC = many picks on
+        # one clip (cap hurts), chicken_thighs = picks across many clips
+        # (cap might help). A single global per-clip cap can't satisfy both.
+        # Skipping for now; revisit when we have recipe-aware cap logic.
         v2_candidates = v2_candidates[:CANDIDATE_CAP]
         # Audio kept ON — it's a real signal in the pipeline. The two earlier
         # shapes (raw transcripts, structured flags + signal text) overwhelmed
