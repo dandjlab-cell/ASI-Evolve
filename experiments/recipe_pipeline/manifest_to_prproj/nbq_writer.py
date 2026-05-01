@@ -329,51 +329,42 @@ def collect_placements_from_paragraph_alignment(
     pa_path: Path,
     sg_to_a_cam: dict[str, str],
 ) -> list[dict]:
-    """Walk paragraph_alignment.json in script-paragraph order. Each distinct
-    natural-take is placed ONCE (at its first paragraph). Source range =
-    take's start..end (already at natural >2s silence boundaries from
-    transcript splitting). Skip paragraphs whose take was already placed.
+    """Walk paragraph_alignment.json's `main_cut` (set-cover + SW-trimmed
+    natural takes). Each take is uniquely assigned to a set of script
+    paragraphs and trimmed to just those paragraphs' word range — no
+    redundant content, no director chatter at edges.
+
+    main_cut entries are pre-sorted by first script paragraph each take
+    covers (script order). Place each on V1 back-to-back.
     """
     pa = json.loads(pa_path.read_text())
-    para_choices: dict[str, dict] = pa.get("paragraph_choices", {})
-
-    def pid_sort(pid: str) -> int:
-        try:
-            return int(pid.lstrip("P"))
-        except Exception:
-            return 10**9
+    main_cut = pa.get("main_cut", [])
 
     placements: list[dict] = []
     timeline_cursor_s = 0.0
-    placed_take_ids: set[str] = set()
-
-    for pid in sorted(para_choices.keys(), key=pid_sort):
-        choice = para_choices[pid]
-        take_id = choice.get("take_id")
-        if not take_id or take_id in placed_take_ids:
-            continue
-        sg_id = choice["sg_id"]
+    for entry in main_cut:
+        sg_id = entry["sg_id"]
         a_cam = sg_to_a_cam.get(sg_id)
         if not a_cam:
-            logger.warning("paragraph %s sg=%s has no a_cam — skipping", pid, sg_id)
+            logger.warning("take %s sg=%s has no a_cam — skipping",
+                           entry["take_id"], sg_id)
             continue
-        src_in_s = float(choice["take_in_s"])
-        src_out_s = float(choice["take_out_s"])
+        src_in_s = float(entry["trimmed_in_s"])
+        src_out_s = float(entry["trimmed_out_s"])
         duration_s = src_out_s - src_in_s
         if duration_s < 0.5:
             continue
         placements.append({
-            "primary_pid": pid,
-            "take_id": take_id,
+            "primary_pid": entry.get("first_pid", ""),
+            "take_id": entry["take_id"],
             "file": a_cam,
             "source_in_s": src_in_s,
             "source_out_s": src_out_s,
             "timeline_in_s": timeline_cursor_s,
             "timeline_out_s": timeline_cursor_s + duration_s,
-            "coverage": choice.get("coverage", 0.0),
+            "paragraphs_assigned": entry.get("paragraphs_assigned", []),
         })
         timeline_cursor_s += duration_s
-        placed_take_ids.add(take_id)
     return placements
 
 
