@@ -478,6 +478,17 @@ def resolve_clip_track_item(item_elem: ET.Element, idx: IdIndex) -> dict:
         if sk and "t" in sk:
             sk["clip_t"] = round(sk["t"] - in_point_seconds_local, 6)
 
+    # Read multicam markers from the timeline VideoClip's Clip body — these
+    # control the recurse direction inside resolve_source_filename when the
+    # source is a VideoSequenceSource.
+    is_multicam_local = False
+    selected_track_index_local = None
+    if video_clip_elem is not None and video_clip_elem.tag == "VideoClip":
+        clip_inner_local = video_clip_elem.find("Clip")
+        if clip_inner_local is not None:
+            mc = child_text(clip_inner_local, "IsMulticam")
+            is_multicam_local = (mc is not None and mc.strip().lower() == "true")
+            selected_track_index_local = child_int(clip_inner_local, "SelectedTrackIndex")
     return {
         "track_item_object_id": item_elem.get("ObjectID"),
         "video_clip_object_id": video_clip_elem.get("ObjectID") if video_clip_elem is not None else None,
@@ -486,7 +497,15 @@ def resolve_clip_track_item(item_elem: ET.Element, idx: IdIndex) -> dict:
         "duration_seconds": (end_seconds - start_seconds) if (start_seconds is not None and end_seconds is not None) else None,
         "is_adjustment_layer": is_adjustment,
         "source_object_ref": source_ref,
-        "source_filename": resolve_source_filename(source_ref, idx),
+        **(lambda info: {
+            "source_filename": info.get("filename") if info else None,
+            "inner_source_in_ticks": info.get("inner_source_in_ticks") if info else None,
+            "inner_source_out_ticks": info.get("inner_source_out_ticks") if info else None,
+        })(resolve_source_info(
+            source_ref, idx,
+            source_in_ticks=in_point_ticks,
+            selected_track_index=selected_track_index_local if is_multicam_local else None,
+        )),
         "source_in_point_ticks": in_point_ticks,
         "source_out_point_ticks": out_point_ticks,
         "playback_speed": playback_speed,
@@ -495,23 +514,14 @@ def resolve_clip_track_item(item_elem: ET.Element, idx: IdIndex) -> dict:
     }
 
 
-def resolve_source_filename(source_ref: str | None, idx: IdIndex) -> str | None:
-    """Resolve source_object_ref → media filename basename (no extension).
-
-    Walks: VideoMediaSource → MediaSource/Media (ObjectURef) → Title or FilePath.
-    Returns None for adjustment-layer clips (no source) or sequence-backed
-    sources (multicam / nested).
-    """
-    if not source_ref:
+def _media_filename(media_source: ET.Element | None, idx: IdIndex) -> str | None:
+    """Helper: VideoMediaSource → Media → Title (basename, no extension)."""
+    if media_source is None:
         return None
-    src = idx.get_id(source_ref, expect=("VideoMediaSource",))
-    if src is None:
-        return None
-    media_node = src.find("MediaSource/Media")
+    media_node = media_source.find("MediaSource/Media")
     if media_node is None:
         return None
-    media_uref = media_node.get("ObjectURef")
-    media = idx.get_uid(media_uref, expect=("Media",))
+    media = idx.get_uid(media_node.get("ObjectURef"), expect=("Media",))
     if media is None:
         return None
     title = child_text(media, "Title") or child_text(media, "FilePath")
@@ -521,6 +531,241 @@ def resolve_source_filename(source_ref: str | None, idx: IdIndex) -> str | None:
     if "." in base:
         base = base.rsplit(".", 1)[0]
     return base
+
+
+def _resolve_in_subsequence(
+    seq_uref: str,
+    idx: IdIndex,
+    source_in_ticks: int | None = None,
+    selected_track_index: int | None = None,
+) -> str | None:
+    """Backwards-compat: returns just the filename string."""
+    info = _resolve_in_subsequence_full(seq_uref, idx, source_in_ticks, selected_track_index)
+    return info.get("filename") if info else None
+
+
+def _resolve_in_subsequence_full(
+    seq_uref: str,
+    idx: IdIndex,
+    source_in_ticks: int | None = None,
+    selected_track_index: int | None = None,
+) -> dict | None:
+    """Recurse into a nested or multicam sub-sequence to find the underlying media filename.
+
+    Two cases:
+      - Nested (selected_track_index is None): pick the V1 clip at source_in_ticks
+        within the sub-sequence's timeline. Editors use nested sequences to bundle
+        multiple clips of the same camera so a single scale keyframe animates all
+        of them — so the inner clip is just a regular VideoMediaSource one level
+        down.
+      - Multicam (selected_track_index is int): pick the track at that index, then
+        the first/only clip on that track. Editor's choice of camera angle is
+        encoded in SelectedTrackIndex on the outer timeline VideoClip.
+    """
+    seq = idx.get_uid(seq_uref, expect=("Sequence",))
+    if seq is None:
+        return None
+    vtg = find_video_track_group(seq, idx)
+    if vtg is None:
+        return None
+    tracks_block = vtg.find("TrackGroup/Tracks")
+    if tracks_block is None:
+        return None
+    track_elems = tracks_block.findall("Track")
+    if not track_elems:
+        return None
+
+    # Multicam: index into tracks
+    if selected_track_index is not None:
+        if selected_track_index >= len(track_elems):
+            return None
+        track = idx.get_uid(track_elems[selected_track_index].get("ObjectURef"),
+                            expect=("VideoClipTrack",))
+        if track is None:
+            return None
+        items = track.find("ClipTrack/ClipItems/TrackItems")
+        if items is None or not items.findall("TrackItem"):
+            return None
+        first_target = idx.get_id(items.findall("TrackItem")[0].get("ObjectRef"),
+                                  expect=("VideoClipTrackItem",))
+        return _info_from_track_item(first_target, idx) if first_target is not None else None
+
+    # Nested: V1 of sub-sequence, find clip at source_in_ticks (default 0 → first clip)
+    target_t = source_in_ticks or 0
+    track = idx.get_uid(track_elems[0].get("ObjectURef"), expect=("VideoClipTrack",))
+    if track is None:
+        return None
+    items = track.find("ClipTrack/ClipItems/TrackItems")
+    if items is None:
+        return None
+    matching_clip: ET.Element | None = None
+    for ti in items.findall("TrackItem"):
+        target = idx.get_id(ti.get("ObjectRef"), expect=("VideoClipTrackItem",))
+        if target is None:
+            continue
+        cti = target.find("ClipTrackItem")
+        if cti is None:
+            continue
+        ti_inner = cti.find("TrackItem")
+        start_ticks = child_int(ti_inner, "Start") or 0
+        end_ticks = child_int(ti_inner, "End") or 0
+        if start_ticks <= target_t < end_ticks:
+            matching_clip = target
+            break
+    if matching_clip is None:
+        # Fall back to the first clip — most nested wrappers have a single
+        # underlying clip (or several of the same camera), so the wrapper's
+        # source_in_ticks doesn't always map cleanly.
+        first_target = idx.get_id(items.findall("TrackItem")[0].get("ObjectRef"),
+                                  expect=("VideoClipTrackItem",))
+        matching_clip = first_target
+    if matching_clip is None:
+        return None
+    return _info_from_track_item(matching_clip, idx)
+
+
+def _filename_from_first_clip(track: ET.Element, idx: IdIndex) -> str | None:
+    """Walk to the first VideoClipTrackItem on a track, then to its filename."""
+    items = track.find("ClipTrack/ClipItems/TrackItems")
+    if items is None:
+        return None
+    track_items = items.findall("TrackItem")
+    if not track_items:
+        return None
+    target = idx.get_id(track_items[0].get("ObjectRef"), expect=("VideoClipTrackItem",))
+    return _filename_from_track_item(target, idx) if target is not None else None
+
+
+def _filename_from_track_item(track_item: ET.Element, idx: IdIndex) -> str | None:
+    """Backwards-compat wrapper. Returns just the filename."""
+    info = _info_from_track_item(track_item, idx)
+    return info.get("filename") if info else None
+
+
+def _info_from_track_item(track_item: ET.Element, idx: IdIndex) -> dict | None:
+    """VideoClipTrackItem → SubClip → VideoClip → Source.
+    Returns {filename, inner_source_in_ticks, inner_source_out_ticks} so callers
+    can use the inner clip's source-time anchoring (not the wrapper's)."""
+    cti = track_item.find("ClipTrackItem")
+    if cti is None:
+        return None
+    sub_clip = cti.find("SubClip")
+    if sub_clip is None:
+        return None
+    sub_elem = idx.get_id(sub_clip.get("ObjectRef"), expect=("VideoClip", "SubClip"))
+    if sub_elem is None:
+        return None
+    if sub_elem.tag == "SubClip":
+        sub_inner = sub_elem.find("Clip")
+        if sub_inner is None:
+            return None
+        vc = idx.get_id(sub_inner.get("ObjectRef"), expect=("VideoClip",))
+        if vc is None:
+            return None
+    else:
+        vc = sub_elem
+    clip_inner = vc.find("Clip")
+    if clip_inner is None:
+        return None
+    inner_src = clip_inner.find("Source")
+    if inner_src is None:
+        return None
+    inner_src_elem = idx.get_id(inner_src.get("ObjectRef"),
+                                 expect=("VideoMediaSource", "VideoSequenceSource"))
+    if inner_src_elem is None:
+        return None
+    inner_in = child_int(clip_inner, "InPoint")
+    inner_out = child_int(clip_inner, "OutPoint")
+    if inner_src_elem.tag == "VideoSequenceSource":
+        # Doubly-nested. Recurse one more level.
+        seq_node = inner_src_elem.find("SequenceSource/Sequence")
+        if seq_node is None:
+            return None
+        deeper = _resolve_in_subsequence_full(seq_node.get("ObjectURef"), idx,
+                                              source_in_ticks=inner_in)
+        return deeper
+    return {
+        "filename": _media_filename(inner_src_elem, idx),
+        "inner_source_in_ticks": inner_in,
+        "inner_source_out_ticks": inner_out,
+    }
+
+
+def resolve_source_info(
+    source_ref: str | None,
+    idx: IdIndex,
+    source_in_ticks: int | None = None,
+    selected_track_index: int | None = None,
+) -> dict | None:
+    """Resolve source_object_ref → {filename, inner_source_in_ticks, inner_source_out_ticks}.
+
+    For VideoMediaSource (regular media): inner_source_in/out are None — the
+    wrapper's own source_in_point_ticks IS the source-time anchor.
+    For VideoSequenceSource (nested or multicam): inner_source_in/out reflect
+    the inner clip's actual cut into the underlying .mov. Truth-set extractors
+    should use these instead of the outer wrapper's source_in_point_ticks
+    (which points into the nested sub-sequence's timeline, not the .mov).
+    """
+    if not source_ref:
+        return None
+    src = idx.get_id(source_ref, expect=("VideoMediaSource", "VideoSequenceSource"))
+    if src is None:
+        return None
+    if src.tag == "VideoMediaSource":
+        return {
+            "filename": _media_filename(src, idx),
+            "inner_source_in_ticks": None,
+            "inner_source_out_ticks": None,
+        }
+    seq_node = src.find("SequenceSource/Sequence")
+    if seq_node is None:
+        return None
+    return _resolve_in_subsequence_full(seq_node.get("ObjectURef"), idx,
+                                        source_in_ticks=source_in_ticks,
+                                        selected_track_index=selected_track_index)
+
+
+def resolve_source_filename(
+    source_ref: str | None,
+    idx: IdIndex,
+    source_in_ticks: int | None = None,
+    selected_track_index: int | None = None,
+) -> str | None:
+    """Backwards-compat: just the filename string. Use resolve_source_info for the full record."""
+    info = resolve_source_info(source_ref, idx, source_in_ticks, selected_track_index)
+    return info.get("filename") if info else None
+
+
+def _resolve_source_filename_orig(
+    source_ref: str | None,
+    idx: IdIndex,
+    source_in_ticks: int | None = None,
+    selected_track_index: int | None = None,
+) -> str | None:
+    """Original — kept for reference. UNUSED after the resolve_source_info refactor.
+
+    Three source-element cases:
+      - VideoMediaSource: regular media clip. Walk to Media → Title.
+      - VideoSequenceSource (nested): editor wrapped same-camera clips in a
+        sub-sequence to apply a single keyframe animation. Recurse to find
+        the inner clip at the wrapper's source_in_ticks position.
+      - VideoSequenceSource (multicam): caller passes selected_track_index;
+        we walk the sub-sequence's tracks and return the active angle's filename.
+    """
+    if not source_ref:
+        return None
+    src = idx.get_id(source_ref, expect=("VideoMediaSource", "VideoSequenceSource"))
+    if src is None:
+        return None
+    if src.tag == "VideoMediaSource":
+        return _media_filename(src, idx)
+    # VideoSequenceSource: recurse into the nested sequence
+    seq_node = src.find("SequenceSource/Sequence")
+    if seq_node is None:
+        return None
+    return _resolve_in_subsequence(seq_node.get("ObjectURef"), idx,
+                                   source_in_ticks=source_in_ticks,
+                                   selected_track_index=selected_track_index)
 
 
 def resolve_track(track_elem: ET.Element, idx: IdIndex) -> dict:
