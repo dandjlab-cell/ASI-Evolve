@@ -124,6 +124,49 @@ def collect_video_sources(sync_groups: dict) -> dict[str, dict]:
     return out
 
 
+def collect_placements_from_manifest_timeline(
+    timeline: list[dict],
+    sync_groups: dict,
+) -> list[dict]:
+    """Map manifest.timeline[].primary_take → .prproj cuts. ONE cut per
+    cluster, take's full source range. The composer (cluster_to_beats.py
+    in roughcut-ai) already chose the primary take per cluster via
+    _select_primary; the writer just maps those choices to the timeline.
+
+    Cluster ordering and timeline_in/out come from the manifest.
+    """
+    sg_to_a_cam = {
+        g["group_id"]: g["a_cam"]
+        for g in sync_groups.get("groups", [])
+        if g.get("a_cam")
+    }
+    placements: list[dict] = []
+    for cluster in timeline:
+        primary = cluster.get("primary_take") or {}
+        sg_id = primary.get("sync_group_id")
+        if not sg_id:
+            continue  # cluster has no primary (e.g. cutdown_pickups)
+        a_cam = sg_to_a_cam.get(sg_id)
+        if not a_cam:
+            logger.warning("cluster %s sg=%s has no a_cam — skipping",
+                           cluster.get("cluster_id"), sg_id)
+            continue
+        src_in_s = float(primary["start_s"])
+        src_out_s = float(primary["end_s"])
+        if src_out_s <= src_in_s:
+            continue
+        placements.append({
+            "cluster_id": cluster.get("cluster_id"),
+            "primary_pid": cluster.get("cluster_id"),  # for log compat
+            "file": a_cam,
+            "source_in_s": src_in_s,
+            "source_out_s": src_out_s,
+            "timeline_in_s": float(cluster.get("timeline_in_s", 0.0)),
+            "timeline_out_s": float(cluster.get("timeline_out_s", 0.0)),
+        })
+    return placements
+
+
 def _paragraph_sort_key(pid: str) -> tuple[int, str]:
     """[P09] sorts before [P10]; non-numeric paragraphs go to the end."""
     try:
@@ -368,6 +411,67 @@ def collect_placements_by_script_order(
     return placements
 
 
+def write_choices_report(
+    trimmed_takes_path: Path,
+    take_visuals_path: Path,
+    out_path: Path,
+) -> None:
+    """Write a human-readable report of per-paragraph take choices, showing
+    every available take, score, and which was picked. Lets the user spot
+    bad picks immediately.
+    """
+    from collections import defaultdict
+    trimmed = json.loads(trimmed_takes_path.read_text())
+    visuals_idx: dict[tuple, int] = {}
+    if take_visuals_path.exists():
+        vis = json.loads(take_visuals_path.read_text())
+        for s in vis.get("scores", []):
+            if s.get("visual_score") is not None:
+                visuals_idx[(s["sync_group_id"],
+                             round(float(s["start_s"]), 2),
+                             round(float(s["end_s"]), 2))] = int(s["visual_score"])
+
+    def combined(t):
+        conf = float(t.get("confidence") or 0.0)
+        v = visuals_idx.get((t["sync_group_id"],
+                             round(float(t["start_s"]), 2),
+                             round(float(t["end_s"]), 2)), 0) or 0
+        return 0.6 * conf + 0.4 * (v / 3.0)
+
+    by_pid = defaultdict(list)
+    for t in trimmed.get("takes", []):
+        for p in (t.get("paragraphs") or []):
+            by_pid[p].append(t)
+
+    def pid_sort(p):
+        try:
+            return int(p.lstrip("P"))
+        except Exception:
+            return 10**9
+
+    lines: list[str] = []
+    lines.append("# Per-paragraph take choices (✓ = chosen, EXC = excluded as pickup)")
+    lines.append("")
+    for pid in sorted(by_pid.keys(), key=pid_sort):
+        options = sorted(by_pid[pid], key=combined, reverse=True)
+        nonpickup = [t for t in options if t.get("type") != "pickup"]
+        chosen = nonpickup[0] if nonpickup else None
+        lines.append(f"## {pid} ({len(options)} candidates)")
+        for t in options:
+            mark = "✓" if t is chosen else ("EXC" if t.get("type") == "pickup" else "  ")
+            score = combined(t)
+            v = visuals_idx.get((t["sync_group_id"],
+                                 round(float(t["start_s"]), 2),
+                                 round(float(t["end_s"]), 2)), "?")
+            lines.append(
+                f"  {mark} {t['sync_group_id']} {t['start_s']:>7.2f}-{t['end_s']:<7.2f}s  "
+                f"type={t['type']:<8} cov={t.get('coverage', 0):.2f} "
+                f"conf={t.get('confidence', 0):.2f} vis={v} score={score:.3f}"
+            )
+        lines.append("")
+    out_path.write_text("\n".join(lines))
+
+
 def self_check_placements(placements: list[dict]) -> list[str]:
     """Return a list of warning strings for likely errors. Empty = clean."""
     warnings: list[str] = []
@@ -550,35 +654,15 @@ def write_nbq_prproj(
     metas = preflight(sorted(video_sources.keys()), footage_folder)
     logger.info("preflight ok: %d files probed", len(metas))
 
-    # Compute placements: walk script paragraphs in order, pick best take per
-    # paragraph (highest combined_score, skip pickups), place its trimmed
-    # segments back-to-back. Simpler than the cluster→beat→segment hierarchy
-    # and avoids the duplicate-segments problem when one take covers multiple
-    # paragraphs.
-    project_dir = manifest_path.parent
-    project_stem = manifest_path.stem.replace("_v4_manifest", "")
-    if trimmed_takes_path is None:
-        trimmed_takes_path = project_dir / f"{project_stem}_trimmed_takes.json"
-    if take_visuals_path is None:
-        take_visuals_path = project_dir / f"{project_stem}_take_visuals.json"
-    transcripts_path = project_dir / f"{project_stem}_transcripts.json"
-    if not trimmed_takes_path.exists():
-        raise RuntimeError(
-            f"trimmed_takes.json not found at {trimmed_takes_path} — "
-            "run trim_air.py before the writer"
-        )
-    if not transcripts_path.exists():
-        logger.warning(
-            "transcripts.json not found at %s — falling back to script-aligned "
-            "boundaries (cuts may start mid-sentence)", transcripts_path
-        )
-    placements_spec = collect_placements_by_script_order(
-        trimmed_takes_path, take_visuals_path, sync_groups,
-        transcripts_path=transcripts_path,
+    # The manifest already chose primary takes per cluster (composer's
+    # _select_primary). Writer's job: map manifest.timeline[].primary_take
+    # to .prproj cuts. ONE cut per cluster, take's full source range,
+    # placed at cluster's timeline_in_s..timeline_out_s.
+    placements_spec = collect_placements_from_manifest_timeline(
+        timeline, sync_groups,
     )
-    n_takes = len({(p["file"], p["source_in_s"], p["source_out_s"]) for p in placements_spec})
-    logger.info("placements: %d cuts from %d distinct take ranges",
-                len(placements_spec), n_takes)
+    logger.info("placements: %d cuts (one per cluster with a primary_take)",
+                len(placements_spec))
 
     # Self-check for errors
     warnings = self_check_placements(placements_spec)
