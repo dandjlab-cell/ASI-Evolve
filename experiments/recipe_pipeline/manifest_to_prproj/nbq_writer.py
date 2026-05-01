@@ -124,6 +124,259 @@ def collect_video_sources(sync_groups: dict) -> dict[str, dict]:
     return out
 
 
+def _clean_word(w: str) -> str:
+    """Lowercase + strip punctuation. Matches script_align.clean_word."""
+    import re
+    return re.sub(r"[^\w']", "", w.lower()).strip("'")
+
+
+def _smith_waterman_words(seq_a: list[str], seq_b: list[str]) -> list[tuple[int, int]]:
+    """Lightweight SW match returning (a_idx, b_idx) pairs. Match=3, mismatch=-1, gap=-2."""
+    m, n = len(seq_a), len(seq_b)
+    if m == 0 or n == 0:
+        return []
+    H = [[0] * (n + 1) for _ in range(m + 1)]
+    max_val, max_i, max_j = 0, 0, 0
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            s = 3 if seq_a[i - 1] == seq_b[j - 1] else -1
+            H[i][j] = max(0, H[i - 1][j - 1] + s, H[i - 1][j] - 2, H[i][j - 1] - 2)
+            if H[i][j] > max_val:
+                max_val, max_i, max_j = H[i][j], i, j
+    pairs = []
+    i, j = max_i, max_j
+    while i > 0 and j > 0 and H[i][j] > 0:
+        diag_score = 3 if seq_a[i - 1] == seq_b[j - 1] else -1
+        if H[i][j] == H[i - 1][j - 1] + diag_score:
+            if seq_a[i - 1] == seq_b[j - 1]:
+                pairs.append((i - 1, j - 1))
+            i -= 1
+            j -= 1
+        elif H[i][j] == H[i - 1][j] - 2:
+            i -= 1
+        else:
+            j -= 1
+    pairs.reverse()
+    return pairs
+
+
+def _extend_to_silence(
+    start_t: float, end_t: float,
+    sg_words: list[dict],
+    silence_s: float = 1.0,
+    max_lookback_s: float = 5.0,
+) -> tuple[float, float]:
+    """Walk Whisper words backward from start_t / forward from end_t to extend
+    to the nearest >silence_s silence boundary (= natural sentence bounds).
+    Pads 0.05s for natural breath room.
+    """
+    if not sg_words:
+        return start_t, end_t
+
+    new_start = start_t
+    for i in range(len(sg_words) - 1, -1, -1):
+        w = sg_words[i]
+        if w["start"] >= start_t:
+            continue
+        if start_t - w["start"] > max_lookback_s:
+            break
+        prev = sg_words[i - 1] if i > 0 else None
+        gap = (w["start"] - prev["end"]) if prev else 999.0
+        if gap > silence_s:
+            new_start = max(0.0, w["start"] - 0.05)
+            break
+        new_start = max(0.0, w["start"] - 0.05)
+
+    new_end = end_t
+    for i, w in enumerate(sg_words):
+        if w["end"] <= end_t:
+            continue
+        if w["start"] - end_t > max_lookback_s:
+            break
+        prev = sg_words[i - 1]
+        gap = w["start"] - prev["end"]
+        if gap > silence_s:
+            break
+        new_end = w["end"] + 0.05
+
+    return new_start, new_end
+
+
+def whisper_align_paragraphs_to_takes(
+    script_text: str,
+    transcripts: dict,
+    sg_to_a_cam: dict[str, str],
+    silence_s: float = 1.0,
+) -> list[dict]:
+    """For each script paragraph (P01..PN in numeric order), find the best
+    Whisper-aligned span across all sync_groups and emit a placement at
+    natural sentence bounds.
+
+    Uses the actual word-by-word transcripts, NOT script_align's
+    pre-computed matched_takes. Each paragraph picks its own best sg.
+    """
+    import re
+    para_re = re.compile(r"^\[(P\d+)\]\s*(.+)$", re.MULTILINE)
+    # Strip producer tags ([Definition: ...], [GFX: ...], etc.) from the
+    # paragraph text — those aren't spoken words.
+    pid_text: dict[str, str] = {}
+    for m in para_re.finditer(script_text):
+        pid = m.group(1)
+        text = re.sub(r"\[[^\]]+\]", "", m.group(2)).strip()
+        if text:
+            pid_text[pid] = text
+
+    def pid_sort(pid: str) -> int:
+        try:
+            return int(pid.lstrip("P"))
+        except Exception:
+            return 10**9
+
+    # Pre-clean each sg's transcript words once
+    sg_clean: dict[str, list[str]] = {
+        sg_id: [_clean_word(w["word"]) for w in (sg_data.get("words") or [])]
+        for sg_id, sg_data in transcripts.items()
+    }
+
+    placements: list[dict] = []
+    timeline_cursor_s = 0.0
+    file_source_cursor: dict[str, float] = {}
+
+    for pid in sorted(pid_text.keys(), key=pid_sort):
+        ptext = pid_text[pid]
+        pwords = [_clean_word(w) for w in ptext.split() if w]
+        pwords = [w for w in pwords if w]
+        if not pwords:
+            continue
+
+        # Try each sg; pick the highest-scoring SW match
+        best_sg = None
+        best_pairs: list[tuple[int, int]] = []
+        best_score = 0
+        for sg_id, twords in sg_clean.items():
+            sg_words = transcripts[sg_id].get("words") or []
+            if not twords or not sg_words:
+                continue
+            pairs = _smith_waterman_words(pwords, twords)
+            if not pairs:
+                continue
+            # Score: number of matched words, weighted by match density
+            n_matched = len(pairs)
+            score = n_matched
+            if score > best_score:
+                best_score = score
+                best_pairs = pairs
+                best_sg = sg_id
+        if best_sg is None or not best_pairs:
+            logger.warning("paragraph %s: no Whisper match found, skipping", pid)
+            continue
+
+        # Filter: require at least 30% of paragraph words to match — below that,
+        # SW noise; we'd be placing wrong content
+        coverage = len(best_pairs) / len(pwords)
+        if coverage < 0.30:
+            logger.warning(
+                "paragraph %s: low coverage (%.0f%% of %d words), skipping",
+                pid, coverage * 100, len(pwords),
+            )
+            continue
+
+        sg_words = transcripts[best_sg].get("words") or []
+        b_indices = [b for _, b in best_pairs]
+        first_b, last_b = min(b_indices), max(b_indices)
+        first_t = float(sg_words[first_b]["start"])
+        last_t = float(sg_words[last_b]["end"])
+
+        # Extend to natural sentence boundaries
+        src_in_s, src_out_s = _extend_to_silence(
+            first_t, last_t, sg_words, silence_s=silence_s,
+        )
+
+        a_cam = sg_to_a_cam.get(best_sg)
+        if not a_cam:
+            logger.warning("paragraph %s: sg %s has no a_cam, skipping", pid, best_sg)
+            continue
+
+        # Per-file cursor: trim leading overlap from previous take
+        cursor = file_source_cursor.get(a_cam, 0.0)
+        if src_in_s < cursor:
+            src_in_s = cursor
+        if src_out_s <= src_in_s:
+            continue
+        duration_s = src_out_s - src_in_s
+        if duration_s < 0.5:
+            continue
+
+        placements.append({
+            "primary_pid": pid,
+            "paragraphs": [pid],
+            "file": a_cam,
+            "source_in_s": src_in_s,
+            "source_out_s": src_out_s,
+            "timeline_in_s": timeline_cursor_s,
+            "timeline_out_s": timeline_cursor_s + duration_s,
+            "coverage": coverage,
+            "matched_words": len(best_pairs),
+            "paragraph_words": len(pwords),
+        })
+        timeline_cursor_s += duration_s
+        file_source_cursor[a_cam] = src_out_s
+
+    return placements
+
+
+def collect_placements_from_paragraph_alignment(
+    pa_path: Path,
+    sg_to_a_cam: dict[str, str],
+) -> list[dict]:
+    """Walk paragraph_alignment.json in script-paragraph order. Each distinct
+    natural-take is placed ONCE (at its first paragraph). Source range =
+    take's start..end (already at natural >2s silence boundaries from
+    transcript splitting). Skip paragraphs whose take was already placed.
+    """
+    pa = json.loads(pa_path.read_text())
+    para_choices: dict[str, dict] = pa.get("paragraph_choices", {})
+
+    def pid_sort(pid: str) -> int:
+        try:
+            return int(pid.lstrip("P"))
+        except Exception:
+            return 10**9
+
+    placements: list[dict] = []
+    timeline_cursor_s = 0.0
+    placed_take_ids: set[str] = set()
+
+    for pid in sorted(para_choices.keys(), key=pid_sort):
+        choice = para_choices[pid]
+        take_id = choice.get("take_id")
+        if not take_id or take_id in placed_take_ids:
+            continue
+        sg_id = choice["sg_id"]
+        a_cam = sg_to_a_cam.get(sg_id)
+        if not a_cam:
+            logger.warning("paragraph %s sg=%s has no a_cam — skipping", pid, sg_id)
+            continue
+        src_in_s = float(choice["take_in_s"])
+        src_out_s = float(choice["take_out_s"])
+        duration_s = src_out_s - src_in_s
+        if duration_s < 0.5:
+            continue
+        placements.append({
+            "primary_pid": pid,
+            "take_id": take_id,
+            "file": a_cam,
+            "source_in_s": src_in_s,
+            "source_out_s": src_out_s,
+            "timeline_in_s": timeline_cursor_s,
+            "timeline_out_s": timeline_cursor_s + duration_s,
+            "coverage": choice.get("coverage", 0.0),
+        })
+        timeline_cursor_s += duration_s
+        placed_take_ids.add(take_id)
+    return placements
+
+
 def collect_placements_from_manifest_timeline(
     timeline: list[dict],
     sync_groups: dict,
@@ -654,15 +907,34 @@ def write_nbq_prproj(
     metas = preflight(sorted(video_sources.keys()), footage_folder)
     logger.info("preflight ok: %d files probed", len(metas))
 
-    # The manifest already chose primary takes per cluster (composer's
-    # _select_primary). Writer's job: map manifest.timeline[].primary_take
-    # to .prproj cuts. ONE cut per cluster, take's full source range,
-    # placed at cluster's timeline_in_s..timeline_out_s.
-    placements_spec = collect_placements_from_manifest_timeline(
-        timeline, sync_groups,
-    )
-    logger.info("placements: %d cuts (one per cluster with a primary_take)",
-                len(placements_spec))
+    # Prefer per-paragraph natural-take alignment if available — produced by
+    # the paragraph-alignment analysis (Whisper transcripts split at >2s
+    # silences = natural takes; SW match each script paragraph against each
+    # take). Each chosen take is placed ONCE at its first script paragraph.
+    project_dir = manifest_path.parent
+    project_stem = manifest_path.stem.replace("_v4_manifest", "")
+    pa_path = project_dir / f"{project_stem}_paragraph_alignment.json"
+    sg_to_a_cam = {
+        g["group_id"]: g["a_cam"]
+        for g in sync_groups.get("groups", [])
+        if g.get("a_cam")
+    }
+    if pa_path.exists():
+        placements_spec = collect_placements_from_paragraph_alignment(
+            pa_path, sg_to_a_cam,
+        )
+        logger.info(
+            "placements: %d cuts from paragraph alignment (natural takes)",
+            len(placements_spec),
+        )
+    else:
+        placements_spec = collect_placements_from_manifest_timeline(
+            timeline, sync_groups,
+        )
+        logger.info(
+            "placements: %d cuts from manifest.timeline (paragraph_alignment.json not found at %s)",
+            len(placements_spec), pa_path,
+        )
 
     # Self-check for errors
     warnings = self_check_placements(placements_spec)
