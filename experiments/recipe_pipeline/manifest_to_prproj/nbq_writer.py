@@ -199,6 +199,7 @@ def write_nbq_prproj(
     sync_groups_path: Path,
     out_path: Path,
     footage_folder_override: Optional[Path] = None,
+    motion_scale_pct: float = 50.0,
 ) -> None:
     logger.info("manifest: %s", manifest_path)
     logger.info("sync_groups: %s", sync_groups_path)
@@ -272,9 +273,10 @@ def write_nbq_prproj(
         remove_existing_vcti(pdata)
 
     # ────────────────────────────────────────────────────────────────────
-    # Build placements (V1, no multicam yet). Motion.Scale is set per-clip
-    # to fit footage height into the sequence height — same pattern as the
-    # recipe writer so 4K source → 1080p sequence (or any ratio) auto-scales.
+    # Build placements (V1, no multicam yet). Motion.Scale defaults to 50%
+    # per NBQ V6 multicam-talent convention (talent shrunk in the composite
+    # to leave room for BG plate + L/R MOGRTs). Override via --motion-scale
+    # for episodes with different framing. Set to 100 to disable.
     # ────────────────────────────────────────────────────────────────────
     placements: list[dict] = []
     for i, p in enumerate(placements_spec):
@@ -283,14 +285,11 @@ def write_nbq_prproj(
         tl_out = seconds_to_ticks(p["timeline_out_s"])
         src_in = seconds_to_ticks(p["source_in_s"])
         src_out = seconds_to_ticks(p["source_out_s"])
-        meta = metas[p["file"]]
         motion_filter_factory = None
-        if meta.height != height:
-            motion_scale_pct = (height / meta.height) * 100.0
-            if abs(motion_scale_pct - 100.0) > 1e-6:
-                motion_filter_factory = (
-                    lambda ids_, _scale=motion_scale_pct: build_motion_filter(_scale, ids_)
-                )
+        if abs(motion_scale_pct - 100.0) > 1e-6:
+            motion_filter_factory = (
+                lambda ids_, _scale=motion_scale_pct: build_motion_filter(_scale, ids_)
+            )
         placement = build_clip_placement(
             chain, tl_in, tl_out, src_in, src_out, ids,
             motion_filter_factory=motion_filter_factory,
@@ -299,14 +298,11 @@ def write_nbq_prproj(
         for el in placement["elements"]:
             pdata.append(el)
         if i < 8 or i % 25 == 0:
-            scale_note = ""
-            if meta.height != height:
-                scale_note = f"  scale={(height / meta.height) * 100.0:.1f}%"
             logger.info(
-                "placed[%03d] %s  cluster=%s  beat=%s  tl=%.2f-%.2fs  src=%.2f-%.2fs  vcti=%s%s",
+                "placed[%03d] %s  cluster=%s  beat=%s  tl=%.2f-%.2fs  src=%.2f-%.2fs  vcti=%s  scale=%.1f%%",
                 i, p["file"], p["cluster_id"], p["beat_id"],
                 p["timeline_in_s"], p["timeline_out_s"],
-                p["source_in_s"], p["source_out_s"], placement["vcti_id"], scale_note,
+                p["source_in_s"], p["source_out_s"], placement["vcti_id"], motion_scale_pct,
             )
 
     # Re-link V1 ClipTrack to all our new VCTIs
@@ -401,6 +397,10 @@ def main(argv=None):
                    help="Output prproj path. Default: experiments/PREMIERE PROJECTS/OUTPUTS/<project>/<project>_round1.prproj")
     p.add_argument("--footage-folder", type=Path, default=None,
                    help="Override the manifest's footage_folder")
+    p.add_argument("--motion-scale", type=float, default=50.0,
+                   help="Motion.Scale percentage applied to every placed clip "
+                        "(NBQ V6 talent default is 50%%; set to 100 to disable). "
+                        "Per-clip Geometry2 transforms still apply on top via V7.")
     p.add_argument("-v", "--verbose", action="store_true")
     args = p.parse_args(argv)
 
@@ -413,7 +413,11 @@ def main(argv=None):
     setup_logging(args.output, args.verbose)
 
     try:
-        write_nbq_prproj(args.manifest, args.sync_groups, args.output, args.footage_folder)
+        write_nbq_prproj(
+            args.manifest, args.sync_groups, args.output,
+            args.footage_folder,
+            motion_scale_pct=args.motion_scale,
+        )
     except Exception:
         logger.exception("write_nbq_prproj failed")
         raise
