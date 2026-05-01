@@ -79,6 +79,9 @@ from .core.media_chain import (  # noqa: E402
 from .core.placement import (  # noqa: E402
     build_clip_placement,
 )
+from .effects.motion import (  # noqa: E402
+    build_motion_filter,
+)
 
 
 # Use the same logger name as the recipe writer + core modules so their log
@@ -269,7 +272,9 @@ def write_nbq_prproj(
         remove_existing_vcti(pdata)
 
     # ────────────────────────────────────────────────────────────────────
-    # Build placements (V1, no effects, no multicam yet)
+    # Build placements (V1, no multicam yet). Motion.Scale is set per-clip
+    # to fit footage height into the sequence height — same pattern as the
+    # recipe writer so 4K source → 1080p sequence (or any ratio) auto-scales.
     # ────────────────────────────────────────────────────────────────────
     placements: list[dict] = []
     for i, p in enumerate(placements_spec):
@@ -278,18 +283,30 @@ def write_nbq_prproj(
         tl_out = seconds_to_ticks(p["timeline_out_s"])
         src_in = seconds_to_ticks(p["source_in_s"])
         src_out = seconds_to_ticks(p["source_out_s"])
+        meta = metas[p["file"]]
+        motion_filter_factory = None
+        if meta.height != height:
+            motion_scale_pct = (height / meta.height) * 100.0
+            if abs(motion_scale_pct - 100.0) > 1e-6:
+                motion_filter_factory = (
+                    lambda ids_, _scale=motion_scale_pct: build_motion_filter(_scale, ids_)
+                )
         placement = build_clip_placement(
             chain, tl_in, tl_out, src_in, src_out, ids,
+            motion_filter_factory=motion_filter_factory,
         )
         placements.append(placement)
         for el in placement["elements"]:
             pdata.append(el)
         if i < 8 or i % 25 == 0:
+            scale_note = ""
+            if meta.height != height:
+                scale_note = f"  scale={(height / meta.height) * 100.0:.1f}%"
             logger.info(
-                "placed[%03d] %s  cluster=%s  beat=%s  tl=%.2f-%.2fs  src=%.2f-%.2fs  vcti=%s",
+                "placed[%03d] %s  cluster=%s  beat=%s  tl=%.2f-%.2fs  src=%.2f-%.2fs  vcti=%s%s",
                 i, p["file"], p["cluster_id"], p["beat_id"],
                 p["timeline_in_s"], p["timeline_out_s"],
-                p["source_in_s"], p["source_out_s"], placement["vcti_id"],
+                p["source_in_s"], p["source_out_s"], placement["vcti_id"], scale_note,
             )
 
     # Re-link V1 ClipTrack to all our new VCTIs
@@ -298,7 +315,17 @@ def write_nbq_prproj(
     logger.info("V1 track: linked %d VCTIs", len(placements))
 
     # ────────────────────────────────────────────────────────────────────
-    # Build bins
+    # Build bins. Root layout:
+    #   1_CUTS/        — sequence(s) from the seed
+    #   2_FOOTAGE/     — parent bin containing per-camera sub-bins
+    #     A CAM/       — studio A611C* clips
+    #     B CAM/       — studio C166C* clips
+    #     R5/          — non-studio R5 clips (e.g. cold-open kitchen)
+    #   3_AUDIO/       — empty placeholder (audio import not yet decoded;
+    #                    AudioMediaSource/AudioStream ClassIDs needed)
+    # Bin nesting: a bin's children are URefs — Premiere doesn't care if the
+    # target is a media item or another bin. Build sub-bins first; pass their
+    # UIDs as children of the parent.
     # ────────────────────────────────────────────────────────────────────
     root_bin = find_root_project_item(pdata)
     container = root_bin.find("ProjectItemContainer")
@@ -309,7 +336,6 @@ def write_nbq_prproj(
         if classify_root_clip_project_item(u, pdata) == "sequence":
             sequence_urefs.append(u)
 
-    # Footage bins partitioned by role: A_CAM, B_CAM, R5 (everything not A/B).
     a_cam_uids: list[str] = []
     b_cam_uids: list[str] = []
     r5_uids: list[str] = []
@@ -317,8 +343,9 @@ def write_nbq_prproj(
         info = video_sources.get(basename, {})
         role = info.get("role")
         if role == "a_cam":
-            # A611C* studio + 0X3A5325 R5 cold-open both technically have role=a_cam
-            # in their respective sync_groups. Distinguish by prefix.
+            # Both A611C* studio and 0X3A5325 R5 cold-open are role=a_cam in
+            # their respective sync_groups. Split by prefix to put R5 in its
+            # own sub-bin.
             if basename.startswith("0X3A"):
                 r5_uids.append(chain["clip_project_item_uid"])
             else:
@@ -326,23 +353,30 @@ def write_nbq_prproj(
         elif role == "b_cam":
             b_cam_uids.append(chain["clip_project_item_uid"])
 
-    cuts_bin, cuts_uid = build_bin("1_CUTS", ids, sequence_urefs)
-    footage_a_bin, footage_a_uid = build_bin("2_FOOTAGE_A_CAM", ids, a_cam_uids)
-    footage_b_bin, footage_b_uid = build_bin("2_FOOTAGE_B_CAM", ids, b_cam_uids)
-    footage_r5_bin, footage_r5_uid = build_bin("2_FOOTAGE_R5", ids, r5_uids)
-    pdata.append(cuts_bin)
-    pdata.append(footage_a_bin)
-    pdata.append(footage_b_bin)
-    pdata.append(footage_r5_bin)
-    logger.info("bins: 1_CUTS=%s, 2_FOOTAGE_A_CAM=%s (%d), 2_FOOTAGE_B_CAM=%s (%d), 2_FOOTAGE_R5=%s (%d)",
-                cuts_uid, footage_a_uid, len(a_cam_uids),
-                footage_b_uid, len(b_cam_uids),
-                footage_r5_uid, len(r5_uids))
+    a_cam_bin, a_cam_uid = build_bin("A CAM", ids, a_cam_uids)
+    b_cam_bin, b_cam_uid = build_bin("B CAM", ids, b_cam_uids)
+    r5_bin, r5_uid = build_bin("R5", ids, r5_uids)
+    pdata.append(a_cam_bin)
+    pdata.append(b_cam_bin)
+    pdata.append(r5_bin)
 
-    replace_root_bin_items(
-        root_bin,
-        [cuts_uid, footage_a_uid, footage_b_uid, footage_r5_uid],
+    cuts_bin, cuts_uid = build_bin("1_CUTS", ids, sequence_urefs)
+    footage_bin, footage_uid = build_bin(
+        "2_FOOTAGE", ids, [a_cam_uid, b_cam_uid, r5_uid],
     )
+    audio_bin, audio_uid = build_bin("3_AUDIO", ids, [])
+    pdata.append(cuts_bin)
+    pdata.append(footage_bin)
+    pdata.append(audio_bin)
+
+    logger.info(
+        "bins: 1_CUTS=%s (%d sequences), 2_FOOTAGE=%s (A CAM=%d, B CAM=%d, R5=%d), 3_AUDIO=%s (empty — audio import is a follow-up)",
+        cuts_uid, len(sequence_urefs),
+        footage_uid, len(a_cam_uids), len(b_cam_uids), len(r5_uids),
+        audio_uid,
+    )
+
+    replace_root_bin_items(root_bin, [cuts_uid, footage_uid, audio_uid])
 
     # ────────────────────────────────────────────────────────────────────
     # Serialize + integrity check
