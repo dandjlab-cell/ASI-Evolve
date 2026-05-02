@@ -1,0 +1,932 @@
+{
+  "recipe": "basil_pesto",
+  "global_notes": "Converted from pipeline manifest by score_pipeline_output.py",
+  "_source_manifest": "/Users/dandj/DevApps/roughcut-ai/runs/basil_pesto/basil_pesto_manifest.json",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_type": "beauty",
+      "recipe_section": "vibrant green pesto coating twisted pasta",
+      "filename": "B19I6416.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 9.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 14.125
+      },
+      "beat_description": "vibrant green pesto coating twisted pasta",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_016",
+      "_v2_file": "AI2I5200.mov"
+    },
+    {
+      "beat_index": 1,
+      "beat_type": "technique",
+      "recipe_section": "crushing unpeeled garlic with side of chef's knife",
+      "filename": "B19I6401.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 11.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 16.125
+      },
+      "beat_description": "crushing unpeeled garlic with side of chef's knife",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Unpeeled garlic cloves (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": "AI2I5184.mov"
+    },
+    {
+      "beat_index": 2,
+      "beat_type": "ingredient",
+      "recipe_section": "dropping unpeeled garlic into skillet",
+      "filename": "B19I6402.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 6.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 11.125
+      },
+      "beat_description": "dropping unpeeled garlic into skillet",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Unpeeled garlic cloves (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": "AI2I5185.mov"
+    },
+    {
+      "beat_index": 3,
+      "beat_type": "ingredient",
+      "recipe_section": "scattering pine nuts into skillet",
+      "filename": "B19I6402.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 20.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 25.125
+      },
+      "beat_description": "scattering pine nuts into skillet",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Raw pine nuts (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": "AI2I5185.mov"
+    },
+    {
+      "beat_index": 4,
+      "beat_type": "transformation_from",
+      "recipe_section": "stirring garlic and pine nuts in skillet",
+      "filename": "B19I6403.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 2.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 7.125
+      },
+      "beat_description": "stirring garlic and pine nuts in skillet",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_003",
+      "_v2_file": "AI2I5185.mov"
+    },
+    {
+      "beat_index": 5,
+      "beat_type": "match_cut",
+      "recipe_section": "TRANSFORMATION: stirring until golden brown and fragrant",
+      "filename": "B19I6404.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 3.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 8.125
+      },
+      "beat_description": "TRANSFORMATION: stirring until golden brown and fragrant",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": "AI2I5186.mov"
+    },
+    {
+      "beat_index": 6,
+      "beat_type": "technique",
+      "recipe_section": "transferring toasted garlic and pine nuts to plate",
+      "filename": "B19I6405.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 13.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 18.125
+      },
+      "beat_description": "transferring toasted garlic and pine nuts to plate",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_005",
+      "_v2_file": "AI2I5188.mov"
+    },
+    {
+      "beat_index": 7,
+      "beat_type": "technique",
+      "recipe_section": "plucking basil leaves from stems",
+      "filename": "B19I6406.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 23.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 28.125
+      },
+      "beat_description": "plucking basil leaves from stems",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Fresh basil (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": "AI2I5189.mov"
+    },
+    {
+      "beat_index": 8,
+      "beat_type": "technique",
+      "recipe_section": "grating lemon zest",
+      "filename": "B19I6406.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 153.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 158.125
+      },
+      "beat_description": "grating lemon zest",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Lemon (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": "AI2I5189.mov"
+    },
+    {
+      "beat_index": 9,
+      "beat_type": "technique",
+      "recipe_section": "grating Parmesan cheese",
+      "filename": "B19I6406.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 158.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 163.125
+      },
+      "beat_description": "grating Parmesan cheese",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Parmesan cheese (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": "AI2I5189.mov"
+    },
+    {
+      "beat_index": 10,
+      "beat_type": "technique",
+      "recipe_section": "peeling toasted garlic cloves",
+      "filename": "B19I6407.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 18.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 23.125
+      },
+      "beat_description": "peeling toasted garlic cloves",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_007",
+      "_v2_file": "AI2I5190.mov"
+    },
+    {
+      "beat_index": 11,
+      "beat_type": "ingredient",
+      "recipe_section": "dropping peeled garlic into food processor",
+      "filename": "B19I6408.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 4.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 9.125
+      },
+      "beat_description": "dropping peeled garlic into food processor",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Garlic cloves (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5191.mov"
+    },
+    {
+      "beat_index": 12,
+      "beat_type": "ingredient",
+      "recipe_section": "scattering toasted pine nuts into food processor",
+      "filename": "B19I6408.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 9.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 14.125
+      },
+      "beat_description": "scattering toasted pine nuts into food processor",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Pine nuts (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5191.mov"
+    },
+    {
+      "beat_index": 13,
+      "beat_type": "transformation_from",
+      "recipe_section": "pulsing garlic and nuts in processor",
+      "filename": "B19I6409.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 23.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 28.125
+      },
+      "beat_description": "pulsing garlic and nuts in processor",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": "AI2I5192.mov"
+    },
+    {
+      "beat_index": 14,
+      "beat_type": "match_cut",
+      "recipe_section": "TRANSFORMATION: pulsing until resembling wet sand",
+      "filename": "B19I6409.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 49.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 54.125
+      },
+      "beat_description": "TRANSFORMATION: pulsing until resembling wet sand",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": "AI2I5192.mov"
+    },
+    {
+      "beat_index": 15,
+      "beat_type": "ingredient",
+      "recipe_section": "stuffing basil leaves into food processor",
+      "filename": "B19I6410.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 7.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 12.125
+      },
+      "beat_description": "stuffing basil leaves into food processor",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Fresh basil (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_010",
+      "_v2_file": "AI2I5193.mov"
+    },
+    {
+      "beat_index": 16,
+      "beat_type": "ingredient",
+      "recipe_section": "sprinkling grated Parmesan",
+      "filename": "B19I6410.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 48.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 53.125
+      },
+      "beat_description": "sprinkling grated Parmesan",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Parmesan cheese (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_010",
+      "_v2_file": "AI2I5193.mov"
+    },
+    {
+      "beat_index": 17,
+      "beat_type": "ingredient",
+      "recipe_section": "adding lemon zest",
+      "filename": "B19I6410.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 37.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 42.125
+      },
+      "beat_description": "adding lemon zest",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Lemon (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_010",
+      "_v2_file": "AI2I5193.mov"
+    },
+    {
+      "beat_index": 18,
+      "beat_type": "transformation_from",
+      "recipe_section": "pulsing the leafy mixture",
+      "filename": "B19I6410.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 84.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 89.125
+      },
+      "beat_description": "pulsing the leafy mixture",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_010",
+      "_v2_file": "AI2I5193.mov"
+    },
+    {
+      "beat_index": 19,
+      "beat_type": "match_cut",
+      "recipe_section": "TRANSFORMATION: pulsing until finely minced and uniform",
+      "filename": "B19I6410.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 163.375,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 167.625
+      },
+      "beat_description": "TRANSFORMATION: pulsing until finely minced and uniform",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_010",
+      "_v2_file": "AI2I5193.mov"
+    },
+    {
+      "beat_index": 20,
+      "beat_type": "ingredient",
+      "recipe_section": "drizzling olive oil into running processor",
+      "filename": "B19I6411.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 7.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 12.125
+      },
+      "beat_description": "drizzling olive oil into running processor",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Extra-virgin olive oil (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_011",
+      "_v2_file": "AI2I5194.mov"
+    },
+    {
+      "beat_index": 21,
+      "beat_type": "match_cut",
+      "recipe_section": "TRANSFORMATION: processing until smooth and emulsified",
+      "filename": "B19I6411.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 31.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 36.125
+      },
+      "beat_description": "TRANSFORMATION: processing until smooth and emulsified",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_011",
+      "_v2_file": "AI2I5194.mov"
+    },
+    {
+      "beat_index": 22,
+      "beat_type": "technique",
+      "recipe_section": "transferring finished pesto to bowl",
+      "filename": "B19I6412.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 8.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 13.125
+      },
+      "beat_description": "transferring finished pesto to bowl",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_012",
+      "_v2_file": "AI2I5197.mov"
+    },
+    {
+      "beat_index": 23,
+      "beat_type": "ingredient",
+      "recipe_section": "sprinkling salt into pesto",
+      "filename": "B19I6411.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 61.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 66.125
+      },
+      "beat_description": "sprinkling salt into pesto",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Kosher salt (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_011",
+      "_v2_file": "AI2I5194.mov"
+    },
+    {
+      "beat_index": 24,
+      "beat_type": "unlabeled",
+      "recipe_section": "Stir salt into pesto",
+      "filename": "B19I6411.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 68.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 73.125
+      },
+      "beat_description": "Stir salt into pesto",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_011",
+      "_v2_file": "AI2I5195.mov"
+    },
+    {
+      "beat_index": 25,
+      "beat_type": "beauty",
+      "recipe_section": "finished pesto glistening in small white bowl",
+      "filename": "B19I6413.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 64.371,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 66.496
+      },
+      "beat_description": "finished pesto glistening in small white bowl",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_013",
+      "_v2_file": "AI2I5199.mov"
+    },
+    {
+      "beat_index": 26,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: hero plate still",
+      "filename": "B19I6417.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 201.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 206.125
+      },
+      "beat_description": "BEAUTY: hero plate still",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": null
+    },
+    {
+      "beat_index": 27,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: presentation hold",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: presentation hold",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "AI2I5202.mov"
+    },
+    {
+      "beat_index": 28,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: tongs lift cascade",
+      "filename": "B19I6416.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 39.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 44.125
+      },
+      "beat_description": "BEAUTY: tongs lift cascade",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": null
+    },
+    {
+      "beat_index": 29,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: fork lift stretch",
+      "filename": "B19I6415.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 54.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 59.125
+      },
+      "beat_description": "BEAUTY: fork lift stretch",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": null
+    },
+    {
+      "beat_index": 30,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: sauce drip mid-air",
+      "filename": "B19I6416.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 34.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 39.125
+      },
+      "beat_description": "BEAUTY: sauce drip mid-air",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": null
+    }
+  ]
+}
