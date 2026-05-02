@@ -1,0 +1,384 @@
+{
+  "picks": [
+    {
+      "category": "beauty_opener",
+      "clip_id": "AI2I5462",
+      "t": 28.781,
+      "label": "Title hero (two beats)",
+      "beat_index": 0,
+      "duration_s": 1.166
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "B19I6695",
+      "t": 31.323,
+      "label": "Title hero (two beats)",
+      "beat_index": 1,
+      "duration_s": 1.293
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "B19I6669",
+      "t": 24.024,
+      "label": "Title hero (two beats)",
+      "beat_index": 2,
+      "duration_s": 0.001
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6669",
+      "t": 24.025,
+      "label": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
+      "beat_index": 3,
+      "duration_s": 1.501
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6669",
+      "t": 40.207,
+      "label": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
+      "beat_index": 4,
+      "duration_s": 1.168
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5438",
+      "t": 50.259,
+      "label": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
+      "beat_index": 5,
+      "duration_s": 0.563
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6669",
+      "t": 58.35,
+      "label": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
+      "beat_index": 6,
+      "duration_s": 1.335
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5438",
+      "t": 61.061,
+      "label": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
+      "beat_index": 7,
+      "duration_s": 5.13
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6669",
+      "t": 65.774,
+      "label": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
+      "beat_index": 8,
+      "duration_s": 1.251
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6669",
+      "t": 73.699,
+      "label": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
+      "beat_index": 9,
+      "duration_s": 1.042
+    },
+    {
+      "category": "technique",
+      "clip_id": "AI2I5438",
+      "t": 111.862,
+      "label": "Whisk-up (the marinade comes together)",
+      "beat_index": 12,
+      "duration_s": 0.917
+    },
+    {
+      "category": "technique",
+      "clip_id": "B19I6669",
+      "t": 154.863,
+      "label": "Whisk-up (the marinade comes together)",
+      "beat_index": 13,
+      "duration_s": 1.29
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6669",
+      "t": 156.153,
+      "label": "Speed ramp into chicken (RAMP, 6 keyframes)",
+      "beat_index": 14,
+      "duration_s": 0.003
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6670",
+      "t": 5.881,
+      "label": "Speed ramp into chicken (RAMP, 6 keyframes)",
+      "beat_index": 15,
+      "duration_s": 1.668
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5440",
+      "t": 8.05,
+      "label": "Speed ramp into chicken (RAMP, 6 keyframes)",
+      "beat_index": 16,
+      "duration_s": 1.126
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6671",
+      "t": 21.104,
+      "label": "Speed ramp into chicken (RAMP, 6 keyframes)",
+      "beat_index": 17,
+      "duration_s": 0.003
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6671",
+      "t": 21.107,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 18,
+      "duration_s": 1.29
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 8.675,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 19,
+      "duration_s": 0.209
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 12.221,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 20,
+      "duration_s": 0.083
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 14.64,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 21,
+      "duration_s": 0.083
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 17.1,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 22,
+      "duration_s": 0.084
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 19.937,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 23,
+      "duration_s": 0.083
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 23.649,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 24,
+      "duration_s": 0.083
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 25.651,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 25,
+      "duration_s": 0.083
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 27.527,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 26,
+      "duration_s": 0.084
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5441",
+      "t": 30.489,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 27,
+      "duration_s": 0.5
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6673",
+      "t": 0.375,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 28,
+      "duration_s": 0.835
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6673",
+      "t": 5.047,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 29,
+      "duration_s": 1.168
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6673",
+      "t": 10.928,
+      "label": "Marinade pour + bag massage (rapid-fire micro-beats)",
+      "beat_index": 30,
+      "duration_s": 0.004
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6673",
+      "t": 10.932,
+      "label": "Chill instruction MOGRT",
+      "beat_index": 31,
+      "duration_s": 1.497
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6687",
+      "t": 42.96,
+      "label": "Chill instruction MOGRT",
+      "beat_index": 32,
+      "duration_s": 0.003
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6687",
+      "t": 42.963,
+      "label": "Raw-on-grill, sear builds (FRONT angle introduced)",
+      "beat_index": 33,
+      "duration_s": 1.54
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6688",
+      "t": 26.401,
+      "label": "Raw-on-grill, sear builds (FRONT angle introduced)",
+      "beat_index": 34,
+      "duration_s": 1.126
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6691",
+      "t": 32.532,
+      "label": "Raw-on-grill, sear builds (FRONT angle introduced)",
+      "beat_index": 35,
+      "duration_s": 1.585
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6691",
+      "t": 41.291,
+      "label": "Raw-on-grill, sear builds (FRONT angle introduced)",
+      "beat_index": 36,
+      "duration_s": 1.335
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6691",
+      "t": 64.356,
+      "label": "Raw-on-grill, sear builds (FRONT angle introduced)",
+      "beat_index": 37,
+      "duration_s": 0.002
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6691",
+      "t": 64.358,
+      "label": "Cooked thighs reveal + flip",
+      "beat_index": 38,
+      "duration_s": 0.561
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6693",
+      "t": 4.755,
+      "label": "Cooked thighs reveal + flip",
+      "beat_index": 39,
+      "duration_s": 1.498
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6693",
+      "t": 6.253,
+      "label": "Cilantro / sauce-brushing transition",
+      "beat_index": 40,
+      "duration_s": 0.003
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6694",
+      "t": 95.095,
+      "label": "Cilantro / sauce-brushing transition",
+      "beat_index": 41,
+      "duration_s": 1.626
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6694",
+      "t": 96.721,
+      "label": "Animated-mask hero plate (mid-edit reveal)",
+      "beat_index": 42,
+      "duration_s": 0.001
+    },
+    {
+      "category": "beauty",
+      "clip_id": "AI2I5462",
+      "t": 28.779,
+      "label": "Animated-mask hero plate (mid-edit reveal)",
+      "beat_index": 43,
+      "duration_s": 1.168
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6695",
+      "t": 30.489,
+      "label": "Animated-mask hero plate (mid-edit reveal)",
+      "beat_index": 44,
+      "duration_s": 0.002
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6695",
+      "t": 30.491,
+      "label": "Slicing beat (FRONT)",
+      "beat_index": 45,
+      "duration_s": 1.166
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6696",
+      "t": 30.906,
+      "label": "Slicing beat (FRONT)",
+      "beat_index": 46,
+      "duration_s": 1.664
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6696",
+      "t": 32.57,
+      "label": "End card",
+      "beat_index": 47,
+      "duration_s": 0.004
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6696",
+      "t": 54.805,
+      "label": "End card",
+      "beat_index": 48,
+      "duration_s": 2.876
+    }
+  ],
+  "recipe": "chicken_thighs",
+  "category": "beats",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/chicken_thighs.json",
+  "source_annotation_sha": "48ab0f7b8cc1363e"
+}

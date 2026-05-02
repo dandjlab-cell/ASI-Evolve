@@ -1,0 +1,78 @@
+{
+  "picks": [
+    {
+      "category": "open",
+      "clip_id": "AI2I4942",
+      "t": 29.157,
+      "t_in": 29.157,
+      "t_out": 30.239,
+      "duration_s": 1.0820000000000007,
+      "label": "Bacon hero open",
+      "beat_index": 0
+    },
+    {
+      "category": "open",
+      "clip_id": "AI2I4946",
+      "t": 64.856,
+      "t_in": 64.856,
+      "t_out": 65.607,
+      "duration_s": 0.7510000000000048,
+      "label": "Bacon hero open",
+      "beat_index": 1
+    },
+    {
+      "category": "open",
+      "clip_id": "AI2I4948",
+      "t": 47.881,
+      "t_in": 47.881,
+      "t_out": 48.839,
+      "duration_s": 0.9579999999999984,
+      "label": "Bacon hero open",
+      "beat_index": 2
+    },
+    {
+      "category": "final",
+      "clip_id": "AI2I4958",
+      "t": 15.64,
+      "t_in": 15.64,
+      "t_out": 15.641,
+      "duration_s": 0.0009999999999994458,
+      "label": "Tender-potato reveal",
+      "beat_index": 18
+    },
+    {
+      "category": "final",
+      "clip_id": "AI2I4961",
+      "t": 14.473,
+      "t_in": 14.473,
+      "t_out": 14.478,
+      "duration_s": 0.004999999999999005,
+      "label": "Tender-potato reveal",
+      "beat_index": 19
+    },
+    {
+      "category": "final",
+      "clip_id": "AI2I4961",
+      "t": 14.478,
+      "t_in": 14.478,
+      "t_out": 14.723,
+      "duration_s": 0.245000000000001,
+      "label": "Potato pile from the side / final stir",
+      "beat_index": 20
+    },
+    {
+      "category": "final",
+      "clip_id": "AI2I4961",
+      "t": 14.723,
+      "t_in": 14.723,
+      "t_out": 14.723,
+      "duration_s": 0.0,
+      "label": "Garnish title-stacking (final bowl)",
+      "beat_index": 21
+    }
+  ],
+  "recipe": "creamy_potato_soup",
+  "category": "beauty",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/creamy_potato_soup.json",
+  "source_annotation_sha": "b39d9071f6e8199f"
+}

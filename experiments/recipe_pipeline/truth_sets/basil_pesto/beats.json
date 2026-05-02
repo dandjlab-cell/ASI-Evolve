@@ -1,0 +1,368 @@
+{
+  "picks": [
+    {
+      "category": "beauty_opener",
+      "clip_id": "B19I6415",
+      "t": 8.886,
+      "label": "Cold open: hero pour \u2192 hero hand-off",
+      "beat_index": 0,
+      "duration_s": 0.644
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "AI2I5202",
+      "t": 176.385,
+      "label": "Cold open: hero pour \u2192 hero hand-off",
+      "beat_index": 1,
+      "duration_s": 1.459
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "AI2I5184",
+      "t": 20.896,
+      "label": "Cold open: hero pour \u2192 hero hand-off",
+      "beat_index": 2,
+      "duration_s": 0.001
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5184",
+      "t": 20.897,
+      "label": "Ingredient 1: garlic",
+      "beat_index": 3,
+      "duration_s": 1.29
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5184",
+      "t": 22.187,
+      "label": "Garlic into pan, pine nuts arrive",
+      "beat_index": 4,
+      "duration_s": 0.002
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6401",
+      "t": 30.948,
+      "label": "Garlic into pan, pine nuts arrive",
+      "beat_index": 5,
+      "duration_s": 1.376
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5185",
+      "t": 9.509,
+      "label": "Garlic into pan, pine nuts arrive",
+      "beat_index": 6,
+      "duration_s": 1.168
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6402",
+      "t": 21.188,
+      "label": "Garlic into pan, pine nuts arrive",
+      "beat_index": 7,
+      "duration_s": 0.004
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6402",
+      "t": 21.192,
+      "label": "Pine nuts label + toast",
+      "beat_index": 8,
+      "duration_s": 1.789
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6404",
+      "t": 3.837,
+      "label": "Pine nuts label + toast",
+      "beat_index": 9,
+      "duration_s": 1.126
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5188",
+      "t": 16.808,
+      "label": "Pine nuts label + toast",
+      "beat_index": 10,
+      "duration_s": 0.005
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5188",
+      "t": 16.813,
+      "label": "Plate transfer",
+      "beat_index": 11,
+      "duration_s": 0.996
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6407",
+      "t": 62.145,
+      "label": "Plate transfer",
+      "beat_index": 12,
+      "duration_s": 0.004
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6407",
+      "t": 62.149,
+      "label": "FRONT garlic chop, multi-cut compression",
+      "beat_index": 13,
+      "duration_s": 1.289
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5191",
+      "t": 4.129,
+      "label": "FRONT garlic chop, multi-cut compression",
+      "beat_index": 14,
+      "duration_s": 1.043
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5191",
+      "t": 11.22,
+      "label": "FRONT garlic chop, multi-cut compression",
+      "beat_index": 15,
+      "duration_s": 1.167
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6409",
+      "t": 47.339,
+      "label": "FRONT garlic chop, multi-cut compression",
+      "beat_index": 16,
+      "duration_s": 0.959
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5192",
+      "t": 77.452,
+      "label": "FRONT garlic chop, multi-cut compression",
+      "beat_index": 17,
+      "duration_s": 0.751
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5193",
+      "t": 8.55,
+      "label": "FRONT garlic chop, multi-cut compression",
+      "beat_index": 18,
+      "duration_s": 0.209
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5193",
+      "t": 11.803,
+      "label": "FRONT garlic chop, multi-cut compression",
+      "beat_index": 19,
+      "duration_s": 0.002
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5193",
+      "t": 11.805,
+      "label": "Basil into processor",
+      "beat_index": 20,
+      "duration_s": 0.207
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5193",
+      "t": 14.64,
+      "label": "Basil into processor",
+      "beat_index": 21,
+      "duration_s": 0.872
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5193",
+      "t": 15.512,
+      "label": "Pine-nut dump + return to board",
+      "beat_index": 22,
+      "duration_s": 0.003
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6410",
+      "t": 37.871,
+      "label": "Pine-nut dump + return to board",
+      "beat_index": 23,
+      "duration_s": 1.043
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6410",
+      "t": 49.883,
+      "label": "Pine-nut dump + return to board",
+      "beat_index": 24,
+      "duration_s": 1.164
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6410",
+      "t": 51.047,
+      "label": "Processor blend, mid-add",
+      "beat_index": 25,
+      "duration_s": 0.004
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6410",
+      "t": 96.763,
+      "label": "Processor blend, mid-add",
+      "beat_index": 26,
+      "duration_s": 1.043
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6410",
+      "t": 106.356,
+      "label": "Processor blend, mid-add",
+      "beat_index": 27,
+      "duration_s": 0.834
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5193",
+      "t": 165.707,
+      "label": "Processor blend, mid-add",
+      "beat_index": 28,
+      "duration_s": 0.918
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6411",
+      "t": 11.803,
+      "label": "Processor blend, mid-add",
+      "beat_index": 29,
+      "duration_s": 0.002
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6411",
+      "t": 11.805,
+      "label": "Olive oil + salt into processor",
+      "beat_index": 30,
+      "duration_s": 1.5
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6411",
+      "t": 63.814,
+      "label": "Olive oil + salt into processor",
+      "beat_index": 31,
+      "duration_s": 1.376
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6411",
+      "t": 70.279,
+      "label": "Olive oil + salt into processor",
+      "beat_index": 32,
+      "duration_s": 0.959
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5196",
+      "t": 15.682,
+      "label": "Olive oil + salt into processor",
+      "beat_index": 33,
+      "duration_s": 0.005
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I5196",
+      "t": 15.687,
+      "label": "Pesto pour into jar",
+      "beat_index": 34,
+      "duration_s": 1.121
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6412",
+      "t": 11.803,
+      "label": "Pesto pour into jar",
+      "beat_index": 35,
+      "duration_s": 0.709
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6413",
+      "t": 54.721,
+      "label": "Pesto pour into jar",
+      "beat_index": 36,
+      "duration_s": 0.79
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6413",
+      "t": 55.511,
+      "label": "Hero pesto held aloft (50% speed pair)",
+      "beat_index": 37,
+      "duration_s": 0.003
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6414",
+      "t": 47.443,
+      "label": "Hero pesto held aloft (50% speed pair)",
+      "beat_index": 38,
+      "duration_s": 0.668
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6415",
+      "t": 7.236,
+      "label": "Hero pesto held aloft (50% speed pair)",
+      "beat_index": 39,
+      "duration_s": 0.73
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6416",
+      "t": 42.084,
+      "label": "Hero pesto held aloft (50% speed pair)",
+      "beat_index": 40,
+      "duration_s": 0.002
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6416",
+      "t": 42.086,
+      "label": "Pesto onto pasta",
+      "beat_index": 41,
+      "duration_s": 1.374
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6417",
+      "t": 26.777,
+      "label": "Pesto onto pasta",
+      "beat_index": 42,
+      "duration_s": 1.585
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6417",
+      "t": 194.528,
+      "label": "Pesto onto pasta",
+      "beat_index": 43,
+      "duration_s": 0.0
+    },
+    {
+      "category": "beauty_close",
+      "clip_id": "B19I6417",
+      "t": 194.528,
+      "label": "Final beauty (50% speed)",
+      "beat_index": 44,
+      "duration_s": 2.064
+    }
+  ],
+  "recipe": "basil_pesto",
+  "category": "beats",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/basil_pesto.json",
+  "source_annotation_sha": "faecc48fecddec24"
+}

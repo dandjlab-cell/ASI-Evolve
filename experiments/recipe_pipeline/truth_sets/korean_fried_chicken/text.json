@@ -1,0 +1,160 @@
+{
+  "picks": [
+    {
+      "category": "title",
+      "clip_id": "B19I6278",
+      "t": 44.171,
+      "label": "\"Step 1: Make the glaze\" title card",
+      "beat_index": 3,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6276",
+      "t": 16.85,
+      "label": "\"Step 1: Make the glaze\" title card",
+      "beat_index": 4,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6307",
+      "t": 38.121,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 19,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6307",
+      "t": 46.421,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 20,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6307",
+      "t": 51.969,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 21,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6307",
+      "t": 56.682,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 22,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 5.339,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 23,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 5.339,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 24,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 7.424,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 25,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 51.26,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 27,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 58.559,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 28,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 86.753,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 29,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 95.178,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 30,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "AI2I5095",
+      "t": 105.314,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 31,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 133.425,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 32,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6309",
+      "t": 134.672,
+      "label": "\"Step 4: Coat the chicken\" (regular speed)",
+      "beat_index": 33,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6310",
+      "t": 11.22,
+      "label": "\"Step 4: Coat the chicken\" (regular speed)",
+      "beat_index": 34,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6310",
+      "t": 246.788,
+      "label": "\"Step 4: Coat the chicken\" (regular speed)",
+      "beat_index": 35,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6311",
+      "t": 23.148,
+      "label": "\"Step 5: Fry the chicken\" + canola pool",
+      "beat_index": 37,
+      "mogrt_overlaps": []
+    }
+  ],
+  "recipe": "korean_fried_chicken",
+  "category": "text",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/korean_fried_chicken.json",
+  "source_annotation_sha": "bf46b6d58e6931ae"
+}

@@ -1,0 +1,88 @@
+{
+  "picks": [
+    {
+      "category": "open",
+      "clip_id": "B19I6415",
+      "t": 8.886,
+      "t_in": 8.886,
+      "t_out": 9.53,
+      "duration_s": 0.6440000000000001,
+      "label": "Cold open: hero pour \u2192 hero hand-off",
+      "beat_index": 0
+    },
+    {
+      "category": "open",
+      "clip_id": "AI2I5202",
+      "t": 176.385,
+      "t_in": 176.385,
+      "t_out": 177.844,
+      "duration_s": 1.4590000000000032,
+      "label": "Cold open: hero pour \u2192 hero hand-off",
+      "beat_index": 1
+    },
+    {
+      "category": "open",
+      "clip_id": "AI2I5184",
+      "t": 20.896,
+      "t_in": 20.896,
+      "t_out": 20.897,
+      "duration_s": 0.0009999999999976694,
+      "label": "Cold open: hero pour \u2192 hero hand-off",
+      "beat_index": 2
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6413",
+      "t": 55.511,
+      "t_in": 55.511,
+      "t_out": 55.514,
+      "duration_s": 0.0030000000000001137,
+      "label": "Hero pesto held aloft (50% speed pair)",
+      "beat_index": 37
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6414",
+      "t": 47.443,
+      "t_in": 47.443,
+      "t_out": 48.111,
+      "duration_s": 0.6679999999999993,
+      "label": "Hero pesto held aloft (50% speed pair)",
+      "beat_index": 38
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6415",
+      "t": 7.236,
+      "t_in": 7.236,
+      "t_out": 7.966,
+      "duration_s": 0.7300000000000004,
+      "label": "Hero pesto held aloft (50% speed pair)",
+      "beat_index": 39
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6416",
+      "t": 42.084,
+      "t_in": 42.084,
+      "t_out": 42.086,
+      "duration_s": 0.001999999999995339,
+      "label": "Hero pesto held aloft (50% speed pair)",
+      "beat_index": 40
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6417",
+      "t": 194.528,
+      "t_in": 194.528,
+      "t_out": 196.592,
+      "duration_s": 2.0640000000000214,
+      "label": "Final beauty (50% speed)",
+      "beat_index": 44
+    }
+  ],
+  "recipe": "basil_pesto",
+  "category": "beauty",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/basil_pesto.json",
+  "source_annotation_sha": "faecc48fecddec24"
+}

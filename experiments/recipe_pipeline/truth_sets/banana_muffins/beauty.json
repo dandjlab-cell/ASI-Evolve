@@ -1,0 +1,58 @@
+{
+  "picks": [
+    {
+      "category": "open",
+      "clip_id": "A057_02270208_C032",
+      "t": 8.54,
+      "t_in": 8.54,
+      "t_out": 10.323,
+      "duration_s": 1.7830000000000013,
+      "label": "Cold-open hero (broken muffin)",
+      "beat_index": 0
+    },
+    {
+      "category": "open",
+      "clip_id": "A057_02270101_C023",
+      "t": 23.378,
+      "t_in": 23.378,
+      "t_out": 23.379,
+      "duration_s": 0.0010000000000012221,
+      "label": "Cold-open hero (broken muffin)",
+      "beat_index": 1
+    },
+    {
+      "category": "final",
+      "clip_id": "A057_02270154_C028",
+      "t": 20.938,
+      "t_in": 20.938,
+      "t_out": 22.185,
+      "duration_s": 1.2469999999999999,
+      "label": "Baked reveal beat",
+      "beat_index": 22
+    },
+    {
+      "category": "final",
+      "clip_id": "A057_02270154_C028",
+      "t": 22.185,
+      "t_in": 22.185,
+      "t_out": 22.189,
+      "duration_s": 0.004000000000001336,
+      "label": "Hero return / end card",
+      "beat_index": 23
+    },
+    {
+      "category": "final",
+      "clip_id": "A057_02270208_C032",
+      "t": 8.05,
+      "t_in": 8.05,
+      "t_out": 9.968,
+      "duration_s": 1.9179999999999993,
+      "label": "Hero return / end card",
+      "beat_index": 24
+    }
+  ],
+  "recipe": "banana_muffins",
+  "category": "beauty",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/banana_muffins.json",
+  "source_annotation_sha": "7a15bc3b3f9c1983"
+}

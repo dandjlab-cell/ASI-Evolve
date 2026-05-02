@@ -1,0 +1,24 @@
+{
+  "picks": [
+    {
+      "category": "title",
+      "clip_id": "B19I6673",
+      "t": 10.932,
+      "label": "Chill instruction MOGRT",
+      "beat_index": 31,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "B19I6687",
+      "t": 42.96,
+      "label": "Chill instruction MOGRT",
+      "beat_index": 32,
+      "mogrt_overlaps": []
+    }
+  ],
+  "recipe": "chicken_thighs",
+  "category": "text",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/chicken_thighs.json",
+  "source_annotation_sha": "48ab0f7b8cc1363e"
+}

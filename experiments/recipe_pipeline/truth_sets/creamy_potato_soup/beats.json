@@ -1,0 +1,168 @@
+{
+  "picks": [
+    {
+      "category": "beauty_opener",
+      "clip_id": "AI2I4942",
+      "t": 29.157,
+      "label": "Bacon hero open",
+      "beat_index": 0,
+      "duration_s": 1.082
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "AI2I4946",
+      "t": 64.856,
+      "label": "Bacon hero open",
+      "beat_index": 1,
+      "duration_s": 0.751
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "AI2I4948",
+      "t": 47.881,
+      "label": "Bacon hero open",
+      "beat_index": 2,
+      "duration_s": 0.958
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I4948",
+      "t": 48.839,
+      "label": "Slotted-spoon lift + drain pair",
+      "beat_index": 3,
+      "duration_s": 0.001
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6157",
+      "t": 48.048,
+      "label": "Slotted-spoon lift + drain pair",
+      "beat_index": 4,
+      "duration_s": 0.876
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6157",
+      "t": 78.662,
+      "label": "Slotted-spoon lift + drain pair",
+      "beat_index": 5,
+      "duration_s": 1.083
+    },
+    {
+      "category": "stop_motion",
+      "clip_id": "B19I6157",
+      "t": 79.745,
+      "label": "Onion drop (stop-motion feel)",
+      "beat_index": 6,
+      "duration_s": 0.001
+    },
+    {
+      "category": "stop_motion",
+      "clip_id": "AI2I4949",
+      "t": 14.806,
+      "label": "Onion drop (stop-motion feel)",
+      "beat_index": 7,
+      "duration_s": 0.876
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I4950",
+      "t": 2.336,
+      "label": "Mirepoix pile-on (CU rotation)",
+      "beat_index": 8,
+      "duration_s": 0.001
+    },
+    {
+      "category": "technique",
+      "clip_id": "AI2I4950",
+      "t": 2.337,
+      "label": "Stir / sweat transition",
+      "beat_index": 9,
+      "duration_s": 0.875
+    },
+    {
+      "category": "technique",
+      "clip_id": "AI2I4953",
+      "t": 43.335,
+      "label": "Stir / sweat transition",
+      "beat_index": 10,
+      "duration_s": 0.834
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I4953",
+      "t": 81.79,
+      "label": "Roux into stock + potato dump (mask-graded run)",
+      "beat_index": 12,
+      "duration_s": 0.918
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I4953",
+      "t": 102.352,
+      "label": "Roux into stock + potato dump (mask-graded run)",
+      "beat_index": 13,
+      "duration_s": 1.335
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "AI2I4954",
+      "t": 8.425,
+      "label": "Roux into stock + potato dump (mask-graded run)",
+      "beat_index": 14,
+      "duration_s": 1.293
+    },
+    {
+      "category": "title_card",
+      "clip_id": "AI2I4955",
+      "t": 84.084,
+      "label": "Simmer beat with title card",
+      "beat_index": 16,
+      "duration_s": 1.293
+    },
+    {
+      "category": "title_card",
+      "clip_id": "AI2I4958",
+      "t": 13.388,
+      "label": "Simmer beat with title card",
+      "beat_index": 17,
+      "duration_s": 2.252
+    },
+    {
+      "category": "beauty",
+      "clip_id": "AI2I4958",
+      "t": 15.64,
+      "label": "Tender-potato reveal",
+      "beat_index": 18,
+      "duration_s": 0.001
+    },
+    {
+      "category": "beauty",
+      "clip_id": "AI2I4961",
+      "t": 14.473,
+      "label": "Tender-potato reveal",
+      "beat_index": 19,
+      "duration_s": 0.005
+    },
+    {
+      "category": "beauty",
+      "clip_id": "AI2I4961",
+      "t": 14.478,
+      "label": "Potato pile from the side / final stir",
+      "beat_index": 20,
+      "duration_s": 0.245
+    },
+    {
+      "category": "beauty",
+      "clip_id": "AI2I4961",
+      "t": 14.723,
+      "label": "Garnish title-stacking (final bowl)",
+      "beat_index": 21,
+      "duration_s": 0.0
+    }
+  ],
+  "recipe": "creamy_potato_soup",
+  "category": "beats",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/creamy_potato_soup.json",
+  "source_annotation_sha": "b39d9071f6e8199f"
+}

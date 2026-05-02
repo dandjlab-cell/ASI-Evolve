@@ -1,0 +1,88 @@
+{
+  "picks": [
+    {
+      "category": "open",
+      "clip_id": "AI2I5462",
+      "t": 28.781,
+      "t_in": 28.781,
+      "t_out": 29.947,
+      "duration_s": 1.1660000000000004,
+      "label": "Title hero (two beats)",
+      "beat_index": 0
+    },
+    {
+      "category": "open",
+      "clip_id": "B19I6695",
+      "t": 31.323,
+      "t_in": 31.323,
+      "t_out": 32.616,
+      "duration_s": 1.2929999999999993,
+      "label": "Title hero (two beats)",
+      "beat_index": 1
+    },
+    {
+      "category": "open",
+      "clip_id": "B19I6669",
+      "t": 24.024,
+      "t_in": 24.024,
+      "t_out": 24.025,
+      "duration_s": 0.0009999999999976694,
+      "label": "Title hero (two beats)",
+      "beat_index": 2
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6691",
+      "t": 64.358,
+      "t_in": 64.358,
+      "t_out": 64.919,
+      "duration_s": 0.5609999999999928,
+      "label": "Cooked thighs reveal + flip",
+      "beat_index": 38
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6693",
+      "t": 4.755,
+      "t_in": 4.755,
+      "t_out": 6.253,
+      "duration_s": 1.4980000000000002,
+      "label": "Cooked thighs reveal + flip",
+      "beat_index": 39
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6694",
+      "t": 96.721,
+      "t_in": 96.721,
+      "t_out": 96.722,
+      "duration_s": 0.000999999999990564,
+      "label": "Animated-mask hero plate (mid-edit reveal)",
+      "beat_index": 42
+    },
+    {
+      "category": "final",
+      "clip_id": "AI2I5462",
+      "t": 28.779,
+      "t_in": 28.779,
+      "t_out": 29.947,
+      "duration_s": 1.1679999999999993,
+      "label": "Animated-mask hero plate (mid-edit reveal)",
+      "beat_index": 43
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6695",
+      "t": 30.489,
+      "t_in": 30.489,
+      "t_out": 30.491,
+      "duration_s": 0.0019999999999988916,
+      "label": "Animated-mask hero plate (mid-edit reveal)",
+      "beat_index": 44
+    }
+  ],
+  "recipe": "chicken_thighs",
+  "category": "beauty",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/chicken_thighs.json",
+  "source_annotation_sha": "48ab0f7b8cc1363e"
+}

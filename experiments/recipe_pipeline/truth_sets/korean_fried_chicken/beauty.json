@@ -1,0 +1,108 @@
+{
+  "picks": [
+    {
+      "category": "open",
+      "clip_id": "B19I6339",
+      "t": 16.56,
+      "t_in": 16.56,
+      "t_out": 17.278,
+      "duration_s": 0.718,
+      "label": "Cold-open hero into Step 1 title",
+      "beat_index": 0
+    },
+    {
+      "category": "open",
+      "clip_id": "B19I6339",
+      "t": 76.368,
+      "t_in": 76.368,
+      "t_out": 77.828,
+      "duration_s": 1.460000000000008,
+      "label": "Cold-open hero into Step 1 title",
+      "beat_index": 1
+    },
+    {
+      "category": "open",
+      "clip_id": "B19I6278",
+      "t": 44.169,
+      "t_in": 44.169,
+      "t_out": 44.171,
+      "duration_s": 0.0020000000000024443,
+      "label": "Cold-open hero into Step 1 title",
+      "beat_index": 2
+    },
+    {
+      "category": "final",
+      "clip_id": "AI2I5116",
+      "t": 11.969,
+      "t_in": 11.969,
+      "t_out": 11.97,
+      "duration_s": 0.0010000000000012221,
+      "label": "Garnish: sesame seeds + scallions",
+      "beat_index": 45
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6335",
+      "t": 14.556,
+      "t_in": 14.556,
+      "t_out": 15.724,
+      "duration_s": 1.168000000000001,
+      "label": "Garnish: sesame seeds + scallions",
+      "beat_index": 46
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6335",
+      "t": 39.873,
+      "t_in": 39.873,
+      "t_out": 41.291,
+      "duration_s": 1.4179999999999993,
+      "label": "Garnish: sesame seeds + scallions",
+      "beat_index": 47
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6339",
+      "t": 39.331,
+      "t_in": 39.331,
+      "t_out": 40.499,
+      "duration_s": 1.1679999999999993,
+      "label": "Plating + final hero",
+      "beat_index": 48
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6339",
+      "t": 66.775,
+      "t_in": 66.775,
+      "t_out": 67.734,
+      "duration_s": 0.958999999999989,
+      "label": "Plating + final hero",
+      "beat_index": 49
+    },
+    {
+      "category": "final",
+      "clip_id": "B19I6339",
+      "t": 76.368,
+      "t_in": 76.368,
+      "t_out": 77.703,
+      "duration_s": 1.335000000000008,
+      "label": "Plating + final hero",
+      "beat_index": 50
+    },
+    {
+      "category": "final",
+      "clip_id": "AI2I5122",
+      "t": 4.087,
+      "t_in": 4.087,
+      "t_out": 7.715,
+      "duration_s": 3.628,
+      "label": "Plating + final hero",
+      "beat_index": 51
+    }
+  ],
+  "recipe": "korean_fried_chicken",
+  "category": "beauty",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/korean_fried_chicken.json",
+  "source_annotation_sha": "bf46b6d58e6931ae"
+}

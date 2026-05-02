@@ -1,0 +1,408 @@
+{
+  "picks": [
+    {
+      "category": "beauty_opener",
+      "clip_id": "B19I6339",
+      "t": 16.56,
+      "label": "Cold-open hero into Step 1 title",
+      "beat_index": 0,
+      "duration_s": 0.718
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "B19I6339",
+      "t": 76.368,
+      "label": "Cold-open hero into Step 1 title",
+      "beat_index": 1,
+      "duration_s": 1.46
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "B19I6278",
+      "t": 44.169,
+      "label": "Cold-open hero into Step 1 title",
+      "beat_index": 2,
+      "duration_s": 0.002
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6278",
+      "t": 44.171,
+      "label": "\"Step 1: Make the glaze\" title card",
+      "beat_index": 3,
+      "duration_s": 0.77
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6276",
+      "t": 16.85,
+      "label": "\"Step 1: Make the glaze\" title card",
+      "beat_index": 4,
+      "duration_s": 0.0
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6276",
+      "t": 16.85,
+      "label": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "beat_index": 5,
+      "duration_s": 0.772
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6276",
+      "t": 26.902,
+      "label": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "beat_index": 6,
+      "duration_s": 1.209
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6278",
+      "t": 5.839,
+      "label": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "beat_index": 7,
+      "duration_s": 1.585
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6278",
+      "t": 14.806,
+      "label": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "beat_index": 8,
+      "duration_s": 1.627
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6278",
+      "t": 26.13,
+      "label": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "beat_index": 9,
+      "duration_s": 0.584
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6280",
+      "t": 7.466,
+      "label": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "beat_index": 10,
+      "duration_s": 1.168
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6280",
+      "t": 11.949,
+      "label": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "beat_index": 11,
+      "duration_s": 0.73
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "B19I6280",
+      "t": 23.732,
+      "label": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "beat_index": 12,
+      "duration_s": 0.004
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6280",
+      "t": 23.736,
+      "label": "Cornstarch slurry side-build",
+      "beat_index": 13,
+      "duration_s": 1.164
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6279",
+      "t": 25.651,
+      "label": "Cornstarch slurry side-build",
+      "beat_index": 14,
+      "duration_s": 0.646
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6279",
+      "t": 56.202,
+      "label": "Cornstarch slurry side-build",
+      "beat_index": 15,
+      "duration_s": 0.667
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6279",
+      "t": 92.029,
+      "label": "Cornstarch slurry side-build",
+      "beat_index": 16,
+      "duration_s": 0.001
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6279",
+      "t": 92.03,
+      "label": "Slurry + gochujang back into pot, glaze closes out",
+      "beat_index": 17,
+      "duration_s": 0.625
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6279",
+      "t": 121.288,
+      "label": "Slurry + gochujang back into pot, glaze closes out",
+      "beat_index": 18,
+      "duration_s": 0.813
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6307",
+      "t": 38.121,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 19,
+      "duration_s": 1.085
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6307",
+      "t": 46.421,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 20,
+      "duration_s": 1.168
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6307",
+      "t": 51.969,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 21,
+      "duration_s": 1.209
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6307",
+      "t": 56.682,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 22,
+      "duration_s": 1.334
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 5.339,
+      "label": "\"Step 2: Make the dredge\"",
+      "beat_index": 23,
+      "duration_s": 0.0
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 5.339,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 24,
+      "duration_s": 2.085
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 7.424,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 25,
+      "duration_s": 0.375
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 51.26,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 27,
+      "duration_s": 1.042
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 58.559,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 28,
+      "duration_s": 1.042
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 86.753,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 29,
+      "duration_s": 0.709
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 95.178,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 30,
+      "duration_s": 0.772
+    },
+    {
+      "category": "title_card",
+      "clip_id": "AI2I5095",
+      "t": 105.314,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 31,
+      "duration_s": 1.543
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 133.425,
+      "label": "\"Step 3: Make the batter\"",
+      "beat_index": 32,
+      "duration_s": 1.247
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6309",
+      "t": 134.672,
+      "label": "\"Step 4: Coat the chicken\" (regular speed)",
+      "beat_index": 33,
+      "duration_s": 0.004
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6310",
+      "t": 11.22,
+      "label": "\"Step 4: Coat the chicken\" (regular speed)",
+      "beat_index": 34,
+      "duration_s": 1.209
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6310",
+      "t": 246.788,
+      "label": "\"Step 4: Coat the chicken\" (regular speed)",
+      "beat_index": 35,
+      "duration_s": 1.669
+    },
+    {
+      "category": "title_card",
+      "clip_id": "B19I6311",
+      "t": 23.148,
+      "label": "\"Step 5: Fry the chicken\" + canola pool",
+      "beat_index": 37,
+      "duration_s": 2.044
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6314",
+      "t": 53.512,
+      "label": "Frying",
+      "beat_index": 38,
+      "duration_s": 1.375
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6314",
+      "t": 54.887,
+      "label": "\"Glaze\" title cuts back to glaze pot",
+      "beat_index": 39,
+      "duration_s": 0.001
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6331",
+      "t": 4.192,
+      "label": "\"Glaze\" title cuts back to glaze pot",
+      "beat_index": 40,
+      "duration_s": 0.667
+    },
+    {
+      "category": "stop_motion",
+      "clip_id": "B19I6332",
+      "t": 25.984,
+      "label": "The glaze toss (Transform punch-in stack + V2 stutter)",
+      "beat_index": 41,
+      "duration_s": 0.004
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6332",
+      "t": 25.988,
+      "label": "Tossed glazed chicken settling",
+      "beat_index": 42,
+      "duration_s": 0.914
+    },
+    {
+      "category": "",
+      "clip_id": "B19I6333",
+      "t": 4.505,
+      "label": "Tossed glazed chicken settling",
+      "beat_index": 43,
+      "duration_s": 0.959
+    },
+    {
+      "category": "",
+      "clip_id": "AI2I5116",
+      "t": 10.802,
+      "label": "Tossed glazed chicken settling",
+      "beat_index": 44,
+      "duration_s": 1.167
+    },
+    {
+      "category": "beauty",
+      "clip_id": "AI2I5116",
+      "t": 11.969,
+      "label": "Garnish: sesame seeds + scallions",
+      "beat_index": 45,
+      "duration_s": 0.001
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6335",
+      "t": 14.556,
+      "label": "Garnish: sesame seeds + scallions",
+      "beat_index": 46,
+      "duration_s": 1.168
+    },
+    {
+      "category": "beauty",
+      "clip_id": "B19I6335",
+      "t": 39.873,
+      "label": "Garnish: sesame seeds + scallions",
+      "beat_index": 47,
+      "duration_s": 1.418
+    },
+    {
+      "category": "beauty_close",
+      "clip_id": "B19I6339",
+      "t": 39.331,
+      "label": "Plating + final hero",
+      "beat_index": 48,
+      "duration_s": 1.168
+    },
+    {
+      "category": "beauty_close",
+      "clip_id": "B19I6339",
+      "t": 66.775,
+      "label": "Plating + final hero",
+      "beat_index": 49,
+      "duration_s": 0.959
+    },
+    {
+      "category": "beauty_close",
+      "clip_id": "B19I6339",
+      "t": 76.368,
+      "label": "Plating + final hero",
+      "beat_index": 50,
+      "duration_s": 1.335
+    },
+    {
+      "category": "beauty_close",
+      "clip_id": "AI2I5122",
+      "t": 4.087,
+      "label": "Plating + final hero",
+      "beat_index": 51,
+      "duration_s": 3.628
+    }
+  ],
+  "recipe": "korean_fried_chicken",
+  "category": "beats",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/korean_fried_chicken.json",
+  "source_annotation_sha": "bf46b6d58e6931ae"
+}

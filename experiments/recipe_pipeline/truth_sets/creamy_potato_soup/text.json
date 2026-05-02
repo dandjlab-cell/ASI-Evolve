@@ -1,0 +1,24 @@
+{
+  "picks": [
+    {
+      "category": "title",
+      "clip_id": "AI2I4955",
+      "t": 84.084,
+      "label": "Simmer beat with title card",
+      "beat_index": 16,
+      "mogrt_overlaps": []
+    },
+    {
+      "category": "title",
+      "clip_id": "AI2I4958",
+      "t": 13.388,
+      "label": "Simmer beat with title card",
+      "beat_index": 17,
+      "mogrt_overlaps": []
+    }
+  ],
+  "recipe": "creamy_potato_soup",
+  "category": "text",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/creamy_potato_soup.json",
+  "source_annotation_sha": "b39d9071f6e8199f"
+}

@@ -1,0 +1,200 @@
+{
+  "picks": [
+    {
+      "category": "beauty_opener",
+      "clip_id": "A057_02270208_C032",
+      "t": 8.54,
+      "label": "Cold-open hero (broken muffin)",
+      "beat_index": 0,
+      "duration_s": 1.783
+    },
+    {
+      "category": "beauty_opener",
+      "clip_id": "A057_02270101_C023",
+      "t": 23.378,
+      "label": "Cold-open hero (broken muffin)",
+      "beat_index": 1,
+      "duration_s": 0.001
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270101_C023",
+      "t": 23.379,
+      "label": "Wet base build (butter \u2192 bananas)",
+      "beat_index": 2,
+      "duration_s": 0.812
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270101_C023",
+      "t": 202.244,
+      "label": "Wet base build (butter \u2192 bananas)",
+      "beat_index": 4,
+      "duration_s": 0.002
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270101_C023",
+      "t": 202.246,
+      "label": "Banana mash",
+      "beat_index": 5,
+      "duration_s": 1.416
+    },
+    {
+      "category": "",
+      "clip_id": "A003_05111902_C011",
+      "t": 172.673,
+      "label": "Banana mash",
+      "beat_index": 6,
+      "duration_s": 1.624
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "A003_05111902_C011",
+      "t": 174.297,
+      "label": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "beat_index": 7,
+      "duration_s": 0.002
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "A057_02270107_C025",
+      "t": 2.878,
+      "label": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "beat_index": 8,
+      "duration_s": 1.126
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "A057_02270107_C025",
+      "t": 10.093,
+      "label": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "beat_index": 9,
+      "duration_s": 0.563
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "A057_02270107_C025",
+      "t": 16.558,
+      "label": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "beat_index": 10,
+      "duration_s": 0.688
+    },
+    {
+      "category": "ingredient",
+      "clip_id": "A057_02270107_C025",
+      "t": 21.73,
+      "label": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "beat_index": 11,
+      "duration_s": 0.959
+    },
+    {
+      "category": "technique",
+      "clip_id": "A057_02270107_C025",
+      "t": 22.689,
+      "label": "Sugar dome + whisk-in",
+      "beat_index": 12,
+      "duration_s": 0.0
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270107_C025",
+      "t": 86.503,
+      "label": "Dry pours (baking soda \u2192 flour)",
+      "beat_index": 13,
+      "duration_s": 1.168
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270107_C025",
+      "t": 96.555,
+      "label": "Dry pours (baking soda \u2192 flour)",
+      "beat_index": 14,
+      "duration_s": 1.168
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270107_C025",
+      "t": 104.855,
+      "label": "Dry pours (baking soda \u2192 flour)",
+      "beat_index": 15,
+      "duration_s": 1.001
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270107_C025",
+      "t": 187.354,
+      "label": "Dry pours (baking soda \u2192 flour)",
+      "beat_index": 16,
+      "duration_s": 0.001
+    },
+    {
+      "category": "technique",
+      "clip_id": "A057_02270107_C025",
+      "t": 187.355,
+      "label": "Fold to batter (uninterrupted overhead)",
+      "beat_index": 17,
+      "duration_s": 1.334
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270116_C026",
+      "t": 201.41,
+      "label": "Smooth batter + bake instruction",
+      "beat_index": 18,
+      "duration_s": 1.126
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270142_C027",
+      "t": 10.385,
+      "label": "Smooth batter + bake instruction",
+      "beat_index": 19,
+      "duration_s": 0.002
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270142_C027",
+      "t": 11.467,
+      "label": "Strobe / flash transition",
+      "beat_index": 20,
+      "duration_s": 0.003
+    },
+    {
+      "category": "",
+      "clip_id": "A057_02270142_C027",
+      "t": 74.324,
+      "label": "Strobe / flash transition",
+      "beat_index": 21,
+      "duration_s": 0.209
+    },
+    {
+      "category": "beauty",
+      "clip_id": "A057_02270154_C028",
+      "t": 20.938,
+      "label": "Baked reveal beat",
+      "beat_index": 22,
+      "duration_s": 1.247
+    },
+    {
+      "category": "beauty",
+      "clip_id": "A057_02270154_C028",
+      "t": 22.185,
+      "label": "Hero return / end card",
+      "beat_index": 23,
+      "duration_s": 0.004
+    },
+    {
+      "category": "beauty",
+      "clip_id": "A057_02270208_C032",
+      "t": 8.05,
+      "label": "Hero return / end card",
+      "beat_index": 24,
+      "duration_s": 1.918
+    }
+  ],
+  "recipe": "banana_muffins",
+  "category": "beats",
+  "source_annotation_path": "/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/banana_muffins.json",
+  "source_annotation_sha": "7a15bc3b3f9c1983"
+}
