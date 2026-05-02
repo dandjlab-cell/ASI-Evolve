@@ -1,0 +1,44 @@
+{
+  "_doc": "Per-recipe filename-prefix \u2192 camera mapping for ASI annotation backfill. Camera convention does NOT generalize across shoots \u2014 must be verified visually per recipe and cached here. See ~/.claude/projects/.../memory/feedback_camera_detection_per_recipe.md.",
+  "_schema": {
+    "<recipe_slug>": {
+      "<filename_prefix>": "front | overhead",
+      "_verified_at": "YYYY-MM-DD",
+      "_verified_via": "free-text source description"
+    }
+  },
+  "_prefix_keying": "First 5 chars of source filename (e.g. 'B19I6', 'AI2I5', 'A057_'). Match the keying used by backfill_camera_labels.py.",
+  "mappings": {
+    "banana_muffins": {
+      "A057_": "front",
+      "A003_": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "Dan visual confirmation 2026-05-02 \u2014 A057 confirmed front (3/4 angle bowl shots + beauty hand shots), A003 confirmed overhead"
+    },
+    "basil_pesto": {
+      "B19I6": "front",
+      "AI2I5": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "chicken_thighs": {
+      "B19I6": "front",
+      "AI2I5": "overhead",
+      "[NEST": "front",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "creamy_potato_soup": {
+      "AI2I4": "overhead",
+      "B19I6": "front",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "Visual spot-check of FINAL.mp4 frames + beat-count inference (17 AI2I4 used for cooking/pot shots = overhead, 3 B19I6 used for hero spoon-lifts = front)"
+    },
+    "korean_fried_chicken": {
+      "B19I6": "front",
+      "AI2I5": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "Visual spot-check of FINAL.mp4 frames + beat-count inference (46 B19I6 used for saucepan + hero shots = front, 4 AI2I5 used for ingredient-bowl shots = overhead)"
+    }
+  }
+}

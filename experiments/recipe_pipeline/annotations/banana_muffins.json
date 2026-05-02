@@ -1,0 +1,707 @@
+{
+  "recipe": "banana_muffins",
+  "global_notes": "Auto-extracted from banana_muffins \u2014 Effect Reasoning (image mode).md via emit_structured_annotation.py heuristics. Editor should review beat_type classifications.",
+  "source_narrative": "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Annotations/banana_muffins \u2014 Effect Reasoning (image mode).md",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_type": "beauty_opener",
+      "recipe_section": "Cold-open hero (broken muffin)",
+      "filename": "A057_02270208_C032",
+      "in_point": {
+        "seconds": 8.54,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.783,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 10.323
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 0,
+      "_v1_track_item_index": 1
+    },
+    {
+      "beat_index": 1,
+      "beat_type": "beauty_opener",
+      "recipe_section": "Cold-open hero (broken muffin)",
+      "filename": "A057_02270101_C023",
+      "in_point": {
+        "seconds": 23.378,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.001,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 23.379
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 0,
+      "_v1_track_item_index": 2
+    },
+    {
+      "beat_index": 2,
+      "beat_type": "",
+      "recipe_section": "Wet base build (butter \u2192 bananas)",
+      "filename": "A057_02270101_C023",
+      "in_point": {
+        "seconds": 23.379,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.812,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 24.191
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 2,
+      "_v1_track_item_index": 2
+    },
+    {
+      "beat_index": 3,
+      "beat_type": "",
+      "recipe_section": "Wet base build (butter \u2192 bananas)",
+      "filename": null,
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.084,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 1.084
+      },
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: no source filename (title_card / nested / wrapper)"
+      },
+      "verdict": "editorial_group",
+      "confidence": "low",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 2,
+      "_v1_track_item_index": 3
+    },
+    {
+      "beat_index": 4,
+      "beat_type": "",
+      "recipe_section": "Wet base build (butter \u2192 bananas)",
+      "filename": "A057_02270101_C023",
+      "in_point": {
+        "seconds": 202.244,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.002,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 202.246
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 2,
+      "_v1_track_item_index": 4
+    },
+    {
+      "beat_index": 5,
+      "beat_type": "",
+      "recipe_section": "Banana mash",
+      "filename": "A057_02270101_C023",
+      "in_point": {
+        "seconds": 202.246,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.416,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 203.662
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 5,
+      "_v1_track_item_index": 4
+    },
+    {
+      "beat_index": 6,
+      "beat_type": "",
+      "recipe_section": "Banana mash",
+      "filename": "A003_05111902_C011",
+      "in_point": {
+        "seconds": 172.673,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.624,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 174.297
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A003_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 5,
+      "_v1_track_item_index": 5
+    },
+    {
+      "beat_index": 7,
+      "beat_type": "ingredient",
+      "recipe_section": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "filename": "A003_05111902_C011",
+      "in_point": {
+        "seconds": 174.297,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.002,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 174.299
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A003_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 7,
+      "_v1_track_item_index": 5
+    },
+    {
+      "beat_index": 8,
+      "beat_type": "ingredient",
+      "recipe_section": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 2.878,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.126,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 4.004
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 7,
+      "_v1_track_item_index": 6
+    },
+    {
+      "beat_index": 9,
+      "beat_type": "ingredient",
+      "recipe_section": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 10.093,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.563,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 10.656
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 7,
+      "_v1_track_item_index": 7
+    },
+    {
+      "beat_index": 10,
+      "beat_type": "ingredient",
+      "recipe_section": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 16.558,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.688,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 17.246
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 7,
+      "_v1_track_item_index": 8
+    },
+    {
+      "beat_index": 11,
+      "beat_type": "ingredient",
+      "recipe_section": "Wet ingredient roll-call (FRONT loop, four titles)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 21.73,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.959,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 22.689
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 7,
+      "_v1_track_item_index": 9
+    },
+    {
+      "beat_index": 12,
+      "beat_type": "technique",
+      "recipe_section": "Sugar dome + whisk-in",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 22.689,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.0,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 22.689
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 12,
+      "_v1_track_item_index": 9
+    },
+    {
+      "beat_index": 13,
+      "beat_type": "",
+      "recipe_section": "Dry pours (baking soda \u2192 flour)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 86.503,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.168,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 87.671
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 13,
+      "_v1_track_item_index": 10
+    },
+    {
+      "beat_index": 14,
+      "beat_type": "",
+      "recipe_section": "Dry pours (baking soda \u2192 flour)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 96.555,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.168,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 97.723
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 13,
+      "_v1_track_item_index": 11
+    },
+    {
+      "beat_index": 15,
+      "beat_type": "",
+      "recipe_section": "Dry pours (baking soda \u2192 flour)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 104.855,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.001,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 105.856
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 13,
+      "_v1_track_item_index": 12
+    },
+    {
+      "beat_index": 16,
+      "beat_type": "",
+      "recipe_section": "Dry pours (baking soda \u2192 flour)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 187.354,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.001,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 187.355
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 13,
+      "_v1_track_item_index": 13
+    },
+    {
+      "beat_index": 17,
+      "beat_type": "technique",
+      "recipe_section": "Fold to batter (uninterrupted overhead)",
+      "filename": "A057_02270107_C025",
+      "in_point": {
+        "seconds": 187.355,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.334,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 188.689
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 17,
+      "_v1_track_item_index": 13
+    },
+    {
+      "beat_index": 18,
+      "beat_type": "",
+      "recipe_section": "Smooth batter + bake instruction",
+      "filename": "A057_02270116_C026",
+      "in_point": {
+        "seconds": 201.41,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.126,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 202.536
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 18,
+      "_v1_track_item_index": 14
+    },
+    {
+      "beat_index": 19,
+      "beat_type": "",
+      "recipe_section": "Smooth batter + bake instruction",
+      "filename": "A057_02270142_C027",
+      "in_point": {
+        "seconds": 10.385,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.002,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 10.387
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 18,
+      "_v1_track_item_index": 15
+    },
+    {
+      "beat_index": 20,
+      "beat_type": "",
+      "recipe_section": "Strobe / flash transition",
+      "filename": "A057_02270142_C027",
+      "in_point": {
+        "seconds": 11.467,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.003,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 11.47
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 20,
+      "_v1_track_item_index": 15
+    },
+    {
+      "beat_index": 21,
+      "beat_type": "",
+      "recipe_section": "Strobe / flash transition",
+      "filename": "A057_02270142_C027",
+      "in_point": {
+        "seconds": 74.324,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.209,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 74.533
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 20,
+      "_v1_track_item_index": 16
+    },
+    {
+      "beat_index": 22,
+      "beat_type": "beauty",
+      "recipe_section": "Baked reveal beat",
+      "filename": "A057_02270154_C028",
+      "in_point": {
+        "seconds": 20.938,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.247,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 22.185
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 22,
+      "_v1_track_item_index": 17
+    },
+    {
+      "beat_index": 23,
+      "beat_type": "beauty",
+      "recipe_section": "Hero return / end card",
+      "filename": "A057_02270154_C028",
+      "in_point": {
+        "seconds": 22.185,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.004,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 22.189
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 23,
+      "_v1_track_item_index": 17
+    },
+    {
+      "beat_index": 24,
+      "beat_type": "beauty",
+      "recipe_section": "Hero return / end card",
+      "filename": "A057_02270208_C032",
+      "in_point": {
+        "seconds": 8.05,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.918,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 9.968
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[banana_muffins][A057_])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 23,
+      "_v1_track_item_index": 18
+    }
+  ]
+}

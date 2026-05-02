@@ -1,0 +1,636 @@
+{
+  "recipe": "creamy_potato_soup",
+  "global_notes": "Auto-extracted from creamy_potato_soup \u2014 Effect Reasoning (image mode).md via emit_structured_annotation.py heuristics. Editor should review beat_type classifications.",
+  "source_narrative": "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Annotations/creamy_potato_soup \u2014 Effect Reasoning (image mode).md",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_type": "beauty_opener",
+      "recipe_section": "Bacon hero open",
+      "filename": "AI2I4942",
+      "in_point": {
+        "seconds": 29.157,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.082,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 30.239
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 0,
+      "_v1_track_item_index": 2
+    },
+    {
+      "beat_index": 1,
+      "beat_type": "beauty_opener",
+      "recipe_section": "Bacon hero open",
+      "filename": "AI2I4946",
+      "in_point": {
+        "seconds": 64.856,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.751,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 65.607
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 0,
+      "_v1_track_item_index": 3
+    },
+    {
+      "beat_index": 2,
+      "beat_type": "beauty_opener",
+      "recipe_section": "Bacon hero open",
+      "filename": "AI2I4948",
+      "in_point": {
+        "seconds": 47.881,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.958,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 48.839
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 0,
+      "_v1_track_item_index": 4
+    },
+    {
+      "beat_index": 3,
+      "beat_type": "",
+      "recipe_section": "Slotted-spoon lift + drain pair",
+      "filename": "AI2I4948",
+      "in_point": {
+        "seconds": 48.839,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.001,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 48.84
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 3,
+      "_v1_track_item_index": 4
+    },
+    {
+      "beat_index": 4,
+      "beat_type": "",
+      "recipe_section": "Slotted-spoon lift + drain pair",
+      "filename": "B19I6157",
+      "in_point": {
+        "seconds": 48.048,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.876,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 48.924
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 3,
+      "_v1_track_item_index": 5
+    },
+    {
+      "beat_index": 5,
+      "beat_type": "",
+      "recipe_section": "Slotted-spoon lift + drain pair",
+      "filename": "B19I6157",
+      "in_point": {
+        "seconds": 78.662,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.083,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 79.745
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 3,
+      "_v1_track_item_index": 6
+    },
+    {
+      "beat_index": 6,
+      "beat_type": "stop_motion",
+      "recipe_section": "Onion drop (stop-motion feel)",
+      "filename": "B19I6157",
+      "in_point": {
+        "seconds": 79.745,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.001,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 79.746
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 6,
+      "_v1_track_item_index": 6
+    },
+    {
+      "beat_index": 7,
+      "beat_type": "stop_motion",
+      "recipe_section": "Onion drop (stop-motion feel)",
+      "filename": "AI2I4949",
+      "in_point": {
+        "seconds": 14.806,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.876,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 15.682
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 6,
+      "_v1_track_item_index": 7
+    },
+    {
+      "beat_index": 8,
+      "beat_type": "",
+      "recipe_section": "Mirepoix pile-on (CU rotation)",
+      "filename": "AI2I4950",
+      "in_point": {
+        "seconds": 2.336,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.001,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 2.337
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 8,
+      "_v1_track_item_index": 8
+    },
+    {
+      "beat_index": 9,
+      "beat_type": "technique",
+      "recipe_section": "Stir / sweat transition",
+      "filename": "AI2I4950",
+      "in_point": {
+        "seconds": 2.337,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.875,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 3.212
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 9,
+      "_v1_track_item_index": 8
+    },
+    {
+      "beat_index": 10,
+      "beat_type": "technique",
+      "recipe_section": "Stir / sweat transition",
+      "filename": "AI2I4953",
+      "in_point": {
+        "seconds": 43.335,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.834,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 44.169
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 9,
+      "_v1_track_item_index": 9
+    },
+    {
+      "beat_index": 11,
+      "beat_type": "",
+      "recipe_section": "Garlic + flour beats (50% speed)",
+      "filename": null,
+      "in_point": {
+        "seconds": null,
+        "reasoning": "no V1 clip overlap"
+      },
+      "duration": {
+        "seconds": 2.79,
+        "reasoning": "narrative section length"
+      },
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: no source filename (title_card / nested / wrapper)"
+      },
+      "verdict": "editorial_group",
+      "confidence": "low",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": []
+    },
+    {
+      "beat_index": 12,
+      "beat_type": "ingredient",
+      "recipe_section": "Roux into stock + potato dump (mask-graded run)",
+      "filename": "AI2I4953",
+      "in_point": {
+        "seconds": 81.79,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.918,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 82.708
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 12,
+      "_v1_track_item_index": 10
+    },
+    {
+      "beat_index": 13,
+      "beat_type": "ingredient",
+      "recipe_section": "Roux into stock + potato dump (mask-graded run)",
+      "filename": "AI2I4953",
+      "in_point": {
+        "seconds": 102.352,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.335,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 103.687
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 12,
+      "_v1_track_item_index": 11
+    },
+    {
+      "beat_index": 14,
+      "beat_type": "ingredient",
+      "recipe_section": "Roux into stock + potato dump (mask-graded run)",
+      "filename": "AI2I4954",
+      "in_point": {
+        "seconds": 8.425,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.293,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 9.718
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 12,
+      "_v1_track_item_index": 12
+    },
+    {
+      "beat_index": 15,
+      "beat_type": "ingredient",
+      "recipe_section": "Liquids pour (broth + milk)",
+      "filename": null,
+      "in_point": {
+        "seconds": null,
+        "reasoning": "no V1 clip overlap"
+      },
+      "duration": {
+        "seconds": 3.96,
+        "reasoning": "narrative section length"
+      },
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: no source filename (title_card / nested / wrapper)"
+      },
+      "verdict": "editorial_group",
+      "confidence": "low",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": []
+    },
+    {
+      "beat_index": 16,
+      "beat_type": "title_card",
+      "recipe_section": "Simmer beat with title card",
+      "filename": "AI2I4955",
+      "in_point": {
+        "seconds": 84.084,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.293,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 85.377
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 16,
+      "_v1_track_item_index": 13
+    },
+    {
+      "beat_index": 17,
+      "beat_type": "title_card",
+      "recipe_section": "Simmer beat with title card",
+      "filename": "AI2I4958",
+      "in_point": {
+        "seconds": 13.388,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 2.252,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 15.64
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 16,
+      "_v1_track_item_index": 14
+    },
+    {
+      "beat_index": 18,
+      "beat_type": "beauty",
+      "recipe_section": "Tender-potato reveal",
+      "filename": "AI2I4958",
+      "in_point": {
+        "seconds": 15.64,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.001,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 15.641
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 18,
+      "_v1_track_item_index": 14
+    },
+    {
+      "beat_index": 19,
+      "beat_type": "beauty",
+      "recipe_section": "Tender-potato reveal",
+      "filename": "AI2I4961",
+      "in_point": {
+        "seconds": 14.473,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.005,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 14.478
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 18,
+      "_v1_track_item_index": 15
+    },
+    {
+      "beat_index": 20,
+      "beat_type": "beauty",
+      "recipe_section": "Potato pile from the side / final stir",
+      "filename": "AI2I4961",
+      "in_point": {
+        "seconds": 14.478,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.245,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 14.723
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 20,
+      "_v1_track_item_index": 15
+    },
+    {
+      "beat_index": 21,
+      "beat_type": "beauty",
+      "recipe_section": "Garnish title-stacking (final bowl)",
+      "filename": "AI2I4961",
+      "in_point": {
+        "seconds": 14.723,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.0,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 14.723
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[creamy_potato_soup][AI2I4])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 21,
+      "_v1_track_item_index": 15
+    },
+    {
+      "beat_index": 22,
+      "beat_type": "",
+      "recipe_section": "Spoon-lift money shots (slowed tail)",
+      "filename": null,
+      "in_point": {
+        "seconds": null,
+        "reasoning": "no V1 clip overlap"
+      },
+      "duration": {
+        "seconds": 3.71,
+        "reasoning": "narrative section length"
+      },
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: no source filename (title_card / nested / wrapper)"
+      },
+      "verdict": "editorial_group",
+      "confidence": "low",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": []
+    }
+  ]
+}

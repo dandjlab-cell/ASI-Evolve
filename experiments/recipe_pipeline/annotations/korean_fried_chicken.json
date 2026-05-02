@@ -1,27 +1,27 @@
 {
-  "recipe": "chicken_thighs",
-  "global_notes": "Auto-extracted from chicken_thighs \u2014 Effect Reasoning (image mode).md via emit_structured_annotation.py heuristics. Editor should review beat_type classifications.",
-  "source_narrative": "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Annotations/chicken_thighs \u2014 Effect Reasoning (image mode).md",
+  "recipe": "korean_fried_chicken",
+  "global_notes": "Auto-extracted from korean_fried_chicken \u2014 Effect Reasoning (image mode).md via emit_structured_annotation.py heuristics. Editor should review beat_type classifications.",
+  "source_narrative": "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Annotations/korean_fried_chicken \u2014 Effect Reasoning (image mode).md",
   "beats": [
     {
       "beat_index": 0,
       "beat_type": "beauty_opener",
-      "recipe_section": "Title hero (two beats)",
-      "filename": "AI2I5462",
+      "recipe_section": "Cold-open hero into Step 1 title",
+      "filename": "B19I6339",
       "in_point": {
-        "seconds": 28.781,
+        "seconds": 16.56,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.166,
+        "seconds": 0.718,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 29.947
+        "seconds": 17.278
       },
       "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -34,22 +34,22 @@
     {
       "beat_index": 1,
       "beat_type": "beauty_opener",
-      "recipe_section": "Title hero (two beats)",
-      "filename": "B19I6695",
+      "recipe_section": "Cold-open hero into Step 1 title",
+      "filename": "B19I6339",
       "in_point": {
-        "seconds": 31.323,
+        "seconds": 76.368,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.293,
+        "seconds": 1.46,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 32.616
+        "seconds": 77.828
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -62,22 +62,22 @@
     {
       "beat_index": 2,
       "beat_type": "beauty_opener",
-      "recipe_section": "Title hero (two beats)",
-      "filename": "B19I6669",
+      "recipe_section": "Cold-open hero into Step 1 title",
+      "filename": "B19I6278",
       "in_point": {
-        "seconds": 24.024,
+        "seconds": 44.169,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 0.001,
+        "seconds": 0.002,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 24.025
+        "seconds": 44.171
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -89,23 +89,23 @@
     },
     {
       "beat_index": 3,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
-      "filename": "B19I6669",
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 1: Make the glaze\" title card",
+      "filename": "B19I6278",
       "in_point": {
-        "seconds": 24.025,
+        "seconds": 44.171,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.501,
+        "seconds": 0.77,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 25.526
+        "seconds": 44.941
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -117,23 +117,23 @@
     },
     {
       "beat_index": 4,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
-      "filename": "B19I6669",
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 1: Make the glaze\" title card",
+      "filename": "B19I6276",
       "in_point": {
-        "seconds": 40.207,
+        "seconds": 16.85,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.168,
+        "seconds": 0.0,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 41.375
+        "seconds": 16.85
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -146,682 +146,150 @@
     {
       "beat_index": 5,
       "beat_type": "ingredient",
-      "recipe_section": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
-      "filename": "AI2I5438",
+      "recipe_section": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "filename": "B19I6276",
       "in_point": {
-        "seconds": 50.259,
+        "seconds": 16.85,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 0.563,
+        "seconds": 0.772,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 50.822
+        "seconds": 17.622
       },
       "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 3,
-      "_v1_track_item_index": 5
+      "_section_idx": 5,
+      "_v1_track_item_index": 4
     },
     {
       "beat_index": 6,
       "beat_type": "ingredient",
-      "recipe_section": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
-      "filename": "B19I6669",
+      "recipe_section": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "filename": "B19I6276",
       "in_point": {
-        "seconds": 58.35,
+        "seconds": 26.902,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.335,
+        "seconds": 1.209,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 59.685
+        "seconds": 28.111
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 3,
-      "_v1_track_item_index": 6
+      "_section_idx": 5,
+      "_v1_track_item_index": 5
     },
     {
       "beat_index": 7,
       "beat_type": "ingredient",
-      "recipe_section": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
-      "filename": "AI2I5438",
+      "recipe_section": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "filename": "B19I6278",
       "in_point": {
-        "seconds": 61.061,
+        "seconds": 5.839,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 5.13,
+        "seconds": 1.585,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 66.191
+        "seconds": 7.424
       },
       "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 3,
-      "_v1_track_item_index": 7
+      "_section_idx": 5,
+      "_v1_track_item_index": 6
     },
     {
       "beat_index": 8,
       "beat_type": "ingredient",
-      "recipe_section": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
-      "filename": "B19I6669",
+      "recipe_section": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "filename": "B19I6278",
       "in_point": {
-        "seconds": 65.774,
+        "seconds": 14.806,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.251,
+        "seconds": 1.627,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 67.025
+        "seconds": 16.433
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 3,
-      "_v1_track_item_index": 8
+      "_section_idx": 5,
+      "_v1_track_item_index": 7
     },
     {
       "beat_index": 9,
       "beat_type": "ingredient",
-      "recipe_section": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
-      "filename": "B19I6669",
+      "recipe_section": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "filename": "B19I6278",
       "in_point": {
-        "seconds": 73.699,
+        "seconds": 26.13,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.042,
+        "seconds": 0.584,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 74.741
+        "seconds": 26.714
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 3,
-      "_v1_track_item_index": 9
+      "_section_idx": 5,
+      "_v1_track_item_index": 8
     },
     {
       "beat_index": 10,
       "beat_type": "ingredient",
-      "recipe_section": "Marinade ingredient build (overhead bowl, 9 stacked drops)",
-      "filename": null,
+      "recipe_section": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "filename": "B19I6280",
       "in_point": {
-        "seconds": 0.0,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 5.211,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 5.211
-      },
-      "camera": {
-        "choice": "unknown",
-        "reasoning": "backfilled 2026-05-02: no source filename (title_card / nested / wrapper)"
-      },
-      "verdict": "editorial_group",
-      "confidence": "low",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 3,
-      "_v1_track_item_index": 10
-    },
-    {
-      "beat_index": 11,
-      "beat_type": "technique",
-      "recipe_section": "Whisk-up (the marinade comes together)",
-      "filename": null,
-      "in_point": {
-        "seconds": 5.211,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.003,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 5.214
-      },
-      "camera": {
-        "choice": "unknown",
-        "reasoning": "backfilled 2026-05-02: no source filename (title_card / nested / wrapper)"
-      },
-      "verdict": "editorial_group",
-      "confidence": "low",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 11,
-      "_v1_track_item_index": 10
-    },
-    {
-      "beat_index": 12,
-      "beat_type": "technique",
-      "recipe_section": "Whisk-up (the marinade comes together)",
-      "filename": "AI2I5438",
-      "in_point": {
-        "seconds": 111.862,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.917,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 112.779
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 11,
-      "_v1_track_item_index": 11
-    },
-    {
-      "beat_index": 13,
-      "beat_type": "technique",
-      "recipe_section": "Whisk-up (the marinade comes together)",
-      "filename": "B19I6669",
-      "in_point": {
-        "seconds": 154.863,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 1.29,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 156.153
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 11,
-      "_v1_track_item_index": 12
-    },
-    {
-      "beat_index": 14,
-      "beat_type": "",
-      "recipe_section": "Speed ramp into chicken (RAMP, 6 keyframes)",
-      "filename": "B19I6669",
-      "in_point": {
-        "seconds": 156.153,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.003,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 156.156
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 14,
-      "_v1_track_item_index": 12
-    },
-    {
-      "beat_index": 15,
-      "beat_type": "",
-      "recipe_section": "Speed ramp into chicken (RAMP, 6 keyframes)",
-      "filename": "B19I6670",
-      "in_point": {
-        "seconds": 5.881,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 1.668,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 7.549
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 14,
-      "_v1_track_item_index": 13
-    },
-    {
-      "beat_index": 16,
-      "beat_type": "",
-      "recipe_section": "Speed ramp into chicken (RAMP, 6 keyframes)",
-      "filename": "AI2I5440",
-      "in_point": {
-        "seconds": 8.05,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 1.126,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 9.176
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 14,
-      "_v1_track_item_index": 14
-    },
-    {
-      "beat_index": 17,
-      "beat_type": "",
-      "recipe_section": "Speed ramp into chicken (RAMP, 6 keyframes)",
-      "filename": "B19I6671",
-      "in_point": {
-        "seconds": 21.104,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.003,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 21.107
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 14,
-      "_v1_track_item_index": 15
-    },
-    {
-      "beat_index": 18,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "B19I6671",
-      "in_point": {
-        "seconds": 21.107,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 1.29,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 22.397
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 15
-    },
-    {
-      "beat_index": 19,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 8.675,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.209,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 8.884
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 16
-    },
-    {
-      "beat_index": 20,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 12.221,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.083,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 12.304
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 17
-    },
-    {
-      "beat_index": 21,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 14.64,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.083,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 14.723
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 18
-    },
-    {
-      "beat_index": 22,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 17.1,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.084,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 17.184
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 19
-    },
-    {
-      "beat_index": 23,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 19.937,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.083,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 20.02
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 20
-    },
-    {
-      "beat_index": 24,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 23.649,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.083,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 23.732
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 21
-    },
-    {
-      "beat_index": 25,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 25.651,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.083,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 25.734
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 22
-    },
-    {
-      "beat_index": 26,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 27.527,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.084,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 27.611
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 23
-    },
-    {
-      "beat_index": 27,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "AI2I5441",
-      "in_point": {
-        "seconds": 30.489,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.5,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 30.989
-      },
-      "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 24
-    },
-    {
-      "beat_index": 28,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "B19I6673",
-      "in_point": {
-        "seconds": 0.375,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.835,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 1.21
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 25
-    },
-    {
-      "beat_index": 29,
-      "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "B19I6673",
-      "in_point": {
-        "seconds": 5.047,
+        "seconds": 7.466,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
@@ -829,27 +297,55 @@
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 6.215
+        "seconds": 8.634
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 26
+      "_section_idx": 5,
+      "_v1_track_item_index": 9
     },
     {
-      "beat_index": 30,
+      "beat_index": 11,
       "beat_type": "ingredient",
-      "recipe_section": "Marinade pour + bag massage (rapid-fire micro-beats)",
-      "filename": "B19I6673",
+      "recipe_section": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "filename": "B19I6280",
       "in_point": {
-        "seconds": 10.928,
+        "seconds": 11.949,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.73,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 12.679
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 5,
+      "_v1_track_item_index": 10
+    },
+    {
+      "beat_index": 12,
+      "beat_type": "ingredient",
+      "recipe_section": "Glaze ingredient build (canola oil \u2192 garlic \u2192 ginger \u2192 soy \u2192 sugar \u2192 vinegar \u2192 cornstarch slurry intro)",
+      "filename": "B19I6280",
+      "in_point": {
+        "seconds": 23.732,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
@@ -857,95 +353,599 @@
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 10.932
+        "seconds": 23.736
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 18,
-      "_v1_track_item_index": 27
+      "_section_idx": 5,
+      "_v1_track_item_index": 11
+    },
+    {
+      "beat_index": 13,
+      "beat_type": "",
+      "recipe_section": "Cornstarch slurry side-build",
+      "filename": "B19I6280",
+      "in_point": {
+        "seconds": 23.736,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.164,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 24.9
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 13,
+      "_v1_track_item_index": 11
+    },
+    {
+      "beat_index": 14,
+      "beat_type": "",
+      "recipe_section": "Cornstarch slurry side-build",
+      "filename": "B19I6279",
+      "in_point": {
+        "seconds": 25.651,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.646,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 26.297
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 13,
+      "_v1_track_item_index": 12
+    },
+    {
+      "beat_index": 15,
+      "beat_type": "",
+      "recipe_section": "Cornstarch slurry side-build",
+      "filename": "B19I6279",
+      "in_point": {
+        "seconds": 56.202,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.667,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 56.869
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 13,
+      "_v1_track_item_index": 13
+    },
+    {
+      "beat_index": 16,
+      "beat_type": "",
+      "recipe_section": "Cornstarch slurry side-build",
+      "filename": "B19I6279",
+      "in_point": {
+        "seconds": 92.029,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.001,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 92.03
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 13,
+      "_v1_track_item_index": 14
+    },
+    {
+      "beat_index": 17,
+      "beat_type": "",
+      "recipe_section": "Slurry + gochujang back into pot, glaze closes out",
+      "filename": "B19I6279",
+      "in_point": {
+        "seconds": 92.03,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.625,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 92.655
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 17,
+      "_v1_track_item_index": 14
+    },
+    {
+      "beat_index": 18,
+      "beat_type": "",
+      "recipe_section": "Slurry + gochujang back into pot, glaze closes out",
+      "filename": "B19I6279",
+      "in_point": {
+        "seconds": 121.288,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.813,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 122.101
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 17,
+      "_v1_track_item_index": 15
+    },
+    {
+      "beat_index": 19,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 2: Make the dredge\"",
+      "filename": "B19I6307",
+      "in_point": {
+        "seconds": 38.121,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.085,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 39.206
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 19,
+      "_v1_track_item_index": 16
+    },
+    {
+      "beat_index": 20,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 2: Make the dredge\"",
+      "filename": "B19I6307",
+      "in_point": {
+        "seconds": 46.421,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.168,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 47.589
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 19,
+      "_v1_track_item_index": 17
+    },
+    {
+      "beat_index": 21,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 2: Make the dredge\"",
+      "filename": "B19I6307",
+      "in_point": {
+        "seconds": 51.969,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.209,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 53.178
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 19,
+      "_v1_track_item_index": 18
+    },
+    {
+      "beat_index": 22,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 2: Make the dredge\"",
+      "filename": "B19I6307",
+      "in_point": {
+        "seconds": 56.682,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.334,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 58.016
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 19,
+      "_v1_track_item_index": 19
+    },
+    {
+      "beat_index": 23,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 2: Make the dredge\"",
+      "filename": "B19I6309",
+      "in_point": {
+        "seconds": 5.339,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.0,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 5.339
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 19,
+      "_v1_track_item_index": 20
+    },
+    {
+      "beat_index": 24,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": "B19I6309",
+      "in_point": {
+        "seconds": 5.339,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 2.085,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 7.424
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 24,
+      "_v1_track_item_index": 20
+    },
+    {
+      "beat_index": 25,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": "B19I6309",
+      "in_point": {
+        "seconds": 7.424,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.375,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 7.799
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 24,
+      "_v1_track_item_index": 21
+    },
+    {
+      "beat_index": 26,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": null,
+      "in_point": {
+        "seconds": 0.0,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 3.003,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 3.003
+      },
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: no source filename (title_card / nested / wrapper)"
+      },
+      "verdict": "editorial_group",
+      "confidence": "low",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 24,
+      "_v1_track_item_index": 22
+    },
+    {
+      "beat_index": 27,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": "B19I6309",
+      "in_point": {
+        "seconds": 51.26,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.042,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 52.302
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 24,
+      "_v1_track_item_index": 23
+    },
+    {
+      "beat_index": 28,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": "B19I6309",
+      "in_point": {
+        "seconds": 58.559,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.042,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 59.601
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 24,
+      "_v1_track_item_index": 24
+    },
+    {
+      "beat_index": 29,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": "B19I6309",
+      "in_point": {
+        "seconds": 86.753,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.709,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 87.462
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 24,
+      "_v1_track_item_index": 25
+    },
+    {
+      "beat_index": 30,
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": "B19I6309",
+      "in_point": {
+        "seconds": 95.178,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.772,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 95.95
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 24,
+      "_v1_track_item_index": 26
     },
     {
       "beat_index": 31,
       "beat_type": "title_card",
-      "recipe_section": "Chill instruction MOGRT",
-      "filename": "B19I6673",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": "AI2I5095",
       "in_point": {
-        "seconds": 10.932,
+        "seconds": 105.314,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.497,
+        "seconds": 1.543,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 12.429
+        "seconds": 106.857
       },
       "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][AI2I5])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 31,
+      "_section_idx": 24,
       "_v1_track_item_index": 27
     },
     {
       "beat_index": 32,
       "beat_type": "title_card",
-      "recipe_section": "Chill instruction MOGRT",
-      "filename": "B19I6687",
+      "recipe_section": "\"Step 3: Make the batter\"",
+      "filename": "B19I6309",
       "in_point": {
-        "seconds": 42.96,
+        "seconds": 133.425,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 0.003,
+        "seconds": 1.247,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 42.963
+        "seconds": 134.672
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 31,
+      "_section_idx": 24,
       "_v1_track_item_index": 28
     },
     {
       "beat_index": 33,
-      "beat_type": "",
-      "recipe_section": "Raw-on-grill, sear builds (FRONT angle introduced)",
-      "filename": "B19I6687",
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 4: Coat the chicken\" (regular speed)",
+      "filename": "B19I6309",
       "in_point": {
-        "seconds": 42.963,
+        "seconds": 134.672,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.54,
+        "seconds": 0.004,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 44.503
+        "seconds": 134.676
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -957,23 +957,23 @@
     },
     {
       "beat_index": 34,
-      "beat_type": "",
-      "recipe_section": "Raw-on-grill, sear builds (FRONT angle introduced)",
-      "filename": "B19I6688",
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 4: Coat the chicken\" (regular speed)",
+      "filename": "B19I6310",
       "in_point": {
-        "seconds": 26.401,
+        "seconds": 11.22,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.126,
+        "seconds": 1.209,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 27.527
+        "seconds": 12.429
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -985,23 +985,23 @@
     },
     {
       "beat_index": 35,
-      "beat_type": "",
-      "recipe_section": "Raw-on-grill, sear builds (FRONT angle introduced)",
-      "filename": "B19I6691",
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 4: Coat the chicken\" (regular speed)",
+      "filename": "B19I6310",
       "in_point": {
-        "seconds": 32.532,
+        "seconds": 246.788,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.585,
+        "seconds": 1.669,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 34.117
+        "seconds": 248.457
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -1013,79 +1013,74 @@
     },
     {
       "beat_index": 36,
-      "beat_type": "",
-      "recipe_section": "Raw-on-grill, sear builds (FRONT angle introduced)",
-      "filename": "B19I6691",
+      "beat_type": "stop_motion",
+      "recipe_section": "Stop-motion stutter on chicken-into-batter",
+      "filename": null,
       "in_point": {
-        "seconds": 41.291,
-        "reasoning": "intersection of section timeline range with this V1 cut"
+        "seconds": null,
+        "reasoning": "no V1 clip overlap"
       },
       "duration": {
-        "seconds": 1.335,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 42.626
+        "seconds": 1.21,
+        "reasoning": "narrative section length"
       },
       "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: no source filename (title_card / nested / wrapper)"
       },
       "verdict": "editorial_group",
-      "confidence": "medium",
+      "confidence": "low",
       "effects": "",
       "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 33,
-      "_v1_track_item_index": 31
+      "mogrt_overlaps": []
     },
     {
       "beat_index": 37,
-      "beat_type": "",
-      "recipe_section": "Raw-on-grill, sear builds (FRONT angle introduced)",
-      "filename": "B19I6691",
+      "beat_type": "title_card",
+      "recipe_section": "\"Step 5: Fry the chicken\" + canola pool",
+      "filename": "B19I6311",
       "in_point": {
-        "seconds": 64.356,
+        "seconds": 23.148,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 0.002,
+        "seconds": 2.044,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 64.358
+        "seconds": 25.192
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 33,
-      "_v1_track_item_index": 32
+      "_section_idx": 37,
+      "_v1_track_item_index": 31
     },
     {
       "beat_index": 38,
-      "beat_type": "beauty",
-      "recipe_section": "Cooked thighs reveal + flip",
-      "filename": "B19I6691",
+      "beat_type": "",
+      "recipe_section": "Frying",
+      "filename": "B19I6314",
       "in_point": {
-        "seconds": 64.358,
+        "seconds": 53.512,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 0.561,
+        "seconds": 1.375,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 64.919
+        "seconds": 54.887
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -1097,95 +1092,11 @@
     },
     {
       "beat_index": 39,
-      "beat_type": "beauty",
-      "recipe_section": "Cooked thighs reveal + flip",
-      "filename": "B19I6693",
-      "in_point": {
-        "seconds": 4.755,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 1.498,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 6.253
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 38,
-      "_v1_track_item_index": 33
-    },
-    {
-      "beat_index": 40,
       "beat_type": "",
-      "recipe_section": "Cilantro / sauce-brushing transition",
-      "filename": "B19I6693",
+      "recipe_section": "\"Glaze\" title cuts back to glaze pot",
+      "filename": "B19I6314",
       "in_point": {
-        "seconds": 6.253,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 0.003,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 6.256
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 40,
-      "_v1_track_item_index": 33
-    },
-    {
-      "beat_index": 41,
-      "beat_type": "",
-      "recipe_section": "Cilantro / sauce-brushing transition",
-      "filename": "B19I6694",
-      "in_point": {
-        "seconds": 95.095,
-        "reasoning": "intersection of section timeline range with this V1 cut"
-      },
-      "duration": {
-        "seconds": 1.626,
-        "reasoning": "source span the editor used in this cut"
-      },
-      "out_point": {
-        "seconds": 96.721
-      },
-      "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
-      },
-      "verdict": "editorial_group",
-      "confidence": "medium",
-      "effects": "",
-      "nested": "",
-      "mogrt_overlaps": [],
-      "_section_idx": 40,
-      "_v1_track_item_index": 34
-    },
-    {
-      "beat_index": 42,
-      "beat_type": "beauty",
-      "recipe_section": "Animated-mask hero plate (mid-edit reveal)",
-      "filename": "B19I6694",
-      "in_point": {
-        "seconds": 96.721,
+        "seconds": 54.887,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
@@ -1193,11 +1104,95 @@
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 96.722
+        "seconds": 54.888
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 39,
+      "_v1_track_item_index": 32
+    },
+    {
+      "beat_index": 40,
+      "beat_type": "",
+      "recipe_section": "\"Glaze\" title cuts back to glaze pot",
+      "filename": "B19I6331",
+      "in_point": {
+        "seconds": 4.192,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.667,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 4.859
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 39,
+      "_v1_track_item_index": 33
+    },
+    {
+      "beat_index": 41,
+      "beat_type": "stop_motion",
+      "recipe_section": "The glaze toss (Transform punch-in stack + V2 stutter)",
+      "filename": "B19I6332",
+      "in_point": {
+        "seconds": 25.984,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.004,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 25.988
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 41,
+      "_v1_track_item_index": 34
+    },
+    {
+      "beat_index": 42,
+      "beat_type": "",
+      "recipe_section": "Tossed glazed chicken settling",
+      "filename": "B19I6332",
+      "in_point": {
+        "seconds": 25.988,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.914,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 26.902
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -1209,23 +1204,23 @@
     },
     {
       "beat_index": 43,
-      "beat_type": "beauty",
-      "recipe_section": "Animated-mask hero plate (mid-edit reveal)",
-      "filename": "AI2I5462",
+      "beat_type": "",
+      "recipe_section": "Tossed glazed chicken settling",
+      "filename": "B19I6333",
       "in_point": {
-        "seconds": 28.779,
+        "seconds": 4.505,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.168,
+        "seconds": 0.959,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 29.947
+        "seconds": 5.464
       },
       "camera": {
-        "choice": "overhead",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][AI2I5])"
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -1237,23 +1232,23 @@
     },
     {
       "beat_index": 44,
-      "beat_type": "beauty",
-      "recipe_section": "Animated-mask hero plate (mid-edit reveal)",
-      "filename": "B19I6695",
+      "beat_type": "",
+      "recipe_section": "Tossed glazed chicken settling",
+      "filename": "AI2I5116",
       "in_point": {
-        "seconds": 30.489,
+        "seconds": 10.802,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 0.002,
+        "seconds": 1.167,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 30.491
+        "seconds": 11.969
       },
       "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][AI2I5])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -1265,23 +1260,23 @@
     },
     {
       "beat_index": 45,
-      "beat_type": "",
-      "recipe_section": "Slicing beat (FRONT)",
-      "filename": "B19I6695",
+      "beat_type": "beauty",
+      "recipe_section": "Garnish: sesame seeds + scallions",
+      "filename": "AI2I5116",
       "in_point": {
-        "seconds": 30.491,
+        "seconds": 11.969,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.166,
+        "seconds": 0.001,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 31.657
+        "seconds": 11.97
       },
       "camera": {
-        "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][AI2I5])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -1293,23 +1288,23 @@
     },
     {
       "beat_index": 46,
-      "beat_type": "",
-      "recipe_section": "Slicing beat (FRONT)",
-      "filename": "B19I6696",
+      "beat_type": "beauty",
+      "recipe_section": "Garnish: sesame seeds + scallions",
+      "filename": "B19I6335",
       "in_point": {
-        "seconds": 30.906,
+        "seconds": 14.556,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 1.664,
+        "seconds": 1.168,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 32.57
+        "seconds": 15.724
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
@@ -1321,59 +1316,143 @@
     },
     {
       "beat_index": 47,
-      "beat_type": "",
-      "recipe_section": "End card",
-      "filename": "B19I6696",
+      "beat_type": "beauty",
+      "recipe_section": "Garnish: sesame seeds + scallions",
+      "filename": "B19I6335",
       "in_point": {
-        "seconds": 32.57,
+        "seconds": 39.873,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 0.004,
+        "seconds": 1.418,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 32.574
+        "seconds": 41.291
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 47,
-      "_v1_track_item_index": 37
+      "_section_idx": 45,
+      "_v1_track_item_index": 38
     },
     {
       "beat_index": 48,
-      "beat_type": "",
-      "recipe_section": "End card",
-      "filename": "B19I6696",
+      "beat_type": "beauty_close",
+      "recipe_section": "Plating + final hero",
+      "filename": "B19I6339",
       "in_point": {
-        "seconds": 54.805,
+        "seconds": 39.331,
         "reasoning": "intersection of section timeline range with this V1 cut"
       },
       "duration": {
-        "seconds": 2.876,
+        "seconds": 1.168,
         "reasoning": "source span the editor used in this cut"
       },
       "out_point": {
-        "seconds": 57.681
+        "seconds": 40.499
       },
       "camera": {
         "choice": "front",
-        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[chicken_thighs][B19I6])"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
       },
       "verdict": "editorial_group",
       "confidence": "medium",
       "effects": "",
       "nested": "",
       "mogrt_overlaps": [],
-      "_section_idx": 47,
-      "_v1_track_item_index": 38
+      "_section_idx": 48,
+      "_v1_track_item_index": 39
+    },
+    {
+      "beat_index": 49,
+      "beat_type": "beauty_close",
+      "recipe_section": "Plating + final hero",
+      "filename": "B19I6339",
+      "in_point": {
+        "seconds": 66.775,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 0.959,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 67.734
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 48,
+      "_v1_track_item_index": 40
+    },
+    {
+      "beat_index": 50,
+      "beat_type": "beauty_close",
+      "recipe_section": "Plating + final hero",
+      "filename": "B19I6339",
+      "in_point": {
+        "seconds": 76.368,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 1.335,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 77.703
+      },
+      "camera": {
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][B19I6])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 48,
+      "_v1_track_item_index": 41
+    },
+    {
+      "beat_index": 51,
+      "beat_type": "beauty_close",
+      "recipe_section": "Plating + final hero",
+      "filename": "AI2I5122",
+      "in_point": {
+        "seconds": 4.087,
+        "reasoning": "intersection of section timeline range with this V1 cut"
+      },
+      "duration": {
+        "seconds": 3.628,
+        "reasoning": "source span the editor used in this cut"
+      },
+      "out_point": {
+        "seconds": 7.715
+      },
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[korean_fried_chicken][AI2I5])"
+      },
+      "verdict": "editorial_group",
+      "confidence": "medium",
+      "effects": "",
+      "nested": "",
+      "mogrt_overlaps": [],
+      "_section_idx": 48,
+      "_v1_track_item_index": 42
     }
   ]
 }

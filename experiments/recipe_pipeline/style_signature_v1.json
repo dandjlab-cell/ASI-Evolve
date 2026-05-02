@@ -1,0 +1,667 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-02",
+  "scope": {
+    "recipe_count": 18,
+    "recipes": [
+      "baked_lobster_tail",
+      "baked_potato_soup",
+      "banana_muffins",
+      "basil_pesto",
+      "chicken_thighs",
+      "congee",
+      "crab_rangoon",
+      "cranberry_jalapeno_dip",
+      "creamy_potato_soup",
+      "cucumber_tea",
+      "flaky_pie_crust",
+      "french_onion_mac",
+      "korean_fried_chicken",
+      "peppermint_bark",
+      "pin_wheel",
+      "puppy_chow",
+      "steak_tacos",
+      "sweet_potato_pie"
+    ]
+  },
+  "beat_count": {
+    "per_recipe": {
+      "cranberry_jalapeno_dip": 19,
+      "flaky_pie_crust": 22,
+      "puppy_chow": 22,
+      "creamy_potato_soup": 23,
+      "sweet_potato_pie": 23,
+      "banana_muffins": 25,
+      "congee": 26,
+      "crab_rangoon": 27,
+      "cucumber_tea": 29,
+      "baked_potato_soup": 34,
+      "peppermint_bark": 34,
+      "steak_tacos": 41,
+      "french_onion_mac": 44,
+      "basil_pesto": 45,
+      "chicken_thighs": 49,
+      "baked_lobster_tail": 51,
+      "korean_fried_chicken": 52,
+      "pin_wheel": 52
+    },
+    "total_beats": 618,
+    "outliers": {
+      "median": 31.5,
+      "p25": 23.5,
+      "p75": 44.75,
+      "iqr": 21.25,
+      "low_fence": -8.375,
+      "high_fence": 76.625,
+      "low": [],
+      "high": []
+    }
+  },
+  "beat_type_distribution": {
+    "corpus": {
+      "unlabeled": 329,
+      "ingredient": 196,
+      "beauty_opener": 27,
+      "title_card": 24,
+      "beauty": 19,
+      "stop_motion": 11,
+      "technique": 7,
+      "beauty_close": 5
+    },
+    "per_recipe": {
+      "baked_lobster_tail": {
+        "unlabeled": 35,
+        "ingredient": 13,
+        "stop_motion": 2,
+        "beauty_opener": 1
+      },
+      "baked_potato_soup": {
+        "unlabeled": 18,
+        "ingredient": 14,
+        "beauty_opener": 1,
+        "stop_motion": 1
+      },
+      "banana_muffins": {
+        "unlabeled": 13,
+        "ingredient": 5,
+        "beauty": 3,
+        "beauty_opener": 2,
+        "technique": 2
+      },
+      "basil_pesto": {
+        "unlabeled": 25,
+        "ingredient": 12,
+        "beauty": 4,
+        "beauty_opener": 3,
+        "beauty_close": 1
+      },
+      "chicken_thighs": {
+        "ingredient": 21,
+        "unlabeled": 15,
+        "beauty": 5,
+        "beauty_opener": 3,
+        "technique": 3,
+        "title_card": 2
+      },
+      "congee": {
+        "unlabeled": 12,
+        "ingredient": 12,
+        "beauty_opener": 1,
+        "stop_motion": 1
+      },
+      "crab_rangoon": {
+        "unlabeled": 14,
+        "ingredient": 12,
+        "beauty_opener": 1
+      },
+      "cranberry_jalapeno_dip": {
+        "unlabeled": 12,
+        "ingredient": 6,
+        "beauty_opener": 1
+      },
+      "creamy_potato_soup": {
+        "unlabeled": 6,
+        "ingredient": 4,
+        "beauty": 4,
+        "beauty_opener": 3,
+        "stop_motion": 2,
+        "technique": 2,
+        "title_card": 2
+      },
+      "cucumber_tea": {
+        "unlabeled": 15,
+        "ingredient": 11,
+        "stop_motion": 2,
+        "beauty_opener": 1
+      },
+      "flaky_pie_crust": {
+        "unlabeled": 17,
+        "ingredient": 4,
+        "beauty_opener": 1
+      },
+      "french_onion_mac": {
+        "unlabeled": 22,
+        "ingredient": 21,
+        "beauty_opener": 1
+      },
+      "korean_fried_chicken": {
+        "title_card": 20,
+        "unlabeled": 12,
+        "ingredient": 8,
+        "beauty_close": 4,
+        "beauty_opener": 3,
+        "beauty": 3,
+        "stop_motion": 2
+      },
+      "peppermint_bark": {
+        "unlabeled": 24,
+        "ingredient": 9,
+        "beauty_opener": 1
+      },
+      "pin_wheel": {
+        "unlabeled": 37,
+        "ingredient": 13,
+        "beauty_opener": 1,
+        "stop_motion": 1
+      },
+      "puppy_chow": {
+        "unlabeled": 17,
+        "ingredient": 4,
+        "beauty_opener": 1
+      },
+      "steak_tacos": {
+        "ingredient": 20,
+        "unlabeled": 20,
+        "beauty_opener": 1
+      },
+      "sweet_potato_pie": {
+        "unlabeled": 15,
+        "ingredient": 7,
+        "beauty_opener": 1
+      }
+    },
+    "share_outliers_by_type": {
+      "beauty_opener": {
+        "median": 0.041,
+        "p25": 0.029,
+        "p75": 0.056,
+        "iqr": 0.027,
+        "low_fence": -0.011,
+        "high_fence": 0.097,
+        "low": [],
+        "high": [
+          {
+            "recipe": "creamy_potato_soup",
+            "value": 0.1304
+          }
+        ]
+      },
+      "ingredient": {
+        "median": 0.285,
+        "p25": 0.213,
+        "p75": 0.424,
+        "iqr": 0.211,
+        "low_fence": -0.104,
+        "high_fence": 0.74,
+        "low": [],
+        "high": []
+      },
+      "stop_motion": {
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.036,
+        "iqr": 0.036,
+        "low_fence": -0.054,
+        "high_fence": 0.09,
+        "low": [],
+        "high": []
+      },
+      "unlabeled": {
+        "median": 0.525,
+        "p25": 0.491,
+        "p75": 0.678,
+        "iqr": 0.187,
+        "low_fence": 0.21,
+        "high_fence": 0.959,
+        "low": [],
+        "high": []
+      },
+      "technique": {
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "iqr": 0.0,
+        "low_fence": 0.0,
+        "high_fence": 0.0,
+        "low": [],
+        "high": [
+          {
+            "recipe": "creamy_potato_soup",
+            "value": 0.087
+          },
+          {
+            "recipe": "banana_muffins",
+            "value": 0.08
+          },
+          {
+            "recipe": "chicken_thighs",
+            "value": 0.0612
+          }
+        ]
+      },
+      "beauty": {
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.043,
+        "iqr": 0.043,
+        "low_fence": -0.065,
+        "high_fence": 0.107,
+        "low": [],
+        "high": [
+          {
+            "recipe": "creamy_potato_soup",
+            "value": 0.1739
+          },
+          {
+            "recipe": "banana_muffins",
+            "value": 0.12
+          }
+        ]
+      },
+      "beauty_close": {
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "iqr": 0.0,
+        "low_fence": 0.0,
+        "high_fence": 0.0,
+        "low": [],
+        "high": [
+          {
+            "recipe": "korean_fried_chicken",
+            "value": 0.0769
+          },
+          {
+            "recipe": "basil_pesto",
+            "value": 0.0222
+          }
+        ]
+      },
+      "title_card": {
+        "median": 0.0,
+        "p25": 0.0,
+        "p75": 0.0,
+        "iqr": 0.0,
+        "low_fence": 0.0,
+        "high_fence": 0.0,
+        "low": [],
+        "high": [
+          {
+            "recipe": "korean_fried_chicken",
+            "value": 0.3846
+          },
+          {
+            "recipe": "creamy_potato_soup",
+            "value": 0.087
+          },
+          {
+            "recipe": "chicken_thighs",
+            "value": 0.0408
+          }
+        ]
+      }
+    }
+  },
+  "camera_by_beat_type": {
+    "labeled_recipes": [
+      "baked_lobster_tail",
+      "baked_potato_soup",
+      "banana_muffins",
+      "basil_pesto",
+      "chicken_thighs",
+      "congee",
+      "crab_rangoon",
+      "cranberry_jalapeno_dip",
+      "creamy_potato_soup",
+      "cucumber_tea",
+      "flaky_pie_crust",
+      "french_onion_mac",
+      "korean_fried_chicken",
+      "peppermint_bark",
+      "pin_wheel",
+      "puppy_chow",
+      "steak_tacos",
+      "sweet_potato_pie"
+    ],
+    "unlabeled_recipes": [],
+    "coverage_per_recipe": {
+      "baked_lobster_tail": {
+        "beats": 51,
+        "labeled": 51,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "baked_potato_soup": {
+        "beats": 34,
+        "labeled": 34,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "banana_muffins": {
+        "beats": 25,
+        "labeled": 24,
+        "unknown": 1,
+        "coverage": 0.96
+      },
+      "basil_pesto": {
+        "beats": 45,
+        "labeled": 45,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "chicken_thighs": {
+        "beats": 49,
+        "labeled": 47,
+        "unknown": 2,
+        "coverage": 0.959
+      },
+      "congee": {
+        "beats": 26,
+        "labeled": 26,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "crab_rangoon": {
+        "beats": 27,
+        "labeled": 27,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "cranberry_jalapeno_dip": {
+        "beats": 19,
+        "labeled": 19,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "creamy_potato_soup": {
+        "beats": 23,
+        "labeled": 20,
+        "unknown": 3,
+        "coverage": 0.87
+      },
+      "cucumber_tea": {
+        "beats": 29,
+        "labeled": 29,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "flaky_pie_crust": {
+        "beats": 22,
+        "labeled": 22,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "french_onion_mac": {
+        "beats": 44,
+        "labeled": 44,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "korean_fried_chicken": {
+        "beats": 52,
+        "labeled": 50,
+        "unknown": 2,
+        "coverage": 0.962
+      },
+      "peppermint_bark": {
+        "beats": 34,
+        "labeled": 34,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "pin_wheel": {
+        "beats": 52,
+        "labeled": 52,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "puppy_chow": {
+        "beats": 22,
+        "labeled": 22,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "steak_tacos": {
+        "beats": 41,
+        "labeled": 41,
+        "unknown": 0,
+        "coverage": 1.0
+      },
+      "sweet_potato_pie": {
+        "beats": 23,
+        "labeled": 23,
+        "unknown": 0,
+        "coverage": 1.0
+      }
+    },
+    "overall_camera": {
+      "front": 434,
+      "overhead": 176,
+      "unknown": 8
+    },
+    "by_beat_type": {
+      "beauty_opener": {
+        "front": 19,
+        "overhead": 8
+      },
+      "ingredient": {
+        "front": 139,
+        "overhead": 55,
+        "unknown": 2
+      },
+      "stop_motion": {
+        "overhead": 8,
+        "front": 2,
+        "unknown": 1
+      },
+      "unlabeled": {
+        "front": 234,
+        "overhead": 92,
+        "unknown": 3
+      },
+      "technique": {
+        "front": 3,
+        "overhead": 3,
+        "unknown": 1
+      },
+      "beauty": {
+        "front": 13,
+        "overhead": 6
+      },
+      "beauty_close": {
+        "front": 4,
+        "overhead": 1
+      },
+      "title_card": {
+        "front": 20,
+        "overhead": 3,
+        "unknown": 1
+      }
+    }
+  },
+  "duration": {
+    "overall_percentiles": {
+      "p10": 0.417,
+      "p25": 0.918,
+      "p50": 1.251,
+      "p75": 1.627,
+      "p90": 2.444
+    },
+    "overall_n": 613,
+    "by_beat_type": {
+      "beauty_opener": {
+        "p10": 0.002,
+        "p25": 0.855,
+        "p50": 1.783,
+        "p75": 3.337,
+        "p90": 3.754,
+        "n": 27
+      },
+      "ingredient": {
+        "p10": 0.698,
+        "p25": 1.168,
+        "p50": 1.335,
+        "p75": 1.668,
+        "p90": 2.482,
+        "n": 196
+      },
+      "stop_motion": {
+        "p10": 0.004,
+        "p25": 0.292,
+        "p50": 0.542,
+        "p75": 1.001,
+        "p90": 1.168,
+        "n": 11
+      },
+      "unlabeled": {
+        "p10": 0.459,
+        "p25": 0.917,
+        "p50": 1.209,
+        "p75": 1.595,
+        "p90": 2.223,
+        "n": 328
+      },
+      "technique": {
+        "p10": 0.418,
+        "p25": 0.844,
+        "p50": 0.896,
+        "p75": 1.197,
+        "p90": 1.312,
+        "n": 6
+      },
+      "beauty": {
+        "p10": 0.001,
+        "p25": 0.002,
+        "p50": 0.403,
+        "p75": 1.168,
+        "p90": 1.442,
+        "n": 18
+      },
+      "beauty_close": {
+        "p10": 1.043,
+        "p25": 1.168,
+        "p50": 1.335,
+        "p75": 2.064,
+        "p90": 3.002,
+        "n": 5
+      },
+      "title_card": {
+        "p10": 0.408,
+        "p25": 0.84,
+        "p50": 1.209,
+        "p75": 1.531,
+        "p90": 2.081,
+        "n": 22
+      }
+    },
+    "median_per_recipe": {
+      "baked_lobster_tail": 1.752,
+      "baked_potato_soup": 1.564,
+      "banana_muffins": 0.98,
+      "basil_pesto": 0.895,
+      "chicken_thighs": 1.042,
+      "congee": 1.377,
+      "crab_rangoon": 1.376,
+      "cranberry_jalapeno_dip": 1.335,
+      "creamy_potato_soup": 0.897,
+      "cucumber_tea": 1.084,
+      "flaky_pie_crust": 1.355,
+      "french_onion_mac": 1.251,
+      "korean_fried_chicken": 1.063,
+      "peppermint_bark": 1.544,
+      "pin_wheel": 1.167,
+      "puppy_chow": 1.231,
+      "steak_tacos": 1.502,
+      "sweet_potato_pie": 1.293
+    },
+    "median_outliers": {
+      "median": 1.272,
+      "p25": 1.068,
+      "p75": 1.377,
+      "iqr": 0.309,
+      "low_fence": 0.605,
+      "high_fence": 1.841,
+      "low": [],
+      "high": []
+    }
+  },
+  "camera_runs": {
+    "by_camera_summary": {
+      "front": {
+        "n_runs": 106,
+        "max_run": 26,
+        "p25": 1.0,
+        "p50": 3.0,
+        "p75": 5.0,
+        "p90": 7.0
+      },
+      "overhead": {
+        "n_runs": 95,
+        "max_run": 11,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 2.0,
+        "p90": 3.6
+      },
+      "unknown": {
+        "n_runs": 7,
+        "max_run": 2,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p90": 1.4
+      }
+    },
+    "max_run_per_recipe": {
+      "korean_fried_chicken": 26,
+      "sweet_potato_pie": 23,
+      "puppy_chow": 22,
+      "banana_muffins": 17,
+      "chicken_thighs": 15,
+      "crab_rangoon": 13,
+      "baked_lobster_tail": 11,
+      "basil_pesto": 10,
+      "steak_tacos": 10,
+      "cranberry_jalapeno_dip": 8,
+      "cucumber_tea": 8,
+      "baked_potato_soup": 7,
+      "french_onion_mac": 7,
+      "peppermint_bark": 7,
+      "pin_wheel": 7,
+      "creamy_potato_soup": 6,
+      "congee": 5,
+      "flaky_pie_crust": 4
+    },
+    "max_run_outliers": {
+      "median": 9.0,
+      "p25": 7.0,
+      "p75": 14.5,
+      "iqr": 7.5,
+      "low_fence": -4.25,
+      "high_fence": 25.75,
+      "low": [],
+      "high": [
+        {
+          "recipe": "korean_fried_chicken",
+          "value": 26
+        }
+      ]
+    }
+  },
+  "deferred_v2": [
+    "speed-ramp taxonomy (requires Premiere XML re-parse)",
+    "nested sequence usage (XML re-parse)",
+    "stop-motion segment-level stats (need per-segment frame counts)",
+    "title-card / beauty_close placement timing (need timeline_in coords)"
+  ]
+}
