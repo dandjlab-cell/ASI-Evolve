@@ -1,170 +1,195 @@
-# Recipe Pipeline — Session Handoff (2026-04-27)
+# ASI-Evolve Beauty Pick Iteration — Session Handoff
 
-**Date:** 2026-04-27
-**Branch:** `main`
+**Date:** 2026-05-02
+**Branch:** `refactor/writer-modules`
 **Last commits:**
-- ASI-Evolve `9422103` — prproj reader + effect reasoning + A/B diff harness
-- ASI-Evolve `b22fbae` — session handoff doc
-- Brain `e648860` — ASI-Evolve session: vocabulary v2, prproj writer plan, full effect decoder
+- ASI-Evolve `0e34228` — visual shot-type classification (corpus 0.263 → 0.315)
+- ASI-Evolve `132efea` — nested + multicam VideoSequenceSource recurse in prproj_reader
+- ASI-Evolve `890acb0` — document tuning experiments (per-clip cap reverted)
+- ASI-Evolve `102a761` — ASI iteration harness (runner, scorer, prompts, drivers)
+- roughcut-ai `490ab8c` — audio_cues parser CLIP_<cid> prefix fix
 
 **Role:** BUILDER
 
 ---
 
-## Session goal
+## Project elevator pitch (one sentence)
 
-Lock down the vocabulary of editorial intents (across all 17 corpus recipes), decode every effect parameter format we'd need to write a fresh Premiere project from scratch, and decide the production-system architecture for the manifest writer.
+ASI-Evolve is the prompt-iteration / harness repo for [[Recipe Pipeline]] (roughcut-ai); this branch contains the beauty-pick prompt iteration harness — runner that calls Opus on cached scan candidates, scorer that compares against editor truth, and ~10 supporting modules (truth-set extraction, shot-type classification cache, etc.).
 
-## What Was Done
+## What Was Done This Session (2026-05-01 → 2026-05-02)
 
-### Vocabulary work
-- Built `recipe-analyze` skill at `~/.claude/skills/recipe-analyze/` — orchestrates `prproj_reader` → frame extraction → Opus editorial reasoning → pattern library refresh
-- Reran all 17 recipes through image-mode editorial reasoning (Opus reads actual rendered frames at every cut + effect boundary)
-- Generated **Editorial Intents Vocabulary v1** at `Brain/Projects/ASI-Evolve/Editorial Intents Vocabulary v1.md` — 7 categories, 26 entries, each with Definition + Realization + Recipes-cited + Counter-examples
-- Refined Stop-Motion category based on Dan's feedback:
-  - Two distinct patterns (`no-hands-addition` normal-paced vs `frame-staccato-stop-motion` 2-frame-per-clip)
-  - Shared constraints: locked overhead, hands don't block action (off-camera reach OK)
-  - Frame-staccato has ~5-frame entry hold + 2-frame body + ~5-frame exit hold (canonical structure)
-  - Exit hold extends past 5 frames when chaining into a Transform zoom-in (chained-effect rule)
-- Added `masked-hand-over-staccato` entry — composite of object-aware mask on hand layer + frame-staccato underneath. Steak_tacos sheet-pan moment is the canonical example.
+End-to-end build and tuning of the beauty-pick iteration harness. **Corpus composite went 0.131 → 0.315 (2.4× lift). KFC alone: 0.131 → 0.570 (4.4× lift).** Approaching the practical ceiling (~0.55-0.60 corpus on this scorer).
 
-### Decoder work
-- Added speed-ramp extraction to `prproj_reader.py` — TimeRemapping + PlaybackSpeed now flow through to dumps
-- Verified all Mask2 Type values (was guessing before):
-  - `0` = system companion mask
-  - `1` = Ellipse Mask Tool
-  - `2` = Rectangle Mask Tool
-  - `3` = Pen Mask Tool
-  - `4` = Object Mask Tool (Sensei)
-- Verified Lumetri pid → UI panel mapping via A/B tests:
-  - pid 20 = Basic Correction Saturation
-  - pid 31 = Creative Saturation
-  - pid 90 = HSL Secondary Saturation
-  - pid 51 = Vignette Amount
-- Decoded project skeleton XML for the writer (3 A/B pairs):
-  - Bin / nested bin (`BinProjectItem` ClassID `dbfd6653-...`)
-  - Media import (`MasterClip` + `Media` + `VideoMediaSource` + `VideoStream` + `ClipProjectItem` + `ClipLoggingInfo`)
-  - Empty sequence (~50 elements: Sequence + TrackGroups + per-track ClipTracks + audio mixer)
-  - Nested-sequence-as-clip (via `VideoSequenceSource` instead of `VideoMediaSource`)
-- All ClassIDs documented in `Brain/Knowledge/API Integration/Effect Replication Recipes.md`
+Levers tried (in order, with what stuck):
+1. **Cap + stratification + transcript injection** (initial shim) — corpus 0.131 → 0.217
+2. **Audio_cues parser fix in roughcut-ai** (CLIP_<cid> mirroring bug) — fix shipped, $0.21/recipe was being wasted before
+3. **Production VLM v2 gate** — corpus → 0.262
+4. **REDO-only audio integration** (Dan's insight: crew_positive is baseline noise; crew_redo is the high-signal cue) — corpus → 0.274, KFC → 0.403
+5. **Nested + multicam recurse in prproj_reader** — better truth, eliminated null source_filenames
+6. **Visual shot-type classification per candidate** (the win) — corpus → 0.315, KFC → 0.570
 
-### Architecture decision
-- **Prproj-direct is the primary path** for the production manifest writer
-- UXP can't do speed ramps (per Adobe API: "Set speed: NO"); UXP can't do MOGRT text (per existing vault notes); both are core editorial elements
-- Server-deployable, no Premiere needed at build time, no plugin install for editors
-- Confirmed V1/V2 sync happens upstream (`audio_sync.py` cross-correlates audio → pairs.json with offsets → `build_editlist.py` grounding picks pre-aligned source coords). Recipe writer is dumb placement: V1 on track 1, V2 on track 2, both at same `timeline_in`. No offset math.
-- **The detailed plan for next session is at `Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md`**
+Levers tested and reverted:
+- Hard pick cap "exactly 4-6 picks" — corpus dropped 0.274 → 0.239, missed editor's long tail
+- Per-clip cap (cap=15) — KFC variance exploded ±0.029 → ±0.208
+- Image mode at cap=10 — tied corpus, asymmetric per-recipe wins/losses
+- Corpus-average shot-type prompt rules — KFC +0.063 / basil_pesto -0.062, net flat
+- NMS=3.0 (production default) — hurts the picker even when reachability stays at 80%
 
 ## Current State
 
-**What works end-to-end:**
-- Reader: any `.prproj` → JSON dump with cuts, effects, masks, speed ramps, MOGRT text, Lumetri params, Mirror, Replicate
-- `recipe-analyze` skill: prproj → 2fps + 12fps frames → Opus editorial reasoning → pattern library refresh
-- Vocabulary clustering: 17 OBSERVATIONS sections → curated 26-entry intent catalog
-- A/B diff harness: any two prprojs → byte-level diffs in matching ArbVideoComponentParams
+### What works end-to-end
 
-**What's documented:**
-- Effect Replication Recipes — every parameter for every effect we use, with verified values from steak_tacos
-- Stop-motion vocabulary fully refined (4 entries with shared constraints + 5-2-5 frame rule)
-- Speed ramp encoding (per `Premiere Speed Ramp via prproj.md`)
-- MOGRT text encoding (`textEditValue` UTF-16 JSON inside ArbVideoComponentParam)
-- Mask Type discriminator (0/1/2/3/4 mapping verified)
-- Bin/Media/Sequence/NestedSequence ClassIDs
+```bash
+cd /Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline
 
-**What's not yet built:**
-- The prproj-direct writer (`manifest_to_prproj.py`) — round-by-round plan exists, build is next session
-- Mirror Reflection Angle visual semantics (storage verified; visual mapping needs in-Premiere observation — 5 min check on existing test prprojs)
-- Replicate Count visual semantics (same — 5 min check)
+# 3-run averaged benchmark on 5-recipe corpus, parallel fan-out
+python3 run_n_average.py --prompt prompts/beauty_pick_text_fewshot.jinja2 -n 3
+# ~3 min wall, $0 (Opus subscription)
 
-## Key Files Changed
+# Single-run benchmark / mutation loop
+python3 iterate_beauty_pick.py --benchmark
+python3 iterate_beauty_pick.py --generations 3 --variants-per-gen 2
 
-| File | What |
+# Image mode benchmark
+python3 run_image_mode_avg.py -n 3
+```
+
+The picker reads:
+- VLM beauty_score (from production roughcut-ai v2 scan)
+- Audio REDO flag (crew_redo cues from audio_cues.json)
+- Shot type per candidate (close / medium / wide / overhead / macro / reveal)
+- Few-shot leave-one-out examples from other recipes' truth sets
+
+Best result, 3-run averaged on `prompts/beauty_pick_text_fewshot.jinja2`:
+- **Corpus 0.315** (best of session)
+- **KFC 0.570** (best of session, 4.4× session-start)
+- basil_pesto 0.547, time_match 0.42 on KFC (3.5× prior)
+
+### What's still weak
+
+| Recipe | Composite | Bottleneck |
+|---|---|---|
+| basil_pesto | 0.547 | None major; near ceiling |
+| **chicken_thighs** | **0.221** | Score saturation on AI2I5461 (4+ frames at 1.00 crowd out lower-scored truth) |
+| korean_fried_chicken | 0.570 | None major; near ceiling |
+| **creamy_potato_soup** | **0.057** | Picker still 0% clip_overlap (truth on AI2I49xx, picker prefers other clips). Nested-clip truth picks need motion strip to pin down moment |
+| easy_banana_muffins | 0.181 | Editor uses cold-open hero on uncommon clip (A057_xxx), picker doesn't surface it |
+
+## Key Files Changed (this session)
+
+| Path | Change |
 |---|---|
-| `experiments/recipe_pipeline/prproj_reader.py` | Speed ramp extraction added; Mask vertex decode; full param dumps for Transform/Lumetri/Mirror/Replicate |
-| `experiments/recipe_pipeline/effect_reasoning/run_effect_reasoning.py` | Compact effects table for Opus prompts; speed-ramp column added |
-| `experiments/recipe_pipeline/effect_reasoning/run_effect_reasoning_with_images_cli.py` | Image-mode reasoning runner — uses frame_index for 12fps dense-region frames |
-| `experiments/recipe_pipeline/effect_reasoning/cluster_vocabulary.py` | NEW — synthesizes OBSERVATIONS into the editorial-intent vocabulary |
-| `experiments/recipe_pipeline/prproj_ab_diff/diff_arb_payloads.py` | A/B diff harness — used to decode Mask Type, Lumetri pids, MOGRT text |
-| `experiments/recipe_pipeline/prproj_dumps/*.json` | 18 effect dumps (17 recipes + 1 legacy duplicate) |
-| `~/.claude/skills/recipe-analyze/SKILL.md` | NEW — orchestrator skill doc |
-| `~/.claude/skills/recipe-analyze/scripts/orchestrate.sh` | NEW — chains reader → frames → reasoning → library refresh |
-| `~/.claude/skills/recipe-analyze/scripts/extract_frames_for_prproj.py` | NEW — 2fps baseline + 12fps in dense regions identified from effects JSON |
-| `~/.claude/skills/recipe-analyze/scripts/refresh_pattern_library.py` | NEW — auto-refreshes the cross-recipe headline-stats table |
-| `Brain/Knowledge/API Integration/Effect Replication Recipes.md` | NEW — canonical reference; every effect's full param spec |
-| `Brain/Knowledge/API Integration/Premiere Adjustment Layer Transform via prproj.md` | UPDATED — Uniform Scale semantics corrected |
-| `Brain/Knowledge/API Integration/Premiere Mask2 via prproj.md` | UPDATED — full Type → tool table |
-| `Brain/Knowledge/API Integration/Premiere prproj Reverse Engineering Method.md` | UPDATED — extended ClassID table with bin/media/sequence elements |
-| `Brain/Projects/ASI-Evolve/Editorial Intents Vocabulary v1.md` | NEW — 7-category, 26-entry vocabulary |
-| `Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md` | NEW — round-by-round build plan for next session |
-| `Brain/Projects/ASI-Evolve/Test Prprojs Needed.md` | UPDATED — closed (all primary tests done) |
-| `Brain/Projects/ASI-Evolve/Annotations/{recipe} — Effect Reasoning (image mode).md` | 17 NEW files — Opus reasoning per recipe |
+| `experiments/recipe_pipeline/runners/beauty_pick_runner.py` | Full runner — v2 path, NMS, REDO-only audio, shot_type, few-shot, image mode, batched mode |
+| `experiments/recipe_pipeline/scorers/beauty_pick.py` | Composite scorer with span-based time match |
+| `experiments/recipe_pipeline/prompts/beauty_pick_text_fewshot.jinja2` | Active best prompt (shot-type-aware editorial guidance) |
+| `experiments/recipe_pipeline/iterate_beauty_pick.py` | Mutation loop driver (parallel fan-out across 5 recipes) |
+| `experiments/recipe_pipeline/run_n_average.py` | N-run averaging for noise-denoising |
+| `experiments/recipe_pipeline/run_image_mode_avg.py` | Image mode equivalent |
+| `experiments/recipe_pipeline/build_shot_type_cache.py` | One-time per-recipe shot-type classification (~25 min wall) |
+| `experiments/recipe_pipeline/classify_shot_types.py` | Diagnostic comparing editor truth vs picker shot-type distributions |
+| `experiments/recipe_pipeline/shot_type_diagnostic.py` | Regex-based diagnostic (inconclusive — VLM doesn't tag shot type in prose) |
+| `experiments/recipe_pipeline/prproj_reader.py` | Added `resolve_source_info()` (filename + inner_source_in_ticks); recurses into nested + multicam VideoSequenceSource |
+| `experiments/recipe_pipeline/truth_sets/{recipe}/beauty.json` | Truth sets for 5 corpus recipes (after multi-cut span-aware extraction) |
+| `experiments/recipe_pipeline/truth_sets/{recipe}/shot_types.json` | Per-candidate shot-type cache (~300 entries each) |
+| roughcut-ai `tools/manifest_gen/audio_cues.py` | Parser tolerates `CLIP_<cid>` prefix from LLM output |
 
 ## Decisions Made
 
 | Decision | Reasoning |
 |---|---|
-| **Prproj-direct as primary writer architecture** | UXP can't do speed ramps (Adobe API: "Set speed: NO"). Recipes use them constantly. Without prproj-direct, an entire editorial layer is unencodable. Plus: server-deployable, no plugin install, deterministic. |
-| **Stop-Motion is its own vocabulary category, with TWO distinct patterns** | Dan corrected the conflation: `no-hands-addition` (normal pace, defined by hand-presence) is orthogonal to `frame-staccato-stop-motion` (defined by 2-frame-per-clip cut rate). Both can stack. |
-| **5-frame bookends are non-negotiable for staccato sequences** | Without them the staccato feels jarring on entry/exit. Exit hold extends past 5 when chaining into a zoom transition. |
-| **MOGRT counts are tooling noise, NOT editorial signature** | Saved as feedback memory previously — Dan added MOGRTs because manifest can't get text in any other way. Don't infer text-style preferences from Capsule density. |
-| **Verified Mask Type table over assumed** | Had been guessing Type=4=object-aware from correlation. Ran A/B tests (`MASK_PEN`, `MASK_ELLIPSE`) → confirmed 0=companion, 1=Ellipse, 2=Rectangle, 3=Pen, 4=Object. |
-| **V1/V2 sync is upstream concern, not writer concern** | Read `roughcut-ai/premiere-plugin/lib/ppro-api.js:596-684` — recipe pipeline writer doesn't consume `audio_offset_s`. Sync was applied during manifest generation by `audio_sync.py`. By manifest-write time, source coords already represent the same wall-clock moment. |
-| **Object-aware mask geometry stays editor's responsibility** | Sensei generates the Tracker payloads on-click. Manifest emits Type=4 placeholder + marker; editor clicks Object Mask Tool; Sensei populates everything. We don't need to decode the FlatBuffers tracker format. |
-| **Image-mode reasoning beats text-only reasoning** | Image mode caught visual details (red garlic press, hand-presence patterns, mask-isolated hand exits) that text descriptors lost. Quality lift validated end-to-end across all 17 recipes. |
-| **Vocabulary clustering used `--no-annotation` flag for Opus calls** | Existing per-beat annotation caused Opus to anchor to its prose framing instead of deriving from effects + frames. Removing it dramatically improved precision (verified on steak_tacos title-card section bug). |
+| Per-candidate structured tags > per-corpus prompt rules | Proved 3× this session (audio asymmetry, NMS, shot type). Rules help one recipe and hurt another by similar magnitude; tags let picker compose recipe-specific patterns organically. See [[Per-Candidate Tags Beat Per-Corpus Rules]]. |
+| Drop crew_positive as a flag, keep only crew_redo | Crew is positive on ~90% of takes whether they're keepers or not. crew_redo is high signal — explicitly says "the take just finished was NOT the keeper." |
+| NMS_WINDOW_S = 1.5 (vs production 3.0) | Production NMS=3.0 collapses hero clusters that the picker uses as a "this region is hot" discrimination signal. KFC composite dropped 0.298 → 0.245 with NMS=3.0; held at 0.290 with 1.5. |
+| No per-clip cap on v2 path | Tested cap=8 (reachability dropped 74% → 63%) and cap=15 (KFC variance exploded). Editor patterns differ per recipe — single global cap can't satisfy both KFC's "many picks on one clip" and chicken_thighs' "picks across many clips". |
+| Image mode at cap=10, not cap=30 | At cap=30, Opus skims/anchors instead of reading all images. Cap=10 has Opus actually Read each frame; corpus tied with text mode. |
+| Free-form picker output, JSON block at end (batched mode) | JSON-only system prompt is brittle; free-form lets picker reason aloud (great for debugging) without breaking parsing. |
 
 ## What's Next
 
-1. **Build round 1 of the prproj-direct writer** — `manifest_to_prproj.py` that takes basil_pesto's existing manifest + ffprobe + emits a working prproj with bins + media + sequence + V1 clips. Spec is in `Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md` §"Round 1".
-2. **Verify round 1** — open generated prproj in Premiere, spot-check 3 clips, round-trip read it with the existing `prproj_reader.py` to confirm values match the manifest exactly.
-3. **Round 2** — V2 + MOGRTs (proves the prproj-direct MOGRT path UXP can't do).
-4. **Round 3** — Effects layer (the editorial-intent vocabulary: Transforms, speed ramps, Lumetri, masks, kaleidoscopes).
-5. **Round 4** — Manifest schema v2 design with intent tags per beat.
-6. **Side task (~10 min)** — open `MIRROR_ANGLE_0/90` and `REPLICATE_2/3` in Premiere, observe and document the visual semantics. Updates to `Effect Replication Recipes.md`.
+### Immediate (likely 30-min wins)
+
+1. **Push the branch.** Currently local on `refactor/writer-modules`.
+2. **Inform roughcut-ai agent of the shot-type result.** Hand-off prompt at `~/DevApps/Brain/Projects/RoughCut/Handoff to roughcut-ai — *.md` (3 prior handoffs already pushed). Worth pinging them that visual shot-type classification gave the biggest single lift.
+3. **Decide whether to ship Round 2 prproj writer** (V2 + MOGRT text emit) — that was the next item before beauty-pick rabbit-holed. Plan still at `~/DevApps/Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md`.
+
+### Lever ideas worth testing if continuing beauty pick
+
+1. **Motion strip per candidate** (~5-10 frames at 1s spacing per candidate, sent to image-mode picker). Could close the basil_pesto / chicken_thighs time_match gap. Implementation: extend `_frame_path_for_candidate` to return a list, prompt asks picker to read N frames per candidate. Cap drops to ~10 candidates.
+2. **Recipe-aware per-clip cap.** Compute per-recipe truth-distribution metadata at truth-extract time, use to set cap dynamically. KFC pattern (B19I6339 has 4+ truth picks) wants cap=N; chicken_thighs pattern (truth across 5 clips) wants cap=K.
+3. **Editor-feedback fine-tuning loop.** Long horizon (months of feedback data needed); only meaningful at scale.
+
+### What NOT to do
+
+- **Don't add corpus-average prompt rules** ("prefer X for Y category"). Tested twice this session (shot type, audio keeper); both hurt as many recipes as they helped. Use per-candidate tags instead.
+- **Don't bump CANDIDATE_CAP higher than 300** without per-clip stratification — picker drowns at higher caps. Tested cap=1500 earlier, corpus dropped.
+- **Don't re-test image mode at high caps.** Cap=30 confirmed worse than cap=10 (Opus skims).
 
 ## Known Issues
 
-- **steak_tacos vs steak_taco slug duplicate** — `prproj_dumps/` has both. The reader's slugifier produced `steak_taco` from `STEAK TACO.prproj` filename; later we copied to `steak_tacos_effects.json` for consistency. Only impacts directory listings; effect-reasoning files use `steak_tacos`. Cleanup: delete `steak_taco_effects.json`.
-- **baked_lobster_tails reports 775s duration** — known parser anomaly from prior handoff (beat 55 nest at 736s far past actual ~60s recipe). Cosmetic; effects extraction is fine.
-- **Mirror reflection-angle + Replicate count visual semantics unverified** — storage formats are decoded; what specific values (angle 0 vs 90, count 2 vs 3) DO visually requires opening the test prprojs in Premiere. 5-minute check.
-
-## Scope guard rail — DO NOT over-scope
-
-**This session = Round 1 ONLY.** Build the skeleton writer that produces a prproj with bins + media + sequence + V1 clip placement. Stop there and verify before adding more.
-
-DO NOT this session:
-- ❌ Add V2 cam track (that's Round 2)
-- ❌ Implement MOGRT writing (that's Round 2)
-- ❌ Implement ANY effects: no Transforms, no speed ramps, no Lumetri, no masks (that's Round 3)
-- ❌ Encode editorial-intent vocabulary entries (that's Round 4)
-- ❌ Decode the Lumetri Blob, the PremiereFilterPrivateData, or the Tracker payloads (deferred — see Effect Replication Recipes "A/B tests needed" section)
-
-The vocabulary doc exists for future rounds. Read it to understand the destination, but don't try to implement vocabulary intents in Round 1.
-
-The pass criteria for Round 1 is in `Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md` — open Premiere, load the generated prproj, spot-check 3 V1 clips. That's the bar. Hitting it = round 1 done; iterate to round 2 next.
+- **Branch is `refactor/writer-modules`** but the writer-refactor work is from a much earlier session; today's commits are on top. Worth either renaming the branch or merging soon to clarify.
+- **`creamy_potato_soup` truth picks** include 3 entries on AI2I4961 at low source-times (0-1s) which may be artifacts of the nested-clip recurse — first inner clip's source-time is always picked even if the actual moment is one of the other 6 inner clips. Acceptable for now but worth revisiting with motion strip work.
+- **Opus stochasticity** is real (±0.05 across same-prompt runs). Always use 3-run averaging for benchmark claims; single-shot is noisy.
+- **Per-clip cap on v2 path is OFF** by design (commit `890acb0`). Don't re-enable without recipe-aware logic.
 
 ## Quick Start for Next Session
 
 ```bash
-# Set cwd to the ASI-Evolve repo (where the writer code will live):
+# Pull and confirm state
 cd /Users/dandj/DevApps/ASI-Evolve
+git checkout refactor/writer-modules
+git log --oneline -5
 
-# Read the canonical context for Round 1 (in this order):
-cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md"
-cat "/Users/dandj/DevApps/Brain/Knowledge/API Integration/Effect Replication Recipes.md"
+# Verify the 3-run benchmark still works
+cd experiments/recipe_pipeline
+python3 run_n_average.py --prompt prompts/beauty_pick_text_fewshot.jinja2 -n 3
+# Expected: corpus ≈ 0.315, KFC ≈ 0.57, basil ≈ 0.55, ~3 min wall
 
-# Vocabulary doc is reference-only for Round 1 — don't implement it yet:
-# cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/Editorial Intents Vocabulary v1.md"
+# Read the full session arc
+cat ~/DevApps/Brain/Projects/RoughCut/Beauty\ Pick\ Prompt\ Iteration\ —\ 2026-04-29.md
 
-# Confirm the existing reader still works (sanity check, not part of build):
-python3 experiments/recipe_pipeline/prproj_reader.py "Recipe XMLs/STEAK TACO.prproj"
+# If continuing beauty pick, the highest-leverage next lever is motion strip
+# (see "Lever ideas worth testing" above)
 
-# Existing manifest = INPUT for the round 1 writer:
-cat /Users/dandj/DevApps/roughcut-ai/runs/basil_pesto/basil_pesto_manifest.json | python3 -m json.tool | head -50
-
-# Test prprojs available for round-trip verification (compare your output structure to these):
-ls "/Users/dandj/DevApps/ASI-Evolve/experiments/PREMIERE PROJECTS/TESTS/"
-
-# Round 1 build location:
-# experiments/recipe_pipeline/manifest_to_prproj/manifest_to_prproj.py
+# If pivoting to Round 2 prproj writer:
+cat ~/DevApps/Brain/Projects/ASI-Evolve/Prproj-Direct\ Writer\ Plan.md
 ```
+
+## Where things live (paths, services, credentials)
+
+| Asset | Location |
+|---|---|
+| Cached candidate scans (production) | `~/DevApps/roughcut-ai/runs/modal/{recipe}/scan.json` (5 recipes) |
+| Editor FINAL prprojs | `~/DevApps/ASI-Evolve/experiments/PREMIERE PROJECTS/RECIPES/{Recipe}.prproj` |
+| Truth sets | `~/DevApps/ASI-Evolve/experiments/recipe_pipeline/truth_sets/{recipe}/{beauty,beats,text}.json` |
+| Shot-type cache | `~/DevApps/ASI-Evolve/experiments/recipe_pipeline/truth_sets/{recipe}/shot_types.json` |
+| Iteration history | `~/DevApps/ASI-Evolve/experiments/recipe_pipeline/runs/beauty_pick_iteration_history.json` |
+| Frame JPEGs (for image-mode) | `~/DevApps/roughcut-ai/runs/modal/{recipe}/scan_frames/[scan_frames/]_dino_<cid>/frame_NNNN.jpg` |
+| /recipe-analyze skill (used to generate truth) | `~/.claude/skills/recipe-analyze/` |
+
+**Credentials:** None required for the harness — Opus calls go through the user's Claude CLI subscription auth (no API key). Production roughcut-ai runs use Gemini through Modal (out of scope for ASI iteration).
+
+**External services:** None during iteration. roughcut-ai pipeline backfills (audio_cues, scans) require Modal credentials but that's a separate workflow.
+
+**Brain vault access:** the vault is a regular file tree at `~/DevApps/Brain/` (Obsidian on top). Read notes directly with the Read tool — no login required. The skill `obsidian-cli` is registered if you want CLI-style ops; not needed for read-only.
+
+**If cached scans are missing** (e.g. fresh laptop / different machine):
+```bash
+ls ~/DevApps/roughcut-ai/runs/modal/*/scan.json   # 5 should exist
+```
+If missing, ping the roughcut-ai agent to re-run Phase 1 / Phase 2 on the 5 ASI corpus recipes (basil_pesto, chicken_thighs, korean_fried_chicken, creamy_potato_soup, easy_banana_muffins). Backfill cost ~$5 total. Recipe selection criterion: must have FINAL prproj at `experiments/PREMIERE PROJECTS/RECIPES/`.
+
+**Branch naming.** `refactor/writer-modules` is misleading — the writer-refactor work is from a much earlier session (commit `2094548` and prior). Today's beauty-pick commits land on top of it but don't relate. **Decision for next session:** either rename this branch to `feature/beauty-pick-shot-type` or rebase onto main and merge the writer-refactor work cleanly. Don't ship as-is — the branch name will confuse code review.
+
+## Companion Brain notes
+
+- [[Beauty Pick Prompt Iteration — 2026-04-29]] — full session arc, all experiments, all numbers
+- [[VLM Beauty Score — Spec]] — original architectural spec (now shipped)
+- [[LLMs Mirror The Format You Show Them]] — pattern from the audio_cues parser bug
+- [[Per-Candidate Tags Beat Per-Corpus Rules]] — pattern from this session's three structural fixes
+- [[Editorial Rules - Dan's Camera Logic]] — editor's shot-type framework (informed the diagnostic)
+- [[Premiere prproj Multicam Detection]] — companion reader doc; the recurse this session built on
+- [[Recipe Pipeline]] — production pipeline that consumes our prompt winners
+- [[ASI-Evolve]] (project hub)
+
+3 prior handoffs to the roughcut-ai agent at `~/DevApps/Brain/Projects/RoughCut/Handoff to roughcut-ai — *.md` document the audio_cues fix, VLM beauty_score spec, NMS findings.
