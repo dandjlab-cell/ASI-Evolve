@@ -39,6 +39,85 @@
       "AI2I5": "overhead",
       "_verified_at": "2026-05-02",
       "_verified_via": "Visual spot-check of FINAL.mp4 frames + beat-count inference (46 B19I6 used for saucepan + hero shots = front, 4 AI2I5 used for ingredient-bowl shots = overhead)"
+    },
+    "baked_lobster_tail": {
+      "B19I4": "front",
+      "AI2I4": "front",
+      "[NEST": "front",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "baked_potato_soup": {
+      "B19I4": "overhead",
+      "AI2I4": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "congee": {
+      "B19I4": "front",
+      "AI2I4": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "crab_rangoon": {
+      "B19I4": "front",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "cranberry_jalapeno_dip": {
+      "AI2I3": "overhead",
+      "B19I3": "front",
+      "[NEST": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "cucumber_tea": {
+      "B19I4": "front",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "flaky_pie_crust": {
+      "A054_": "overhead",
+      "4L9A8": "front",
+      "[NEST": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "french_onion_mac": {
+      "B19I4": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "peppermint_bark": {
+      "AI2I3": "overhead",
+      "B19I3": "front",
+      "[NEST": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "pin_wheel": {
+      "B19I4": "front",
+      "AI2I3": "overhead",
+      "B19I3": "overhead",
+      "[NEST": "overhead",
+      "AI2I4": "overhead",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "puppy_chow": {
+      "B19I3": "front",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "steak_tacos": {
+      "B19I6": "front",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
+    },
+    "sweet_potato_pie": {
+      "B19I3": "front",
+      "_verified_at": "2026-05-02",
+      "_verified_via": "derive_camera_mapping.py \u2014 Pass 1 vote against approved_edits timeline"
     }
   }
 }

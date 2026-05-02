@@ -9,8 +9,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I3315.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front dominates because the anchor is the hands-snap-bark moment at [3.0-4.0s] that sells the \"layered crunchy product\" payoff \u2014 the single overhead plate opens the beat for establishment, then the edit commits to front to showcase the pour-into-snap narrative that only a side angle can show."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][AI2I3])"
       },
       "duration": {
         "seconds": 4.713,
@@ -41,7 +41,7 @@
       "filename": "B19I3730.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the opening anchor of a 33-beat dump run that holds front for the first 5 beats \u2014 per rule 3 the editor establishes and holds rather than alternating, and this angle shows the marble counter context and settled chocolate at eye level that the preceding overhead pour frames (5.0\u20135.5s) already covered from above."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.585,
@@ -69,7 +69,7 @@
       "filename": "B19I3731.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because the action is horizontal/lateral \u2014 door hinging open and bowl sliding into the microwave cavity \u2014 which overhead would flatten and hide the interior; it's also a held-camera run (front across ~6 beats here), consistent with the dump rule of not alternating."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 3.253,
@@ -97,7 +97,7 @@
       "filename": "B19I3733.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.6690000000000005,
@@ -123,7 +123,7 @@
       "filename": "B19I3737.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is beat 4 of a held front run (the camera run shows four consecutive fronts before this), so per Rule 3 the editor is holding camera across ingredient dumps rather than alternating; front at eye-level also shows the jar tipping and the drip forming on the rim, which overhead would flatten into an invisible pour."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.5429999999999993,
@@ -151,7 +151,7 @@
       "filename": "B19I3738.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is a held-camera run start \u2014 the editor stays on FRONT through four consecutive beats (12.5s through 14.0s) before switching to OVERHEAD at 14.5s for the pour, so this isn't alternation but the opening beat of a sustained front sequence that lets the extract drip, spatula lift, and chocolate ribbon swirl all read from the same eye-level angle."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.9600000000000009,
@@ -177,7 +177,7 @@
       "filename": "B19I3734.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Overhead is a switch point from the previous front shot (B19I3738.mov, 2.0s) into a sustained overhead run continuing on AI2I3284.mov; the angle is justified because only top-down reveals the pool spreading across the foil and the coverage area that the brush will work in the next beat \u2014 front wouldn't show pool geometry at all."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.4179999999999975,
@@ -203,7 +203,7 @@
       "filename": "AI2I3284.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][AI2I3])"
       },
       "duration": {
         "seconds": 1.5020000000000024,
@@ -229,7 +229,7 @@
       "filename": "AI2I3284.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is beat 8 of a 33-beat dump run and sits inside a brief 2-beat overhead hold (beats 7\u20138) that breaks up a long front run \u2014 the top-down angle is needed to show the flat, set chocolate surface in the foil-lined pan, which a front/eye-level shot can't reveal."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][AI2I3])"
       },
       "duration": {
         "seconds": 1.9179999999999993,
@@ -258,7 +258,7 @@
       "filename": "B19I3736.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 2.001999999999999,
@@ -286,7 +286,7 @@
       "filename": "B19I3736.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the switch point right before the overhead stop-motion pound \u2014 the overhead angle is reserved for the percussive anchor, so front holds through the sealing action (an eye-level hand motion that reads as \"ingredient now contained\") and hands off to overhead for the impact."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 0.8339999999999996,
@@ -312,7 +312,7 @@
       "filename": "AI2I3285.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because the action IS top-down \u2014 the pin drives straight down into the bag, so shards flying and the pound impact only read from above; front would show a hand moving vertically behind a bag, hiding the actual crush. This is a switch point (prev/next are front) and functions as an anchor \u2014 the percussive stop-motion beat with shards is the \"found moment\" the editor built this section around."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][AI2I3])"
       },
       "duration": {
         "seconds": 1.0430000000000028,
@@ -338,7 +338,7 @@
       "filename": "B19I3736.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Overhead \u2014 only the top-down angle shows the texture change from shards to dust and the pin's grinding motion across the bag; the front angle at 24.5s shows the result (flat sealed bag) but can't show the crushing itself, so overhead is the anchor for the \"crushing completes\" moment and continues the held overhead run through the prep sequence."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.2099999999999973,
@@ -364,7 +364,7 @@
       "filename": "B19I3736.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.3760000000000012,
@@ -390,7 +390,7 @@
       "filename": "B19I3739.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front here because it's the tail of a held front-camera run (beats 9\u201314 are all front per the run notation) and the front eye-level angle shows the wafers cascading into the bowl with depth and falling motion that an overhead would flatten into a static pile."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.5010000000000012,
@@ -418,7 +418,7 @@
       "filename": "AI2I3287.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this beat is the wafers\u2192melted-chocolate transformation \u2014 only the top-down angle shows the bowl's contents changing state, and it's a deliberate switch point out of the preceding front-heavy run to land on the organic flourish."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][AI2I3])"
       },
       "duration": {
         "seconds": 1.9190000000000005,
@@ -447,7 +447,7 @@
       "filename": "B19I3744.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor here because it's the only angle that shows the ribbon's vertical silhouette \u2014 the thick pour cascading back into the bowl \u2014 which the overhead flattens into just a circle in a circle; this is a deliberate switch off the overhead held in the previous beat because that angle cannot sell the ribbon."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 2.001999999999999,
@@ -474,7 +474,7 @@
       "filename": "B19I3745.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Frame scan shows this is actually OVERHEAD (not front as labeled) \u2014 a deliberate break from the held front run because peppermint extract is a liquid pour where the stream and swirl forming in the chocolate only read from top-down; front would be blocked by the hand and bowl."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.6679999999999993,
@@ -502,7 +502,7 @@
       "filename": "B19I3745.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.1270000000000024,
@@ -528,7 +528,7 @@
       "filename": "B19I3745.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is a held-camera run (prev front, next front) where the ECU with spatula visible is the anchor \u2014 it shows the ribbon fold and fall laterally into the bowl, which overhead flattens into a featureless white pool."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 2.2929999999999993,
@@ -555,7 +555,7 @@
       "filename": "B19I3747.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Overhead is a switch point, not a held run \u2014 the previous beat was front (B19I3745) and the editor cuts top-down here because the anchor of this moment is the pool of white chocolate spreading across the dark slab, which is only legible from above; a front angle would hide the spread behind the pan's rim and kill the layering reveal that defines the new recipe section."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.5019999999999953,
@@ -581,7 +581,7 @@
       "filename": "B19I3747.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front holds the eye-level angle one beat longer before the switch to overhead on beat 29 \u2014 you see the hand and offset spatula enter toward the camera, which reads the \"tool arrives\" moment more tactilely than a top-down reveal would."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.5010000000000048,
@@ -607,7 +607,7 @@
       "filename": "AI2I3291.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the anchor here \u2014 it's the money shot reveal of the entire foil-lined pan covered in white chocolate, which front cannot show (front would only see the spatula and hand, missing the pan geography and full coverage payoff)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][AI2I3])"
       },
       "duration": {
         "seconds": 1.7519999999999953,
@@ -633,7 +633,7 @@
       "filename": "B19I3747.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The metadata labels this \"front\" but the shot description (\"Wide overhead, hand pulls spatula out\") and every frame 41.0\u201343.0s show overhead \u2014 this is an overhead hold, not a front cut. It sits inside a sustained overhead run (the entire sprinkle flourish that follows stays overhead), so it's a held-camera beat, not a switch point; the top-down angle is the only way to read \"surface is now smooth and fully coated\" as a money shot."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.5430000000000064,
@@ -659,7 +659,7 @@
       "filename": "B19I3747.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The metadata label \"front\" contradicts the shot description (medium overhead, wider), and the surrounding clips at 42.5s and 43.5s are both overhead \u2014 this is a held-overhead run (rule 3), and the cut is a pull-back reframe within the same camera family to keep the angle from going stale, not a switch to front."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.8359999999999985,
@@ -685,7 +685,7 @@
       "filename": "B19I3768.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Overhead (metadata-label of \"front\" conflicts with the visuals, which clearly show top-down of the full pan with even peppermint coverage) \u2014 this is the anchor payoff shot that resolves the ingredient-dump run by revealing total coverage, which no front angle could show, and then holds to carry the refrigerate text card."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 2.1679999999999993,
@@ -714,7 +714,7 @@
       "filename": "B19I3769.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front 3/4 is the anchor shot for the reveal \u2014 lifting a foil flap is a vertical/diagonal gesture that reads clearly from front but would be obscured from overhead (the flap itself would block the bark it's revealing), so this is the only angle that sells \"reveal\" in a single frame."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.1270000000000024,
@@ -740,7 +740,7 @@
       "filename": "B19I3772.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front 3/4 shows the knife pressing down through the bark with visible crack propagation and bracing hand \u2014 overhead would flatten the vertical knife travel into a line, losing the break moment that sells \"cutting set bark.\""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 0.9169999999999945,
@@ -767,7 +767,7 @@
       "filename": "B19I3772.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this beat sits mid-run in a held-front knife sequence (48.5s\u219249.0s\u219249.5s all front) \u2014 the editor is holding one camera through the physical action, tightening framing rather than alternating, and front shows the knife angle and hand-brace pressure that overhead would flatten into a line."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -793,8 +793,8 @@
       "recipe_section": "prep / knife work",
       "filename": "[NEST] Nest - Peppermint Bark",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead is required to read the rectangular slab's geometry and set up the grid-of-squares reveal on the next beat \u2014 a front angle would only show the edge profile and couldn't sell the \"before cut\" state that pairs with the \"after cut\" jump on 50.5s."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 0.9590000000000032,
@@ -821,7 +821,7 @@
       "filename": "B19I3773.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is a switch point after the overhead nest \u2014 peppermint bark's whole identity is its three stacked layers (dark chocolate bottom, white chocolate, pink peppermint flakes), which only read in profile from front; overhead would flatten it to a pink-dotted disc and lose the hero feature."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.543999999999997,
@@ -847,7 +847,7 @@
       "filename": "B19I3774.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the anchor shot for the finishing section \u2014 you cannot show the layered cross-section (pink peppermint / white / dark chocolate stripes) from overhead, so this best-take ECU is what sells the payoff of the entire recipe."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 1.5010000000000048,
@@ -873,7 +873,7 @@
       "filename": "B19I3774.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front ECU is the anchor shot \u2014 the snap-break is a found organic flourish (the editor's favorite kind of moment), and only the front angle reveals the layered peppermint/white/dark cross-section as the bark cracks apart; overhead would flatten the break into a line."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 2.043999999999997,
@@ -899,7 +899,7 @@
       "filename": "B19I3776.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 the anchor shot for the final beauty. A vertical stack of bark reads as architecture from eye-level (you see the layers, the height, the silhouette); overhead would collapse it into a flat disc and kill the hero. Previous beat was also front, so this continues a held-camera run into the closer rather than switching for its own sake."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[peppermint_bark][B19I3])"
       },
       "duration": {
         "seconds": 2.335000000000001,

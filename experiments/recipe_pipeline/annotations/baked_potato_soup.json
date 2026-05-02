@@ -9,8 +9,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "B19I4267.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front 3/4 hero is the anchor shot \u2014 it's the finished-dish beauty take with title card composited onto it, so this angle is non-negotiable for a beauty opener; overhead wouldn't sell the steam, toppings, or bowl depth."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 3.337,
@@ -41,7 +41,7 @@
       "filename": "AI2I4224.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 1.209,
@@ -69,7 +69,7 @@
       "filename": "AI2I4225.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because the transformation being sold \u2014 fat rendering out and strips going pale in the pot \u2014 reads top-down where you can see the liquid pooling and all six strips at once; eye-level would hide the rendered fat behind the Dutch oven wall."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 0.45899999999999963,
@@ -95,7 +95,7 @@
       "filename": "AI2I4226.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is a transformation moment \u2014 the browning edges and curling in rendered fat only read from top-down; a front angle would flatten the fat pool and hide the curl, so this is the best-take anchor for showing the bacon's change of state."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 0.5419999999999998,
@@ -120,8 +120,8 @@
       "recipe_section": "transformation",
       "filename": "B19I4253.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The metadata says \"front\" but the frame-by-frame scan shows OVERHEAD \u2014 this is an overhead tight push-in on the bacon in fat, which is the correct angle because the transformation being sold (crisp texture + fat pooling) reads from the top-down, not eye-level; it's a held-camera continuation of the prior overhead beat, not a switch."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 0.125,
@@ -146,8 +146,8 @@
       "recipe_section": "transformation",
       "filename": "B19I4253.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front here is the anchor \u2014 the tighter push-in on crisped bacon sitting in the rendered fat is the best-take version of \"bacon is done,\" and it's the payoff shot the surrounding beats are built around (note: the frame-by-frame labels this OVERHEAD, which contradicts the metadata; if the shot is actually overhead, the reasoning is the same \u2014 it's the anchor for the \"bacon fully rendered\" moment, not a camera-alternation choice)."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.0010000000000003,
@@ -172,8 +172,8 @@
       "recipe_section": "transformation",
       "filename": "B19I4253.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The frame content (paper towel with bacon viewed top-down, tongs descending vertically) is actually overhead, not front \u2014 overhead is correct here because draining/placement reads top-down, and this sits inside a held-overhead run that continues into the onion dump at 8.5s, so it's part of a sustained overhead camera hold through the transformation-to-ingredient handoff, not a switch point."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.6690000000000005,
@@ -198,8 +198,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4255.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is a switch point \u2014 beats 4\u20137 are a held front run during the ingredient dump sequence, and front at eye-level sells the bowl-tilt-and-cascade action (arm motion, falling onion stream) better than a top-down would, which would flatten the pour into a static dump."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.5009999999999994,
@@ -226,8 +226,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4255.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Overhead \u2014 this is a held-camera run continuing from the prior overhead dump (rule 3), and top-down is the only angle that actually shows the spoon folding onion into the rendered fat in the pot."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.6270000000000007,
@@ -253,7 +253,7 @@
       "filename": "AI2I4228.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because the broth pour is a top-down ingredient reveal \u2014 you need to see liquid hitting the pot surface and the level rising, which a front eye-level angle would flatten; it's also a held-camera run (beat 9 within a stretch of overheads) consistent with the \"hold camera across dumps\" rule."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 1.4179999999999993,
@@ -281,8 +281,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4257.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The frame-by-frame shows OVERHEAD, not front \u2014 this contradicts the metadata label, but an overhead angle is the correct choice here because the white milk stream swirling into yellow broth is a top-down transformation that only reads from above; it's a held-camera continuation of the overhead pour run, not a switch."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.4600000000000009,
@@ -311,7 +311,7 @@
       "filename": "AI2I4229.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is part of a held ingredient-dump run \u2014 the editor is staying top-down to show milk integrating into the onion base, which a front eye-level angle wouldn't reveal. (medium)"
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 1.4589999999999996,
@@ -337,8 +337,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4257.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.4189999999999987,
@@ -366,7 +366,7 @@
       "filename": "AI2I4229.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because we're mid-ingredient-dump run and the editor is holding overhead across the dump beats (this is beat 13, surrounded by overhead on both sides in the local run); top-down is also the only angle that reads a flat pile of pepper on the soup surface \u2014 eye-level would lose the pile against the rim."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 1.6679999999999993,
@@ -394,8 +394,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4257.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The metadata labels this \"front\" but the frame-by-frame clearly shows overhead (spoon visible from above, pepper swirled on surface) \u2014 this is a held-camera continuation of the overhead ingredient-dump run, not a switch, so the angle stays overhead to keep the stir action legible from the only angle that reads the swirl pattern."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.6260000000000012,
@@ -422,7 +422,7 @@
       "filename": "AI2I4230.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is the best take of the simmer moment \u2014 the foamy surface and dispersed pepper read only from top-down; an eye-level front shot would just show a pot rim."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -448,8 +448,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4259.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front was the best-take pick for this potato cascade \u2014 it shows the chunks arcing down in profile with visible falling motion, which reads more kinetically than a top-down would, and it functions as a switch point breaking the prior overhead pair before returning to overhead next."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 2.1690000000000005,
@@ -478,7 +478,7 @@
       "filename": "AI2I4231.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is a switch point \u2014 the prior ingredient dump run was overhead, and the simmer reveal needs a top-down view to show the soup's milky surface with onion/potato submerged, which eye-level can't reveal."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 2.0440000000000005,
@@ -504,8 +504,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4260.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front \u2014 this is a switch point and likely the anchor for this mini-section; the low-angle front on the spoon lift shows chunks suspended against soup and reveals consistency/drip, which the overhead flattens into a top-down puddle."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.7929999999999993,
@@ -530,8 +530,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4260.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front because this beat sits inside a long held-front run (positions 14\u201324 of the dump sequence are almost all front) \u2014 holding the camera across dumps per rule 3, not switching back to overhead just because the action is vertical."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 4.379999999999999,
@@ -558,8 +558,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4261.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor here \u2014 it's the best take for selling \"smooth, no chunks\" because the eye-level angle reads the soup's texture and the spoon's drag through it, which overhead would flatten into a uniform orange circle."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.3340000000000032,
@@ -584,8 +584,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4262.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.918999999999997,
@@ -612,8 +612,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4262.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Overhead is the held camera for this cheese-integration run \u2014 the stir action reads as a top-down graphic (orange streaks through soup) that a front angle would flatten into an obscured rim view."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.5020000000000024,
@@ -638,8 +638,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4263.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is labeled but the frame-by-frame shows overhead \u2014 this is actually the continuation of an overhead hold across the sour cream dump (consistent with the \"hold camera across dumps\" rule), showing the tub tilt and dollop fall from top-down where the pour action reads clearest; eye-level front wouldn't show the cream landing on the soup surface."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 2.0429999999999993,
@@ -666,8 +666,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4263.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -693,7 +693,7 @@
       "filename": "AI2I4236.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 0.6259999999999977,
@@ -719,7 +719,7 @@
       "filename": "AI2I4236.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the held camera through the stop-motion fill sequence \u2014 it's the only angle that shows the bowl filling from empty to full, which a front low-angle would hide behind the rim."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][AI2I4])"
       },
       "duration": {
         "seconds": 0.4170000000000016,
@@ -744,8 +744,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4266.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front \u2014 this is the switch point from the overhead fill resolution; front (low angle) sells the cheese cascade in silhouette against the bowl rim in a way overhead would flatten into a texture pile, and it opens the held front run that carries the rest of the garnish sequence."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.6679999999999993,
@@ -772,8 +772,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4266.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front \u2014 holding the front camera across the ingredient dump run (beat 3 of 8, all front after the initial overhead), so this is a held-camera continuation, not a switch; the low angle keeps the bacon crumbles sitting on top of the cheese readable in silhouette against the bowl rim."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.6679999999999993,
@@ -800,8 +800,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4266.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is held through the chive run (beat 4 of a front-camera streak); the 3/4 front angle shows chives landing and scattering across the bowl's surface in a way overhead would flatten, and switching cameras mid-dump would violate the hold-then-switch rule."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.669000000000004,
@@ -828,8 +828,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4266.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front continues the held-camera run (beat 5 of 8, all front after the initial overhead) \u2014 this is the \"hold one camera across dumps\" rule in action, and the tight top-down framing on the finished bowl is the best-take hero composition for selling the pepper grind moment."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.7509999999999977,
@@ -856,8 +856,8 @@
       "recipe_section": "money shot",
       "filename": "B19I4267.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "This is the anchor shot for the money-shot section \u2014 the hero bowl reveal is THE moment of the video, so the editor picked the best take of hands presenting the finished soup; it's a deliberate switch point away from cooking coverage into beauty, and the overhead/3-4 hero angle shows the full composition (bacon, cheese, chives arranged on top) that a front eye-level angle would foreshorten and hide."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.918999999999997,
@@ -882,8 +882,8 @@
       "recipe_section": "plating / finishing",
       "filename": "B19I4268.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "This is a macro/tight anchor shot of the finished soup surface \u2014 it's the beauty-money shot showcasing the bacon/cheese/chives texture that no other angle can deliver, functioning as the organic flourish anchor for the plating section rather than part of a held run."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 1.2510000000000048,
@@ -908,8 +908,8 @@
       "recipe_section": "beauty close (plating, final hero)",
       "filename": "B19I4268.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor shot here \u2014 the hero spoon lift with bacon-topped scoop and \"the kitchn\" logo is the best-take money shot for the outro, and overhead couldn't sell the vertical lift or the food-porn silhouette of the heaping spoon."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_potato_soup][B19I4])"
       },
       "duration": {
         "seconds": 3.9209999999999994,

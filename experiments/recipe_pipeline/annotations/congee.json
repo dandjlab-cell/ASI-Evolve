@@ -9,8 +9,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "B19I4166.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "The beat is actually a two-shot group \u2014 front hero bowl (1.5s) then overhead spoon-dip (1.8s); the overhead half exists because it's the best-take reveal of congee texture and scallion distribution, which the eye-level front simply cannot show (you can't see INTO a bowl from front)."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 3.337,
@@ -41,7 +41,7 @@
       "filename": "AI2I4113.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because the next beat is a top-down rice pour into this exact strainer \u2014 establishing the empty receiving vessel from the same angle the pour will use means the viewer's eye is already locked onto the target when rice starts hitting it. Not an anchor, just a setup beat for the dump that follows."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 0.625,
@@ -67,7 +67,7 @@
       "filename": "AI2I4113.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is beat 2 of a held overhead run (`overhead, overhead <<<`) per rule 3 \u2014 the editor is holding the angle across consecutive ingredient dumps rather than alternating, and top-down shows rice accumulating in the strainer which a front angle would flatten."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 1.3349999999999995,
@@ -95,7 +95,7 @@
       "filename": "B19I4141.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because beats 1\u20132 were overhead dumps and this is the switch point into a 7-beat front run \u2014 front shows the washing technique (fingers agitating rice, water flowing through) at eye level where the tip callout's claim about \"creamier congee\" is visually earned, which a top-down wouldn't sell."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 3.0859999999999994,
@@ -123,7 +123,7 @@
       "filename": "B19I4143.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.293000000000001,
@@ -149,7 +149,7 @@
       "filename": "AI2I4116.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is a switch point \u2014 the previous two beats ran front (B19I4143), and this kicks off a 2-beat overhead micro-hold (this clip + AI2I4118 next) before returning to a long front run; top-down is also the only angle that reads the pour column entering the pot, rice visible under the surface, and the cup measurement markings, none of which a front eye-level shot could show."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 1.709999999999999,
@@ -177,7 +177,7 @@
       "filename": "AI2I4118.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead continues the held-camera run from the preceding water pour \u2014 staying top-down lets the foamy ring and boil pattern read clearly, which a front angle would flatten into a pot rim."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -204,7 +204,7 @@
       "filename": "B19I4151.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is a switch point after an overhead shot \u2014 the front angle is the anchor here since it's the only angle that shows the steam rising and the vertical tilt-and-spill action, which overhead would flatten into nothing."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.209999999999999,
@@ -230,7 +230,7 @@
       "filename": "B19I4151.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because beat 10 sits mid-run in a held front camera sequence (beats 7-10 all front per the camera run), not a switch point \u2014 the editor is holding the angle across dumps rather than alternating, and front shows the ginger coins entering the simmering surface at eye-level where the splash/drop action reads clearly."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.3340000000000014,
@@ -258,7 +258,7 @@
       "filename": "B19I4151.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this beat sits in the middle of a held front-camera run (beats 7\u201310 all front per the camera run map), so it's not a switch point \u2014 the editor is holding the angle across consecutive dumps per rule 3, and front frames the bowl-dump action at pot level where the garlic slices are visibly falling in."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -286,7 +286,7 @@
       "filename": "B19I4151.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 10 in a held front-camera run (beats 7-10 are all front per the camera run array), and the front angle captures the vertical drop of scallion whites falling into the pot plus the dispersion across the bubbling surface \u2014 an overhead would flatten the falling action."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.501999999999999,
@@ -314,7 +314,7 @@
       "filename": "AI2I4123.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is part of a held overhead run through the simmering/stirring section \u2014 top-down reveals the pot contents (rice texture, floating scallion rings) that an eye-level front angle would hide behind the rim."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 0.7089999999999996,
@@ -341,7 +341,7 @@
       "filename": "AI2I4134.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead continues the held camera run from the previous overhead beat (0.7s) \u2014 front would hide what's inside the pot, and only top-down reveals the scallions floating on broken-down rice and the spoon's path through the thickening texture."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 1.0010000000000012,
@@ -368,7 +368,7 @@
       "filename": "B19I4160.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because the scoop-lift action reads vertically \u2014 the drip falling off the spoon and the creamy profile of the scoop only exist in a side view; overhead would flatten this into a shapeless blob, so this is a deliberate switch-point off the held overhead into the best-take angle for the texture payoff."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.6260000000000012,
@@ -394,7 +394,7 @@
       "filename": "B19I4160.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this beat sits mid-run in a held front sequence (positions 13-17 are all front per the camera run), so the editor is executing the \"hold camera across dumps\" rule rather than switching \u2014 and front shows the dish-tip-to-stream arc laterally, which overhead would flatten into a top-down puddle with no pour gesture."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.5850000000000009,
@@ -422,7 +422,7 @@
       "filename": "B19I4160.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this beat sits at position 15 of a 6-beat held-front run (positions 14\u201317 all front), so holding \u2014 not switching \u2014 is the correct move; front also reads the dark soy swirl and the salt landing beside it on the congee surface clearly at eye level."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.376999999999999,
@@ -451,7 +451,7 @@
       "filename": "B19I4160.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is a held-camera run \u2014 this is the 4th consecutive front clip in the dump sequence (positions 13-16), and the eye-level angle captures the thin amber stream's vertical arc as it hits the salt, which overhead would flatten into just a spreading puddle."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.3760000000000012,
@@ -480,7 +480,7 @@
       "filename": "B19I4160.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 17 of a held five-shot front run (positions 13\u201317) before the switch to overhead at beat 18 \u2014 holding the same eye-level angle across the pepper drop keeps the dump sequence from choppy alternation, per the \"hold camera across dumps\" rule."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.3759999999999977,
@@ -509,7 +509,7 @@
       "filename": "AI2I4134.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 1.4179999999999993,
@@ -535,7 +535,7 @@
       "filename": "B19I4160.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor \u2014 this is the hero money shot where the finished congee is revealed clinging to the spoon with scallion flecks visible, a textural payoff overhead can't sell, and it also functions as the natural switch point out of the previous overhead punch-in and into the overhead stop-motion plating run that follows."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 2.086000000000002,
@@ -561,7 +561,7 @@
       "filename": "AI2I4135.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because the bowl-filling transformation only reads from top-down \u2014 front would just show the bowl rim with congee rising invisibly; this is the anchor shot for the stop-motion sequence, not a switch point."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 0.541999999999998,
@@ -588,7 +588,7 @@
       "filename": "AI2I4135.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the only angle that reads the bowl filling top-down \u2014 front would just show a static rim with stuff appearing behind it, so this isn't an alternation choice but the only camera that sells the stop-motion fill, and it's mid-run in a held overhead sequence (5 prior overhead beats)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 0.4170000000000016,
@@ -615,7 +615,7 @@
       "filename": "B19I4164.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the switch point \u2014 the previous overhead was a brief 0.4s punch-in, and front now holds across beats 2\u20133 of the dump sequence (rule 3: hold camera, don't alternate), showing the scallions landing and settling on the congee surface at eye-level which reads the garnish action better than a top-down would."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.3770000000000024,
@@ -643,7 +643,7 @@
       "filename": "B19I4164.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is held from the previous beat (beats 2 and 3 both front) \u2014 this is a held-camera run mid-ingredient-dump, not a switch point, and the front angle shows the thin vertical stream of sesame oil and the amber halo spreading across the bowl's surface, which an overhead would flatten."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 1.6259999999999977,
@@ -671,7 +671,7 @@
       "filename": "AI2I4140.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the anchor shot for the finished-dish reveal \u2014 it shows the full top-down composition of scallions and ginger garnish on the bowl, which a front angle can't sell, and it's the first in a held overhead run (three overhead beats before switching to front spoon lift)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][AI2I4])"
       },
       "duration": {
         "seconds": 1.7520000000000024,
@@ -698,7 +698,7 @@
       "filename": "B19I4172.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor for the outro hero \u2014 this is the best take of the heaped spoon composed to sit under the incoming \"the kitchn\" logo lockup, where an overhead would obscure the brand mark and fail to read as a finished-product beauty shot."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[congee][B19I4])"
       },
       "duration": {
         "seconds": 3.336999999999996,

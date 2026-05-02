@@ -9,8 +9,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I3926.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The beat actually opens OVERHEAD (0.0-1.0s) showing the finished cranberry dip plate as a top-down hero tile, then switches to FRONT (1.0-3.5s) for the chip-lift because front is the only angle that shows the dip dripping off the chip, the cream cheese layer exposed underneath, and the dimensional texture that sells \"creamy dip\" \u2014 the front shot is the anchor (best take of the money moment), not an alternation."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][AI2I3])"
       },
       "duration": {
         "seconds": 3.67,
@@ -40,8 +40,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "[NEST] nest - overhead blender",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead is used because it's the only angle that shows the empty processor bowl with its S-blade and then the ingredients landing inside it \u2014 a front/eye-level shot would hide the vessel contents entirely, so this isn't alternation, it's the correct anchor for a \"dump into bowl\" action."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 2.795,
@@ -71,7 +71,7 @@
       "filename": "B19I3922.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the switch point \u2014 the prior beat was overhead (beat 1), and this beat kicks off a 7-beat front hold per Rule 3's \"hold camera, then switch\" pattern; front also frames the processor rim and cascade depth that the overhead flattens into a pure top-down dump."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.4589999999999996,
@@ -99,7 +99,7 @@
       "filename": "B19I3922.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front, but flagging a data discrepancy \u2014 frame-by-frame reads OVERHEAD at 11.5-12.5s while the beat label and pipeline say front; if the label is correct, this is beat 3 of a held-front run (beat 2 was the switch from overhead, beats 2-9 all hold front per rule 3), and eye-level sells the sugar cascade with more depth than top-down would."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -127,7 +127,7 @@
       "filename": "B19I3922.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The frame-by-frame actually shows OVERHEAD at 13.0s\u201314.0s (hand pinching salt onto cranberries from above) \u2014 contradicting the \"front\" label, but consistent with rule 3: this is a held overhead run across the dry-pour ingredients (sugar at 12.5s, salt here, lemon juice next), where staying top-down lets the viewer see each ingredient land in the bowl without resetting spatial context every beat."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.334999999999999,
@@ -155,7 +155,7 @@
       "filename": "B19I3922.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "The frames show overhead (top-down pour of lemon juice into bowl), not front as the metadata labels \u2014 overhead reads the pourable-liquid ingredient instantly (stream landing in mix, splash visible), whereas front would put the cup-hand between camera and bowl and hide the juice entering; this is the standard ingredient-dump top-down angle, and treating it as \"front\" looks like a label error given beats 1 and 10 of the run are also overhead around this same dump cluster."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.3760000000000012,
@@ -183,7 +183,7 @@
       "filename": "B19I3923.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because the side-view window shows cranberries visibly tumbling and pink splatter building on the walls \u2014 overhead would only show an opaque lid, hiding the transformation that's the whole point of this beat."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.459999999999999,
@@ -209,7 +209,7 @@
       "filename": "B19I3926.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 held camera run continuing from the previous front shot (B19I3923.mov) into the next front shot (B19I3926.mov); this is mid-sequence hold, not a switch point, and front shows the paddle engagement with the cheese blocks at eye-level in a way overhead would flatten into a indistinguishable white mass."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 0.9600000000000009,
@@ -236,7 +236,7 @@
       "filename": "B19I3926.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 0.916999999999998,
@@ -262,7 +262,7 @@
       "filename": "B19I3927.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is a held-camera continuation from the previous front shot (B19I3926.mov) \u2014 the editor is sitting on front through the whipping action rather than alternating, and this frame is the best-take moment showing the silky whipped texture resolve in the bowl before switching to overhead for the spreading nest."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.0850000000000009,
@@ -287,8 +287,8 @@
       "recipe_section": "mid-edit",
       "filename": "[NEST] Nest - spreading cheese",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this beat is the start of a nested stop-motion spreading sequence (6 inner clips) \u2014 you cannot read a cream cheese disc forming into a circular base from eye-level, so overhead is the only angle that shows the shape/spread construction; this is an anchor moment, not a held-camera continuation."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 3.378,
@@ -315,7 +315,7 @@
       "filename": "B19I3935.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the switch point \u2014 the previous nest held overhead through the cream cheese spread, and front is the best take for showing the dollop's vertical landing onto the flat cream cheese bed (overhead would flatten that drop action into a shape change)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 0.7929999999999993,
@@ -341,7 +341,7 @@
       "filename": "B19I3935.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front continues a held-camera run from the previous 0.8s front shot (B19I3935.mov) \u2014 the slotted spatula's spreading is a lateral smearing motion across the cream cheese bed, and front sells that horizontal gesture plus the widening salsa footprint, whereas overhead would flatten it into an abstract red blob on white."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.1670000000000016,
@@ -367,7 +367,7 @@
       "filename": "B19I3936.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 13 in an extended front-camera hold during the ingredient dump run (rule 3) \u2014 there's no reason to switch to overhead mid-hold, and the eye-level angle lets the green cilantro pop against the red salsa as it lands."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.251999999999999,
@@ -395,7 +395,7 @@
       "filename": "B19I3937.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the anchor shot for the money-shot reveal \u2014 a front-angle \"hero pull-out\" that shows the finished dip and the chip plate beside it in a composed, eye-level frame; overhead would flatten it into another top-down ingredient shot and kill the \"finished dish\" read."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 2.210000000000001,
@@ -421,7 +421,7 @@
       "filename": "B19I3938.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.2509999999999977,
@@ -447,7 +447,7 @@
       "filename": "B19I3938.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor here \u2014 a macro, shallow-focus hero of the finished cranberry salsa with cilantro garnish, where the layered depth and out-of-focus foreground/background only read on the eye-level lens; overhead would flatten it into a texture map."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 1.1270000000000024,
@@ -473,7 +473,7 @@
       "filename": "AI2I3931.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the anchor here \u2014 two hands entering symmetrically from opposite sides is a composition that only reads top-down, and after a front shot of a loaded chip it's the switch point that delivers the payoff of the dip being shared/used."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][AI2I3])"
       },
       "duration": {
         "seconds": 1.8350000000000009,
@@ -500,7 +500,7 @@
       "filename": "B19I3940.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the switch point after the overhead lift-out \u2014 this is the end-card anchor where the hero chip with loaded dip sits at eye-level so \"the kitchn\" logo has a clean top-left corner to animate into, something the overhead's top-down geometry couldn't accommodate."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cranberry_jalapeno_dip][B19I3])"
       },
       "duration": {
         "seconds": 3.043999999999997,

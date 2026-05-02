@@ -59,13 +59,15 @@ def load_cache(path: Path) -> dict[str, dict[str, str]]:
     return out
 
 
-def backfill_one(annotation: dict, recipe_slug: str, prefix_camera: dict[str, str]) -> dict:
+def backfill_one(annotation: dict, recipe_slug: str,
+                 prefix_camera: dict[str, str], force: bool = False) -> dict:
     counts: Counter = Counter()
     backfilled: list[int] = []
     skipped_nested: list[int] = []
     skipped_no_filename: list[int] = []
     skipped_unmapped_prefix: list[tuple[int, str]] = []
     preserved_existing: list[int] = []
+    overwrote_disagreement: list[tuple[int, str, str]] = []  # (idx, old, new)
     today = date.today().isoformat()
 
     for b in annotation.get("beats", []):
@@ -77,7 +79,7 @@ def backfill_one(annotation: dict, recipe_slug: str, prefix_camera: dict[str, st
             b["camera"] = cam
 
         existing = cam.get("choice")
-        if existing not in (None, "", "unknown"):
+        if not force and existing not in (None, "", "unknown"):
             preserved_existing.append(idx)
             counts["preserved_existing"] += 1
             continue
@@ -103,6 +105,9 @@ def backfill_one(annotation: dict, recipe_slug: str, prefix_camera: dict[str, st
             counts[f"unmapped:{prefix}"] += 1
             continue
 
+        if existing and existing != camera and existing != "unknown":
+            overwrote_disagreement.append((idx, existing, camera))
+            counts[f"overwrote:{existing}->{camera}"] += 1
         cam["choice"] = camera
         cam["reasoning"] = REASONING.format(date=today, recipe=recipe_slug, prefix=prefix)
         backfilled.append(idx)
@@ -116,10 +121,12 @@ def backfill_one(annotation: dict, recipe_slug: str, prefix_camera: dict[str, st
         "skipped_nested_n": len(skipped_nested),
         "skipped_no_filename_n": len(skipped_no_filename),
         "unmapped_prefixes": skipped_unmapped_prefix,
+        "overwrote_disagreement": overwrote_disagreement,
     }
 
 
-def run(targets: list[str], annotations_dir: Path, cache: dict, dry_run: bool) -> int:
+def run(targets: list[str], annotations_dir: Path, cache: dict,
+        dry_run: bool, force: bool) -> int:
     summary = []
     missing_in_cache = []
     for slug in targets:
@@ -132,7 +139,7 @@ def run(targets: list[str], annotations_dir: Path, cache: dict, dry_run: bool) -
             continue
         ann = json.loads(path.read_text())
         n_beats = len(ann.get("beats", []))
-        stats = backfill_one(ann, slug, cache[slug])
+        stats = backfill_one(ann, slug, cache[slug], force=force)
         if not dry_run:
             path.write_text(json.dumps(ann, indent=2))
             logger.info("wrote %s (%d beats, %d backfilled)",
@@ -151,11 +158,18 @@ def run(targets: list[str], annotations_dir: Path, cache: dict, dry_run: bool) -
         overhead = c.get("out:overhead", 0)
         unknown = sum(v for k, v in c.items() if k.startswith("out:unknown"))
         unmapped = sum(v for k, v in c.items() if k.startswith("unmapped:"))
+        n_overwrote = len(s.get("overwrote_disagreement", []))
         print(f"  {s['recipe']:25s} "
               f"front={front:>3} overhead={overhead:>3} unknown={unknown:>2} "
-              f"unmapped_prefix={unmapped:>2} preserved={s['preserved_existing_n']:>2}")
+              f"unmapped_prefix={unmapped:>2} preserved={s['preserved_existing_n']:>2} "
+              f"overwrote={n_overwrote:>2}")
         if s["unmapped_prefixes"]:
             print(f"      unmapped: {s['unmapped_prefixes']}")
+        if n_overwrote:
+            shifts: Counter = Counter()
+            for _, old, new in s["overwrote_disagreement"]:
+                shifts[f"{old}→{new}"] += 1
+            print(f"      reconciled: {dict(shifts)}")
 
     if missing_in_cache:
         print()
@@ -177,6 +191,10 @@ def main(argv=None) -> int:
                         "Default: every recipe in the cache.")
     p.add_argument("--dry-run", action="store_true",
                    help="Compute and report but do not write files.")
+    p.add_argument("--force", action="store_true",
+                   help="Reconcile mode: overwrite existing non-null camera labels "
+                        "when they disagree with the cache. Use after derive-all "
+                        "to bring stale legacy-rule labels in line with the cache.")
     p.add_argument("-v", "--verbose", action="store_true")
     args = p.parse_args(argv)
 
@@ -191,7 +209,7 @@ def main(argv=None) -> int:
         return 2
     cache = load_cache(args.cache)
     targets = args.recipe or sorted(cache.keys())
-    return run(targets, args.annotations_dir, cache, args.dry_run)
+    return run(targets, args.annotations_dir, cache, args.dry_run, args.force)
 
 
 if __name__ == "__main__":

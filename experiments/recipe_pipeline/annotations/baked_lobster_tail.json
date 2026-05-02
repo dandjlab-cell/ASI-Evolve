@@ -10,7 +10,7 @@
       "filename": "B19I4323.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor \u2014 the drizzle-on-tail hero is the money shot of the dish, showing the split tail, herb butter glistening, and the spoon action that an overhead would flatten into a top-down tray read."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 3.337,
@@ -41,7 +41,7 @@
       "filename": "B19I4307.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because it's the anchor shot for the ingredient reveal \u2014 the hand placing the tail on the board is the action that sells \"here is the lobster,\" and eye-level shows the hand-to-ingredient hand-off in a way overhead would flatten into a static product shot."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.209,
@@ -68,8 +68,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4277.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because the subject IS the accumulating count of tails on the board \u2014 a top-down graphic reveal of 1\u21922\u21923\u21924 only reads from above; front/eye-level would hide the board surface and kill the compilation payoff."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 0.4169999999999998,
@@ -94,8 +94,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4277.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead is the anchor here because the stop-motion accumulation gag (1\u21922\u21923\u21924 tails appearing) only reads from top-down \u2014 a front angle would hide the board surface where the tails are landing."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 0.4169999999999998,
@@ -120,8 +120,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4307.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this is a switch point in the ingredient/action run \u2014 the front shot established the cutting action at 5.5\u20137.0s, and overhead now shows the top-down geometry of the shell slit opening up across all four tails, which the eye-level front angle can't reveal."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 3.9210000000000003,
@@ -150,7 +150,7 @@
       "filename": "B19I4315.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because the meat-prying action is vertical and intimate \u2014 hands lifting meat up out of the shell reads clearly at eye-level, where overhead would flatten the lift into a shape change; it's also a switch point after two overhead beats, and this front take is the anchor that best sells the \"pry\" moment."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.834999999999999,
@@ -178,7 +178,7 @@
       "filename": "B19I4316.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the held camera for this ingredient-dump run (beat 4 of a 5-beat front streak) \u2014 the editor is holding the angle across dumps rather than alternating, and front shows the knife's downward travel and the meat splitting open in a way overhead would flatten."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.8350000000000009,
@@ -206,7 +206,7 @@
       "filename": "B19I4317.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 3.9209999999999994,
@@ -234,7 +234,7 @@
       "filename": "B19I4317.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because we're in a held front-camera run (beats 3\u20137 all front) \u2014 this is the middle of a hold, not a switch point, and front shows the downward hand pressure flattening the cloth-covered tail at eye level where the gesture reads clearly."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.876999999999999,
@@ -262,7 +262,7 @@
       "filename": "B19I4317.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the anchor \u2014 the hands-on-press moment sells the physical action of flattening the tail, which reads cleanly at eye-level where the cloth-covered press and the hands are the silhouette; overhead would flatten the gesture into a top-down blob."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.0010000000000012,
@@ -287,8 +287,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "AI2I4276.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this is a switch point \u2014 the ingredient dump run has been holding front for five beats, and water pouring into a dish reads clearly only from above where you can see the liquid filling the vessel; front would just show a hand and a cup."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 1.6260000000000012,
@@ -317,7 +317,7 @@
       "filename": "B19I4306.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -343,7 +343,7 @@
       "filename": "B19I4318.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor here \u2014 it's the scroll-stopper hero shot of the beauty opener, selling the single butterflied tail entering water at eye-level where you see the curl and translucency of the meat; overhead would flatten it into a top-down ingredient shot and kill the hero moment."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.0009999999999977,
@@ -368,8 +368,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4286.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this is a switch point into an ingredient-dump compilation \u2014 the next several beats are tails being placed in the dish, and overhead is the only angle that shows the dish filling up (front view at 24.5s can't read the arrangement inside the dish)."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 0.33399999999999963,
@@ -395,8 +395,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4286.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead is the anchor for this stop-motion payoff because the compilation only reads from top-down \u2014 you can't count tails in a dish from a front angle."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 0.1670000000000016,
@@ -422,8 +422,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4286.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead is the anchor here \u2014 the top-down compilation payoff of all four tails arranged in the dish only reads from above; a front angle would flatten the arrangement and hide the count."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 0.41699999999999804,
@@ -449,8 +449,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4286.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "This is a switch point \u2014 after a held overhead run building the four-tail compilation, cutting to a low-angle front reveals the foil sheet entering the frame from foreground depth, which an overhead would flatten into a featureless rectangle."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 0.75,
@@ -477,7 +477,7 @@
       "filename": "B19I4318.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the switch point out of the preceding overhead ingredient-dump run \u2014 the sealing gesture (hand pressing foil, Kitchn logo, green dish) reads as a tactile human action that an overhead would flatten into a texture shot, so front sells the \"sealing\" verb before the MOGRT card takes over."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 2.878,
@@ -504,8 +504,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "AI2I4287.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because the butter melting in the saucepan is a top-down transformation \u2014 foam forming on the surface only reads from above, and this sits inside a held overhead run (beats 1-2 overhead, this is beat 4), so it's continuation of the hold, not a switch."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 2.0020000000000024,
@@ -534,7 +534,7 @@
       "filename": "B19I4319.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is a switch point that begins a short front hold (the run shows F, F, F clustered here after an O,O,F,O opening) \u2014 per the hold-then-switch rule, the editor is ending the overhead run and committing to front for the next several dumps, and front gives human presence (hand entering, garlic falling from fingers) that the top-down overhead can't sell on an ingredient reveal."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.376999999999999,
@@ -562,7 +562,7 @@
       "filename": "B19I4319.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Overhead is the anchor here \u2014 it's the only angle that reveals the swirl pattern and bubbling surface of the garlic butter, which is the whole point of a beauty-opener hero shot; front would just show the side of a saucepan."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.1260000000000012,
@@ -587,8 +587,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4287.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because the swirl pattern in the butter is only legible top-down \u2014 a front angle would just show a hand/wrist moving and lose the glossy circular motion that makes this a hero beauty shot; this is an organic-flourish anchor for the opener, not part of a held run (previous beat was front)."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 0.8339999999999961,
@@ -614,7 +614,7 @@
       "filename": "B19I4320.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because it's a switch point after a 3-beat overhead hold (beats 5-7 all overhead per the run), and the front angle sells the dark-manicure hand tipping parsley at eye level in a way the top-down can't \u2014 you see the pour arc and the hand gesture, not just the landing."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.4179999999999993,
@@ -642,7 +642,7 @@
       "filename": "B19I4320.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front sells the tactile push-and-fold gesture at eye-level in a beauty opener where hero shots need to feel cinematic, not top-down utilitarian \u2014 overhead would flatten it into an ingredient-reveal shot, which this section isn't."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.1260000000000048,
@@ -668,7 +668,7 @@
       "filename": "B19I4320.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front continues a held front-camera run (positions 9\u201311 are all front in the sequence), consistent with the rule to hold a camera across several dumps rather than alternate \u2014 the front angle sells the pour as a gesture (cup tipping, stream falling) in a way overhead would flatten into just a puddle."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -696,7 +696,7 @@
       "filename": "B19I4320.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is a switch point \u2014 the run just shifted from overhead dumps into a stretch of five front beats, and this angle sells the vertical salt stream falling from the hand in a way overhead flattens into a blob."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.333999999999996,
@@ -723,8 +723,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4288.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because the anchor moment here is the top-down view of the sauce's texture and motion \u2014 you see the swirl pattern and suspended greens, which a front angle would flatten into an obscured pot rim."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -751,7 +751,7 @@
       "filename": "B19I4321.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.3770000000000024,
@@ -777,7 +777,7 @@
       "filename": "B19I4321.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor here because the reveal action \u2014 foil lifting up and away \u2014 reads as a vertical gesture toward the lens that an overhead would flatten into a shrinking rectangle; this is a best-take reveal beat, not part of a held-camera run."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.7520000000000024,
@@ -802,8 +802,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4290.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because after the front hero anchor at 43.0s, the editor switches to top-down for the plating reveal \u2014 overhead shows the full platter composition (four tails + lemon wedges + parsley-butter ramekin) which a front angle would foreshorten and obscure."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 1.6679999999999993,
@@ -830,7 +830,7 @@
       "filename": "B19I4325.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the anchor \u2014 an ECU tilted hero of the spoon lifting parsley butter is the best-take sell of the sauce itself, and overhead couldn't show the butter's viscosity, flecks of parsley, and the lift off the ramekin the way a low tilted angle does."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.0429999999999993,
@@ -856,7 +856,7 @@
       "filename": "B19I4323.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor here because the ECU of butter pouring onto split lobster tails is the hero beauty moment \u2014 the drizzle, sheen, and pooling in the shell read at eye-level in a way an overhead flatten would lose."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.3759999999999977,
@@ -882,7 +882,7 @@
       "filename": "B19I4323.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this ECU push-in on a single basted tail is the anchor \u2014 it's the best-take hero moment of the drizzle sequence, showing sauce pooling inside one shell in a way the overhead's flatter top-down geometry can't sell."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 1.2090000000000032,
@@ -907,8 +907,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "AI2I4292.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this is a switch point into the beauty/end-card sequence \u2014 the finished platter is a top-down subject (full plate composition, logo placement, symmetry) that only reads from above; front angle can't show the plating."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 2.293999999999997,
@@ -934,7 +934,7 @@
       "filename": "B19I4326.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the anchor shot for the end-card \u2014 the eye-level ECU sells the dip-and-lift hero action with the logo locked in frame, which overhead can't do (overhead would flatten the lift and hide the logo placement)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 3.7959999999999994,
@@ -959,8 +959,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4277.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead here is a switch point \u2014 the previous 3.8s front shot held the eye-level angle, so cutting to overhead reveals the top-down state of the pan/bowl (ingredient layout, coverage, distribution) that the front angle can't show."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 2.2519999999999527,
@@ -985,8 +985,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4277.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this sits inside a held overhead run (previous and next are both overhead) \u2014 it's not a switch point, it's continuation of the same camera holding through a mid-edit sequence where top-down framing shows ingredient placement/action that an eye-level front wouldn't reveal."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 3.9630000000000223,
@@ -1011,8 +1011,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4284.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this sits inside a held overhead run (prev and next are both overhead) \u2014 not a switch point, just continuing the held-camera rule for a top-down action where the transformation reads best from above."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 7.214999999999975,
@@ -1037,8 +1037,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4286.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this sits inside a held-overhead run (prev and next are both overhead) \u2014 it's not a switch point but a continuation, keeping the top-down angle that reads ingredient identity/placement better than eye-level would."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 2.9189999999999827,
@@ -1063,8 +1063,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4288.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because with no scan/frame data to confirm content, the prior beat was also overhead (AI2I4286) and this is most likely a held-camera run continuing the same top-down angle rather than a switch \u2014 holding the overhead keeps an ingredient/action sequence legible from above where a front eye-level wouldn't show the pan/bowl contents."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 2.1270000000000095,
@@ -1089,8 +1089,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4288.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": ""
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 2.0860000000000127,
@@ -1115,8 +1115,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4288.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this sits inside a held-overhead run (prev and next are both overhead) \u2014 it's not a switch point, it's continuation of a sustained top-down angle that shows ingredient placement/coverage in the pan which a front eye-level shot wouldn't read."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 1.2930000000000064,
@@ -1141,8 +1141,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4289.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this is part of a held-camera run \u2014 the previous and next beats are both overhead, so this is the middle of a sustained top-down sequence showing ingredient placement/action that reads clearest from above."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 2.1689999999999827,
@@ -1167,8 +1167,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4289.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": ""
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 3.9209999999999923,
@@ -1193,8 +1193,8 @@
       "recipe_section": "mid-edit",
       "filename": "AI2I4291.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because prev (AI2I4289) and next (AI2I4292) are both overhead \u2014 this is mid-run of a held overhead camera, not a switch point, so the editor is staying top-down to keep the ingredient/action reading cleanly from above rather than cutting back to eye-level."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 2.795000000000016,
@@ -1219,8 +1219,8 @@
       "recipe_section": "late-edit (likely transformation or money shots)",
       "filename": "AI2I4292.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because at 10.8s this is almost certainly a held-camera transformation/money shot (late-edit section) where top-down reveals the full surface change \u2014 pooling, spreading, or layering \u2014 that an eye-level front angle would foreshorten into invisibility."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][AI2I4])"
       },
       "duration": {
         "seconds": 10.802999999999997,
@@ -1246,7 +1246,7 @@
       "filename": "B19I4322.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the switch point after a held overhead run (previous beat was overhead at the same source timecode 10.8s), breaking the hold to re-establish the cook/eye-level perspective before the next front beat continues."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 2.2939999999999827,
@@ -1272,7 +1272,7 @@
       "filename": "B19I4322.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 with no VLM/frame data and the prior shot also front, this reads as a held-camera run continuing rather than a deliberate switch; front at eye-level sells transformation/money-shot moments in late-edit better than a top-down ingredient angle would."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 4.336999999999989,
@@ -1298,7 +1298,7 @@
       "filename": "B19I4319.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front at eye-level sells the finished dish as a presentation/reveal in plating, showing the plate's silhouette and the garnish/sauce landing on top in a way overhead would flatten."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 2.5860000000000127,
@@ -1325,7 +1325,7 @@
       "filename": "B19I4319.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the same B19I4319.mov clip continuing from the previous beat \u2014 it's a held camera run into the lobster/butter nest, not a switch point."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[baked_lobster_tail][B19I4])"
       },
       "duration": {
         "seconds": 3.6280000000000427,
@@ -1351,8 +1351,8 @@
       "recipe_section": "beauty close (plating, final hero)",
       "filename": "[NEST] Nest - lobster tail:butter melt",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front \u2014 this is a nested beauty sequence of butter melting on the lobster tail, and the front/eye-level angle shows the translucent butter slumping and pooling against the shell in a way an overhead flatten would kill; it's the anchor shot because the organic flourish (butter melt transformation) IS the moment."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 38.78899999999999,

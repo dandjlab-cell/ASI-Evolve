@@ -9,8 +9,8 @@
       "recipe_section": "beauty opener (scroll-stopper, 2-3 hero shots)",
       "filename": "A054_04180657_C022.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The macro front shot of the twisted fluted crust edge is the anchor \u2014 it's the hero \"best take\" that sells Flaky Pie Crust as the title promises; the overhead opening is context/setup, not alternation, and the beat builds toward the front anchor because overhead can't show the crimped edge profile that defines the crust's craft."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][A054_])"
       },
       "duration": {
         "seconds": 3.337,
@@ -41,7 +41,7 @@
       "filename": "4L9A8796.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor take here \u2014 the plunge into the flour mound reads as a macro, dimensional action (whisk diving down into a textured pile), which overhead would flatten into a top-down swirl and lose the \"plunge\" entirely."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 1.6270000000000007,
@@ -67,7 +67,7 @@
       "filename": "4L9A8796.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front anchors the \"butter should be the size of a pea\" technique tip \u2014 eye-level sells fingertip smearing/pinching better than top-down, and this is part of the front-heavy run in the camera sequence (front, front, front, overhead, front...); the mid-beat flip to overhead is the best-take for the bench scraper pulling through the mixture, a top-down motion."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 2.3360000000000003,
@@ -96,7 +96,7 @@
       "filename": "4L9A8797.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is an organic flourish/anchor moment (rule 4) where the cascade of crumble falling through space only reads in profile; overhead would flatten it into a pile with no visible fall, so front is the only angle that sells the texture beat."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 1.043000000000001,
@@ -122,7 +122,7 @@
       "filename": "A054_04180540_C008.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is a deliberate switch point \u2014 beat 4 is the first overhead after three front shots (the `<<<` marker in the camera run confirms it), and top-down is the only angle that reveals the ice cubes in the receiving Pyrex and the water level rising against them, which a front angle would flatten into a glass wall."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][A054_])"
       },
       "duration": {
         "seconds": 1.2509999999999994,
@@ -150,7 +150,7 @@
       "filename": "4L9A8798.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is a deliberate switch point after the overhead ice-water pour \u2014 the front angle makes the Pyrex logo and empty-vessel shape legible at eye-level (overhead would flatten it into a disc), reintroducing the measuring container as its own beat."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 0.916999999999998,
@@ -176,7 +176,7 @@
       "filename": "4L9A8800.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this sits in the middle of a held front run (prev front 0.9s, next front 1.3s) \u2014 per Rule 3, the editor holds one camera across several ingredient-dump beats rather than alternating, and front reads the vertical scoop-and-lift action at eye level where overhead would flatten the spoon's travel."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 2.7950000000000017,
@@ -202,7 +202,7 @@
       "filename": "4L9A8800.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the held angle through this ingredient-dump stretch \u2014 prev and next are both front \u2014 and at eye-level the Pyrex tipping near-vertical reads as a silhouette with the final stream trailing out, which overhead would flatten into just a bowl surface."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 1.2510000000000012,
@@ -228,7 +228,7 @@
       "filename": "4L9A8801.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because the previous shot was also front (4L9A8800.mov, 1.3s) and this continues a held-front run before switching to the overhead nest \u2014 front eye-level also shows the shaggy-clump texture against the bowl wall, which an overhead tilt would flatten into a top-down mass."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 1.2100000000000009,
@@ -253,8 +253,8 @@
       "recipe_section": "technique / active cooking",
       "filename": "[NEST] nest - flaky",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because the shot's whole purpose is showing texture INSIDE the bowl \u2014 shaggy dough crumble \u2014 which a front/eye-level angle physically cannot reveal; this is a content requirement, not a held-run continuation."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 4.128999999999998,
@@ -281,7 +281,7 @@
       "filename": "4L9A8802.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is a deliberate switch point between an overhead nest (previous) and another overhead (next) \u2014 the front angle is the best take for showing both disks in frame together with the first disk visible right, dramatizing \"two disks now exist\" in a way overhead couldn't since overhead would flatten them into the counter."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 1.0010000000000012,
@@ -307,7 +307,7 @@
       "filename": "A054_04180548_C011.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][A054_])"
       },
       "duration": {
         "seconds": 1.1679999999999993,
@@ -333,7 +333,7 @@
       "filename": "4L9A8803.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front sells the \"holding up to camera\" presentation gesture \u2014 this is the hero beat showing the finished dough disk lifted toward the viewer, which overhead would flatten into just a top of a plastic blob; it's a held-front run (prev/next are both front-adjacent) finishing the make-dough section before the chill."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 2.2940000000000005,
@@ -362,7 +362,7 @@
       "filename": "4L9A8815.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the switch-point shot before handing off to overhead for the roll \u2014 it captures two human gestures (hand placing the disk, fingers shaping the edges) that read as intent, whereas overhead would flatten them into pure top-down geometry; overhead earns its turn at the next beat because the rolling pin's flattening action only legibly reads from above."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -388,7 +388,7 @@
       "filename": "A054_04180631_C018.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is a held-camera switch point \u2014 the run breaks from front into three consecutive overheads (this one + next two), and top-down is the only angle that reads the flat disk actually expanding into a wide thin round."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][A054_])"
       },
       "duration": {
         "seconds": 2.5859999999999985,
@@ -417,7 +417,7 @@
       "filename": "A054_04180648_C020.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the only angle that reads this moment \u2014 a front/eye-level shot would hide the empty pie plate under the draping dough, so overhead is the anchor here because it's the only take that shows the transport-and-drop action landing in the vessel."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][A054_])"
       },
       "duration": {
         "seconds": 1.4179999999999993,
@@ -444,7 +444,7 @@
       "filename": "A054_04180648_C020.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because pressing dough into a plate is a top-down spreading action \u2014 the circular coverage across the plate bottom only reads from above, and this continues a held overhead run from the previous beat (A054 overhead) before the switch to front for the crimping macro that follows."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][A054_])"
       },
       "duration": {
         "seconds": 0.9170000000000016,
@@ -471,7 +471,7 @@
       "filename": "4L9A8820.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because it's the anchor \u2014 only the macro front angle shows the thumbs' pinching technique and the zigzag flutes resolving into pattern, which the overhead flattens; this is a deliberate switch point between two overhead shots (0.9s prev, 1.3s next) to sell the crimping technique."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 2.0859999999999985,
@@ -497,7 +497,7 @@
       "filename": "A054_04180700_C023.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the switch point out of the preceding front-camera run \u2014 top-down is the only angle that reads the full circular fluted crust as a finished \"pre-bake hero,\" which a front/eye-level shot would foreshorten into a flat disc."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][A054_])"
       },
       "duration": {
         "seconds": 1.2510000000000048,
@@ -524,7 +524,7 @@
       "filename": "4L9A8823.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the switch point after the overhead tray-drop reveal at 40.5s \u2014 overhead sold the \"it's baked\" moment, and front takes over as the anchor for the beauty run because only a side angle gives you the shallow-DOF focus pull across the fluted rim (overhead flattens that texture)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 2.168999999999997,
@@ -550,7 +550,7 @@
       "filename": "4L9A8821.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because the tilt-up reveal is a front-angle move \u2014 it physically can't happen from overhead \u2014 and this continues a held front run from the previous 2.2s front shot before switching to overhead on the next beat for the flat beauty."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][4L9A8])"
       },
       "duration": {
         "seconds": 1.0840000000000032,
@@ -577,7 +577,7 @@
       "filename": "A054_04180657_C022.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is a top-down beauty shot where the circular geometry, lattice/crimp pattern, and even bake color of the finished crust read as a complete object \u2014 a front eye-level angle would only show the rim profile and hide the payoff."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[flaky_pie_crust][A054_])"
       },
       "duration": {
         "seconds": 1.9609999999999985,

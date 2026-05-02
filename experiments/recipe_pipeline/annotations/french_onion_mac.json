@@ -40,8 +40,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4583.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front here is the switch point into the ingredient run \u2014 after the overhead title-card scoop, front sells the pot-side pour at eye level showing the oil stream and onion cascade hitting the pot wall, which an overhead would flatten into a puddle shape. (Note: the frame-by-frame labels 3.5\u20134.5s as OVERHEAD, which conflicts with the beat's \"front\" tag \u2014 worth flagging.)"
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.2929999999999997,
@@ -96,8 +96,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4583.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front because this is the switch point in the held-camera run \u2014 the previous beat was overhead (bowl lifting away completing the onion dump), and front sells the salt action better by showing the stream falling in from the side and the crystals landing/stirring in macro, which an overhead would flatten."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.2509999999999994,
@@ -124,8 +124,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4583.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor here because the tight macro sells the salting-and-stirring action \u2014 you see salt crystals catching light on glossy onion slices, which an overhead would flatten into generic \"stuff in pan.\""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.2509999999999994,
@@ -178,8 +178,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4584.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front because the shot is looking at the underside of the lid as it's lifted \u2014 condensation droplets clinging to the lid's interior are only legible from an eye-level/upward angle, not from a top-down overhead; this is a switch point (anchor shot) that opens the \"reveal\" moment after the covered-cooking beat."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.168000000000001,
@@ -282,8 +282,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4588.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Labeled \"front\" but the frame-by-frame shows overhead on the panko pour \u2014 this is almost certainly an overhead shot continuing the held overhead run through the ingredient dump (prior beat AI2I4705 was also overhead), consistent with the \"hold camera across dumps\" rule rather than a switch; the top-down angle is what sells a cascading-pour ingredient shot."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.3760000000000012,
@@ -310,8 +310,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4588.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The pipeline label says front but the frame-by-frame shows overhead butter pouring onto panko across the entire 15.7\u201317.0s window \u2014 front only appears at the cut-out frame (17.0s) when hands start tossing with the spatula. Given the camera run marks this as position 11 inside a front\u2026front\u2026front hold, the intent is to continue the held front run through the dump sequence (rule 3), but the actual visible content here is overhead of the pour \u2014 either a pipeline mislabel or the front take shows the pour from eye-level and wasn't captured in the scan."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.293000000000001,
@@ -338,8 +338,8 @@
       "recipe_section": "technique / active cooking",
       "filename": "B19I4588.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor here \u2014 it's the best take showing the tossing action with the red spatula blurred mid-motion, which sells the \"buttering the panko\" technique in a way the overhead (which would just show a bowl of crumbs) can't; it also marks a deliberate switch point out of the overhead butter-pour that preceded it."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.5429999999999993,
@@ -392,8 +392,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4590.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front because this is the anchor \u2014 the hero shot of cooked al-dente elbows on the spoon with steam/water dripping sells the \"pasta is done\" moment better than an overhead ever could, and it also serves as the switch point out of the overhead ingredient-dump run."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.7099999999999973,
@@ -446,8 +446,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4591.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.4179999999999993,
@@ -474,8 +474,8 @@
       "recipe_section": "transformation",
       "filename": "B19I4592.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "This is an anchor shot \u2014 a top-down hero reveal of the glossy braised onion jam swimming in wine that only overhead can sell (front angle would flatten the pool and hide the liquid-to-onion ratio), and it sits inside a held overhead run (pour \u2192 hero \u2192 scrape \u2192 transfer), consistent with the \"hold camera, then switch\" rule for transformation beats."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.2510000000000012,
@@ -500,8 +500,8 @@
       "recipe_section": "transformation",
       "filename": "[NEST] Nest - french onion",
       "camera": {
-        "choice": "front",
-        "reasoning": "Overhead (frame data contradicts the \"front\" label) \u2014 this is the anchor for the transformation reveal, since the top-down view is the only angle that shows the reserved onion jam as a contained, hero portion in the glass bowl; a front/eye-level take would flatten the mound and hide the marble-counter framing."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 2.251999999999999,
@@ -527,8 +527,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4594.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is wrong per the frame-by-frame scan \u2014 every frame from 28.0s\u201330.0s reads OVERHEAD (butter cubes viewed top-down on pasta/onion bed), so this is a held overhead run through the butter/flour dumps, not a front switch."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.4180000000000028,
@@ -585,8 +585,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4594.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front sells the stir as a human action \u2014 you see the hand/wrist driving the spoon into the mound, which reads as \"cooking begins\" rather than another ingredient-dump top-down; it's a switch point out of the held overhead ingredient run, marking the transition from dumping to mixing."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.0850000000000009,
@@ -611,8 +611,8 @@
       "recipe_section": "technique / active cooking",
       "filename": "B19I4594.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Overhead (metadata says \"front\" but every frame shows top-down spoon-through-flour) \u2014 this is the anchor shot for the roux section because the transformation (flour craters \u2192 golden paste) only reads from above; front angle would hide the incorporation happening on the pot floor."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.2509999999999977,
@@ -691,8 +691,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4595.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front holds the established camera run \u2014 positions 24-29 in the beat group are all front, so this is a held-camera stretch per rule 3 (don't alternate F/O every dump), and front at eye-level lets the cheese drop read as a gesture with the cook's hand entering frame rather than a top-down ingredient label shot."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.6259999999999977,
@@ -719,8 +719,8 @@
       "recipe_section": "technique / active cooking",
       "filename": "B19I4595.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.1259999999999977,
@@ -745,8 +745,8 @@
       "recipe_section": "technique / active cooking",
       "filename": "B19I4595.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 0.9179999999999993,
@@ -771,8 +771,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4595.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 0.7510000000000048,
@@ -799,8 +799,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4595.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Held-camera run \u2014 this is beat 29 of a 5-beat front streak (positions 25\u201329), so the editor is obeying rule 3 (hold across dumps) rather than switching; the angle frames both seasoning piles together so the \"salt + pepper\" pairing reads in one glance."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.3759999999999977,
@@ -880,8 +880,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4596.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor here \u2014 it's the only angle that captures the dramatic mid-air drop and syrupy splash of onions hitting the sauce; overhead would flatten the vertical action and lose the pooling/splash silhouette. This sits inside a long front-heavy hold (beats 29\u201338 mostly front), so it's continuing the held run, not switching."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 0.875,
@@ -908,8 +908,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4596.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor here \u2014 it's the best-take capture of the splash/settle beat, showing the onions' vertical drop and the spoon's exit silhouetted against the pan wall, which overhead would flatten into an indistinct blob."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.0850000000000009,
@@ -934,8 +934,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I4596.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front here is a switch point ending a held-overhead ingredient-dump run \u2014 eye-level sells the \"sauce is done, now we add pasta\" transition where overhead would just read as more stirring."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 0.9590000000000032,
@@ -960,8 +960,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4596.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front \u2014 this is a held-camera run (positions 33-38 are all front in the camera sequence), so the editor is sustaining the front angle across multiple ingredient dumps rather than alternating; the eye-level angle also sells the dramatic cascade of macaroni piling into the pot better than a flat top-down would."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -988,8 +988,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "[NEST] Nest - french mac and cheese",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front continues a long held-front run (beats 29\u201336 all front), following the \"hold camera across dumps, don't alternate every beat\" rule \u2014 this beat shows the assembled pot moment and stays on the established angle rather than switching for variety's sake."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 2.3359999999999985,
@@ -1017,8 +1017,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4597.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front because this sits inside a long held-front run (seven fronts in a row leading into this beat) \u2014 the editor is holding the angle across dumps per the ingredient-dump rule, not alternating, and front sells the layering action at eye-level as cheese/onions build up."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.1670000000000016,
@@ -1045,8 +1045,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4597.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is labeled but the frames read as overhead close-ups of the pot \u2014 treating the labeled \"front\" as correct, it's a held-camera choice within a long front run (beats 35\u201338 per the run vector), continuing the same angle across panko/cheese dumps rather than alternating, because the editor is holding one camera across the dump sequence per rule 3."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.1679999999999993,
@@ -1101,8 +1101,8 @@
       "recipe_section": "technique / active cooking",
       "filename": "B19I4598.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor here \u2014 the low front angle sells the \"reveal\" of the finished bake with golden browned edges and panko crust catching light across the surface, which an overhead would flatten into a texture map; overhead was right for ingredient dumps, but the payoff shot of a baked dish wants the hero front angle."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -1127,8 +1127,8 @@
       "recipe_section": "transformation",
       "filename": "B19I4598.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor here \u2014 this tight close-up on the bubbling golden crust is the best-take beauty shot of the transformation, a found organic moment the overhead wider shot can't deliver at this intimacy."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 1.2510000000000048,
@@ -1180,8 +1180,8 @@
       "recipe_section": "beauty close (plating, final hero)",
       "filename": "B19I4600.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front because this IS the anchor \u2014 the hero scoop with cheese pull and end-card logo is the single best-take beauty frame of the video, and overhead can't show the vertical cheese stretch from pot to spoon."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[french_onion_mac][B19I4])"
       },
       "duration": {
         "seconds": 3.4200000000000017,

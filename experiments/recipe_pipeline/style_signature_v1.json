@@ -337,9 +337,9 @@
     "coverage_per_recipe": {
       "baked_lobster_tail": {
         "beats": 51,
-        "labeled": 51,
-        "unknown": 0,
-        "coverage": 1.0
+        "labeled": 50,
+        "unknown": 1,
+        "coverage": 0.98
       },
       "baked_potato_soup": {
         "beats": 34,
@@ -373,15 +373,15 @@
       },
       "crab_rangoon": {
         "beats": 27,
-        "labeled": 27,
-        "unknown": 0,
-        "coverage": 1.0
+        "labeled": 25,
+        "unknown": 2,
+        "coverage": 0.926
       },
       "cranberry_jalapeno_dip": {
         "beats": 19,
-        "labeled": 19,
-        "unknown": 0,
-        "coverage": 1.0
+        "labeled": 17,
+        "unknown": 2,
+        "coverage": 0.895
       },
       "creamy_potato_soup": {
         "beats": 23,
@@ -397,15 +397,15 @@
       },
       "flaky_pie_crust": {
         "beats": 22,
-        "labeled": 22,
-        "unknown": 0,
-        "coverage": 1.0
+        "labeled": 21,
+        "unknown": 1,
+        "coverage": 0.955
       },
       "french_onion_mac": {
         "beats": 44,
-        "labeled": 44,
-        "unknown": 0,
-        "coverage": 1.0
+        "labeled": 42,
+        "unknown": 2,
+        "coverage": 0.955
       },
       "korean_fried_chicken": {
         "beats": 52,
@@ -415,15 +415,15 @@
       },
       "peppermint_bark": {
         "beats": 34,
-        "labeled": 34,
-        "unknown": 0,
-        "coverage": 1.0
+        "labeled": 33,
+        "unknown": 1,
+        "coverage": 0.971
       },
       "pin_wheel": {
         "beats": 52,
-        "labeled": 52,
-        "unknown": 0,
-        "coverage": 1.0
+        "labeled": 50,
+        "unknown": 2,
+        "coverage": 0.962
       },
       "puppy_chow": {
         "beats": 22,
@@ -445,29 +445,29 @@
       }
     },
     "overall_camera": {
-      "front": 434,
-      "overhead": 176,
-      "unknown": 8
+      "front": 379,
+      "overhead": 220,
+      "unknown": 19
     },
     "by_beat_type": {
       "beauty_opener": {
-        "front": 19,
-        "overhead": 8
+        "front": 16,
+        "overhead": 11
       },
       "ingredient": {
-        "front": 139,
-        "overhead": 55,
-        "unknown": 2
+        "front": 110,
+        "overhead": 80,
+        "unknown": 6
       },
       "stop_motion": {
-        "overhead": 8,
-        "front": 2,
+        "overhead": 6,
+        "front": 4,
         "unknown": 1
       },
       "unlabeled": {
-        "front": 234,
-        "overhead": 92,
-        "unknown": 3
+        "front": 209,
+        "overhead": 110,
+        "unknown": 10
       },
       "technique": {
         "front": 3,
@@ -598,62 +598,62 @@
   "camera_runs": {
     "by_camera_summary": {
       "front": {
-        "n_runs": 106,
-        "max_run": 26,
+        "n_runs": 74,
+        "max_run": 50,
         "p25": 1.0,
         "p50": 3.0,
         "p75": 5.0,
-        "p90": 7.0
-      },
-      "overhead": {
-        "n_runs": 95,
-        "max_run": 11,
-        "p25": 1.0,
-        "p50": 1.0,
-        "p75": 2.0,
-        "p90": 3.6
+        "p90": 9.4
       },
       "unknown": {
-        "n_runs": 7,
+        "n_runs": 18,
         "max_run": 2,
         "p25": 1.0,
         "p50": 1.0,
         "p75": 1.0,
-        "p90": 1.4
+        "p90": 1.0
+      },
+      "overhead": {
+        "n_runs": 67,
+        "max_run": 34,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 3.0,
+        "p90": 6.4
       }
     },
     "max_run_per_recipe": {
+      "baked_lobster_tail": 50,
+      "baked_potato_soup": 34,
       "korean_fried_chicken": 26,
       "sweet_potato_pie": 23,
+      "pin_wheel": 22,
       "puppy_chow": 22,
       "banana_muffins": 17,
+      "french_onion_mac": 17,
       "chicken_thighs": 15,
-      "crab_rangoon": 13,
-      "baked_lobster_tail": 11,
       "basil_pesto": 10,
       "steak_tacos": 10,
       "cranberry_jalapeno_dip": 8,
       "cucumber_tea": 8,
-      "baked_potato_soup": 7,
-      "french_onion_mac": 7,
-      "peppermint_bark": 7,
-      "pin_wheel": 7,
       "creamy_potato_soup": 6,
+      "peppermint_bark": 6,
       "congee": 5,
+      "crab_rangoon": 5,
       "flaky_pie_crust": 4
     },
     "max_run_outliers": {
-      "median": 9.0,
-      "p25": 7.0,
-      "p75": 14.5,
-      "iqr": 7.5,
-      "low_fence": -4.25,
-      "high_fence": 25.75,
+      "median": 12.5,
+      "p25": 6.5,
+      "p75": 22.0,
+      "iqr": 15.5,
+      "low_fence": -16.75,
+      "high_fence": 45.25,
       "low": [],
       "high": [
         {
-          "recipe": "korean_fried_chicken",
-          "value": 26
+          "recipe": "baked_lobster_tail",
+          "value": 50
         }
       ]
     }

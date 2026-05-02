@@ -10,7 +10,7 @@
       "filename": "B19I3781.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor/best-take for the hero dish reveal \u2014 eye-level shows the dimensional profile of the slice and the whipped cream dollop that an overhead would flatten into a disc, and it seats the \"Sweet Potato Pie\" title card cleanly above the plate."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 2.0440000000000005,
@@ -40,7 +40,7 @@
       "filename": "B19I3697.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor shot for this beauty-opener beat because it's at eye-level with the fork-piercing action, showing the hand entering frame and the tactile detail of tines puncturing skin \u2014 overhead would flatten that tactile drama into a top-down ingredient shot, which is the wrong register for a scroll-stopper."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 2.085,
@@ -66,7 +66,7 @@
       "filename": "B19I3699.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is a held-camera run (all 22 beats front), so the choice follows Rule 3's \"hold across dumps\" rather than being a switch point; the low eye-level angle reads the flour's textural spread on marble better than overhead would on a thin flat scatter."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.3339999999999996,
@@ -95,7 +95,7 @@
       "filename": "B19I3699.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 3 of a 22-beat ingredient-dump run where every beat stays front \u2014 per rule 3, hold the camera across dumps rather than alternating; front shows the plop action at eye-level where the dough ball reads clearly against the marble."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -124,7 +124,7 @@
       "filename": "B19I3700.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the anchor shot \u2014 the horizontal carry of the pin across frame reads as a deliberate transfer gesture that overhead would flatten into a top-down blob, and it keeps the eye-level POV established by the preceding ingredient beat before the overhead pivot on the next press-down action."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -151,7 +151,7 @@
       "filename": "B19I3700.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is part of a held front-camera run (prev front, next front, same source clip B19I3700.mov), so the editor isn't switching angles here; front at eye-level shows the fingers crimping the rim edge and tucking dough against the dish interior, which overhead would flatten into an indistinct ring."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.1679999999999993,
@@ -177,7 +177,7 @@
       "filename": "B19I3700.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the middle of a held-front run (previous 1.2s front \u2192 this 2.0s front \u2192 next 1.2s front) covering the technique-driven crimping action, and front is the angle where you actually see the index/thumb pinching motion \u2014 overhead would flatten the finger work into a top-down pattern shot (which is what the editor saves for the cut-out at 20.5s to reveal the finished scallop)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.9600000000000009,
@@ -203,7 +203,7 @@
       "filename": "B19I3709.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is a held-camera run (prev front 2.0s \u2192 this front 1.2s \u2192 next front 1.3s), and the sheet pan sliding in horizontally from above-right is a lateral entrance that reads as motion at eye-level; overhead would kill the \"slides into frame\" gesture by flattening it into a static top-down reveal."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.2100000000000009,
@@ -229,7 +229,7 @@
       "filename": "B19I3716.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front continues a held-camera run (prev front, next front) through the scoring/opening sweet potato sequence \u2014 front shows the horizontal knife stroke traveling along the length of the potato, which overhead would compress into a static top-down line without conveying the slicing motion."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.3349999999999973,
@@ -256,7 +256,7 @@
       "filename": "B19I3716.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 part of a held-front run (previous front, next front), and front is the angle that actually shows the 3D \"peel open\" reveal of orange flesh emerging from skin; overhead would flatten the opening gesture."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.1679999999999993,
@@ -283,7 +283,7 @@
       "filename": "B19I3716.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 held camera run per Rule 3; previous beat and next beat are both front, so this continues the front hold during the ingredient dump rather than alternating F\u2192O\u2192F."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.5430000000000028,
@@ -310,7 +310,7 @@
       "filename": "B19I3718.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.6259999999999977,
@@ -336,7 +336,7 @@
       "filename": "B19I3720.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Overhead (frame-by-frame shows top-down, despite \"front\" label in metadata) holds the camera run from the previous beat \u2014 rule 3 says hold the camera across an ingredient dump sequence, and this top-down angle is the only one that shows cinnamon landing and forming a mound on the orange/cream boundary, which a front/eye-level angle would hide behind the jar."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.2520000000000024,
@@ -364,7 +364,7 @@
       "filename": "B19I3720.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Held camera run \u2014 this is beat 13 of 22 straight \"front\" labeled shots, so the editor is following the \"hold camera across dumps\" rule rather than switching; the angle shows the pile forming beside the cinnamon mound, which is what the ingredient-dump sequence is cataloging."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.2090000000000032,
@@ -392,7 +392,7 @@
       "filename": "B19I3720.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Beat 14 of a 22-beat held camera run on ingredient dumps \u2014 not a switch point, not a fresh anchor, just continuation of the locked angle per the \"hold camera across dumps\" rule (note: metadata labels this \"front\" but the frame-by-frame reads OVERHEAD, so the label appears inconsistent with the visible top-down spice-mound framing)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.2099999999999937,
@@ -420,7 +420,7 @@
       "filename": "B19I3720.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is beat 15 of 22 in a sustained front-camera hold through the ingredient dump run, so the choice isn't about what the angle reveals but about not breaking the held-camera rhythm per rule 3 (hold across dumps, don't alternate). Note: the frame-by-frame labels this moment OVERHEAD (top-down on cinnamon/salt), which contradicts the pipeline's \"front\" tag \u2014 if the shot is actually the overhead top-down, then it's still consistent with the held run since every neighbor beat is tagged the same."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 0.04100000000000392,
@@ -448,7 +448,7 @@
       "filename": "B19I3720.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 16 of a 22-beat run entirely held on front \u2014 the editor is following the \"hold camera across dumps, don't alternate every beat\" rule, not making an anchor switch here."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -477,7 +477,7 @@
       "filename": "B19I3721.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the switch point from overhead ingredient prep to front for the pour action \u2014 the editor lands here before beat 19's pour because the filling's arc/stream reads from the side, not from above, so this beat establishes the angle one beat early on a steady empty-crust frame."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.1260000000000048,
@@ -504,7 +504,7 @@
       "filename": "B19I3721.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 3 in a held front-camera run (prev front \u2192 this front \u2192 next front) \u2014 per rule 3 the editor is holding through the pour progression, and front frames the filling climbing against the crust wall (the level change), which overhead would flatten into a top-down puddle."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 0.8339999999999961,
@@ -531,7 +531,7 @@
       "filename": "B19I3779.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because you need the side-profile of the slice to read the filling-against-crust layers \u2014 overhead would flatten this into a top-down shape with no layer information, defeating the purpose of a hero slice lift; this is the anchor shot for the plating section (best take of the money moment), and it sits inside a held-front run (previous 0.8s front \u2192 this \u2192 next 2.4s front), not a switch point."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.3769999999999953,
@@ -557,7 +557,7 @@
       "filename": "B19I3782.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front continues a held front run (prev and next are both front) \u2014 the low-angle shows the fork physically piercing and pulling a bite off the side of the slice, which overhead would flatten into an uninformative top-down dollop shot."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 2.378,
@@ -583,7 +583,7 @@
       "filename": "B19I3782.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is an anchor beauty shot, not part of an ingredient-dump alternation rule; the editor picked front because eye-level macro reads the dollop's height and the filling's creamy striation, whereas overhead would flatten the dollop into a circle and lose the texture story."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 1.2509999999999977,
@@ -609,7 +609,7 @@
       "filename": "B19I3782.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the beauty/end-card anchor \u2014 the hero slice with whipped cream needs a profile view to show the cross-section and leave negative space top-right for the \"the kitchn\" logo, which overhead would flatten and leave no room for."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[sweet_potato_pie][B19I3])"
       },
       "duration": {
         "seconds": 4.1710000000000065,

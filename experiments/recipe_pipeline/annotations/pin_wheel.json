@@ -10,7 +10,7 @@
       "filename": "B19I4012.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front dominates this beat (2.5s of 3.3s) because the hand-lift \u2192 snap \u2192 crumb-reveal is the anchor \u2014 front is the only angle that sells the tactile handling and the pinwheel cross-section at the break, which overhead would flatten into a top-down graphic."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 3.337,
@@ -41,7 +41,7 @@
       "filename": "AI2I3934.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is the first beat of a 43-beat ingredient dump run that opens on overhead \u2014 top-down is the only angle that reads \"something being dropped INTO the bowl,\" which front can't show, and it establishes the ingredient-dump POV before the long front-camera hold that follows."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 1.376,
@@ -69,8 +69,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I3942.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The frame-by-frame shows OVERHEAD, not front \u2014 sugar stream is viewed top-down with the pile building visibly on the butter, which is what \"overhead\" means in this taxonomy. Against the rules: this is part of a held overhead run across the ingredient dump sequence (granulated sugar \u2192 powdered sugar both stay overhead), which is exactly the \"hold camera across dumps, don't alternate every beat\" behavior \u2014 so the pipeline's \"front\" label appears to be a misclassification."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.46,
@@ -98,8 +98,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I3942.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Pipeline labels this front but the frame-by-frame shows OVERHEAD \u2014 the anchor here is top-down because the powdered sugar cloud rising and pile forming is pure top-down action (invisible from front), and it sits inside a run where the editor is holding overhead through the dump rather than alternating."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.3339999999999996,
@@ -127,8 +127,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I3942.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The frame-by-frame shows this is actually overhead (macro top-down on sugar pile) \u2014 it's a held-camera run during an ingredient dump, and overhead is required here because the transformation (dark vanilla pooling into white sugar) is only legible from above."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -156,8 +156,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I3942.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is beat 5 in a held front run (beats 2-8 all front per the camera run map), so this is a held-camera choice per rule #3 \u2014 the editor is parking on front across consecutive dumps rather than alternating F\u2192O every beat, even though the visible composition here reads overhead (likely a cropped/reframed nested front, given the 79% punch-in and h:-0.06/v:0.08 offset)."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.209999999999999,
@@ -185,8 +185,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I3942.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Note conflict \u2014 metadata says front but frames show OVERHEAD (paddle descending into bowl from above); if overhead, this is the held-camera continuation of the ingredient-dump run, letting the viewer see the bowl they've been watching get filled now receive the tool, which a front angle would hide behind the mixer body."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.6669999999999998,
@@ -212,8 +212,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I3942.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front because this sits inside a held-camera run (previous B19I3942 front 0.7s, next B19I3945 front 1.1s) \u2014 rule 3 says don't alternate every beat during ingredient dumps, so the editor stays on front through the paddle-kicks-on moment rather than switching angles mid-phrase."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.918000000000001,
@@ -238,8 +238,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I3945.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front holds from the previous beat (B19I3942.mov front, 0.9s) \u2014 this is a held-camera continuation through the end of the creaming/technique section, letting the paddle-turning pale yellow mixture read as the payoff to \"creaming is done\" before the next beat switches overhead for the flour dump. Overhead wouldn't sell the paddle motion or the color change as clearly at eye level. Note: the /watch-video frame at 11.5s is labeled OVERHEAD, which contradicts the beat's \"Camera: front\" tag \u2014 flagging the inconsistency."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.0839999999999996,
@@ -264,8 +264,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "[NEST] Nest_Pinwheel._1",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this is a deliberate switch point \u2014 the preceding run was 7 front shots in a row, and this is the first overhead after that hold, per the \"hold then switch\" rule; the top-down angle is also the only angle that reads flour cascading into an empty bowl and forming a conical pile geometrically."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 3.17,
@@ -294,8 +294,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I3947.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the switch point \u2014 the beat at position 9 was overhead (pouring the flour in) and the editor swings to front here so the paddle's vertical sweep and the dough-clump formation read with dimension, which a top-down angle flattens; this follows the \"hold, then switch\" rule rather than alternating every beat."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.543000000000001,
@@ -322,8 +322,8 @@
       "recipe_section": "ingredient dump",
       "filename": "B19I3947.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front because this is the anchor shot for the \"dough is done\" payoff \u2014 the paddle lifting clear of a unified yellow mass reads as a completion gesture at eye-level, which overhead would flatten into just another bowl-of-stuff top-down; it's also a deliberate switch point between two overheads (17.0s and 18.5s), breaking a held overhead run before the triptych composition lands."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.9589999999999996,
@@ -349,7 +349,7 @@
       "filename": "AI2I3940.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the only angle that reads the triptych composition (mixer bowl + two empty bowls staged for portioning) \u2014 front camera physically cannot show this setup, and this shot is the anchor that opens the stop-motion 3-color-split sequence that follows at 19.0s and 19.5s."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 1.501999999999999,
@@ -374,8 +374,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I3949.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the switch point after a held overhead run \u2014 previous beat was overhead (AI2I3940.mov), and the editor breaks the hold here to keep the ingredient dump sequence from getting monotonous, using front to show the hand/bottle/spatula action from eye level rather than repeating the top-down ingredient-reveal angle."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 2.501999999999999,
@@ -403,7 +403,7 @@
       "filename": "B19I3951.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is a switch point driven by necessity \u2014 green drops landing in a small bowl and folding through dough are top-down ingredient actions that front-eye-level literally cannot show, so the camera run breaks from the front\u2192front pair on either side."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 2.5450000000000017,
@@ -431,8 +431,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3954.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "This is overhead, not front \u2014 and it's the anchor of this section: a stop-motion-style beat where the green disk sits alone on plastic wrap, hands out of frame, which is exactly the kind of \"beautiful accident\" organic moment rule 2/4 describes; it's also mid-run in a held overhead sequence (24.5\u219225.0\u219225.5\u219226.0), so no switch is warranted."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.75,
@@ -457,8 +457,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3954.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front holds the run \u2014 prev front \u2192 this front \u2192 next front \u2014 so the editor is NOT switching here; keeping eye-level through the dough-wrap reveal preserves continuity of the arm's lateral motion, where an overhead cut would have interrupted the held-camera pass with a top-down insert. (Note: the frame-by-frame tool labels 25.5s as OVERHEAD, which conflicts with the \"Camera: front\" metadata \u2014 if the frames are correct, then this IS a switch point inserted as a single overhead beat to show the wrapped packet shape before returning to front.)"
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.6679999999999993,
@@ -483,8 +483,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3954.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "The frame-by-frame shows this is actually overhead (top-down of hands shaping red dough on plastic wrap), not front \u2014 the metadata label conflicts with the visible content; reasoned as overhead, this continues the held overhead run through the dough-wrapping sequence (rule 3: hold camera through a repetitive action block), since front can't read what fingers are doing to a flat packet on the counter."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.75,
@@ -510,7 +510,7 @@
       "filename": "AI2I3947.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is a switch point from the previous front shot that then holds into the next overhead beat \u2014 the top-down angle shows the completed roundness of the cupped ball (its finished 3D form) in a way eye-level front couldn't, and it pre-positions the viewer for the wrapping action coming on the same camera."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 0.6679999999999993,
@@ -536,7 +536,7 @@
       "filename": "AI2I3947.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is a held-camera ingredient-wrapping run (previous beat also overhead) \u2014 the top-down angle is the only one that reads the \"corners pulling up and meeting in the middle\" sealing geometry; a front/eye-level would flatten the wrap into an ambiguous blob."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 0.9589999999999996,
@@ -561,8 +561,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3956.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is a switch point \u2014 previous was overhead 1.0s showing the wrap action top-down, and the next is front 0.9s, so this is a hold-then-switch rather than alternation; eye-level shows the dough compressed between two palms in a way overhead can't (you see the squeeze, the hand presence, the \"made by hand\" tactility), making this likely the anchor for the shaping micro-moment before returning to overhead context."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.6260000000000012,
@@ -587,8 +587,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3956.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "This is part of a held-overhead run (29.0s sealed packet \u2192 29.5s tugging \u2192 30.0s press-flat), not front \u2014 the editor is holding overhead through the wrap-refinement phase per rule 3 (hold one camera for several beats), because top-down is the only angle that reads \"plastic tightening around a flat packet\" clearly."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.9170000000000016,
@@ -614,7 +614,7 @@
       "filename": "AI2I3948.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this beat contains a triptych split-screen composition of three dough packets (green/red/yellow) \u2014 that 3-panel top-down layout is physically only possible from overhead, so this is an anchor shot dictated by the stop-motion/split-screen concept, not the held-run pattern (rule 2: crafted/stop-motion moments become anchors)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 2.503,
@@ -642,8 +642,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I3984.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the switch point after an overhead hold (beat 22 was overhead on the empty triptych with the \"Refrigerate 1 hour\" callout) \u2014 front sells the gesture of flour being sprinkled from above (arm/hand motion, cascade against the marble) and the torso-blurred workspace context that establishes a new section (dough-shaping prep); an overhead would flatten it into a texture shot and lose the handoff from waiting \u2192 active rolling."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.0420000000000016,
@@ -670,8 +670,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3984.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the switch point out of the ingredient-dump run into the shaping phase \u2014 it shows the hand gesture landing the disk onto floured marble (depth + contact), which overhead would flatten into just a red circle on white."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.5429999999999993,
@@ -696,8 +696,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3984.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front \u2014 this sits in a held-camera run (front 0.5s \u2192 front 0.9s \u2192 front 1.0s), and the lateral rolling-pin stroke flattening the dough into a rectangle reads horizontally, which front shows as motion across frame while overhead would compress it into a static top-down spread."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 0.9169999999999945,
@@ -722,8 +722,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3986.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.0010000000000048,
@@ -748,8 +748,8 @@
       "recipe_section": "mid-edit",
       "filename": "B19I3987.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the anchor here because it's the only angle that renders the vertical lift \u2014 overhead would just show the dough vanishing from the tray, losing the motion itself; the previous beat was also front, so this reads as the tail of a short held-front run before switching to the overhead brushing/rolling sequence."
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.3350000000000009,
@@ -775,7 +775,7 @@
       "filename": "AI2I3981.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is the switch point from front (previous B19I3987) into a held overhead run (next AI2I3981 is also overhead) \u2014 top-down is the only angle that actually shows the dough sheet expanding horizontally across the marble, which front would flatten into just a rocking pin."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 1.0009999999999977,
@@ -801,7 +801,7 @@
       "filename": "AI2I3981.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because the action is layering yellow dough onto red base \u2014 only a top-down angle reads the stacked color relationship; front would flatten it into a blur of hands. This sits inside a held overhead run (prev overhead, next overhead), so it's a continuation, not a switch point."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 1.0429999999999993,
@@ -827,7 +827,7 @@
       "filename": "AI2I3982.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is a held-camera run \u2014 the previous clip (AI2I3981) and next clip (AI2I3982) are both overhead, so the editor is staying on top-down for the full dough-layering sequence; the overhead is also the only angle that reveals the three-color stack forming (green onto yellow/red), which a front angle would flatten into edge-only silhouette."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 0.875,
@@ -853,7 +853,7 @@
       "filename": "AI2I3982.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because the beat IS the three-color stack forming (green landing on yellow/red) \u2014 that layered color relationship simply doesn't read from eye-level, and this sits inside a held overhead run (prev overhead 0.9s \u2192 this \u2192 next overhead nest 3.2s), so it's continuation of the held camera, not a switch point."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -878,8 +878,8 @@
       "recipe_section": "mid-edit",
       "filename": "[NEST] Nest _pinwheel_2",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead because this continues a held-camera run from the previous overhead beat and covers a sequence (land on board \u2192 square \u2192 trim edges \u2192 clean reveal) that is entirely top-down 2D geometry \u2014 a front angle would hide the rectangle shape and the trim curls falling away."
+        "choice": "unknown",
+        "reasoning": "backfilled 2026-05-02: nested-sequence wrapper, no single source camera"
       },
       "duration": {
         "seconds": 3.2120000000000033,
@@ -905,8 +905,8 @@
       "recipe_section": "late-edit (likely transformation or money shots)",
       "filename": "B19I3990.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": ""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.8350000000000009,
@@ -932,7 +932,7 @@
       "filename": "AI2I3983.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the anchor shot here \u2014 the pinwheel cross-section (red/green/yellow stripe at the end cap) is only visible from above; a front angle would hide the entire payoff of the rolling sequence."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 1.5019999999999953,
@@ -957,8 +957,8 @@
       "recipe_section": "prep / knife work",
       "filename": "B19I3990.mov",
       "camera": {
-        "choice": "front",
-        "reasoning": "Front is the switch point \u2014 both the previous beat and the next beat are overhead, so cutting to front here breaks up the overhead run and shows the pink-nailed hands pressing/gripping the wrapped log, a tactile sealing detail that overhead would flatten into just \"log on board.\""
+        "choice": "overhead",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I3])"
       },
       "duration": {
         "seconds": 1.6260000000000048,
@@ -984,7 +984,7 @@
       "filename": "AI2I3983.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because the candy-wrapper twist happens at both ends of the log simultaneously \u2014 front would hide the far end, and top-down is the only angle that shows both hands twisting parchment ends in the same frame; this is a best-take switch, not alternation for its own sake."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 1.793999999999997,
@@ -1012,7 +1012,7 @@
       "filename": "B19I4001.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor shot here \u2014 the reveal of the green spiral at the log's end and the parchment being pulled away is a \"money moment\" that only reads face-on; overhead would flatten the spiral into a dot and lose the hand's unwrap gesture."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 0.9590000000000032,
@@ -1038,7 +1038,7 @@
       "filename": "AI2I3992.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is a switch point after a 1.0s held front shot \u2014 it reveals the cross-section/spiral pattern on the log's cut ends that front (eye-level) physically can't show, and sets up the next overhead beat for continuity into the slicing."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 0.2919999999999945,
@@ -1064,7 +1064,7 @@
       "filename": "AI2I3992.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because it reveals the spatial state of three separated log discs on the board with the green spiral visible on the left end \u2014 a front angle would stack the pieces into a single silhouette and hide the \"three sections\" payoff; it's also sitting inside a held overhead run (previous beat overhead), so this is a continuation, not a switch point."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 0.1670000000000016,
@@ -1090,7 +1090,7 @@
       "filename": "AI2I3992.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 0.4170000000000016,
@@ -1116,7 +1116,7 @@
       "filename": "B19I4001.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because the sequence climaxes on the green spiral cross-section reveal at [55.0s] \u2014 that payoff only reads face-on; overhead would flatten the spiral into an ambiguous shape, so front is the best-take anchor for the reveal."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 1.2929999999999993,
@@ -1142,7 +1142,7 @@
       "filename": "B19I4001.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this shot sits inside a held-front run through the disc-cutting sequence (prev front \u2192 this front \u2192 next front), and front is the only angle that shows the spiral cross-section at the cut face \u2014 overhead would just show a log from above and miss the reveal entirely."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 0.4590000000000032,
@@ -1168,7 +1168,7 @@
       "filename": "B19I4001.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 0.8339999999999961,
@@ -1194,7 +1194,7 @@
       "filename": "AI2I3993.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the only angle that can actually show the grid layout forming on the parchment tray \u2014 front/eye-level would flatten the arrangement into an unreadable stack, so this isn't an alternation choice, it's the only shot that sells top-down placement."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 1.1259999999999977,
@@ -1220,7 +1220,7 @@
       "filename": "AI2I3993.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead is the payoff frame of the held stop-motion run \u2014 you need top-down to read the completed 12-piece grid pattern that the previous 11 placements were building toward, and a front angle at this moment would hide the very composition the sequence was constructing."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I3])"
       },
       "duration": {
         "seconds": 0.5840000000000032,
@@ -1246,7 +1246,7 @@
       "filename": "B19I4002.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the switch point from the prior overhead (grid-complete) beat into a 5-beat front run \u2014 the low-angle hero shot with spirals facing camera is the anchor that sells \"pinwheel cookie\" visually, which overhead (top-down circles) literally cannot show."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 3.0859999999999985,
@@ -1274,7 +1274,7 @@
       "filename": "B19I4034.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front at low angle is the anchor shot here \u2014 it's the hero reveal of finished baked pinwheels, and a low front sells presentation/arrival in a way overhead can't (overhead would just show cookie tops with no entrance gesture)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 1.5020000000000024,
@@ -1300,7 +1300,7 @@
       "filename": "B19I4035.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is an anchor shot for the plating section, a found beauty macro of the spiral face that only reads on the front/eye-level angle (overhead would flatten the spiral into a flat disc and kill the bokeh depth that sells the \"hero\" quality); it continues a held-front run with the surrounding B19I4034.mov beats."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 1.208999999999996,
@@ -1326,7 +1326,7 @@
       "filename": "B19I4034.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because the spiral pattern IS the payoff of a pinwheel cookie \u2014 overhead would show only the cookie's top face, burying the hero detail; this is the anchor beauty shot for the finishing section, and it sits inside a held front-camera run (prev front 1.2s, next front 1.5s) so no switch is needed."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 1.794000000000004,
@@ -1352,7 +1352,7 @@
       "filename": "B19I4034.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this extreme macro of pink-nailed fingers on the spiral cookie texture is the anchor shot for the beauty-close \u2014 the best-take hero that sells the final product's craft detail, and overhead couldn't capture the thumb grip, nail styling, or the spiral surface at this intimate scale."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][B19I4])"
       },
       "duration": {
         "seconds": 1.5010000000000048,
@@ -1378,7 +1378,7 @@
       "filename": "AI2I4025.mov",
       "camera": {
         "choice": "overhead",
-        "reasoning": "Overhead because this is the anchor end-card composition \u2014 the top-down angle is required to stage the full dish with \"the kitchn\" logo/wordmark laid over it, which a front eye-level shot physically cannot frame; the previous front shot ends and this switches deliberately as the outro anchor, not as alternation."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[pin_wheel][AI2I4])"
       },
       "duration": {
         "seconds": 3.128,

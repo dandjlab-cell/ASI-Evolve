@@ -70,7 +70,7 @@
       "filename": "B19I4540.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this IS the anchor shot \u2014 the mandoline angled across frame with cucumber pushed down from top and slices piling below is the single image that sells \"mandoline slicing\" in one read, where overhead would flatten the vertical push action and lose the blade/pile relationship."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.2509999999999994,
@@ -174,7 +174,7 @@
       "filename": "B19I4542.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the switch point out of overhead \u2014 beat 1 was the overhead \"final dump\" state, and the editor breaks to front here to introduce the salting action with the MOGRT, then holds front for beats 3\u20134; overhead would flatten the vertical salt stream, while front shows salt mid-air and the accumulating pile on the slices."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.1680000000000001,
@@ -202,7 +202,7 @@
       "filename": "B19I4542.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is held through a salt/toss run (Salting C \u2192 Tossing A \u2192 Tossing B all front) before switching to overhead for the drain hold \u2014 this is Rule 3 in action (hold one camera across several ingredient-action beats, switch on the section change to drain)."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.4179999999999993,
@@ -228,7 +228,7 @@
       "filename": "B19I4548.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is beat 4 of 15 marked `<<<` at the tail of a held front run (front/front/front) per the run map `[overhead, front, front, front <<<, overhead, ...]`, executing the \"hold camera then switch\" rule right before the overhead cut to the cream cheese placement at beat 5; the extreme close-up of the empty bowl interior with strainer top-right anchors the drain moment without breaking the held sequence."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 2.4610000000000003,
@@ -284,7 +284,7 @@
       "filename": "B19I4547.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 6 in a sustained front-camera hold (beats 6\u201313 are all front after a single overhead at beat 5) \u2014 the hold-across-dumps rule is operating, and the close 3/4 angle shows the tipping ramekin and falling stream of dill, which the top-down angle flattens into just a growing pile."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 0.9589999999999996,
@@ -312,7 +312,7 @@
       "filename": "B19I4547.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is beat 7 inside a sustained front run (beats 6 through 13 all hold front per the camera run), so the \"hold camera across dumps\" rule applies and switching to overhead mid-run would break the held block for no payoff; the front 3/4 already reads the chive stream pouring from the ramekin clearly."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.209999999999999,
@@ -340,7 +340,7 @@
       "filename": "B19I4547.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 8 in a held front-camera run (beats 6\u201313 all front per the run map), so the rule is \"hold, don't alternate\" \u2014 and front shows the vertical squeeze action of the upside-down bottle and the dollop landing, which overhead would flatten into a shapeless blob on the mound."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.0840000000000032,
@@ -368,7 +368,7 @@
       "filename": "B19I4547.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 beat 9 of a long front-camera run (beats 6-13), so this is a held-camera continuation, not a switch point; front shows the salt shaker and pepper grinder entering from the top of frame and the seasoning landing on the herb mound, which overhead would flatten into indistinct sprinkle."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.0009999999999977,
@@ -397,7 +397,7 @@
       "filename": "B19I4547.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is beat 10 of 15 in a held front-camera run (positions 2-13 of the camera run are all front) \u2014 it's neither the anchor nor a switch point, just continuation of the held angle, and front keeps the pepper grinder visible at top of frame which overhead would crop out."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 0.9600000000000009,
@@ -426,7 +426,7 @@
       "filename": "B19I4547.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this is the anchor shot for \"mixing begins\" \u2014 the plunge reads as a dynamic forward-action moment where green herbs striking pale butter needs the eye-level angle to sell the contact and texture contrast, and it opens a held-front run (next beat also front) rather than alternating off the prior ingredient dump."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 0.8760000000000012,
@@ -452,7 +452,7 @@
       "filename": "B19I4547.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front because this sits in a held-front run (previous 0.9s front, next 1.2s front of same source B19I4547.mov) \u2014 the editor isn't alternating, he's staying on the angle that shows the fold-and-streak transformation at eye level where the green-into-pale-butter contrast reads clearest."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 0.666999999999998,
@@ -478,7 +478,7 @@
       "filename": "B19I4547.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "This is overhead (the frame data shows OVERHEAD at 20.5s despite the \"front\" metadata label) \u2014 folding/mixing reads entirely from top-down because the action is the spatula tracing through the bowl and the herb streaks distributing, neither of which is visible from eye-level; this is the anchor shot for the \"mixture coming together\" moment and also the switch point out of the preceding 0.7s front clip."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.1679999999999993,
@@ -531,8 +531,8 @@
       "recipe_section": "ingredient dump (text overlay marks this step)",
       "filename": "B19I4550.mov",
       "camera": {
-        "choice": "overhead",
-        "reasoning": "Overhead is a switch point at the end of the dump run that repositions the viewer top-down for the incoming overhead stop-motion cucumber compilation \u2014 showing the flat smoothed canvas the slices will land on, which a front angle can't reveal."
+        "choice": "front",
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.6679999999999993,
@@ -615,7 +615,7 @@
       "filename": "B19I4551.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 0.7510000000000012,
@@ -641,7 +641,7 @@
       "filename": "B19I4551.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this beat sits inside a held-camera run (prev and next are both front from the same source file B19I4551.mov), and front shows the trimmed crust strip separating from the loaf at eye level, which overhead would flatten into just \"knife on bread.\""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 0.75,
@@ -667,7 +667,7 @@
       "filename": "B19I4551.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 0.8350000000000009,
@@ -693,7 +693,7 @@
       "filename": "B19I4551.mov",
       "camera": {
         "choice": "front",
-        "reasoning": ""
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 0.791999999999998,
@@ -719,7 +719,7 @@
       "filename": "B19I4552.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this sits inside a held front-camera run (prev front, this front, next front) during the portion-cut beat, and front reveals the cross-section of cucumber/cream-cheese filling as the knife descends, which an overhead would flatten into just a knife-top."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 1.0429999999999993,
@@ -746,7 +746,7 @@
       "filename": "B19I4553.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front \u2014 this is the anchor beauty-reveal shot for the plating section; front angle shows the cucumber/cream cheese cross-section that sells \"tea sandwich,\" which overhead would flatten into a meaningless top-down rectangle."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 2.0020000000000024,
@@ -772,7 +772,7 @@
       "filename": "B19I4553.mov",
       "camera": {
         "choice": "front",
-        "reasoning": "Front is the anchor for the plating finale \u2014 this is the cleanest, hand-free version of the stacked plate, the best-take beauty shot that sells the finished dish before the hero hand-held close-up takes over."
+        "reasoning": "backfilled 2026-05-02 via per-recipe prefix\u2192camera cache (camera_mapping.json[cucumber_tea][B19I4])"
       },
       "duration": {
         "seconds": 3.6700000000000017,
