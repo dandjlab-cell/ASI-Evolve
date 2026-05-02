@@ -107,21 +107,30 @@ def build_rapid_camera_alternation(annotation: dict) -> dict:
 
 
 def build_missing_flourishes(annotation: dict) -> dict:
-    """Strip 'speed' / 'ramp' keyword tokens from beat.effects."""
+    """Strip 'speed' / 'ramp' keyword tokens from every field where R4 looks
+    for them: effects, effects_info, recipe_section, beat_description,
+    effects_reasoning. Earlier version only stripped from `effects` and was
+    a no-op on recipes whose ramps were documented in recipe_section text
+    (chicken_thighs, basil_pesto, etc.) — fixed 2026-05-03.
+    """
     ann = copy.deepcopy(annotation)
     n_stripped = 0
-    pat = re.compile(r"\b(speed[\w_]*|ramp[\w_]*)\b[^,;|]*", re.IGNORECASE)
+    pat = re.compile(r"\b(speed[\w_-]*|ramp[\w_-]*)\b[^,;|.()]*", re.IGNORECASE)
+    fields_to_clean = ("effects", "effects_info", "recipe_section",
+                       "beat_description", "effects_reasoning")
     for b in ann["beats"]:
-        eff = b.get("effects", "")
-        if not isinstance(eff, str):
-            continue
-        if not pat.search(eff):
-            continue
-        new_eff = pat.sub("", eff)
-        new_eff = re.sub(r"[,;|]\s*[,;|]", ",", new_eff)  # collapse double-separators
-        new_eff = new_eff.strip(", ;|")
-        b["effects"] = new_eff
-        n_stripped += 1
+        touched = False
+        for field in fields_to_clean:
+            v = b.get(field, "")
+            if not isinstance(v, str) or not pat.search(v):
+                continue
+            new_v = pat.sub("", v)
+            new_v = re.sub(r"[,;|()]\s*[,;|()]", ",", new_v)
+            new_v = new_v.strip(", ;|()")
+            b[field] = new_v
+            touched = True
+        if touched:
+            n_stripped += 1
     ann["_variant"] = "missing_flourishes"
     ann["_variant_meta"] = {"n_stripped": n_stripped}
     return ann

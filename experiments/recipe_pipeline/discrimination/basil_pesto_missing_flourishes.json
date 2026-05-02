@@ -1042,7 +1042,7 @@
     {
       "beat_index": 37,
       "beat_type": "beauty",
-      "recipe_section": "Hero pesto held aloft (50% speed pair)",
+      "recipe_section": "Hero pesto held aloft (50%",
       "filename": "B19I6413",
       "in_point": {
         "seconds": 55.511,
@@ -1070,7 +1070,7 @@
     {
       "beat_index": 38,
       "beat_type": "beauty",
-      "recipe_section": "Hero pesto held aloft (50% speed pair)",
+      "recipe_section": "Hero pesto held aloft (50%",
       "filename": "B19I6414",
       "in_point": {
         "seconds": 47.443,
@@ -1098,7 +1098,7 @@
     {
       "beat_index": 39,
       "beat_type": "beauty",
-      "recipe_section": "Hero pesto held aloft (50% speed pair)",
+      "recipe_section": "Hero pesto held aloft (50%",
       "filename": "B19I6415",
       "in_point": {
         "seconds": 7.236,
@@ -1126,7 +1126,7 @@
     {
       "beat_index": 40,
       "beat_type": "beauty",
-      "recipe_section": "Hero pesto held aloft (50% speed pair)",
+      "recipe_section": "Hero pesto held aloft (50%",
       "filename": "B19I6416",
       "in_point": {
         "seconds": 42.084,
@@ -1238,7 +1238,7 @@
     {
       "beat_index": 44,
       "beat_type": "beauty_close",
-      "recipe_section": "Final beauty (50% speed)",
+      "recipe_section": "Final beauty (50%",
       "filename": "B19I6417",
       "in_point": {
         "seconds": 194.528,
@@ -1266,6 +1266,6 @@
   ],
   "_variant": "missing_flourishes",
   "_variant_meta": {
-    "n_stripped": 0
+    "n_stripped": 5
   }
 }

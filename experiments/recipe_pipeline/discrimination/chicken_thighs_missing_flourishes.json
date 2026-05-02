@@ -398,7 +398,7 @@
     {
       "beat_index": 14,
       "beat_type": "",
-      "recipe_section": "Speed ramp into chicken (RAMP, 6 keyframes)",
+      "recipe_section": "6 keyframes",
       "filename": "B19I6669",
       "in_point": {
         "seconds": 156.153,
@@ -426,7 +426,7 @@
     {
       "beat_index": 15,
       "beat_type": "",
-      "recipe_section": "Speed ramp into chicken (RAMP, 6 keyframes)",
+      "recipe_section": "6 keyframes",
       "filename": "B19I6670",
       "in_point": {
         "seconds": 5.881,
@@ -454,7 +454,7 @@
     {
       "beat_index": 16,
       "beat_type": "",
-      "recipe_section": "Speed ramp into chicken (RAMP, 6 keyframes)",
+      "recipe_section": "6 keyframes",
       "filename": "AI2I5440",
       "in_point": {
         "seconds": 8.05,
@@ -482,7 +482,7 @@
     {
       "beat_index": 17,
       "beat_type": "",
-      "recipe_section": "Speed ramp into chicken (RAMP, 6 keyframes)",
+      "recipe_section": "6 keyframes",
       "filename": "B19I6671",
       "in_point": {
         "seconds": 21.104,
@@ -1378,6 +1378,6 @@
   ],
   "_variant": "missing_flourishes",
   "_variant_meta": {
-    "n_stripped": 0
+    "n_stripped": 4
   }
 }

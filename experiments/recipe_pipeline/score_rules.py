@@ -270,12 +270,34 @@ def score_flourish_detection(beats: List[dict]) -> dict:
     """
     speed_ramp_beats = []
     for beat in beats:
-        effects = str(beat.get("effects", beat.get("effects_info", "")))
-        if "speed" not in effects.lower() and "ramp" not in effects.lower():
+        # Look across all fields where ramps might be documented. Annotation
+        # JSONs vary: some recipes have structured `effects`, others document
+        # ramps as natural-language text in `recipe_section` (e.g. "Speed ramp
+        # into chicken (RAMP, 6 keyframes)") or `effects_reasoning`. Earlier
+        # versions of this rule only checked `effects` / `effects_info` and
+        # silently returned the 0.7 neutral floor on every recipe — fixed
+        # 2026-05-03 after Dan flagged that chicken_thighs and basil_pesto
+        # both have visible speed ramps.
+        ramp_text_sources = " ".join([
+            str(beat.get("effects", "")),
+            str(beat.get("effects_info", "")),
+            str(beat.get("recipe_section", "")),
+            str(beat.get("beat_description", "")),
+            str(beat.get("effects_reasoning", "")),
+        ]).lower()
+        if "speed" not in ramp_text_sources and "ramp" not in ramp_text_sources:
             continue
+        effects = str(beat.get("effects", beat.get("effects_info", ""))) or ramp_text_sources
 
         desc = str(beat.get("beat_description", "")).lower()
         reasoning = str(beat.get("effects_reasoning", "")).lower()
+        # 2026-05-03: include recipe_section in classification text. Many
+        # recipes (basil_pesto: "Hero pesto held aloft", chicken_thighs:
+        # "Speed ramp into chicken") document the ramp's editorial role
+        # in recipe_section rather than beat_description. Excluding it
+        # caused organic flourishes to be silently misclassified as functional.
+        section = str(beat.get("recipe_section", "")).lower()
+        classify_text = f"{desc} {reasoning} {section}"
 
         # Prefer the structured verdict token if present: [flourish: organic|functional].
         # Keyword matching is a fallback for legacy annotations that pre-date the token.
@@ -297,8 +319,17 @@ def score_flourish_detection(beats: List[dict]) -> dict:
                 "tempo", "accelerat",
             ]
 
-            is_flourish = any(s in desc or s in reasoning for s in flourish_signals)
-            is_functional = any(s in desc or s in reasoning for s in functional_signals)
+            is_functional = any(s in classify_text for s in functional_signals)
+            is_flourish_signal = any(s in classify_text for s in flourish_signals)
+            # Default to organic flourish when no explicit classification fires.
+            # Reason: in food video, speed ramps are MOSTLY organic (pour drips,
+            # beauty hero shots, transformation reveals) — functional pacing
+            # ramps are the rare case. Classifying unknowns as flourish-by-default
+            # avoids silently penalizing recipes whose annotations don't have
+            # rich beat_description text (chicken_thighs ramp beats only have
+            # "Speed ramp into chicken" in recipe_section, no flourish keywords).
+            # Functional ramps still need to be EXPLICITLY tagged.
+            is_flourish = is_flourish_signal or not is_functional
 
         speed_ramp_beats.append({
             "beat_index": beat.get("beat_index"),
