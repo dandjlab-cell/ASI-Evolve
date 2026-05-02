@@ -42,4 +42,6 @@ CID_VIDEO_FILTER_COMPONENT = "d10da199-beea-4dd1-b941-ed3a78766d50"
 CID_VIDEO_COMPONENT_PARAM = "fe47129e-6c94-4fc0-95d5-c056a517aaf3"
 CID_VIDEO_COMPONENT_PARAM_BOOL = "cc12343e-f113-4d3b-ae05-b287db77d461"  # bool
 CID_VIDEO_COMPONENT_PARAM_CLAMPED = "a4ff2d6e-7ac2-44f8-9d52-17d9ca50e542"  # clamped float (anti-flicker)
+CID_VIDEO_COMPONENT_PARAM_COLOR = "0fde4e9f-f895-4ba3-b0fe-9a6feafda583"  # color (drop shadow shadow-color)
+CID_VIDEO_COMPONENT_PARAM_INT = "6e02e8bb-2569-46b2-8ab1-4ab11c43e9c8"  # int / enum (Ultra Key Output, Setting)
 CID_POINT_COMPONENT_PARAM = "ca81d347-309b-44d2-acc7-1c572efb973c"
