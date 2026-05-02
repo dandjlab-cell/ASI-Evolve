@@ -196,6 +196,10 @@ def _build_production_candidates(recipe_slug: str) -> tuple[list[dict], dict]:
                 })
         v2_candidates = _nms_hero_band(v2_candidates)
         v2_candidates.sort(key=lambda c: c["score"], reverse=True)
+        # Attach shot_type from the pre-built cache (build_shot_type_cache.py).
+        # Visual classification per (clip_id, rounded_t). One-time Opus cost,
+        # reused on every benchmark run.
+        _attach_shot_types(v2_candidates, recipe_slug)
         # Per-clip cap on v2 path TESTED 2026-05-02 and reverted. Tradeoffs:
         #   cap=8:  reachability 74% → 63% (too tight, drops truth picks)
         #   cap=15: corpus 0.274 → 0.270 (tied), but KFC stdev exploded
@@ -318,6 +322,37 @@ AUDIO_LAG_AFTER_S = 8.0    # crew_positive lags the take by up to ~8s
 # Audio cue types from roughcut-ai/audio_cue_extraction prompt.
 KEEPER_TYPES = {"crew_positive"}
 REJECT_TYPES = {"crew_redo"}
+
+
+def _attach_shot_types(candidates: list[dict], recipe_slug: str) -> None:
+    """Look up each candidate's shot_type from the cached classification.
+
+    Cache file: truth_sets/{ann_slug}/shot_types.json keyed by 'clip_id@rounded_t'.
+    Cache is built one-time by build_shot_type_cache.py.
+    Missing entries get shot_type=None (picker treats as unspecified).
+    """
+    # Map runs_modal name → annotation slug for cache lookup
+    name_map = {
+        "basil_pesto": "basil_pesto",
+        "chicken_thighs": "chicken_thighs",
+        "korean_fried_chicken": "korean_fried_chicken",
+        "creamy_potato_soup": "creamy_potato_soup",
+        "easy_banana_muffins": "banana_muffins",
+    }
+    ann_slug = name_map.get(recipe_slug, recipe_slug)
+    cache_path = (Path("/Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline")
+                  / "truth_sets" / ann_slug / "shot_types.json")
+    if not cache_path.exists():
+        for c in candidates:
+            c["shot_type"] = None
+        return
+    try:
+        cache = json.loads(cache_path.read_text())
+    except (json.JSONDecodeError, OSError):
+        cache = {}
+    for c in candidates:
+        key = f"{c['clip_id']}@{int(round(c['t']))}"
+        c["shot_type"] = cache.get(key)
 
 
 def _attach_audio_signals(candidates: list[dict], audio_cues: dict) -> None:
@@ -518,11 +553,12 @@ def _format_candidates_block(candidates: list[dict]) -> str:
     lines = []
     for i, c in enumerate(candidates):
         flag_str = " [audio: REDO]" if c.get("audio_reject") else ""
+        shot_str = f" shot={c['shot_type']}" if c.get("shot_type") else ""
         sig_lines = ""
         for sig in (c.get("audio_signals") or [])[:1]:
             sig_lines += f"\n      crew @ {sig['t']:+.1f}s: \"{sig['text']}\""
         lines.append(
-            f"  [{i}] clip={c['clip_id']} t={c['t']:.1f}s camera={c['camera']} "
+            f"  [{i}] clip={c['clip_id']} t={c['t']:.1f}s camera={c['camera']}{shot_str} "
             f"score={c['score']}{flag_str}\n"
             f"    VLM: {c['vlm_description']}{sig_lines}"
         )
