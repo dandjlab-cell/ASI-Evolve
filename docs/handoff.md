@@ -17,6 +17,21 @@
 
 ASI-Evolve is the prompt-iteration / harness repo for [[Recipe Pipeline]] (roughcut-ai); this branch contains the beauty-pick prompt iteration harness — runner that calls Opus on cached scan candidates, scorer that compares against editor truth, and ~10 supporting modules (truth-set extraction, shot-type classification cache, etc.).
 
+## Why this work matters (business context)
+
+The Recipe Pipeline delivers AT's (Apartment Therapy) AI-assisted rough cuts under a **$5K/mo AI services retainer through end of 2026** ($40K total, ring-fenced by Karis). Beauty pick is one of the highest-leverage stages — it picks the hero shots that anchor the editorial. Better picks = less editor cleanup time = better unit economics on every recipe AT runs through the pipeline. Iteration here is about closing the gap between AI choices and Dan's editor instincts so the 85% timeline gets closer to 95%.
+
+This is also the wedge for clients 2-10. Pipeline maintenance is the bottleneck on scaling; tighter prompts mean less per-client tuning. See [[Boardroom Agreements]] and [[AT AI Services — Scope and Status]] for the broader strategy.
+
+## Architecture: ASI-Evolve ↔ roughcut-ai
+
+Two repos work in tandem:
+
+- **`~/DevApps/roughcut-ai/`** — production pipeline. Runs on Modal with Gemini 2.5 Pro. Has real per-recipe cost (~$5/recipe scan + processing). Lives behind `--all-gemini` flag at scale. Builds 85% Premiere timelines for AT.
+- **`~/DevApps/ASI-Evolve/`** (this repo) — prompt iteration harness. Calls Opus via the user's Claude CLI subscription (no API key, no per-call cost). Reads roughcut-ai's CACHED outputs (`runs/modal/{recipe}/scan.json`), runs prompt variants against editor truth, scores. **Free to iterate as much as we want.** Winning prompts get committed back to roughcut-ai via PR.
+
+This session shipped one such PR: the `audio_cues.py` parser fix in roughcut-ai (commit `490ab8c`) was discovered by the ASI iteration loop after we noticed audio_cues.json was empty. The fix is now live in production.
+
 ## What Was Done This Session (2026-05-01 → 2026-05-02)
 
 End-to-end build and tuning of the beauty-pick iteration harness. **Corpus composite went 0.131 → 0.315 (2.4× lift). KFC alone: 0.131 → 0.570 (4.4× lift).** Approaching the practical ceiling (~0.55-0.60 corpus on this scorer).
@@ -35,6 +50,34 @@ Levers tested and reverted:
 - Image mode at cap=10 — tied corpus, asymmetric per-recipe wins/losses
 - Corpus-average shot-type prompt rules — KFC +0.063 / basil_pesto -0.062, net flat
 - NMS=3.0 (production default) — hurts the picker even when reachability stays at 80%
+
+## What "editor truth" is and how the scorer works
+
+**Truth source.** Dan's actual finished prproj edits at `experiments/PREMIERE PROJECTS/RECIPES/*.prproj` are the ground truth. The `/recipe-analyze` skill (Stage 5 + 6 at `~/.claude/skills/recipe-analyze/scripts/`) parses both the prproj XML and Dan's hand-written narrative annotations (`Brain/Projects/ASI-Evolve/Annotations/{recipe} — Effect Reasoning (image mode).md`) to identify which clips and timestamps Dan cut to as beauty moments. Output: `truth_sets/{recipe}/beauty.json` with picks like `{clip_id, t_in, t_out, category, label}`.
+
+**Scorer.** `scorers/beauty_pick.py` computes a weighted composite:
+
+```
+composite = 0.5 · clip_overlap     (did the picker pick a clip Dan used?)
+          + 0.4 · time_match       (was the pick within Dan's used SPAN ±5s?)
+          + 0.1 · category_balance (did open/final ratio match Dan's?)
+```
+
+Span-based time matching: a pick at any time within `[t_in - 5s, t_out + 5s]` of Dan's used range counts. This is more generous than strict-nearest matching.
+
+So **"corpus 0.315"** literally means: across the 5-recipe corpus, the picker's choices match Dan's actual cuts 31.5% of the way toward perfect alignment on this composite. Theoretical ceiling at our current reachability is ~0.55-0.60 — beyond that requires upstream work (better truth, finer frame sampling, fine-tuning).
+
+**Why these 5 recipes.** basil_pesto, chicken_thighs, korean_fried_chicken, creamy_potato_soup, easy_banana_muffins all have cached Modal Phase 2 outputs in `~/DevApps/roughcut-ai/runs/modal/`. The other 12 corpus recipes don't (yet) — adding one means triggering a Modal scan run first via the roughcut-ai agent (~$1/recipe).
+
+## Active prompt summary
+
+`prompts/beauty_pick_text_fewshot.jinja2` is the current best. What it tells the picker:
+- Role: food video editor selecting beauty moments for `{{dish_name}}`
+- Receives `{{num_candidates}}` candidates each with `clip_id`, `t`, `camera`, `shot_type`, `score`, optional `[audio: REDO]` flag, VLM description
+- Few-shot leave-one-out examples from OTHER recipes' truth picks (4 examples, no leakage)
+- Editorial framework: overhead/wide = establishing context, close-up = DETAIL or YUM, macro = TEXTURE, medium = ACTION, reveal = pull-back
+- Audio: REDO flag means the take was a mid-take (skip), absence is neutral
+- Output: 4-8 picks as JSON (free-form reasoning before the JSON block is allowed and helps debugging)
 
 ## Current State
 
@@ -132,6 +175,54 @@ Best result, 3-run averaged on `prompts/beauty_pick_text_fewshot.jinja2`:
 - **Opus stochasticity** is real (±0.05 across same-prompt runs). Always use 3-run averaging for benchmark claims; single-shot is noisy.
 - **Per-clip cap on v2 path is OFF** by design (commit `890acb0`). Don't re-enable without recipe-aware logic.
 
+## First-run sanity checks (especially on a fresh machine)
+
+Before doing real work, verify the prerequisites:
+
+```bash
+# 1. Brain vault present + readable
+test -f ~/DevApps/Brain/MEMORY.md && echo "✓ vault" || echo "✗ vault missing — clone Brain repo first"
+
+# 2. roughcut-ai cached scans present (5 expected)
+ls ~/DevApps/roughcut-ai/runs/modal/*/scan.json 2>/dev/null | wc -l
+# Expected: 5. If 0, scans need backfilling — escalate to roughcut-ai agent
+
+# 3. Editor truth prprojs present
+ls "$HOME/DevApps/ASI-Evolve/experiments/PREMIERE PROJECTS/RECIPES/"*.prproj 2>/dev/null | wc -l
+# Expected: 5+ FINAL prprojs
+
+# 4. /recipe-analyze skill installed (only needed if extending truth)
+test -f ~/.claude/skills/recipe-analyze/SKILL.md && echo "✓ recipe-analyze skill" || echo "✗ skill missing"
+
+# 5. Truth + shot-type caches present
+ls experiments/recipe_pipeline/truth_sets/*/beauty.json | wc -l       # Expected: 17
+ls experiments/recipe_pipeline/truth_sets/*/shot_types.json | wc -l   # Expected: 5
+
+# 6. Claude CLI ≥ 2.x
+claude --version
+```
+
+If any check fails: stop and resolve before iterating. Don't waste a session on broken inputs. If a backfill (Modal scans) is needed, the credentials live in `roughcut-ai/.env` — that's a roughcut-ai problem, not an ASI problem.
+
+## How to decide: continue beauty pick OR pivot to Round 2 writer?
+
+Both are valid next moves. Decision criteria:
+
+**Continue beauty pick if:**
+- Dan asks specifically about beauty pick / says "push further on the picker"
+- Composite ≤0.40 corpus is unacceptable for the AT use case (it currently sits at 0.315 — workable but not great)
+- You have ~1-2 hours to test the motion-strip lever (the highest-leverage remaining option)
+
+**Pivot to Round 2 writer if:**
+- Dan asks about shipping deliverables / V2 / MOGRTs / "the writer"
+- AT timeline pressure (Karis weekly status routine, end-of-month deliverables)
+- Beauty pick at 0.315 is "good enough for now" — the bigger user-facing impact comes from being able to express V2-track + MOGRT text in the writer output
+- Editorial fidelity (speed ramps, MOGRT, multi-track) is currently blocked on the writer being only V1
+
+Default if Dan doesn't specify: **pivot to Round 2 writer.** Beauty pick is at a reasonable plateau (2.4× session-start, 4.4× on KFC) and the next +0.10 lift requires multi-day work (motion strip, recipe-aware caps, fine-tuning). Round 2 writer is a 1-2 day shippable that unlocks editorial fidelity for the entire pipeline. Better unit of progress for the AT timeline.
+
+Plan for Round 2 at `~/DevApps/Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md` — has round-by-round build plan, current status (Round 1 shipped + refactored), known XML gotchas.
+
 ## Quick Start for Next Session
 
 ```bash
@@ -181,15 +272,39 @@ If missing, ping the roughcut-ai agent to re-run Phase 1 / Phase 2 on the 5 ASI 
 
 **Branch naming.** `refactor/writer-modules` is misleading — the writer-refactor work is from a much earlier session (commit `2094548` and prior). Today's beauty-pick commits land on top of it but don't relate. **Decision for next session:** either rename this branch to `feature/beauty-pick-shot-type` or rebase onto main and merge the writer-refactor work cleanly. Don't ship as-is — the branch name will confuse code review.
 
-## Companion Brain notes
+## Brain vault — read these first if you have 5 minutes
 
-- [[Beauty Pick Prompt Iteration — 2026-04-29]] — full session arc, all experiments, all numbers
-- [[VLM Beauty Score — Spec]] — original architectural spec (now shipped)
-- [[LLMs Mirror The Format You Show Them]] — pattern from the audio_cues parser bug
-- [[Per-Candidate Tags Beat Per-Corpus Rules]] — pattern from this session's three structural fixes
-- [[Editorial Rules - Dan's Camera Logic]] — editor's shot-type framework (informed the diagnostic)
-- [[Premiere prproj Multicam Detection]] — companion reader doc; the recurse this session built on
-- [[Recipe Pipeline]] — production pipeline that consumes our prompt winners
-- [[ASI-Evolve]] (project hub)
+The Brain vault at `~/DevApps/Brain/` is Dan's cross-project knowledge base (Obsidian). It carries all the strategic + technical context that doesn't live in code. **Read it directly with the Read tool — no Obsidian needed for read-only.**
 
-3 prior handoffs to the roughcut-ai agent at `~/DevApps/Brain/Projects/RoughCut/Handoff to roughcut-ai — *.md` document the audio_cues fix, VLM beauty_score spec, NMS findings.
+**Mandatory reads for any session continuing this work:**
+
+| File | Why |
+|---|---|
+| `~/DevApps/Brain/MEMORY.md` | Project routing table, current priorities, learned preferences, AT engagement context |
+| `~/DevApps/Brain/Projects/RoughCut/Beauty Pick Prompt Iteration — 2026-04-29.md` | Full arc of this work — every experiment, every number, every reverted lever, the architectural lessons |
+| `~/DevApps/Brain/Projects/ASI-Evolve/Prproj-Direct Writer Plan.md` | Plan for the OTHER active workstream (Round 2 V2 + MOGRTs); decide whether to continue beauty pick or pivot here |
+
+**Reusable patterns extracted this session:**
+
+| File | What it teaches |
+|---|---|
+| `~/DevApps/Brain/Knowledge/LLM Patterns/Per-Candidate Tags Beat Per-Corpus Rules.md` | Why universal prompt rules fail vs structured per-candidate tags. Proved 3× this session (audio asymmetry, NMS calibration, shot type) |
+| `~/DevApps/Brain/Knowledge/LLM Patterns/LLMs Mirror The Format You Show Them.md` | Why the audio_cues parser was silently broken for months ($0.21/recipe wasted) — input header pattern + example output keys = LLM mirrors prefix into JSON keys |
+
+**Editorial / strategic context:**
+
+| File | Why |
+|---|---|
+| `~/DevApps/Brain/Knowledge/Editorial Craft/Editorial Rules - Dan's Camera Logic.md` | Editor's anchor-shot/shot-type framework that informed today's shot-type diagnostic |
+| `~/DevApps/Brain/Clients/Apartment Therapy/AT AI Services — Scope and Status.md` | The retainer this work serves, weekly status routine for Karis |
+| `~/DevApps/Brain/Projects/RoughCut/Architecture — Lessons from Claude Code Paper.md` | Why we're investing in harness work (1.6%/98.4% rule) |
+
+**Companion documentation specific to today's work:**
+
+- 3 handoffs to the roughcut-ai agent at `~/DevApps/Brain/Projects/RoughCut/Handoff to roughcut-ai — *.md` (audio_cues fix, VLM beauty_score spec, NMS findings)
+- `~/DevApps/Brain/Projects/RoughCut/VLM Beauty Score — Spec.md` (the architectural spec we shipped)
+- `~/DevApps/Brain/Knowledge/API Integration/Premiere prproj Multicam Detection.md` (the reader work the nested/multicam recurse built on)
+
+**How to navigate:** the `[[wikilinks]]` in vault notes resolve to other notes — follow them like Obsidian would. Use `Read` on the resolved path. The `Knowledge Map.md` at the vault root is the index.
+
+If you're continuing in a different direction (not beauty pick), check `MEMORY.md` first — it has the cross-project routing including [[Renewed Homes 2026]], [[NQ AI Sidekick]], and other active work.
