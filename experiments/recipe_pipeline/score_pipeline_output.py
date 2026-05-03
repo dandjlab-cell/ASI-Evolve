@@ -315,6 +315,11 @@ def main(argv=None) -> int:
     p.add_argument("recipe", help="Recipe slug (e.g. basil_pesto)")
     p.add_argument("--annotations-dir", type=Path, default=ANNOTATIONS_DIR)
     p.add_argument("--pipeline-runs-root", type=Path, default=PIPELINE_RUNS_ROOT)
+    p.add_argument("--manifest", type=Path, default=None,
+                   help="Override the pipeline manifest path. Useful when the "
+                        "manifest folder name differs from the annotation slug "
+                        "(e.g., 'easy_banana_muffins' folder vs 'banana_muffins' "
+                        "annotation slug).")
     p.add_argument("--scores-dir", type=Path, default=PIPELINE_SCORES_DIR)
     p.add_argument("--vault-note-dir", type=Path,
                    default=Path.home() / "DevApps/Brain/Projects/ASI-Evolve")
@@ -339,7 +344,9 @@ def main(argv=None) -> int:
                 dan_score["composite"], dan_score["beat_count"])
 
     # Load AI manifest + convert + score
-    manifest_path = args.pipeline_runs_root / args.recipe / f"{args.recipe}_manifest.json"
+    manifest_path = args.manifest or (
+        args.pipeline_runs_root / args.recipe / f"{args.recipe}_manifest.json"
+    )
     if not manifest_path.is_file():
         logger.error("pipeline manifest not found: %s", manifest_path)
         return 2

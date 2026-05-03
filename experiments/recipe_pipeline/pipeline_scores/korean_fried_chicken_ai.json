@@ -1,0 +1,1664 @@
+{
+  "recipe": "korean_fried_chicken",
+  "global_notes": "Converted from pipeline manifest by score_pipeline_output.py",
+  "_source_manifest": "/Users/dandj/DevApps/roughcut-ai/runs/korean_fried_chicken/korean_fried_chicken_manifest.json",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_type": "beauty",
+      "recipe_section": "A stunning final plate of Korean Fried Chicken, glossy and garnished.",
+      "filename": "B19I6335.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 3.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 8.125
+      },
+      "beat_description": "A stunning final plate of Korean Fried Chicken, glossy and garnished.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_018",
+      "_v2_file": "AI2I5117.mov"
+    },
+    {
+      "beat_index": 1,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding finely chopped garlic to a saucepan.",
+      "filename": "B19I6276.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 15.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 20.125
+      },
+      "beat_description": "Adding finely chopped garlic to a saucepan.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Garlic (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": "AI2I5060.mov"
+    },
+    {
+      "beat_index": 2,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring canola oil over the garlic.",
+      "filename": "B19I6276.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 23.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 28.125
+      },
+      "beat_description": "Pouring canola oil over the garlic.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Canola oil (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": "AI2I5060.mov"
+    },
+    {
+      "beat_index": 3,
+      "beat_type": "transformation_from",
+      "recipe_section": "Stirring raw, white garlic in the oil.",
+      "filename": "B19I6276.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 33.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 38.125
+      },
+      "beat_description": "Stirring raw, white garlic in the oil.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": "AI2I5060.mov"
+    },
+    {
+      "beat_index": 4,
+      "beat_type": "match_cut",
+      "recipe_section": "Stirring fragrant, lightly golden-brown garlic in the oil.",
+      "filename": "B19I6277.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 15.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 20.125
+      },
+      "beat_description": "Stirring fragrant, lightly golden-brown garlic in the oil.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "instruction: Cook until fragrant, 3-6 min (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": "AI2I5061.mov"
+    },
+    {
+      "beat_index": 5,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring soy sauce into the saucepan.",
+      "filename": "B19I6278.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 4.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 9.125
+      },
+      "beat_description": "Pouring soy sauce into the saucepan.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Soy sauce (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_003",
+      "_v2_file": "AI2I5062.mov"
+    },
+    {
+      "beat_index": 6,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding packed light brown sugar.",
+      "filename": "B19I6278.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 12.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 17.125
+      },
+      "beat_description": "Adding packed light brown sugar.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Packed light brown sugar (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_003",
+      "_v2_file": "AI2I5062.mov"
+    },
+    {
+      "beat_index": 7,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring rice vinegar.",
+      "filename": "B19I6278.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 24.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 29.125
+      },
+      "beat_description": "Pouring rice vinegar.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Rice vinegar (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_003",
+      "_v2_file": "AI2I5062.mov"
+    },
+    {
+      "beat_index": 8,
+      "beat_type": "unlabeled",
+      "recipe_section": "Simmer the sauce",
+      "filename": "B19I6278.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 126.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 131.125
+      },
+      "beat_description": "Simmer the sauce",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "instruction: Bring to a simmer (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_003",
+      "_v2_file": "AI2I5062.mov"
+    },
+    {
+      "beat_index": 9,
+      "beat_type": "ingredient",
+      "recipe_section": "Placing cornstarch in a small bowl.",
+      "filename": "B19I6280.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 10.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 15.125
+      },
+      "beat_description": "Placing cornstarch in a small bowl.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Cornstarch (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_005",
+      "_v2_file": "AI2I5065.mov"
+    },
+    {
+      "beat_index": 10,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring water over the cornstarch.",
+      "filename": "B19I6280.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 6.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 11.125
+      },
+      "beat_description": "Pouring water over the cornstarch.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Water (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_005",
+      "_v2_file": "AI2I5065.mov"
+    },
+    {
+      "beat_index": 11,
+      "beat_type": "technique",
+      "recipe_section": "Whisking the cornstarch and water into a slurry.",
+      "filename": "B19I6280.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 20.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 25.125
+      },
+      "beat_description": "Whisking the cornstarch and water into a slurry.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_005",
+      "_v2_file": "AI2I5065.mov"
+    },
+    {
+      "beat_index": 12,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring the cornstarch slurry into the simmering sauce.",
+      "filename": "B19I6279.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 24.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 29.125
+      },
+      "beat_description": "Pouring the cornstarch slurry into the simmering sauce.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Cornstarch slurry (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": "AI2I5064.mov"
+    },
+    {
+      "beat_index": 13,
+      "beat_type": "transformation_from",
+      "recipe_section": "Whisking the thin, watery sauce.",
+      "filename": "B19I6279.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 28.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 33.125
+      },
+      "beat_description": "Whisking the thin, watery sauce.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": "AI2I5064.mov"
+    },
+    {
+      "beat_index": 14,
+      "beat_type": "match_cut",
+      "recipe_section": "Whisking the bubbling, thickened glaze.",
+      "filename": "B19I6279.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 47.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 52.125
+      },
+      "beat_description": "Whisking the bubbling, thickened glaze.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "instruction: Whisk until thickened (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": "AI2I5064.mov"
+    },
+    {
+      "beat_index": 15,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding gochujang paste to the glaze.",
+      "filename": "B19I6279.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 82.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 87.125
+      },
+      "beat_description": "Adding gochujang paste to the glaze.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Gochujang paste (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": "AI2I5064.mov"
+    },
+    {
+      "beat_index": 16,
+      "beat_type": "ingredient",
+      "recipe_section": "Drizzling toasted sesame oil.",
+      "filename": "B19I6279.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 104.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 109.125
+      },
+      "beat_description": "Drizzling toasted sesame oil.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Toasted sesame oil (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": "AI2I5064.mov"
+    },
+    {
+      "beat_index": 17,
+      "beat_type": "unlabeled",
+      "recipe_section": "Whisk gochujang and toasted sesame oil into the glaze",
+      "filename": "B19I6279.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 110.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 115.125
+      },
+      "beat_description": "Whisk gochujang and toasted sesame oil into the glaze",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": "AI2I5064.mov"
+    },
+    {
+      "beat_index": 18,
+      "beat_type": "technique",
+      "recipe_section": "Transferring the finished glaze to a large bowl.",
+      "filename": "B19I6331.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 2.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 7.125
+      },
+      "beat_description": "Transferring the finished glaze to a large bowl.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_014",
+      "_v2_file": "AI2I5113.mov"
+    },
+    {
+      "beat_index": 19,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding cornstarch to a medium bowl for the dredge.",
+      "filename": "B19I6307.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 3.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 8.125
+      },
+      "beat_description": "Adding cornstarch to a medium bowl for the dredge.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Cornstarch (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": "AI2I5093.mov"
+    },
+    {
+      "beat_index": 20,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling garlic powder.",
+      "filename": "B19I6307.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 35.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 40.125
+      },
+      "beat_description": "Sprinkling garlic powder.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Garlic powder (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": "AI2I5093.mov"
+    },
+    {
+      "beat_index": 21,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling ground ginger.",
+      "filename": "B19I6307.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 45.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 50.125
+      },
+      "beat_description": "Sprinkling ground ginger.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Ground ginger (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": "AI2I5093.mov"
+    },
+    {
+      "beat_index": 22,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling kosher salt.",
+      "filename": "B19I6307.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 51.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 56.125
+      },
+      "beat_description": "Sprinkling kosher salt.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Kosher salt (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": "AI2I5093.mov"
+    },
+    {
+      "beat_index": 23,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling ground white pepper.",
+      "filename": "B19I6307.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 55.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 60.125
+      },
+      "beat_description": "Sprinkling ground white pepper.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Ground white pepper (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": "AI2I5093.mov"
+    },
+    {
+      "beat_index": 24,
+      "beat_type": "unlabeled",
+      "recipe_section": "Whisk dredge ingredients together",
+      "filename": "B19I6308.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 1.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 6.125
+      },
+      "beat_description": "Whisk dredge ingredients together",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_007",
+      "_v2_file": "AI2I5094.mov"
+    },
+    {
+      "beat_index": 25,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding cornstarch to a second medium bowl for the batter.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 5.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 10.125
+      },
+      "beat_description": "Adding cornstarch to a second medium bowl for the batter.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Cornstarch (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 26,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling baking powder.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 14.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 19.125
+      },
+      "beat_description": "Sprinkling baking powder.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Baking powder (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 27,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling kosher salt.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 26.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 31.125
+      },
+      "beat_description": "Sprinkling kosher salt.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Kosher salt (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 28,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling ground white pepper.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 31.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 36.125
+      },
+      "beat_description": "Sprinkling ground white pepper.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Ground white pepper (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 29,
+      "beat_type": "technique",
+      "recipe_section": "Finely grating garlic into the bowl.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 49.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 54.125
+      },
+      "beat_description": "Finely grating garlic into the bowl.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Garlic (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 30,
+      "beat_type": "technique",
+      "recipe_section": "Finely grating ginger into the bowl.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 57.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 62.125
+      },
+      "beat_description": "Finely grating ginger into the bowl.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Ginger (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 31,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring cold water.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 84.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 89.125
+      },
+      "beat_description": "Pouring cold water.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Cold water (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 32,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring soy sauce.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 93.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 98.125
+      },
+      "beat_description": "Pouring soy sauce.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Soy sauce (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 33,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring rice vinegar.",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 98.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 103.125
+      },
+      "beat_description": "Pouring rice vinegar.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Rice vinegar (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 34,
+      "beat_type": "unlabeled",
+      "recipe_section": "Whisk batter until combined",
+      "filename": "B19I6309.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 103.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 108.125
+      },
+      "beat_description": "Whisk batter until combined",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": "AI2I5095.mov"
+    },
+    {
+      "beat_index": 35,
+      "beat_type": "technique",
+      "recipe_section": "Tossing a piece of chicken in the dry dredge.",
+      "filename": "B19I6310.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 9.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 14.125
+      },
+      "beat_description": "Tossing a piece of chicken in the dry dredge.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Boneless, skinless chicken thighs (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": "AI2I5096.mov"
+    },
+    {
+      "beat_index": 36,
+      "beat_type": "unlabeled",
+      "recipe_section": "Shake off excess dredge from the chicken",
+      "filename": "B19I6310.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 12.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 17.125
+      },
+      "beat_description": "Shake off excess dredge from the chicken",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": "AI2I5096.mov"
+    },
+    {
+      "beat_index": 37,
+      "beat_type": "technique",
+      "recipe_section": "Tossing the dredged chicken in the wet batter.",
+      "filename": "B19I6310.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 16.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 21.125
+      },
+      "beat_description": "Tossing the dredged chicken in the wet batter.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": "AI2I5096.mov"
+    },
+    {
+      "beat_index": 38,
+      "beat_type": "unlabeled",
+      "recipe_section": "Drain excess batter from the chicken",
+      "filename": "B19I6310.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 19.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 24.125
+      },
+      "beat_description": "Drain excess batter from the chicken",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": "AI2I5096.mov"
+    },
+    {
+      "beat_index": 39,
+      "beat_type": "technique",
+      "recipe_section": "Returning the battered chicken to the dredge, pressing to create a craggy coating.",
+      "filename": "B19I6310.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 22.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 27.125
+      },
+      "beat_description": "Returning the battered chicken to the dredge, pressing to create a craggy coating.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": "AI2I5096.mov"
+    },
+    {
+      "beat_index": 40,
+      "beat_type": "unlabeled",
+      "recipe_section": "Transfer coated chicken to a second baking sheet",
+      "filename": "B19I6310.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 31.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 36.125
+      },
+      "beat_description": "Transfer coated chicken to a second baking sheet",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": "AI2I5096.mov"
+    },
+    {
+      "beat_index": 41,
+      "beat_type": "technique",
+      "recipe_section": "Adding a coated piece of chicken to the hot oil.",
+      "filename": "B19I6311.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 22.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 27.125
+      },
+      "beat_description": "Adding a coated piece of chicken to the hot oil.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_010",
+      "_v2_file": "AI2I5097.mov"
+    },
+    {
+      "beat_index": 42,
+      "beat_type": "transformation_from",
+      "recipe_section": "Stirring pale, raw coated chicken pieces in bubbling oil.",
+      "filename": "B19I6312.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 0.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 5.125
+      },
+      "beat_description": "Stirring pale, raw coated chicken pieces in bubbling oil.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_011",
+      "_v2_file": "AI2I5098.mov"
+    },
+    {
+      "beat_index": 43,
+      "beat_type": "match_cut",
+      "recipe_section": "Stirring golden-brown, crispy chicken pieces in the oil.",
+      "filename": "B19I6314.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 20.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 25.125
+      },
+      "beat_description": "Stirring golden-brown, crispy chicken pieces in the oil.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "instruction: Fry until golden-brown, 6-8 min (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_013",
+      "_v2_file": "AI2I5100.mov"
+    },
+    {
+      "beat_index": 44,
+      "beat_type": "technique",
+      "recipe_section": "Transferring the fried chicken to a wire rack with a spider.",
+      "filename": "B19I6314.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 37.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 42.125
+      },
+      "beat_description": "Transferring the fried chicken to a wire rack with a spider.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_013",
+      "_v2_file": "AI2I5100.mov"
+    },
+    {
+      "beat_index": 45,
+      "beat_type": "transformation_from",
+      "recipe_section": "Tossing the plain fried chicken in the bowl of glaze.",
+      "filename": "B19I6332.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 23.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 28.125
+      },
+      "beat_description": "Tossing the plain fried chicken in the bowl of glaze.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_015",
+      "_v2_file": "AI2I5114.mov"
+    },
+    {
+      "beat_index": 46,
+      "beat_type": "match_cut",
+      "recipe_section": "Tossing the glossy, fully coated chicken in the glaze.",
+      "filename": "B19I6332.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 56.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 61.125
+      },
+      "beat_description": "Tossing the glossy, fully coated chicken in the glaze.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_015",
+      "_v2_file": "AI2I5114.mov"
+    },
+    {
+      "beat_index": 47,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling toasted sesame seeds over the chicken.",
+      "filename": "B19I6335.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 13.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 18.125
+      },
+      "beat_description": "Sprinkling toasted sesame seeds over the chicken.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Toasted sesame seeds (0.0s-4.2s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_018",
+      "_v2_file": "AI2I5117.mov"
+    },
+    {
+      "beat_index": 48,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling sliced scallions over the chicken.",
+      "filename": "B19I6335.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 39.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 44.125
+      },
+      "beat_description": "Sprinkling sliced scallions over the chicken.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [
+        "ingredient: Scallions (0.0s-4.3s)"
+      ],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_018",
+      "_v2_file": "AI2I5117.mov"
+    },
+    {
+      "beat_index": 49,
+      "beat_type": "beauty",
+      "recipe_section": "The final dish served and ready to eat.",
+      "filename": "B19I6335.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 54.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 59.125
+      },
+      "beat_description": "The final dish served and ready to eat.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_018",
+      "_v2_file": "AI2I5117.mov"
+    },
+    {
+      "beat_index": 50,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: chicken frying",
+      "filename": "B19I6312.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 3.583,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 9.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 13.497
+      },
+      "beat_description": "BEAUTY: chicken frying",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": null
+    },
+    {
+      "beat_index": 51,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: batter drip",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: batter drip",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "AI2I5096.mov"
+    },
+    {
+      "beat_index": 52,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: sauce simmering",
+      "filename": "B19I6278.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 125.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 130.125
+      },
+      "beat_description": "BEAUTY: sauce simmering",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": null
+    },
+    {
+      "beat_index": 53,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: fork lift with dip",
+      "filename": "B19I6339.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 78.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 83.125
+      },
+      "beat_description": "BEAUTY: fork lift with dip",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": null
+    },
+    {
+      "beat_index": 54,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: hero plate",
+      "filename": "B19I6339.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 83.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 88.125
+      },
+      "beat_description": "BEAUTY: hero plate",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": null
+    }
+  ]
+}

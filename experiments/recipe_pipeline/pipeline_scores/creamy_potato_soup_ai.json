@@ -1,559 +1,13 @@
 {
-  "recipe": "basil_pesto",
+  "recipe": "creamy_potato_soup",
   "global_notes": "Converted from pipeline manifest by score_pipeline_output.py",
-  "_source_manifest": "/Users/dandj/DevApps/roughcut-ai/runs/basil_pesto/basil_pesto_manifest.json",
+  "_source_manifest": "/Users/dandj/DevApps/roughcut-ai/runs/creamy_potato_soup/creamy_potato_soup_manifest.json",
   "beats": [
     {
       "beat_index": 0,
       "beat_type": "beauty",
-      "recipe_section": "A perfect swirl of bright green pesto in a bowl, glistening with olive oil.",
-      "filename": "B19I6417.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 215.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 220.125
-      },
-      "beat_description": "A perfect swirl of bright green pesto in a bowl, glistening with olive oil.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_017",
-      "_v2_file": "AI2I5202.mov"
-    },
-    {
-      "beat_index": 1,
-      "beat_type": "technique",
-      "recipe_section": "Pressing the side of a chef's knife onto an unpeeled garlic clove to crush it.",
-      "filename": "B19I6401.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 11.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 16.125
-      },
-      "beat_description": "Pressing the side of a chef's knife onto an unpeeled garlic clove to crush it.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Garlic (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_001",
-      "_v2_file": "AI2I5184.mov"
-    },
-    {
-      "beat_index": 2,
-      "beat_type": "ingredient",
-      "recipe_section": "Placing crushed, unpeeled garlic into a skillet.",
-      "filename": "B19I6402.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 6.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 11.125
-      },
-      "beat_description": "Placing crushed, unpeeled garlic into a skillet.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Garlic (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_002",
-      "_v2_file": "AI2I5185.mov"
-    },
-    {
-      "beat_index": 3,
-      "beat_type": "ingredient",
-      "recipe_section": "Adding pine nuts to the skillet.",
-      "filename": "B19I6402.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.249,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 20.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 25.125
-      },
-      "beat_description": "Adding pine nuts to the skillet.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Raw pine nuts (0.0s-4.2s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_002",
-      "_v2_file": "AI2I5185.mov"
-    },
-    {
-      "beat_index": 4,
-      "beat_type": "transformation_from",
-      "recipe_section": "Shaking the skillet, showing pale garlic and pine nuts.",
-      "filename": "B19I6402.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 25.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 30.125
-      },
-      "beat_description": "Shaking the skillet, showing pale garlic and pine nuts.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_002",
-      "_v2_file": "AI2I5185.mov"
-    },
-    {
-      "beat_index": 5,
-      "beat_type": "transformation_from",
-      "recipe_section": "[Match Cut] Shaking the skillet, showing lightly browned garlic and pine nuts.",
-      "filename": "B19I6404.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 7.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 12.125
-      },
-      "beat_description": "[Match Cut] Shaking the skillet, showing lightly browned garlic and pine nuts.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "instruction: Toast until lightly browned and fragrant, 3-5 min (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_004",
-      "_v2_file": "AI2I5187.mov"
-    },
-    {
-      "beat_index": 6,
-      "beat_type": "technique",
-      "recipe_section": "Tipping the toasted garlic and pine nuts from the skillet onto a plate.",
-      "filename": "B19I6405.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 11.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 16.125
-      },
-      "beat_description": "Tipping the toasted garlic and pine nuts from the skillet onto a plate.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_005",
-      "_v2_file": "AI2I5188.mov"
-    },
-    {
-      "beat_index": 7,
-      "beat_type": "technique",
-      "recipe_section": "Plucking basil leaves from their stems.",
-      "filename": "B19I6406.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.249,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 22.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 27.125
-      },
-      "beat_description": "Plucking basil leaves from their stems.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Fresh basil (0.0s-4.2s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_006",
-      "_v2_file": "AI2I5189.mov"
-    },
-    {
-      "beat_index": 8,
-      "beat_type": "technique",
-      "recipe_section": "Squeezing a toasted garlic clove, popping it from its peel.",
-      "filename": "B19I6407.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 18.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 23.125
-      },
-      "beat_description": "Squeezing a toasted garlic clove, popping it from its peel.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_007",
-      "_v2_file": "AI2I5190.mov"
-    },
-    {
-      "beat_index": 9,
-      "beat_type": "ingredient",
-      "recipe_section": "Dropping peeled garlic cloves into a food processor bowl.",
-      "filename": "B19I6408.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 3.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 8.125
-      },
-      "beat_description": "Dropping peeled garlic cloves into a food processor bowl.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Garlic (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_008",
-      "_v2_file": "AI2I5191.mov"
-    },
-    {
-      "beat_index": 10,
-      "beat_type": "ingredient",
-      "recipe_section": "Pouring toasted pine nuts into the food processor bowl.",
-      "filename": "B19I6408.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 9.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 14.125
-      },
-      "beat_description": "Pouring toasted pine nuts into the food processor bowl.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Pine nuts (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_008",
-      "_v2_file": "AI2I5191.mov"
-    },
-    {
-      "beat_index": 11,
-      "beat_type": "transformation_from",
-      "recipe_section": "Pulsing the food processor, showing whole garlic and pine nuts bouncing.",
-      "filename": "B19I6409.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.249,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 46.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 51.125
-      },
-      "beat_description": "Pulsing the food processor, showing whole garlic and pine nuts bouncing.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_009",
-      "_v2_file": "AI2I5192.mov"
-    },
-    {
-      "beat_index": 12,
-      "beat_type": "transformation_from",
-      "recipe_section": "[Match Cut] Pulsing the food processor, showing a mixture the texture of wet sand.",
-      "filename": "B19I6409.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 66.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 71.125
-      },
-      "beat_description": "[Match Cut] Pulsing the food processor, showing a mixture the texture of wet sand.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "instruction: Pulse until the texture of wet sand (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_009",
-      "_v2_file": "AI2I5192.mov"
-    },
-    {
-      "beat_index": 13,
-      "beat_type": "ingredient",
-      "recipe_section": "Piling fresh basil leaves into the food processor.",
-      "filename": "B19I6410.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 6.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 11.125
-      },
-      "beat_description": "Piling fresh basil leaves into the food processor.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Fresh basil (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_010",
-      "_v2_file": "AI2I5193.mov"
-    },
-    {
-      "beat_index": 14,
-      "beat_type": "ingredient",
-      "recipe_section": "Adding grated Parmesan cheese to the food processor.",
-      "filename": "B19I6410.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 47.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 52.125
-      },
-      "beat_description": "Adding grated Parmesan cheese to the food processor.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Parmesan cheese (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_010",
-      "_v2_file": "AI2I5193.mov"
-    },
-    {
-      "beat_index": 15,
-      "beat_type": "ingredient",
-      "recipe_section": "Sprinkling lemon zest into the food processor.",
-      "filename": "B19I6410.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.249,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 36.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 41.125
-      },
-      "beat_description": "Sprinkling lemon zest into the food processor.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Lemon zest (0.0s-4.2s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_010",
-      "_v2_file": "AI2I5193.mov"
-    },
-    {
-      "beat_index": 16,
-      "beat_type": "transformation_from",
-      "recipe_section": "Pulsing the food processor, showing a coarse, leafy mixture of basil and cheese.",
-      "filename": "B19I6410.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 99.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 104.125
-      },
-      "beat_description": "Pulsing the food processor, showing a coarse, leafy mixture of basil and cheese.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_010",
-      "_v2_file": "AI2I5193.mov"
-    },
-    {
-      "beat_index": 17,
-      "beat_type": "transformation_from",
-      "recipe_section": "[Match Cut] Pulsing the food processor, showing a finely minced, uniform green mixture.",
-      "filename": "B19I6410.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 163.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 168.125
-      },
-      "beat_description": "[Match Cut] Pulsing the food processor, showing a finely minced, uniform green mixture.",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "instruction: Pulse until uniform and finely minced (0.0s-4.3s)"
-      ],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": "pair_010",
-      "_v2_file": "AI2I5193.mov"
-    },
-    {
-      "beat_index": 18,
-      "beat_type": "ingredient",
-      "recipe_section": "Streaming extra-virgin olive oil into the running food processor.",
-      "filename": "B19I6411.mov",
+      "recipe_section": "A warm, inviting bowl of finished potato soup, fully garnished.",
+      "filename": "B19I6172.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
@@ -569,22 +23,78 @@
       "out_point": {
         "seconds": 13.125
       },
-      "beat_description": "Streaming extra-virgin olive oil into the running food processor.",
+      "beat_description": "A warm, inviting bowl of finished potato soup, fully garnished.",
       "effects": "",
       "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Extra-virgin olive oil (0.0s-4.3s)"
-      ],
+      "mogrt_overlaps": [],
       "verdict": "pipeline_proposed",
       "_source": "pipeline_manifest",
-      "_pair_id": "pair_011",
-      "_v2_file": "AI2I5194.mov"
+      "_pair_id": "pair_022",
+      "_v2_file": null
     },
     {
-      "beat_index": 19,
+      "beat_index": 1,
+      "beat_type": "ingredient",
+      "recipe_section": "Tossing chopped bacon into a Dutch oven.",
+      "filename": "B19I6151.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 31.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 36.125
+      },
+      "beat_description": "Tossing chopped bacon into a Dutch oven.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 2,
       "beat_type": "transformation_from",
-      "recipe_section": "The food processor running, showing a slightly separated, dark green mixture.",
-      "filename": "B19I6411.mov",
+      "recipe_section": "Stirring raw, pale bacon pieces in the pot.",
+      "filename": "B19I6151.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 51.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 56.125
+      },
+      "beat_description": "Stirring raw, pale bacon pieces in the pot.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 3,
+      "beat_type": "match_cut",
+      "recipe_section": "Stirring browned, sizzling bacon in rendered fat.",
+      "filename": "B19I6153.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
@@ -594,26 +104,55 @@
         "reasoning": "computed from timeline_in/timeline_out timecodes"
       },
       "in_point": {
-        "seconds": 29.875,
+        "seconds": 1.875,
         "reasoning": "from v1.adjusted_in"
       },
       "out_point": {
-        "seconds": 34.125
+        "seconds": 6.125
       },
-      "beat_description": "The food processor running, showing a slightly separated, dark green mixture.",
+      "beat_description": "Stirring browned, sizzling bacon in rendered fat.",
       "effects": "",
       "effects_reasoning": "",
       "mogrt_overlaps": [],
       "verdict": "pipeline_proposed",
       "_source": "pipeline_manifest",
-      "_pair_id": "pair_011",
-      "_v2_file": "AI2I5194.mov"
+      "_pair_id": "pair_003",
+      "_v2_file": null
     },
     {
-      "beat_index": 20,
-      "beat_type": "transformation_from",
-      "recipe_section": "[Match Cut] The food processor running, showing a smooth, creamy, bright green pesto.",
-      "filename": "B19I6411.mov",
+      "beat_index": 4,
+      "beat_type": "match_cut",
+      "recipe_section": "Stirring dark, crispy bacon bits.",
+      "filename": "B19I6157.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 5.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 10.125
+      },
+      "beat_description": "Stirring dark, crispy bacon bits.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_007",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 5,
+      "beat_type": "technique",
+      "recipe_section": "Lifting crispy bacon from the pot with a slotted spoon.",
+      "filename": "B19I6157.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
@@ -629,22 +168,20 @@
       "out_point": {
         "seconds": 40.125
       },
-      "beat_description": "[Match Cut] The food processor running, showing a smooth, creamy, bright green pesto.",
+      "beat_description": "Lifting crispy bacon from the pot with a slotted spoon.",
       "effects": "",
       "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "instruction: Process until smooth, 30-60 seconds (0.0s-4.3s)"
-      ],
+      "mogrt_overlaps": [],
       "verdict": "pipeline_proposed",
       "_source": "pipeline_manifest",
-      "_pair_id": "pair_011",
-      "_v2_file": "AI2I5194.mov"
+      "_pair_id": "pair_007",
+      "_v2_file": null
     },
     {
-      "beat_index": 21,
-      "beat_type": "technique",
-      "recipe_section": "Scraping the finished pesto into a small bowl with a spatula.",
-      "filename": "B19I6412.mov",
+      "beat_index": 6,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding diced yellow onion to the bacon fat.",
+      "filename": "B19I6158.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
@@ -654,26 +191,316 @@
         "reasoning": "computed from timeline_in/timeline_out timecodes"
       },
       "in_point": {
-        "seconds": 18.875,
+        "seconds": 12.875,
         "reasoning": "from v1.adjusted_in"
       },
       "out_point": {
-        "seconds": 23.125
+        "seconds": 17.125
       },
-      "beat_description": "Scraping the finished pesto into a small bowl with a spatula.",
+      "beat_description": "Adding diced yellow onion to the bacon fat.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 7,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding diced carrot.",
+      "filename": "B19I6158.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 20.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 25.125
+      },
+      "beat_description": "Adding diced carrot.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 8,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding diced celery.",
+      "filename": "B19I6158.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 25.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 30.125
+      },
+      "beat_description": "Adding diced celery.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 9,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling kosher salt over the vegetables.",
+      "filename": "B19I6158.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 36.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 41.125
+      },
+      "beat_description": "Sprinkling kosher salt over the vegetables.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 10,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling black pepper over the vegetables.",
+      "filename": "B19I6158.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 44.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 49.125
+      },
+      "beat_description": "Sprinkling black pepper over the vegetables.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_008",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 11,
+      "beat_type": "transformation_from",
+      "recipe_section": "Stirring the crisp, raw vegetables in the pot.",
+      "filename": "B19I6159.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 2.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 7.125
+      },
+      "beat_description": "Stirring the crisp, raw vegetables in the pot.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_009",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 12,
+      "beat_type": "match_cut",
+      "recipe_section": "Stirring the softened, translucent vegetables.",
+      "filename": "B19I6161.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 0.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 5.125
+      },
+      "beat_description": "Stirring the softened, translucent vegetables.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_011",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 13,
+      "beat_type": "ingredient",
+      "recipe_section": "Stirring in minced garlic.",
+      "filename": "B19I6162.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 60.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 65.125
+      },
+      "beat_description": "Stirring in minced garlic.",
       "effects": "",
       "effects_reasoning": "",
       "mogrt_overlaps": [],
       "verdict": "pipeline_proposed",
       "_source": "pipeline_manifest",
       "_pair_id": "pair_012",
-      "_v2_file": "AI2I5197.mov"
+      "_v2_file": null
     },
     {
-      "beat_index": 22,
+      "beat_index": 14,
       "beat_type": "ingredient",
-      "recipe_section": "Sprinkling kosher salt over the pesto.",
-      "filename": "B19I6411.mov",
+      "recipe_section": "Sprinkling all-purpose flour over the vegetables.",
+      "filename": "B19I6162.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 74.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 79.125
+      },
+      "beat_description": "Sprinkling all-purpose flour over the vegetables.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_012",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 15,
+      "beat_type": "technique",
+      "recipe_section": "Stirring to coat the vegetables with flour, forming a paste.",
+      "filename": "B19I6162.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 78.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 83.125
+      },
+      "beat_description": "Stirring to coat the vegetables with flour, forming a paste.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_012",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 16,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding diced russet potatoes to the pot.",
+      "filename": "B19I6163.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 8.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 13.125
+      },
+      "beat_description": "Adding diced russet potatoes to the pot.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_013",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 17,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring in low-sodium chicken broth.",
+      "filename": "B19I6164.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
@@ -689,22 +516,49 @@
       "out_point": {
         "seconds": 66.125
       },
-      "beat_description": "Sprinkling kosher salt over the pesto.",
+      "beat_description": "Pouring in low-sodium chicken broth.",
       "effects": "",
       "effects_reasoning": "",
-      "mogrt_overlaps": [
-        "ingredient: Kosher salt (0.0s-4.3s)"
-      ],
+      "mogrt_overlaps": [],
       "verdict": "pipeline_proposed",
       "_source": "pipeline_manifest",
-      "_pair_id": "pair_011",
-      "_v2_file": "AI2I5194.mov"
+      "_pair_id": "pair_014",
+      "_v2_file": null
     },
     {
-      "beat_index": 23,
-      "beat_type": "technique",
-      "recipe_section": "Gently folding the salt into the pesto with a spoon.",
-      "filename": "B19I6410.mov",
+      "beat_index": 18,
+      "beat_type": "ingredient",
+      "recipe_section": "Pouring in milk.",
+      "filename": "B19I6164.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 76.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 81.125
+      },
+      "beat_description": "Pouring in milk.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_014",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 19,
+      "beat_type": "unlabeled",
+      "recipe_section": "Stir to combine potatoes, broth, and milk.",
+      "filename": "B19I6164.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
@@ -714,55 +568,171 @@
         "reasoning": "computed from timeline_in/timeline_out timecodes"
       },
       "in_point": {
-        "seconds": 126.875,
+        "seconds": 82.875,
         "reasoning": "from v1.adjusted_in"
       },
       "out_point": {
-        "seconds": 131.125
+        "seconds": 87.125
       },
-      "beat_description": "Gently folding the salt into the pesto with a spoon.",
+      "beat_description": "Stir to combine potatoes, broth, and milk.",
       "effects": "",
       "effects_reasoning": "",
       "mogrt_overlaps": [],
       "verdict": "pipeline_proposed",
       "_source": "pipeline_manifest",
-      "_pair_id": "pair_010",
-      "_v2_file": "AI2I5193.mov"
+      "_pair_id": "pair_014",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 20,
+      "beat_type": "technique",
+      "recipe_section": "Placing a lid on the pot.",
+      "filename": "B19I6167.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 14.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 19.125
+      },
+      "beat_description": "Placing a lid on the pot.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_017",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 21,
+      "beat_type": "transformation_from",
+      "recipe_section": "Uncovering the pot to reveal a simmering, brothy soup.",
+      "filename": "B19I6169.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 9.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 14.125
+      },
+      "beat_description": "Uncovering the pot to reveal a simmering, brothy soup.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_019",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 22,
+      "beat_type": "match_cut",
+      "recipe_section": "Uncovering the pot to reveal a thick, creamy soup with tender potatoes.",
+      "filename": "B19I6169.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 10.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 15.125
+      },
+      "beat_description": "Uncovering the pot to reveal a thick, creamy soup with tender potatoes.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_019",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 23,
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling crumbled bacon over soup in a bowl.",
+      "filename": "B19I6171.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 31.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 36.125
+      },
+      "beat_description": "Sprinkling crumbled bacon over soup in a bowl.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_021",
+      "_v2_file": null
     },
     {
       "beat_index": 24,
-      "beat_type": "beauty",
-      "recipe_section": "The finished pesto being drizzled over a beautiful plate of pasta.",
-      "filename": "B19I6415.mov",
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling grated sharp cheddar cheese.",
+      "filename": "B19I6171.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
       },
       "duration": {
-        "seconds": 4.25,
+        "seconds": 4.209,
         "reasoning": "computed from timeline_in/timeline_out timecodes"
       },
       "in_point": {
-        "seconds": 6.875,
+        "seconds": 7.575,
         "reasoning": "from v1.adjusted_in"
       },
       "out_point": {
-        "seconds": 11.125
+        "seconds": 11.825
       },
-      "beat_description": "The finished pesto being drizzled over a beautiful plate of pasta.",
+      "beat_description": "Sprinkling grated sharp cheddar cheese.",
       "effects": "",
       "effects_reasoning": "",
       "mogrt_overlaps": [],
       "verdict": "pipeline_proposed",
       "_source": "pipeline_manifest",
-      "_pair_id": "pair_015",
-      "_v2_file": "AI2I5200.mov"
+      "_pair_id": "pair_021",
+      "_v2_file": null
     },
     {
       "beat_index": 25,
-      "beat_type": "beauty",
-      "recipe_section": "BEAUTY: pesto pour",
-      "filename": "B19I6413.mov",
+      "beat_type": "ingredient",
+      "recipe_section": "Sprinkling thinly sliced scallions.",
+      "filename": "B19I6171.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
@@ -772,13 +742,129 @@
         "reasoning": "computed from timeline_in/timeline_out timecodes"
       },
       "in_point": {
-        "seconds": 45.875,
+        "seconds": 57.875,
         "reasoning": "from v1.adjusted_in"
       },
       "out_point": {
-        "seconds": 50.125
+        "seconds": 62.125
       },
-      "beat_description": "BEAUTY: pesto pour",
+      "beat_description": "Sprinkling thinly sliced scallions.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_021",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 26,
+      "beat_type": "beauty",
+      "recipe_section": "The final, garnished bowl of potato soup, with a spoon ready to dive in.",
+      "filename": "B19I6171.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 83.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 88.125
+      },
+      "beat_description": "The final, garnished bowl of potato soup, with a spoon ready to dive in.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_021",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 27,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: Placing the bowl",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: Placing the bowl",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "AI2I4963.mov"
+    },
+    {
+      "beat_index": 28,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: Hero shot",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: Hero shot",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "AI2I4963.mov"
+    },
+    {
+      "beat_index": 29,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: Toppings close-up",
+      "filename": "B19I6173.mov",
+      "camera": {
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 98.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 103.125
+      },
+      "beat_description": "BEAUTY: Toppings close-up",
       "effects": "",
       "effects_reasoning": "",
       "mogrt_overlaps": [],
@@ -788,10 +874,10 @@
       "_v2_file": null
     },
     {
-      "beat_index": 26,
+      "beat_index": 30,
       "beat_type": "beauty",
-      "recipe_section": "BEAUTY: mixing pasta",
-      "filename": "B19I6416.mov",
+      "recipe_section": "BEAUTY: Placing the bowl",
+      "filename": "B19I6172.mov",
       "camera": {
         "choice": "front",
         "reasoning": "derived from camera_mapping.json[B19I6]"
@@ -807,123 +893,7 @@
       "out_point": {
         "seconds": 45.125
       },
-      "beat_description": "BEAUTY: mixing pasta",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": null,
-      "_v2_file": null
-    },
-    {
-      "beat_index": 27,
-      "beat_type": "beauty",
-      "recipe_section": "BEAUTY: pesto reveal",
-      "filename": "",
-      "camera": {
-        "choice": "unknown",
-        "reasoning": "derived from camera_mapping.json[]"
-      },
-      "duration": {
-        "seconds": 4.249,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": null,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": null
-      },
-      "beat_description": "BEAUTY: pesto reveal",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": null,
-      "_v2_file": "AI2I5194.mov"
-    },
-    {
-      "beat_index": 28,
-      "beat_type": "beauty",
-      "recipe_section": "BEAUTY: pesto pour",
-      "filename": "",
-      "camera": {
-        "choice": "unknown",
-        "reasoning": "derived from camera_mapping.json[]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": null,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": null
-      },
-      "beat_description": "BEAUTY: pesto pour",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": null,
-      "_v2_file": "AI2I5198.mov"
-    },
-    {
-      "beat_index": 29,
-      "beat_type": "beauty",
-      "recipe_section": "BEAUTY: mixing pasta",
-      "filename": "",
-      "camera": {
-        "choice": "unknown",
-        "reasoning": "derived from camera_mapping.json[]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": null,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": null
-      },
-      "beat_description": "BEAUTY: mixing pasta",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": null,
-      "_v2_file": "AI2I5201.mov"
-    },
-    {
-      "beat_index": 30,
-      "beat_type": "beauty",
-      "recipe_section": "BEAUTY: pesto reveal",
-      "filename": "B19I6411.mov",
-      "camera": {
-        "choice": "front",
-        "reasoning": "derived from camera_mapping.json[B19I6]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": 73.875,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": 78.125
-      },
-      "beat_description": "BEAUTY: pesto reveal",
+      "beat_description": "BEAUTY: Placing the bowl",
       "effects": "",
       "effects_reasoning": "",
       "mogrt_overlaps": [],
@@ -935,60 +905,31 @@
     {
       "beat_index": 31,
       "beat_type": "beauty",
-      "recipe_section": "BEAUTY: presenting the bowl",
-      "filename": "",
+      "recipe_section": "BEAUTY: Hero shot",
+      "filename": "B19I6172.mov",
       "camera": {
-        "choice": "unknown",
-        "reasoning": "derived from camera_mapping.json[]"
+        "choice": "front",
+        "reasoning": "derived from camera_mapping.json[B19I6]"
       },
       "duration": {
-        "seconds": 4.249,
+        "seconds": 3.291,
         "reasoning": "computed from timeline_in/timeline_out timecodes"
       },
       "in_point": {
-        "seconds": null,
+        "seconds": 50.875,
         "reasoning": "from v1.adjusted_in"
       },
       "out_point": {
-        "seconds": null
+        "seconds": 54.171
       },
-      "beat_description": "BEAUTY: presenting the bowl",
+      "beat_description": "BEAUTY: Hero shot",
       "effects": "",
       "effects_reasoning": "",
       "mogrt_overlaps": [],
       "verdict": "pipeline_proposed",
       "_source": "pipeline_manifest",
       "_pair_id": null,
-      "_v2_file": "AI2I5202.mov"
-    },
-    {
-      "beat_index": 32,
-      "beat_type": "beauty",
-      "recipe_section": "BEAUTY: hero plate",
-      "filename": "",
-      "camera": {
-        "choice": "unknown",
-        "reasoning": "derived from camera_mapping.json[]"
-      },
-      "duration": {
-        "seconds": 4.25,
-        "reasoning": "computed from timeline_in/timeline_out timecodes"
-      },
-      "in_point": {
-        "seconds": null,
-        "reasoning": "from v1.adjusted_in"
-      },
-      "out_point": {
-        "seconds": null
-      },
-      "beat_description": "BEAUTY: hero plate",
-      "effects": "",
-      "effects_reasoning": "",
-      "mogrt_overlaps": [],
-      "verdict": "pipeline_proposed",
-      "_source": "pipeline_manifest",
-      "_pair_id": null,
-      "_v2_file": "AI2I5203.mov"
+      "_v2_file": null
     }
   ]
 }

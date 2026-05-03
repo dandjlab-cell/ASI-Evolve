@@ -1,0 +1,674 @@
+{
+  "recipe": "banana_muffins",
+  "global_notes": "Converted from pipeline manifest by score_pipeline_output.py",
+  "_source_manifest": "/Users/dandj/DevApps/roughcut-ai/runs/banana_muffins/banana_muffins_manifest.json",
+  "beats": [
+    {
+      "beat_index": 0,
+      "beat_type": "beauty",
+      "recipe_section": "A beautiful arrangement of the finished banana muffins.",
+      "filename": "A003_05111956_C015.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 3.125,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 91.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 95.012
+      },
+      "beat_description": "A beautiful arrangement of the finished banana muffins.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_005",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 1,
+      "beat_type": "technique",
+      "recipe_section": "Placing paper liners into a muffin pan.",
+      "filename": "A003_05111917_C013.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 37.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 42.125
+      },
+      "beat_description": "Placing paper liners into a muffin pan.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_003",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 2,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding peeled bananas to the bowl of melted butter.",
+      "filename": "A003_05111902_C011.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 89.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 94.125
+      },
+      "beat_description": "Adding peeled bananas to the bowl of melted butter.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 3,
+      "beat_type": "transformation_from",
+      "recipe_section": "Mashing whole bananas with a fork.",
+      "filename": "A003_05111902_C011.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 169.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 174.125
+      },
+      "beat_description": "Mashing whole bananas with a fork.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 4,
+      "beat_type": "match_cut",
+      "recipe_section": "Mashing chunky bananas with a fork.",
+      "filename": "A003_05111902_C011.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 221.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 226.125
+      },
+      "beat_description": "Mashing chunky bananas with a fork.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 5,
+      "beat_type": "match_cut",
+      "recipe_section": "Mashing banana puree with a fork.",
+      "filename": "A003_05111902_C011.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 280.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 285.125
+      },
+      "beat_description": "Mashing banana puree with a fork.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_001",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 6,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding brown sugar to the bowl.",
+      "filename": "A003_05111909_C012.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 11.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 16.125
+      },
+      "beat_description": "Adding brown sugar to the bowl.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 7,
+      "beat_type": "transformation_from",
+      "recipe_section": "Whisking a lumpy, separated mixture.",
+      "filename": "A003_05111909_C012.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 27.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 32.125
+      },
+      "beat_description": "Whisking a lumpy, separated mixture.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 8,
+      "beat_type": "match_cut",
+      "recipe_section": "Whisking a smooth, emulsified batter.",
+      "filename": "A003_05111909_C012.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 72.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 77.125
+      },
+      "beat_description": "Whisking a smooth, emulsified batter.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 9,
+      "beat_type": "ingredient",
+      "recipe_section": "Adding flour to the bowl.",
+      "filename": "A003_05111909_C012.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 96.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 101.125
+      },
+      "beat_description": "Adding flour to the bowl.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 10,
+      "beat_type": "transformation_from",
+      "recipe_section": "Folding flour into the wet batter with a spatula.",
+      "filename": "A003_05111909_C012.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 107.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 112.125
+      },
+      "beat_description": "Folding flour into the wet batter with a spatula.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 11,
+      "beat_type": "match_cut",
+      "recipe_section": "Folding a mostly combined batter with a few flour streaks.",
+      "filename": "A003_05111909_C012.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 152.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 157.125
+      },
+      "beat_description": "Folding a mostly combined batter with a few flour streaks.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 12,
+      "beat_type": "match_cut",
+      "recipe_section": "Folding a fully incorporated, smooth muffin batter.",
+      "filename": "A003_05111909_C012.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 160.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 165.125
+      },
+      "beat_description": "Folding a fully incorporated, smooth muffin batter.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_002",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 13,
+      "beat_type": "technique",
+      "recipe_section": "Scooping batter into a lined muffin well.",
+      "filename": "A003_05111917_C013.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 77.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 82.125
+      },
+      "beat_description": "Scooping batter into a lined muffin well.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_003",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 14,
+      "beat_type": "technique",
+      "recipe_section": "Pressing on the top of a golden-brown muffin in the pan, which bounces back.",
+      "filename": "A003_05111943_C014.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 20.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 25.125
+      },
+      "beat_description": "Pressing on the top of a golden-brown muffin in the pan, which bounces back.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": "A057_02270142_C027.mov"
+    },
+    {
+      "beat_index": 15,
+      "beat_type": "technique",
+      "recipe_section": "Transferring a muffin from the pan to a wire rack.",
+      "filename": "A003_05111943_C014.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 38.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 43.125
+      },
+      "beat_description": "Transferring a muffin from the pan to a wire rack.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_004",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 16,
+      "beat_type": "beauty",
+      "recipe_section": "The final plated banana muffins, one broken open to show the texture.",
+      "filename": "A003_05112002_C016.mov",
+      "camera": {
+        "choice": "overhead",
+        "reasoning": "derived from camera_mapping.json[A003_]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": 37.875,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": 42.125
+      },
+      "beat_description": "The final plated banana muffins, one broken open to show the texture.",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": "pair_006",
+      "_v2_file": null
+    },
+    {
+      "beat_index": 17,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: texture close-up",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: texture close-up",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "A057_02270202_C030.mov"
+    },
+    {
+      "beat_index": 18,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: steam pull",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: steam pull",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "A057_02270201_C029.mov"
+    },
+    {
+      "beat_index": 19,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: muffin break",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: muffin break",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "A057_02270201_C029.mov"
+    },
+    {
+      "beat_index": 20,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: texture reveal",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.249,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: texture reveal",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "A057_02270201_C029.mov"
+    },
+    {
+      "beat_index": 21,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: overhead texture reveal",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: overhead texture reveal",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "A003_05112002_C016.mov"
+    },
+    {
+      "beat_index": 22,
+      "beat_type": "beauty",
+      "recipe_section": "BEAUTY: hero plate",
+      "filename": "",
+      "camera": {
+        "choice": "unknown",
+        "reasoning": "derived from camera_mapping.json[]"
+      },
+      "duration": {
+        "seconds": 4.25,
+        "reasoning": "computed from timeline_in/timeline_out timecodes"
+      },
+      "in_point": {
+        "seconds": null,
+        "reasoning": "from v1.adjusted_in"
+      },
+      "out_point": {
+        "seconds": null
+      },
+      "beat_description": "BEAUTY: hero plate",
+      "effects": "",
+      "effects_reasoning": "",
+      "mogrt_overlaps": [],
+      "verdict": "pipeline_proposed",
+      "_source": "pipeline_manifest",
+      "_pair_id": null,
+      "_v2_file": "A003_05111956_C015.mov"
+    }
+  ]
+}
