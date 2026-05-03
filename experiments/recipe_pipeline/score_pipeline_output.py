@@ -174,82 +174,108 @@ def render_report(recipe: str, dan_score: dict, ai_score: dict,
     today = date.today().isoformat()
     out.append("---")
     out.append("project: ASI-Evolve")
-    out.append("type: phase-4-fitness-gradient")
+    out.append("type: phase-4-polish-gradient")
     out.append(f"date: {today}")
     out.append(f"recipe: {recipe}")
-    out.append("status: v1")
-    out.append("tags: [asi-evolve, phase-4, fitness-gradient, scorer, roughcut-ai]")
+    out.append("status: v2")
+    out.append("tags: [asi-evolve, phase-4, polish-gradient, scorer, roughcut-ai]")
     out.append("related:")
     out.append('  - "[[Editing Agent - Roadmap]]"')
     out.append('  - "[[Editing Agent — Style Signature v1]]"')
-    out.append('  - "[[Phase 3 — Discrimination Test chicken_thighs]]"')
+    out.append('  - "[[Phase 4 — Fitness Gradient Rollup]]"')
     out.append("source: experiments/recipe_pipeline/score_pipeline_output.py")
     out.append("---")
     out.append("")
-    out.append(f"# Phase 4 — Fitness Gradient ({recipe})")
+    out.append(f"# Phase 4 — Polish Gradient ({recipe})")
     out.append("")
     out.append(
-        f"First measured comparison between the AI pipeline's proposed edit "
-        f"and Dan's approved edit on the same recipe, using the same scorer "
-        f"(`score_rules.py`, post-2026-05-03 fixes). The delta is the fitness "
-        f"gradient — the signal an evolution loop would optimize against."
+        "**Reframe (Dan, 2026-05-03):** the AI's manifest is an *intentional polish baseline*, "
+        "not a bid to replace Dan's edit. The current pipeline outputs a deliberately basic "
+        "first-pass cut so the editor can finish it. The goal of comparing AI to Dan is to "
+        "find which polish steps the editor still has to do — and incrementally push those "
+        "into the pipeline so future versions need less polish."
     )
     out.append("")
     out.append(
-        "Phase 4 deliverable in [[Editing Agent - Roadmap]]. The scorer was "
-        "validated by Phase 3 discrimination tests on chicken_thighs and "
-        "basil_pesto: all 4 deliberate-violation variants now score below "
-        "baseline. Whether the scorer can ALSO distinguish the AI's output "
-        "from Dan's is what this note measures."
+        f"This note compares AI ({recipe}) to Dan's approved edit using `score_rules.py` "
+        f"(post-2026-05-03 fixes validated by Phase 3 discrimination test). The composite "
+        f"delta is informational; the per-rule breakdown is what's actionable. Some rules "
+        f"identify *real polish-reduction targets* (pacing, flourishes, selection); others "
+        f"reflect *intentional product choices* (beauty optionality, basic baseline) and "
+        f"should NOT be treated as flaws to fix."
     )
     out.append("")
 
     # Composite + beat count summary
     delta = dan_score["composite"] - ai_score["composite"]
-    out.append("## Headline")
+    out.append("## Headline (informational)")
     out.append("")
     out.append("| | Composite | Beat count |")
     out.append("|---|---|---|")
-    out.append(f"| **Dan (approved)** | **{dan_score['composite']}** | {dan_beat_count} |")
-    out.append(f"| **AI (pipeline)** | **{ai_score['composite']}** | {ai_beat_count} |")
-    out.append(f"| **Δ (Dan − AI)** | **{delta:+.2f}** | {dan_beat_count - ai_beat_count:+d} |")
+    out.append(f"| Dan (approved) | {dan_score['composite']} | {dan_beat_count} |")
+    out.append(f"| AI (pipeline baseline) | {ai_score['composite']} | {ai_beat_count} |")
+    out.append(f"| Δ (Dan − AI) | {delta:+.2f} | {dan_beat_count - ai_beat_count:+d} |")
     out.append("")
-    interp = (
-        "**Dan scores higher** — the scorer can distinguish the editorial "
-        "quality gap. Magnitude is the gradient evolution would optimize."
-        if delta > 0.5 else
-        ("**Effectively tied** — the scorer cannot distinguish the AI from "
-         "Dan on this recipe. Either the AI's output is editorially "
-         "equivalent (unlikely) OR the scorer is too coarse to see the "
-         "difference (likely; this is a scorer-extension prompt for Phase 5)."
-         if abs(delta) <= 0.5 else
-         "**AI scores higher than Dan** — the scorer rewards something the AI "
-         "does that Dan doesn't. Investigate which rules are pulling AI's "
-         "score up and tighten them.")
+    out.append(
+        "Composite delta is a directional summary, not a verdict. AI is intentionally "
+        "below Dan; the question is *which gap components are polish-reduction targets* "
+        "and which reflect product design."
     )
-    out.append(interp)
     out.append("")
 
-    # Per-rule comparison
-    out.append("## Per-rule comparison")
-    out.append("")
-    out.append("| Rule | Dan | AI | Δ (Dan − AI) |")
-    out.append("|---|---|---|---|")
+    # Categorize rules into three buckets:
+    #   real_targets   — rules where AI loses for editor-polish reasons
+    #   intentional    — rules where AI loses by design
+    #   inconclusive   — small delta or known noise
     rules = list(dan_score["rules"].keys())
-    for r in rules:
+
+    # Polish-reduction targets per Dan's 2026-05-03 priorities (faster cuts,
+    # flourishes, better selection, footage-aware moment vs close-up).
+    real_target_rules = {
+        "beat_density": "pacing — faster cuts vs hardcoded ~4.25s median",
+        "flourish_detection": "flourishes — pipeline doesn't emit ramps yet",
+        "camera_run_quality": "selection — camera variety / hold quality",
+    }
+    # Caveats / intentional choices acknowledged in product framing.
+    caveat_rules = {
+        "mogrt_text_readability": "AI mogrts synthesized from manifest text — approximate",
+        "structural_coherence": "label-vocabulary noise (Dan's `?` beats vs AI's fine-grained types) — finding overstated; both follow recipe order",
+        "dump_camera_hold": "AI has fewer ingredient-dump runs to penalize — gameable",
+        "duration_compensation": "fires only on dump-sequence post-switch beats; sparse signal",
+    }
+
+    out.append("## Polish-reduction targets (push these closer to Dan)")
+    out.append("")
+    out.append("| Rule | Dan | AI | Δ | Polish step it represents |")
+    out.append("|---|---|---|---|---|")
+    for r, label in real_target_rules.items():
+        if r not in dan_score["rules"]:
+            continue
         ds = dan_score["rules"][r]["score"]
         as_ = ai_score["rules"][r]["score"]
         d = ds - as_
-        marker = " ⭐" if d > 0.05 else (" ⚠️" if d < -0.05 else "")
-        out.append(f"| `{r}` | {ds:.3f} | {as_:.3f} | {d:+.3f}{marker} |")
-    out.append("")
-    out.append("⭐ = rule contributes to Dan's lead. ⚠️ = AI scores higher on this rule (worth investigating).")
+        out.append(f"| `{r}` | {ds:.3f} | {as_:.3f} | {d:+.3f} | {label} |")
     out.append("")
 
-    # Diagnostic detail per rule that differs
-    out.append("## Where the gap comes from")
+    out.append("## Caveats / intentional baseline (do NOT optimize against)")
     out.append("")
-    for r in rules:
+    out.append("| Rule | Dan | AI | Δ | Why this delta is not a polish target |")
+    out.append("|---|---|---|---|---|")
+    for r, label in caveat_rules.items():
+        if r not in dan_score["rules"]:
+            continue
+        ds = dan_score["rules"][r]["score"]
+        as_ = ai_score["rules"][r]["score"]
+        d = ds - as_
+        out.append(f"| `{r}` | {ds:.3f} | {as_:.3f} | {d:+.3f} | {label} |")
+    out.append("")
+
+    # Diagnostic detail for the polish-reduction targets only
+    out.append("## Where the polish-reduction targets break down")
+    out.append("")
+    for r in real_target_rules:
+        if r not in dan_score["rules"]:
+            continue
         ds = dan_score["rules"][r]["score"]
         as_ = ai_score["rules"][r]["score"]
         if abs(ds - as_) <= 0.05:
@@ -259,49 +285,38 @@ def render_report(recipe: str, dan_score: dict, ai_score: dict,
         out.append("")
         d_detail = dan_score["rules"][r].get("detail", "")
         a_detail = ai_score["rules"][r].get("detail", "")
-        out.append(f"- Dan: {d_detail}")
-        out.append(f"- AI: {a_detail}")
+        out.append(f"- Dan: {d_detail or '(no detail)'}")
+        out.append(f"- AI: {a_detail or '(no detail)'}")
         out.append("")
 
-    # Caveats
-    out.append("## Caveats")
+    out.append("## Methodology caveats")
     out.append("")
     out.append(
-        "- **AI's manifest doesn't propose speed ramps.** R4 (flourish detection) "
-        "will score the AI at 0.7 neutral by construction. This isn't the AI's "
-        "output being measured fairly on flourishes — it's the AI not emitting "
-        "them at all (a later pipeline stage handles ramps). Treat R4 delta as "
-        "a known structural gap, not an editorial-quality signal."
+        "- **AI manifest is intentionally a basic baseline.** Editor adds polish: "
+        "fine-grained cuts, speed ramps, MOGRT styling, etc. The composite delta "
+        "above measures total polish required, not editorial deficit."
     )
     out.append(
-        "- **AI's mogrt_overlaps are synthesized from the manifest's `text` field**, "
-        "which only carries content (not style/font/duration). MOGRT readability "
-        "is approximated from beat duration alone. R3 deltas should be read with "
-        "this in mind."
+        "- **AI's mogrt_overlaps are synthesized from the manifest's `text` field** "
+        "for scoring purposes; the AI doesn't separately emit MOGRT styling/duration. "
+        "R3 numbers are approximate."
     )
     out.append(
         "- **Camera labels on the AI side are derived from the per-recipe cache** "
-        "(camera_mapping.json), not from the AI's actual output. The AI doesn't "
-        "explicitly choose front/overhead — it picks v1/v2 by audio sync, and the "
-        "filename prefix is what we map. Same accuracy as Dan's annotation since "
-        "both routes go through the cache."
+        "(`camera_mapping.json`), same lookup as Dan's annotation, so the camera "
+        "comparison is apples-to-apples."
+    )
+    out.append(
+        "- **`structural_coherence` is label-vocabulary noise here.** Dan's annotation "
+        "has many unlabeled beats (`?`) which form long runs and inflate his clustering "
+        "score; AI uses fine-grained beat_types (`technique`/`transformation_from`/etc) "
+        "which fragment the same content across labels. Both follow recipe order; the "
+        "rule isn't comparing the right thing."
     )
     out.append("")
 
-    out.append("## Followups")
-    out.append("")
-    out.append("- Score the same comparison on the other 4 ASI corpus recipes "
-               "(chicken_thighs, banana_muffins, creamy_potato_soup, "
-               "korean_fried_chicken) to see whether the gap is recipe-specific "
-               "or structural.")
-    out.append("- For each rule where AI > Dan: investigate which property of the "
-               "AI's output is gaming the rule. Tighten rule or add a counter-rule.")
-    out.append("- For each rule where Dan ≫ AI: that's a real editorial pattern "
-               "the AI doesn't produce yet. These become Phase 5 rule-extension "
-               "candidates and Phase 6 generation targets.")
-    out.append("- Save the converted AI annotation at "
-               f"`experiments/recipe_pipeline/pipeline_scores/{recipe}_ai.json` "
-               "for inspection / further analysis.")
+    out.append(f"See [[Phase 4 — Fitness Gradient Rollup]] for the corpus-wide pattern "
+               f"across all 5 ASI recipes and the prioritized polish-reduction roadmap.")
     out.append("")
     return "\n".join(out)
 
