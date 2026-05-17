@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decomposing the Editor — ASI-Evolve Strategic Explainer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #faf8f3;
+  --bg-tint: #f3efe5;
+  --paper: #fffdf7;
+  --ink: #14110d;
+  --ink-soft: #4a4439;
+  --ink-faint: #8a8276;
+  --rule: #d8cfb8;
+  --rule-faint: #ebe3cf;
+  --accent: #8a2820;
+  --accent-soft: #f0d8d3;
+  --accent-deep: #5c1a15;
+  --highlight: #f7e8a8;
+  --code-bg: #1a1612;
+  --code-ink: #f1e9d8;
+  --max-w: 1240px;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --serif: "Newsreader", "Newsreader Subset", Georgia, serif;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.65;
+  font-feature-settings: "kern", "liga", "calt", "onum";
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-soft); transition: background 120ms ease; }
+a:hover { background: var(--accent-soft); }
+
+.wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--gutter); }
+
+/* ─── nameplate / masthead ─── */
+.masthead {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.25rem 0;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  position: sticky;
+  top: 0;
+  background: rgba(250, 248, 243, 0.96);
+  backdrop-filter: blur(10px);
+  z-index: 50;
+}
+.masthead-inner { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.masthead .brand { font-weight: 700; color: var(--ink); }
+.masthead .brand::before { content: "■"; color: var(--accent); margin-right: 0.5rem; }
+.masthead .meta { color: var(--ink-faint); }
+
+/* ─── hero ─── */
+.hero {
+  padding: clamp(3rem, 8vw, 7rem) 0 clamp(2.5rem, 6vw, 5rem);
+  border-bottom: 1px solid var(--rule);
+}
+.hero .kicker {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  margin: 0 0 1.5rem;
+  max-width: 14ch;
+}
+.hero h1 em { font-style: italic; color: var(--accent-deep); font-weight: 500; }
+.hero .deck {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 52ch;
+  font-style: italic;
+  margin: 0;
+}
+.hero .byline {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.hero .byline strong { color: var(--ink); font-weight: 600; }
+
+/* ─── nav ─── */
+.toc {
+  border-bottom: 1px solid var(--rule);
+  padding: 1.25rem 0;
+  background: var(--paper);
+}
+.toc-inner {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+.toc-inner a {
+  color: var(--ink-soft);
+  border-bottom: none;
+}
+.toc-inner a:hover { color: var(--accent); background: none; }
+.toc-inner .num {
+  font-family: var(--mono);
+  color: var(--accent);
+  margin-right: 0.5rem;
+  font-size: 0.72rem;
+}
+
+/* ─── section ─── */
+section {
+  padding: clamp(3rem, 6vw, 6rem) 0;
+  border-bottom: 1px solid var(--rule-faint);
+}
+section.tint { background: var(--bg-tint); }
+.section-head {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  align-items: baseline;
+}
+.section-head .num {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding-top: 0.6rem;
+  border-top: 2px solid var(--accent);
+  width: 3rem;
+}
+.section-head h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  margin: 0;
+  max-width: 22ch;
+}
+.section-head .deck {
+  grid-column: 2;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--ink-soft);
+  margin: 0.75rem 0 0;
+  max-width: 60ch;
+}
+
+/* ─── article body layout ─── */
+.body {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.5rem;
+}
+.body > * { grid-column: 2; }
+.body > .span-full { grid-column: 1 / -1; }
+.body p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 0 0 1.1rem;
+  max-width: 65ch;
+}
+.body p.lead {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--ink);
+  font-weight: 400;
+  max-width: 56ch;
+}
+.body p.lead::first-letter {
+  font-family: var(--serif);
+  font-weight: 600;
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.85;
+  margin: 0.4rem 0.5rem -0.2rem 0;
+  color: var(--accent-deep);
+}
+.body h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.55rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 2.5rem 0 0.75rem;
+  color: var(--ink);
+}
+.body h4 {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 2rem 0 0.5rem;
+}
+.body ul, .body ol { padding-left: 1.4rem; margin: 0 0 1.2rem; max-width: 62ch; }
+.body li { margin-bottom: 0.5rem; line-height: 1.6; }
+.body strong { font-weight: 600; }
+.body em { font-style: italic; }
+.body code {
+  font-family: var(--mono);
+  font-size: 0.92em;
+  background: var(--bg-tint);
+  padding: 0.08em 0.35em;
+  border-radius: 3px;
+  border: 1px solid var(--rule-faint);
+}
+
+/* ─── pull quote ─── */
+.pull {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.65rem, 2.6vw, 2.3rem);
+  line-height: 1.32;
+  color: var(--ink);
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem 0 0.5rem 2rem;
+  margin: 2.5rem 0;
+  max-width: 28ch;
+  float: right;
+  margin-left: 2rem;
+  clear: right;
+}
+.pull cite {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 500;
+  margin-top: 1rem;
+}
+.pull-full {
+  float: none;
+  margin: 3rem auto;
+  max-width: 60ch;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+/* ─── callout ─── */
+.callout {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  padding: 1.5rem 1.75rem;
+  margin: 1.75rem 0;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  max-width: 65ch;
+}
+.callout .label {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.callout p:last-child { margin-bottom: 0; }
+
+/* ─── diagram: three layers ─── */
+.layers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2.5rem 0;
+  max-width: 720px;
+}
+.layer {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 1.5rem 1.75rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 4rem 1fr auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+.layer .layer-num {
+  font-family: var(--mono);
+  font-size: 1.7rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+.layer .layer-body h4 {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--ink);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.layer .layer-body p {
+  font-family: var(--sans);
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+.layer .layer-tag {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--bg-tint);
+  color: var(--ink-soft);
+  padding: 0.4rem 0.7rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.layer .question {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--accent);
+  margin-top: 0.4rem;
+  display: block;
+}
+
+/* ─── canonical moves grid ─── */
+.moves {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin: 2rem 0;
+}
+.move {
+  background: var(--paper);
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.move .move-num {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+.move .move-name {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.move .move-name em { font-style: italic; color: var(--accent-deep); }
+.move .move-recipes {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+  letter-spacing: 0.02em;
+}
+.move .move-sub {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  margin-top: 0.3rem;
+}
+.move.featured {
+  background: var(--accent-soft);
+  position: relative;
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+.move.featured .move-name { color: var(--accent-deep); }
+.move.featured .move-recipes { color: var(--accent-deep); }
+
+/* ─── decomposition diagram (beauty) ─── */
+.decomp {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+}
+.decomp-header {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+}
+.decomp-axes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+.axis {
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+}
+.axis .axis-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+.axis .axis-tag {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-bottom: 0.5rem;
+}
+.axis .axis-values {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+/* ─── timeline ─── */
+.timeline {
+  position: relative;
+  padding: 2rem 0;
+  margin: 2.5rem 0;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--rule);
+}
+.tl-item {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+.tl-item::before {
+  content: "";
+  position: absolute;
+  left: 7.7rem;
+  top: 0.65rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 3px solid var(--bg);
+  z-index: 2;
+}
+.tl-year {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  padding-top: 0.25rem;
+  font-weight: 500;
+  text-align: right;
+  padding-right: 1rem;
+}
+.tl-body h4 {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0 0 0.4rem;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.tl-body h4 .field {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-left: 0.6rem;
+  font-weight: 700;
+  vertical-align: middle;
+}
+.tl-body p {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  max-width: 60ch;
+}
+
+/* ─── ingredient v1/v2 split ─── */
+.variant-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.variant {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 1.5rem 1.75rem;
+}
+.variant .v-tag {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.variant .v-name {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+}
+.variant .v-desc {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+}
+.variant .v-stat {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--rule-faint);
+  color: var(--ink);
+}
+.variant .v-stat strong { color: var(--accent-deep); }
+
+/* ─── bibliography ─── */
+.bib {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  margin: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+.bib-entry {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule-faint);
+  align-items: baseline;
+}
+.bib-entry .bib-year {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+  text-align: right;
+  padding-right: 1rem;
+  border-right: 1px solid var(--rule-faint);
+}
+.bib-entry .bib-body {}
+.bib-entry .bib-title {
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin: 0 0 0.3rem;
+  letter-spacing: -0.005em;
+}
+.bib-entry .bib-title em { font-style: italic; }
+.bib-entry .bib-cite {
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+  margin: 0 0 0.6rem;
+}
+.bib-entry .bib-borrow {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.bib-entry .bib-borrow strong {
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  background: var(--bg-tint);
+  padding: 0.15em 0.5em;
+  border-radius: 3px;
+  color: var(--accent-deep);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* ─── footer ─── */
+footer {
+  border-top: 2px solid var(--ink);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  background: var(--paper);
+}
+footer .colophon {
+  font-family: var(--sans);
+  font-size: 0.82rem;
+  color: var(--ink-faint);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  line-height: 1.6;
+}
+footer .colophon strong { color: var(--ink); display: block; font-weight: 600; margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.72rem; }
+footer .colophon code { font-family: var(--mono); font-size: 0.82rem; color: var(--ink-soft); }
+footer .end-mark { font-family: var(--serif); font-style: italic; color: var(--accent); margin-top: 2rem; font-size: 1rem; }
+
+/* ─── summary block (final section) ─── */
+.summary-block {
+  background: var(--ink);
+  color: var(--bg);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  border: 1px solid var(--ink);
+  margin: 2rem 0;
+}
+.summary-block .label {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--highlight);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.summary-block h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--bg);
+  margin: 0 0 2rem;
+  letter-spacing: -0.01em;
+  max-width: 28ch;
+  line-height: 1.25;
+}
+.summary-block ol {
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-left: 1.2rem;
+  color: var(--bg);
+  max-width: 56ch;
+}
+.summary-block ol li { margin-bottom: 0.5rem; }
+.summary-block ol li strong { color: var(--highlight); font-weight: 600; }
+
+/* ─── responsive ─── */
+@media (max-width: 720px) {
+  .body { grid-template-columns: 1fr; }
+  .body > * { grid-column: 1; }
+  .section-head { grid-template-columns: 1fr; }
+  .section-head .num { width: auto; border-top-width: 2px; padding-top: 0.5rem; margin-bottom: 0.5rem; }
+  .section-head .deck { grid-column: 1; }
+  .pull { float: none; margin: 2rem 0; max-width: 100%; padding-left: 1.5rem; }
+  .pull-full { padding-left: 1.5rem; }
+  .layer { grid-template-columns: 3rem 1fr; }
+  .layer .layer-tag { grid-column: 2; justify-self: start; margin-top: 0.5rem; }
+  .variant-split { grid-template-columns: 1fr; }
+  .timeline::before { left: 0.5rem; }
+  .tl-item { grid-template-columns: 1fr; }
+  .tl-item::before { left: 0.2rem; }
+  .tl-year { text-align: left; padding-right: 0; padding-left: 1.5rem; }
+  .tl-body { padding-left: 1.5rem; }
+  .bib-entry { grid-template-columns: 1fr; gap: 0.5rem; }
+  .bib-entry .bib-year { text-align: left; border-right: none; padding-right: 0; }
+}
+
+/* ─── selection ─── */
+::selection { background: var(--highlight); color: var(--ink); }
+</style>
+</head>
+
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <span class="brand">ASI-Evolve · Strategic Explainer</span>
+    <span class="meta">v1 · May 2026 · Decomposed Cinematic Scoring</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ─── HERO ─── -->
+<div class="hero">
+  <div class="kicker">A Strategic Explainer</div>
+  <h1>Decomposing<br>the <em>editor</em>.</h1>
+  <p class="deck">Voice synthesis decomposed prosody. Music generation decomposed rhythm. We are decomposing the cut — turning Dan&rsquo;s implicit editorial formula into a stack of measurable scoring dimensions a machine can check its work against.</p>
+  <div class="byline">
+    <span><strong>Audience</strong> Dan + future-self</span>
+    <span><strong>Status</strong> Vocabulary in progress</span>
+    <span><strong>Read time</strong> 12 minutes</span>
+  </div>
+</div>
+
+<!-- ─── TOC ─── -->
+<nav class="toc">
+  <div class="toc-inner">
+    <a href="#problem"><span class="num">I</span>The problem</a>
+    <a href="#bet"><span class="num">II</span>The bet</a>
+    <a href="#architecture"><span class="num">III</span>The architecture</a>
+    <a href="#vocabulary"><span class="num">IV</span>The vocabulary</a>
+    <a href="#toolkit"><span class="num">V</span>The toolkit</a>
+    <a href="#bridge"><span class="num">VI</span>The bridge</a>
+    <a href="#summary"><span class="num">VII</span>The summary</a>
+  </div>
+</nav>
+
+<!-- ─── I — THE PROBLEM ─── -->
+<section id="problem">
+  <div class="section-head">
+    <span class="num">I</span>
+    <div>
+      <h2>What we&rsquo;re trying to emulate.</h2>
+      <p class="deck">An editor has a formula in their head that they haven&rsquo;t written down. Until it&rsquo;s written down, no machine can measure against it.</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <p class="lead">An edit is good when three things are true at once. <strong>Information lands</strong> — the viewer understands what&rsquo;s happening without working for it. <strong>Rhythm feels right</strong> — cuts come when the eye and ear expect them. <strong>Each shot earns its place</strong> — nothing is filler. Every shot either advances the story, shows a result, or delivers a satisfying visual.</p>
+
+    <p>For recipe content these abstract properties take recognizable shapes. Ingredients are legible because their text overlays hang on screen long enough to read. Process reads as cause-and-effect because action and result are both visible. Hero shots earn their length because they&rsquo;re paying off something the viewer wants to see. The whole edit has a shape: ingredient, process, reveal.</p>
+
+    <p>Dan knows when this is working and when it isn&rsquo;t. He has rules he applies without articulating them — when to cut into an action, when to hold on a beauty shot, when to alternate camera angles, when an ingredient dump should show the dump and when it should appear as if by magic. The rules live in his hands and his eye. They have never been written down.</p>
+
+    <p class="callout-inline span-full"></p>
+
+    <div class="callout span-full">
+      <span class="label">The whole project, in one sentence</span>
+      <p>Make Dan&rsquo;s implicit editorial formula explicit enough that a machine can score against it — then use that score to either polish AI-generated edits or recognize good ones from bad ones.</p>
+    </div>
+
+    <p>Eighteen of Dan&rsquo;s finished recipes have been annotated. The annotations capture <em>some</em> of the formula — beat boundaries, source clips, mogrt overlays — but the most important field, the editorial classification of each beat, was filled in by an LLM that watched the cut and guessed. About fifty-four percent of beats were left untyped because the LLM couldn&rsquo;t tell what they were. The rest were typed too coarsely; later analysis would show that a single bucket (&ldquo;ingredient&rdquo;) contains at least two editorial sub-variants that move in opposite directions.</p>
+
+    <p>This is the gap. Without a more granular vocabulary, every scoring rule we try fails because we&rsquo;re averaging across heterogeneous editorial intents. Until the vocabulary is clean, scoring is impossible.</p>
+  </div>
+</section>
+
+<!-- ─── II — THE BET ─── -->
+<section id="bet" class="tint">
+  <div class="section-head">
+    <span class="num">II</span>
+    <div>
+      <h2>The watershed thesis.</h2>
+      <p class="deck">Two adjacent fields broke through implicit modeling by decomposing the signal into measurable parts. We are betting the same pattern will break editing.</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <p class="lead">In two adjacent fields, the same pattern repeated itself a decade apart. Both fields had been stuck producing technically-fluent but emotionally-flat output. Both broke through not by making the model bigger, but by giving the model an <em>explicit decomposition</em> of the signal it was trying to produce.</p>
+
+    <aside class="pull">
+      &ldquo;Voice synthesis broke past robotic output by decomposing prosody into explicit measurable layers. Music generation broke past off-beat output by injecting explicit metrical structure.&rdquo;
+      <cite>— Strategic Directive, North Star</cite>
+    </aside>
+
+    <p><strong>Voice synthesis</strong> spent years chasing more-natural speech by training bigger end-to-end neural networks on more data. The output stayed robotic because the model had no explicit knowledge of prosody — the duration, pitch, and energy contour that make speech sound human. The breakthrough came in 2021 with FastSpeech 2 and FastPitch, which decomposed prosody into three explicit, independently-predictable dimensions and added them back into the speech synthesis pipeline as conditioning. Three dimensions, each measurable from ground truth via signal processing, each predicted by a separate sub-network. The field hasn&rsquo;t looked back.</p>
+
+    <p><strong>Music generation</strong> followed the same arc. Music Transformer (2018) used sophisticated relative attention to try to learn musical structure from raw note sequences. Output was off-beat. REMI (2020) replaced the sophistication with a single insight: explicit <em>bar</em> and <em>position</em> tokens. The model knew where a downbeat was because the tokenization said so. Output became listenable. The metric grid had to be made explicit; the model wasn&rsquo;t going to discover it.</p>
+
+    <p>Academic computational video editing — Learning to Cut (Pardo 2021), MovieCuts (Pardo 2022), ESA, EditIQ — is currently sitting where music generation sat before REMI. It&rsquo;s trying to learn rhythm implicitly from raw video. The output works in narrow cases but doesn&rsquo;t generalize.</p>
+
+    <div class="callout">
+      <span class="label">The bet</span>
+      <p>We apply the voice/music decomposition pattern to editing directly, rather than waiting for the video-editing field to break through on its own. Decompose the cut into independently-measurable dimensions. Score each independently. Don&rsquo;t expect a single classifier to figure out gestalt &ldquo;goodness.&rdquo;</p>
+    </div>
+
+    <h3>Three required moves</h3>
+
+    <p>Borrowed from the directive verbatim:</p>
+
+    <ol>
+      <li><strong>Make the metrical grid explicit.</strong> Replace implicit rhythm with measurable timing structures — average shot length, pacing curve, cut-frequency curve.</li>
+      <li><strong>Separate structure from content.</strong> Distinguish &ldquo;what&rsquo;s in the shot&rdquo; (already handled by visual models) from &ldquo;where the shot sits in the temporal arrangement&rdquo; (currently underdeveloped).</li>
+      <li><strong>Score against decomposed dimensions, not gestalt.</strong> Replace single composite scores with vectors of independent dimensional scores. Optimize each independently and in combination.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ─── III — THE ARCHITECTURE ─── -->
+<section id="architecture">
+  <div class="section-head">
+    <span class="num">III</span>
+    <div>
+      <h2>Three layers.</h2>
+      <p class="deck">The system being built is a stack. Each layer answers a different question, uses different signals, and rests on the one below it.</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <p class="lead">The architecture decomposes into three layers, each with a distinct purpose and a distinct source of truth. They are not interchangeable. The bottom layer must be built first; the top layer is the final sanity check; the middle layer is where the watershed bet pays off.</p>
+
+    <div class="layers span-full">
+      <div class="layer">
+        <div class="layer-num">01</div>
+        <div class="layer-body">
+          <h4>Editorial Vocabulary</h4>
+          <p>Canonical moves and sub-variants. Tells us <em>which editorial cell</em> a beat belongs to.</p>
+          <span class="question">&ldquo;What kind of beat is this?&rdquo;</span>
+        </div>
+        <div class="layer-tag">From Dan&rsquo;s head</div>
+      </div>
+      <div class="layer">
+        <div class="layer-num">02</div>
+        <div class="layer-body">
+          <h4>Scoring Dimensions</h4>
+          <p>Measurable rules borrowed from voice/music research. Applied <em>per editorial cell</em>. ASL, pacing, motion peak, audio onset.</p>
+          <span class="question">&ldquo;Is this good editing?&rdquo;</span>
+        </div>
+        <div class="layer-tag">From research</div>
+      </div>
+      <div class="layer">
+        <div class="layer-num">03</div>
+        <div class="layer-body">
+          <h4>Style Fingerprint</h4>
+          <p>A learned classifier — trained on Dan&rsquo;s edits as positives, random/AI as negatives. Used as a passive readout, never an optimizer.</p>
+          <span class="question">&ldquo;Does this feel like Dan?&rdquo;</span>
+        </div>
+        <div class="layer-tag">From the corpus</div>
+      </div>
+    </div>
+
+    <h3>Why a stack, not a single model</h3>
+
+    <p>The temptation is to skip the bottom two layers and train a single end-to-end model on Dan&rsquo;s edits — a learned &ldquo;Dan-classifier&rdquo; that judges edits holistically. The watershed thesis says that&rsquo;s the wrong move. A single learned model is the implicit-gestalt approach that voice synthesis and music generation both abandoned. It produces good demos and bad generalization.</p>
+
+    <p>Layer 1 (vocabulary) is the <em>structure</em>. Layer 2 (decomposed scoring) is the <em>controllable knobs</em>. Layer 3 (fingerprint) is the <em>final sanity check</em> — useful as a readout to know whether the bottom two are converging on Dan&rsquo;s style, but dangerous if it becomes the optimizer.</p>
+
+    <p>The middle layer cannot work without the bottom layer. Earlier in this project we tried to stratify motion-phase scoring by the bare <code>beat_type</code> field — six broad categories. The signal collapsed because one of those buckets (&ldquo;ingredient&rdquo;) contained at least two editorial sub-variants that move in opposite directions. The Layer 2 measurement was correct; the Layer 1 stratification key was too coarse. The vocabulary is the prerequisite.</p>
+  </div>
+</section>
+
+<!-- ─── IV — THE VOCABULARY ─── -->
+<section id="vocabulary" class="tint">
+  <div class="section-head">
+    <span class="num">IV</span>
+    <div>
+      <h2>The canonical-move vocabulary.</h2>
+      <p class="deck">Seven editorial supertypes recur across all eighteen recipes. Each has a content axis of sub-variants. Beauty has additional axes for placement and framing.</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <p class="lead">Cross-recipe analysis of <code>recipe_section</code> text across the eighteen annotation files reveals roughly seven canonical editorial moves that recur across the corpus. These are the supertypes. Each supertype has a per-recipe sub-variant vocabulary that captures the editorial differences within it.</p>
+
+    <div class="moves span-full">
+      <div class="move featured">
+        <span class="move-num">01</span>
+        <span class="move-name"><em>Beauty</em></span>
+        <span class="move-recipes">13 of 18 recipes · decomposed across 3 axes</span>
+        <span class="move-sub">Moments: plating, fork-in, reveal, break-apart, vessel-final, drizzle…</span>
+      </div>
+      <div class="move featured">
+        <span class="move-num">02</span>
+        <span class="move-name"><em>Ingredient dump</em></span>
+        <span class="move-recipes">13 of 18 recipes · 2 confirmed sub-variants</span>
+        <span class="move-sub">V1 cut-to-action · V2 stop-motion-vibe / appear-in-bowl</span>
+      </div>
+      <div class="move">
+        <span class="move-num">03</span>
+        <span class="move-name">Plating / finishing</span>
+        <span class="move-recipes">11 of 18 recipes</span>
+        <span class="move-sub">Sub-variants not yet inventoried</span>
+      </div>
+      <div class="move">
+        <span class="move-num">04</span>
+        <span class="move-name">Technique / active cooking</span>
+        <span class="move-recipes">10 of 18 recipes</span>
+        <span class="move-sub">Sub-variants not yet inventoried</span>
+      </div>
+      <div class="move">
+        <span class="move-num">05</span>
+        <span class="move-name">Prep / knife work</span>
+        <span class="move-recipes">6 of 18 recipes</span>
+        <span class="move-sub">Sub-variants not yet inventoried</span>
+      </div>
+      <div class="move">
+        <span class="move-num">06</span>
+        <span class="move-name">Transformation</span>
+        <span class="move-recipes">4 of 18 recipes</span>
+        <span class="move-sub">May collapse into Beauty after inventory</span>
+      </div>
+      <div class="move">
+        <span class="move-num">07</span>
+        <span class="move-name">Money shot</span>
+        <span class="move-recipes">3 of 18 recipes</span>
+        <span class="move-sub">Rare. Content-based. Can land anywhere.</span>
+      </div>
+    </div>
+
+    <h3>Beauty decomposed into three independent axes</h3>
+
+    <p>Beauty is the supertype with the cleanest internal structure. It decomposes into three axes that move independently — the moment (what&rsquo;s being shown), the take (which version), and the placement (where it lands in the edit). Same moment can land at the opener and at the close, with two different takes from the shoot. The editor selects from the pool first, decides placement second.</p>
+
+    <div class="decomp span-full">
+      <div class="decomp-header">Beauty — (moment, take, placement) decomposition</div>
+      <div class="decomp-axes">
+        <div class="axis">
+          <div class="axis-name">Moment</div>
+          <div class="axis-tag">Content axis — open-ended</div>
+          <div class="axis-values">plating-assembly<br>place-on-table<br>reveal<br>fork-in / spoon-in<br>break-apart<br>vessel-final-dish<br>drizzle<br>…</div>
+        </div>
+        <div class="axis">
+          <div class="axis-name">Take</div>
+          <div class="axis-tag">Which version</div>
+          <div class="axis-values">overhead · medium<br>front · close-up<br>overhead · close-up<br>(usually 2-3 per moment)</div>
+        </div>
+        <div class="axis">
+          <div class="axis-name">Placement</div>
+          <div class="axis-tag">Editorial decision</div>
+          <div class="axis-values">front (opener)<br>back (close)<br>repeated-at-both<br>(derived from beat-index)</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>Ingredient dump has two opposite-direction sub-variants</h3>
+
+    <p>The discovery that started the vocabulary correction. The bare <code>ingredient</code> bucket contains two editorial styles whose motion signatures point in opposite directions. Tested on the forty-two RAFT-cached beats we have for two recipes:</p>
+
+    <div class="variant-split span-full">
+      <div class="variant">
+        <div class="v-tag">V1 — CUT-TO-ACTION</div>
+        <div class="v-name">The dump is visible.</div>
+        <div class="v-desc">Dan cuts into the shot ~0.5s before the dump impact. Viewer sees the full pour or drop or scatter. The action is what carries the beat.</div>
+        <div class="v-stat">RAFT motion-magnitude peak inside the beat: <strong>71% of sample</strong></div>
+      </div>
+      <div class="variant">
+        <div class="v-tag">V2 — STOP-MOTION-VIBE</div>
+        <div class="v-name">The dump appears.</div>
+        <div class="v-desc">Overhead bowl. Ingredient simply appears between frames. The mogrt text still holds long enough to read. Stop-motion feel without literal frame-by-frame snaps.</div>
+        <div class="v-stat">RAFT motion-magnitude peak inside the beat: <strong>14% of sample</strong></div>
+      </div>
+    </div>
+
+    <p>The opposite signatures explain why earlier stratification by bare <code>beat_type</code> collapsed to noise: V1 and V2 were averaging each other out. With the sub-variant split surfaced, the per-cell scoring becomes coherent again.</p>
+
+    <h3>The dimension count is FastSpeech-2-scale</h3>
+
+    <p>The concern that we&rsquo;re proliferating dimensions is fair — and worth checking against the discipline. FastSpeech 2 decomposed prosody into three axes (duration, pitch, energy), not fifty. Our Beauty decomposition has five axes that satisfy the same criteria: each computable from ground truth, each predictable independently, each addable as scoring conditioning. Five is FastSpeech-2-scale for a higher-dimensional problem (cinema has axes — camera, framing — that speech doesn&rsquo;t). The risk to watch is value proliferation <em>within</em> the moment axis: cap at roughly ten to twelve moments per supertype during labeling, collapse synonyms.</p>
+  </div>
+</section>
+
+<!-- ─── V — THE TOOLKIT ─── -->
+<section id="toolkit">
+  <div class="section-head">
+    <span class="num">V</span>
+    <div>
+      <h2>The borrowed toolkit.</h2>
+      <p class="deck">Each scoring dimension traces to a specific paper and a specific algorithm. We don&rsquo;t reinvent. We adapt techniques whose calibration is already published.</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <p class="lead">The watershed bet has an operational discipline attached: every decomposed scoring dimension must cite a watershed-source paper, name the specific algorithm or loss being borrowed, and identify the library or function used to implement it. The data flowing through the pipeline carries the borrowed-technique slug as a labeled column. If a borrowed technique consistently fails to discriminate Dan&rsquo;s edits from generated edits, the data exposes it.</p>
+
+    <div class="bib span-full">
+
+      <div class="bib-entry">
+        <div class="bib-year">2020<br>REMI</div>
+        <div class="bib-body">
+          <p class="bib-title">REMI: Pop Music Transformer with explicit metric grid tokens</p>
+          <p class="bib-cite">Huang &amp; Yang, 2020 — Bar/Position tokens</p>
+          <p class="bib-borrow">Borrowed as <strong>remi_metric_grid</strong> — structural foundation for explicit metrical scoring (not a scoring loss itself). The thesis that explicit grid tokens outperform implicit attention is the precedent for the entire architecture.</p>
+        </div>
+      </div>
+
+      <div class="bib-entry">
+        <div class="bib-year">2021<br>FastSpeech 2</div>
+        <div class="bib-body">
+          <p class="bib-title">FastSpeech 2: variance adaptor for duration, pitch, energy</p>
+          <p class="bib-cite">Ren et al., ICLR 2021</p>
+          <p class="bib-borrow">Borrowed as <strong>fastspeech2_variance_adaptor</strong> — architecture pattern. Decomposed per-dimension prediction, each computable from ground truth and predictable independently. The template for how a decomposed scoring vector should work.</p>
+        </div>
+      </div>
+
+      <div class="bib-entry">
+        <div class="bib-year">2021<br>FACT</div>
+        <div class="bib-body">
+          <p class="bib-title">FACT: full-attention cross-modal transformer for music-to-dance</p>
+          <p class="bib-cite">Li et al., ICCV 2021 — N-future supervision (N=20)</p>
+          <p class="bib-borrow">Borrowed as <strong>fact_future_n_supervision</strong> + <strong>fact_pipeline_shape</strong> — score over N future shots, mirroring the predict-N-futures training framing. Also informs the audio-first cut-proposal routing.</p>
+        </div>
+      </div>
+
+      <div class="bib-entry">
+        <div class="bib-year">2021<br>L-T-C</div>
+        <div class="bib-body">
+          <p class="bib-title">Learning to Cut by Watching Movies</p>
+          <p class="bib-cite">Pardo et al., 2021 — contrastive plausibility classifier</p>
+          <p class="bib-borrow">Borrowed as <strong>pretrained_floor:ltc</strong> — generic &ldquo;is this a sane cut&rdquo; floor. Not a watershed-decomposition source; a pretrained model used as a sanity check, separate from the decomposed dimensions.</p>
+        </div>
+      </div>
+
+      <div class="bib-entry">
+        <div class="bib-year">2022<br>Bailando</div>
+        <div class="bib-body">
+          <p class="bib-title">Bailando: dance generation via Actor-Critic GPT</p>
+          <p class="bib-cite">CVPR 2022 — beat-align reward, σ=3 exponential</p>
+          <p class="bib-borrow">Borrowed as <strong>bailando_beat_align</strong> — soft-σ implementation for audio-beat alignment scoring. Not the paper&rsquo;s RL reward; a scoring adaptation of the alignment formulation.</p>
+        </div>
+      </div>
+
+      <div class="bib-entry">
+        <div class="bib-year">2022<br>MovieCuts</div>
+        <div class="bib-body">
+          <p class="bib-title">MovieCuts: multi-label professional cut-type taxonomy</p>
+          <p class="bib-cite">Pardo et al., 2022 — J-cut, L-cut, match, smash, cross, cut-away…</p>
+          <p class="bib-borrow">Borrowed as <strong>pretrained_floor:moviecuts</strong> — label space for cut-type distribution scoring. Used as a vocabulary import for the cross-shot continuity layer.</p>
+        </div>
+      </div>
+
+      <div class="bib-entry">
+        <div class="bib-year">2023<br>EDGE</div>
+        <div class="bib-body">
+          <p class="bib-title">EDGE: editable dance generation primitives</p>
+          <p class="bib-cite">Tseng et al., CVPR 2023</p>
+          <p class="bib-borrow">Borrowed as <strong>edge_editing_primitives</strong> — pipeline-shape role only. Temporal and joint-wise conditioning patterns inform operator design, not scoring.</p>
+        </div>
+      </div>
+
+      <div class="bib-entry">
+        <div class="bib-year">2025<br>MotionBeat</div>
+        <div class="bib-body">
+          <p class="bib-title">MotionBeat: Soft-DTW alignment between audio onsets and motion contacts</p>
+          <p class="bib-cite">Wang et al., arXiv 2510.13244 — ℒ_beat = SoftDTW(o, c)</p>
+          <p class="bib-borrow">Borrowed as <strong>motionbeat_soft_dtw</strong> + <strong>motionbeat_pulse_extraction</strong> + <strong>motionbeat_bar_emd</strong> — direct loss apparatus for cut-to-motion alignment. The pulse-extraction stage feeds a Soft-DTW loss layer (the canonical paper formulation). The most directly-borrowed apparatus in the toolkit.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="pull pull-full">
+      &ldquo;The borrow framing makes the implementation choices explicit so engineers don&rsquo;t reach for <code>scipy.spatial.distance.euclidean</code> when MotionBeat validated <code>tslearn.metrics.soft_dtw</code>.&rdquo;
+      <cite>— Adjacent-Field Techniques notes</cite>
+    </aside>
+  </div>
+</section>
+
+<!-- ─── VI — THE BRIDGE ─── -->
+<section id="bridge" class="tint">
+  <div class="section-head">
+    <span class="num">VI</span>
+    <div>
+      <h2>The Review UI is the bridge.</h2>
+      <p class="deck">The vocabulary doesn&rsquo;t exist on disk yet. The Review UI&rsquo;s only job is to extract it from Dan&rsquo;s head with the finished footage as the prompt.</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <p class="lead">Three hundred and twenty-nine of six hundred and eighteen beats are untyped. The rest are typed too coarsely for the decomposed-scoring layer to work. Both gaps close the same way: Dan watches the finished cuts and labels the beats. The Beat Review UI is the instrument that makes the labeling tractable.</p>
+
+    <h3>What the Review UI is and isn&rsquo;t</h3>
+
+    <p>It is not an editing tool. It is not a generation tool. It is an <em>interrogation surface</em> — a localhost web app that plays the finished video at each beat, shows the surrounding context, and asks Dan to pick a sub-variant and capture a short &ldquo;why&rdquo; note. The labeling is inductive: Dan can add a new sub-variant whenever the existing taxonomy doesn&rsquo;t fit what he&rsquo;s seeing.</p>
+
+    <p>The labeling output flows into a sidecar JSON that the merge script eventually folds back into the canonical annotation files. The sidecar is upsert-keyed, atomic, and source-drift-detected; if the underlying annotation file changes, the UI notices and asks for re-acknowledgment before further writes.</p>
+
+    <h3>Why labeling is the prerequisite for the watershed payoff</h3>
+
+    <p>The scoring layer (Layer 2) needs an editorial stratification key (Layer 1) to apply each measurement <em>per cell</em>. Global scoring fails because editorial intent varies — beauty cuts on stillness, technique cuts on motion, and averaging them produces nothing. The vocabulary work is the structural prerequisite that makes per-cell scoring statistically honest.</p>
+
+    <p>The next phase, once the vocabulary stabilizes at v1, is wiring the directive&rsquo;s scoring dimensions per cell. That&rsquo;s where the watershed cash-out begins — when each decomposed dimension starts emitting <code>borrowed_technique</code>-tagged outputs that can be aggregated into the polish-gradient report.</p>
+
+    <div class="callout">
+      <span class="label">Honest grounding check</span>
+      <p>This session has done a lot of vocabulary work and zero scoring-dimension work. That&rsquo;s correct sequencing — Layer 1 must exist before Layer 2 can be measured — but it means the watershed bet hasn&rsquo;t yet been cashed in. The risk to watch is staying in vocabulary refinement too long. The right discipline is: ship the vocabulary at v1 (don&rsquo;t perfect it), then wire Amendment 01 step #1 (operator-dimension pairing) to restructure the scoring loop.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── VII — SUMMARY ─── -->
+<section id="summary">
+  <div class="section-head">
+    <span class="num">VII</span>
+    <div>
+      <h2>The simplest possible summary.</h2>
+      <p class="deck">Strip away every framework and what remains is a short pipeline. Each step has one job.</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="summary-block span-full">
+      <div class="label">If you remember nothing else</div>
+      <h3>Make the implicit explicit. Score what&rsquo;s explicit. Check the whole thing feels like Dan.</h3>
+      <ol>
+        <li><strong>Goal</strong> — make Dan&rsquo;s editorial formula explicit enough that a machine can score against it.</li>
+        <li><strong>Move 1</strong> — capture the editorial vocabulary (canonical moves, sub-variants, Beauty&rsquo;s axes). The Review UI&rsquo;s job.</li>
+        <li><strong>Move 2</strong> — wire measurable scoring rules per editorial cell (ASL, pacing, motion-peak, audio-onset, cut-frequency). Borrowed from voice/music research.</li>
+        <li><strong>Move 3</strong> — train a &ldquo;would Dan have done this?&rdquo; classifier as a final passive sanity check.</li>
+        <li><strong>Test bed</strong> — recipes first (densest labeled data, simplest structure).</li>
+        <li><strong>Generalization</strong> — same architecture for other content types (NBQ dialogue corpus is the next proof point).</li>
+      </ol>
+    </div>
+
+    <p class="lead" style="margin-top: 3rem;">The whole session this explainer documents is Move 1. Everything else flows from getting the vocabulary right.</p>
+  </div>
+</section>
+
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="wrap">
+    <div class="colophon">
+      <div>
+        <strong>Canonical references</strong>
+        <code>Brain/Projects/ASI-Evolve/</code><br>
+        Editorial Move Vocabulary<br>
+        Motion Signal — Conditional Not Blanket<br>
+        Strategic Directive — Decomposed Cinematic Scoring<br>
+        Adjacent-Field Techniques — What We&rsquo;re Borrowing
+      </div>
+      <div>
+        <strong>Implementation paths</strong>
+        <code>experiments/recipe_pipeline/annotations/</code><br>
+        <code>experiments/offline_validation/</code><br>
+        <code>experiments/review_ui/</code> <em>(in progress)</em><br>
+        <code>~/.claude/plans/asi-evolve-handoff-…</code>
+      </div>
+      <div>
+        <strong>Status as of 2026-05-17</strong>
+        Vocabulary v1 nearly complete<br>
+        Review UI plan approved, not yet built<br>
+        Scoring dimensions pending vocabulary ship<br>
+        Style fingerprint reserved for v3
+      </div>
+      <div>
+        <strong>Watershed sources cited</strong>
+        REMI · FastSpeech 2 · FACT<br>
+        Learning to Cut · Bailando<br>
+        MovieCuts · EDGE · MotionBeat<br>
+        <em>see section V</em>
+      </div>
+    </div>
+    <p class="end-mark">— Decompose first. Score second. Sanity-check third.</p>
+  </div>
+</footer>
+
+</body>
+</html>

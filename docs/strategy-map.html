@@ -1,0 +1,1250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASI-Evolve System Map · Interactive Strategy Explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0d0e12;
+  --bg-soft: #14161e;
+  --bg-card: #1a1d27;
+  --bg-card-hover: #232734;
+  --border: #2a2f3d;
+  --border-bright: #3a4154;
+  --text: #e8eaf0;
+  --text-soft: #a0a6b8;
+  --text-faint: #5d6478;
+  --accent: #ff5a4a;
+  --accent-soft: #ff8a7a;
+  --accent-dim: rgba(255, 90, 74, 0.15);
+  --layer-1: #f5c563;
+  --layer-2: #5ec2d8;
+  --layer-3: #b478e0;
+  --layer-thesis: #ff5a4a;
+  --layer-goal: #e8eaf0;
+  --layer-paper: #84c995;
+  --layer-bridge: #ffb95e;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif: "Newsreader", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --panel-w: 440px;
+  --shadow-card: 0 1px 2px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-card-hover: 0 4px 8px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 0 1px var(--accent), 0 0 24px var(--accent-dim);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.55;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ─── HEADER ─── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 14, 18, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.header .brand {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header .brand::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  display: inline-block;
+  border-radius: 1px;
+}
+.header .brand strong { color: var(--text); }
+.header .title {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+.filters {
+  display: flex;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  align-items: center;
+}
+.filters .label {
+  color: var(--text-faint);
+  margin-right: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+.chip {
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-soft);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 120ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.chip:hover { background: var(--bg-card); color: var(--text); border-color: var(--border-bright); }
+.chip.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.chip .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.chip .dot.c1 { background: var(--layer-1); }
+.chip .dot.c2 { background: var(--layer-2); }
+.chip .dot.c3 { background: var(--layer-3); }
+.chip .dot.cp { background: var(--layer-paper); }
+
+/* ─── CANVAS ─── */
+.canvas-wrap {
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  height: calc(100vh - 64px);
+  scroll-behavior: smooth;
+}
+.canvas {
+  position: relative;
+  width: 1480px;
+  min-height: 1900px;
+  padding: 40px;
+  margin: 0 auto;
+}
+.canvas svg.connections {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── NODE ─── */
+.node {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  box-shadow: var(--shadow-card);
+  user-select: none;
+}
+.node:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-bright);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-card-hover);
+}
+.node.selected {
+  box-shadow: var(--shadow-glow);
+  border-color: var(--accent);
+}
+.node.dimmed { opacity: 0.18; }
+.node.connected { box-shadow: 0 0 0 1px var(--accent-soft), 0 4px 12px rgba(0,0,0,0.4); }
+
+.node .label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.node .label .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.node .title {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+.node .sub {
+  font-size: 12px;
+  color: var(--text-soft);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+.node .meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-faint);
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.04em;
+}
+
+/* node type variants */
+.node[data-type="goal"] {
+  background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-soft) 100%);
+  border-color: var(--text);
+  border-width: 1px;
+}
+.node[data-type="goal"] .title {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
+}
+.node[data-type="goal"] .label { color: var(--text); }
+.node[data-type="goal"] .label .dot { background: var(--layer-goal); }
+
+.node[data-type="thesis"] { border-color: var(--accent); background: linear-gradient(180deg, rgba(255,90,74,0.08) 0%, var(--bg-card) 100%); }
+.node[data-type="thesis"] .label .dot { background: var(--accent); }
+.node[data-type="thesis"] .title { font-family: var(--serif); font-weight: 600; font-size: 15px; }
+
+.node[data-type="layer"] {
+  border-width: 1px;
+}
+.node[data-type="layer"] .title { font-size: 16px; }
+
+.node[data-layer="1"] { border-left: 3px solid var(--layer-1); }
+.node[data-layer="1"] .label .dot { background: var(--layer-1); }
+.node[data-layer="2"] { border-left: 3px solid var(--layer-2); }
+.node[data-layer="2"] .label .dot { background: var(--layer-2); }
+.node[data-layer="3"] { border-left: 3px solid var(--layer-3); }
+.node[data-layer="3"] .label .dot { background: var(--layer-3); }
+.node[data-layer="paper"] { border-left: 3px solid var(--layer-paper); }
+.node[data-layer="paper"] .label .dot { background: var(--layer-paper); }
+.node[data-layer="bridge"] { border-left: 3px solid var(--layer-bridge); }
+.node[data-layer="bridge"] .label .dot { background: var(--layer-bridge); }
+
+.node[data-type="paper"] .title { font-family: var(--serif); font-style: italic; font-size: 13px; }
+.node[data-type="paper"] .sub { font-family: var(--mono); font-size: 10px; }
+
+.node[data-type="bridge"] {
+  background: linear-gradient(180deg, rgba(255,185,94,0.08) 0%, var(--bg-card) 100%);
+  border-color: var(--layer-bridge);
+}
+.node[data-type="bridge"] .title { font-family: var(--serif); font-style: italic; font-size: 15px; }
+
+/* layer band labels */
+.band-label {
+  position: absolute;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 600;
+  left: 0;
+  z-index: 1;
+}
+.band-label .num {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 2px 7px;
+  margin-right: 8px;
+  color: var(--text);
+}
+.band-rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+/* ─── SVG CONNECTIONS ─── */
+.conn {
+  fill: none;
+  stroke: var(--border-bright);
+  stroke-width: 1.5;
+  opacity: 0.4;
+  transition: all 180ms ease;
+}
+.conn.highlighted {
+  stroke: var(--accent);
+  opacity: 1;
+  stroke-width: 2;
+}
+.conn.dimmed { opacity: 0.05; }
+.conn-arrow {
+  fill: var(--border-bright);
+  opacity: 0.4;
+  transition: all 180ms ease;
+}
+.conn-arrow.highlighted { fill: var(--accent); opacity: 1; }
+.conn-arrow.dimmed { opacity: 0.05; }
+
+/* ─── DETAIL PANEL ─── */
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--panel-w);
+  max-width: 100vw;
+  height: 100vh;
+  background: var(--bg-soft);
+  border-left: 1px solid var(--border);
+  box-shadow: -8px 0 32px rgba(0,0,0,0.5);
+  z-index: 200;
+  transform: translateX(100%);
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.panel.open { transform: translateX(0); }
+.panel-head {
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg-soft);
+  z-index: 1;
+}
+.panel-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-soft);
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  transition: all 120ms ease;
+}
+.panel-close:hover { background: var(--bg-card); color: var(--text); }
+.panel-type {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.panel-type .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.panel h2 {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--text);
+}
+.panel h2 em { font-style: italic; }
+.panel-summary {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-soft);
+  margin: 14px 0 0;
+}
+.panel-body {
+  padding: 24px 28px 80px;
+  flex: 1;
+}
+.panel-body h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 24px 0 10px;
+}
+.panel-body h4:first-child { margin-top: 0; }
+.panel-body p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-soft);
+  margin: 0 0 10px;
+}
+.panel-body p strong { color: var(--text); font-weight: 600; }
+.panel-body code {
+  font-family: var(--mono);
+  font-size: 12px;
+  background: var(--bg-card);
+  padding: 2px 6px;
+  border-radius: 3px;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.connections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.conn-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 120ms ease;
+  text-align: left;
+}
+.conn-link:hover { background: var(--bg-card-hover); border-color: var(--border-bright); transform: translateX(2px); }
+.conn-link .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.conn-link .arrow {
+  margin-left: auto;
+  color: var(--text-faint);
+  font-family: var(--mono);
+  font-size: 14px;
+}
+.conn-link .meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-left: 8px;
+}
+.borrowed {
+  font-family: var(--mono);
+  font-size: 11px;
+  background: rgba(132, 201, 149, 0.1);
+  color: var(--layer-paper);
+  padding: 6px 10px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+/* ─── HINT ─── */
+.hint {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-faint);
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  z-index: 50;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  transition: opacity 260ms ease;
+}
+.hint.hidden { opacity: 0; pointer-events: none; }
+.hint kbd {
+  font-family: var(--mono);
+  font-size: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-bright);
+  border-radius: 3px;
+  padding: 2px 5px;
+  color: var(--text);
+}
+
+/* ─── tour button ─── */
+.tour-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 18px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(255, 90, 74, 0.35);
+  transition: all 180ms ease;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tour-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(255, 90, 74, 0.5); }
+.tour-btn .icon { font-size: 14px; }
+.tour-counter {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  padding-left: 8px;
+  border-left: 1px solid rgba(255,255,255,0.3);
+  margin-left: 4px;
+}
+
+/* ─── selection ─── */
+::selection { background: var(--accent); color: white; }
+
+/* ─── scrollbar ─── */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-bright); }
+
+/* ─── responsive ─── */
+@media (max-width: 900px) {
+  .header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .canvas { transform-origin: top left; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="header">
+  <span class="brand"><strong>ASI-Evolve</strong> Map</span>
+  <span class="title">click · hover · filter</span>
+  <div class="filters">
+    <span class="label">Filter</span>
+    <button class="chip active" data-filter="all">All</button>
+    <button class="chip" data-filter="1"><span class="dot c1"></span>Vocabulary</button>
+    <button class="chip" data-filter="2"><span class="dot c2"></span>Scoring</button>
+    <button class="chip" data-filter="3"><span class="dot c3"></span>Fingerprint</button>
+    <button class="chip" data-filter="paper"><span class="dot cp"></span>Papers</button>
+  </div>
+</header>
+
+<div class="canvas-wrap" id="canvasWrap">
+  <div class="canvas" id="canvas">
+    <svg class="connections" id="conns" width="1400" height="1820"></svg>
+    <!-- nodes rendered by JS -->
+  </div>
+</div>
+
+<aside class="panel" id="panel" aria-hidden="true">
+  <div class="panel-head">
+    <button class="panel-close" id="panelClose" aria-label="Close panel">×</button>
+    <div class="panel-type" id="panelType"></div>
+    <h2 id="panelTitle"></h2>
+    <p class="panel-summary" id="panelSummary"></p>
+  </div>
+  <div class="panel-body" id="panelBody"></div>
+</aside>
+
+<div class="hint" id="hint">
+  <span><kbd>click</kbd> node</span>
+  <span><kbd>hover</kbd> connections</span>
+  <span><kbd>esc</kbd> close</span>
+</div>
+
+<button class="tour-btn" id="tourBtn">
+  <span class="icon">▶</span>
+  Tour
+  <span class="tour-counter" id="tourCounter" style="display:none;">1 / 7</span>
+</button>
+
+<script>
+// ─── DATA MODEL ─────────────────────────────────────────────────────────────
+const NODES = {
+  goal: {
+    type: 'goal', layer: 'goal', x: 600, y: 60, w: 280,
+    label: 'Goal',
+    title: 'Make the implicit explicit.',
+    sub: 'Get Dan\'s formula into a form a machine can score.',
+    summary: 'Extract editor rules. Score generated edits against them.',
+    body: [
+      ['Output', '<p>Pipeline producing edits Dan approves with light cleanup. Scorer separates Dan-style cuts from random/AI.</p>'],
+    ],
+    connects: ['watershed'],
+  },
+  watershed: {
+    type: 'thesis', layer: 'thesis', x: 600, y: 220, w: 280,
+    label: 'Bet',
+    title: 'Watershed thesis.',
+    sub: 'Decompose like voice synth + music gen did.',
+    summary: 'Two adjacent fields broke through by decomposing. We do the same to editing.',
+    body: [
+      ['Voice (2021)', '<p>FastSpeech 2: prosody → duration + pitch + energy. Robotic output ended.</p>'],
+      ['Music (2020)', '<p>REMI: explicit bar/position tokens. Off-beat output ended.</p>'],
+      ['Editing (now)', '<p>Learning to Cut / MovieCuts / ESA / EditIQ still learn rhythm implicitly. Stuck where music was pre-REMI.</p>'],
+      ['Our move', '<p>Apply the decomposition pattern directly. Don\'t wait for the field.</p>'],
+    ],
+    connects: ['layer1', 'layer2', 'layer3'],
+  },
+  layer1: {
+    type: 'layer', layer: '1', x: 200, y: 410, w: 280,
+    label: 'Layer 01',
+    title: 'Editorial Vocabulary',
+    sub: 'Which cell does this beat belong to?',
+    summary: 'Stratification key. Tells Layer 2 which rules to apply per cell.',
+    body: [
+      ['Source', '<p>Dan\'s head → Review UI → annotation JSONs.</p>'],
+      ['Output per beat', '<p><code>(canonical_move, sub_variant)</code>. Beauty: <code>(moment, take, placement, framing, camera)</code>.</p>'],
+      ['Why prerequisite', '<p>Global scoring failed: opposite-direction sub-variants averaged to noise.</p>'],
+    ],
+    connects: ['beauty', 'ingredient_dump', 'technique', 'prep', 'plating', 'transformation', 'money_shot', 'review_ui'],
+  },
+  layer2: {
+    type: 'layer', layer: '2', x: 600, y: 410, w: 280,
+    label: 'Layer 02',
+    title: 'Scoring Dimensions',
+    sub: 'Is this good editing — within its cell?',
+    summary: 'Measurable rules from voice/music papers. Applied per Layer 1 cell.',
+    body: [
+      ['Discipline', '<p>Every rule output carries a <code>borrowed_technique</code> slug. Failed bets show up as data.</p>'],
+      ['Role', '<p>Where the watershed bet cashes in. Layer 1 = key. Layer 3 = sanity check.</p>'],
+    ],
+    connects: ['asl', 'pacing', 'cut_freq', 'motion_peak', 'audio_onset', 'shot_pair', 'motion_dir'],
+  },
+  layer3: {
+    type: 'layer', layer: '3', x: 1000, y: 410, w: 280,
+    label: 'Layer 03',
+    title: 'Style Fingerprint',
+    sub: 'Does this feel like Dan?',
+    summary: 'Binary classifier. Dan\'s edits = positive. Random/AI = negative. Read-only.',
+    body: [
+      ['Scope', '<p>Reserved for v3. Measurable from v1 as passive readout.</p>'],
+      ['Why passive', '<p>Optimizing against a learned classifier = the implicit-gestalt trap voice + music both quit.</p>'],
+    ],
+    connects: [],
+  },
+  review_ui: {
+    type: 'bridge', layer: 'bridge', x: 200, y: 1480, w: 280,
+    label: 'Bridge',
+    title: 'Beat Review UI',
+    sub: 'Where Dan labels beats against finished footage.',
+    summary: 'Localhost web app. Plays each beat. Dan picks a sub-variant. Output feeds Layer 1.',
+    body: [
+      ['Output', '<p>Sidecar JSON. Upsert by <code>beat_index</code>. Atomic. Source-drift detected.</p>'],
+      ['Status', '<p>Plan approved. UI labeling model needs revision for (moment, take, placement).</p>'],
+    ],
+    connects: ['layer1'],
+  },
+
+  beauty: {
+    type: 'move', layer: '1', x: 60, y: 600, w: 200,
+    label: 'Supertype',
+    title: 'Beauty',
+    sub: '13 recipes · 3 axes',
+    summary: 'Three independent axes: moment / take / placement.',
+    body: [
+      ['Axes', '<p><strong>Moment</strong> — what (plating, fork-in, reveal…)<br><strong>Take</strong> — which version (camera × framing)<br><strong>Placement</strong> — front/back/both</p>'],
+      ['Sequence patterns', '<p>Medium-then-close-up · overhead/front alternation · V1+V2 split across opener/close.</p>'],
+    ],
+    connects: ['layer1', 'b_moment', 'b_take', 'b_place'],
+  },
+  ingredient_dump: {
+    type: 'move', layer: '1', x: 280, y: 600, w: 200,
+    label: 'Supertype',
+    title: 'Ingredient dump',
+    sub: '13 recipes · V1/V2',
+    summary: 'Two opposite-direction sub-variants. Confirmed by RAFT.',
+    body: [
+      ['V1 cut-to-action', '<p>Cut in ~0.5s before impact. Action visible. <strong>RAFT peak: 71%.</strong></p>'],
+      ['V2 appear', '<p>Overhead bowl. Ingredient appears between frames. <strong>RAFT peak: 14%.</strong></p>'],
+      ['Why it matters', '<p>Global scoring averaged V1 + V2 to noise. The split triggered the vocabulary correction.</p>'],
+    ],
+    connects: ['layer1'],
+  },
+  technique: {
+    type: 'move', layer: '1', x: 500, y: 600, w: 200,
+    label: 'Supertype',
+    title: 'Technique / active cooking',
+    sub: '10 recipes',
+    summary: 'Active cooking beats. Sub-variants TBD.',
+    body: [['Status', '<p>Inventory pending.</p>']],
+    connects: ['layer1'],
+  },
+  prep: {
+    type: 'move', layer: '1', x: 60, y: 760, w: 200,
+    label: 'Supertype',
+    title: 'Prep / knife work',
+    sub: '6 recipes',
+    summary: 'Knife/prep beats. Sub-variants TBD.',
+    body: [['Status', '<p>Inventory pending.</p>']],
+    connects: ['layer1'],
+  },
+  plating: {
+    type: 'move', layer: '1', x: 280, y: 760, w: 200,
+    label: 'Supertype',
+    title: 'Plating / finishing',
+    sub: '11 recipes',
+    summary: 'May collapse into Beauty.plating-assembly.',
+    body: [['Status', '<p>Possible collapse into Beauty pending more analysis.</p>']],
+    connects: ['layer1', 'beauty'],
+  },
+  transformation: {
+    type: 'move', layer: '1', x: 500, y: 760, w: 200,
+    label: 'Supertype',
+    title: 'Transformation',
+    sub: '4 recipes · edge case',
+    summary: 'State change. Own thing or Beauty sub-variant? TBD.',
+    body: [['Status', '<p>Inventory pending.</p>']],
+    connects: ['layer1'],
+  },
+  money_shot: {
+    type: 'move', layer: '1', x: 60, y: 920, w: 200,
+    label: 'Supertype',
+    title: 'Money shot',
+    sub: '3 recipes · rare',
+    summary: 'Process-peak satisfaction visual. Content-based. Lands anywhere.',
+    body: [
+      ['Examples', '<p>Bacon sizzling · chocolate ribbons falling · glossy sauce · steam off finished bowl.</p>'],
+      ['Vs Beauty', '<p>Beauty = positional. Money shot = content. Not every recipe has one.</p>'],
+    ],
+    connects: ['layer1'],
+  },
+
+  b_moment: {
+    type: 'axis', layer: '1', x: 60, y: 1080, w: 200,
+    label: 'Beauty axis',
+    title: 'Moment',
+    sub: 'Content tag · open-ended',
+    summary: 'What the beauty beat shows.',
+    body: [
+      ['Values', '<p><code>plating-assembly · place-on-table · reveal · fork-in · spoon-in · break-apart · vessel-final-dish · drizzle</code> · more during labeling.</p>'],
+      ['Cap', '<p>~10-12 per supertype. Collapse synonyms.</p>'],
+    ],
+    connects: ['beauty'],
+  },
+  b_take: {
+    type: 'axis', layer: '1', x: 280, y: 1080, w: 200,
+    label: 'Beauty axis',
+    title: 'Take',
+    sub: 'Which version of the moment',
+    summary: 'Different shots of the same moment (camera × framing).',
+    body: [
+      ['Use', '<p>V1 at opener + V2 at close = same moment, different takes.</p>'],
+      ['Gap', '<p>Take count not in annotations yet. Capture during labeling.</p>'],
+    ],
+    connects: ['beauty'],
+  },
+  b_place: {
+    type: 'axis', layer: '1', x: 500, y: 1080, w: 200,
+    label: 'Beauty axis',
+    title: 'Placement',
+    sub: 'Auto-derived',
+    summary: 'Front / back / repeated. Computed from beat_index.',
+    body: [
+      ['Logic', '<p><code>beat_index / total_beats</code> → front/middle/back. UI derives, Dan doesn\'t type.</p>'],
+      ['Note', '<p>Same shot can land anywhere. Placement is an editorial decision, not a shot property.</p>'],
+    ],
+    connects: ['beauty'],
+  },
+
+  asl: {
+    type: 'dimension', layer: '2', x: 760, y: 600, w: 180,
+    label: 'Dimension',
+    title: 'ASL match',
+    sub: 'Average shot length',
+    summary: 'Mean shot duration manifest ÷ reference.',
+    body: [
+      ['Compute', '<p><code>mean(manifest) / mean(reference)</code></p>'],
+      ['Borrowed', '<p><span class="borrowed">recipe_specific</span></p>'],
+    ],
+    connects: ['layer2'],
+  },
+  pacing: {
+    type: 'dimension', layer: '2', x: 960, y: 600, w: 180,
+    label: 'Dimension',
+    title: 'Pacing curve',
+    sub: 'Shot duration series · correlation',
+    summary: 'Pearson + Spearman against reference.',
+    body: [
+      ['Compute', '<p>Shot duration as time series. Pearson + Spearman.</p>'],
+      ['Borrowed', '<p><span class="borrowed">fastspeech2_variance_adaptor</span></p>'],
+    ],
+    connects: ['layer2', 'fastspeech2'],
+  },
+  cut_freq: {
+    type: 'dimension', layer: '2', x: 1160, y: 600, w: 180,
+    label: 'Dimension',
+    title: 'Cut frequency curve',
+    sub: 'Cuts per 10s window · DTW',
+    summary: 'Soft-DTW distance between manifest and reference curves.',
+    body: [
+      ['Compute', '<p>Rolling 10s window. Soft-DTW.</p>'],
+      ['Borrowed', '<p><span class="borrowed">motionbeat_soft_dtw</span></p>'],
+    ],
+    connects: ['layer2', 'motionbeat'],
+  },
+  motion_peak: {
+    type: 'dimension', layer: '2', x: 760, y: 760, w: 180,
+    label: 'Dimension',
+    title: 'Motion peak alignment',
+    sub: 'Cut distance to nearest motion peak',
+    summary: 'Per beat: min |cut_time − peak_time|.',
+    body: [
+      ['Compute', '<p>RAFT/DINO magnitude → <code>find_peaks</code> → distance.</p>'],
+      ['Caveat', '<p>Signal is conditional on Layer 1 cell. V1 ingredient = peaks. V2 = none.</p>'],
+      ['Borrowed', '<p><span class="borrowed">motionbeat_pulse_extraction</span> + <span class="borrowed">bailando_beat_align</span></p>'],
+    ],
+    connects: ['layer2', 'motionbeat', 'bailando'],
+  },
+  audio_onset: {
+    type: 'dimension', layer: '2', x: 960, y: 760, w: 180,
+    label: 'Dimension',
+    title: 'Audio onset alignment',
+    sub: 'Cut distance to audio onset',
+    summary: '% cuts within ±N frames of nearest onset.',
+    body: [
+      ['Compute', '<p>librosa onset detection.</p>'],
+      ['Borrowed', '<p><span class="borrowed">bailando_beat_align</span> + librosa</p>'],
+    ],
+    connects: ['layer2', 'bailando'],
+  },
+  shot_pair: {
+    type: 'dimension', layer: '2', x: 1160, y: 760, w: 180,
+    label: 'Dimension',
+    title: 'Shot-pair plausibility',
+    sub: 'Sane-cut floor',
+    summary: 'Pretrained classifier. Per adjacent pair.',
+    body: [
+      ['Compute', '<p>Learning-to-Cut model. Usability gate, not fitness.</p>'],
+      ['Borrowed', '<p><span class="borrowed">pretrained_floor:ltc</span></p>'],
+    ],
+    connects: ['layer2', 'ltc'],
+  },
+  motion_dir: {
+    type: 'dimension', layer: '2', x: 960, y: 920, w: 180,
+    label: 'Dimension',
+    title: 'Motion direction continuity',
+    sub: 'Flow across cuts',
+    summary: 'Optical flow direction across cut boundary vs reference.',
+    body: [
+      ['Compute', '<p>RAFT flow direction across each cut.</p>'],
+      ['Borrowed', '<p><span class="borrowed">recipe_specific</span></p>'],
+    ],
+    connects: ['layer2'],
+  },
+
+  remi: {
+    type: 'paper', layer: 'paper', x: 60, y: 1300, w: 200,
+    label: '2020',
+    title: 'REMI',
+    sub: 'Huang & Yang · bar/position tokens',
+    summary: 'Explicit metric grid beats implicit attention.',
+    body: [
+      ['Borrowed', '<p><span class="borrowed">remi_metric_grid</span></p>'],
+    ],
+    connects: ['watershed'],
+  },
+  fastspeech2: {
+    type: 'paper', layer: 'paper', x: 280, y: 1300, w: 200,
+    label: '2021',
+    title: 'FastSpeech 2',
+    sub: 'Ren et al. ICLR · duration/pitch/energy',
+    summary: 'Three measurable dimensions. Each predicted independently.',
+    body: [
+      ['Criteria for a good dimension', '<p>(1) computable from ground truth (2) predictable independently (3) addable as conditioning.</p>'],
+      ['Borrowed', '<p><span class="borrowed">fastspeech2_variance_adaptor</span></p>'],
+    ],
+    connects: ['watershed', 'pacing'],
+  },
+  fact: {
+    type: 'paper', layer: 'paper', x: 500, y: 1300, w: 200,
+    label: '2021',
+    title: 'FACT',
+    sub: 'Li et al. ICCV · N-future supervision',
+    summary: 'Cross-modal transformer. N=20 future frames.',
+    body: [
+      ['Borrowed', '<p><span class="borrowed">fact_future_n_supervision</span><br><span class="borrowed">fact_pipeline_shape</span></p>'],
+    ],
+    connects: ['watershed'],
+  },
+  ltc: {
+    type: 'paper', layer: 'paper', x: 720, y: 1300, w: 200,
+    label: '2021',
+    title: 'Learning to Cut',
+    sub: 'Pardo et al. · plausibility classifier',
+    summary: 'Pretrained shot-pair sanity check.',
+    body: [
+      ['Borrowed', '<p><span class="borrowed">pretrained_floor:ltc</span></p>'],
+    ],
+    connects: ['shot_pair'],
+  },
+  bailando: {
+    type: 'paper', layer: 'paper', x: 60, y: 1480, w: 200,
+    label: '2022',
+    title: 'Bailando',
+    sub: 'CVPR · beat-align σ=3',
+    summary: 'Soft-σ beat alignment formulation.',
+    body: [
+      ['Borrowed', '<p><span class="borrowed">bailando_beat_align</span></p>'],
+    ],
+    connects: ['audio_onset', 'motion_peak'],
+  },
+  moviecuts: {
+    type: 'paper', layer: 'paper', x: 280, y: 1480, w: 200,
+    label: '2022',
+    title: 'MovieCuts',
+    sub: 'Pardo et al. · cut-type taxonomy',
+    summary: 'J-cut · L-cut · Match · Smash · Cross · Cut Away · Emphasis · Reaction.',
+    body: [
+      ['Borrowed', '<p><span class="borrowed">pretrained_floor:moviecuts</span></p>'],
+    ],
+    connects: ['watershed'],
+  },
+  edge: {
+    type: 'paper', layer: 'paper', x: 500, y: 1480, w: 200,
+    label: '2023',
+    title: 'EDGE',
+    sub: 'Tseng et al. CVPR · pin-and-fill',
+    summary: 'Editable dance generation primitives.',
+    body: [
+      ['Borrowed', '<p><span class="borrowed">edge_editing_primitives</span> · operator design</p>'],
+    ],
+    connects: ['watershed'],
+  },
+  motionbeat: {
+    type: 'paper', layer: 'paper', x: 720, y: 1480, w: 200,
+    label: '2025',
+    title: 'MotionBeat',
+    sub: 'Wang et al. · ℒ_beat = SoftDTW(o, c)',
+    summary: 'Soft-DTW between audio onset and motion contact pulses.',
+    body: [
+      ['Borrowed', '<p><span class="borrowed">motionbeat_soft_dtw</span> · <code>tslearn.metrics.soft_dtw</code><br><span class="borrowed">motionbeat_pulse_extraction</span> · <code>scipy.signal.find_peaks</code><br><span class="borrowed">motionbeat_bar_emd</span> · bar-level EMD</p>'],
+    ],
+    connects: ['cut_freq', 'motion_peak'],
+  },
+};
+
+// ─── BAND LABELS ────────────────────────────────────────────────────────────
+const BANDS = [
+  { y: 30, label: 'I', text: 'Goal' },
+  { y: 195, label: 'II', text: 'Watershed thesis' },
+  { y: 385, label: 'III', text: 'Three-layer architecture' },
+  { y: 575, label: 'IV', text: 'Canonical moves (Layer 1)' },
+  { y: 575, label: 'V', text: 'Scoring dimensions (Layer 2)', x: 740 },
+  { y: 1055, label: 'VI', text: 'Beauty decomposition' },
+  { y: 1275, label: 'VII', text: 'Research foundation' },
+  { y: 1455, label: '', text: '', noRule: true },
+];
+
+// ─── RENDER ─────────────────────────────────────────────────────────────────
+const canvas = document.getElementById('canvas');
+const conns = document.getElementById('conns');
+
+// render bands
+BANDS.forEach(band => {
+  if (!band.noRule) {
+    const rule = document.createElement('div');
+    rule.className = 'band-rule';
+    rule.style.top = (band.y + 18) + 'px';
+    rule.style.left = (band.x || 40) + 'px';
+    rule.style.right = '40px';
+    canvas.appendChild(rule);
+  }
+  if (band.label || band.text) {
+    const lbl = document.createElement('div');
+    lbl.className = 'band-label';
+    lbl.style.top = band.y + 'px';
+    lbl.style.left = (band.x || 40) + 'px';
+    lbl.innerHTML = (band.label ? `<span class="num">${band.label}</span>` : '') + band.text;
+    canvas.appendChild(lbl);
+  }
+});
+
+// render nodes
+Object.entries(NODES).forEach(([id, n]) => {
+  const el = document.createElement('div');
+  el.className = 'node';
+  el.id = 'node-' + id;
+  el.dataset.id = id;
+  el.dataset.type = n.type;
+  el.dataset.layer = n.layer;
+  el.style.left = n.x + 'px';
+  el.style.top = n.y + 'px';
+  el.style.width = n.w + 'px';
+  el.innerHTML = `
+    <div class="label"><span class="dot"></span>${n.label}</div>
+    <div class="title">${n.title}</div>
+    ${n.sub ? `<div class="sub">${n.sub}</div>` : ''}
+  `;
+  el.addEventListener('click', e => { e.stopPropagation(); selectNode(id); });
+  el.addEventListener('mouseenter', () => highlightConnected(id, true));
+  el.addEventListener('mouseleave', () => highlightConnected(id, false));
+  canvas.appendChild(el);
+});
+
+// build connection list (deduplicated edges)
+const EDGES = [];
+const seen = new Set();
+Object.entries(NODES).forEach(([id, n]) => {
+  (n.connects || []).forEach(target => {
+    const key = [id, target].sort().join('::');
+    if (seen.has(key)) return;
+    seen.add(key);
+    EDGES.push({ from: id, to: target });
+  });
+});
+
+// draw connections as SVG paths between node centers
+function drawConnections() {
+  const svgNs = 'http://www.w3.org/2000/svg';
+  conns.innerHTML = '';
+  // arrow marker
+  const defs = document.createElementNS(svgNs, 'defs');
+  defs.innerHTML = `
+    <marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,-5L10,0L0,5" class="conn-arrow"></path>
+    </marker>
+    <marker id="arrow-hl" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,-5L10,0L0,5" class="conn-arrow highlighted"></path>
+    </marker>
+  `;
+  conns.appendChild(defs);
+  EDGES.forEach(e => {
+    const a = NODES[e.from]; const b = NODES[e.to];
+    if (!a || !b) return;
+    const ax = a.x + a.w / 2;
+    const ay = a.y + 40;
+    const bx = b.x + b.w / 2;
+    const by = b.y + 40;
+    const dx = bx - ax;
+    const dy = by - ay;
+    // curve: control points pulled along the connection axis
+    const cx1 = ax + dx * 0.05;
+    const cy1 = ay + Math.abs(dy) * 0.4;
+    const cx2 = bx - dx * 0.05;
+    const cy2 = by - Math.abs(dy) * 0.4;
+    const path = document.createElementNS(svgNs, 'path');
+    path.setAttribute('d', `M ${ax} ${ay} C ${cx1} ${cy1}, ${cx2} ${cy2}, ${bx} ${by}`);
+    path.setAttribute('class', 'conn');
+    path.dataset.from = e.from;
+    path.dataset.to = e.to;
+    conns.appendChild(path);
+  });
+}
+drawConnections();
+
+// ─── INTERACTION ────────────────────────────────────────────────────────────
+let selectedId = null;
+const panel = document.getElementById('panel');
+
+function selectNode(id) {
+  selectedId = id;
+  document.querySelectorAll('.node').forEach(n => n.classList.remove('selected'));
+  const el = document.getElementById('node-' + id);
+  if (el) el.classList.add('selected');
+  populatePanel(id);
+  panel.classList.add('open');
+  panel.setAttribute('aria-hidden', 'false');
+  document.getElementById('hint').classList.add('hidden');
+  scrollNodeIntoView(id);
+}
+
+function scrollNodeIntoView(id) {
+  const n = NODES[id];
+  if (!n) return;
+  const wrap = document.getElementById('canvasWrap');
+  const targetX = n.x + n.w / 2 - wrap.clientWidth / 2 + 40;
+  const targetY = n.y + 40 - wrap.clientHeight / 2;
+  wrap.scrollTo({ left: Math.max(0, targetX), top: Math.max(0, targetY), behavior: 'smooth' });
+}
+
+function populatePanel(id) {
+  const n = NODES[id];
+  if (!n) return;
+  const layerColors = {
+    '1': 'var(--layer-1)', '2': 'var(--layer-2)', '3': 'var(--layer-3)',
+    'goal': 'var(--layer-goal)', 'thesis': 'var(--layer-thesis)',
+    'paper': 'var(--layer-paper)', 'bridge': 'var(--layer-bridge)'
+  };
+  const typeLabel = {
+    'goal': 'Goal', 'thesis': 'Strategic thesis', 'layer': 'Architecture layer',
+    'move': 'Canonical move (Layer 1)', 'axis': 'Decomposition axis (Layer 1)',
+    'dimension': 'Scoring dimension (Layer 2)', 'paper': 'Research source', 'bridge': 'Infrastructure'
+  };
+  document.getElementById('panelType').innerHTML =
+    `<span class="dot" style="background:${layerColors[n.layer] || '#fff'}"></span>${typeLabel[n.type] || n.type}`;
+  document.getElementById('panelTitle').textContent = n.title;
+  document.getElementById('panelSummary').textContent = n.summary || '';
+
+  let bodyHtml = '';
+  (n.body || []).forEach(([heading, html]) => {
+    bodyHtml += `<h4>${heading}</h4>${html}`;
+  });
+
+  // outgoing connections
+  const out = (n.connects || []).filter(t => NODES[t]);
+  // incoming connections
+  const incoming = Object.entries(NODES).filter(([oid, on]) => (on.connects || []).includes(id)).map(([oid]) => oid);
+  if (out.length || incoming.length) {
+    bodyHtml += '<h4>Explore connected</h4><div class="connections-list">';
+    [...new Set([...out, ...incoming])].forEach(tid => {
+      const t = NODES[tid];
+      if (!t) return;
+      const color = layerColors[t.layer] || '#fff';
+      bodyHtml += `<button class="conn-link" data-jump="${tid}">
+        <span class="dot" style="background:${color}"></span>
+        <span>${t.title}</span>
+        <span class="meta">${typeLabel[t.type] || ''}</span>
+        <span class="arrow">→</span>
+      </button>`;
+    });
+    bodyHtml += '</div>';
+  }
+
+  document.getElementById('panelBody').innerHTML = bodyHtml;
+  document.querySelectorAll('.conn-link[data-jump]').forEach(btn => {
+    btn.addEventListener('click', () => selectNode(btn.dataset.jump));
+  });
+}
+
+function closePanel() {
+  panel.classList.remove('open');
+  panel.setAttribute('aria-hidden', 'true');
+  selectedId = null;
+  document.querySelectorAll('.node').forEach(n => n.classList.remove('selected'));
+  clearHighlights();
+}
+
+document.getElementById('panelClose').addEventListener('click', closePanel);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closePanel();
+});
+
+// hover highlighting — show outgoing + incoming connections, dim everything else
+function highlightConnected(id, on) {
+  if (selectedId) return; // don't fight with selection
+  if (!on) { clearHighlights(); return; }
+  const n = NODES[id];
+  if (!n) return;
+  const out = new Set(n.connects || []);
+  const inc = new Set();
+  Object.entries(NODES).forEach(([oid, on2]) => {
+    if ((on2.connects || []).includes(id)) inc.add(oid);
+  });
+  const related = new Set([id, ...out, ...inc]);
+  document.querySelectorAll('.node').forEach(node => {
+    if (related.has(node.dataset.id)) {
+      node.classList.add('connected'); node.classList.remove('dimmed');
+    } else {
+      node.classList.add('dimmed'); node.classList.remove('connected');
+    }
+  });
+  document.querySelectorAll('.conn').forEach(path => {
+    const from = path.dataset.from, to = path.dataset.to;
+    if ((from === id && related.has(to)) || (to === id && related.has(from))) {
+      path.classList.add('highlighted'); path.classList.remove('dimmed');
+    } else {
+      path.classList.add('dimmed'); path.classList.remove('highlighted');
+    }
+  });
+}
+
+function clearHighlights() {
+  document.querySelectorAll('.node').forEach(n => n.classList.remove('dimmed', 'connected'));
+  document.querySelectorAll('.conn').forEach(p => p.classList.remove('dimmed', 'highlighted'));
+}
+
+// filter chips
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    const f = chip.dataset.filter;
+    document.querySelectorAll('.node').forEach(node => {
+      if (f === 'all') { node.style.opacity = '1'; node.style.pointerEvents = 'auto'; }
+      else if (node.dataset.layer === f) { node.style.opacity = '1'; node.style.pointerEvents = 'auto'; }
+      else { node.style.opacity = '0.15'; node.style.pointerEvents = 'none'; }
+    });
+  });
+});
+
+// click outside node to close
+canvas.addEventListener('click', e => {
+  if (!e.target.closest('.node')) closePanel();
+});
+
+// ─── TOUR ───────────────────────────────────────────────────────────────────
+const TOUR = ['goal', 'watershed', 'layer1', 'beauty', 'ingredient_dump', 'layer2', 'motionbeat', 'layer3', 'review_ui'];
+let tourIdx = -1;
+const tourBtn = document.getElementById('tourBtn');
+const tourCounter = document.getElementById('tourCounter');
+
+tourBtn.addEventListener('click', () => {
+  tourIdx = (tourIdx + 1) % (TOUR.length + 1);
+  if (tourIdx === TOUR.length) {
+    tourIdx = -1;
+    tourBtn.innerHTML = `<span class="icon">▶</span>Take the tour<span class="tour-counter" id="tourCounter" style="display:none;">1 / ${TOUR.length}</span>`;
+    closePanel();
+    return;
+  }
+  selectNode(TOUR[tourIdx]);
+  tourBtn.innerHTML = `<span class="icon">→</span>Next${tourIdx === TOUR.length - 1 ? ' (last)' : ''}<span class="tour-counter">${tourIdx + 1} / ${TOUR.length}</span>`;
+});
+
+// hint auto-fade after first interaction
+setTimeout(() => {
+  if (!selectedId) document.getElementById('hint').style.opacity = '0.55';
+}, 4500);
+
+</script>
+
+</body>
+</html>

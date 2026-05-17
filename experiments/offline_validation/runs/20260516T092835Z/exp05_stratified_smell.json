@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "scope": "directional smell test only; N=42 from basil_pesto + chicken_thighs",
+  "source": "experiments/offline_validation/runs/20260514T193913Z/exp05_results.json",
+  "n_beats_in_exp05": 42,
+  "n_beats_joinable": 42,
+  "notes": [
+    "raft_delta = min_dist_dan_raft_s - median_random_raft_s",
+    "negative delta means Dan's cut-out lands closer to a RAFT peak than random",
+    "samples per beat_type are tiny (1-21); statistical conclusions not supported",
+    "real stratification requires (a) RAFT curves for 16 missing recipes, (b) 329 untyped beats labeled"
+  ],
+  "by_beat_type": {
+    "ingredient": {
+      "n_beats": 13,
+      "n_recipes": 2,
+      "median_raft_delta_s": 0.26614847869456515,
+      "mean_raft_delta_s": 3.170134751763177,
+      "per_recipe_median": {
+        "basil_pesto": 0.16713634228600238,
+        "chicken_thighs": 0.9679800371774512
+      },
+      "per_recipe_n": {
+        "basil_pesto": 5,
+        "chicken_thighs": 8
+      },
+      "all_negative": false,
+      "all_positive": false
+    },
+    "UNTYPED": {
+      "n_beats": 21,
+      "n_recipes": 2,
+      "median_raft_delta_s": -0.00817208080975007,
+      "mean_raft_delta_s": 0.7787725239175349,
+      "per_recipe_median": {
+        "basil_pesto": -0.3255354974423543,
+        "chicken_thighs": 0.4468782145268051
+      },
+      "per_recipe_n": {
+        "basil_pesto": 11,
+        "chicken_thighs": 10
+      },
+      "all_negative": false,
+      "all_positive": false
+    },
+    "beauty_opener": {
+      "n_beats": 3,
+      "n_recipes": 2,
+      "median_raft_delta_s": -0.5835629195279637,
+      "mean_raft_delta_s": -0.364562818802239,
+      "per_recipe_median": {
+        "basil_pesto": -0.5835629195279637,
+        "chicken_thighs": -0.2550627684393767
+      },
+      "per_recipe_n": {
+        "basil_pesto": 1,
+        "chicken_thighs": 2
+      },
+      "all_negative": false,
+      "all_positive": false
+    },
+    "beauty_close": {
+      "n_beats": 1,
+      "n_recipes": 1,
+      "median_raft_delta_s": 0.11291943161246465,
+      "mean_raft_delta_s": 0.11291943161246465,
+      "per_recipe_median": {
+        "basil_pesto": 0.11291943161246465
+      },
+      "per_recipe_n": {
+        "basil_pesto": 1
+      },
+      "all_negative": false,
+      "all_positive": true
+    },
+    "beauty": {
+      "n_beats": 2,
+      "n_recipes": 1,
+      "median_raft_delta_s": -1.2114886566073588,
+      "mean_raft_delta_s": -1.2114886566073588,
+      "per_recipe_median": {
+        "chicken_thighs": -1.2114886566073588
+      },
+      "per_recipe_n": {
+        "chicken_thighs": 2
+      },
+      "all_negative": true,
+      "all_positive": false
+    },
+    "technique": {
+      "n_beats": 1,
+      "n_recipes": 1,
+      "median_raft_delta_s": -2.6915835169440925,
+      "mean_raft_delta_s": -2.6915835169440925,
+      "per_recipe_median": {
+        "chicken_thighs": -2.6915835169440925
+      },
+      "per_recipe_n": {
+        "chicken_thighs": 1
+      },
+      "all_negative": true,
+      "all_positive": false
+    },
+    "title_card": {
+      "n_beats": 1,
+      "n_recipes": 1,
+      "median_raft_delta_s": 0.9840159503756896,
+      "mean_raft_delta_s": 0.9840159503756896,
+      "per_recipe_median": {
+        "chicken_thighs": 0.9840159503756896
+      },
+      "per_recipe_n": {
+        "chicken_thighs": 1
+      },
+      "all_negative": false,
+      "all_positive": true
+    }
+  }
+}

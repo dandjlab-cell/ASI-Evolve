@@ -1,282 +1,197 @@
-# ASI-Evolve Strategy Track — Session Handoff 2026-05-13/14
+# ASI-Evolve — Session Handoff 2026-05-14 → 2026-05-15
 
-**Date:** 2026-05-14
-**Branch:** `refactor/writer-modules` (no code changes this session — strategy track only)
-**Last code commit:** `6f0247e` docs(asi): reframe phase 4 as polish-reduction; onboard Codex
-**Role:** BUILDER (next session)
-**Predecessor handoff:** none directly — the prior `handoff.md` (May 2 beauty-pick) was historical; this overwrites it.
+**Date:** 2026-05-15 (+ 2026-05-16 corrections appended throughout)
+**Branch:** `refactor/writer-modules` (uncommitted spike work + dirty files from earlier — see "Git state" below)
+**Predecessor handoff:** the 2026-05-13/14 handoff at the top of `git log` (`8ea74bc`) — that handoff queued the offline experiments; this one reports what they found.
 
 ---
 
-## The project in one sentence
+## ⚠️ READ THIS FIRST — 2026-05-16 corrections
 
-**ASI-Evolve is the scorer + harness layer that measures roughcut-ai pipeline output against Dan's editor reference style.** Recipe content (footage-driven bucket). Code repo: `/Users/dandj/DevApps/ASI-Evolve/`; canonical scoring file: `experiments/recipe_pipeline/score_rules.py`. Strategy hub: vault at `/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/`.
+The findings table below references stratifications by bare `beat_type`. **Those stratifications are SUSPECT.** Bare `beat_type` is too coarse — the real editorial structure lives in `recipe_section` text + parenthetical sub-variants + `beat_description`. The canonical reference for the correct editorial vocabulary is now:
 
----
+→ **[Editorial Move Vocabulary — Canonical Moves and Sub-Variants](../../Brain/Projects/ASI-Evolve/Editorial%20Move%20Vocabulary%20—%20Canonical%20Moves%20and%20Sub-Variants.md)**
 
-## What was done this session (strategy track only — zero code)
+That vault note documents:
+- ~8 canonical editorial moves that recur across all 18 recipes
+- The `ingredient_dump` V1 (cut-to-action) vs V2 (stop-motion-vibe / appear-in-bowl) sub-variant split, confirmed by RAFT-peak-presence data
+- That `mid-edit` and `late-edit` are **annotator placeholder buckets, NOT editorial moves**
+- Which prior findings still survive (mogrt_minimum_hold; technique-vs-tool conceptual framing) and which need redo (every beat_type-stratified analysis + per-recipe variance)
+- The known `camera_mapping.json` prefix-rule bug on chicken_thighs B19I6669
 
-The session built out the complete strategy framework for adding new scoring dimensions, anchored on a specific bet: **adapt watershed techniques from speech synthesis, music generation, and music-to-dance generation to score the editorial rhythm of recipe edits.** The rhythm lives in the **visual signal** (motion peaks, action phases, camera settles, cut placements), not audio.
-
-### Artifacts created in the vault
-
-`/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/` (Obsidian vault):
-
-- **`_Strategy.md`** — hub pointer at the project root (new)
-- **`Editing Agent - Roadmap.md`** — pre-existing, **updated** for V-JEPA2 set-aside cleanup + new fitness framing
-- **`Strategy/`** — entire folder is new, contains:
-  - `Strategic Directive — Decomposed Cinematic Scoring.md` — verbatim directive + Amendment 01 + Corrections section (C1, C2, C3)
-  - `Directive Crosswalk — Current Pipeline.md` — every directive dimension mapped to existing scorer rules + gaps + per-dimension portability table + Borrowed-technique column with slugs (codex R4–R6 refined)
-  - `Next Steps — Prioritized Mutations.md` — what to build, in what order; 5 gate categories (Always-on / Schema-contract-gated / Commercially-gated / Threshold-gated / Off-the-shelf-spike-gated); **Watershed-Technique Wire-Through (Layers 1–3)** section defining canonical slugs + Layer 2 emitted-data schema + Layer 3 calibration linkage
-  - `Reconciliation — Directive vs Editing Agent Roadmap.md` — multi-track strategy stack; 6 codex review rounds logged with full audit trail
-  - `Adjacent-Field Techniques — What We're Borrowing.md` — six watershed techniques mapped to scoring dimensions; back-pointer table; codex R4+R5 corrections folded
-  - `External Input — 2026-05-11 ChatGPT Editor Stack Triage.md` — triage of an external ChatGPT "Editing AI model stack" proposal (4 KEEP + 4 REJECT + ~7 duplicative)
-  - `Business Strategy Frame — Why This Technical Bet Matters.md` — connects technical strategy to Path A business strategy (Adobe 36-month window, manifesto, content type buckets)
-  - `References/` — 9 paper / lineage notes:
-    - `Learning to Cut by Watching Movies (Pardo 2021).md`
-    - `MovieCuts (Pardo 2022).md` (with codex R3+R5 corrections re: recipe vs MovieCuts Match Cut)
-    - `ESA — Energy-Based Shot Assembly (2025).md`
-    - `REMI — Pop Music Transformer (Huang & Yang 2020).md`
-    - `MotionBeat (2025).md` (with codex R1 verification of Soft-DTW)
-    - `Music-to-Dance — EDGE Bailando FACT.md`
-    - `Netflix Match Cutting (2022).md`
-    - `Speech Synthesis — Prosody Decomposition Lineage.md` (new lineage note)
-    - `Music Generation — Breakthrough Lineage Beyond REMI.md` (new lineage note)
-
-### User memory entries created/updated (`~/.claude/projects/-Users-dandj-DevApps-ASI-Evolve/memory/`)
-
-- `MEMORY.md` — index updated with 2 new entries
-- `project_vjepa2_dropped.md` — V-JEPA2 set-aside decision (2026-05-11)
-- `feedback_external_research_triage.md` — process discipline for handling external research
-
-### Codex review rounds (6 total this session)
-
-| Round | Verdict | Findings | Where logged |
-|---|---|---|---|
-| R1 | APPROVED | 5 MEDIUM + 5 LOW (paper accuracy, V-JEPA2 alignment) | `Reconciliation` note |
-| R2 | APPROVED | 5 MEDIUM + 5 LOW (V-JEPA2 cleanup, MovieCuts taxonomy) | `Reconciliation` note |
-| R3 | APPROVED | 4 MEDIUM + 3 LOW (business-frame incorporation, bucket-portability) | `Reconciliation` note |
-| R4 | **NOT APPROVED → APPROVED** | 1 HIGH (EDGE/FACT citation error) + 5 MEDIUM + 4 LOW | `Reconciliation` note |
-| R5 | **NOT APPROVED → APPROVED** | 1 HIGH (stale body text contradicting corrected table) + 4 MEDIUM + 4 LOW | `Reconciliation` note |
-| R6 | APPROVED | 0 unresolved CRITICAL/HIGH/MEDIUM/LOW | `Reconciliation` note |
+**Before running any motion-signal analysis or building UI labeling flows, read that vault note.** Do not redo this session's discovery process.
 
 ---
 
-## Current state
+## Project in one line
 
-**Strategy documentation: complete and codex-approved through R6.**
-
-**Code implementation: NOT started.** Zero changes to `score_rules.py` or any other file in the ASI-Evolve code repo this session.
-
-**Roughcut state (referenced, not modified):** v16 is the latest branch (`feat/recipe-pipeline-v16-modal` at `8a3ebfe` in the worktree `roughcut-ai/.claude/worktrees/v16-smoke/` or `.claude/worktrees/continue-from-handoff-atomic-snail/`). Five PRs merged: pair_verification module (PR2), Drive registry (PR3), pair_verification→Phase 1 (PR4), `NO_AUDIO_FAIL_CLOSED_FLOOR = 0.10` calibration (PR5). V15 frozen as rollback. **Dan is currently resolving v16 audio sync issues** — v16 is the active dev branch but pairs.json files in `runs/{recipe}/` are still v15-shape (no `pass_a0_status` field yet).
-
-**The 12 "shot-first" polish-reduction plans** (shot-first-body-file-fence, shot-first-non-action-classifier, beauty-picker-vlm-floor, etc.) are **in design, not in v16 yet.** They're on top of v16, in design notes that the user mentioned but I haven't read directly.
+ASI-Evolve = scorer + harness measuring roughcut-ai pipeline output against Dan's editor reference style. Recipe content. Strategy hub: `~/DevApps/Brain/Projects/ASI-Evolve/`.
 
 ---
 
-## Key decisions made (the "why" that context windows forget)
+## What this session actually delivered
 
-| Decision | Reasoning |
-|---|---|
-| **V-JEPA2 set aside entirely** (not "v3 supplemental") | Heavy compute + unproven value + conflicts with directive's explicit-metrical-grid thesis. Triple-validated: ASI directive Constraint #4 + codex reviews + roughcut's own `docs/plans/vjepa2-watch.md` + `~/DevApps/Brain/Knowledge/VLM/V-JEPA2 Applicability for Recipe Pipeline.md` atomic lesson. Revisit conditions documented in `Reconciliation` Tension 1. |
-| **Bailando is a PRINCIPLE, not an audio technique** | Late-session correction. Bailando's watershed contribution is "explicit beat-alignment objective beats implicit discovery." Modality-agnostic. For recipes, the "beat" is a visual event (motion peak / action transition / camera settle / cut placement), not an audio onset. This corrects earlier framing where `bailando_beat_align` was locked to §1.5 audio onset alignment. |
-| **The rhythm lives in the visual signal for recipe content** | Recipe audio = ambient kitchen + sparse dialogue. No music. The editorial rhythm exists in DINO distance peaks, action phases, camera settles, cut placements — all signals already cached by roughcut today. Audio onset alignment (§1.5) is bucket-portable but **deprioritized for recipes**. |
-| **§1.5 audio rhythm gating should NOT use v16's `pass_a0_status`** | Separate problems. v16's `pass_a0_status` = camera A↔B sync state. Bailando audio-onset = "is there rhythmic audio to score against." Conflation that needs fixing in the Next Steps + Layer 2 schema documentation. **PENDING — not yet corrected in the vault notes.** See "Hot pending items" below. |
-| **Path A defense window: 36 months from 2026 → 2029** | Per `Future of AI Editing — Big Picture 2026-05-06.md`. Adobe MAX 2026 (Oct 2026) ships "Your Style v1" (horizontal). v2 (per-show, 2027) + v3 (house-corpus, 2028-2029) progressively close the gap. The 40%→85% vertical-depth gap is "the entire game." |
-| **Boardroom Agreement #54: ship at 80%, not 95%** | Per `The Edit Never Ends Manifesto`. Pace behind commercial validation, not in parallel. v2 scoring spine ships against current roughcut output; calibration re-tunes as roughcut PRs land. |
-| **Watershed wire-through Layer 2 emitted-data schema** | Every scoring rule output carries `borrowed_technique`, `basis_technique`, `adaptation_role`, `source_type`, `paper`, `paper_note`, `implementation`, `calibration` fields. Polish-gradient report groups deltas by `borrowed_technique` slug so "is the X bet paying off" is answerable from data, not analogy. |
-| **RAFT is set up (Dan stated) and unlocks subject-vs-camera motion disentanglement** | The biggest single win RAFT offers is `subject_motion_magnitude` (residual after camera-motion removal). Cleaner peaks for action-phase scoring than DINO distance alone. Spec'd in the final messages of this session. |
-| **Test concepts as offline notebook experiments BEFORE wiring code** | The directive's "diff-based learning" principle says train on AI-vs-Dan deltas. Apply that to OUR strategy: test each watershed-borrowed technique as a notebook experiment against cached data + Dan's 18 annotated recipes BEFORE writing the scoring rule. If the bet doesn't show up in data, don't ship the code. |
+A complete spike of 4 hypotheses about how Dan cuts recipes, plus the surfacing of the actual UX blocker. The spike originally reported 2 clean findings worth wiring, but only one (`mogrt_minimum_hold`) survives 2026-05-16's editorial-vocabulary correction — see "READ THIS FIRST" callout above and the table below.
 
----
-
-## What's next — RUN OFFLINE EXPERIMENTS BEFORE WRITING CODE
-
-The user's last direction: **validate watershed-borrowed techniques as offline notebook experiments BEFORE committing to wiring them into `score_rules.py`.** Each experiment uses already-cached roughcut data + Dan's 18 annotated recipes. Zero pipeline runs needed.
-
-### Highest-value experiments (priority order)
-
-#### Experiment #2 — DINO peaks vs Dan cuts (single most load-bearing)
-
-Test whether Dan's cuts cluster near DINO cosine-distance peaks more often than random.
-
-- Load `~/DevApps/roughcut-ai/runs/{recipe}/dino_cache.json` for each of the 18 annotated recipes
-- Run `scipy.signal.find_peaks` on the DINO distance array
-- Load Dan's cut times from the corresponding annotation in `experiments/recipe_pipeline/annotations/{recipe}.json`
-- Histogram of `min(|cut - peak|)` for Dan's cuts vs the same metric on randomly-placed cuts
-- **Pass condition:** Dan's cuts have a statistically significant tighter alignment to DINO peaks than random
-- **If passes:** §1.6 motion-peak alignment + §1.7 visual rest + action-phase scoring all gain empirical justification. Bailando-principle with DINO as signal source is validated.
-- **If fails:** Need RAFT for sharper signal (see Experiment #5) OR rhythm isn't where I think it is.
-
-#### Experiment #5 — RAFT subject-vs-camera disentanglement
-
-Since RAFT is already set up, validate the "biggest single win" claim.
-
-- Run RAFT on 2-3 recipe video clips (basil_pesto, chicken_thighs are well-annotated)
-- Per-frame outputs: `flow_magnitude`, `flow_direction`, `camera_motion.translation`, `subject_motion_magnitude`
-- Compare `subject_motion_magnitude` peaks against Dan's cut times — same histogram as Experiment #2
-- **Pass condition:** RAFT's `subject_motion_magnitude` has sharper / more aligned peaks than DINO distance
-- **If passes:** RAFT is worth caching as `raft_cache.json` per recipe; ASI consumes the residual-subject-motion peak signal for action-phase scoring
-- **If fails:** DINO is good enough; RAFT adds nothing for v2
-
-**These two run in parallel.** Half-day each, max. Both use cached data + already-set-up tools.
-
-### Subsequent experiments (after the load-bearing two pass)
-
-| # | Experiment | What it tests |
+| Hypothesis | Verdict | Operational result |
 |---|---|---|
-| 1 | Pacing curve correlation signal test | Do Dan-recipes correlate with each other more than with shuffles? |
-| 3 | Soft-DTW vs Euclidean on cut-frequency curves | Empirical validation of MotionBeat's loss choice |
-| 8 | Pareto frontier visualization | Plot Phase 4 fitness gradient outputs in 2D dimension-pair space |
-| 4 | Bailando soft-σ on Whisper utterance starts | Does Dan cluster cuts near speech segments? Cheap proxy for §1.5 |
-| 6 | Dan Discriminator feasibility | sklearn LogReg on cached DINO embeddings, AUC > 0.7 target |
-| 7 | Manual MovieCuts taxonomy labeling | 50 transitions × 3 recipes, build Dan's target distribution |
-| 9 | Operator-dimension dry-run | Load manifest, apply `shot_extend()`, recompute ASL match, validate Amendment 01 §1 |
+| **Exp #2** — Dan cuts near DINO motion peaks | Stage A borderline, Stage B fail | Peak-proximity not Dan's rule |
+| **Exp #5** — RAFT subject-motion peaks tighter than DINO | Not promising (N=2 on Modal L4) | Peak-alignment-as-technique unviable at this N; RAFT-as-feature-source for stratified rules untested (separate, viable question). See [Brain vault: Motion Signal — Conditional Not Blanket](../../Brain/Projects/ASI-Evolve/Motion%20Signal%20—%20Conditional%20Not%20Blanket.md) |
+| **motion_phase global** — Dan cuts on `active`/`just_finished` frames | Borderline-fail / fail | Global rule not Dan's rule either |
+| **motion_phase stratified by `beat_type`** | ~~CLEAN finding~~ → **SUSPECT (2026-05-16)** | Stratified by bare `beat_type`, which is too coarse. The technique +27pp / beauty_opener −35pp lifts may hide sub-variant variance. Needs redo on `(canonical_move, sub_variant)` — see [Editorial Move Vocabulary — Canonical Moves and Sub-Variants](../../Brain/Projects/ASI-Evolve/Editorial%20Move%20Vocabulary%20—%20Canonical%20Moves%20and%20Sub-Variants.md). |
+| **mogrt hold-duration** — beats with text overlay hold longer | **CLEAN, p < 1e-19** | Median +0.34s lift, 11/13 recipes positive. *Still valid* — no beat_type dependency. |
 
-Each is a notebook-shaped Python experiment, no pipeline required.
-
-### After experiments pass (only then write code)
-
-1. **Step 0** in `score_rules.py` — add `_validate_rule_output()` enforcing Layer 2 schema (`borrowed_technique`, `paper`, `paper_note`, `implementation`, `calibration`, etc.); backfill legacy 7 rules with `recipe_specific` slug; switch to all-rules enforcement when `LEGACY_RULE_IDS` exhausted. Per Watershed Wire-Through section of `Next Steps — Prioritized Mutations.md`.
-2. **§1.1 ASL match** + **§1.2 Duration variance** — `fastspeech2_variance_adaptor` scalar predictors, ~1 hour total
-3. **§1.4 Cut frequency curve** — `tslearn.metrics.soft_dtw`, `motionbeat_soft_dtw` slug
-4. **§1.6 + §1.7 + Action-phase alignment** — consume `dino_cache.json` + `classify_broll.py` output; `bailando_beat_align` slug for alignment-scoring stage, `motionbeat_pulse_extraction` for feature stage
-5. **§1.3 Pacing curve** — `fact_future_n_supervision` slug; Pearson + Spearman over N-shot resampled series
+**Authoritative verdict + numbers:** `experiments/offline_validation/runs/20260514T193913Z/verdict.md`.
 
 ---
 
-## Hot pending items (not yet fixed in the vault)
+## Production-candidate scoring rules emerging from this work
 
-These were surfaced near end-of-session but **NOT yet folded into the strategy notes.** Next session should land them before starting experiments OR document them as deliberate deferred-to-experiments items.
+**Status as of 2026-05-16:** Only `mogrt_minimum_hold` is ready to wire. The `motion_phase_by_beat_type` rule is **superseded** pending re-stratification on `(canonical_move, sub_variant)` — see [Editorial Move Vocabulary — Canonical Moves and Sub-Variants](../../Brain/Projects/ASI-Evolve/Editorial%20Move%20Vocabulary%20—%20Canonical%20Moves%20and%20Sub-Variants.md).
 
-1. **§1.5 + Layer 2 schema have a stale `audio_state ← pass_a0_status` conflation.** I added this mid-session; the conflation is: v16's `pass_a0_status` indicates camera A↔B sync state (whether we can trust the manifest timeline), NOT whether there's rhythmic audio to score against. These are different upstream signals. **Fix:** remove `audio_state` field from Layer 2 schema; demote §1.5 to "bucket-portable, recipe-deprioritized"; apply `bailando_beat_align` slug to the *visual-rhythm* dimensions (§1.6, §1.7, action-phase) — not just §1.5. This is documented in the codex log conceptually but the actual schema/text edit DIDN'T LAND in `Next Steps — Prioritized Mutations.md` or the Crosswalk. 
+1. **`mogrt_minimum_hold`** — Read manifest's mogrt overlap metadata + beat `timeline_out − timeline_in`. Penalize anything shorter than ~1.3s (the with-mogrt p25 from corpus). No model dependency, no peak detection. Cheap, defensible, statistically clean.
 
-2. **RAFT spec lives only in conversation context** — the per-frame schema (`flow_magnitude`, `flow_direction`, `camera_motion`, `subject_motion_magnitude`) was specified in the last messages but **NOT written into `Next Steps — Prioritized Mutations.md` or the Crosswalk**. Should be added when revising §1.6 + action-phase to consume RAFT output. Maps to slug `pretrained_floor:raft`. Either land in the strategy notes OR start with experiments and document RAFT post-validation.
-
-3. **The 9 offline experiments are NOT yet captured in a Strategy note.** They live only in conversation context. Worth a dedicated `Strategy/Offline Experiment Plan.md` note before starting (or track in the experiment notebooks themselves).
-
-### Process discipline learning (from codex R5)
-
-**When correcting a summary table or section header, sweep the body sections of the same document for the same terms.** I caught this twice mid-session — codex flagged stale body text after I fixed the summary table. Saved as memory `feedback_external_research_triage.md` but the pattern itself ("table-vs-body drift") worth surfacing here too.
+2. ~~**`motion_phase_by_beat_type`**~~ → **DO NOT WIRE YET (2026-05-16).** This rule was built on bare-`beat_type` stratification, which we now know collapses across editorial sub-variants. The `ingredient` bucket alone contains at least two distinct sub-variants (V1 cut-to-action and V2 stop-motion-vibe) with opposite motion signatures — RAFT peak present for V1 (71% of sample) vs absent for V2 (14% of sample). The other beat_types likely have similar splits. **Before wiring this rule, redo the stratification on `(canonical_move, sub_variant)` per [Editorial Move Vocabulary — Canonical Moves and Sub-Variants](../../Brain/Projects/ASI-Evolve/Editorial%20Move%20Vocabulary%20—%20Canonical%20Moves%20and%20Sub-Variants.md).** Until that's done, the per-beat_type lifts (technique +27pp, beauty_opener −35pp) may be artifacts of sub-variant mix, not stable editorial rules.
 
 ---
 
-## Known issues / watch-outs
+## The actual blocker Dan surfaced at end of session
 
-### Coordination with roughcut
+Dan's words (paraphrased): *"For more annotation work I'd need to see what I edited, not read text about it. The UX is broken — I'm being asked to label data from text descriptions about cuts I made months ago. We have finished videos, frame extracts, XMLs. This should be presented in a way where I can easily explain what's happening and the editorial decisions. I have a formula to how I edit these."*
 
-- v16 is still being shaken out for audio sync (Dan's words)
-- The 12 polish-reduction plans (`shot-first-*`, `beauty-picker-*`, etc.) are on top of v16, in design — they will land progressively and richer roughcut output will arrive; **the offline experiments do not depend on this** but the eventual scoring rule calibrations will re-tune as v16 audio + polish-reduction settles
-- v15 is frozen as rollback target
+**This is the real next-session priority.** The follow-ups in `verdict.md` rank "label the untyped 329 beats" (54% of corpus) as HIGH — but Dan can't reasonably do that without an editor-facing review UI. The current "annotation" pipeline goes XML → JSON → Brain vault text, which is one-directional. There's no way to scroll through the finished cut, see what was happening at each beat, type a `beat_type` + an editorial-reason note, and have it land back into the JSON.
 
-### Things NOT to do
+**What we have that could be the foundation:**
+- **Finished MP4s** for the 7 motion_phase-corpus recipes (verified locations under `/Volumes/2TB Footage/01_Projects/Kitchn/2026_March/04 Exports/{Recipe Name}/{...}FINAL.mp4`). Example: `Basil Pesto FINAL.mp4`, `11 Korean Fried Chicken_FINAL.mp4`, `Grilled Steak Tacos FINAL v2.mp4`.
+- **Per-recipe annotation JSON** (18 files at `experiments/recipe_pipeline/annotations/*.json`) — has every beat's timeline position, source clip, mogrt overlap, recipe_section, current beat_type (if any).
+- **Frame extracts** at `experiments/recipe_pipeline/frames/{recipe}/frame_*.jpg` — extracted at smart fps (2fps baseline + 12fps in dense regions, per `extract_frames_smart.py`).
+- **UXP probe scaffolding** at `experiments/recipe_pipeline/uxp_probe/` — an existing Premiere UXP panel skeleton that talks to a live Premiere project. ~12 probe rounds of history in `.before-round*` files.
+- **Source XMLs** at `/Volumes/2TB Footage/01_Projects/Kitchn/2026_March/02 Footage/{Recipe}_FINAL.xml` and approved edits at `experiments/recipe_pipeline/approved_edits/`.
 
-- Don't propose V-JEPA2 work. Triple-validated set-aside.
-- Don't conflate Bailando with audio. It's the alignment principle, modality-agnostic.
-- Don't write code in `score_rules.py` before running the offline experiments. The experiments validate whether the watershed bets are real before we commit to wiring them.
-- Don't fix the random pre-session dirty files in `ASI-Evolve/` (CODEX.md, README.md, score_pipeline_output.py changes, etc.). They're not from this session.
-- Don't touch the Brain vault's unrelated dirty files (Renewed Homes, NQ AI Sidekick, Daily/, etc.).
+**What a minimal "review UX" looks like** (open design — Dan hasn't picked):
+- Local web page or UXP panel, one per recipe
+- Lists each beat sequentially with its current metadata
+- Per beat: shows in/out frame thumbnails, the mogrt text (if any), the recipe_section, the source clip ID
+- Plays the corresponding slice of the FINAL.mp4 at the beat's timeline_in→timeline_out
+- Lets Dan: pick a `beat_type` from a dropdown, type a free-text "why this cut" note
+- Saves back to a sidecar JSON or merges into the existing annotation file
 
----
-
-## Key files to read FIRST (priority order for next session)
-
-1. **`~/DevApps/Brain/Projects/ASI-Evolve/_Strategy.md`** — hub pointer; lists all strategy notes with one-line descriptions
-2. **`~/DevApps/Brain/Projects/ASI-Evolve/Strategy/Business Strategy Frame — Why This Technical Bet Matters.md`** — frames *why* the technical bet matters (Path A, Adobe window, boardroom discipline)
-3. **`~/DevApps/Brain/Projects/ASI-Evolve/Strategy/Strategic Directive — Decomposed Cinematic Scoring.md`** — the verbatim directive + Amendment 01 + Corrections section
-4. **`~/DevApps/Brain/Projects/ASI-Evolve/Strategy/Adjacent-Field Techniques — What We're Borrowing.md`** — six watershed techniques (REMI / FastSpeech 2 / Bailando / MotionBeat / FACT / EDGE) mapped to scoring dimensions; back-pointer table
-5. **`~/DevApps/Brain/Projects/ASI-Evolve/Strategy/Next Steps — Prioritized Mutations.md`** — the Watershed-Technique Wire-Through (Layers 1–3) section + §1.1–§1.7 spec + the boardroom-discipline gates
-6. **`~/DevApps/Brain/Projects/ASI-Evolve/Strategy/Directive Crosswalk — Current Pipeline.md`** — every dimension's borrowed-technique slug + paired operator + bucket-portability
-7. **`~/DevApps/Brain/Projects/ASI-Evolve/Strategy/Reconciliation — Directive vs Editing Agent Roadmap.md`** — full 6-round codex audit trail at the bottom
-8. **`~/DevApps/ASI-Evolve/experiments/recipe_pipeline/score_rules.py`** — current 7-rule scorer (will get Step 0 added later)
-9. **`~/DevApps/ASI-Evolve/CODEX.md`** line 146 — institutional knowledge that already identified `motion_phase` consumption as the right action-boundary fix
-10. **`~/DevApps/roughcut-ai/runs/{recipe}/dino_cache.json`** — sample structure for experiment #2
+**Open questions for Dan next session:**
+1. Web (browser) or UXP (in Premiere)? UXP gets you live Premiere integration but needs Premiere open. Web is portable.
+2. Review-existing-edits-and-annotate? Or annotate-while-editing-new-recipes?
+3. The "formula" Dan mentioned — would it be more useful to dictate it FIRST (so we know what beat_types / decision dimensions to provide as picker options), or surface it inductively as he annotates?
 
 ---
 
-## Quick Start for next session
+## What's deployed / what's pending
 
-```bash
-# Read the strategy hub first
-cat "/Users/dandj/DevApps/Brain/Projects/ASI-Evolve/_Strategy.md"
+### Local
+- `experiments/offline_validation/` — full spike machinery. All scripts are runnable from there with `.venv/bin/python3`.
+  - `preflight.py` → `recipe_run_map.json` (coverage state)
+  - `data_loaders.py`, `stats.py` — shared
+  - `exp02_dino_peaks_vs_dan_cuts.py` — peak alignment (Exp #2)
+  - `exp05_raft_subject_vs_camera.py` — RAFT stats over Modal-cached curves (Exp #5)
+  - `modal_exp05_raft.py` + `run_exp05_modal.py` — Modal pipeline (parallel-capable for future N=5+)
+  - `motion_phase_classifier.py` — regex classifier
+  - `exp_motion_phase_vs_dan_cuts.py` — global motion_phase
+  - `exp_stratified_by_beat_type.py` — stratified + mogrt analysis (the clean-finding script)
+- `experiments/offline_validation/runs/` — 4 timestamped output dirs (results JSON + plots + verdict.md)
+- `experiments/offline_validation/.cache/exp05_curves/` — 27 RAFT subject-motion curves cached locally (don't need to re-pull from Modal)
+- `experiments/offline_validation/.cache/exp05_raft/basil_pesto/` — partial 12fps frame extracts from the killed-then-resumed run (basil_pesto only, 11 of 13 clips). **Safe to delete** — Modal redid everything.
 
-# Then start Experiment #2 + #5 in parallel.
-# Experiment #2: DINO peaks vs Dan cuts
-cd /Users/dandj/DevApps/ASI-Evolve
-mkdir -p experiments/offline_validation
+### Modal
+- Volume `asi-exp05` — RAFT subject-motion JSONs for basil_pesto (13 clips) + chicken_thighs (14 clips). Already pulled locally; can keep or delete.
+- Volume `roughcut-artifacts` — 27 recipes processed by roughcut. **6 of the 18 ASI-annotated recipes are on Modal** (basil_pesto, chicken_thighs, banana_muffins as `easy_banana_muffins` with DIFFERENT footage, korean_fried_chicken, steak_tacos partial, creamy_potato_soup new). The other 21 Modal recipes (salmon_pasta, coleslaw, etc.) aren't in our annotation set.
+- Modal app: `experiments/offline_validation/modal_exp05_raft.py` — uses your existing `gdrive-oauth` secret + L4 GPU. Reuses `roughcut-ai/runpod/download_footage.py` for Drive pull.
 
-# Inspect dino_cache.json schema for a known-annotated recipe:
-python3 -c "import json; d=json.load(open('/Users/dandj/DevApps/roughcut-ai/runs/basil_pesto/dino_cache.json')); print(list(d.keys())[:5])"
+### Brain vault
+- `~/DevApps/Brain/Projects/ASI-Evolve/Strategy/*.md` — codex-approved through R6 in the prior session; strategy framework unchanged.
+- **Added 2026-05-16:** `~/DevApps/Brain/Projects/ASI-Evolve/Motion Signal — Conditional Not Blanket.md` — finding doc that separates *peak-alignment-as-technique* (recipe-conditional, evidence in §1/§2) from *motion-phase-scoring-as-technique* (beat-type-conditional, evidence in §3, uses VLM categorical signal) from *RAFT-as-feature-source* (untested, hypothesis in Open Questions §1, smell test in §4). This supersedes any earlier "RAFT shelved" / "RAFT mooted" framing.
+- Hot-pending items #1, #3 from prior handoff are still pending (§1.5 audio conflation, Strategy/Offline Experiment Plan.md). Item #2 (RAFT spec backfill) is **not mooted** — it's reframed as RAFT-as-feature-source for stratified categorical rules; the spec should now describe RAFT magnitude → threshold → categorical phase label feeding `motion_phase × beat_type`, not RAFT for peak-alignment.
 
-# Verify annotation file exists for that recipe:
-ls /Users/dandj/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/basil_pesto*.json
+---
 
-# Then build:
-# experiments/offline_validation/exp02_dino_peaks_vs_dan_cuts.ipynb (or .py)
-#   - load dino_cache.json for 3 recipes (basil_pesto, chicken_thighs, korean_fried_chicken)
-#   - scipy.signal.find_peaks on cosine distance array
-#   - load Dan's cut times from annotations/{recipe}.json
-#   - histogram of min(|cut - peak|) for Dan's cuts vs random baseline
-#   - report whether Dan-cuts-near-peaks is statistically significant (KS test or t-test)
+## Coverage state
 
-# Experiment #5: RAFT subject-vs-camera (requires RAFT setup, which Dan stated is done)
-# experiments/offline_validation/exp05_raft_subject_vs_camera.ipynb (or .py)
-#   - run RAFT on 1-2 recipes' source video
-#   - extract per-frame: flow_magnitude, flow_direction, camera_motion, subject_motion_magnitude
-#   - compare subject_motion_magnitude peaks vs DINO peaks vs Dan's cut times
+From `experiments/offline_validation/recipe_run_map.json` (re-run after creamy_potato_soup pull):
+
+```
+qualifying recipes: 6 / 18
+qualifying ≥1s beats with DINO cache: 118
+coverage tier: M6_A  (M6-A: 5 recipes / 60 beats — MET)
+                     (M6-B: 10 recipes / 150 beats — NOT MET)
 ```
 
-Before writing experiments: **read 4 + 5** (Adjacent-Field Techniques + Next Steps Watershed Wire-Through section) from the priority list above. They define what the experiments are testing.
+Motion_phase corpus is 7 (adds french_onion_mac which has scan.json but no dino_cache).
 
-After experiments pass: ship Step 0 + the v1/v2 cheap-wire scoring spine. All slugs and implementation choices already documented.
-
----
-
-## Watch-out: credentials / external state
-
-- No new credentials needed for this work
-- ASI reads from `~/DevApps/roughcut-ai/runs/{recipe}/` — cross-repo file reads (existing pattern in `score_pipeline_output.py`)
-- Brain vault is at `~/DevApps/Brain/` — separate git repo with many unrelated dirty files; DO NOT touch anything outside `Projects/ASI-Evolve/`
-- **RAFT model weights / invocation: location uncertain.** Dan stated "we have RAFT set up" in conversation. **Pre-handoff grep across `~/DevApps/ASI-Evolve/` and `~/DevApps/roughcut-ai/tools/` + `docs/` for `raft|RAFT` returned only false-positive substring matches** (in words like "draft", "crafting"). No standalone RAFT module found. **Next session must ask Dan first** — possible locations to check: a separate repo (e.g., `~/DevApps/raft/` or similar), an unpushed branch, a conda env, or a Modal/Runpod-side setup not in the local checkouts. Do NOT assume it's wired before confirming.
-
-## Annotation file schema (for Experiment #2)
-
-Sample: `~/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/basil_pesto.json`
-
-Top-level keys: `recipe`, `global_notes`, `source_narrative`, `beats`
-
-Per-beat keys (relevant for experiments):
-- `beat_index` — int, sequential
-- `beat_type` — string (e.g. `ingredient`, `beauty_opener`, `title_card`, `technique`, `beauty`, `stop_motion`, `beauty_close`)
-- `recipe_section` — string
-- `filename` — source clip filename (maps to roughcut source files)
-- `in_point` — start time within source file (seconds)
-- `duration` — beat duration (seconds)
-- `out_point` — `in_point + duration`
-- `camera` — `front` / `overhead` / `unknown`
-- `verdict`, `confidence` — Dan's editorial judgment annotations
-- `effects`, `nested`, `mogrt_overlaps` — overlay / nest metadata
-
-For Experiment #2 ("Dan's cuts"): each beat boundary is effectively a cut. The cumulative timeline position of each cut = sum of prior beat durations. Map to the corresponding DINO-cache time index per `filename`.
-
-## Offline experiments — strategy-note status
-
-**The 9 offline experiments (described in detail in §"What's next" above) are NOT yet captured as a dedicated Strategy/ note.** They live only in this handoff and the prior conversation context. Recommendation for next session, in order of preference:
-
-1. **Create `~/DevApps/Brain/Projects/ASI-Evolve/Strategy/Offline Experiment Plan.md`** before starting — consolidate all 9 experiments with hypothesis + pass condition + downstream impact + cached-data paths. ~20 min to write.
-2. **OR** track each experiment's hypothesis + pass condition inline in the notebook header — acceptable for a single-session iteration but harder to revisit.
-
-Either works; option 1 is more durable.
+Of the 12 recipes still missing roughcut runs, only `creamy_potato_soup` had a Drive folder ID registered in `roughcut-ai/recipes_full.json`. The other 11 need IDs added before Modal can pull them.
 
 ---
 
-## Where data outputs live
+## Codex review log
 
-- Strategy notes: `~/DevApps/Brain/Projects/ASI-Evolve/Strategy/` (8 notes + 9 references)
-- Hub pointer: `~/DevApps/Brain/Projects/ASI-Evolve/_Strategy.md`
-- Code scoring rules: `~/DevApps/ASI-Evolve/experiments/recipe_pipeline/score_rules.py`
-- Dan's annotations: `~/DevApps/ASI-Evolve/experiments/recipe_pipeline/annotations/{recipe}.json`
-- Roughcut artifacts: `~/DevApps/roughcut-ai/runs/{recipe}/{dino_cache,scan,pairs,audio_cues,manifest}.json`
-- Roughcut v16 worktrees: `~/DevApps/roughcut-ai/.claude/worktrees/v16-smoke/` and `.../continue-from-handoff-atomic-snail/`
-- User memory: `~/.claude/projects/-Users-dandj-DevApps-ASI-Evolve/memory/MEMORY.md` (+ supporting files)
-- New experiments target: `~/DevApps/ASI-Evolve/experiments/offline_validation/` (folder to be created)
+Plan: `~/.claude/plans/continue-from-handoff-users-dandj-devapp-polymorphic-blossom.md`. Approved at Round 3 (3 rounds total — caught a real off-by-0.5s peak-time bug + a coverage gate that was unreachable on the current cache state). Full audit trail in the plan file's "Codex Review Log" section. No additional codex rounds this session (didn't introduce new design decisions worth reviewing — the spikes followed the approved plan, the stratification + mogrt analyses were data-driven extensions).
+
+---
+
+## Git state at handoff
+
+Branch: `refactor/writer-modules` (HEAD = `8ea74bc` from the prior session).
+
+**Uncommitted changes:**
+- Modified (carryover from before this session, not touched this session):
+  - `CODEX.md`, `README.md`, `experiments/recipe_pipeline/prproj_dumps/{basil_pesto,chicken_thighs}_effects.json`, `experiments/recipe_pipeline/score_pipeline_output.py`, `experiments/recipe_pipeline/uxp_probe/{index.html, index.js, manifest.json}`
+- Untracked (from this session):
+  - `experiments/offline_validation/` ← all spike work
+- Untracked (carryover from before):
+  - Many files including `docs/asi-current-contract.md`, `docs/asi-pipeline-map.md`, `experiments/recipe_pipeline/{cached_recipes,frames,prproj_dumps,...}` — see `git status` for full list
+
+**Suggested commit for this session's work:**
+- `experiments/offline_validation/**` — the whole offline_validation spike
+- Updated `docs/handoff.md` (this file)
+- Possibly also the carryover `prproj_dumps/*.json` if those are wanted as commits
+
+Don't commit before reviewing the dirty-files list — there are pre-session changes mixed in.
+
+---
+
+## Quick-start for next session
+
+```bash
+cd /Users/dandj/DevApps/ASI-Evolve
+
+# Read the verdict first
+cat experiments/offline_validation/runs/20260514T193913Z/verdict.md
+
+# Optionally re-run the experiments (all idempotent, use cached curves):
+.venv/bin/python3 experiments/offline_validation/preflight.py
+.venv/bin/python3 experiments/offline_validation/exp02_dino_peaks_vs_dan_cuts.py
+.venv/bin/python3 experiments/offline_validation/exp05_raft_subject_vs_camera.py
+.venv/bin/python3 experiments/offline_validation/exp_motion_phase_vs_dan_cuts.py
+.venv/bin/python3 experiments/offline_validation/exp_stratified_by_beat_type.py
+
+# Inspect a sample motion_phase classification result on real data:
+.venv/bin/python3 experiments/offline_validation/motion_phase_classifier.py
+```
+
+To kick off the editor-UX conversation Dan raised, the next session should start with the 3 open questions in the "blocker" section above. Until those are answered, don't try to push more auto-classification work — Dan needs to see the actual edit to provide ground truth.
+
+---
+
+## Things NOT to do next session
+
+- Don't propose more **peak-alignment** experiments as a *global* scoring rule. The data killed the blanket-rule version on the current corpus (per-recipe deltas sign-flip; see [Motion Signal — Conditional Not Blanket](../../Brain/Projects/ASI-Evolve/Motion%20Signal%20—%20Conditional%20Not%20Blanket.md) §1).
+- **Do not conflate "peak-alignment failed" with "RAFT failed."** Peak-alignment is the technique that's recipe-conditional; RAFT was just the tool feeding one variant of it. RAFT-as-feature-source for stratified categorical rules (e.g. RAFT magnitude → threshold → phase label feeding `motion_phase × beat_type`) is **unblocked work**, not blocked. Unblocking step: backfill RAFT curves for the 16 missing recipes via `run_exp05_modal.py` (existing infra; ~30-60 min L4 time).
+- Don't try to auto-classify `(empty)` beat_types using VLM descriptions before talking with Dan about the editor UX. Dan explicitly said "the UX is broken" — programmatic labeling without his editorial input is exactly the thing that's been frustrating him.
+- Don't touch the carryover dirty files. They predate this session.
+- Don't touch the Brain vault — strategy framework is codex-approved and stable.
+
+---
+
+## Key context for future-you
+
+- Dan has a **formula** for how he edits recipes that he hasn't articulated yet. The stratified beat_type finding is consistent with that formula being real (different rules for different beat moves). The right move is: build the UX that lets him articulate it against the visual evidence. The data will then have the labels needed to wire scoring rules.
+- ~~The two clean findings (mogrt-hold + motion_phase-by-beat_type) are honest empirical results. They survived stratification and a real null. Don't lose them.~~ → **Updated 2026-05-16:** only `mogrt_minimum_hold` survives unchanged (no beat_type dependency). The `motion_phase_by_beat_type` finding is suspect — it was stratified on bare `beat_type` which collapses across editorial sub-variants with opposite motion signatures. Needs redo on `(canonical_move, sub_variant)`. See [Editorial Move Vocabulary — Canonical Moves and Sub-Variants](../../Brain/Projects/ASI-Evolve/Editorial%20Move%20Vocabulary%20—%20Canonical%20Moves%20and%20Sub-Variants.md).
+- The "Dan cuts on motion peaks" framing was wrong at the global level — but motion DOES matter conditionally on beat intent. The pivot in this session was from "motion as global rule" to "motion as one signal interpreted differently per beat_type." That framing should carry forward.
+- Modal RAFT pipeline is built and works. If a new motion-related hypothesis surfaces, the infrastructure is there.
+- **Session 2026-05-16 follow-up:** the carry-forward framing above was clarified into a permanent finding doc. See [Motion Signal — Conditional Not Blanket](../../Brain/Projects/ASI-Evolve/Motion%20Signal%20—%20Conditional%20Not%20Blanket.md). It separates peak-alignment-as-technique (recipe-conditional, evidence in §1/§2) from RAFT-as-feature-source (untested as a blanket categorical signal, hypothesis in §Open Questions §1). A directional smell test on the existing N=42 RAFT data is recorded at `experiments/offline_validation/runs/20260516T092835Z/exp05_stratified_smell.md`.

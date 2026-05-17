@@ -1,0 +1,590 @@
+{
+  "schema_version": 1,
+  "scope": "directional smell test only; N=42 from basil_pesto + chicken_thighs",
+  "hypothesis_under_test": "Dan cuts just before the action happens, and cut when it ends",
+  "interpretation": {
+    "signed_delta_negative": "cut BEFORE peak (action not yet at maximum motion)",
+    "signed_delta_positive": "cut AFTER peak (action has finished)",
+    "signed_delta_zero": "cut on the peak (during maximum motion)"
+  },
+  "source": "experiments/offline_validation/runs/20260514T193913Z/exp05_results.json",
+  "prominence_percentile": 75,
+  "n_beats_in_exp05": 42,
+  "n_beats_signed": 42,
+  "n_missing_curve": 0,
+  "n_no_peaks": 0,
+  "caveats": [
+    "samples per beat_type are tiny (1-21); statistical conclusions not supported",
+    "'nearest peak' uses |cut - peak|; if Dan cuts equidistant between two peaks, sign is determined by floating-point tiebreak",
+    "peaks computed with prominence = 75th percentile of subject_motion curve, matching exp05 config",
+    "real test requires (a) RAFT curves for 16 missing recipes, (b) 329 untyped beats labeled"
+  ],
+  "overall": {
+    "n_beats": 42,
+    "n_recipes": 2,
+    "median_signed_delta_s": 0.3219999999999992,
+    "mean_signed_delta_s": -0.4146666666666669,
+    "n_cut_before_peak": 12,
+    "n_cut_after_peak": 30,
+    "n_cut_on_peak": 0,
+    "pct_cut_before": 28.6,
+    "pct_cut_after": 71.4,
+    "per_recipe_median": {
+      "basil_pesto": 0.448666666666667,
+      "chicken_thighs": 0.258333333333324
+    },
+    "per_recipe_n": {
+      "basil_pesto": 18,
+      "chicken_thighs": 24
+    }
+  },
+  "by_beat_type": {
+    "ingredient": {
+      "n_beats": 13,
+      "n_recipes": 2,
+      "median_signed_delta_s": 0.1733333333333329,
+      "mean_signed_delta_s": -1.7659999999999982,
+      "n_cut_before_peak": 4,
+      "n_cut_after_peak": 9,
+      "n_cut_on_peak": 0,
+      "pct_cut_before": 30.8,
+      "pct_cut_after": 69.2,
+      "per_recipe_median": {
+        "basil_pesto": 0.766333333333332,
+        "chicken_thighs": -0.9219999999999966
+      },
+      "per_recipe_n": {
+        "basil_pesto": 5,
+        "chicken_thighs": 8
+      }
+    },
+    "UNTYPED": {
+      "n_beats": 21,
+      "n_recipes": 2,
+      "median_signed_delta_s": 0.3453333333333344,
+      "mean_signed_delta_s": -0.04709523809523788,
+      "n_cut_before_peak": 8,
+      "n_cut_after_peak": 13,
+      "n_cut_on_peak": 0,
+      "pct_cut_before": 38.1,
+      "pct_cut_after": 61.9,
+      "per_recipe_median": {
+        "basil_pesto": 0.3453333333333344,
+        "chicken_thighs": 0.43166666666666664
+      },
+      "per_recipe_n": {
+        "basil_pesto": 11,
+        "chicken_thighs": 10
+      }
+    },
+    "beauty_opener": {
+      "n_beats": 3,
+      "n_recipes": 2,
+      "median_signed_delta_s": 0.3219999999999992,
+      "mean_signed_delta_s": 1.0384444444444452,
+      "n_cut_before_peak": 0,
+      "n_cut_after_peak": 3,
+      "n_cut_on_peak": 0,
+      "pct_cut_before": 0.0,
+      "pct_cut_after": 100.0,
+      "per_recipe_median": {
+        "basil_pesto": 0.3023333333333369,
+        "chicken_thighs": 1.4064999999999994
+      },
+      "per_recipe_n": {
+        "basil_pesto": 1,
+        "chicken_thighs": 2
+      }
+    },
+    "beauty_close": {
+      "n_beats": 1,
+      "n_recipes": 1,
+      "median_signed_delta_s": 0.8836666666666417,
+      "mean_signed_delta_s": 0.8836666666666417,
+      "n_cut_before_peak": 0,
+      "n_cut_after_peak": 1,
+      "n_cut_on_peak": 0,
+      "pct_cut_before": 0.0,
+      "pct_cut_after": 100.0,
+      "per_recipe_median": {
+        "basil_pesto": 0.8836666666666417
+      },
+      "per_recipe_n": {
+        "basil_pesto": 1
+      }
+    },
+    "beauty": {
+      "n_beats": 2,
+      "n_recipes": 1,
+      "median_signed_delta_s": 0.4333333333333331,
+      "mean_signed_delta_s": 0.4333333333333331,
+      "n_cut_before_peak": 0,
+      "n_cut_after_peak": 2,
+      "n_cut_on_peak": 0,
+      "pct_cut_before": 0.0,
+      "pct_cut_after": 100.0,
+      "per_recipe_median": {
+        "chicken_thighs": 0.4333333333333331
+      },
+      "per_recipe_n": {
+        "chicken_thighs": 2
+      }
+    },
+    "technique": {
+      "n_beats": 1,
+      "n_recipes": 1,
+      "median_signed_delta_s": 0.19466666666664878,
+      "mean_signed_delta_s": 0.19466666666664878,
+      "n_cut_before_peak": 0,
+      "n_cut_after_peak": 1,
+      "n_cut_on_peak": 0,
+      "pct_cut_before": 0.0,
+      "pct_cut_after": 100.0,
+      "per_recipe_median": {
+        "chicken_thighs": 0.19466666666664878
+      },
+      "per_recipe_n": {
+        "chicken_thighs": 1
+      }
+    },
+    "title_card": {
+      "n_beats": 1,
+      "n_recipes": 1,
+      "median_signed_delta_s": 1.4706666666666663,
+      "mean_signed_delta_s": 1.4706666666666663,
+      "n_cut_before_peak": 0,
+      "n_cut_after_peak": 1,
+      "n_cut_on_peak": 0,
+      "pct_cut_before": 0.0,
+      "pct_cut_after": 100.0,
+      "per_recipe_median": {
+        "chicken_thighs": 1.4706666666666663
+      },
+      "per_recipe_n": {
+        "chicken_thighs": 1
+      }
+    }
+  },
+  "per_beat": [
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 3,
+      "source_id": "AI2I5184",
+      "cut_out_s": 22.186999999999998,
+      "signed_delta": 0.9786666666666655,
+      "abs_delta": 0.9786666666666655,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 53
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 6,
+      "source_id": "AI2I5185",
+      "cut_out_s": 10.677,
+      "signed_delta": 0.5519999999999996,
+      "abs_delta": 0.5519999999999996,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 34
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 14,
+      "source_id": "AI2I5191",
+      "cut_out_s": 5.172,
+      "signed_delta": 0.04699999999999971,
+      "abs_delta": 0.04699999999999971,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 10
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 15,
+      "source_id": "AI2I5191",
+      "cut_out_s": 12.387,
+      "signed_delta": 0.3453333333333344,
+      "abs_delta": 0.3453333333333344,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 10
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 34,
+      "source_id": "AI2I5196",
+      "cut_out_s": 16.808,
+      "signed_delta": 0.766333333333332,
+      "abs_delta": 0.766333333333332,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 18
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 1,
+      "source_id": "AI2I5202",
+      "cut_out_s": 177.844,
+      "signed_delta": 0.3023333333333369,
+      "abs_delta": 0.3023333333333369,
+      "beat_type": "beauty_opener",
+      "n_peaks_in_clip": 148
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 5,
+      "source_id": "B19I6401",
+      "cut_out_s": 32.324,
+      "signed_delta": -0.30100000000000193,
+      "abs_delta": 0.30100000000000193,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 31
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 8,
+      "source_id": "B19I6402",
+      "cut_out_s": 22.981,
+      "signed_delta": 0.6893333333333338,
+      "abs_delta": 0.6893333333333338,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 30
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 9,
+      "source_id": "B19I6404",
+      "cut_out_s": 4.963,
+      "signed_delta": 0.004666666666667041,
+      "abs_delta": 0.004666666666667041,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 17
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 13,
+      "source_id": "B19I6407",
+      "cut_out_s": 63.438,
+      "signed_delta": 0.5630000000000024,
+      "abs_delta": 0.5630000000000024,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 41
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 23,
+      "source_id": "B19I6410",
+      "cut_out_s": 38.914,
+      "signed_delta": 0.03900000000000148,
+      "abs_delta": 0.03900000000000148,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 108
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 24,
+      "source_id": "B19I6410",
+      "cut_out_s": 51.047000000000004,
+      "signed_delta": 0.17200000000000415,
+      "abs_delta": 0.17200000000000415,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 108
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 26,
+      "source_id": "B19I6410",
+      "cut_out_s": 97.80600000000001,
+      "signed_delta": 7.51433333333334,
+      "abs_delta": 7.51433333333334,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 108
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 30,
+      "source_id": "B19I6411",
+      "cut_out_s": 13.305,
+      "signed_delta": 5.68,
+      "abs_delta": 5.68,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 51
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 31,
+      "source_id": "B19I6411",
+      "cut_out_s": 65.19,
+      "signed_delta": -2.768333333333331,
+      "abs_delta": 2.768333333333331,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 51
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 41,
+      "source_id": "B19I6416",
+      "cut_out_s": 43.46,
+      "signed_delta": -0.16499999999999915,
+      "abs_delta": 0.16499999999999915,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 34
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 42,
+      "source_id": "B19I6417",
+      "cut_out_s": 28.362000000000002,
+      "signed_delta": 2.487000000000002,
+      "abs_delta": 2.487000000000002,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 109
+    },
+    {
+      "recipe": "basil_pesto",
+      "beat_index": 44,
+      "source_id": "B19I6417",
+      "cut_out_s": 196.59199999999998,
+      "signed_delta": 0.8836666666666417,
+      "abs_delta": 0.8836666666666417,
+      "beat_type": "beauty_close",
+      "n_peaks_in_clip": 109
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 7,
+      "source_id": "AI2I5438",
+      "cut_out_s": 66.191,
+      "signed_delta": -2.017333333333326,
+      "abs_delta": 2.017333333333326,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 98
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 16,
+      "source_id": "AI2I5440",
+      "cut_out_s": 9.176,
+      "signed_delta": 1.134333333333334,
+      "abs_delta": 1.134333333333334,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 50
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 0,
+      "source_id": "AI2I5462",
+      "cut_out_s": 29.947,
+      "signed_delta": 0.3219999999999992,
+      "abs_delta": 0.3219999999999992,
+      "beat_type": "beauty_opener",
+      "n_peaks_in_clip": 14
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 43,
+      "source_id": "AI2I5462",
+      "cut_out_s": 29.947,
+      "signed_delta": 0.3219999999999992,
+      "abs_delta": 0.3219999999999992,
+      "beat_type": "beauty",
+      "n_peaks_in_clip": 14
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 3,
+      "source_id": "B19I6669",
+      "cut_out_s": 25.526,
+      "signed_delta": -25.932333333333336,
+      "abs_delta": 25.932333333333336,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 134
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 4,
+      "source_id": "B19I6669",
+      "cut_out_s": 41.375,
+      "signed_delta": -10.083333333333336,
+      "abs_delta": 10.083333333333336,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 134
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 6,
+      "source_id": "B19I6669",
+      "cut_out_s": 59.685,
+      "signed_delta": 0.8100000000000023,
+      "abs_delta": 0.8100000000000023,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 134
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 8,
+      "source_id": "B19I6669",
+      "cut_out_s": 67.025,
+      "signed_delta": 8.150000000000006,
+      "abs_delta": 8.150000000000006,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 134
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 9,
+      "source_id": "B19I6669",
+      "cut_out_s": 74.741,
+      "signed_delta": -3.717333333333329,
+      "abs_delta": 3.717333333333329,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 134
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 13,
+      "source_id": "B19I6669",
+      "cut_out_s": 156.153,
+      "signed_delta": 0.19466666666664878,
+      "abs_delta": 0.19466666666664878,
+      "beat_type": "technique",
+      "n_peaks_in_clip": 134
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 15,
+      "source_id": "B19I6670",
+      "cut_out_s": 7.549,
+      "signed_delta": -4.742666666666666,
+      "abs_delta": 4.742666666666666,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 9
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 18,
+      "source_id": "B19I6671",
+      "cut_out_s": 22.397,
+      "signed_delta": 0.18866666666666632,
+      "abs_delta": 0.18866666666666632,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 44
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 29,
+      "source_id": "B19I6673",
+      "cut_out_s": 6.215,
+      "signed_delta": 0.1733333333333329,
+      "abs_delta": 0.1733333333333329,
+      "beat_type": "ingredient",
+      "n_peaks_in_clip": 10
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 31,
+      "source_id": "B19I6673",
+      "cut_out_s": 12.429,
+      "signed_delta": 1.4706666666666663,
+      "abs_delta": 1.4706666666666663,
+      "beat_type": "title_card",
+      "n_peaks_in_clip": 10
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 33,
+      "source_id": "B19I6687",
+      "cut_out_s": 44.503,
+      "signed_delta": -0.12199999999999989,
+      "abs_delta": 0.12199999999999989,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 29
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 34,
+      "source_id": "B19I6688",
+      "cut_out_s": 27.527,
+      "signed_delta": 0.9853333333333332,
+      "abs_delta": 0.9853333333333332,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 16
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 35,
+      "source_id": "B19I6691",
+      "cut_out_s": 34.117,
+      "signed_delta": 1.4919999999999973,
+      "abs_delta": 1.4919999999999973,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 40
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 36,
+      "source_id": "B19I6691",
+      "cut_out_s": 42.626,
+      "signed_delta": 1.3343333333333334,
+      "abs_delta": 1.3343333333333334,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 40
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 39,
+      "source_id": "B19I6693",
+      "cut_out_s": 6.253,
+      "signed_delta": 0.5446666666666671,
+      "abs_delta": 0.5446666666666671,
+      "beat_type": "beauty",
+      "n_peaks_in_clip": 9
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 41,
+      "source_id": "B19I6694",
+      "cut_out_s": 96.721,
+      "signed_delta": -5.570666666666668,
+      "abs_delta": 5.570666666666668,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 58
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 1,
+      "source_id": "B19I6695",
+      "cut_out_s": 32.616,
+      "signed_delta": 2.4909999999999997,
+      "abs_delta": 2.4909999999999997,
+      "beat_type": "beauty_opener",
+      "n_peaks_in_clip": 18
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 45,
+      "source_id": "B19I6695",
+      "cut_out_s": 31.657,
+      "signed_delta": 1.532,
+      "abs_delta": 1.532,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 18
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 46,
+      "source_id": "B19I6696",
+      "cut_out_s": 32.57,
+      "signed_delta": -0.22166666666666401,
+      "abs_delta": 0.22166666666666401,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 65
+    },
+    {
+      "recipe": "chicken_thighs",
+      "beat_index": 48,
+      "source_id": "B19I6696",
+      "cut_out_s": 57.681,
+      "signed_delta": -3.9440000000000026,
+      "abs_delta": 3.9440000000000026,
+      "beat_type": "UNTYPED",
+      "n_peaks_in_clip": 65
+    }
+  ]
+}

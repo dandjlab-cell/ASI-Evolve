@@ -5,3 +5,5 @@
 *.prproj.log
 experiments/PREMIERE PROJECTS/OUTPUTS/
 experiments/recipe_pipeline/decoder_harness/captures/
+experiments/offline_validation/.cache/
+.DS_Store
